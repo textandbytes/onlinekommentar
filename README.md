@@ -9,7 +9,7 @@ Publishing platform for legal commentaries
 ## Run the Application Locally
 - Clone this repository: `git clone git@github.com:textandbytes/onlinekommentar.git`
 - cd into the project directory: `cd onlinekommentar`
-- Update .env file with application-specific configuration variables in `sources/webapp`
+- Update `.env` file with application-specific configuration variables in `sources/webapp`
 - cd into the provisioning directory: `cd provisioning`
 - Start the application using Docker: `docker-compose --env-file ../sources/webapp/.env up`
 - Install dependencies with composer: `docker-compose run --rm composer install`
