@@ -9,12 +9,14 @@ Publishing platform for legal commentaries
 ## Run the Application Locally
 - Clone this repository: `git clone git@github.com:textandbytes/onlinekommentar.git`
 - cd into the project directory: `cd onlinekommentar`
-- Update `.env` file with application-specific configuration variables in `sources/webapp`
+- Copy the `.env.example` file in `sources/webapp` and name it `.env`, update it with application-specific configuration variables
 - cd into the provisioning directory: `cd provisioning`
 - Start the application using Docker: `docker-compose --env-file ../sources/webapp/.env up`
+- Note: if the docker container is running in the foreground, you should open a new terminal window and go to the project directory and run `cd provisioning` again
 - Install dependencies with composer: `docker-compose run --rm composer install`
 - Install frontend dependencies: `docker-compose run --rm npm install`
 - Run the database migrations: `docker-compose run --rm artisan migrate`
+- Go to http://localhost and click on "Generate applictiona key" (the key will be stored in your `.env` file)
 
 ## Local Development
 - Run artisan commands: `docker-compose run --rm artisan <command>`
