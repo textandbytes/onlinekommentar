@@ -16,7 +16,7 @@ Publishing platform for legal commentaries
 - Install dependencies with composer: `docker-compose run --rm composer install`
 - Install frontend dependencies: `docker-compose run --rm npm install`
 - Run the database migrations: `docker-compose run --rm artisan migrate`
-- Go to http://localhost and click on "GENERATE APP KEY" (the key will be stored in your `.env` file)
+- Go to http://localhost:8001 and click on "GENERATE APP KEY" (the key will be stored in your `.env` file)
 
 ## Local Development
 - Run artisan commands: `docker-compose run --rm artisan <command>`
