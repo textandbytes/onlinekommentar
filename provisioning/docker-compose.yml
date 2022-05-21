@@ -23,7 +23,7 @@ services:
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
     volumes:
-      - 'sail-mysql:/var/lib/mysql'
+      - 'mysql-data:/var/lib/mysql'
 
   php:
     build:
@@ -65,5 +65,5 @@ services:
       - '${FORWARD_MAILHOG_DASHBOARD_PORT:-8025}:8025'
 
 volumes:
-  sail-mysql:
+  mysql-data:
     driver: local
