@@ -26,7 +26,10 @@ Publishing platform for legal commentaries
 ### Watching Javascript and CSS changes
 - Watch local file changes (JS, CSS): `docker-compose run --rm npm run watch`
 
-### Running Other artisan Commands
+### Running npm Commands
+- `docker-compose run --rm npm <command>`, e.g. `docker-compose run --rm npm install`
+
+### Running artisan Commands
 - `docker-compose run --rm artisan <command>`, e.g. `docker-compose run --rm artisan config:clear`
 
 ### Running composer Commands
