@@ -1,12 +1,12 @@
 # Onlinekommentar
 Publishing platform for legal commentaries
 
-# How to Set Up
+## How to Set Up
 
-## Prerequisites
+### Prerequisites
 - Install Docker Desktop
 
-## Run the Application Locally
+### Run the Application Locally
 - Clone this repository: `git clone git@github.com:textandbytes/onlinekommentar.git`
 - cd into the project directory: `cd onlinekommentar`
 - Copy the `.env.example` file in `sources/webapp` and name it `.env`, update it with application-specific configuration variables
@@ -18,11 +18,16 @@ Publishing platform for legal commentaries
 - Run the database migrations: `docker-compose run --rm artisan migrate`
 - Go to http://localhost:8001 and click on "GENERATE APP KEY" (the key will be stored in your `.env` file)
 
+---
+
 ## Local Development
-- Run artisan commands: `docker-compose run --rm artisan <command>`
+`cd` into the `provisioning` folder to run `composer`, `npm` and `artisan` commands via their Docker containers. See examples below.
 
 ### Watching Javascript and CSS changes
 - Watch local file changes (JS, CSS): `docker-compose run --rm npm run watch`
 
 ### Running Other artisan Commands
 - `docker-compose run --rm artisan <command>`, e.g. `docker-compose run --rm artisan config:clear`
+
+### Running composer Commands
+- `docker-compose run --rm composer require <dependency>`, e.g. `docker-compose run --rm composer require laravel/jetstream`
