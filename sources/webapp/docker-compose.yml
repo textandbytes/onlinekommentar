@@ -3,12 +3,12 @@ version: '3.8'
 services:
   nginx:
     build:
-      context: .
+      context: ../../provisioning
       dockerfile: nginx.dockerfile
     ports:
       - 8001:80
     volumes:
-      - ../sources/webapp:/var/www/html
+      - ./:/var/www/html
     depends_on:
       - mysql
       - php
@@ -27,32 +27,32 @@ services:
 
   php:
     build:
-      context: .
+      context: ../../provisioning
       dockerfile: php.dockerfile
     volumes:
-      - ../sources/webapp:/var/www/html
+      - ./:/var/www/html
 
   composer:
     build:
-      context: .
+      context: ../../provisioning
       dockerfile: composer.dockerfile
     volumes:
-      - ../sources/webapp:/var/www/html
+      - ./:/var/www/html
     working_dir: /var/www/html
 
   npm:
     image: node:current-alpine
     volumes:
-      - ../sources/webapp:/var/www/html
+      - ./:/var/www/html
     entrypoint: ["npm"]
     working_dir: /var/www/html
 
   artisan:
     build:
-      context: .
+      context: ../../provisioning
       dockerfile: php.dockerfile
     volumes:
-      - ../sources/webapp:/var/www/html
+      - ./:/var/www/html
     working_dir: /var/www/html
     depends_on:
       - mysql
