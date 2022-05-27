@@ -18,7 +18,7 @@ mix.js('resources/js/app.js', 'public/js').vue()
     ])
     .alias({
         '@': 'resources/js',
-    });
+    }).sourceMaps();
 
 if (mix.inProduction()) {
     mix.version();
