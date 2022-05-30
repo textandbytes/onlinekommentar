@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\Cms\DocumentTreeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,12 +25,17 @@ Route::get('/', function () {
     ]);
 });
 
-Route::middleware([
+Route::prefix('cms')->middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
+
+    Route::resource('tree', DocumentTreeController::class);
+
 });
+
