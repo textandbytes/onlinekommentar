@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Cms;
 
 use App\Models\DocumentTree;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Inertia\Inertia;
 
 class DocumentTreeController extends Controller
 {
@@ -14,7 +16,12 @@ class DocumentTreeController extends Controller
      */
     public function index()
     {
-        //
+        
+        return Inertia::render('DocumentTree', 
+                               ['documentTree' => DocumentTree::orderBy('parent_id')
+                                    ->orderBy('sort')
+                                    ->get()]
+                              );
     }
 
     /**
