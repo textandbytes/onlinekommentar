@@ -16,19 +16,26 @@ return new class extends Migration
     {
         Schema::create('document_tree', function (Blueprint $table) {
             $table->smallIncrements('id');
-            $table->unsignedSmallInteger('parent_id')->default(0);
+            $table->unsignedSmallInteger('parent_id')->nullable()->default(1);
             $table->unsignedSmallInteger('sort')->default(0);
             $table->string('label_de', 1024)->nullable();
             $table->string('label_en', 1024)->nullable();
             $table->string('label_fr', 1024)->nullable();
             $table->string('label_it', 1024)->nullable();
             $table->timestamps();
+            $table->foreign('parent_id')
+                  ->references('id')
+                  ->on('document_tree')
+                  ->onDelete('cascade');
         });
+
+        
+
 
         // insert a root node into the document_tree table
         DB::table('document_tree')->insert([
             'id' => 1,
-            'parent_id' => 0,
+            'parent_id' => null,
             'sort' => 0,
             'label_de' => '-',
             'label_en' => '-',
