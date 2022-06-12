@@ -5,6 +5,8 @@ sources/webapp/yarn-error.log
 sources/webapp/app/storage/
 sources/webapp/public/css/app.css
 sources/webapp/public/js/app.js
+sources/webapp/public/js/manifest.js
+sources/webapp/public/js/vendor.js
 sources/webapp/public/storage
 sources/webapp/public/hot
 sources/webapp/storage/*.key
