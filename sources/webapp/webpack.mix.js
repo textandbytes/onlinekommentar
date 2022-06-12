@@ -21,7 +21,11 @@ mix
     ])
     .alias({
         '@': 'resources/js',
-    }).sourceMaps();
+    })
+    .webpackConfig({ 
+        output: { chunkFilename: "js/app/[name].js?id=[chunkhash]" } 
+    })
+    .sourceMaps();
 
 if (mix.inProduction()) {
     mix.version();

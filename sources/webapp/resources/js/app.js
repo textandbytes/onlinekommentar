@@ -9,8 +9,8 @@ const appName = window.document.getElementsByTagName('title')[0]?.innerText || '
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
-    resolve: name => {
-        let page = require(`./Pages/${name}.vue`).default;
+    resolve: async name => {
+        let page = (await import(`./Pages/${name}.vue`)).default;
         page.layout ??= Layout; // set the default layout if a layout is not defined
         return page;
     },
