@@ -17,13 +17,26 @@ mix
     .vue(3)
     .postCss('resources/css/app.css', 'public/css', [
         require('postcss-import'),
+        require('tailwindcss/nesting'),
         require('tailwindcss'),
     ])
     .alias({
         '@': 'resources/js',
     })
     .webpackConfig({ 
-        output: { chunkFilename: "js/app/[name].js?id=[chunkhash]" } 
+        output: { chunkFilename: "js/app/[name].js?id=[chunkhash]" },
+        module: {
+            rules: [
+              {
+                test: /\.(postcss)$/,
+                use: [
+                  'vue-style-loader',
+                  { loader: 'css-loader', options: { importLoaders: 1 } },
+                  'postcss-loader'
+                ]
+              }
+            ],
+          },
     })
     .sourceMaps();
 
