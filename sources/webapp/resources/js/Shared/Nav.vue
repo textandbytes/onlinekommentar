@@ -24,10 +24,6 @@
   </nav>
 </template>
 
-<script setup>
-  import NavLink from './NavLink';
-</script>
-
 <style lang="scss" scoped>
 
 </style>

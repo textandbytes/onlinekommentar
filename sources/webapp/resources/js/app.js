@@ -4,6 +4,7 @@ import { createApp, h } from 'vue';
 import { createInertiaApp, Link, Head, usePage } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
 import Layout from './Shared/Layout.vue';
+import NavLink from './Shared/NavLink.vue';
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 const initialPage = JSON.parse(app.dataset.page);
@@ -22,6 +23,7 @@ createInertiaApp({
             .use(plugin)
             .component("Head", Head)
             .component("Link", Link)
+            .component("NavLink", NavLink)
             .mixin({ methods: { route } })
             .mount(el);
     },
