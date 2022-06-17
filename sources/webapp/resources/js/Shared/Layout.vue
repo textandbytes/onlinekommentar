@@ -10,7 +10,7 @@
     </header>
   </section>
   
-  <section class="p-6 mb-auto">
+  <section class="mt-8 p-6 mb-auto">
     <div class="max-w-3xl mx-auto">
       <slot />
     </div>
