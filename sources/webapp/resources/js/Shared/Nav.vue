@@ -18,6 +18,14 @@
             </NavLink>
           </li>
           <li>
+            <NavLink 
+              href="/contact"
+              :active="$page.component === 'Contact'" 
+            >
+              Kontakt
+            </NavLink>
+          </li>
+          <li>
             <button class="uppercase rounded-full border border-black text-xs px-4 py-2 font-medium tracking-widest">Menu</button>
           </li>
       </ul>
