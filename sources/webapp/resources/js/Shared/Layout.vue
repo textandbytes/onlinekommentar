@@ -3,12 +3,7 @@
   <section class="px-32">
     <header class="flex justify-between">
       <div class="flex">
-        <img src="/img/ok-logo.png" width="100" height="100" />
-        <div class="flex flex-col uppercase m-5 leading-snug font-medium text-sm">
-          <span class="flex flex-col">Onlinekommentar</span>
-          <span class="flex flex-col">der frei zugängliche</span>
-          <span class="flex flex-col">Rechtskommentar</span>
-        </div>
+        <img src="/img/ok-logo-text.svg" alt="Onlinekommentar – der frei zugängliche Rechtskommenter" class="mt-4" />
       </div>
       
       <Nav />
