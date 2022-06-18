@@ -1,22 +1,21 @@
 
 <template>
-  <section class="px-32">
-    <header class="flex justify-between">
+  <article>
+    <header class="flex justify-between py-4 px-16">
       <div class="flex">
         <img src="/img/ok-logo-text.svg" alt="Onlinekommentar – der frei zugängliche Rechtskommenter" class="mt-4" />
       </div>
       
       <Nav />
     </header>
-  </section>
+    
+    <main class="mt-8 p-6 mb-auto">
+      <div class="max-w-3xl mx-auto">
+        <slot />
+      </div>
+    </main>
   
-  <section class="mt-8 p-6 mb-auto">
-    <div class="max-w-3xl mx-auto">
-      <slot />
-    </div>
-  </section>
-
-  <section>
+    
     <footer class="bg-ok-yellow flex mt-8">
       <!-- Main: left section -->
       <div class="w-1/2 border-r border-black flex">
@@ -51,7 +50,7 @@
       
         <!-- Left: right section -->
         <div class="w-1/2 flex flex-col left-section-right">
-           <NavLink 
+          <NavLink 
             href="/"
             :active="$page.component === 'Home'" 
           >
@@ -103,14 +102,14 @@
         
         <div class="flex flex-row justify-between mt-4 border-t border-black pt-4 px-8">
           <div class="flex text-xs space-x-8">
-             <NavLink 
+            <NavLink 
               href="/disclaimer"
               :active="$page.component === 'Disclaimer'" 
             >
               Haftungsauschluss
             </NavLink>
   
-             <NavLink 
+            <NavLink 
               href="/imprint"
               :active="$page.component === 'Imprint'" 
             >
@@ -129,7 +128,8 @@
 
       </div>
     </footer>
-  </section>
+
+  </article>
   
 </template>
 
@@ -139,6 +139,12 @@ import Nav from './Nav';
 </script>
 
 <style lang="postcss" scoped>
+  article {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
+  }
   a {
     @apply border-b border-r border-black py-2 pl-12;
 
