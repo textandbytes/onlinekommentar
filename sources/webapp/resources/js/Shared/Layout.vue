@@ -1,8 +1,8 @@
 
 <template>
   <article>
-    <header class="flex justify-between py-4 px-16">
-      <div class="flex">
+    <header class="flex justify-between py-4 px-8 lg:px-32">
+      <div class="hidden md:flex">
         <img src="/img/ok-logo-text.svg" alt="Onlinekommentar – der frei zugängliche Rechtskommenter" class="mt-4" />
       </div>
       
