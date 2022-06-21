@@ -1,4 +1,52 @@
 <template>
+  <Transition>
+    <div v-show="showMenu" class="absolute top-0 left-0 w-screen h-screen bg-ok-yellow">
+      <nav class="flex h-screen justify-end items-center text-right mr-32 text-3xl">
+        <ul class="flex flex-col list-style-none space-y-5">
+            <NavLink 
+              href="/commentaries"
+              :active="$page.component === 'Commentaries'"
+              @click="toggleMenu"
+            >
+              Kommentare
+            </NavLink>
+  
+            <NavLink 
+              href="/authors"
+              :active="$page.component === 'Authors'"
+              @click="toggleMenu"
+            >
+              Autor:innen
+            </NavLink>
+  
+            <NavLink 
+              href="/editors"
+              :active="$page.component === 'Editors'"
+              @click="toggleMenu"
+            >
+              Herausgeber:innen
+            </NavLink>
+  
+            <NavLink 
+              href="/about"
+              :active="$page.component === 'About'"
+              @click="toggleMenu"
+            >
+              Über uns
+            </NavLink>
+  
+            <NavLink 
+              href="/contact"
+              :active="$page.component === 'Contact'"
+              @click="toggleMenu"
+            >
+              Kontakt
+            </NavLink>
+        </ul>
+      </nav>
+    </div>  
+  </Transition>
+
   <nav>
     <ul class="flex mt-4 space-x-6">
           
@@ -48,10 +96,22 @@
           </Menu>
       </li>
 
-      <li id="nav-menu" @click="toggleMenu">
-        <button class="uppercase rounded-full border border-black text-xs px-8 py-2 font-medium tracking-wider">Menu</button>
-      </li>
+      <li id="nav-menu" @click="toggleMenu" class="z-50">
+        <button type="button" class="w-32 uppercase rounded-full border border-black text-xs font-medium tracking-wider py-2 text-center inline-flex items-center justify-center mr-2 mb-2">
+          Menu
+          <svg v-show="showMenu" class="ml-2" xmlns="http://www.w3.org/2000/svg" width="14.707" height="14.707" viewBox="0 0 14.707 14.707">
+            <g id="X" transform="translate(-1792.387 -75.877)">
+              <g id="Gruppe_17" data-name="Gruppe 17" transform="translate(1792.741 90.231) rotate(-45)">
+                <line id="Linie_2" data-name="Linie 2" x2="19.799" fill="none" stroke="#000" stroke-width="1"/>
+              </g>
+              <g id="Gruppe_18" data-name="Gruppe 18" transform="translate(1806.741 90.231) rotate(-135)">
+                <line id="Linie_2-2" data-name="Linie 2" x2="19.799" transform="translate(0 0)" fill="none" stroke="#000" stroke-width="1"/>
+              </g>
+            </g>
+          </svg>
 
+        </button>
+      </li>
     </ul>
   </nav>
 </template>
@@ -63,6 +123,11 @@ import { ref } from 'vue'
 
   const searchBox = ref(false)
   const searchInput = ref()
+  const showMenu = ref(false)
+
+  const toggleMenu = () => {
+    showMenu.value = !showMenu.value
+  }
 
   const toggleSearchBox = () => {
     searchBox.value = !searchBox.value
@@ -76,5 +141,13 @@ import { ref } from 'vue'
 </script>
 
 <style lang="postcss" scoped>
+  .v-enter-active,
+  .v-leave-active {
+    transition: opacity 0.5s ease;
+  }
 
+  .v-enter-from,
+  .v-leave-to {
+    opacity: 0;
+  }
 </style>

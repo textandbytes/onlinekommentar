@@ -2,7 +2,7 @@
 <template>
   <article>
     <header class="flex justify-between py-4 px-8 lg:px-32">
-      <div class="hidden md:flex">
+      <div class="hidden md:flex z-50">
         <img src="/img/ok-logo-text.svg" alt="Onlinekommentar – der frei zugängliche Rechtskommenter" class="mt-4" />
       </div>
       
