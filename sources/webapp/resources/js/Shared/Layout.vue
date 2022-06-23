@@ -2,11 +2,13 @@
 <template>
   <article>
     <header class="flex justify-between py-4 px-8 lg:px-32">
-      <div class="hidden md:flex z-50">
+      <div class="hidden md:flex z-40">
         <img src="/img/ok-logo-text.svg" alt="Onlinekommentar – der frei zugängliche Rechtskommenter" class="mt-4" />
       </div>
       
       <Nav />
+
+      <Sidebar />
     </header>
     
     <main class="mt-8 p-6 mb-auto">
@@ -135,6 +137,7 @@
 
 <script setup>
 import Nav from './Nav';
+import Sidebar from './Sidebar';
 
 </script>
 
