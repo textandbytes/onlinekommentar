@@ -3,7 +3,7 @@
   <div id="shadow" class="absolute top-0 bottom-0 left-0 w-2 h-screen bg-transparent"></div>
     
     <!-- sidebar handle -->
-    <div @click="toggleSidebar" id="handle" class="absolute right-0 top-1/2 -mr-4 py-6 bg-ok-blue rounded-tr-lg rounded-br-lg shadow-tr-lg shadow-br-lg">
+    <div @click="toggleSidebar" id="handle" class="absolute right-0 top-1/2 -mt-16 -mr-4 py-6 bg-ok-blue rounded-tr-lg rounded-br-lg shadow-tr-lg shadow-br-lg">
       <div id="handle-text" class="text-xs uppercase mb-6">Inhalt</div>
       <svg class="ml-3" xmlns="http://www.w3.org/2000/svg" width="18" height="16.2" viewBox="0 0 24.75 22.25">
         <g id="Icon_ionic-md-list" data-name="Icon ionic-md-list" transform="translate(-5.625 -6.188)">
