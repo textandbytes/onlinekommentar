@@ -33,3 +33,6 @@ Publishing platform for legal commentaries
 
 ### Running composer Commands
 - `docker-compose run --rm composer require <dependency>`, e.g. `docker-compose run --rm composer require laravel/jetstream`
+
+### Mailhog Dashboard
+- To test sending and receiving mails from the application locally, go to http://localhost:8026

@@ -11,14 +11,34 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js').vue()
+mix
+    .js('resources/js/app.js', 'public/js')
+    .extract()
+    .vue(3)
     .postCss('resources/css/app.css', 'public/css', [
         require('postcss-import'),
+        require('tailwindcss/nesting'),
         require('tailwindcss'),
     ])
     .alias({
         '@': 'resources/js',
-    }).sourceMaps();
+    })
+    .webpackConfig({ 
+        output: { chunkFilename: "js/app/[name].js?id=[chunkhash]" },
+        module: {
+            rules: [
+              {
+                test: /\.(postcss)$/,
+                use: [
+                  'vue-style-loader',
+                  { loader: 'css-loader', options: { importLoaders: 1 } },
+                  'postcss-loader'
+                ]
+              }
+            ],
+          },
+    })
+    .sourceMaps();
 
 if (mix.inProduction()) {
     mix.version();

@@ -12,8 +12,17 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                sans: ['Work Sans', 'sans-serif', ...defaultTheme.fontFamily.sans],
+                serif: ['Libre Caslon Text', 'serif', ...defaultTheme.fontFamily.serif],
             },
+             colors: {
+              'ok-gray':      '#707070',
+              'ok-dark-gray': '#575757',
+              'ok-beige':     '#E8E7E2',
+              'ok-yellow':    '#FCF0BD',
+              'ok-orange':    '#F4E8D7',
+              'ok-blue':      '#AFCEE2',
+            }
         },
     },
 
