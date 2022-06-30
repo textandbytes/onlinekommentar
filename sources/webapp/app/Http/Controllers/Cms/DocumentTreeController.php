@@ -17,12 +17,19 @@ class DocumentTreeController extends Controller
     public function index()
     {
         
-        return Inertia::render('DocumentTree', 
-                               ['documentTree' => DocumentTree::orderBy('parent_id')
-                                    ->orderBy('sort')
-                                    ->get()]
-                              );
+      $aDocumentTree = DocumentTree::prepareTreeData(
+                           DocumentTree::select('id', 'parent_id', 'label_de AS label')
+                           ->where('id', '>', '1')
+                           ->orderBy('parent_id')->orderBy('sort')
+                           ->get()
+                           ->toArray()
+                       );
+
+      return Inertia::render('DocumentTree', 
+                              ['documentTree' => []]
+                            );
     }
+
 
     /**
      * Show the form for creating a new resource.
