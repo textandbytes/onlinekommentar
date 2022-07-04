@@ -25,7 +25,9 @@ class DocumentTree extends Model
      * Prepare tree data recursively
      *
      * @param array  $aItems    - data to prepare
-     * @param int    $iParentId - 1 is the id of the root record
+     * @param int    $iParentId - 1 is the id of the root node
+     *                            call method with $iParentId null 
+     *                            to include root node
      *
      * @return array $aTree
      */
@@ -53,6 +55,7 @@ class DocumentTree extends Model
           // Fill the output
           $aTree[] = $aItem;
         }
+    
       }
 
       return $aTree;

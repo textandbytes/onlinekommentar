@@ -16,17 +16,21 @@ class DocumentTreeController extends Controller
      */
     public function index()
     {
-        
+      
+      // Select all document records including root document (id 1)
+      // which is needed for the recursiv calls in the vue components
       $aDocumentTree = DocumentTree::prepareTreeData(
                            DocumentTree::select('id', 'parent_id', 'label_de AS label')
-                           ->where('id', '>', '1')
+                           ->where('id', '>', '0')
                            ->orderBy('parent_id')->orderBy('sort')
                            ->get()
-                           ->toArray()
+                           ->toArray(),
+                           null
                        );
 
+      
       return Inertia::render('DocumentTree', 
-                              ['documentTree' => []]
+                             ['documentTree' => array_shift($aDocumentTree)]
                             );
     }
 
