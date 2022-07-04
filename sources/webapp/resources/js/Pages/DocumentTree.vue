@@ -21,7 +21,7 @@ defineProps({
 </template>
 
 <script>
-import Tree from "./Tree";
+import Tree from "../Shared/Tree";
 
 export default {
   components: {
