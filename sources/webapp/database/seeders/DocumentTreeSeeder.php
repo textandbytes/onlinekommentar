@@ -106,8 +106,31 @@ class DocumentTreeSeeder extends Seeder
             'label_it'  => '3. Abschnitt: Bildung, Forschung und Kultur Art. 61a – Art. 72'
         ]);
 
+        DocumentTree::Factory()->create([
+            'id'        => 11,
+            'parent_id' => 10,
+            'sort'      => 1,
+            'label_de'  => 'Art. 68 BV, Sport',
+            'label_en'  => 'Art. 68 BV, Sport',
+            'label_fr'  => 'Art. 68 BV, Sport',
+            'label_it'  => 'Art. 68 BV, Sport',
+            'node_type'  => 'leaf',
+            'content_de'  => '<p><sup>1</sup>Der Bund fördert den Sport, ins­be­son­de­re die Ausbildung.</p>
+            <p><sup>2</sup>Er betreibt eine Sportschule.</p>
+            <p><sup>3</sup>Er kann Vor­schrif­ten über den Jugend­sport erlas­sen und den Sport­un­ter­richt an Schu­len obli­ga­to­risch erklären.</p>',
 
+            'content_en'  => '<p><sup>1</sup>The Con­fe­de­ra­ti­on shall encou­ra­ge sport, and in par­ti­cu­lar edu­ca­ti­on in sport.</p>
+            <p><sup>2</sup>It shall ope­ra­te a sports school.</p>
+            <p><sup>3</sup>It may issue regu­la­ti­ons on sport for young peop­le and decla­re the tea­ching of sport in schools to be compulsory.</p>',
 
+            'content_fr'  => '<p><sup>1</sup>La Con­fé­dé­ra­ti­on encou­ra­ge le sport, en par­ti­cu­lier la for­ma­ti­on au sport.</p>
+            <p><sup>2</sup>Elle gère une éco­le de sport.</p>
+            <p><sup>3</sup>Elle peut légifé­rer sur la pra­tique du sport par les jeu­nes et décla­rer obli­ga­toire l’enseignement du sport dans les écoles.</p>',
+
+            'content_it'  => '<p><sup>1</sup>La Con­fe­der­a­zio­ne pro­muo­ve lo sport, in par­ti­co­la­re l’educazione sportiva.</p>
+            <p><sup>2</sup>Ges­tis­ce una scuo­la di sport.</p>
+            <p><sup>3</sup>Può emana­re pre­scri­zio­ni sullo sport gio­va­ni­le e dichiara­re obb­li­ga­to­rio l’insegna­mento del­lo sport nel­le scuole.</p>',
+        ]);
 
     }
 }
