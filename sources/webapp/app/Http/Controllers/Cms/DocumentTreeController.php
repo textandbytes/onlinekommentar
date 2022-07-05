@@ -25,10 +25,10 @@ class DocumentTreeController extends Controller
                            ->orderBy('parent_id')->orderBy('sort')
                            ->get()
                            ->toArray(),
-                           null
+                           null,
+                           'leaf'
                        );
 
-      
       return Inertia::render('DocumentTree', 
                              ['documentTree' => array_shift($aDocumentTree)]
                             );
