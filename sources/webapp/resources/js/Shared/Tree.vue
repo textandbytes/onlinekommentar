@@ -1,20 +1,20 @@
 <template>
   <div id="document-tree">
     <ul id="tree-root">
-      <node-tree :node="treeData"></node-tree>
+      <tree-node :node="treeData"></tree-node>
     </ul>
   </div>
 </template>
 
 <script>
-import NodeTree from "./NodeTree";
+import TreeNode from "./TreeNode";
 
 export default {
   props: {
     treeData: Object
   },
   components: {
-    NodeTree
+    TreeNode
   }
 };
 </script>
