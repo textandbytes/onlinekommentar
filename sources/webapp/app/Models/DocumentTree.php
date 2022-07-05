@@ -31,7 +31,7 @@ class DocumentTree extends Model
      *
      * @return array $aTree
      */
-    protected function prepareTreeData(array $aItems, $iParentId = 1)
+    protected static function prepareTreeData(array $aItems, $iParentId = 1)
     {
       $aTree = [];
 
@@ -43,7 +43,7 @@ class DocumentTree extends Model
           
           // Call the function recursively, use the item's id as the parent's id
           // The function returns the list of children as an array or an empty array
-          $aChildren = $this->prepareTreeData($aItems, $aItem['id']);
+          $aChildren = Self::prepareTreeData($aItems, $aItem['id']);
 
           // Children array is not empty
           if (count($aChildren) > 0) {
