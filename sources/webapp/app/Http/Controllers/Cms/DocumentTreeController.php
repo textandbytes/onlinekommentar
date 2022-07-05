@@ -20,7 +20,7 @@ class DocumentTreeController extends Controller
       // Select all document records including root document (id 1)
       // which is needed for the recursiv calls in the vue components
       $aDocumentTree = DocumentTree::prepareTreeData(
-                           DocumentTree::select('id', 'parent_id', 'label_de AS label')
+                           DocumentTree::select('id', 'parent_id', 'label_de AS label', 'node_type')
                            ->where('id', '>', '0')
                            ->orderBy('parent_id')->orderBy('sort')
                            ->get()
