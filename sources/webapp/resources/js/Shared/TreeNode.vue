@@ -1,6 +1,6 @@
 <template>
   <li class="tree-node">
-    <span class="label" v-if="node.id != 1" :class="{ 'font-bold' : node.node_type === 'leaf' }">{{ node.label }} <span>({{ childrenCount }}) ({{ leafCount }})</span>
+    <span class="label" v-if="node.id != 1" :class="{ 'font-bold' : node.node_type === 'leaf' }">{{ node.label }} <span>({{ childrenCount }})</span>
     </span>
 
     <ul v-if="node.children && node.children.length" :key="node.id" class="children-list">
