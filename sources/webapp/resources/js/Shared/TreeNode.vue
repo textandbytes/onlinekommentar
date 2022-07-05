@@ -1,10 +1,12 @@
 <template>
   <li class="tree-node">
-    <span class="label" v-if="node.id != 1">{{ node.label }} <span v-if="node.children && node.children.length">[{{ node.children.length }}] [{{ childrenCount }}]</span></span>
+    <span class="label" v-if="node.id != 1" :class="{ 'font-bold' : node.node_type === 'leaf' }">{{ node.label }} <span>({{ childrenCount }}) ({{ leafCount }})</span>
+    </span>
 
     <ul v-if="node.children && node.children.length" :key="node.id" class="children-list">
-      <TreeNode v-for="child in node.children" :node="child" @born="initNode(node.id)" />
+      <TreeNode v-for="child in node.children" :node="child" @born="initNode(node.node_type)" />
     </ul>
+    
   </li>
 </template>
 
@@ -23,7 +25,7 @@ export default {
     this.$emit('born');
   },
   methods: {
-        initNode(iNodeId) {
+        initNode(nodeType) {
           this.childrenCount++;
           this.$emit('born');
       },
