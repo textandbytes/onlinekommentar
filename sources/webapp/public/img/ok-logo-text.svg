@@ -1,52 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300.964" height="50.224" viewBox="0 0 300.964 50.224">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="395.549" height="119.467" viewBox="0 0 395.549 119.467">
   <defs>
     <clipPath id="clip-path">
-      <rect id="Rechteck_188" data-name="Rechteck 188" width="300.964" height="50.224" transform="translate(0 0)" fill="none"/>
-    </clipPath>
-    <clipPath id="clip-path-2">
-      <rect id="Rechteck_187" data-name="Rechteck 187" width="182.674" height="50.224" transform="translate(118.29 0)" fill="none"/>
-    </clipPath>
-    <clipPath id="clip-path-3">
-      <rect id="Rechteck_184" data-name="Rechteck 184" width="147.042" height="15.171" transform="translate(118.29 0)" fill="none"/>
-    </clipPath>
-    <clipPath id="clip-path-4">
-      <rect id="Rechteck_185" data-name="Rechteck 185" width="182.674" height="15.56" transform="translate(118.29 17.137)" fill="none"/>
-    </clipPath>
-    <clipPath id="clip-path-5">
-      <rect id="Rechteck_186" data-name="Rechteck 186" width="149.602" height="15.171" transform="translate(118.29 35.053)" fill="none"/>
+      <rect id="Rechteck_196" data-name="Rechteck 196" width="119.467" height="119.467" transform="translate(0 0)" fill="none"/>
     </clipPath>
   </defs>
-  <g id="Logo" transform="translate(0 0)">
-    <g id="Gruppe_386" data-name="Gruppe 386" clip-path="url(#clip-path)">
-      <g id="Gruppe_385" data-name="Gruppe 385" style="isolation: isolate">
-        <g id="Gruppe_384" data-name="Gruppe 384">
-          <g id="Gruppe_383" data-name="Gruppe 383" clip-path="url(#clip-path-2)">
-            <g id="Gruppe_376" data-name="Gruppe 376" style="isolation: isolate">
-              <g id="Gruppe_375" data-name="Gruppe 375">
-                <g id="Gruppe_374" data-name="Gruppe 374" clip-path="url(#clip-path-3)">
-                  <text id="ONLINEKOMMENTAR" transform="translate(118.29 10.79)" fill="#020101" font-size="13" font-family="WorkSans-Medium, Work Sans" font-weight="500"><tspan x="0" y="0" letter-spacing="0.08em">O</tspan><tspan y="0" letter-spacing="0.079em">N</tspan><tspan y="0" letter-spacing="0.08em">L</tspan><tspan y="0" letter-spacing="0.079em">I</tspan><tspan y="0" letter-spacing="0.08em">NE</tspan><tspan y="0" letter-spacing="0.041em">K</tspan><tspan y="0" letter-spacing="0.08em">OMME</tspan><tspan y="0" letter-spacing="0.079em">N</tspan><tspan y="0" letter-spacing="-0.007em">T</tspan><tspan y="0" letter-spacing="0.079em">A</tspan><tspan y="0">R</tspan></text>
-                </g>
-              </g>
-            </g>
-            <g id="Gruppe_379" data-name="Gruppe 379" style="isolation: isolate">
-              <g id="Gruppe_378" data-name="Gruppe 378">
-                <g id="Gruppe_377" data-name="Gruppe 377" clip-path="url(#clip-path-4)">
-                  <text id="DER_FREI_ZUGÄNGLICHE_" data-name="DER FREI ZUGÄNGLICHE " transform="translate(118.29 28.317)" fill="#020101" font-size="13" font-family="WorkSans-Medium, Work Sans" font-weight="500"><tspan x="0" y="0" letter-spacing="0.08em">DER</tspan><tspan y="0" xml:space="preserve" letter-spacing="0.079em"> F</tspan><tspan y="0" letter-spacing="0.08em">REI </tspan><tspan y="0" letter-spacing="0.079em">ZU</tspan><tspan y="0" letter-spacing="0.08em">G</tspan><tspan y="0" letter-spacing="0.079em">Ä</tspan><tspan y="0" letter-spacing="0.08em">N</tspan><tspan y="0" letter-spacing="0.079em">G</tspan><tspan y="0" letter-spacing="0.08em">L</tspan><tspan y="0" letter-spacing="0.079em">I</tspan><tspan y="0" letter-spacing="0.08em">C</tspan><tspan y="0" letter-spacing="0.079em">H</tspan><tspan y="0" letter-spacing="0.08em">E</tspan><tspan y="0"> </tspan></text>
-                </g>
-              </g>
-            </g>
-            <g id="Gruppe_382" data-name="Gruppe 382" style="isolation: isolate">
-              <g id="Gruppe_381" data-name="Gruppe 381">
-                <g id="Gruppe_380" data-name="Gruppe 380" clip-path="url(#clip-path-5)">
-                  <text id="RECHTSKOMMENTAR" transform="translate(118.29 45.843)" fill="#020101" font-size="13" font-family="WorkSans-Medium, Work Sans" font-weight="500"><tspan x="0" y="0" letter-spacing="0.08em">R</tspan><tspan y="0" letter-spacing="0.068em">E</tspan><tspan y="0" letter-spacing="0.08em">CH</tspan><tspan y="0" letter-spacing="0.055em">T</tspan><tspan y="0" letter-spacing="0.079em">S</tspan><tspan y="0" letter-spacing="0.042em">K</tspan><tspan y="0" letter-spacing="0.079em">O</tspan><tspan y="0" letter-spacing="0.08em">MMEN</tspan><tspan y="0" letter-spacing="-0.007em">T</tspan><tspan y="0" letter-spacing="0.079em">A</tspan><tspan y="0">R</tspan></text>
-                </g>
-              </g>
-            </g>
-          </g>
-        </g>
+  <g id="Logo" transform="translate(-1597.266 9466.733)">
+    <text id="onlinekommentar_Der_frei_zugängliche_Rechtskommentar" data-name="onlinekommentar
+Der frei zugängliche 
+Rechtskommentar" transform="translate(1740.815 -9427.499)" font-size="18" font-family="WorkSans-Medium, Work Sans" font-weight="500" letter-spacing="0.08em"><tspan x="0" y="0">ONLINEKOMMENTAR</tspan><tspan x="0" y="22">DER FREI ZUGÄNGLICHE </tspan><tspan x="0" y="44">RECHTSKOMMENTAR</tspan></text>
+    <g id="Gruppe_391" data-name="Gruppe 391" transform="translate(1597.266 -9466.733)">
+      <g id="Gruppe_392" data-name="Gruppe 392" clip-path="url(#clip-path)">
+        <path id="Pfad_47" data-name="Pfad 47" d="M59.734,119.467a59.734,59.734,0,1,1,59.733-59.733,59.8,59.8,0,0,1-59.733,59.733m0-116.529a56.8,56.8,0,1,0,56.795,56.8,56.86,56.86,0,0,0-56.795-56.8" fill="#020101"/>
+        <path id="Pfad_48" data-name="Pfad 48" d="M65.574,76.466V39.423L60.715,38.4V37.154H76.051V38.4l-4.807,1.027V58.754L86.526,41.636a2.575,2.575,0,0,0,.864-1.62q0-.7-1.08-1.08a14.38,14.38,0,0,0-3.456-.54V37.154H97.11V38.4a27.784,27.784,0,0,0-5.157,1.242,7.436,7.436,0,0,0-2.727,2.106l-10.692,12.2L95.868,76.466l5.994,1.025v1.243H90.144L74.755,58.268l-3.511,4v14.2l4.807,1.025v1.243H60.715V77.491Z" fill="#020101"/>
+        <path id="Pfad_49" data-name="Pfad 49" d="M53.757,47.317a19.96,19.96,0,0,0-7.218-7.855,19.032,19.032,0,0,0-10.234-2.848,19.029,19.029,0,0,0-10.233,2.848,19.945,19.945,0,0,0-7.218,7.855,23.608,23.608,0,0,0-2.627,11.146,23.607,23.607,0,0,0,2.627,11.145,19.922,19.922,0,0,0,7.218,7.854A18.935,18.935,0,0,0,28.8,78.853l.723-3.2c-.069-.052-.141-.1-.21-.151a14.49,14.49,0,0,1-4.535-6.693,30.689,30.689,0,0,1-1.577-10.4,30.454,30.454,0,0,1,1.577-10.372A14.31,14.31,0,0,1,29.308,41.4a11.173,11.173,0,0,1,7.053-2.3,10.976,10.976,0,0,1,9.6,5.09q3.456,5.089,3.457,14.1a31.155,31.155,0,0,1-1.576,10.482,14.6,14.6,0,0,1-4.508,6.72c-.076.06-.157.111-.234.169l.719,3.185a18.935,18.935,0,0,0,2.723-1.391,19.937,19.937,0,0,0,7.218-7.854,23.619,23.619,0,0,0,2.627-11.145,23.62,23.62,0,0,0-2.627-11.146" fill="#020101"/>
       </g>
-      <path id="Pfad_43" data-name="Pfad 43" d="M13.1,44.959l3.345-5.794a16.168,16.168,0,1,1,16.155,0l3.345,5.794a22.41,22.41,0,0,0,12.35-19.785c0-12.459-10.643-22.56-23.772-22.56S.75,12.715.75,25.174A22.41,22.41,0,0,0,13.1,44.959Z" fill="none" stroke="#141215" stroke-miterlimit="10" stroke-width="2"/>
-      <path id="Pfad_44" data-name="Pfad 44" d="M85.291,45.054h8L77.061,20.306,92.906,3.167H84.592L65.363,24.017V3.167H58.572V45.054h6.791v-12.9l6.779-7.295Z" fill="none" stroke="#141215" stroke-miterlimit="10" stroke-width="2"/>
     </g>
   </g>
 </svg>
