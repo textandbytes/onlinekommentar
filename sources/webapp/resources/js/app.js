@@ -13,7 +13,7 @@ createInertiaApp({
     title: (title) => `${appName} - ${title}`,
     resolve: async name => {
         let page = (await import(`./Pages/${name}.vue`)).default;
-        if (!initialPage.props.is_cms) {
+        if (!initialPage.props.is_cms  && !name.startsWith('Dashboard')) {
             page.layout ??= Layout; // set the default layout if a layout is not defined
         }
         return page;
