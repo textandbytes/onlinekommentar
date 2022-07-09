@@ -4,6 +4,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\Cms\DocumentTreeController;
+use App\Http\Controllers\DocumentTreeControllerFrontend;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,8 @@ Route::get('/contact', function () {
 Route::get('/settings', function () {
     return Inertia::render('Settings', []);
 });
+
+Route::get('/tree', [DocumentTreeControllerFrontend::class, 'index']);
 
 Route::prefix('cms')->middleware([
     'auth:sanctum',
