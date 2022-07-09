@@ -50,6 +50,10 @@ Route::prefix('cms')->middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
+    Route::get('/', function () {
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
+
     Route::resource('tree', DocumentTreeController::class);
 
 });
