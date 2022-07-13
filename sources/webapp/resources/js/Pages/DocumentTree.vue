@@ -13,8 +13,10 @@ defineProps({
           <h2 class="font-semibold text-xl text-gray-800 leading-tight">Document Tree</h2>
         </template>
 
-        <div class="ml-16">
-          <tree :tree-data="documentTree"></tree>
+        <div class="py-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <Tree :tree-data="documentTree"></Tree>
+            </div>
         </div>
 
     </AppLayout>
