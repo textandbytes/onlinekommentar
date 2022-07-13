@@ -4,7 +4,7 @@
     </span>
 
     <ul v-if="node.children && node.children.length" :key="node.id" class="children-list">
-      <TreeNode v-for="child in node.children" :node="child" />
+      <TreeNodeFrontend v-for="child in node.children" :node="child" />
     </ul>
     
   </li>
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: "TreeNode",
+  name: "TreeNodeFrontend",
   props: {
     node: Object
   },

@@ -8,7 +8,7 @@
       </div>
 
        <div class="ml-4 mt-4">
-        <tree :tree-data="treeData"></tree>
+        <TreeFrontend :tree-data="treeData"></TreeFrontend>
       </div>
     </div>
     
@@ -24,7 +24,7 @@
 
 <script setup>
   import { ref, onMounted } from 'vue'
-  import Tree from "../Shared/Tree";
+  import TreeFrontend from "../Shared/TreeFrontend";
 
   const isSidebarOpen = ref(false)
   const treeData = ref({})
