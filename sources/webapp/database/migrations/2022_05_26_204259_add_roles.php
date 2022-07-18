@@ -8,15 +8,10 @@ use Spatie\Permission\Models\Role;
 return new class extends Migration
 {
     private $roleNames = [
-        'super-admin',
         'admin',
-        'super-editor',
         'editor',
         'author',
-        'commentator',
-        'reviewer',
         'proofreader',
-        'publisher'
     ];
 
     /**
