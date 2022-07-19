@@ -22,7 +22,7 @@ services:
     env_file:
       ./.env.prod
     ports:
-      - '${FORWARD_DB_PORT:-33061}:3306'
+      - '${FORWARD_DB_PORT:-3306}:3306'
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_USER: ${DB_USERNAME}
