@@ -9,6 +9,7 @@ services:
       ./.env.prod
     ports:
       - 80:80
+      - 443:443
     depends_on:
       - mysql
       - php
