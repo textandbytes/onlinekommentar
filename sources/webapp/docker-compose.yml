@@ -59,7 +59,7 @@ services:
       - mysql
     entrypoint: ["php", "/var/www/html/artisan"]
 
-  mailhog:
+  mail:
     image: 'mailhog/mailhog:latest'
     ports:
       - '${FORWARD_MAILHOG_PORT:-1026}:1025'
