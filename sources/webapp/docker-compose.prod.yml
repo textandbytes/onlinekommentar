@@ -13,9 +13,6 @@ services:
     depends_on:
       - mysql
       - php
-      - composer_assets
-      - npm_assets
-      - database_migrations
 
   mysql:
     image: 'mysql/mysql-server:8.0'
