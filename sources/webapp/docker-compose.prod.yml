@@ -3,7 +3,7 @@ version: '3.8'
 services:
   nginx:
     build:
-      context: ../../provisioning/production
+      context: ../../provisioning/${APP_ENV}
       dockerfile: nginx.prod.dockerfile
     env_file:
       ./.env.prod
@@ -30,15 +30,15 @@ services:
 
   php:
     build:
-      context: ../../provisioning/production
-      dockerfile: php.prod.dockerfile
+      context: ../../provisioning/${APP_ENV}
+      dockerfile: php.dockerfile
     volumes:
       - ./:/var/www/html
 
   composer_assets:
     build:
-      context: ../../provisioning/production
-      dockerfile: composer.prod.dockerfile
+      context: ../../provisioning/${APP_ENV}
+      dockerfile: composer.dockerfile
     volumes:
       - ./:/var/www/html
     command: ["/bin/sh", "-c", "composer install --no-dev --no-plugins"]
@@ -53,8 +53,8 @@ services:
 
   database_migrations:
     build:
-      context: ../../provisioning/production
-      dockerfile: php.prod.dockerfile
+      context: ../../provisioning/${APP_ENV}
+      dockerfile: php.dockerfile
     volumes:
       - ./:/var/www/html
     command: ["/bin/sh", "-c", "php artisan migrate"]
