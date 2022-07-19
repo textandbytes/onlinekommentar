@@ -31,13 +31,6 @@ services:
     volumes:
       - 'mysql-data:/var/lib/mysql'
 
-  php:
-    build:
-      context: ../../provisioning/${APP_ENV}
-      dockerfile: php.dockerfile
-    volumes:
-      - ./:/var/www/html
-
   composer_assets:
     build:
       context: ../../provisioning/${APP_ENV}
