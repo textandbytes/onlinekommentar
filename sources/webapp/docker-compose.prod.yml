@@ -56,6 +56,13 @@ services:
       - mysql
       - php
 
+  mail:
+    image: boky/postfix:latest
+    ports:
+      - '${MAIL_PORT:-587}:587'
+    environment:
+      ALLOWED_SENDER_DOMAINS: ${MAIL_ALLOWED_SENDER_DOMAINS}
+
 volumes:
   mysql-data:
     driver: local
