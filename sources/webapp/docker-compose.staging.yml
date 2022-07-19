@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  nginx:
+    build:
+      context: ../../provisioning/${APP_ENV}
+      dockerfile: nginx.dockerfile
+    env_file:
+      ./.env.staging
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - mysql
+      - php
+
+  mysql:
+    image: 'mysql/mysql-server:8.0'
+    env_file:
+      ./.env.staging
+    ports:
+      - '${FORWARD_DB_PORT:-3306}:3306'
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ALLOW_EMPTY_PASSWORD: ${DB_ALLOW_EMPTY_PASSWORD:-0}
+    volumes:
+      - 'mysql-data:/var/lib/mysql'
+
+  composer_assets:
+    build:
+      context: ../../provisioning/${APP_ENV}
+      dockerfile: composer.dockerfile
+    volumes:
+      - ./:/var/www/html
+    command: ["/bin/sh", "-c", "composer install --no-dev --no-plugins"]
+    working_dir: /var/www/html
+
+  npm_assets:
+    image: node:current-alpine
+    volumes:
+      - ./:/var/www/html
+    command: ["/bin/sh", "-c", "npm install && npm run production"]
+    working_dir: /var/www/html
+
+  database_migrations:
+    build:
+      context: ../../provisioning/${APP_ENV}
+      dockerfile: php.dockerfile
+    volumes:
+      - ./:/var/www/html
+    command: ["/bin/sh", "-c", "php artisan migrate"]
+    working_dir: /var/www/html
+    depends_on:
+      - mysql
+      - php
+
+  mail:
+    image: boky/postfix:latest
+    ports:
+      - '${MAIL_PORT:-587}:587'
+    environment:
+      ALLOWED_SENDER_DOMAINS: ${MAIL_ALLOWED_SENDER_DOMAINS}
+
+volumes:
+  mysql-data:
+    driver: local
