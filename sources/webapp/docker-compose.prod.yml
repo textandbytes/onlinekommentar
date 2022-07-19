@@ -18,6 +18,8 @@ services:
 
   mysql:
     image: 'mysql/mysql-server:8.0'
+    env_file:
+      ./.env.prod
     ports:
       - '${FORWARD_DB_PORT:-33061}:3306'
     environment:
