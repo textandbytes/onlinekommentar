@@ -4,7 +4,7 @@ services:
   nginx:
     build:
       context: ../../provisioning/${APP_ENV}
-      dockerfile: nginx.prod.dockerfile
+      dockerfile: nginx.dockerfile
     env_file:
       ./.env.prod
     ports:
