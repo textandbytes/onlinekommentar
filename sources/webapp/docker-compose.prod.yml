@@ -32,6 +32,8 @@ services:
     build:
       context: ../../provisioning/${APP_ENV}
       dockerfile: composer.dockerfile
+    env_file:
+      ./.env.prod
     volumes:
       - ./:/var/www/html
     command: ["/bin/sh", "-c", "composer install --no-dev --no-plugins"]
@@ -48,6 +50,8 @@ services:
     build:
       context: ../../provisioning/${APP_ENV}
       dockerfile: php.dockerfile
+    env_file:
+      ./.env.prod
     volumes:
       - ./:/var/www/html
     command: ["/bin/sh", "-c", "php artisan migrate"]
@@ -58,6 +62,8 @@ services:
 
   mail:
     image: boky/postfix:latest
+    env_file:
+      ./.env.prod
     ports:
       - '${MAIL_PORT:-587}:587'
     environment:
