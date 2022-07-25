@@ -1,10 +1,11 @@
 <?php
 
+use App\Http\Controllers\DocumentTreeControllerFrontend;
+use App\Http\Controllers\Cms\DocumentTreeController;
+use App\Http\Controllers\Cms\UsersController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Http\Controllers\Cms\DocumentTreeController;
-use App\Http\Controllers\DocumentTreeControllerFrontend;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,5 +60,6 @@ Route::prefix('cms')->middleware([
 
     Route::resource('tree', DocumentTreeController::class);
 
+    Route::resource('users', UsersController::class);
 });
 
