@@ -17,8 +17,14 @@ class UsersController extends Controller
   {
     return Inertia::render('Users/Index', [
       'users' => User::query()
+        ->with('roles')
         ->when(Request::input('search'), function ($query, $search) {
           $query->where('name', 'like', "%{$search}%");
+          $query->orWhere('email', 'like', "%{$search}%");
+
+          $query->orWhereHas('roles', function ($subquery) use ($search) {
+            return $subquery->where('name', 'like',  "%{$search}%");
+          });
         })
         ->paginate(20)
         ->withQueryString()
@@ -27,6 +33,7 @@ class UsersController extends Controller
           'name' => $user->name,
           'email' => $user->email,
           'profile_photo_url' => $user->profile_photo_url,
+          'role' => $user->roles[0]->name ?? '',
         ]),
 
       'filters' => Request::only(['search'])
