@@ -13,15 +13,11 @@ let props = defineProps({
 
 let search = ref(props.filters.search);
 
-const showPagination = computed({
-    get() {
-        return props.users.last_page > 1;
-    }
-})
-
 watch(search, debounce(function (value) {
   Inertia.get('/cms/users', { search: value }, { preserveState: true, replace: true });
 }, 300));
+
+const showPagination = computed(() => props.users.last_page > 1)
 </script>
 
 <template>
@@ -33,7 +29,7 @@ watch(search, debounce(function (value) {
 
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="mt-8 flex flex-col">
-          <input v-model="search" type="text" placeholder="Search..." class="border px-2 rounded-lg" />
+          <input v-model="search" type="text" placeholder="Search name, e-mail or role..." class="border px-2 rounded-lg" />
           <div class="my-6">
             <Pagination v-if="showPagination" :links="users.links" class="text-right" />
           </div>
