@@ -25,6 +25,13 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        /**
+         * Global authorization gate that grants full access to administrators 
+         * and specific abilities to users directly assigned a specific permission.
+         * 
+         */
+        Gate::before(function ($user, $permission) {
+            return $user->hasRole('admin') || $user->hasDirectPermission($permission) ? true : null;
+        });
     }
 }
