@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Cms;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Inertia\Inertia;
+use Request;
 
 class UsersController extends Controller
 {
@@ -22,6 +23,7 @@ class UsersController extends Controller
         return Inertia::render('Users/Index', [
             'users' => User::query()
                 ->with('roles')
+                ->where('id', '!=', Auth::id())
                 ->when(Request::input('search'), function ($query, $search) {
                     $query->where('name', 'like', "%{$search}%");
                     $query->orWhere('email', 'like', "%{$search}%");
