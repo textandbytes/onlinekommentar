@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Cms;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Inertia\Inertia;
-use Request;
 
 class UsersController extends Controller
 {
@@ -15,6 +17,8 @@ class UsersController extends Controller
      */
     public function index()
     {
+        abort_if(Gate::denies('view-users'), Response::HTTP_FORBIDDEN, __('cms.authorization_error'));
+
         return Inertia::render('Users/Index', [
             'users' => User::query()
                 ->with('roles')
