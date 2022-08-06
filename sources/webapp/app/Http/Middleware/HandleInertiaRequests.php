@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -36,8 +37,26 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
+        /*
+         * Share the abilities of the authenticated user with Inertia
+         * components to support toggling of user interface elements 
+         * using conditionals.
+         * 
+         *   e.g. v-if="$page.props.can['view-users']"
+         * 
+         */
+        $abilities = [];
+        if ($request->user()) {
+            $user = User::find($request->user()->id);
+            foreach($user->getAllPermissions() as $permission) {
+                $abilities[$permission->name] = $user->can($permission->name);
+            }
+        }
+
         return array_merge(parent::share($request), [
             'is_cms' => fn() => $request->is('cms') || $request->is('cms/*') || $request->is('user/*'),
+
+            'can' => fn () => $abilities
         ]);
     }
 }
