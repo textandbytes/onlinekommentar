@@ -10,8 +10,7 @@ return new class extends Migration
     private $roleNames = [
         'admin',
         'editor',
-        'author',
-        'proofreader',
+        'commentator',
     ];
 
     /**
