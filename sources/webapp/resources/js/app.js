@@ -9,6 +9,9 @@ import NavLink from './Shared/NavLink.vue';
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 const initialPage = JSON.parse(app.dataset.page);
 
+import mitt from 'mitt'
+const emitter = mitt()
+
 createInertiaApp({
     title: (title) => `${appName} - ${title}`,
     resolve: async name => {
@@ -18,14 +21,15 @@ createInertiaApp({
         }
         return page;
     },
-    setup({ el, app, props, plugin }) {
-        return createApp({ render: () => h(app, props) })
+    setup({ el, app: inertiaApp, props, plugin }) {
+        const app = createApp({ render: () => h(inertiaApp, props) })
             .use(plugin)
             .component("Head", Head)
             .component("Link", Link)
             .component("NavLink", NavLink)
             .mixin({ methods: { route } })
-            .mount(el);
+        app.config.globalProperties.emitter = emitter
+        app.mount(el)
     },
 });
 
