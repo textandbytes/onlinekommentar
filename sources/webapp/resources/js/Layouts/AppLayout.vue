@@ -287,6 +287,8 @@
       </main>
     </div>
   </div>
+
+  <ModalWithDismiss />
 </template>
 
 <script setup>
@@ -298,6 +300,7 @@
   import JetDropdownLink from '@/Jetstream/DropdownLink.vue'
   import JetNavLink from '@/Jetstream/NavLink.vue'
   import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink.vue'
+  import ModalWithDismiss from '../Modals/ModalWithDismiss.vue'
 
   defineProps({
     title: String
