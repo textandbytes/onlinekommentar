@@ -275,7 +275,9 @@
       </nav>
 
       <main>
-        <slot />
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-10">
+          <slot />
+        </div>
       </main>
     </div>
   </div>

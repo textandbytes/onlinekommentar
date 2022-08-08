@@ -1,40 +1,38 @@
 <template>
   <Head title="Profile" />
 
-  <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-    <h1 class="font-semibold text-2xl text-gray-800 leading-tight py-4 mb-8 border-b border-gray-200">
-      Profile
-    </h1>
+  <h1 class="font-semibold text-2xl text-gray-800 leading-tight py-4 mb-8 border-b border-gray-200">
+    Profile
+  </h1>
 
-    <div v-if="$page.props.jetstream.canUpdateProfileInformation">
-      <UpdateProfileInformationForm :user="$page.props.user" />
+  <div v-if="$page.props.jetstream.canUpdateProfileInformation">
+    <UpdateProfileInformationForm :user="$page.props.user" />
 
-      <JetSectionBorder />
-    </div>
-
-    <div v-if="$page.props.jetstream.canUpdatePassword">
-      <UpdatePasswordForm class="mt-10 sm:mt-0" />
-
-      <JetSectionBorder />
-    </div>
-
-    <div v-if="$page.props.jetstream.canManageTwoFactorAuthentication">
-      <TwoFactorAuthenticationForm 
-        :requires-confirmation="confirmsTwoFactorAuthentication"
-        class="mt-10 sm:mt-0" 
-      />
-
-      <JetSectionBorder />
-    </div>
-
-    <LogoutOtherBrowserSessionsForm :sessions="sessions" class="mt-10 sm:mt-0" />
-
-    <template v-if="$page.props.jetstream.hasAccountDeletionFeatures">
-      <JetSectionBorder />
-
-      <DeleteUserForm class="mt-10 sm:mt-0" />
-    </template>
+    <JetSectionBorder />
   </div>
+
+  <div v-if="$page.props.jetstream.canUpdatePassword">
+    <UpdatePasswordForm class="mt-10 sm:mt-0" />
+
+    <JetSectionBorder />
+  </div>
+
+  <div v-if="$page.props.jetstream.canManageTwoFactorAuthentication">
+    <TwoFactorAuthenticationForm 
+      :requires-confirmation="confirmsTwoFactorAuthentication"
+      class="mt-10 sm:mt-0" 
+    />
+
+    <JetSectionBorder />
+  </div>
+
+  <LogoutOtherBrowserSessionsForm :sessions="sessions" class="mt-10 sm:mt-0" />
+
+  <template v-if="$page.props.jetstream.hasAccountDeletionFeatures">
+    <JetSectionBorder />
+
+    <DeleteUserForm class="mt-10 sm:mt-0" />
+  </template>
 </template>
 
 <script setup>
