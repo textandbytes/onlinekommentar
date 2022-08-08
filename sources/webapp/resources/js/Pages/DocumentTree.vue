@@ -1,33 +1,25 @@
-<script setup>
-import AppLayout from '@/Layouts/AppLayout.vue';
-
-defineProps({
-    documentTree: Object
-});
-</script>
-
 <template>
-    <AppLayout title="Document Tree">
+  <Head title="Document Tree" />
 
-        <template #header>
-          <h2 class="font-semibold text-xl text-gray-800 leading-tight">Document Tree</h2>
-        </template>
+  <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-12">
+    <h1 class="font-semibold text-2xl text-gray-800 leading-tight py-4 mb-8 border-b border-gray-200">
+      Document Tree
+    </h1>
 
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <Tree :tree-data="documentTree"></Tree>
-            </div>
-        </div>
-
-    </AppLayout>
+    <Tree :tree-data="documentTree"></Tree>
+  </div>
 </template>
 
 <script>
-import Tree from "../Shared/cms/Tree";
+  import Tree from '@/Shared/cms/Tree'
 
-export default {
-  components: {
-    Tree
+  export default {
+    props: {
+      documentTree: Object
+    },
+
+    components: {
+      Tree
+    }
   }
-};
 </script>
