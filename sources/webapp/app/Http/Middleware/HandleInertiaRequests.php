@@ -54,9 +54,18 @@ class HandleInertiaRequests extends Middleware
         }
 
         return array_merge(parent::share($request), [
-            'is_cms' => fn() => $request->is('cms') || $request->is('cms/*') || $request->is('user/*'),
+            'is_cms' => function () use ($request) {
+                return $request->is('cms') || $request->is('cms/*') || $request->is('user/*');
+            },
 
-            'can' => fn () => $abilities
+            'can' => fn () => $abilities,
+
+            'flash' => function () use ($request) {
+                return [
+                    'success' => $request->session()->get('success'),
+                    'error' => $request->session()->get('error'),
+                ];
+            },
         ]);
     }
 }

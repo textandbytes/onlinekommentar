@@ -276,6 +276,8 @@
 
       <main>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-10">
+          <FlashMessages />
+
           <slot />
         </div>
       </main>
@@ -294,7 +296,8 @@
   import JetDropdownLink from '@/Jetstream/DropdownLink.vue'
   import JetNavLink from '@/Jetstream/NavLink.vue'
   import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink.vue'
-  import ModalWithDismiss from '../Modals/ModalWithDismiss.vue'
+  import FlashMessages from '@/Shared/FlashMessages'
+  import ModalWithDismiss from '@/Modals/ModalWithDismiss.vue'
 
   defineProps({
     title: String
