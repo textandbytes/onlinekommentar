@@ -3,7 +3,7 @@ require('./bootstrap');
 import { createApp, h } from 'vue';
 import { createInertiaApp, Link, Head, usePage } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
-import AppLayout from '@/Layouts/AppLayout.vue';
+import CmsLayout from '@/Layouts/CmsLayout.vue';
 import Layout from './Shared/Layout.vue';
 import NavLink from './Shared/NavLink.vue';
 
@@ -20,7 +20,7 @@ createInertiaApp({
 
         // set the 'layout' property to null in page components to override any layout from being used 
         if (page.layout === undefined) {
-            page.layout = initialPage.props.is_cms ? AppLayout : Layout
+            page.layout = initialPage.props.is_cms ? CmsLayout : Layout
         }
 
         return page;
