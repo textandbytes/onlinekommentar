@@ -6,20 +6,29 @@
   </h1>
 
   <div class="mt-8 flex flex-col">
-    <input
-      v-model="search"
-      type="text"
-      placeholder="Search name, e-mail or role..."
-      class="border px-2 rounded-lg"
-    />
-
-    <div class="my-6">
-      <Pagination
-        v-if="showPagination"
-        :links="users.links"
-        class="text-right"
+    <div class="flex items-center justify-between mb-6">
+      <input
+        v-model="search"
+        type="text"
+        placeholder="Search..."
+        size="40"
+        class="border px-2 rounded-lg focus:ring-ok-blue-500"
       />
+
+      <Link
+        v-if="$page.props.can['create-users']"
+        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-ok-blue text-base font-medium text--gray-900 hover:bg-ok-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ok-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
+        href="/cms/users/create">
+        <span>Create</span>
+        <span class="hidden md:inline">&nbsp;User</span>
+      </Link>
     </div>
+
+    <Pagination
+      v-if="showPagination"
+      :links="users.links"
+      class="text-right my-6"
+    />
 
     <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
       <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
@@ -45,7 +54,7 @@
                   </span>
                 </th>
 
-                <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6 text-right text-sm font-semibold text-gray-900">
+                <th v-if="$page.props.can['delete-users']" scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6 text-right text-sm font-semibold text-gray-900">
                   <span class="sr-only">
                     Delete
                   </span>
@@ -84,7 +93,7 @@
                   </Link>
                 </td>
 
-                <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                <td v-if="$page.props.can['delete-users']" class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                   <button
                     type="button"
                     @click.prevent="onDelete(user)"
