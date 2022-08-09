@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Response;
 use Inertia\Inertia;
+use Exception;
 use Request;
 
 class UsersController extends Controller
@@ -15,6 +16,7 @@ class UsersController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -42,5 +44,25 @@ class UsersController extends Controller
                 ]),
             'filters' => Request::only(['search'])
         ]);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(User $user)
+    {
+        abort_if(Gate::denies('delete-users'), Response::HTTP_FORBIDDEN, __('cms.authorization_error'));
+
+        try {
+            $user->delete();
+
+            return redirect('/cms/users')->with('success', 'User deleted.');
+        }
+        catch (Exception $e) {
+            return redirect('/cms/users')->with('error', $e->getMessage());
+        }
     }
 }

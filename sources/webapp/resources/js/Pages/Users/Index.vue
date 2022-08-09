@@ -44,6 +44,12 @@
                     Edit
                   </span>
                 </th>
+
+                <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6 text-right text-sm font-semibold text-gray-900">
+                  <span class="sr-only">
+                    Delete
+                  </span>
+                </th>
               </tr>
             </thead>
 
@@ -73,9 +79,18 @@
                 </td>
 
                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                  <a href="#" class="text-indigo-600 hover:text-indigo-900">
+                  <Link :href="`/users/${user.id}/edit`" class="text-indigo-600 hover:text-indigo-900">
                     Edit<span class="sr-only">, {{ user.name }}</span>
-                  </a>
+                  </Link>
+                </td>
+
+                <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                  <button
+                    type="button"
+                    @click.prevent="onDelete(user)"
+                    class="text-red-600 hover:text-red-900 cursor-pointer">
+                    Delete<span class="sr-only">, {{ user.name }}</span>
+                  </button>
                 </td>
               </tr>
             </tbody>
