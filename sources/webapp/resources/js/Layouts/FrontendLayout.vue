@@ -17,17 +17,14 @@
       </div>
     </main>
   
-   <Footer />
-
+    <Footer />
   </article>
-  
 </template>
 
 <script setup>
-import Nav from './Nav';
-import Sidebar from './Sidebar';
-import Footer from './Footer';
-
+  import Nav from '@/Shared/Nav';
+  import Sidebar from '@/Shared/Sidebar';
+  import Footer from '@/Shared/Footer';
 </script>
 
 <style lang="postcss" scoped>
@@ -37,5 +34,4 @@ import Footer from './Footer';
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 100%;
   }
-  
 </style>

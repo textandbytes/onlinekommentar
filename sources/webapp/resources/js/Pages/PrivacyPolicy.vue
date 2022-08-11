@@ -1,3 +1,11 @@
+<script>
+  import FrontendLayout from '@/Layouts/FrontendLayout.vue'
+  
+  export default {
+    layout: FrontendLayout
+  }
+</script>
+
 <script setup>
 import { Head } from '@inertiajs/inertia-vue3';
 import JetAuthenticationCardLogo from '@/Jetstream/AuthenticationCardLogo.vue';

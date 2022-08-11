@@ -14,3 +14,11 @@
     </div>
     
 </template>
+
+<script>
+  import FrontendLayout from '@/Layouts/FrontendLayout.vue'
+  
+  export default {
+    layout: FrontendLayout
+  }
+</script>
