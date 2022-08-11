@@ -9,9 +9,12 @@
 </template>
 
 <script>
+  import CmsLayout from '@/Layouts/CmsLayout.vue'
   import Tree from '@/Shared/cms/Tree'
 
   export default {
+    layout: CmsLayout,
+
     props: {
       documentTree: Object
     },

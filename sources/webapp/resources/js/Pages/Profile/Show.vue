@@ -35,6 +35,14 @@
   </template>
 </template>
 
+<script>
+  import CmsLayout from '@/Layouts/CmsLayout.vue'
+  
+  export default {
+    layout: CmsLayout
+  }
+</script>
+
 <script setup>
   import DeleteUserForm from '@/Pages/Profile/Partials/DeleteUserForm.vue'
   import JetSectionBorder from '@/Jetstream/SectionBorder.vue'

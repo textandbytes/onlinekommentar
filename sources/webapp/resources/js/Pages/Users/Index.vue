@@ -116,6 +116,14 @@
   </div>
 </template>
 
+<script>
+  import CmsLayout from '@/Layouts/CmsLayout.vue'
+  
+  export default {
+    layout: CmsLayout
+  }
+</script>
+
 <script setup>
   import { ref, computed, watch } from 'vue'
   import { Inertia } from '@inertiajs/inertia'

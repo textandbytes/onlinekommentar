@@ -71,6 +71,14 @@
   </div>
 </template>
 
+<script>
+  import CmsLayout from '@/Layouts/CmsLayout.vue'
+  
+  export default {
+    layout: CmsLayout
+  }
+</script>
+
 <script setup>
   import { useForm } from '@inertiajs/inertia-vue3'
   import TextInput from '@/Shared/TextInput'
