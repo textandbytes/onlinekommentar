@@ -6,11 +6,15 @@ use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Actions\Fortify\UpdateUserProfileInformation;
+use Inertia\Inertia;
 use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
+use Laravel\Fortify\Contracts\LoginResponse;
+use Laravel\Fortify\Contracts\LogoutResponse;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -21,7 +25,24 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // redirect to the intended url after login
+        $this->app->instance(LoginResponse::class, new class implements LoginResponse {
+            public function toResponse($request)
+            {
+                if ($request->session()->has('url.intended')) {
+                    return redirect()->intended(session('url.intended'));
+                }
+                return redirect('/cms');
+            }
+        });
+
+        // redirect to the login page after logout
+        $this->app->instance(LogoutResponse::class, new class implements LogoutResponse {
+            public function toResponse($request)
+            {
+                return redirect('/login');
+            }
+        });
     }
 
     /**
