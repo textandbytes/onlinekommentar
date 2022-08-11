@@ -2,7 +2,7 @@
 import { computed } from 'vue';
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
 import JetAuthenticationCard from '@/Jetstream/AuthenticationCard.vue';
-import JetAuthenticationCardLogo from '@/Jetstream/AuthenticationCardLogo.vue';
+import JetAuthenticationCardLogo from '@/Jetstream/AuthenticationCardLogoWithText.vue';
 import JetButton from '@/Jetstream/Button.vue';
 
 const props = defineProps({
