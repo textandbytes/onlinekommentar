@@ -132,11 +132,11 @@ class UsersController extends Controller
         $userRoles = $user->getRoleNames();
 
         // return only pertinent fields for the user
-        $user = $user->only(['id', 'name', 'email']);
-        $user['role'] = count($userRoles) > 0 ? $userRoles[0] : null;
+        $userToEdit = $user->only(['id', 'name', 'email']);
+        $userToEdit['role'] = count($userRoles) > 0 ? $userRoles[0] : null;
 
         return Inertia::render('Users/Edit', [
-            'user' => $user,
+            'userToEdit' => $userToEdit,
             'roles' => $roles
         ]);
     }

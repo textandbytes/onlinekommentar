@@ -5,7 +5,7 @@
     <Link class="text-gray-500 hover:text-gray-700" href="/cms/users">
       Users
     </Link>
-    <span class="text-gray-500 font-medium">/</span> {{ user.name }}
+    <span class="text-gray-500 font-medium">/</span> {{ userToEdit.name }}
   </h1>
 
   <div class="max-w-7xl bg-white rounded-md shadow overflow-hidden">
@@ -34,11 +34,11 @@
           :required="true"
           class="pb-8 pr-6 w-full"
           label="Role">
-          <option v-if="!user.role" :value="null" />
+          <option v-if="!userToEdit.role" :value="null" />
           <option
             v-for="role in roles"
             :value="role"
-            :selected="role === user.role">
+            :selected="role === userToEdit.role">
             {{ role }}
           </option>
         </SelectInput>
@@ -87,24 +87,24 @@
   import LoadingButton from '@/Shared/LoadingButton'
 
   const props = defineProps({
-    user: { type: Object, required: true },
+    userToEdit: { type: Object, required: true },
     roles: { type: Object, required: true }
   })
 
   const form = useForm({
-    name: props.user.name,
-    email: props.user.email,
-    role: props.user.role,
+    name: props.userToEdit.name,
+    email: props.userToEdit.email,
+    role: props.userToEdit.role,
     password: null,
     password_confirmation: null,
   })
 
   const update = () => {
-    form.put(`/cms/users/${props.user.id}`, {
       onFinish: () => {
         form.reset('password')
         form.reset('password_confirmation')
       }
+    form.put(`/cms/users/${props.userToEdit.id}`, {
     })
   }
 </script>
