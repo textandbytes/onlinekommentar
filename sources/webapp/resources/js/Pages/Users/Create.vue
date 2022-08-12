@@ -1,11 +1,11 @@
 <template>
   <Head title="Create User" />
 
-  <h1 class="font-semibold text-2xl text-gray-800 leading-tight py-4 mb-8 border-b border-gray-200">
-    <Link class="text-ok-blue-400 hover:text-ok-blue-600" href="/cms/users">
+  <h1 class="font-semibold text-2xl text-gray-800 leading-tight py-4 mb-8">
+    <Link class="text-gray-500 hover:text-gray-700" href="/cms/users">
       Users
     </Link>
-    <span class="text-ok-blue-400 font-medium">/</span> Create
+    <span class="text-gray-500 font-medium">/</span> Create
   </h1>
 
   <div class="max-w-7xl bg-white rounded-md shadow overflow-hidden">

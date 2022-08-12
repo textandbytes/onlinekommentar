@@ -1,7 +1,7 @@
 <template>
   <Head title="Document Tree" />
 
-  <h1 class="font-semibold text-2xl text-gray-800 leading-tight py-4 mb-8 border-b border-gray-200">
+  <h1 class="font-semibold text-2xl text-gray-800 leading-tight py-4 mb-8">
     Document Tree
   </h1>
 
