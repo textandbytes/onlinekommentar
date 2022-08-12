@@ -48,7 +48,7 @@
                   Role
                 </th>
 
-                <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6 text-right text-sm font-semibold text-gray-900">
+                <th v-if="$page.props.can['edit-users']" scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6 text-right text-sm font-semibold text-gray-900">
                   <span class="sr-only">
                     Edit
                   </span>
@@ -87,8 +87,8 @@
                   {{ user.role }}
                 </td>
 
-                <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                  <Link :href="`/users/${user.id}/edit`" class="text-indigo-600 hover:text-indigo-900">
+                <td v-if="$page.props.can['edit-users']" class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                  <Link :href="`/cms/users/${user.id}/edit`" class="text-indigo-600 hover:text-indigo-900">
                     Edit<span class="sr-only">, {{ user.name }}</span>
                   </Link>
                 </td>

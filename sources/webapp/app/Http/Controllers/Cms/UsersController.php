@@ -115,6 +115,86 @@ class UsersController extends Controller
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(User $user)
+    {
+        abort_if(Gate::denies('edit-users'), Response::HTTP_FORBIDDEN, __('cms.authorization_error'));
+
+        // get the list of roles
+        $roles = Role::orderBy('id')->pluck('name', 'id')->toArray();
+
+        // get the roles assigned to the user
+        $userRoles = $user->getRoleNames();
+
+        // return only pertinent fields for the user
+        $user = $user->only(['id', 'name', 'email']);
+        $user['role'] = count($userRoles) > 0 ? $userRoles[0] : null;
+
+        return Inertia::render('Users/Edit', [
+            'user' => $user,
+            'roles' => $roles
+        ]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, User $user)
+    {
+        abort_if(Gate::denies('edit-users'), Response::HTTP_FORBIDDEN, __('cms.users.edit_permission_error'));
+        
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => [
+                'required',
+                'email',
+                'unique:users,email,' . $user->id
+            ],
+            'role' => [
+                'required'
+            ],
+            'password' => [
+                'nullable',
+                'required_with:password',
+                'between:8,64',
+                new StrongPasswordRule
+            ],
+            'password_confirmation' => [
+                'nullable',
+                'same:password'
+            ]
+        ]);
+
+        try {
+            if (trim($request->get('password')) == '') {
+                $user->update($request->except('password'));
+            } else {
+                $user->update([
+                    'name' => request('name'),
+                    'email' => request('email'),
+                    'password' => Hash::make(request('password'))
+                ]);
+            }
+
+            // assign the role to the user
+            $user->syncRoles([$request->get('role')]);
+
+            return redirect('/cms/users/' . $user->id . '/edit')->with('success', 'User updated.');
+        }
+        catch (Exception $e) {
+            return redirect('/cms/users/' . $user->id . '/edit')->with('error', $e->getMessage());
+        }
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\User  $user
