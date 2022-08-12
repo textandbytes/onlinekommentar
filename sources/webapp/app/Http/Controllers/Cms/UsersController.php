@@ -45,7 +45,8 @@ class UsersController extends Controller
                     'profile_photo_url' => $user->profile_photo_url,
                     'role' => $user->roles[0]->name ?? '',
                 ]),
-            'filters' => \Request::only(['search'])
+            'filters' => \Request::only(['search']),
+            'roles' => Role::pluck('name')
         ]);
     }
 

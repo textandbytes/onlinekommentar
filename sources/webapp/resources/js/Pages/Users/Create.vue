@@ -53,9 +53,11 @@
           class="pb-8 pr-6 w-full"
           label="Role">
           <option :value="null" />
-          <option value="admin">Admin</option>
-          <option value="editor">Editor</option>
-          <option value="commentator">Commentator</option>
+          <option
+            v-for="role in roles"
+            :value="role">
+            {{ role }}
+          </option>
         </SelectInput>
       </div>
 
@@ -84,6 +86,10 @@
   import TextInput from '@/Shared/TextInput'
   import SelectInput from '@/Shared/SelectInput'
   import LoadingButton from '@/Shared/LoadingButton'
+
+  defineProps({
+    roles: { type: Object, required: true }
+  })
 
   const form = useForm({
     name: null,
