@@ -100,11 +100,8 @@
   })
 
   const update = () => {
-      onFinish: () => {
-        form.reset('password')
-        form.reset('password_confirmation')
-      }
     form.put(`/cms/users/${props.userToEdit.id}`, {
+      onSuccess: () => form.reset('password', 'password_confirmation')
     })
   }
 </script>
