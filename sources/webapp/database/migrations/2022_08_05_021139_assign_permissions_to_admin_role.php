@@ -17,7 +17,7 @@ return new class extends Migration
         $role = Role::findByName('admin');
         $role->givePermissionTo('view-users');
         $role->givePermissionTo('create-users');
-        $role->givePermissionTo('update-users');
+        $role->givePermissionTo('edit-users');
         $role->givePermissionTo('delete-users');        
     }
 
@@ -30,7 +30,7 @@ return new class extends Migration
     {
         $role = Role::findByName('admin');
         $role->revokePermissionTo('delete-users');
-        $role->revokePermissionTo('update-users');
+        $role->revokePermissionTo('edit-users');
         $role->revokePermissionTo('create-users');
         $role->revokePermissionTo('view-users');
     }

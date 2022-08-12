@@ -10,7 +10,7 @@ return new class extends Migration
     private $permissions = [
         'view-users',
         'create-users',
-        'update-users',
+        'edit-users',
         'delete-users',
     ];
 
