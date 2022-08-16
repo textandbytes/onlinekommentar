@@ -108,10 +108,10 @@ class UsersController extends Controller
             $role = Role::where('name', request('role'))->first();
             $user->assignRole($role);
 
-            return redirect('/cms/users')->with('success', 'User created.');
+            return redirect(route('users.index'))->with('success', 'User created.');
         }
         catch (Exception $e) {
-            return redirect('/cms/users')->with('error', $e->getMessage());
+            return redirect(route('users.index'))->with('error', $e->getMessage());
         }
     }
 
@@ -188,10 +188,10 @@ class UsersController extends Controller
             // assign the role to the user
             $user->syncRoles([$request->get('role')]);
 
-            return redirect('/cms/users/' . $user->id . '/edit')->with('success', 'User updated.');
+            return redirect(route('users.edit', $user->id))->with('success', 'User updated.');
         }
         catch (Exception $e) {
-            return redirect('/cms/users/' . $user->id . '/edit')->with('error', $e->getMessage());
+            return redirect(route('users.edit', $user->id))->with('error', $e->getMessage());
         }
     }
 
@@ -208,10 +208,10 @@ class UsersController extends Controller
         try {
             $user->delete();
 
-            return redirect('/cms/users')->with('success', 'User deleted.');
+            return redirect(route('users.index'))->with('success', 'User deleted.');
         }
         catch (Exception $e) {
-            return redirect('/cms/users')->with('error', $e->getMessage());
+            return redirect(route('users.index'))->with('error', $e->getMessage());
         }
     }
 }
