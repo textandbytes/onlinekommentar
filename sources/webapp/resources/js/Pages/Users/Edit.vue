@@ -39,7 +39,7 @@
             v-for="role in roles"
             :value="role"
             :selected="role === userToEdit.role">
-            {{ role }}
+            {{ __(role) }}
           </option>
         </SelectInput>
 
