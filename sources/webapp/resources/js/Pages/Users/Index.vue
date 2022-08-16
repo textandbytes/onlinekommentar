@@ -1,12 +1,22 @@
 <template>
   <Head title="Manage Users" />
 
-  <h1 class="font-semibold text-2xl text-gray-800 leading-tight py-4 mb-8">
-    Users
-  </h1>
+  <div class="flex items-center justify-between pb-4 border-b">
+    <h1 class="font-semibold text-2xl text-gray-800 leading-tight">
+      Users
+    </h1>
 
-  <div class="mt-8 flex flex-col">
-    <div class="flex items-center justify-between mb-6">
+    <Link
+      v-if="$page.props.can['create-users']"
+      class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-ok-blue text-base font-medium text--gray-900 hover:bg-ok-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ok-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
+      href="/cms/users/create">
+      <span>Create</span>
+      <span class="hidden md:inline">&nbsp;User</span>
+    </Link>
+  </div>
+
+  <div class="flex flex-col mt-6">
+    <div class="flex items-end justify-between mb-6">
       <input
         v-model="search"
         type="text"
@@ -15,20 +25,12 @@
         class="border px-2 rounded-lg focus:ring-ok-blue-500"
       />
 
-      <Link
-        v-if="$page.props.can['create-users']"
-        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-ok-blue text-base font-medium text--gray-900 hover:bg-ok-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ok-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
-        href="/cms/users/create">
-        <span>Create</span>
-        <span class="hidden md:inline">&nbsp;User</span>
-      </Link>
+      <Pagination
+        v-if="showPagination"
+        :links="users.links"
+        class="text-right"
+      />
     </div>
-
-    <Pagination
-      v-if="showPagination"
-      :links="users.links"
-      class="text-right my-6"
-    />
 
     <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
       <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
