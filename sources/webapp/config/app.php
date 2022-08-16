@@ -82,7 +82,20 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'de',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application Supported Locales Configuration
+    |--------------------------------------------------------------------------
+    |
+    | The supported locales determine which locales will be used by the
+    | translation service provider. You are free to modify this list
+    | to any of the locales which will be supported by the application.
+    |
+    */
+
+    'locales' => ['de', 'en', 'fr', 'it'],
 
     /*
     |--------------------------------------------------------------------------
