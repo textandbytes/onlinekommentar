@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Helpers\TranslationsHelper;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
@@ -54,6 +55,21 @@ class HandleInertiaRequests extends Middleware
         }
 
         return array_merge(parent::share($request), [
+            'locales' => function () {
+                return config('app.locales');
+            },
+
+            'locale' => function () {
+                return app()->getLocale() ?: config('app.fallback_locale');
+            },
+
+            'translations' => function () {
+                $locale = app()->getLocale() ?: config('app.fallback_locale');
+                return TranslationsHelper::translations(
+                    lang_path($locale . '.json')
+                );
+            },
+        
             'can' => fn () => $abilities,
 
             'flash' => function () use ($request) {
