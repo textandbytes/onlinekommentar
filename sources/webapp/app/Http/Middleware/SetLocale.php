@@ -19,8 +19,8 @@ class SetLocale
         // save the locale stored in the session if it exists; otherwise save the fallback locale
         $locale = session('locale') ?: config('app.fallback_locale');
 
-        // use the original cms or auth urls
-        if ($request->is('cms*') || $request->is('auth/*') || $request->is('js/*') || $request->is('svg/*') || $request->is('img/*')) {
+        // use the original cms, auth and user profile urls
+        if ($request->is('cms*') || $request->is('auth/*') || $request->is('user/*') || $request->is('js/*') || $request->is('svg/*') || $request->is('img/*')) {
             // save the locale in the session
             session(['locale' => config('app.fallback_locale')]);
             
