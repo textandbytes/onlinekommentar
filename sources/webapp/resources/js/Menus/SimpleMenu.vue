@@ -51,10 +51,11 @@
   const emit = defineEmits(['changed'])
 
   const props = defineProps({
-    options: { type: Array, required: false, default: [] }
+    options: { type: Array, required: false, default: [] },
+    activeOption: { type: String, required: false, default: null }
   })
 
-  const selected = ref(props.options[0])
+  const selected = ref(props.activeOption ?? props.options[0])
 
   const onSelect = (selection) => {
     emit('changed', selection);

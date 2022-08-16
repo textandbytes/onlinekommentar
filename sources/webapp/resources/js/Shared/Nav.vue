@@ -63,7 +63,8 @@
       <LanguageSelector
         id="nav-lang-switcher"
         as="li"
-        :languages="languages"
+        :languages="$page.props.locales"
+        :active-language="$page.props.locale"
       />
 
       <li id="nav-menu" @click="toggleMenu" class="z-50">
@@ -92,8 +93,6 @@
   const searchBox = ref(false)
   const searchInput = ref()
   const showMenu = ref(false)
-
-  const languages = ['de', 'en', 'fr', 'it']
 
   const toggleMenu = () => {
     showMenu.value = !showMenu.value
