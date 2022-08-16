@@ -18,38 +18,25 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Home', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+// frontend routes
+Route::group(['prefix' => '{locale?}', 'where' => ['locale' => implode('|', Config::get('app.locales'))], 'middleware' => ['web']], function() {
+    Route::get('/', function () {
+        return Inertia::render('Home', []);
+    })->name('Home');
+
+    Route::get('/about', function () {
+        return Inertia::render('About', []);
+    })->name('About');
+
+    Route::get('/contact', function () {
+        return Inertia::render('Contact', []);
+    })->name('Contact');
+
+    Route::get('/tree', [DocumentTreeControllerFrontend::class, 'index']);
 });
 
-Route::get('/about', function () {
-    return Inertia::render('About', [
-        
-    ]);
-});
-
-Route::get('/contact', function () {
-    return Inertia::render('Contact', []);
-});
-
-
-Route::get('/settings', function () {
-    return Inertia::render('Settings', []);
-});
-
-Route::get('/tree', [DocumentTreeControllerFrontend::class, 'index']);
-
-Route::prefix('cms')->middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-
+// cms routes
+Route::prefix('cms')->middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
