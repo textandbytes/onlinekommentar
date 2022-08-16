@@ -37,6 +37,7 @@ createInertiaApp({
             .component('Link', Link)
             .component('NavLink', NavLink)
             .mixin({ methods: { route } })
+            .mixin(require('./base'))
         app.config.globalProperties.emitter = emitter
         app.mount(el)
     },
