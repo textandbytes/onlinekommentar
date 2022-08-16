@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\DocumentTreeControllerFrontend;
 use App\Http\Controllers\Cms\DocumentTreeController;
 use App\Http\Controllers\Cms\UsersController;
+use App\Http\Controllers\Frontend\DocumentTreeController as DocumentTreeControllerFrontend;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
