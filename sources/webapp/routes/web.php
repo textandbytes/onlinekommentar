@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Cms\CommentariesController;
 use App\Http\Controllers\Cms\DocumentTreeController;
 use App\Http\Controllers\Cms\UsersController;
 use App\Http\Controllers\Frontend\DocumentTreeController as DocumentTreeControllerFrontend;
@@ -48,5 +49,7 @@ Route::prefix('cms')->middleware(['auth:sanctum', config('jetstream.auth_session
     Route::resource('tree', DocumentTreeController::class);
 
     Route::resource('users', UsersController::class);
+
+    Route::resource('commentaries', CommentariesController::class);
 });
 

@@ -23,6 +23,11 @@
                   Dashboard
                 </JetNavLink>
               </div>
+              <div v-if="$page.props.can['view-commentaries']" class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <JetNavLink :href="route('commentaries.index')" :active="route().current('commentaries.index')">
+                  Commentaries
+                </JetNavLink>
+              </div>
               <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                 <JetNavLink :href="route('tree.index')" :active="route().current('tree.index')">
                   Document Tree

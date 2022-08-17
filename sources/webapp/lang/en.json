@@ -1,5 +1,14 @@
 {
   "admin": "Administrator",
   "editor": "Editor",
-  "commentator": "Commentator"
+  "commentator": "Commentator",
+
+  "de": "German",
+  "en": "English",
+  "fr": "French",
+  "it": "Italian",
+
+  "draft": "Draft",
+  "in_review": "In review",
+  "published": "Published"
 }

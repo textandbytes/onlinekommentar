@@ -9,6 +9,23 @@ class Commentary extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var string[]
+     */
+    protected $fillable = [
+        'content_de',
+        'content_en',
+        'content_fr',
+        'content_it',
+        'suggested_citation_long',
+        'suggested_citation_short',
+        'status',
+        'original_language',
+        'doi',
+    ];
+
     public function users()
     {
         return $this->belongsToMany(User::class, 'users_x_commentaries', 'commentary_id', 'user_id');
