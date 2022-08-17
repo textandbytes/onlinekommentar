@@ -6,6 +6,7 @@ use App\Helpers\TranslationsHelper;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
+use Spatie\Permission\Models\Permission;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -49,8 +50,19 @@ class HandleInertiaRequests extends Middleware
         $abilities = [];
         if ($request->user()) {
             $user = User::find($request->user()->id);
-            foreach($user->getAllPermissions() as $permission) {
-                $abilities[$permission->name] = $user->can($permission->name);
+
+            // grant all abilities to administrators
+            if ($user->hasRole('admin')) {
+                $permissions = Permission::all();
+                foreach ($permissions as $permission) {
+                    $abilities[$permission->name] = true;
+                }
+            }
+            // grant specific abilities assigned to non-administrators
+            else {
+                foreach ($user->getAllPermissions() as $permission) {
+                    $abilities[$permission->name] = $user->can($permission->name);
+                }
             }
         }
 
