@@ -150,7 +150,7 @@ class UsersController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        abort_if(Gate::denies('edit-users'), Response::HTTP_FORBIDDEN, __('cms.users.edit_permission_error'));
+        abort_if(Gate::denies('edit-users'), Response::HTTP_FORBIDDEN, __('cms.authorization_error'));
         
         $this->validate($request, [
             'name' => 'required',
