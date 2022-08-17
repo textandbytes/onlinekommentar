@@ -1,7 +1,7 @@
 <template>
   <Head title="Create User" />
 
-  <h1 class="font-semibold text-2xl text-gray-800 leading-tight py-4 mb-8">
+  <h1 class="font-semibold text-2xl text-gray-800 leading-tight py-4 mb-8 border-b">
     <Link class="text-gray-500 hover:text-gray-700" href="/cms/users">
       Users
     </Link>
