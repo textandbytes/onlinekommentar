@@ -42,25 +42,25 @@
           <table class="min-w-full divide-y divide-gray-300">
             <thead class="bg-gray-50">
               <tr>
-                <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">
+                <th scope="col" class="px-4 py-3.5 text-left text-sm font-semibold text-gray-900">
                   Content
                 </th>
 
-                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                <th scope="col" class="px-4 py-3.5 text-left text-sm font-semibold text-gray-900">
                   Original Language
                 </th>
 
-                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                <th scope="col" class="px-4 py-3.5 text-left text-sm font-semibold text-gray-900">
                   Status
                 </th>
 
-                <th v-if="$page.props.can['edit-commentaries']" scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6 text-right text-sm font-semibold text-gray-900">
+                <th v-if="$page.props.can['edit-commentaries']" scope="col" class="relative px-4 py-3.5 text-right text-sm font-semibold text-gray-900">
                   <span class="sr-only">
                     Edit
                   </span>
                 </th>
 
-                <th v-if="$page.props.can['delete-commentaries']" scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6 text-right text-sm font-semibold text-gray-900">
+                <th v-if="$page.props.can['delete-commentaries']" scope="col" class="relative px-4 py-3.5 sm:pr-6 text-right text-sm font-semibold text-gray-900">
                   <span class="sr-only">
                     Delete
                   </span>
@@ -70,25 +70,26 @@
 
             <tbody class="divide-y divide-gray-200 bg-white">
               <tr v-for="commentary in commentaries.data" :key="commentary.email">
-                <td class="whitespace py-4 pl-4 text-sm text-gray-500">
-                  {{ commentary.content_de }}
+                <td
+                  class="px-4 py-3.5 text-sm text-gray-500"
+                  v-html="commentary.content_de">
                 </td>
 
-                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                <td class="whitespace-nowrap px-4 py-3.5 text-sm text-gray-500">
                   {{ __(commentary.original_language) }}
                 </td>
 
-                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                <td class="whitespace-nowrap px-4 py-3.5 text-sm text-gray-500">
                   {{ __(commentary.status) }}
                 </td>
 
-                <td v-if="$page.props.can['edit-commentaries']" class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                <td v-if="$page.props.can['edit-commentaries']" class="relative whitespace-nowrap px-4 py-3.5 text-right text-sm font-medium">
                   <Link :href="`/cms/commentaries/${commentary.id}/edit`" class="text-indigo-600 hover:text-indigo-900">
                     Edit<span class="sr-only">, {{ commentary.id }}</span>
                   </Link>
                 </td>
 
-                <td v-if="$page.props.can['delete-commentaries']" class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                <td v-if="$page.props.can['delete-commentaries']" class="relative whitespace-nowrap px-4 py-3.5 text-right text-sm font-medium sm:pr-6">
                   <button
                     type="button"
                     @click.prevent="onDelete(commentary)"

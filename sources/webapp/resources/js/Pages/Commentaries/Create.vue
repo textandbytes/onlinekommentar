@@ -24,7 +24,7 @@
           </option>
         </SelectInput>
 
-        <TextareaInput
+        <TipTapEditor
           v-model="form.suggested_citation_long"
           :error="form.errors.suggested_citation_long"
           class="pb-8 pr-6 w-full"
@@ -45,7 +45,7 @@
           label="DOI"
         />
 
-        <TextareaInput
+        <TipTapEditor
           v-model="form.content_de"
           :error="form.errors.content_de"
           :required="true"
@@ -53,21 +53,21 @@
           label="Content (de)"
         />
 
-        <TextareaInput
+        <TipTapEditor
           v-model="form.content_en"
           :error="form.errors.content_en"
           class="pb-8 pr-6 w-full"
           label="Content (en)"
         />
 
-        <TextareaInput
+        <TipTapEditor
           v-model="form.content_fr"
           :error="form.errors.content_fr"
           class="pb-8 pr-6 w-full"
           label="Content (fr)"
         />
 
-        <TextareaInput
+        <TipTapEditor
           v-model="form.content_it"
           :error="form.errors.content_it"
           class="pb-8 pr-6 w-full"
@@ -98,7 +98,7 @@
 <script setup>
   import { useForm } from '@inertiajs/inertia-vue3'
   import TextInput from '@/Shared/TextInput'
-  import TextareaInput from '@/Shared/TextareaInput'
+  import TipTapEditor from '@/TipTapEditor/TipTapEditor'
   import SelectInput from '@/Shared/SelectInput'
   import LoadingButton from '@/Shared/LoadingButton'
 

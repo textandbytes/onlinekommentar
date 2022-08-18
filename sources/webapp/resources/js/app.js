@@ -1,5 +1,7 @@
 require('./bootstrap')
 
+require('phosphor-icons')
+
 import { createApp, h } from 'vue'
 import { createInertiaApp, Link, Head } from '@inertiajs/inertia-vue3'
 import { InertiaProgress } from '@inertiajs/progress'
