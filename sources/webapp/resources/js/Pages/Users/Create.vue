@@ -56,7 +56,7 @@
           <option
             v-for="role in roles"
             :value="role">
-            {{ role }}
+            {{ __(role) }}
           </option>
         </SelectInput>
       </div>

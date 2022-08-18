@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Frontend;
 
 use App\Models\DocumentTree;
 use App\Http\Controllers\Controller;
 
-class DocumentTreeControllerFrontend extends Controller
+class DocumentTreeController extends Controller
 {
     /**
      * Returns document tree in JSON format for display in frontend sidebar.
