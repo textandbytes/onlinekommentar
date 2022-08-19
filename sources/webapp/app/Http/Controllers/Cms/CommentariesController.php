@@ -83,7 +83,11 @@ class CommentariesController extends Controller
                 'original_language' => request('original_language'),
                 'suggested_citation_long' => request('suggested_citation_long'),
                 'suggested_citation_short' => request('suggested_citation_short'),
-                'doi' => request('doi'),
+            ]);
+
+            // auto-generate a doi based on the slug
+            $commentary->update([
+                'doi' => 'xx.xxxx/onlinekommentar.' . $commentary->slug
             ]);
 
             return redirect(route('commentaries.index'))->with('success', 'Commentary created.');
@@ -127,7 +131,7 @@ class CommentariesController extends Controller
             'original_language',
             'suggested_citation_long',
             'suggested_citation_short',
-            'doi'
+            'doi',
             'slug',
         ]);
 
@@ -147,9 +151,13 @@ class CommentariesController extends Controller
     public function update(Request $request, Commentary $commentary)
     {
         abort_if(Gate::denies('edit-commentaries'), Response::HTTP_FORBIDDEN, __('cms.authorization_error'));
-        
+
         $this->validate($request, [
             'label_de' => 'required',
+            'doi' => [
+                'required',
+                Rule::unique('commentaries')->ignore($commentary->doi, 'doi')
+            ],
             'slug' => [
                 'required',
                 'alpha_dash',

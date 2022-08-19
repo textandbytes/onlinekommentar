@@ -95,6 +95,14 @@
         />
 
         <TextInput
+          v-model="form.doi"
+          :error="form.errors.doi"
+          :required="true"
+          class="pb-8 pr-6 w-full"
+          label="DOI"
+        />
+
+        <TextInput
           v-model="form.slug"
           :error="form.errors.slug"
           :required="true"
@@ -147,6 +155,7 @@
     original_language: props.commentary.original_language,
     suggested_citation_long: props.commentary.suggested_citation_long,
     suggested_citation_short: props.commentary.suggested_citation_short,
+    doi: props.commentary.doi,
     slug: props.commentary.slug,
   })
 
