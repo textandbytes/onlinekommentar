@@ -93,6 +93,14 @@
           class="pb-8 pr-6 w-full"
           label="Suggested citation (short)"
         />
+
+        <TextInput
+          v-model="form.slug"
+          :error="form.errors.slug"
+          :required="true"
+          class="pb-8 pr-6 w-full"
+          label="Slug"
+        />
       </div>
 
       <div class="flex items-center justify-end px-8 py-4 bg-gray-50 border-t border-gray-100">
@@ -139,9 +147,10 @@
     original_language: props.commentary.original_language,
     suggested_citation_long: props.commentary.suggested_citation_long,
     suggested_citation_short: props.commentary.suggested_citation_short,
+    slug: props.commentary.slug,
   })
 
   const update = () => {
-    form.put(`/cms/commentaries/${props.commentary.id}`)
+    form.put(`/cms/commentaries/${props.commentary.slug}`)
   }
 </script>

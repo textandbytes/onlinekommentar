@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Cms;
 
 use App\Http\Controllers\Controller;
 use App\Models\Commentary;
+use App\Rules\NonNumericRule;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Validation\Rule;
 use Inertia\Inertia;
 use Exception;
 
@@ -31,10 +33,10 @@ class CommentariesController extends Controller
                 ->paginate(20)
                 ->withQueryString()
                 ->through(fn ($commentary) => [
-                    'id' => $commentary->id,
                     'label_de' => $commentary->label_de,
                     'original_language' => $commentary->original_language,
                     'status' => $commentary->status,
+                    'slug' => $commentary->slug,
                 ]),
             'filters' => \Request::only(['search']),
         ]);
@@ -114,7 +116,6 @@ class CommentariesController extends Controller
 
         // return only pertinent fields for the commentary
         $commentaryToEdit = $commentary->only([
-            'id',
             'label_de',
             'label_en',
             'label_fr',
@@ -123,10 +124,11 @@ class CommentariesController extends Controller
             'content_en',
             'content_fr',
             'content_it',
+            'original_language',
             'suggested_citation_long',
             'suggested_citation_short',
-            'original_language',
             'doi'
+            'slug',
         ]);
 
         return Inertia::render('Commentaries/Edit', [
@@ -148,6 +150,12 @@ class CommentariesController extends Controller
         
         $this->validate($request, [
             'label_de' => 'required',
+            'slug' => [
+                'required',
+                'alpha_dash',
+                new NonNumericRule,
+                Rule::unique('commentaries')->ignore($commentary->slug, 'slug')
+            ]
         ]);
 
         try {
@@ -160,16 +168,17 @@ class CommentariesController extends Controller
                 'content_en' => request('content_en'),
                 'content_fr' => request('content_fr'),
                 'content_it' => request('content_it'),
+                'original_language' => request('original_language'),
                 'suggested_citation_long' => request('suggested_citation_long'),
                 'suggested_citation_short' => request('suggested_citation_short'),
-                'original_language' => request('original_language'),
                 'doi' => request('doi'),
+                'slug' => request('slug'),
             ]);
 
-            return redirect(route('commentaries.edit', $commentary->id))->with('success', 'Commentary updated.');
+            return redirect(route('commentaries.edit', $commentary->slug))->with('success', 'Commentary updated.');
         }
         catch (Exception $e) {
-            return redirect(route('commentaries.edit', $commentary->id))->with('error', $e->getMessage());
+            return redirect(route('commentaries.edit', $commentary->slug))->with('error', $e->getMessage());
         }
     }
 

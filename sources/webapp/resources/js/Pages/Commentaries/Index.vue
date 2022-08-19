@@ -69,7 +69,7 @@
             </thead>
 
             <tbody class="divide-y divide-gray-200 bg-white">
-              <tr v-for="commentary in commentaries.data" :key="commentary.id">
+              <tr v-for="commentary in commentaries.data" :key="commentary.slug">
                 <td class="whitespace-nowrap px-4 py-3.5 text-sm text-gray-500">
                   {{ commentary.label_de }}
                 </td>
@@ -83,7 +83,7 @@
                 </td>
 
                 <td v-if="$page.props.can['edit-commentaries']" class="relative whitespace-nowrap px-4 py-3.5 text-right text-sm font-medium">
-                  <Link :href="`/cms/commentaries/${commentary.id}/edit`" class="text-indigo-600 hover:text-indigo-900">
+                  <Link :href="`/cms/commentaries/${commentary.slug}/edit`" class="text-indigo-600 hover:text-indigo-900">
                     Edit<span class="sr-only">, {{ commentary.label_de }}</span>
                   </Link>
                 </td>
@@ -154,7 +154,7 @@
       message: 'Are you sure you want to delete this commentary?',
       confirmLabel: 'Delete',
       confirmCallback: () => {
-        Inertia.post('/cms/commentaries/' + commentary.id, { _method: 'DELETE' })
+        Inertia.post('/cms/commentaries/' + commentary.slug, { _method: 'DELETE' })
       }
     }
     emitter.emit('open-modal', payload)
