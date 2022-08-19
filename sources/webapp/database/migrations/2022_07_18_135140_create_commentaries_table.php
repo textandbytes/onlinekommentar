@@ -27,7 +27,7 @@ return new class extends Migration
             $table->enum('original_language', ['de', 'en', 'fr', 'it'])->default('de');
             $table->text('suggested_citation_long')->nullable();
             $table->text('suggested_citation_short')->nullable();
-            $table->string('doi')->nullable();
+            $table->string('doi')->unique()->nullable();
             $table->enum('status', ['draft', 'in_review', 'published'])->default('draft');
             $table->timestamps();
         });
