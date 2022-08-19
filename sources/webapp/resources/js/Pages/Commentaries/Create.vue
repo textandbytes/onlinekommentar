@@ -11,14 +11,70 @@
   <div class="max-w-7xl bg-white rounded-md shadow overflow-hidden">
     <form @submit.prevent="store">
       <div class="flex flex-col -mb-8 -mr-6 p-8">
+        <TextInput
+          v-model="form.label_de"
+          :error="form.errors.label_de"
+          :required="true"
+          class="pb-8 pr-6 w-full"
+          label="Label (de)"
+        />
+
+        <TipTapEditor
+          v-model="form.content_de"
+          :error="form.errors.content_de"
+          class="pb-8 pr-6 w-full"
+          label="Content (de)"
+        />
+
+        <TextInput
+          v-model="form.label_en"
+          :error="form.errors.label_en"
+          class="pb-8 pr-6 w-full"
+          label="Label (en)"
+        />
+
+        <TipTapEditor
+          v-model="form.content_en"
+          :error="form.errors.content_en"
+          class="pb-8 pr-6 w-full"
+          label="Content (en)"
+        />
+
+        <TextInput
+          v-model="form.label_fr"
+          :error="form.errors.label_fr"
+          class="pb-8 pr-6 w-full"
+          label="Label (fr)"
+        />
+
+        <TipTapEditor
+          v-model="form.content_fr"
+          :error="form.errors.content_fr"
+          class="pb-8 pr-6 w-full"
+          label="Content (fr)"
+        />
+
+        <TextInput
+          v-model="form.label_it"
+          :error="form.errors.label_it"
+          class="pb-8 pr-6 w-full"
+          label="Label (it)"
+        />
+
+        <TipTapEditor
+          v-model="form.content_it"
+          :error="form.errors.content_it"
+          class="pb-8 pr-6 w-full"
+          label="Content (it)"
+        />
+
         <SelectInput
           v-model="form.original_language"
           :error="form.errors.original_language"
-          :required="true"
           class="pb-8 pr-6 w-full"
           label="Original language">
           <option
-            v-for="language in languages"
+            v-for="(language, index) in languages"
             :value="language">
             {{ __(language) }}
           </option>
@@ -36,42 +92,6 @@
           :error="form.errors.suggested_citation_short"
           class="pb-8 pr-6 w-full"
           label="Suggested citation (short)"
-        />
-
-        <TextInput
-          v-model="form.doi"
-          :error="form.errors.doi"
-          class="pb-8 pr-6 w-full"
-          label="DOI"
-        />
-
-        <TipTapEditor
-          v-model="form.content_de"
-          :error="form.errors.content_de"
-          :required="true"
-          class="pb-8 pr-6 w-full"
-          label="Content (de)"
-        />
-
-        <TipTapEditor
-          v-model="form.content_en"
-          :error="form.errors.content_en"
-          class="pb-8 pr-6 w-full"
-          label="Content (en)"
-        />
-
-        <TipTapEditor
-          v-model="form.content_fr"
-          :error="form.errors.content_fr"
-          class="pb-8 pr-6 w-full"
-          label="Content (fr)"
-        />
-
-        <TipTapEditor
-          v-model="form.content_it"
-          :error="form.errors.content_it"
-          class="pb-8 pr-6 w-full"
-          label="Content (it)"
         />
       </div>
 
@@ -102,19 +122,22 @@
   import SelectInput from '@/Shared/SelectInput'
   import LoadingButton from '@/Shared/LoadingButton'
 
-  defineProps({
+  const props = defineProps({
     languages: { type: Array, required: true }
   })
 
   const form = useForm({
-    original_language: null,
-    suggested_citation_long: null,
-    suggested_citation_short: null,
-    doi: null,
+    label_de: null,
+    label_en: null,
+    label_fr: null,
+    label_it: null,
     content_de: null,
     content_en: null,
     content_fr: null,
     content_it: null,
+    original_language: props.languages[0],
+    suggested_citation_long: null,
+    suggested_citation_short: null,
   })
 
   const store = () => {

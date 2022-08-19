@@ -15,6 +15,10 @@ class Commentary extends Model
      * @var string[]
      */
     protected $fillable = [
+        'label_de',
+        'label_en',
+        'label_fr',
+        'label_it',
         'content_de',
         'content_en',
         'content_fr',

@@ -24,7 +24,7 @@ class CommentariesController extends Controller
         return Inertia::render('Commentaries/Index', [
             'commentaries' => Commentary::query()
                 ->when(\Request::input('search'), function ($query, $search) {
-                    $query->where('content_de', 'like', "%{$search}%");
+                    $query->where('label_de', 'like', "%{$search}%");
                     $query->orWhere('original_language', 'like', "%{$search}%");
                     $query->orWhere('status', 'like', "%{$search}%");
                 })
@@ -32,7 +32,7 @@ class CommentariesController extends Controller
                 ->withQueryString()
                 ->through(fn ($commentary) => [
                     'id' => $commentary->id,
-                    'content_de' => $commentary->content_de,
+                    'label_de' => $commentary->label_de,
                     'original_language' => $commentary->original_language,
                     'status' => $commentary->status,
                 ]),
@@ -65,20 +65,22 @@ class CommentariesController extends Controller
         abort_if(Gate::denies('create-commentaries'), Response::HTTP_FORBIDDEN, __('cms.authorization_error'));
 
         $this->validate($request, [
-            'content_de' => 'required',
-            'original_language' => 'required',
+            'label_de' => 'required',
         ]);
 
         try {
-            // create the commentary
             $commentary = Commentary::create([
+                'label_de' => request('label_de'),
+                'label_en' => request('label_en'),
+                'label_fr' => request('label_fr'),
+                'label_it' => request('label_it'),
                 'content_de' => request('content_de'),
                 'content_en' => request('content_en'),
                 'content_fr' => request('content_fr'),
                 'content_it' => request('content_it'),
+                'original_language' => request('original_language'),
                 'suggested_citation_long' => request('suggested_citation_long'),
                 'suggested_citation_short' => request('suggested_citation_short'),
-                'original_language' => request('original_language'),
                 'doi' => request('doi'),
             ]);
 
@@ -113,6 +115,10 @@ class CommentariesController extends Controller
         // return only pertinent fields for the commentary
         $commentaryToEdit = $commentary->only([
             'id',
+            'label_de',
+            'label_en',
+            'label_fr',
+            'label_it',
             'content_de',
             'content_en',
             'content_fr',
@@ -141,12 +147,15 @@ class CommentariesController extends Controller
         abort_if(Gate::denies('edit-commentaries'), Response::HTTP_FORBIDDEN, __('cms.authorization_error'));
         
         $this->validate($request, [
-            'content_de' => 'required',
-            'original_language' => 'required',
+            'label_de' => 'required',
         ]);
 
         try {
             $commentary->update([
+                'label_de' => request('label_de'),
+                'label_en' => request('label_en'),
+                'label_fr' => request('label_fr'),
+                'label_it' => request('label_it'),
                 'content_de' => request('content_de'),
                 'content_en' => request('content_en'),
                 'content_fr' => request('content_fr'),

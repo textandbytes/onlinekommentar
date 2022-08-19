@@ -43,7 +43,7 @@
             <thead class="bg-gray-50">
               <tr>
                 <th scope="col" class="px-4 py-3.5 text-left text-sm font-semibold text-gray-900">
-                  Content
+                  Label (de)
                 </th>
 
                 <th scope="col" class="px-4 py-3.5 text-left text-sm font-semibold text-gray-900">
@@ -69,10 +69,9 @@
             </thead>
 
             <tbody class="divide-y divide-gray-200 bg-white">
-              <tr v-for="commentary in commentaries.data" :key="commentary.email">
-                <td
-                  class="px-4 py-3.5 text-sm text-gray-500"
-                  v-html="commentary.content_de">
+              <tr v-for="commentary in commentaries.data" :key="commentary.id">
+                <td class="whitespace-nowrap px-4 py-3.5 text-sm text-gray-500">
+                  {{ commentary.label_de }}
                 </td>
 
                 <td class="whitespace-nowrap px-4 py-3.5 text-sm text-gray-500">
@@ -85,7 +84,7 @@
 
                 <td v-if="$page.props.can['edit-commentaries']" class="relative whitespace-nowrap px-4 py-3.5 text-right text-sm font-medium">
                   <Link :href="`/cms/commentaries/${commentary.id}/edit`" class="text-indigo-600 hover:text-indigo-900">
-                    Edit<span class="sr-only">, {{ commentary.id }}</span>
+                    Edit<span class="sr-only">, {{ commentary.label_de }}</span>
                   </Link>
                 </td>
 
@@ -94,7 +93,7 @@
                     type="button"
                     @click.prevent="onDelete(commentary)"
                     class="text-red-600 hover:text-red-900 cursor-pointer">
-                    Delete<span class="sr-only">, {{ commentary.id }}</span>
+                    Delete<span class="sr-only">, {{ commentary.label_de }}</span>
                   </button>
                 </td>
               </tr>
