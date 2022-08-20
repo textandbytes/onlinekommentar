@@ -33,6 +33,7 @@ class CommentariesController extends Controller
                 ->paginate(20)
                 ->withQueryString()
                 ->through(fn ($commentary) => [
+                    'id' => $commentary->id,
                     'label_de' => $commentary->label_de,
                     'original_language' => $commentary->original_language,
                     'status' => $commentary->status,
@@ -120,6 +121,7 @@ class CommentariesController extends Controller
 
         // return only pertinent fields for the commentary
         $commentaryToEdit = $commentary->only([
+            'id',
             'label_de',
             'label_en',
             'label_fr',

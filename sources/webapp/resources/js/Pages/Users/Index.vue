@@ -15,117 +15,29 @@
     </Link>
   </div>
 
-  <div 
-    v-if="users.data.length > 0 || search !== undefined"
-    class="flex flex-col mt-6">
-    <div class="flex items-end justify-between mb-6">
-      <input
-        v-model="search"
-        type="text"
-        placeholder="Search..."
-        size="40"
-        class="border px-2 rounded-lg focus:ring-ok-blue-500"
-      />
-
-      <Pagination
-        v-if="showPagination"
-        :links="users.links"
-        class="text-right"
-      />
-    </div>
-
-    <div 
-      v-if="users.data.length > 0"
-      class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
-      <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
-          <table class="min-w-full divide-y divide-gray-300">
-            <thead class="bg-gray-50">
-              <tr>
-                <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">
-                  Name
-                </th>
-
-                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                  E-Mail
-                </th>
-
-                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                  Role
-                </th>
-
-                <th v-if="$page.props.can['edit-users']" scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6 text-right text-sm font-semibold text-gray-900">
-                  <span class="sr-only">
-                    Edit
-                  </span>
-                </th>
-
-                <th v-if="$page.props.can['delete-users']" scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6 text-right text-sm font-semibold text-gray-900">
-                  <span class="sr-only">
-                    Delete
-                  </span>
-                </th>
-              </tr>
-            </thead>
-
-            <tbody class="divide-y divide-gray-200 bg-white">
-              <tr v-for="user in users.data" :key="user.email">
-                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
-                  <div class="flex items-center">
-                    <div class="h-10 w-10 flex-shrink-0">
-                      <img :src="user.profile_photo_url" :alt="user.name" class="rounded-full">
-                    </div>
-                    <div class="ml-4">
-                      <div class="font-medium text-gray-900">
-                        {{ user.name }}
-                      </div>
-                    </div>
-                  </div>
-                </td>
-
-                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                  <div class="text-gray-500">
-                    {{ user.email }}
-                  </div>
-                </td>
-
-                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                  {{ __(user.role) }}
-                </td>
-
-                <td v-if="$page.props.can['edit-users']" class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                  <Link :href="`/cms/users/${user.id}/edit`" class="text-indigo-600 hover:text-indigo-900">
-                    Edit<span class="sr-only">, {{ user.name }}</span>
-                  </Link>
-                </td>
-
-                <td v-if="$page.props.can['delete-users']" class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                  <button
-                    type="button"
-                    @click.prevent="onDelete(user)"
-                    class="text-red-600 hover:text-red-900 cursor-pointer">
-                    Delete<span class="sr-only">, {{ user.name }}</span>
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+  <SelectableTableView
+    :rows="users"
+    :columns="columns"
+    :filters="filters"
+    :editable="$page.props.can['edit-users']"
+    @on-search="onSearch"
+    @on-select="onSelect">
+    <template v-slot:row-data="user">
+      <div v-if="user.property === 'name'" class="flex items-center px-6 py-4 focus:text-indigo-500">
+        <!-- profile photo and name-->
+        <div class="h-10 w-10 flex-shrink-0">
+          <img :src="user.profile_photo_url" :alt="user.name" class="rounded-full">
+        </div>
+        <div class="ml-4 font-medium text-sm text-gray-900">
+          {{ user.name }}
         </div>
       </div>
-    </div>
-    <div v-else>
-      No users found.
-    </div>
 
-    <Pagination
-      v-if="showPagination"
-      :links="users.links"
-      class="text-right my-6"
-    />
-  </div>
-  <div v-else class="mt-6">
-    No users exist.
-  </div>
+      <div v-else-if="columns.includes(user.property)" class="flex items-center px-6 py-4 text-sm text-gray-500">
+        {{ user[user.property] }}
+      </div>
+    </template>
+  </SelectableTableView>
 </template>
 
 <script>
@@ -137,37 +49,22 @@
 </script>
 
 <script setup>
-  import { ref, computed, watch } from 'vue'
   import { Inertia } from '@inertiajs/inertia'
   import { Link } from '@inertiajs/inertia-vue3'
-  import Pagination from '@/Shared/cms/Pagination'
-  import debounce from 'lodash/debounce'
-  import useEmitter from '../../composables/useEmitter'
+  import SelectableTableView from '@/Shared/SelectableTableView'
 
-  const emitter = useEmitter()
-
-  const props = defineProps({
+  defineProps({
     users: { type: Object, required: true },
     filters: { type: Object, required: true }
   })
 
-  const search = ref(props.filters.search)
+  const columns = ['name', 'email', 'role']
 
-  const showPagination = computed(() => props.users.last_page > 1)
+  const onSearch = (query) => {
+    Inertia.get('/cms/users', { search: query }, { preserveState: true, replace: true })
+  }
 
-  watch(search, debounce((value) => {
-    Inertia.get('/cms/users', { search: value }, { preserveState: true, replace: true })
-  }, 300))
-
-  const onDelete = (user) => {
-    let payload = {
-      title: 'Delete User',
-      message: 'Are you sure you want to delete user \'' + user.name + '\'?',
-      confirmLabel: 'Delete',
-      confirmCallback: () => {
-        Inertia.post('/cms/users/' + user.id, { _method: 'DELETE' })
-      }
-    }
-    emitter.emit('open-modal', payload)
+  const onSelect = (user) => {
+    Inertia.get(`/cms/users/${user.id}/edit`)
   }
 </script>

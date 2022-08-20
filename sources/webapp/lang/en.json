@@ -1,4 +1,8 @@
 {
+  "name": "Name",
+  "email": "E-mail",
+  "role": "Role",
+
   "admin": "Administrator",
   "editor": "Editor",
   "commentator": "Commentator",

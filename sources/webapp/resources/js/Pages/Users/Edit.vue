@@ -9,7 +9,7 @@
   </h1>
 
   <div class="max-w-7xl bg-white rounded-md shadow overflow-hidden">
-    <form @submit.prevent="update">
+    <form @submit.prevent="onUpdate">
       <div class="flex flex-col -mb-8 -mr-6 p-8">
         <TextInput
           v-model="form.name"
@@ -60,10 +60,19 @@
         />
       </div>
 
-      <div class="flex items-center justify-end px-8 py-4 bg-gray-50 border-t border-gray-100">
+      <div class="flex items-center justify-between px-8 py-4 bg-gray-50 border-t border-gray-100">
+        <button
+          v-if="$page.props.can['delete-users']"
+          class="text-red-600 hover:underline"
+          tabindex="-1"
+          type="button"
+          @click="onDelete(userToEdit)">
+          Delete User
+        </button>
+
         <LoadingButton
           :loading="form.processing"
-          class="btn-indigo"
+          class="btn-indigo ml-auto"
           type="submit">
           Update User
         </LoadingButton>
@@ -81,10 +90,14 @@
 </script>
 
 <script setup>
+  import { Inertia } from '@inertiajs/inertia'
   import { useForm } from '@inertiajs/inertia-vue3'
   import TextInput from '@/Shared/TextInput'
   import SelectInput from '@/Shared/SelectInput'
   import LoadingButton from '@/Shared/LoadingButton'
+  import useEmitter from '../../composables/useEmitter'
+
+  const emitter = useEmitter()
 
   const props = defineProps({
     userToEdit: { type: Object, required: true },
@@ -99,9 +112,21 @@
     password_confirmation: null,
   })
 
-  const update = () => {
+  const onUpdate = () => {
     form.put(`/cms/users/${props.userToEdit.id}`, {
       onSuccess: () => form.reset('password', 'password_confirmation')
     })
+  }
+
+  const onDelete = (user) => {
+    let payload = {
+      title: 'Delete User',
+      message: `Are you sure you want to delete user '${user.name}'?`,
+      confirmLabel: 'Delete',
+      confirmCallback: () => {
+        Inertia.post(`/cms/users/${user.id}`, { _method: 'DELETE' })
+      }
+    }
+    emitter.emit('open-modal', payload)
   }
 </script>
