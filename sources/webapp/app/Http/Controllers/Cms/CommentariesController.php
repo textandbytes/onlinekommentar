@@ -7,6 +7,7 @@ use App\Models\Commentary;
 use App\Rules\NonNumericRule;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\Rule;
 use Inertia\Inertia;
@@ -84,11 +85,7 @@ class CommentariesController extends Controller
                 'original_language' => request('original_language'),
                 'suggested_citation_long' => request('suggested_citation_long'),
                 'suggested_citation_short' => request('suggested_citation_short'),
-            ]);
-
-            // auto-generate a doi based on the slug
-            $commentary->update([
-                'doi' => 'xx.xxxx/onlinekommentar.' . $commentary->slug
+                'doi' => 'xx.xxxx/onlinekommentar.' . Str::of(request('label_de'))->slug('-')  // auto-generate a doi based on the sluggable version of the label
             ]);
 
             return redirect(route('commentaries.index'))->with('success', 'Commentary created.');
