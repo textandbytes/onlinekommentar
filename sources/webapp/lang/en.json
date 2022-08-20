@@ -3,6 +3,10 @@
   "email": "E-mail",
   "role": "Role",
 
+  "label_de": "Label (de)",
+  "original_language": "Original Language",
+  "status": "Status",
+
   "admin": "Administrator",
   "editor": "Editor",
   "commentator": "Commentator",
