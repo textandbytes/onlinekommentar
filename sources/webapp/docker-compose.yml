@@ -3,7 +3,7 @@ version: '3.8'
 services:
   nginx:
     build:
-      context: ../../provisioning
+      context: ../../provisioning/local
       dockerfile: nginx.dockerfile
     ports:
       - 8001:80
@@ -28,14 +28,14 @@ services:
 
   php:
     build:
-      context: ../../provisioning
+      context: ../../provisioning/local
       dockerfile: php.dockerfile
     volumes:
       - ./:/var/www/html
 
   composer:
     build:
-      context: ../../provisioning
+      context: ../../provisioning/local
       dockerfile: composer.dockerfile
     volumes:
       - ./:/var/www/html
@@ -50,7 +50,7 @@ services:
 
   artisan:
     build:
-      context: ../../provisioning
+      context: ../../provisioning/local
       dockerfile: php.dockerfile
     volumes:
       - ./:/var/www/html
