@@ -25,7 +25,7 @@ class UsersController extends Controller
     {
         abort_if(Gate::denies('view-users'), Response::HTTP_FORBIDDEN, __('cms.authorization_error'));
 
-        return Inertia::render('Users/Index', [
+        return Inertia::render('Cms/Users/Index', [
             'users' => User::query()
                 ->with('roles')
                 ->where('id', '!=', Auth::id())
@@ -59,7 +59,7 @@ class UsersController extends Controller
     {
         abort_if(Gate::denies('create-users'), Response::HTTP_FORBIDDEN, __('cms.authorization_error'));
 
-        return Inertia::render('Users/Create', [
+        return Inertia::render('Cms/Users/Create', [
             'roles' => Role::pluck('name')
         ]);
     }
@@ -135,7 +135,7 @@ class UsersController extends Controller
         $userToEdit = $user->only(['id', 'name', 'email']);
         $userToEdit['role'] = count($userRoles) > 0 ? $userRoles[0] : null;
 
-        return Inertia::render('Users/Edit', [
+        return Inertia::render('Cms/Users/Edit', [
             'userToEdit' => $userToEdit,
             'roles' => $roles
         ]);

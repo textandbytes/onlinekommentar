@@ -147,7 +147,7 @@
   import TipTapEditor from '@/TipTapEditor/TipTapEditor'
   import SelectInput from '@/Shared/SelectInput'
   import LoadingButton from '@/Shared/LoadingButton'
-  import useEmitter from '../../composables/useEmitter'
+  import useEmitter from '@/composables/useEmitter'
 
   const emitter = useEmitter()
 

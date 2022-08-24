@@ -45,11 +45,11 @@ Route::group(['prefix' => '{locale?}', 'where' => ['locale' => implode('|', Conf
 // cms routes
 Route::prefix('cms')->middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
+        return Inertia::render('Cms/Dashboard');
     })->name('dashboard');
 
     Route::get('/', function () {
-        return Inertia::render('Dashboard');
+        return Inertia::render('Cms/Dashboard');
     })->name('cms');
 
     Route::resource('tree', DocumentTreeController::class);
@@ -58,4 +58,3 @@ Route::prefix('cms')->middleware(['auth:sanctum', config('jetstream.auth_session
 
     Route::resource('commentaries', CommentariesController::class);
 });
-

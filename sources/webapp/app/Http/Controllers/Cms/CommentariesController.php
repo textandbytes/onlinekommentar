@@ -24,7 +24,7 @@ class CommentariesController extends Controller
     {
         abort_if(Gate::denies('view-commentaries'), Response::HTTP_FORBIDDEN, __('cms.authorization_error'));
 
-        return Inertia::render('Commentaries/Index', [
+        return Inertia::render('Cms/Commentaries/Index', [
             'commentaries' => Commentary::query()
                 ->when(\Request::input('search'), function ($query, $search) {
                     $query->where('label_de', 'like', "%{$search}%");
@@ -53,7 +53,7 @@ class CommentariesController extends Controller
     {
         abort_if(Gate::denies('create-commentaries'), Response::HTTP_FORBIDDEN, __('cms.authorization_error'));
 
-        return Inertia::render('Commentaries/Create', [
+        return Inertia::render('Cms/Commentaries/Create', [
             'languages' => ['de', 'en', 'fr', 'it'],
         ]);
     }
@@ -134,7 +134,7 @@ class CommentariesController extends Controller
             'slug',
         ]);
 
-        return Inertia::render('Commentaries/Edit', [
+        return Inertia::render('Cms/Commentaries/Edit', [
             'commentary' => $commentaryToEdit,
             'languages' => ['de', 'en', 'fr', 'it'],
         ]);

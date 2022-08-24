@@ -60,7 +60,7 @@
   import { ref, onMounted } from 'vue'
   import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
   import { ExclamationIcon, XIcon } from '@heroicons/vue/outline'
-  import useEmitter from '../composables/useEmitter'
+  import useEmitter from '@/composables/useEmitter'
 
   const emitter = useEmitter()
 

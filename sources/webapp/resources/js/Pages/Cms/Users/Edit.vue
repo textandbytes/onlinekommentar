@@ -95,7 +95,7 @@
   import TextInput from '@/Shared/TextInput'
   import SelectInput from '@/Shared/SelectInput'
   import LoadingButton from '@/Shared/LoadingButton'
-  import useEmitter from '../../composables/useEmitter'
+  import useEmitter from '@/composables/useEmitter'
 
   const emitter = useEmitter()
 
