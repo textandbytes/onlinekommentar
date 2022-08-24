@@ -24,20 +24,20 @@ use Inertia\Inertia;
 Route::group(['prefix' => '{locale?}', 'where' => ['locale' => implode('|', Config::get('app.locales'))], 'middleware' => ['web']], function() {
     Route::get('/', function () {
         return Inertia::render('Frontend/Home');
-    })->name('Home');
+    })->name('Frontend/Home');
 
     // commentaries
-    Route::get('kommentare', [CommentariesControllerFrontend::class, 'index']);
+    Route::get('kommentare', [CommentariesControllerFrontend::class, 'index'])->name('Frontend/Commentaries');
 
     // about
     Route::get('/ueber-onlinekommentar', function () {
         return Inertia::render('Frontend/About');
-    })->name('About');
+    })->name('Frontend/About');
 
     // contact
     Route::get('/contact', function () {
         return Inertia::render('Frontend/Contact');
-    })->name('Contact');
+    })->name('Frontend/Contact');
 
     Route::get('/tree', [DocumentTreeControllerFrontend::class, 'index']);
 });
