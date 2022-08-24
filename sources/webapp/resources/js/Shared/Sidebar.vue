@@ -23,8 +23,11 @@
 </template>
 
 <script setup>
-  import { ref, onMounted } from 'vue'
+  import { ref, computed, onMounted } from 'vue'
+  import { usePage } from '@inertiajs/inertia-vue3'
   import TreeFrontend from "../Shared/TreeFrontend";
+
+  const locale = computed(() => usePage().props.value.locale)
 
   const isSidebarOpen = ref(false)
   const treeData = ref({})
@@ -35,7 +38,7 @@
 
   onMounted(() => {
     // make an axios request to get the document tree
-    axios.get('/tree')
+    axios.get(`/${locale.value}/tree`)
       .then(response => {
         treeData.value = response.data
       })
@@ -43,7 +46,6 @@
         console.log(error)
       })
   })
-
 </script>
 
 <style lang="postcss" scope>
