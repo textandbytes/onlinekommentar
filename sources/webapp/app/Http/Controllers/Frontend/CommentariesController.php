@@ -18,7 +18,7 @@ class CommentariesController extends Controller
     {
         $commentaries = Commentary::all('id', 'slug', 'label_' . app()->getLocale())->toArray();
 
-        return Inertia::render('Commentaries', [
+        return Inertia::render('Frontend/Commentaries', [
             'commentaries' => $commentaries
         ]);
     }

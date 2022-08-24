@@ -23,7 +23,7 @@ use Inertia\Inertia;
 // frontend routes
 Route::group(['prefix' => '{locale?}', 'where' => ['locale' => implode('|', Config::get('app.locales'))], 'middleware' => ['web']], function() {
     Route::get('/', function () {
-        return Inertia::render('Home');
+        return Inertia::render('Frontend/Home');
     })->name('Home');
 
     // commentaries
@@ -31,12 +31,12 @@ Route::group(['prefix' => '{locale?}', 'where' => ['locale' => implode('|', Conf
 
     // about
     Route::get('/ueber-onlinekommentar', function () {
-        return Inertia::render('About');
+        return Inertia::render('Frontend/About');
     })->name('About');
 
     // contact
     Route::get('/contact', function () {
-        return Inertia::render('Contact');
+        return Inertia::render('Frontend/Contact');
     })->name('Contact');
 
     Route::get('/tree', [DocumentTreeControllerFrontend::class, 'index']);
