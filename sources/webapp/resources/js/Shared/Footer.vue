@@ -1,61 +1,53 @@
 <template>
-   <footer class="bg-ok-yellow flex mt-8">
+  <footer class="bg-ok-yellow flex mt-8">
     <div class="left-top border-r border-ok-dark-gray">
-      
       <div class="pt-2 pl-12 border-b border-r border-ok-dark-gray">
-        <NavLink 
+        <NavLink
           href="/commentaries"
-          :active="$page.component === 'Commentaries'"
-        >
+          :active="$page.component === 'Commentaries'">
           Kommentare
         </NavLink>
       </div>
       
       <div class="pt-2 pl-4 border-b border-ok-dark-gray">
-        <NavLink 
+        <NavLink
           href="/"
-          :active="$page.component === 'Home'" 
-        >
+          :active="$page.component === 'Home'">
           Home
         </NavLink>
       </div>
       
       <div class="pt-2 pl-12 border-b border-r border-ok-dark-gray">
-         <NavLink 
+        <NavLink
           href="/authors"
-          :active="$page.component === 'Authors'"
-        >
+          :active="$page.component === 'Authors'">
           Autor:innen
         </NavLink>
       </div>
       
       <div class="pt-2 pl-4 border-b border-ok-dark-gray">
-         <NavLink 
-          href="/about"
-          :active="$page.component === 'About'" 
-        >
+        <NavLink
+          :href="`/${$page.props.locale}/ueber-onlinekommentar`"
+          :active="$page.component === 'About'">
           Über uns
         </NavLink>
       </div>
       
       <div class="pt-2 pl-12 border-b border-r border-ok-dark-gray">
-         <NavLink 
+        <NavLink
           href="/editors"
-          :active="$page.component === 'Editors'" 
-        >
+          :active="$page.component === 'Editors'">
           Herausgeber:innen
         </NavLink>
       </div>
       
       <div class="pt-2 pl-4 border-b border-ok-dark-gray">
         <NavLink 
-          href="/contact"
-          :active="$page.component === 'Contact'" 
-        >
+          :href="`/${$page.props.locale}/contact`"
+          :active="$page.component === 'Contact'">
           Kontakt
         </NavLink>
       </div>
-
     </div>
     
     <div class="border-b border-ok-dark-gray pt-4">
@@ -65,7 +57,6 @@
           <a href="/contact">Kontaktieren Sie uns</a>
         </button>
       </div>
-  
     </div>
     
     <div class="flex justify-between border-r border-ok-dark-gray">
@@ -94,20 +85,17 @@
     <div>
       <div class="flex flex-row justify-between px-8 pt-4">
         <div class="flex text-xs space-x-8">
-          <NavLink 
+          <NavLink
             href="/disclaimer"
-            :active="$page.component === 'Disclaimer'" 
-          >
+            :active="$page.component === 'Disclaimer'">
             Haftungsauschluss
           </NavLink>
   
-          <NavLink 
+          <NavLink
             href="/imprint"
-            :active="$page.component === 'Imprint'" 
-          >
+            :active="$page.component === 'Imprint'">
             Impressum
           </NavLink>
-  
         </div>
   
         <button class="w-20 text-center text-sm rounded-full border border-ok-dark-gray">
@@ -118,7 +106,6 @@
         </button>
       </div>
     </div>
-
   </footer>
 </template>
 
@@ -138,6 +125,4 @@
     grid-column-gap: 0px;
     grid-row-gap: 0px;
   }
-  
-
 </style>

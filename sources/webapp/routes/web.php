@@ -22,15 +22,19 @@ use Inertia\Inertia;
 // frontend routes
 Route::group(['prefix' => '{locale?}', 'where' => ['locale' => implode('|', Config::get('app.locales'))], 'middleware' => ['web']], function() {
     Route::get('/', function () {
-        return Inertia::render('Home', []);
+        return Inertia::render('Home');
     })->name('Home');
 
-    Route::get('/about', function () {
-        return Inertia::render('About', []);
+    Route::get('/kommentare', function () {
+        return Inertia::render('Commentaries');
+    })->name('Commentaries');
+
+    Route::get('/ueber-onlinekommentar', function () {
+        return Inertia::render('About');
     })->name('About');
 
     Route::get('/contact', function () {
-        return Inertia::render('Contact', []);
+        return Inertia::render('Contact');
     })->name('Contact');
 
     Route::get('/tree', [DocumentTreeControllerFrontend::class, 'index']);

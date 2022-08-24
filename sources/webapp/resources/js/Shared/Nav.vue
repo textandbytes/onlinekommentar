@@ -24,15 +24,15 @@
             Herausgeber:innen
           </NavLink>
 
-          <NavLink 
-            href="/about"
+          <NavLink
+            :href="`/${$page.props.locale}/ueber-onlinekommentar`"
             :active="$page.component === 'About'"
             @click="toggleMenu">
             Über uns
           </NavLink>
 
-          <NavLink 
-            href="/contact"
+          <NavLink
+            :href="`/${$page.props.locale}/contact`"
             :active="$page.component === 'Contact'"
             @click="toggleMenu">
             Kontakt
