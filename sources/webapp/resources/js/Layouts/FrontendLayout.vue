@@ -11,10 +11,8 @@
       <Sidebar />
     </header>
     
-    <main class="mt-8 p-6 mb-auto">
-      <div class="max-w-3xl mx-auto">
-        <slot />
-      </div>
+    <main class="max-w-7xl mx-auto mt-8 p-6 mb-auto">
+      <slot />
     </main>
   
     <Footer />
