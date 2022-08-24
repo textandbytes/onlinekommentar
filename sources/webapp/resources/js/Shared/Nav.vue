@@ -1,6 +1,6 @@
 <template>
   <Transition>
-    <div v-show="showMenu" class="absolute top-0 left-0 w-screen h-screen bg-ok-yellow">
+    <div v-show="showMenu" class="absolute top-0 left-0 w-screen h-screen bg-ok-yellow z-10">
       <nav class="flex h-screen justify-end items-center text-right mr-32 text-3xl">
         <ul class="flex flex-col list-style-none space-y-5">
           <NavLink 
