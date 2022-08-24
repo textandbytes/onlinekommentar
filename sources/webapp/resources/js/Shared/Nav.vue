@@ -4,7 +4,7 @@
       <nav class="flex h-screen justify-end items-center text-right mr-32 text-3xl">
         <ul class="flex flex-col list-style-none space-y-5">
           <NavLink 
-            href="/commentaries"
+            :href="`/${$page.props.locale}/kommentare`"
             :active="$page.component === 'Commentaries'"
             @click="toggleMenu">
             Kommentare

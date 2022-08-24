@@ -3,7 +3,7 @@
     <div class="left-top border-r border-ok-dark-gray">
       <div class="pt-2 pl-12 border-b border-r border-ok-dark-gray">
         <NavLink
-          href="/commentaries"
+          :href="`/${$page.props.locale}/kommentare`"
           :active="$page.component === 'Commentaries'">
           Kommentare
         </NavLink>

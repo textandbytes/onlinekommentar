@@ -3,6 +3,7 @@
 use App\Http\Controllers\Cms\CommentariesController;
 use App\Http\Controllers\Cms\DocumentTreeController;
 use App\Http\Controllers\Cms\UsersController;
+use App\Http\Controllers\Frontend\CommentariesController as CommentariesControllerFrontend;
 use App\Http\Controllers\Frontend\DocumentTreeController as DocumentTreeControllerFrontend;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -25,14 +26,15 @@ Route::group(['prefix' => '{locale?}', 'where' => ['locale' => implode('|', Conf
         return Inertia::render('Home');
     })->name('Home');
 
-    Route::get('/kommentare', function () {
-        return Inertia::render('Commentaries');
-    })->name('Commentaries');
+    // commentaries
+    Route::get('kommentare', [CommentariesControllerFrontend::class, 'index']);
 
+    // about
     Route::get('/ueber-onlinekommentar', function () {
         return Inertia::render('About');
     })->name('About');
 
+    // contact
     Route::get('/contact', function () {
         return Inertia::render('Contact');
     })->name('Contact');
