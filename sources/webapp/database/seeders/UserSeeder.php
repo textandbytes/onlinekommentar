@@ -26,9 +26,9 @@ class UserSeeder extends Seeder
         ])->assignRole('editor');
 
         User::factory()->create([
-            'name' => 'Commentator',
-            'email' => 'commentator@test.com',
-        ])->assignRole('commentator');
+            'name' => 'Author',
+            'email' => 'author@test.com',
+        ])->assignRole('author');
 
         User::factory()->create([
             'name' => 'Unknown',
