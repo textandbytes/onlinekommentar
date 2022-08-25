@@ -17,6 +17,7 @@ class CommentarySeeder extends Seeder
     {
         Commentary::factory()->create([
             'slug' => 'bv68',
+            'document_id' => 7,
             'label_de' => 'Art. 68 BV',
             'content_de' => '
                 <p>
@@ -82,6 +83,7 @@ class CommentarySeeder extends Seeder
 
         Commentary::factory()->create([
             'slug' => 'or11',
+            'document_id' => 9,
             'label_de' => 'Art. 11 OR',
             'content_de' => '
                 <p>
@@ -127,6 +129,7 @@ class CommentarySeeder extends Seeder
         
         Commentary::factory()->create([
             'slug' => 'or143',
+            'document_id' => 10,
             'label_de' => 'Art. 143 OR',
             'content_de' => '
                 <p>
@@ -161,6 +164,7 @@ class CommentarySeeder extends Seeder
         
         Commentary::factory()->create([
             'slug' => 'or701',
+            'document_id' => 11,
             'label_de' => 'Art. 701 OR',
             'content_de' => '
                 <p>
@@ -238,6 +242,7 @@ class CommentarySeeder extends Seeder
         
         Commentary::factory()->create([
             'slug' => 'iprg20',
+            'document_id' => 13,
             'label_de' => 'Art. 20 IPRG',
             'content_de' => '
                 <p>
@@ -317,6 +322,7 @@ class CommentarySeeder extends Seeder
         
         Commentary::factory()->create([
             'slug' => 'lugu32vorb',
+            'document_id' => 15,
             'label_de' => 'Art. 32 — 37 LugÜ',
             'content_de' => '
                 <p>
@@ -383,6 +389,7 @@ class CommentarySeeder extends Seeder
         
         Commentary::factory()->create([
             'slug' => 'lugu32',
+            'document_id' => 15,
             'label_de' => 'Art. 32 LugÜ',
             'content_de' => '
                 <p>
@@ -451,6 +458,7 @@ class CommentarySeeder extends Seeder
         
         Commentary::factory()->create([
             'slug' => 'stpo366',
+            'document_id' => 17,
             'label_de' => 'Art. 366 StPO',
             'content_de' => '
                 <p>

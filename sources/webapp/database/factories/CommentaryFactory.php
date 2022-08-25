@@ -25,6 +25,7 @@ class CommentaryFactory extends Factory
 
         return [
             'slug' => $slug,
+            'document_id' => null,
             'label_de' => $label,
             'content_de' => '<p>' . $this->faker->paragraph . '</p>',
             'suggested_citation_long' => $firstName . ' ' . $lastName . ', Kommentar zu ' . $label,

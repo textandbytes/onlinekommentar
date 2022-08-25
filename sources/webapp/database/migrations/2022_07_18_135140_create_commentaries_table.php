@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('commentaries', function (Blueprint $table) {
             $table->id();
             $table->string('slug')->unique()->nullable();
+            $table->unsignedSmallInteger('document_id')->nullable();
             $table->string('label_de');
             $table->string('label_en')->nullable();
             $table->string('label_fr')->nullable();
@@ -30,6 +31,11 @@ return new class extends Migration
             $table->string('doi')->unique()->nullable();
             $table->enum('status', ['draft', 'in_review', 'published'])->default('draft');
             $table->timestamps();
+
+            $table->foreign('document_id')
+                  ->references('id')
+                  ->on('document_tree')
+                  ->onDelete('cascade');
         });
     }
 
