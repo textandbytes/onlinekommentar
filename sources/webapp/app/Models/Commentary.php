@@ -34,6 +34,11 @@ class Commentary extends Model
         'slug',
     ];
 
+    public function document()
+    {
+        return $this->hasOne(DocumentTree::class, 'id', 'document_id');
+    }
+
     public function users()
     {
         return $this->belongsToMany(User::class, 'users_x_commentaries', 'commentary_id', 'user_id');

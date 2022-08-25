@@ -21,6 +21,11 @@ class DocumentTree extends Model
         return $this->hasMany(DocumentTree::class, 'parent_id');
     }
 
+    public function commentaries()
+    {
+        return $this->hasMany(Commentary::class, 'document_id', 'id');
+    }
+
    /**
      * Prepare tree data recursively
      *
