@@ -54,7 +54,7 @@
       <div class="px-8 pb-4">
         <div class="text-sm w-1/2">Haben Sie Fragen zum Konzept oder möchten Sie einen Kommentar für den Onlinekommentar verfassen?</div>
         <button class="mt-2 px-8 py-1 text-center uppercase text-xs rounded-full border border-ok-dark-gray">
-          <a href="/contact">Kontaktieren Sie uns</a>
+          <Link :href="`/${$page.props.locale}/contact`">Kontaktieren Sie uns</Link>
         </button>
       </div>
     </div>
