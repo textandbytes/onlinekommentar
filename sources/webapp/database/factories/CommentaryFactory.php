@@ -17,9 +17,9 @@ class CommentaryFactory extends Factory
     public function definition()
     {
         $randomNumber = $this->faker->numberBetween(500, 1000);
-        $randomChars =  $this->faker->countryCode;
+        $randomChars =  $this->faker->lexify('????');
         $slug = strtolower($randomChars) . $randomNumber;
-        $label = 'Art. ' . $randomNumber . ' ' . $randomChars;
+        $label = 'Art. ' . $randomNumber . ' ' . strtoupper($randomChars);
         $firstName = $this->faker->firstName;
         $lastName = $this->faker->lastName;
 
