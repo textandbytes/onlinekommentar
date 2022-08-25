@@ -7,7 +7,8 @@
     <div
       v-for="commentary in commentaries"
       :key="commentary.id"
-      class="flex flex-col items-center relative group transition ease-in-out delay-150 bg-white hover:bg-ok-orange p-8 cursor-pointer">
+      class="flex flex-col items-center relative group transition ease-in-out delay-150 bg-white hover:bg-ok-orange p-8 cursor-pointer"
+      @click="onClick(commentary)">
       <div class="text-xs uppercase mb-8">
         Bundesverfassung
       </div>
@@ -44,7 +45,20 @@
 </script>
 
 <script setup>
+  import { computed } from 'vue'
+  import { Inertia } from '@inertiajs/inertia'
+  import { usePage } from '@inertiajs/inertia-vue3'
+
   defineProps({
     commentaries: { type: Object, required: true }
   })
+
+  const locale = computed(() => usePage().props.value.locale)
+
+  const onClick = (commentary) => {
+    Inertia.visit(route('Frontend/Commentary', {
+      locale: locale.value,
+      commentary: commentary
+    }))
+  }
 </script>

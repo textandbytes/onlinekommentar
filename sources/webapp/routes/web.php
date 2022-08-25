@@ -27,7 +27,8 @@ Route::group(['prefix' => '{locale?}', 'where' => ['locale' => implode('|', Conf
     })->name('Frontend/Home');
 
     // commentaries
-    Route::get('kommentare', [CommentariesControllerFrontend::class, 'index'])->name('Frontend/Commentaries');
+    Route::get('/kommentare', [CommentariesControllerFrontend::class, 'index'])->name('Frontend/Commentaries');
+    Route::get('/kommentare/{commentary:slug}', [CommentariesControllerFrontend::class, 'show'])->name('Frontend/Commentary');
 
     // about
     Route::get('/ueber-onlinekommentar', function () {
