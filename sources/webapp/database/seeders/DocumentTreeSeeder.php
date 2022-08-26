@@ -173,10 +173,10 @@ class DocumentTreeSeeder extends Seeder
             'id'         => 11,
             'parent_id'  => 8,
             'sort'       => 3,
-            'label_de'   => '<p>3. Universalversammlung</p><p>Art. 701 OR</p>',
-            'label_en'   => '<p>3. Universal meeting</p><p>Art. 701 CO</p>',
-            'label_fr'   => '<p>3. Réunion de tous les actionnaires</p><p>Art. 701 CO</p>',
-            'label_it'   => '<p>3. Riunione di tutti gli azionisti</p><p>Art. 701 CO</p>',
+            'label_de'   => 'Art. 701 OR',
+            'label_en'   => 'Art. 701 CO',
+            'label_fr'   => 'Art. 701 CO',
+            'label_it'   => 'Art. 701 CO',
             'content_de' => '
                 <p><sup>1</sup>&nbsp;Die Eigentümer oder Vertreter sämtlicher Aktien können, falls kein Widerspruch erhoben wird, eine Generalversammlung ohne Einhaltung der für die Einberufung vorgeschriebenen Formvorschriften abhalten.</p>
                 <p><sup>2</sup>&nbsp;In dieser Versammlung kann über alle in den Geschäftskreis der Generalversammlung fallenden Gegenstände gültig verhandelt und Beschluss gefasst werden, solange die Eigentümer oder Vertreter sämtlicher Aktien anwesend sind.</p>
