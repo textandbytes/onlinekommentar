@@ -1,14 +1,22 @@
 
 <template>
   <article>
-    <header class="flex items-center justify-between py-4 px-8 lg:px-32">
-      <div class="hidden md:flex z-40">
-        <img src="/img/ok-logo-text.svg" alt="Onlinekommentar – der frei zugängliche Rechtskommenter" class="mt-4" />
-      </div>
-      
-      <Nav />
+    <header class="px-8 lg:px-32">
+      <div
+        class="flex items-start justify-between pt-8 pb-4 px-4"
+        :class="{ 'border-b border-black': $page.component !== 'Frontend/Home' }">
+        <div class="hidden md:flex z-40">
+          <img
+            src="/img/ok-logo-text.svg"
+            alt="Onlinekommentar – der frei zugängliche Rechtskommenter"
+            :width="$page.component !== 'Frontend/Home' ? 200 : null"
+          />
+        </div>
+        
+        <Nav />
 
-      <Sidebar />
+        <Sidebar />
+      </div>
     </header>
     
     <main class="max-w-7xl mx-auto mt-8 p-6 mb-auto">

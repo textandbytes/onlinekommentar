@@ -68,7 +68,7 @@
       />
 
       <li id="nav-menu" @click="toggleMenu" class="z-50">
-        <button type="button" class="w-32 uppercase rounded-full border border-black text-xs font-medium tracking-wider py-2 text-center inline-flex items-center justify-center mr-2 mb-2">
+        <button type="button" class="w-32 uppercase rounded-full border border-black text-xs font-medium tracking-wider py-3 text-center inline-flex items-center justify-center mr-2 mb-2">
           Menu
           <svg v-show="showMenu" class="ml-2" xmlns="http://www.w3.org/2000/svg" width="14.707" height="14.707" viewBox="0 0 14.707 14.707">
             <g id="X" transform="translate(-1792.387 -75.877)">
