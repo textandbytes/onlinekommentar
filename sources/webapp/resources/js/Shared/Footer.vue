@@ -4,7 +4,7 @@
       <div class="pt-2 pl-12 border-b border-r border-ok-dark-gray">
         <NavLink
           :href="`/${$page.props.locale}/kommentare`"
-          :active="$page.component === 'Commentaries'">
+          :active="$page.component === 'Frontend/Commentaries'">
           Kommentare
         </NavLink>
       </div>
@@ -12,7 +12,7 @@
       <div class="pt-2 pl-4 border-b border-ok-dark-gray">
         <NavLink
           href="/"
-          :active="$page.component === 'Home'">
+          :active="$page.component === 'Frontend/Home'">
           Home
         </NavLink>
       </div>
@@ -20,7 +20,7 @@
       <div class="pt-2 pl-12 border-b border-r border-ok-dark-gray">
         <NavLink
           href="/authors"
-          :active="$page.component === 'Authors'">
+          :active="$page.component === 'Frontend/Authors'">
           Autor:innen
         </NavLink>
       </div>
@@ -28,7 +28,7 @@
       <div class="pt-2 pl-4 border-b border-ok-dark-gray">
         <NavLink
           :href="`/${$page.props.locale}/ueber-onlinekommentar`"
-          :active="$page.component === 'About'">
+          :active="$page.component === 'Frontend/About'">
           Über uns
         </NavLink>
       </div>
@@ -36,7 +36,7 @@
       <div class="pt-2 pl-12 border-b border-r border-ok-dark-gray">
         <NavLink
           href="/editors"
-          :active="$page.component === 'Editors'">
+          :active="$page.component === 'Frontend/Editors'">
           Herausgeber:innen
         </NavLink>
       </div>
@@ -44,7 +44,7 @@
       <div class="pt-2 pl-4 border-b border-ok-dark-gray">
         <NavLink 
           :href="`/${$page.props.locale}/contact`"
-          :active="$page.component === 'Contact'">
+          :active="$page.component === 'Frontend/Contact'">
           Kontakt
         </NavLink>
       </div>
