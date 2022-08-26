@@ -1,1 +1,7 @@
-{}
+{
+  "commentaries": "Kommentare",
+  "list_view": "Listenansicht",
+  "grid_view": "Gridanansicht",
+  "document_filter_label": "Alle",
+  "view_commentary": "Anzeigen"
+}

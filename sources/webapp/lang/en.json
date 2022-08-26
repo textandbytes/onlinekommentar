@@ -37,5 +37,11 @@
   "cancel_footnote": "Cancel",
   "undo": "Undo",
   "redo": "Redo",
-  "clear": "Clear all"
+  "clear": "Clear all",
+
+  "commentaries": "Commentaries",
+  "list_view": "List view",
+  "grid_view": "Grid view",
+  "document_filter_label": "All",
+  "view_commentary": "View"
 }
