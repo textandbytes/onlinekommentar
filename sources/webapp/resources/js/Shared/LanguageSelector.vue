@@ -9,7 +9,7 @@
 
 <script setup>
   import { Inertia } from '@inertiajs/inertia'
-  import SimpleMenu from '../Menus/SimpleMenu.vue'
+  import SimpleMenu from '@/Menus/SimpleMenu'
 
   defineProps({
     languages: { type: Array, required: true },

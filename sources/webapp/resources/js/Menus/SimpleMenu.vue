@@ -2,8 +2,8 @@
   <Listbox as="div" v-if="options.length > 0" v-model="selected" v-slot="{ open }" @update:modelValue="onSelect">
     <div class="relative">
       <ListboxButton
-        class="w-full min-w-full shadow-sm text-xs px-2 py-1 cursor-pointer focus:outline-none"
-        :class="{ 'bg-white rounded-t-sm': open }">
+        class="w-full min-w-full text-xs px-2 py-1 cursor-pointer focus:outline-none"
+        :class="{ 'bg-white rounded-t-sm drop-shadow-2xl': open }">
         <div
           class="flex items-center space-x-2"
           :class="{ 'border-b border-black': !open }">
@@ -27,7 +27,7 @@
         leave-active-class="transition ease-in duration-100"
         leave-from-class="opacity-100"
         leave-to-class="opacity-0">
-        <ListboxOptions class="absolute w-full bg-white shadow-lg max-h-60 rounded-b-sm text-xs overflow-auto focus:outline-none z-10">
+        <ListboxOptions class="absolute w-full bg-white drop-shadow-2xl max-h-60 rounded-b-sm text-xs overflow-auto focus:outline-none z-10">
           <ListboxOption as="template" v-for="option in options" :key="option.id" :value="option" v-slot="{ active, selected }">
             <li :class="[{ 'bg-ok-beige': active }, 'cursor-pointer select-none relative px-2 py-1']">
               <span
