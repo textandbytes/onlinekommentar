@@ -19,7 +19,7 @@
       </div>
     </header>
     
-    <main class="max-w-7xl mx-auto mt-8 p-6 mb-auto">
+    <main class="px-8 lg:px-32 mx-auto mb-auto">
       <slot />
     </main>
   
