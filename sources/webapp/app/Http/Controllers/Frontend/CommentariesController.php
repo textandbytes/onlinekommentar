@@ -20,10 +20,24 @@ class CommentariesController extends Controller
      */
     public function index($locale)
     {
-        $commentaries = Commentary::all('id', 'slug', 'label_' . $locale)->toArray();
+        $commentaryGroups = Commentary::with('document')
+            ->get()
+            ->groupBy('document_id')
+            ->map(function ($group) use ($locale) {
+                return $group->map(function ($commentary) use ($locale) {
+                    return [
+                        'id' => $commentary->id,
+                        'slug' => $commentary->slug,
+                        'document_id' => $commentary->document_id,
+                        'document_label' => $commentary->document ? $commentary->document->{'label_' . $locale} : null,
+                        'label' => $commentary['label_' . $locale]
+                    ];
+                })->toArray();
+            })
+            ->toArray();
 
         return Inertia::render('Frontend/Commentaries', [
-            'commentaries' => $commentaries
+            'commentaryGroups' => array_values($commentaryGroups)
         ]);
     }
 

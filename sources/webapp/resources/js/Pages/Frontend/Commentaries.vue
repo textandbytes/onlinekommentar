@@ -84,11 +84,13 @@
   import { usePage } from '@inertiajs/inertia-vue3'
   import FlyoutMenuWithDividers from '@/Menus/FlyoutMenuWithDividers'
 
-  defineProps({
-    commentaries: { type: Object, required: true }
+  const props = defineProps({
+    commentaryGroups: { type: Object, required: true }
   })
 
   const locale = computed(() => usePage().props.value.locale)
+
+  const commentaries = computed(() => props.commentaryGroups.flat())
 
   const documents = [
     'Bundesverfassung (BV)',
