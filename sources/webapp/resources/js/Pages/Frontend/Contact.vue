@@ -3,7 +3,7 @@
     <title>Kontakt</title>
   </Head>
 
-  <div class="max-w-3xl mt-8 p-6">
+  <div class="max-w-3xl mx-auto mb-auto mt-8 p-6">
     <h1 class="text-2xl py-4 font-serif">
       Kontakt
     </h1>

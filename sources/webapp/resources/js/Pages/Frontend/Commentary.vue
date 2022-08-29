@@ -3,7 +3,7 @@
     <title>Kommentar</title>
   </Head>
 
-  <div class="max-w-6xl bg-white overflow-hidden px-24 py-12">
+  <div class="max-w-6xl mx-auto mb-auto bg-white overflow-hidden px-24 py-12">
     <div class="sm:grid sm:grid-cols-3 sm:gap-px py-4 border-b-2 border-black">
       <div class="flex items-center text-xs uppercase">
         Table of Contents

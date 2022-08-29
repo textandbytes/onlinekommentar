@@ -4,7 +4,7 @@
     <title>Startseite</title>
   </Head>
 
-  <div class="max-w-3xl mt-8 p-6">
+  <div class="max-w-3xl mx-auto mb-auto mt-8 p-6">
     <p class="mt-8 text-4xl leading-snug">
       Onlinekommentar.ch ist die erste gemeinnützige kostenlose Plattform für Open-Access-Kommentare in der Schweiz.
     </p>

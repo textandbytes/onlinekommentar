@@ -15,11 +15,11 @@
         
         <Nav />
 
-        <Sidebar />
+        <Sidebar class="hidden" />
       </div>
     </header>
     
-    <main class="px-8 lg:px-32 mx-auto mb-auto">
+    <main class="px-8 lg:px-32">
       <slot />
     </main>
   
