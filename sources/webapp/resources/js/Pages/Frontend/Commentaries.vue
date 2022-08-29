@@ -4,12 +4,12 @@
   </Head>
 
   <div class="flex flex-col">
-    <div class="flex items-center justify-between px-4 py-2 border-b border-black bg-white">
+    <div class="lg:flex lg:items-center lg:justify-between space-y-2 lg:space-y-0 p-4 border-b border-black bg-white">
       <div class="text-xs uppercase font-bold">
         {{ __('commentaries') }}
       </div>
 
-      <div class="flex space-x-2">
+      <div class="flex flex-col lg:flex-row space-y-2 lg:space-x-2 lg:space-y-0">
         <button
           type="button"
           class="inline-flex items-center px-3 py-1 border border-ok-dark-gray shadow-sm text-xs uppercase leading-4 font-medium rounded-sm text-black bg-white hover:bg-ok-light-beige focus:outline-none focus:ring-1"
@@ -25,7 +25,7 @@
 
         <FlyoutMenuWithDividers
           v-if="documents.length > 0"
-          class="min-w-[450px] max-w-[450px]"
+          class="lg:min-w-[300px] lg:max-w-[300px] xl:min-w-[450px] xl:max-w-[450px]"
           :label="__('document_filter_label')"
           :options="documents"
           :active-option="activeDocument"
