@@ -44,7 +44,7 @@
       <FlyoutMenuFullWidth
         label="Zitiervorschlag"
         :top-offset=8
-        class="relative flex justify-center w-1/2">
+        class="relative flex justify-center w-full md:w-3/4 lg:w-1/2">
         <SuggestedCitationsPanel :commentary="commentary" />
       </FlyoutMenuFullWidth>
     </div>
