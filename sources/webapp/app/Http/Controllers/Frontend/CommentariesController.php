@@ -30,7 +30,7 @@ class CommentariesController extends Controller
                         'slug' => $commentary->slug,
                         'document_id' => $commentary->document_id,
                         'document_label' => $commentary->document ? $commentary->document->{'label_' . $locale} : null,
-                        'label' => $commentary['label_' . $locale]
+                        'label' => $commentary->{'label_' . $locale}
                     ];
                 })->toArray();
             })

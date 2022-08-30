@@ -43,5 +43,7 @@
   "list_view": "List view",
   "grid_view": "Grid view",
   "document_filter_label": "All",
-  "view_commentary": "View"
+  "view_commentary": "View",
+
+  "copy_citation": "Copy"
 }
