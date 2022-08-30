@@ -5,5 +5,7 @@
   "document_filter_label": "Alle",
   "view_commentary": "Anzeigen",
 
-  "copy_citation": "Kopieren"
+  "copy_citation": "Kopieren",
+  "copied_citation": "Kopiert",
+  "copy_citation_error": "Fehler"
 }

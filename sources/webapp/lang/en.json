@@ -45,5 +45,7 @@
   "document_filter_label": "All",
   "view_commentary": "View",
 
-  "copy_citation": "Copy"
+  "copy_citation": "Copy",
+  "copied_citation": "Copied",
+  "copy_citation_error": "Error"
 }
