@@ -54,18 +54,26 @@ class CommentariesController extends Controller
         $content = $commentary['content_' . $locale];
 
         // add anchor attributes to the heading elements
-        $markupFixer = new MarkupFixer();
-        $contentMarkup = $markupFixer->fix($content);
+        $contentMarkup = null;
+        if ($content) {
+            $markupFixer = new MarkupFixer();
+            $contentMarkup = $markupFixer->fix($content);
+        }
 
         // generate table of contents from the heading elements
-        $tocGenerator = new TocGenerator();
-        $toc = $tocGenerator->getHtmlMenu($contentMarkup);
+        $toc = null;
+        if ($contentMarkup) {
+            $tocGenerator = new TocGenerator();
+            $toc = $tocGenerator->getHtmlMenu($contentMarkup);
+        }
+
 
         return Inertia::render('Frontend/Commentary', [
             'document' => $commentary->document,
             'commentary' => $commentary,
+            'content' => $contentMarkup,
             'tableOfContents' => $toc,
-            'content' => $contentMarkup
+            'versions' => null
         ]);
     }
 }
