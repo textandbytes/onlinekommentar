@@ -73,13 +73,13 @@
     editable: { type: Boolean, required: false, default: false },
   })
 
-  emits: ['on-search', 'on-select']
+  const emit = defineEmits(['on-search', 'on-select'])
 
   const search = ref(props.filters.search)
 
   const showPagination = computed(() => props.rows.last_page > 1)
 
   watch(search, debounce((value) => {
-    this.$emit('on-search', value)
+    emit('on-search', value)
   }, 300))
 </script>
