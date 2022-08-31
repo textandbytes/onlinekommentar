@@ -10,12 +10,6 @@
         size="40"
         class="border px-2 rounded-lg focus:ring-ok-blue-500"
       />
-
-      <Pagination
-        v-if="showPagination"
-        :links="rows.links"
-        class="text-right"
-      />
     </div>
 
     <div 
@@ -58,7 +52,7 @@
     <Pagination
       v-if="showPagination"
       :links="rows.links"
-      class="text-right my-6"
+      class="flex justify-center text-right my-6"
     />
   </div>
   <div v-else class="mt-6">
