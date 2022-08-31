@@ -4,7 +4,7 @@
   </Head>
 
   <div class="flex flex-col">
-    <div class="lg:flex lg:items-center lg:justify-between space-y-2 lg:space-y-0 p-4 border-b border-black bg-white">
+    <div class="lg:flex lg:items-center lg:justify-between space-y-2 lg:space-y-0 p-4 md:px-6 border-b border-black bg-white">
       <div class="text-xs uppercase font-bold">
         {{ __('commentaries') }}
       </div>
@@ -34,17 +34,72 @@
       </div>
     </div>
 
-    <CommentariesListView
+    <StackedListView
       v-if="viewMode === 'list'"
-      :commentary-groups="commentaryGroups"
-      @selected="onSelected"
-    />
+      :directory="commentaryGroups"
+      @selected="onSelected">
+      <template v-slot:item="commentary">
+        <td class="flex flex-col whitespace-nowrap py-3 text-gray-800">
+          <div class="text-lg font-semibold font-serif">
+            {{ commentary.label }}
+          </div>
+          <div class="whitespace-normal text-sm text-gray-500 md:hidden">
+            Ein kommentar von <i>Marco Zollinger</i>
+          </div>
+          <div class="whitespace-normal text-sm text-gray-500 md:hidden">
+            15.05.2021
+          </div>
+        </td>
+        <td class="py-3 hidden md:flex">
+          <div class="whitespace-normal text-sm text-gray-500">
+            Ein kommentar von <i>Marco Zollinger</i>
+          </div>
+        </td>
+        <td class="py-3 hidden md:flex">
+          <div class="whitespace-normal text-sm text-gray-500">
+            15.05.2021
+          </div>
+        </td>
+        <td class="relative whitespace-nowrap py-3 pl-3 text-right text-sm font-medium">
+          <button
+            type="button"
+            class="transition ease-in-out delay-150 inline-flex items-center px-3 py-1.5 border border-2 border-black text-xs font-medium uppercase rounded-full text-black bg-white group-hover:bg-black group-hover:text-white">
+            {{ __('view_commentary') }}
+          </button>
+        </td>
+      </template>
+    </StackedListView>
 
-    <CommentariesGridView
+    <GridListView
       v-else-if="viewMode === 'grid'"
-      :commentaries="commentaries"
-      @selected="onSelected"
-    />
+      :items="commentaries"
+      @selected="onSelected">
+      <template v-slot:item="commentary">
+        <div class="text-xs uppercase mb-8">
+          {{ commentary.document_label ?? '[UNKNOWN]' }}
+        </div>
+
+        <div class="flex flex-col items-center">
+          <h2 class="text-4xl text-center font-medium font-serif mb-8">
+            {{ commentary.label }}
+          </h2>
+
+          <div class="text-sm text-center">
+            Ein Kommentar von <i>Marco Zollinger</i>
+          </div>
+
+          <div class="text-sm text-center mt-1">
+            Herausgegeben von <i>Stefan Schlegel</i> und <i>Odile Ammannn</i>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="transition ease-in-out delay-150 inline-flex items-center px-3 py-1.5 border border-2 border-black text-xs font-medium uppercase rounded-full text-black bg-white group-hover:bg-black group-hover:text-white mt-12">
+          {{ __('view_commentary') }}
+        </button>
+      </template>
+    </GridListView>
   </div>
 </template>
 
@@ -60,8 +115,8 @@
   import { computed } from 'vue'
   import { Inertia } from '@inertiajs/inertia'
   import { usePage } from '@inertiajs/inertia-vue3'
-  import CommentariesListView from './Partials/CommentariesListView'
-  import CommentariesGridView from './Partials/CommentariesGridView'
+  import StackedListView from './Partials/StackedListView'
+  import GridListView from './Partials/GridListView'
   import FlyoutMenuWithDividers from '@/Menus/FlyoutMenuWithDividers'
 
   const props = defineProps({
@@ -72,17 +127,17 @@
 
   const viewMode = 'grid'
 
-  const commentaries = computed(() => props.commentaryGroups.flat())
+  const commentaries = computed(() => Object.values(props.commentaryGroups).flat())
 
   const documents = [
-    'Bundesverfassung (BV)',
-    'Obligationenrecht (OR)',
-    'Bundesgesetz über das Internationale Privatrecht (IPRG)',
-    'Lugano-Übereinkommen (LugÜ)',
+    'Bundesverfassung',
+    'Obligationenrecht',
+    'Bundesgesetz über das Internationale Privatrecht',
+    'Lugano-Übereinkommen',
     'Strafprozessordnung',
   ]
 
-  const activeDocument = 'Obligationenrecht (OR)'
+  const activeDocument = 'Obligationenrecht'
 
   const onSelected = (commentary) => {
     Inertia.visit(route('Frontend/Commentary', {
