@@ -44,6 +44,27 @@
         </SelectInput>
 
         <TextInput
+          v-model="form.title"
+          :error="form.errors.title"
+          class="pb-8 pr-6 w-full"
+          label="Title"
+        />
+
+        <TextInput
+          v-model="form.linkedin_url"
+          :error="form.errors.linkedin_url"
+          class="pb-8 pr-6 w-full"
+          label="LinkedIn URL"
+        />
+
+        <TextInput
+          v-model="form.website_url"
+          :error="form.errors.website_url"
+          class="pb-8 pr-6 w-full"
+          label="Website URL"
+        />
+
+        <TextInput
           v-model="form.password"
           type="password"
           :error="form.errors.password"
@@ -107,6 +128,9 @@
   const form = useForm({
     name: props.userToEdit.name,
     email: props.userToEdit.email,
+    title: props.userToEdit.title,
+    linkedin_url: props.userToEdit.linkedin_url,
+    website_url: props.userToEdit.website_url,
     role: props.userToEdit.role,
     password: null,
     password_confirmation: null,

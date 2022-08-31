@@ -1,6 +1,7 @@
 {
   "name": "Name",
   "email": "E-mail",
+  "title": "Title",
   "role": "Role",
 
   "label_de": "Label (de)",

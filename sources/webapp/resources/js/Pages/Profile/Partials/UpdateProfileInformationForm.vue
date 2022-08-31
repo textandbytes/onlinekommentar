@@ -18,6 +18,9 @@ const form = useForm({
     _method: 'PUT',
     name: props.user.name,
     email: props.user.email,
+    title: props.user.title,
+    linkedin_url: props.user.linkedin_url,
+    website_url: props.user.website_url,
     photo: null,
 });
 
@@ -83,12 +86,12 @@ const clearPhotoFileInput = () => {
         </template>
 
         <template #description>
-            Update your account's profile information and email address.
+            Update your account's profile information.
         </template>
 
         <template #form>
             <!-- Profile Photo -->
-            <div v-if="$page.props.jetstream.managesProfilePhotos" class="col-span-6 sm:col-span-4">
+            <div v-if="$page.props.jetstream.managesProfilePhotos" class="col-span-6">
                 <!-- Profile Photo File Input -->
                 <input
                     ref="photoInput"
@@ -129,7 +132,7 @@ const clearPhotoFileInput = () => {
             </div>
 
             <!-- Name -->
-            <div class="col-span-6 sm:col-span-4">
+            <div class="col-span-6">
                 <JetLabel for="name" value="Name" />
                 <JetInput
                     id="name"
@@ -142,7 +145,7 @@ const clearPhotoFileInput = () => {
             </div>
 
             <!-- Email -->
-            <div class="col-span-6 sm:col-span-4">
+            <div class="col-span-6">
                 <JetLabel for="email" value="Email" />
                 <JetInput
                     id="email"
@@ -171,6 +174,42 @@ const clearPhotoFileInput = () => {
                         A new verification link has been sent to your email address.
                     </div>
                 </div>
+            </div>
+
+            <!-- Title -->
+            <div class="col-span-6">
+                <JetLabel for="title" value="Title" />
+                <JetInput
+                    id="title"
+                    v-model="form.title"
+                    type="text"
+                    class="mt-1 block w-full"
+                />
+                <JetInputError :message="form.errors.title" class="mt-2" />
+            </div>
+
+            <!-- LinkedIn URL -->
+            <div class="col-span-6">
+                <JetLabel for="linkedin_url" value="LinkedIn URL" />
+                <JetInput
+                    id="linkedin_url"
+                    v-model="form.linkedin_url"
+                    type="text"
+                    class="mt-1 block w-full"
+                />
+                <JetInputError :message="form.errors.linkedin_url" class="mt-2" />
+            </div>
+
+            <!-- Website URL -->
+            <div class="col-span-6">
+                <JetLabel for="website_url" value="Website URL" />
+                <JetInput
+                    id="website_url"
+                    v-model="form.website_url"
+                    type="text"
+                    class="mt-1 block w-full"
+                />
+                <JetInputError :message="form.errors.website_url" class="mt-2" />
             </div>
         </template>
 

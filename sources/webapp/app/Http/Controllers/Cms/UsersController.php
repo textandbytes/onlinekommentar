@@ -32,6 +32,7 @@ class UsersController extends Controller
                 ->when(\Request::input('search'), function ($query, $search) {
                     $query->where('name', 'like', "%{$search}%");
                     $query->orWhere('email', 'like', "%{$search}%");
+                    $query->orWhere('title', 'like', "%{$search}%");
                     $query->orWhereHas('roles', function ($subquery) use ($search) {
                         return $subquery->where('name', 'like',  "%{$search}%");
                     });
@@ -42,6 +43,7 @@ class UsersController extends Controller
                     'id' => $user->id,
                     'name' => $user->name,
                     'email' => $user->email,
+                    'title' => $user->title,
                     'profile_photo_url' => $user->profile_photo_url,
                     'role' => $user->roles[0]->name ?? '',
                 ]),
@@ -101,6 +103,9 @@ class UsersController extends Controller
             $user = User::create([
                 'name' => request('name'),
                 'email' => request('email'),
+                'title' => request('title'),
+                'linkedin_url' => request('linkedin_url'),
+                'website_url' => request('website_url'),
                 'password' => Hash::make(request('password'))
             ]);
 
@@ -132,7 +137,7 @@ class UsersController extends Controller
         $userRoles = $user->getRoleNames();
 
         // return only pertinent fields for the user
-        $userToEdit = $user->only(['id', 'name', 'email']);
+        $userToEdit = $user->only(['id', 'name', 'email', 'title', 'linkedin_url', 'website_url']);
         $userToEdit['role'] = count($userRoles) > 0 ? $userRoles[0] : null;
 
         return Inertia::render('Cms/Users/Edit', [
@@ -181,6 +186,9 @@ class UsersController extends Controller
                 $user->update([
                     'name' => request('name'),
                     'email' => request('email'),
+                    'title' => request('title'),
+                    'linkedin_url' => request('linkedin_url'),
+                    'website_url' => request('website_url'),
                     'password' => Hash::make(request('password'))
                 ]);
             }

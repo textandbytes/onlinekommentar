@@ -28,6 +28,20 @@
           label="Email"
         />
 
+        <SelectInput
+          v-model="form.role"
+          :error="form.errors.role"
+          :required="true"
+          class="pb-8 pr-6 w-full"
+          label="Role">
+          <option :value="null" />
+          <option
+            v-for="role in roles"
+            :value="role">
+            {{ __(role) }}
+          </option>
+        </SelectInput>
+
         <TextInput
           v-model="form.password"
           type="password"
@@ -46,19 +60,26 @@
           label="Confirm password"
         />
 
-        <SelectInput
-          v-model="form.role"
-          :error="form.errors.role"
-          :required="true"
+        <TextInput
+          v-model="form.title"
+          :error="form.errors.title"
           class="pb-8 pr-6 w-full"
-          label="Role">
-          <option :value="null" />
-          <option
-            v-for="role in roles"
-            :value="role">
-            {{ __(role) }}
-          </option>
-        </SelectInput>
+          label="Title"
+        />
+
+        <TextInput
+          v-model="form.linkedin_url"
+          :error="form.errors.linkedin_url"
+          class="pb-8 pr-6 w-full"
+          label="LinkedIn URL"
+        />
+
+        <TextInput
+          v-model="form.website_url"
+          :error="form.errors.website_url"
+          class="pb-8 pr-6 w-full"
+          label="Website URL"
+        />
       </div>
 
       <div class="flex items-center justify-end px-8 py-4 bg-gray-50 border-t border-gray-100">
@@ -96,7 +117,10 @@
     email: null,
     password: null,
     password_confirmation: null,
-    role: null
+    role: null,
+    title: null,
+    linkedin_url: null,
+    website_url: null,
   })
 
   const store = () => {
