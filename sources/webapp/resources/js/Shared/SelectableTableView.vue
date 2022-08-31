@@ -42,7 +42,7 @@
                 <td v-for="column in columns" :key="column">
                   <slot name="row-data" v-bind="row" :property="column"></slot>
                 </td>
-                <td v-if="editable">
+                <td v-if="editable" class="px-6 py-4">
                   <ChevronRightIcon class="block w-6 h-6 fill-gray-400" aria-hidden="true" />
                 </td>
               </tr>
