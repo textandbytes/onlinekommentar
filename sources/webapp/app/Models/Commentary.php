@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Permission\Models\Role;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
@@ -34,29 +35,18 @@ class Commentary extends Model
         'slug',
     ];
 
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'pivot'
+    ];
+
     public function document()
     {
         return $this->hasOne(DocumentTree::class, 'id', 'document_id');
-    }
-
-    public function users()
-    {
-        return $this->belongsToMany(User::class, 'users_x_commentaries', 'commentary_id', 'user_id');
-    }
-
-    public function editors()
-    {
-        return $this->users()->where('role_id', 2);
-    }
-
-    public function authors()
-    {
-        return $this->users()->where('role_id', 3);
-    }
-
-    public function proofreaders()
-    {
-        return $this->users()->where('role_id', 4);
     }
 
     /**

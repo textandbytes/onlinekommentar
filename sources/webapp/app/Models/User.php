@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Models\Role;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements MustVerifyEmail
@@ -63,4 +64,16 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function editedCommentaries()
+    {
+        return $this->belongsToMany(Commentary::class, 'users_x_commentaries', 'commentary_id', 'user_id')
+            ->where('role_id', '=', Role::where('name', 'editor')->first()->id);
+    }
+
+    public function authoredCommentaries()
+    {
+        return $this->belongsToMany(Commentary::class, 'users_x_commentaries', 'commentary_id', 'user_id')
+            ->where('role_id', '=', Role::where('name', 'author')->first()->id);
+    }
 }
