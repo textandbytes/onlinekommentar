@@ -15,25 +15,20 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->create([
-            'name' => 'Admin',
-            'email' => 'admin@test.com'
-        ])->assignRole('admin');
+        /*
+         * Founder
+         */
 
         User::factory()->create([
-            'name' => 'Editor',
-            'email' => 'editor@test.com'
-        ])->assignRole('editor');
-
-        User::factory()->create([
-            'name' => 'Author',
-            'email' => 'author@test.com',
-        ])->assignRole('author');
-
-        User::factory()->create([
-            'name' => 'Unknown',
-            'email' => 'unknown@test.com',
+            'name' => 'Dani­el Brug­ger',
+            'title' => 'MLaw, Rechts­an­walt, Gerichts­schrei­ber am Bun­des­ge­richt und Grün­der des Online­kom­men­tars',
+            'linkedin_url' => 'https://www.linkedin.com/in/daniel-brugger-90547474/',
+            'website_url' => '',
         ]);
+        
+        /*
+         * Authors
+         */
 
         User::factory()->create([
             'name' => 'Mar­co Zol­lin­ger',
@@ -102,13 +97,6 @@ class UserSeeder extends Seeder
             'name' => 'Susan­ne Brütsch',
             'title' => 'MLaw, Rechts­an­wäl­tin',
             'linkedin_url' => 'https://www.linkedin.com/in/susanne-br%C3%BCtsch-5a3a22109/',
-            'website_url' => '',
-        ]);
-        
-        User::factory()->create([
-            'name' => 'Dani­el Brug­ger',
-            'title' => 'MLaw, Rechts­an­walt, Gerichts­schrei­ber am Bun­des­ge­richt und Grün­der des Online­kom­men­tars',
-            'linkedin_url' => 'https://www.linkedin.com/in/daniel-brugger-90547474/',
             'website_url' => '',
         ]);
         
@@ -392,6 +380,67 @@ class UserSeeder extends Seeder
             'website_url' => '',
         ]);
 
-        User::factory()->count(100)->create();
+        /*
+         * Editors
+         */
+
+        User::factory()->create([
+            'name' => 'Odile Ammann',
+            'title' => 'Prof. Dr.iur., LL.M.; Professeure associée an der Universität Lausanne',
+            'linkedin_url' => '',
+            'website_url' => '',
+        ]);
+
+        User::factory()->create([
+            'name' => 'Stefan Schlegel',
+            'title' => 'Dr.iur, SNF Ambizione Fellow am Institut für öffentliches Recht der Universität Bern',
+            'linkedin_url' => '',
+            'website_url' => '',
+        ]);
+
+        User::factory()->create([
+            'name' => 'Christoph Hurni',
+            'title' => 'PD Dr.iur., Bundesrichter',
+            'linkedin_url' => '',
+            'website_url' => '',
+        ]);
+
+        User::factory()->create([
+            'name' => 'Mirjam Eggen',
+            'title' => 'Prof. Dr.iur, Ordentliche Professorin für Privatrecht an der Universität Bern',
+            'linkedin_url' => '',
+            'website_url' => '',
+        ]);
+
+        User::factory()->create([
+            'name' => 'Sonja Koch',
+            'title' => 'Dr.iur., Bundesrichterin',
+            'linkedin_url' => '',
+            'website_url' => '',
+        ]);
+
+        /*
+         * Fake users
+         */
+
+        User::factory()->create([
+            'name' => 'Admin',
+            'email' => 'admin@test.com'
+        ])->assignRole('admin');
+
+        User::factory()->create([
+            'name' => 'Editor',
+            'email' => 'editor@test.com'
+        ])->assignRole('editor');
+
+        User::factory()->create([
+            'name' => 'Author',
+            'email' => 'author@test.com',
+        ])->assignRole('author');
+
+        User::factory()->create([
+            'name' => 'Unknown',
+            'email' => 'unknown@test.com',
+        ]);
     }
 }
