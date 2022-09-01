@@ -8,7 +8,7 @@
         type="text"
         placeholder="Search..."
         size="40"
-        class="border px-2 rounded-lg focus:ring-ok-blue-500"
+        class="border border-gray-400 px-2 rounded-lg focus:ring-ok-blue-400"
       />
     </div>
 
