@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white overflow-hidden shadow mb-12 pb-8">
+  <div class="bg-white overflow-hidden mb-12 pb-8">
     <template v-for="(group, label) in directory">
       <div class="my-2 sm:px-6 lg:px-6">
         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
