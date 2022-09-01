@@ -18,7 +18,7 @@
           </NavLink>
 
           <NavLink 
-            href="/editors"
+            :href="`/${$page.props.locale}/herausgeber`"
             :active="$page.component === 'Editors'"
             @click="toggleMenu">
             Herausgeber:innen

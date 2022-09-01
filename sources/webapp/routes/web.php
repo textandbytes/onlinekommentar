@@ -5,6 +5,7 @@ use App\Http\Controllers\Cms\DocumentTreeController;
 use App\Http\Controllers\Cms\UsersController;
 use App\Http\Controllers\Frontend\CommentariesController as CommentariesControllerFrontend;
 use App\Http\Controllers\Frontend\DocumentTreeController as DocumentTreeControllerFrontend;
+use App\Http\Controllers\Frontend\UsersController as UsersControllerFrontend;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -29,6 +30,9 @@ Route::group(['prefix' => '{locale?}', 'where' => ['locale' => implode('|', Conf
     // commentaries
     Route::get('/kommentare', [CommentariesControllerFrontend::class, 'index'])->name('Frontend/Commentaries');
     Route::get('/kommentare/{commentary:slug}', [CommentariesControllerFrontend::class, 'show'])->name('Frontend/Commentary');
+
+    // editors
+    Route::get('/herausgeber', [UsersControllerFrontend::class, 'editors'])->name('Frontend/Editors');
 
     // about
     Route::get('/ueber-onlinekommentar', function () {

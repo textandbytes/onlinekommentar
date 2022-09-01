@@ -48,5 +48,7 @@
 
   "copy_citation": "Copy",
   "copied_citation": "Copied",
-  "copy_citation_error": "Error"
+  "copy_citation_error": "Error",
+
+  "editors": "Editors"
 }

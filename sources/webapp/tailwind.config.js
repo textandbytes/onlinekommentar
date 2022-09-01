@@ -12,6 +12,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
+                regular: ['Libre Caslon Text', 'regular', ...defaultTheme.fontFamily.sans],
                 sans: ['Work Sans', 'sans-serif', ...defaultTheme.fontFamily.sans],
                 serif: ['Libre Caslon Text', 'serif', ...defaultTheme.fontFamily.serif],
             },
