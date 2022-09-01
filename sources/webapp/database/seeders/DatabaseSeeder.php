@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             DocumentTreeSeeder::class,
             CommentarySeeder::class,
+            UserCommentarySeeder::class,
         ]);
     }
 }
