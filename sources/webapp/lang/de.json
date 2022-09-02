@@ -1,7 +1,11 @@
 {
+  "home": "Home",
   "commentaries": "Kommentare",
   "authors": "Autoren:Innen",
   "editors": "Herausgeber:Innen",
+  "about": "Über uns",
+  "contact": "Kontakt",
+
   "list_view": "Listenansicht",
   "grid_view": "Gridanansicht",
   "document_filter_label": "Alle",
@@ -9,5 +13,5 @@
 
   "copy_citation": "Kopieren",
   "copied_citation": "Kopiert",
-  "copy_citation_error": "Fehler",
+  "copy_citation_error": "Fehler"
 }

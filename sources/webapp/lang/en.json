@@ -1,6 +1,11 @@
 {
+  "home": "Home",
+  "commentaries": "Commentaries",
   "authors": "Authors",
   "editors": "Editors",
+  "about": "About",
+  "contact": "Contact",
+
   "name": "Name",
   "email": "E-mail",
   "title": "Title",
@@ -42,7 +47,6 @@
   "redo": "Redo",
   "clear": "Clear all",
 
-  "commentaries": "Commentaries",
   "list_view": "List view",
   "grid_view": "Grid view",
   "document_filter_label": "All",
@@ -50,5 +54,5 @@
 
   "copy_citation": "Copy",
   "copied_citation": "Copied",
-  "copy_citation_error": "Error",
+  "copy_citation_error": "Error"
 }

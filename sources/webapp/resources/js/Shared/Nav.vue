@@ -5,9 +5,9 @@
         <ul class="flex flex-col list-style-none space-y-5">
           <NavLink 
             :href="`/${$page.props.locale}/kommentare`"
-            :active="$page.component === 'Commentaries'"
+            :active="$page.component === 'Frontend/Commentaries'"
             @click="toggleMenu">
-            Kommentare
+            {{ __('commentaries') }}
           </NavLink>
 
           <NavLink 
@@ -26,16 +26,16 @@
 
           <NavLink
             :href="`/${$page.props.locale}/ueber-onlinekommentar`"
-            :active="$page.component === 'About'"
+            :active="$page.component === 'Frontend/About'"
             @click="toggleMenu">
-            Über uns
+            {{ __('about') }}
           </NavLink>
 
           <NavLink
             :href="`/${$page.props.locale}/contact`"
-            :active="$page.component === 'Contact'"
+            :active="$page.component === 'Frontend/Contact'"
             @click="toggleMenu">
-            Kontakt
+            {{ __('contact') }}
           </NavLink>
         </ul>
       </nav>

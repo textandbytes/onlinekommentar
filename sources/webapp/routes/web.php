@@ -23,6 +23,7 @@ use Inertia\Inertia;
 
 // frontend routes
 Route::group(['prefix' => '{locale?}', 'where' => ['locale' => implode('|', Config::get('app.locales'))], 'middleware' => ['web']], function() {
+    // home
     Route::get('/', function () {
         return Inertia::render('Frontend/Home');
     })->name('Frontend/Home');
@@ -43,10 +44,11 @@ Route::group(['prefix' => '{locale?}', 'where' => ['locale' => implode('|', Conf
     })->name('Frontend/About');
 
     // contact
-    Route::get('/contact', function () {
+    Route::get('/kontakt', function () {
         return Inertia::render('Frontend/Contact');
     })->name('Frontend/Contact');
 
+    // document tree
     Route::get('/tree', [DocumentTreeControllerFrontend::class, 'index']);
 });
 

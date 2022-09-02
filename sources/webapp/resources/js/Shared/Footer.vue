@@ -5,15 +5,15 @@
         <NavLink
           :href="`/${$page.props.locale}/kommentare`"
           :active="$page.component === 'Frontend/Commentaries'">
-          Kommentare
+          {{ __('commentaries') }}
         </NavLink>
       </div>
       
       <div class="pt-2 pl-4 border-b border-ok-dark-gray">
         <NavLink
-          href="/"
+          :href="`/${$page.props.locale}`"
           :active="$page.component === 'Frontend/Home'">
-          Home
+          {{ __('home') }}
         </NavLink>
       </div>
       
@@ -29,7 +29,7 @@
         <NavLink
           :href="`/${$page.props.locale}/ueber-onlinekommentar`"
           :active="$page.component === 'Frontend/About'">
-          Über uns
+          {{ __('about') }}
         </NavLink>
       </div>
       
@@ -45,7 +45,7 @@
         <NavLink 
           :href="`/${$page.props.locale}/contact`"
           :active="$page.component === 'Frontend/Contact'">
-          Kontakt
+          {{ __('contact') }}
         </NavLink>
       </div>
     </div>
