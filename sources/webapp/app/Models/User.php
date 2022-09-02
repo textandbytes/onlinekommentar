@@ -65,15 +65,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'profile_photo_url',
     ];
 
-    public function editedCommentaries()
+    public function commentaries()
     {
-        return $this->belongsToMany(Commentary::class, 'users_x_commentaries', 'commentary_id', 'user_id')
-            ->where('role_id', '=', Role::where('name', 'editor')->first()->id);
-    }
-
-    public function authoredCommentaries()
-    {
-        return $this->belongsToMany(Commentary::class, 'users_x_commentaries', 'commentary_id', 'user_id')
-            ->where('role_id', '=', Role::where('name', 'author')->first()->id);
+        return $this->belongsToMany(Commentary::class, 'users_x_commentaries', 'user_id', 'commentary_id');
     }
 }
