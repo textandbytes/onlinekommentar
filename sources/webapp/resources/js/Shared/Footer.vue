@@ -19,9 +19,9 @@
       
       <div class="pt-2 pl-12 border-b border-r border-ok-dark-gray">
         <NavLink
-          href="/authors"
+          :href="`/${$page.props.locale}/autoren`"
           :active="$page.component === 'Frontend/Authors'">
-          Autor:innen
+          {{ __('authors') }}
         </NavLink>
       </div>
       
@@ -35,9 +35,9 @@
       
       <div class="pt-2 pl-12 border-b border-r border-ok-dark-gray">
         <NavLink
-          href="/editors"
+          :href="`/${$page.props.locale}/herausgeber`"
           :active="$page.component === 'Frontend/Editors'">
-          Herausgeber:innen
+          {{ __('editors') }}
         </NavLink>
       </div>
       

@@ -1,4 +1,6 @@
 {
+  "authors": "Authors",
+  "editors": "Editors",
   "name": "Name",
   "email": "E-mail",
   "title": "Title",
@@ -49,6 +51,4 @@
   "copy_citation": "Copy",
   "copied_citation": "Copied",
   "copy_citation_error": "Error",
-
-  "editors": "Editors"
 }

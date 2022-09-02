@@ -31,6 +31,9 @@ Route::group(['prefix' => '{locale?}', 'where' => ['locale' => implode('|', Conf
     Route::get('/kommentare', [CommentariesControllerFrontend::class, 'index'])->name('Frontend/Commentaries');
     Route::get('/kommentare/{commentary:slug}', [CommentariesControllerFrontend::class, 'show'])->name('Frontend/Commentary');
 
+    // authors
+    Route::get('/autoren', [UsersControllerFrontend::class, 'authors'])->name('Frontend/Authors');
+
     // editors
     Route::get('/herausgeber', [UsersControllerFrontend::class, 'editors'])->name('Frontend/Editors');
 

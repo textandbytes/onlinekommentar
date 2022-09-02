@@ -1,7 +1,7 @@
 <template>
   <Users
     :title="title"
-    :users="editors"
+    :users="authors"
     :documents="documents"
     :active-document="activeDocument">
   </Users>
@@ -20,7 +20,7 @@
 
   defineProps({
     title: { type: String, required: true },
-    editors: { type: Object, required: true },
+    authors: { type: Object, required: true },
     documents: { type: Array, required: true },
     activeDocument: { type: String, required: true }
   })

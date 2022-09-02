@@ -1,5 +1,7 @@
 {
   "commentaries": "Kommentare",
+  "authors": "Autoren:Innen",
+  "editors": "Herausgeber:Innen",
   "list_view": "Listenansicht",
   "grid_view": "Gridanansicht",
   "document_filter_label": "Alle",
@@ -8,6 +10,4 @@
   "copy_citation": "Kopieren",
   "copied_citation": "Kopiert",
   "copy_citation_error": "Fehler",
-
-  "editors": "Herausgeber:Innen"
 }

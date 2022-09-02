@@ -11,17 +11,17 @@
           </NavLink>
 
           <NavLink 
-            href="/authors"
-            :active="$page.component === 'Authors'"
+            :href="`/${$page.props.locale}/autoren`"
+            :active="$page.component === 'Frontend/Authors'"
             @click="toggleMenu">
-            Autor:innen
+            {{ __('authors') }}
           </NavLink>
 
           <NavLink 
             :href="`/${$page.props.locale}/herausgeber`"
-            :active="$page.component === 'Editors'"
+            :active="$page.component === 'Frontend/Editors'"
             @click="toggleMenu">
-            Herausgeber:innen
+            {{ __('editors') }}
           </NavLink>
 
           <NavLink
