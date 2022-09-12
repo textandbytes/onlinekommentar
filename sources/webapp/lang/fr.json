@@ -1,1 +1,69 @@
-{}
+{
+    "home": "Accueil",
+    "commentaries": "Commentaires",
+    "authors": "Auteurs",
+    "editors": "Editeurs",
+    "about": "A propos",
+    "contact": "Contact",
+
+    "name": "Nom",
+    "email": "E-mail",
+    "title": "Titre",
+    "role": "Rôle",
+
+    "label_de": "Label (de)",
+    "original_language": "Langue originale",
+    "status": "Statut",
+
+    "admin": "Administrateur",
+    "editor": "Editeur",
+    "author": "Auteur",
+
+    "de": "Allemand",
+    "en": "Anglais",
+    "fr": "Français",
+    "it": "Italien",
+
+    "draft": "Brouillon",
+    "in_review": "En cours de révision",
+    "published": "Publié",
+
+    "bold": "Grs",
+    "italic": "Italique",
+    "subscript": "Indice",
+    "superscript": "Exposant",
+    "paragraph": "Paragraphe",
+    "heading_1": "Titre 1",
+    "heading_2": "Titre 2",
+    "heading_3": "Titre 3",
+    "bullet_list": "Liste à puces",
+    "ordered_list": "Liste numérotée",
+    "link": "Lien",
+    "unset_link": "Supprimer le lien",
+    "footnote": "Note de bas de page",
+    "save_footnote": "Enregistrer",
+    "cancel_footnote": "Annuler",
+    "undo": "Annuler",
+    "redo": "Rétablir",
+    "clear": "Effacer tout",
+
+    "list_view": "Liste",
+    "grid_view": "Grille",
+    "document_filter_label": "Tous les documents",
+    "view_commentary": "Voir le commentaire",
+
+    "copy_citation": "Copier",
+    "copied_citation": "Copié",
+    "copy_citation_error": "Erreur",
+
+    "menu": "Menu",
+
+    "nav_search_box_placeholder": "Saisir un terme de recherche",
+
+    "footer_contact_text": "Vous avez des questions sur le concept ou vous souhaitez rédiger un commentaire pour Onlinekommentar&nbsp;?",
+    "footer_contact_link_text": "Contactez-nous",
+    "disclaimer": "Clause de non-responsabilité",
+    "imprint": "Impressum",
+
+    "about_text": "<p>Le concept d’Onlinekommentar peut être résumé par la phrase suivante&nbsp;: avec Onlinekommentar, un organisme responsable d’utilité publique met à disposition une plateforme web sur laquelle des commentaires de haute qualité et vérifiés sur le droit suisse peuvent être mis à la disposition de tous, librement et gratuitement. Onlinekommentar permet donc de publier en un seul endroit différents commentaires sur des actes législatifs suisses. Avec l’association Onlinekommentar, un organisme responsable stable et durable est assuré pour Onlinekommentar.</p><p>Onlinekommentar veut rendre les connaissances juridiques spécialisées librement disponibles (open access). Cela signifie en d’autres termes qu’Onlinekommentar restera toujours accessible librement et gratuitement et qu’aucun pay-wall ne sera notamment mis en place. Les statuts de l’association stipulent expressément que l’association ne poursuit pas de but commercial et ne cherche pas à faire de bénéfices (point 2 des statuts). Onlinekommentar, en tant que commentaire en accès libre, supprime les obstacles à l’accès. Il permet un accès gratuit, simple, pratique et à bas seuil aux textes, y compris pour les personnes extérieures à la «&nbsp;legal community&nbsp;».</p><p>Les commentaires en libre accès favorisent l’échange de connaissances et offrent à l’annotateur une plus grande visibilité du résultat de son travail. Le projet Onlinekommentar doit également être une contribution à une science et à une pratique juridiques plus inclusives, plus diversifiées, plus qualitatives, plus modernes, plus actuelles, plus interactives et moins hiérarchisées. Vous trouverez d’autres avantages d’Onlinekommentar ici.</p><p>Le concept d’Onlinekommentar a été exposé par son fondateur dans un article récent sur le blog constitutionnel.</p>"
+  }
