@@ -8,7 +8,7 @@
           {{ __('commentaries') }}
         </NavLink>
       </div>
-      
+
       <div class="pt-2 pl-4 border-b border-ok-dark-gray">
         <NavLink
           :href="`/${$page.props.locale}`"
@@ -16,7 +16,7 @@
           {{ __('home') }}
         </NavLink>
       </div>
-      
+
       <div class="pt-2 pl-12 border-b border-r border-ok-dark-gray">
         <NavLink
           :href="`/${$page.props.locale}/autoren`"
@@ -24,7 +24,7 @@
           {{ __('authors') }}
         </NavLink>
       </div>
-      
+
       <div class="pt-2 pl-4 border-b border-ok-dark-gray">
         <NavLink
           :href="`/${$page.props.locale}/ueber-onlinekommentar`"
@@ -32,7 +32,7 @@
           {{ __('about') }}
         </NavLink>
       </div>
-      
+
       <div class="pt-2 pl-12 border-b border-r border-ok-dark-gray">
         <NavLink
           :href="`/${$page.props.locale}/herausgeber`"
@@ -40,25 +40,25 @@
           {{ __('editors') }}
         </NavLink>
       </div>
-      
+
       <div class="pt-2 pl-4 border-b border-ok-dark-gray">
-        <NavLink 
+        <NavLink
           :href="`/${$page.props.locale}/contact`"
           :active="$page.component === 'Frontend/Contact'">
           {{ __('contact') }}
         </NavLink>
       </div>
     </div>
-    
+
     <div class="border-b border-ok-dark-gray pt-4">
       <div class="px-8 pb-4">
-        <div class="text-sm w-1/2">Haben Sie Fragen zum Konzept oder möchten Sie einen Kommentar für den Onlinekommentar verfassen?</div>
+        <div class="text-sm w-1/2" v-html="__('footer_contact_text')"></div>
         <button class="mt-2 px-8 py-1 text-center uppercase text-xs rounded-full border border-ok-dark-gray">
-          <Link :href="`/${$page.props.locale}/contact`">Kontaktieren Sie uns</Link>
+          <Link :href="`/${$page.props.locale}/contact`">{{ __('footer_contact_link_text') }}</Link>
         </button>
       </div>
     </div>
-    
+
     <div class="flex justify-between border-r border-ok-dark-gray">
       <div class="flex flex-col pl-12 pt-4">
         <span class="text-xs">&copy; {{ new Date().getFullYear() }}, Onlinekommentar.ch</span>
@@ -81,23 +81,23 @@
         </a>
       </div>
     </div>
-  
+
     <div>
       <div class="flex flex-row justify-between px-8 pt-4">
         <div class="flex text-xs space-x-8">
           <NavLink
             href="/disclaimer"
             :active="$page.component === 'Disclaimer'">
-            Haftungsauschluss
+            {{ __('disclaimer') }}
           </NavLink>
-  
+
           <NavLink
             href="/imprint"
             :active="$page.component === 'Imprint'">
-            Impressum
+            {{ __('imprint') }}
           </NavLink>
         </div>
-  
+
         <button class="w-20 text-center text-sm rounded-full border border-ok-dark-gray">
           <!-- arrow up -->
           <a href="#top" class="text-black font-semibold top-link">
