@@ -58,7 +58,7 @@
     filters: { type: Object, required: true }
   })
 
-  const columns = ['name', 'email', 'title', 'role']
+  const columns = ['name', 'title', 'occupation', 'practice']
 
   const onSearch = (query) => {
     Inertia.get('/cms/users', { search: query }, { preserveState: true, replace: true })

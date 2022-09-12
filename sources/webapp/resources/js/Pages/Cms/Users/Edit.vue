@@ -51,6 +51,20 @@
         />
 
         <TextInput
+          v-model="form.occupation"
+          :error="form.errors.occupation"
+          class="pb-8 pr-6 w-full"
+          label="Occupation"
+        />
+
+        <TextInput
+          v-model="form.practice"
+          :error="form.errors.practice"
+          class="pb-8 pr-6 w-full"
+          label="Practice"
+        />
+
+        <TextInput
           v-model="form.linkedin_url"
           :error="form.errors.linkedin_url"
           class="pb-8 pr-6 w-full"
@@ -129,6 +143,8 @@
     name: props.userToEdit.name,
     email: props.userToEdit.email,
     title: props.userToEdit.title,
+    occupation: props.userToEdit.occupation,
+    practice: props.userToEdit.practice,
     linkedin_url: props.userToEdit.linkedin_url,
     website_url: props.userToEdit.website_url,
     role: props.userToEdit.role,

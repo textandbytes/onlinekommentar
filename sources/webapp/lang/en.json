@@ -9,6 +9,8 @@
   "name": "Name",
   "email": "E-mail",
   "title": "Title",
+  "occupation": "Occupation",
+  "practice": "Practice",
   "role": "Role",
 
   "label_de": "Label (de)",

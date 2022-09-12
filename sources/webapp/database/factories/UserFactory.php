@@ -27,7 +27,6 @@ class UserFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
-            'title' => $this->faker->jobTitle . ' at ' . $this->faker->company,
             'linkedin_url'=> $this->faker->unique()->url,
             'website_url' => $this->faker->unique()->url,
             'email_verified_at' => now(),

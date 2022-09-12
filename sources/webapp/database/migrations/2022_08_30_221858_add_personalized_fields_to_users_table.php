@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('title')->nullable()->after('email');
-            $table->string('linkedin_url')->nullable()->after('title');
+            $table->string('occupation')->nullable()->after('title');
+            $table->string('practice')->nullable()->after('occupation');
+            $table->string('linkedin_url')->nullable()->after('practice');
             $table->string('website_url')->nullable()->after('linkedin_url');
         });
     }
@@ -30,6 +32,8 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn(array_merge([
                 'title',
+                'occupation',
+                'practice',
                 'linkedin_url',
                 'website_url'
             ]));

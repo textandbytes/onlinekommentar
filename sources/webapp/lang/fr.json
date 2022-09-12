@@ -9,6 +9,8 @@
     "name": "Nom",
     "email": "E-mail",
     "title": "Titre",
+    "occupation": "[TRANSLATE-TO-FRENCH]",
+    "practice": "[TRANSLATE-TO-FRENCH]",
     "role": "Rôle",
 
     "label_de": "Label (de)",

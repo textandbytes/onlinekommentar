@@ -19,6 +19,8 @@ const form = useForm({
     name: props.user.name,
     email: props.user.email,
     title: props.user.title,
+    occupation: props.user.occupation,
+    practice: props.user.practice,
     linkedin_url: props.user.linkedin_url,
     website_url: props.user.website_url,
     photo: null,
@@ -186,6 +188,30 @@ const clearPhotoFileInput = () => {
                     class="mt-1 block w-full"
                 />
                 <JetInputError :message="form.errors.title" class="mt-2" />
+            </div>
+
+            <!-- Occupation -->
+            <div class="col-span-6">
+                <JetLabel for="occupation" value="Occupation" />
+                <JetInput
+                    id="occupation"
+                    v-model="form.occupation"
+                    type="text"
+                    class="mt-1 block w-full"
+                />
+                <JetInputError :message="form.errors.occupation" class="mt-2" />
+            </div>
+
+            <!-- Practice -->
+            <div class="col-span-6">
+                <JetLabel for="practice" value="Practice" />
+                <JetInput
+                    id="practice"
+                    v-model="form.practice"
+                    type="text"
+                    class="mt-1 block w-full"
+                />
+                <JetInputError :message="form.errors.practice" class="mt-2" />
             </div>
 
             <!-- LinkedIn URL -->

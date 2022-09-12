@@ -68,6 +68,20 @@
         />
 
         <TextInput
+          v-model="form.occupation"
+          :error="form.errors.occupation"
+          class="pb-8 pr-6 w-full"
+          label="Occupation"
+        />
+
+        <TextInput
+          v-model="form.practice"
+          :error="form.errors.practice"
+          class="pb-8 pr-6 w-full"
+          label="Practice"
+        />
+
+        <TextInput
           v-model="form.linkedin_url"
           :error="form.errors.linkedin_url"
           class="pb-8 pr-6 w-full"
@@ -119,6 +133,8 @@
     password_confirmation: null,
     role: null,
     title: null,
+    occupation: null,
+    practice: null,
     linkedin_url: null,
     website_url: null,
   })

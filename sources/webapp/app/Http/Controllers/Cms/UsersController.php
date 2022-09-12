@@ -27,25 +27,22 @@ class UsersController extends Controller
 
         return Inertia::render('Cms/Users/Index', [
             'users' => User::query()
-                ->with('roles')
                 ->where('id', '!=', Auth::id())
                 ->when(\Request::input('search'), function ($query, $search) {
                     $query->where('name', 'like', "%{$search}%");
-                    $query->orWhere('email', 'like', "%{$search}%");
                     $query->orWhere('title', 'like', "%{$search}%");
-                    $query->orWhereHas('roles', function ($subquery) use ($search) {
-                        return $subquery->where('name', 'like',  "%{$search}%");
-                    });
+                    $query->orWhere('occupation', 'like', "%{$search}%");
+                    $query->orWhere('practice', 'like', "%{$search}%");
                 })
                 ->paginate(20)
                 ->withQueryString()
                 ->through(fn ($user) => [
                     'id' => $user->id,
                     'name' => $user->name,
-                    'email' => $user->email,
                     'title' => $user->title,
+                    'occupation' => $user->occupation,
+                    'practice' => $user->practice,
                     'profile_photo_url' => $user->profile_photo_url,
-                    'role' => $user->roles[0]->name ?? '',
                 ]),
             'filters' => \Request::only(['search']),
             'roles' => Role::pluck('name')
@@ -104,6 +101,8 @@ class UsersController extends Controller
                 'name' => request('name'),
                 'email' => request('email'),
                 'title' => request('title'),
+                'occupation' => request('occupation'),
+                'practice' => request('practice'),
                 'linkedin_url' => request('linkedin_url'),
                 'website_url' => request('website_url'),
                 'password' => Hash::make(request('password'))
@@ -137,7 +136,16 @@ class UsersController extends Controller
         $userRoles = $user->getRoleNames();
 
         // return only pertinent fields for the user
-        $userToEdit = $user->only(['id', 'name', 'email', 'title', 'linkedin_url', 'website_url']);
+        $userToEdit = $user->only([
+            'id',
+            'name',
+            'email',
+            'title',
+            'occupation',
+            'practice',
+            'linkedin_url',
+            'website_url'
+        ]);
         $userToEdit['role'] = count($userRoles) > 0 ? $userRoles[0] : null;
 
         return Inertia::render('Cms/Users/Edit', [
@@ -187,6 +195,8 @@ class UsersController extends Controller
                     'name' => request('name'),
                     'email' => request('email'),
                     'title' => request('title'),
+                    'occupation' => request('occupation'),
+                    'practice' => request('practice'),
                     'linkedin_url' => request('linkedin_url'),
                     'website_url' => request('website_url'),
                     'password' => Hash::make(request('password'))
