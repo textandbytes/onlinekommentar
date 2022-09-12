@@ -49,6 +49,21 @@ class Commentary extends Model
         return $this->hasOne(DocumentTree::class, 'id', 'document_id');
     }
 
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'users_x_commentaries', 'commentary_id', 'user_id');
+    }
+
+    public function editors()
+    {
+        return $this->users()->where('role_id', Role::where('name', 'editor')->first()->id);
+    }
+
+    public function authors()
+    {
+        return $this->users()->where('role_id', Role::where('name', 'author')->first()->id);
+    }
+
     /**
      * Use the slug as the route key for binding.
      */
