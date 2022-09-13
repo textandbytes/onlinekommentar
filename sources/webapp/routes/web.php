@@ -34,9 +34,11 @@ Route::group(['prefix' => '{locale?}', 'where' => ['locale' => implode('|', Conf
 
     // authors
     Route::get('/autoren', [UsersControllerFrontend::class, 'authors'])->name('Frontend/Authors');
+    Route::get('/autoren/{user}', [UsersControllerFrontend::class, 'author'])->name('Frontend/Author');
 
     // editors
     Route::get('/herausgeber', [UsersControllerFrontend::class, 'editors'])->name('Frontend/Editors');
+    Route::get('/herausgeber/{user}', [UsersControllerFrontend::class, 'editor'])->name('Frontend/Editor');
 
     // about
     Route::get('/ueber-onlinekommentar', function () {

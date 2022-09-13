@@ -40,6 +40,38 @@ class UsersController extends Controller
         ]);
     }
 
+    /**
+     * Display a specific author.
+     *
+     * @param  String  $locale
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function author($locale, User $user)
+    {
+        return Inertia::render('Frontend/User', [
+            'title' => $user->name,
+            'user' => $user,
+            'parentComponent' => 'Frontend/Authors'
+        ]);
+    }
+
+    /**
+     * Display a specific editor.
+     *
+     * @param  String  $locale
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function editor($locale, User $user)
+    {
+        return Inertia::render('Frontend/User', [
+            'title' => $user->name,
+            'user' => $user,
+            'parentComponent' => 'Frontend/Editors'
+        ]);
+    }
+
     private function _getUsersWithCommentariesByRole($roleName)
     {
         return User::with(['commentaries' => function ($query) use ($roleName) {
