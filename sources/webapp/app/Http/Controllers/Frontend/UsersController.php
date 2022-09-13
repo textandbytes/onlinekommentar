@@ -48,7 +48,7 @@ class UsersController extends Controller
                     ->where('role_id', '=', Role::where('name', $roleName)->first()->id)
                     ->select('commentary_id as id', 'label_de');
             }])
-            ->get(['id', 'name', 'title', 'linkedin_url', 'website_url', 'profile_photo_path'])
+            ->get(['id', 'name', 'title', 'occupation', 'practice', 'linkedin_url', 'website_url', 'profile_photo_path'])
             ->flatten()
             ->toArray();
     }
