@@ -26,7 +26,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'practice' => ['nullable', 'string', 'max:255'],
             'linkedin_url' => ['nullable', 'string', 'max:255'],
             'website_url' => ['nullable', 'string', 'max:255'],
-            'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:4096'],
+            'photo' => ['nullable', 'mimes:jpg,jpeg,png,webp', 'max:4096'],
         ])->validateWithBag('updateProfileInformation');
 
         if (isset($input['photo'])) {
