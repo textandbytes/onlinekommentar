@@ -42,13 +42,15 @@ class UsersController extends Controller
 
     private function _getUsersWithCommentariesByRole($roleName)
     {
-        return User::has('commentaries')
-            ->with(['commentaries' => function ($query) use ($roleName) {
+        return User::with(['commentaries' => function ($query) use ($roleName) {
                 $query
                     ->where('role_id', '=', Role::where('name', $roleName)->first()->id)
                     ->select('commentary_id as id', 'label_de');
             }])
             ->get(['id', 'name', 'title', 'occupation', 'practice', 'linkedin_url', 'website_url', 'profile_photo_path'])
+            ->filter(function ($user) {
+                return count($user->commentaries) > 0;
+            })
             ->flatten()
             ->toArray();
     }
