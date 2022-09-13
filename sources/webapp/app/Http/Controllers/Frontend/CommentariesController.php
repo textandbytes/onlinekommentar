@@ -27,6 +27,7 @@ class CommentariesController extends Controller
                 return $group->map(function ($commentary) use ($locale) {
                     return [
                         'id' => $commentary->id,
+                        'slug' => $commentary->slug,
                         'document_label' => $commentary->document ? $commentary->document->{'label_' . $locale} : null,
                         'label' => $commentary->{'label_' . $locale}
                     ];

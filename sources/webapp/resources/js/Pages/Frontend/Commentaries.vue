@@ -36,8 +36,7 @@
 
     <StackedListView
       v-if="viewMode === 'list'"
-      :directory="commentaryGroups"
-      @selected="onSelected">
+      :directory="commentaryGroups">
       <template v-slot:item="commentary">
         <td class="flex flex-col whitespace-nowrap py-3 text-gray-800">
           <div class="text-lg font-semibold font-serif">
@@ -63,7 +62,8 @@
         <td class="relative whitespace-nowrap py-3 pl-3 text-right text-sm font-medium">
           <button
             type="button"
-            class="transition ease-in-out delay-150 inline-flex items-center px-3 py-1.5 border border-2 border-black text-xs font-medium uppercase rounded-full text-black bg-white group-hover:bg-black group-hover:text-white">
+            class="transition ease-in-out delay-150 inline-flex items-center px-3 py-1.5 border border-2 border-black text-xs font-medium uppercase rounded-full text-black bg-white group-hover:bg-black group-hover:text-white"
+            @click="onSelect(commentary)">
             {{ __('view_commentary') }}
           </button>
         </td>
@@ -73,10 +73,11 @@
     <GridListView
       v-else-if="viewMode === 'grid'"
       :items="commentaries"
-      @selected="onSelected"
       class="bg-gray-800 sm:gap-px">
       <template v-slot:item="commentary">
-        <div class="flex flex-col items-center relative group transition ease-in-out delay-150 bg-white hover:bg-ok-orange p-8 cursor-pointer">
+        <div
+          class="flex flex-col items-center relative group transition ease-in-out delay-150 bg-white hover:bg-ok-orange p-8 cursor-pointer"
+          @click="onSelect(commentary)">
           <div class="text-xs uppercase mb-8">
             {{ commentary.document_label ?? '[UNKNOWN]' }}
           </div>
@@ -142,7 +143,7 @@
 
   const activeDocument = 'Obligationenrecht'
 
-  const onSelected = (commentary) => {
+  const onSelect = (commentary) => {
     Inertia.visit(route('Frontend/Commentary', {
       locale: locale.value,
       commentary: commentary

@@ -2,8 +2,7 @@
   <div class="overflow-hidden divide-y divide-gray-800 sm:divide-y-0 sm:grid sm:grid-cols-3">
     <template
       v-for="item in items"
-      :key="item.id"
-      @click="$emit('selected', item)">
+      :key="item.id">
       <slot name="item" v-bind="item" />
     </template>
 
