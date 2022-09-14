@@ -9,19 +9,19 @@
 
 <script setup>
   import { Inertia } from '@inertiajs/inertia'
+  import { usePage } from '@inertiajs/inertia-vue3'
   import SimpleMenu from '@/Menus/SimpleMenu'
 
-  defineProps({
+  const props = defineProps({
     languages: { type: Array, required: true },
     activeLanguage: { type: String, required: true }
   })
 
   const onChange = (language) => {
-    /*
-     * Reload the current page component with the selected language 
-     * to update the locale segment in the url and to load the 
-     * corresponding translations.
-     */
-    Inertia.visit(route(Inertia.page.component, language))
+    // replace the locale segment in the url
+    let targetUrl = usePage().url.value.replace(`/${props.activeLanguage}/`, `/${language}/`)
+
+    // request the target url to load the corresponding translations
+    Inertia.visit(targetUrl)
   }
 </script>
