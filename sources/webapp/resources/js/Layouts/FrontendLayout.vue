@@ -17,7 +17,7 @@
 
         <Nav />
 
-        <Sidebar class="hidden" />
+        <Sidebar />
       </div>
     </header>
     
