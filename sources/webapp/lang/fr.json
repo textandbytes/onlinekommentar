@@ -9,8 +9,8 @@
     "name": "Nom",
     "email": "E-mail",
     "title": "Titre",
-    "occupation": "[TRANSLATE-TO-FRENCH]",
-    "practice": "[TRANSLATE-TO-FRENCH]",
+    "occupation": "Occupation",
+    "practice": "Pratique",
     "role": "Rôle",
 
     "label_de": "Label (de)",
@@ -52,9 +52,9 @@
     "list_view": "Liste",
     "grid_view": "Grille",
     "document_filter_label": "Tous les documents",
-    "view_user": "[TRANSLATE-TO-FRENCH]",
+    "view_user": "Voir l’utilisateur",
     "view_commentary": "Voir le commentaire",
-    "back_to_results": "[TRANSLATE-TO-FRENCH]",
+    "back_to_results": "Retourner aux résultats",
 
     "copy_citation": "Copier",
     "copied_citation": "Copié",
