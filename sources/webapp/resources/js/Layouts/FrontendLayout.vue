@@ -5,14 +5,16 @@
       <div
         class="flex items-start justify-between pt-8 pb-4 px-4"
         :class="{ 'border-b border-black': $page.component !== 'Frontend/Home' }">
-        <div class="hidden md:flex z-40">
+        <Link
+          class="hidden md:flex z-40"
+          :href="`/${$page.props.locale}`">
           <img
             src="/img/ok-logo-text.svg"
             alt="Onlinekommentar – der frei zugängliche Rechtskommenter"
             :width="$page.component !== 'Frontend/Home' ? 200 : null"
           />
-        </div>
-        
+        </Link>
+
         <Nav />
 
         <Sidebar class="hidden" />
