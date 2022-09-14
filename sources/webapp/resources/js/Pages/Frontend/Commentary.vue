@@ -29,7 +29,7 @@
 
     <div class="flex flex-col items-center my-8 md:my-12 space-y-6">
       <div class="text-xs font-sans uppercase">
-        Kommentar Zu
+        {{ __('commentary_on') }}
       </div>
 
       <div class="text-2xl md:text-6xl font-serif">
@@ -70,7 +70,7 @@
 
 <script>
   import FrontendLayout from '@/Layouts/FrontendLayout'
-  
+
   export default {
     layout: FrontendLayout
   }
