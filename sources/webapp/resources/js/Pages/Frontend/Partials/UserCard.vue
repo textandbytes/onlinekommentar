@@ -5,7 +5,7 @@
     </div>
 
     <div class="flex flex-col items-center justify-between space-y-6">
-      <img :src="user.profile_photo_url" class="w-24 h-24 rounded-full" />
+      <img :src="user.profile_photo_url" class="w-24 h-24 rounded-full grayscale" />
 
       <h2 class="text-4xl text-center font-medium font-regular leading-normal break-normal">
         {{ user.name }}
