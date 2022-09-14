@@ -9,7 +9,7 @@
         v-if="tableOfContents"
         label="Table of Contents"
         class="flex items-center py-2 md:py-4"
-        :top-offset=14>
+        menu-classes="top-16">
         <div v-html="tableOfContents" class="p-4"></div>
       </FlyoutMenuFullWidth>
       <div v-else class=" py-2 md:py-4">&nbsp;</div>
@@ -22,7 +22,7 @@
         v-if="versions"
         label="Versions"
         class="flex items-center justify-end py-2 md:py-4"
-        :top-offset=14>
+        menu-classes="top-16">
       </FlyoutMenuFullWidth>
       <div v-else class=" py-2 md:py-4">&nbsp;</div>
     </div>
@@ -48,8 +48,8 @@
       <FlyoutMenuFullWidth
         v-if="commentary"
         label="Zitiervorschlag"
-        :top-offset=8
-        class="relative flex justify-center w-full md:w-3/4 lg:w-1/2">
+        class="relative flex justify-center w-full md:w-3/4 lg:w-1/2"
+        menu-classes="top-8">
         <SuggestedCitationsPanel :commentary="commentary" />
       </FlyoutMenuFullWidth>
     </div>
