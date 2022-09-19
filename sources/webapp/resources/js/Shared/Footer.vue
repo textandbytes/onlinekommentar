@@ -53,7 +53,7 @@
     <div class="border-b border-ok-dark-gray pt-4">
       <div class="px-8 pb-4">
         <div class="text-sm w-1/2" v-html="__('footer_contact_text')"></div>
-        <button class="mt-2 px-8 py-1 text-center uppercase text-xs rounded-full border border-ok-dark-gray">
+        <button class="ok-button">
           <Link :href="`/${$page.props.locale}/contact`">{{ __('footer_contact_link_text') }}</Link>
         </button>
       </div>
