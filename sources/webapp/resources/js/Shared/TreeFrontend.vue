@@ -22,6 +22,7 @@ export default {
 <style>
 #tree-root ul {
   padding-left: 16px;
+  padding-right: 32px;
   margin: 6px 0;
 }
 </style>
