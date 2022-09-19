@@ -78,14 +78,16 @@
       class="bg-gray-800 sm:gap-px">
       <template v-slot:item="commentary">
         <div
-          class="flex flex-col items-center relative group transition ease-in-out delay-150 bg-white hover:bg-ok-orange p-8 cursor-pointer"
+          class="h-[310px] md:h-[340px] xl:h-[500px] relative group transition ease-in-out delay-150 bg-white hover:bg-ok-orange p-8 cursor-pointer"
           @click="onSelect(commentary)">
-          <div class="text-xs uppercase mb-8">
-            {{ commentary.document_label ?? '[UNKNOWN]' }}
-          </div>
 
-          <div class="flex flex-col items-center">
-            <h2 class="text-4xl text-center font-medium font-serif mb-8">
+          <div class="flex flex-col relative items-center h-full w-full">
+            
+            <div class="text-xs uppercase mb-8 tracking-wider">
+              {{ commentary.document_label ?? '[UNKNOWN]' }}
+            </div>
+            
+            <h2 class="text-5xl text-center font-medium font-serif my-12">
               {{ commentary.label }}
             </h2>
 
@@ -96,13 +98,16 @@
             <div class="text-sm text-center mt-1">
               Herausgegeben von <i>Stefan Schlegel</i> und <i>Odile Ammannn</i>
             </div>
-          </div>
+            
+            <div class="absolute flex bottom-0 w-full">
+              <button
+                type="button"
+                class="ok-button mx-auto pb-10">
+                {{ __('view_commentary') }}
+              </button>
+            </div>
 
-          <button
-            type="button"
-            class="transition ease-in-out delay-150 inline-flex items-center px-3 py-1.5 border border-2 border-black text-xs font-medium uppercase rounded-full text-black bg-white group-hover:bg-black group-hover:text-white mt-12">
-            {{ __('view_commentary') }}
-          </button>
+          </div>
         </div>
       </template>
     </GridListView>

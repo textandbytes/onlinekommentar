@@ -1,5 +1,5 @@
 <template>
-  <div class="overflow-hidden divide-y divide-gray-800 sm:divide-y-0 sm:grid sm:grid-cols-3">
+  <div class="overflow-hidden divide-y divide-gray-800 sm:divide-y-0 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
     <template
       v-for="item in items"
       :key="item.id">
