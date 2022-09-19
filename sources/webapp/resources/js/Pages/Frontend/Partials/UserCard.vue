@@ -1,13 +1,13 @@
 <template>
-  <div class="flex flex-col items-center justify-between px-4 py-6 bg-white">
-    <div class="text-xs uppercase mb-4">
-      {{ user.practice ?? '' }}
+  <div class="relative group transition ease-in-out delay-150 bg-white p-8 cursor-pointer">
+    <div class="text-xs uppercase mb-4 text-center" v-html="user.practice">
+      
     </div>
 
     <div class="flex flex-col items-center justify-between space-y-6">
       <img :src="user.profile_photo_url" class="w-24 h-24 rounded-full grayscale" />
 
-      <h2 class="text-4xl text-center font-medium font-regular leading-normal break-normal">
+      <h2 class="text-5xl text-center font-medium font-regular leading-normal" style="word-spacing: 999px">
         {{ user.name }}
       </h2>
 
@@ -17,13 +17,12 @@
     </div>
 
     <div
-      class="w-full text-sm mt-8 mb-4"
-      :class="[user.occupation ? 'py-2 border-y-2' : 'border-t-2']">
-      {{ user.occupation }}
+      class="w-full text-sm mt-8 mb-4 py-2 border-y border-black min-h-[60px]">
+      {{ user.occupation ?? '' }}
     </div>
 
     <div class="w-full flex items-center justify-between">
-      <div class="space-x-2">
+      <div class="mt-4 space-x-2">
         <a
           v-if="user.linkedin_url"
           :href="user.linkedin_url"

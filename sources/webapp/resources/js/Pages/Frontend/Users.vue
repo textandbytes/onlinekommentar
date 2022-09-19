@@ -4,15 +4,30 @@
   </Head>
 
   <div class="flex flex-col">
-    <div class="lg:flex lg:items-center lg:justify-between space-y-2 lg:space-y-0 p-4 md:px-6 border-b border-black bg-white">
-      <div class="text-xs uppercase font-bold">
+    <div class="lg:flex lg:items-center lg:justify-between space-y-2 lg:space-y-0 px-4 py-2 md:px-6 border-b border-black bg-white">
+      <div class="text-xs uppercase font-medium tracking-wider">
         {{ title }}
       </div>
 
       <div class="flex flex-col lg:flex-row space-y-2 lg:space-x-2 lg:space-y-0">
+        <button
+          type="button"
+          :class="viewMode === 'list' ? 'bg-ok-beige' : 'bg-white'"
+          class="inline-flex items-center px-3 py-1 border border-ok-dark-gray shadow-sm text-xs uppercase leading-4 font-medium rounded-md text-black bg-white hover:bg-ok-light-beige focus:outline-none focus:ring-1 focus:ring-gray-300 tracking-wider"
+          @click="">
+          <img class="mr-2" src="/img/list.svg" alt="{{ __('list_view') }}"> {{ __('list_view') }}
+        </button>
+
+        <button
+          type="button"
+          :class="viewMode === 'grid' ? 'bg-ok-beige' : 'bg-white'"
+          class="inline-flex items-center px-3 py-1 border border-ok-dark-gray shadow-sm text-xs uppercase leading-4 font-medium rounded-md text-black bg-white hover:bg-ok-light-beige focus:outline-none focus:ring-1 focus:ring-gray-300 tracking-wider">
+          <img class="mr-2" src="/img/grid.svg" alt="{{ __('grid_view') }}"> {{ __('grid_view') }}
+        </button>
+
         <FlyoutMenuWithDividers
           v-if="documents.length > 0"
-          class="lg:min-w-[300px] lg:max-w-[300px] xl:min-w-[450px] xl:max-w-[450px]"
+          class="lg:min-w-[300px] lg:max-w-[300px] xl:min-w-[450px] xl:max-w-[450px] uppercase tracking-wider"
           :label="__('document_filter_label')"
           :options="documents"
           :active-option="activeDocument"
@@ -29,7 +44,7 @@
           <template v-slot:buttons>
             <button
               type="button"
-              class="transition ease-in-out delay-150 inline-flex items-center px-3 py-1.5 border border-2 border-black text-xs font-medium uppercase rounded-full text-black bg-white group-hover:bg-black group-hover:text-white"
+              class="ok-button"
               @click="goToUserDetailView(user)">
               {{ __('view_user') }}
             </button>
@@ -64,6 +79,8 @@
   })
 
   const locale = computed(() => usePage().props.value.locale)
+
+  const viewMode = 'grid'
 
   const goToUserDetailView = (user) => {
     let userDetailComponent = usePage().component.value.slice(0, -1)
