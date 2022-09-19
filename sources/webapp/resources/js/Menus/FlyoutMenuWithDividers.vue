@@ -4,12 +4,12 @@
       <ListboxButton class="w-full min-w-full text-xs font-medium cursor-pointer focus:outline-none">
         <div
           class="flex items-center justify-between space-x-2 px-2 py-1 bg-white border"
-          :class="[!open ? 'border-ok-dark-gray rounded-sm' : 'border-transparent rounded-t-sm drop-shadow-2xl']">
-          <span v-if="open || !selected" class="block truncate">
+          :class="[!open ? 'border-ok-dark-gray rounded-md' : 'border-transparent rounded-t-md drop-shadow-[0px_0px_15px_rgba(0,0,0,0.2)]']">
+          <span v-if="open || !selected" class="block truncate tracking-wider uppercase">
             {{ label }}
           </span>
-          <span v-else class="block">
-            {{ label + ': ' + selected }}
+          <span v-else class="block tracking-wider uppercase">
+            {{ selected }}
           </span>
 
           <ChevronDownIcon
@@ -28,7 +28,7 @@
         leave-active-class="transition ease-in duration-100"
         leave-from-class="opacity-100"
         leave-to-class="opacity-0">
-        <ListboxOptions class="absolute w-full bg-white drop-shadow-2xl max-h-60 rounded-b-sm text-xs overflow-auto focus:outline-none z-10 divide-y divide-ok-dark-gray">
+        <ListboxOptions class="absolute w-full bg-white drop-shadow-[0px_25px_15px_rgba(0,0,0,0.2)] max-h-60 rounded-b-sm text-xs overflow-auto focus:outline-none z-10 divide-y divide-ok-dark-gray">
           <ListboxOption as="template" v-for="option in options" :key="option.id" :value="option" v-slot="{ active, selected }">
             <li :class="[{ 'bg-ok-beige': active }, 'cursor-pointer select-none relative p-2']">
               <span :class="[selected ? 'font-semibold' : 'font-normal', 'block']">

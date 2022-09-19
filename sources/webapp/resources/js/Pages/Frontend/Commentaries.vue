@@ -4,28 +4,30 @@
   </Head>
 
   <div class="flex flex-col">
-    <div class="lg:flex lg:items-center lg:justify-between space-y-2 lg:space-y-0 p-4 md:px-6 border-b border-black bg-white">
-      <div class="text-xs uppercase font-bold">
+    <div class="lg:flex lg:items-center lg:justify-between space-y-2 lg:space-y-0 px-4 py-2 md:px-6 border-b border-black bg-white">
+      <div class="text-xs uppercase font-medium tracking-wider">
         {{ __('commentaries') }}
       </div>
 
       <div class="flex flex-col lg:flex-row space-y-2 lg:space-x-2 lg:space-y-0">
         <button
           type="button"
-          class="inline-flex items-center px-3 py-1 border border-ok-dark-gray shadow-sm text-xs uppercase leading-4 font-medium rounded-sm text-black bg-white hover:bg-ok-light-beige focus:outline-none focus:ring-1"
+          :class="viewMode === 'list' ? 'bg-ok-beige' : 'bg-white'"
+          class="inline-flex items-center px-3 py-1 border border-ok-dark-gray shadow-sm text-xs uppercase leading-4 font-medium rounded-md text-black bg-white hover:bg-ok-light-beige focus:outline-none focus:ring-1 focus:ring-gray-300 tracking-wider"
           @click="">
-          <i class="ph-list text-lg -ml-0.5 mr-1"></i> {{ __('list_view') }}
+          <img class="mr-2" src="/img/list.svg" alt="{{ __('list_view') }}"> {{ __('list_view') }}
         </button>
 
         <button
           type="button"
-          class="inline-flex items-center px-3 py-1 border border-ok-dark-gray shadow-sm text-xs uppercase leading-4 font-medium rounded-sm text-black bg-white hover:bg-ok-light-beige focus:outline-none focus:ring-1">
-          <i class="ph-grid-four text-lg -ml-0.5 mr-1"></i> {{ __('grid_view') }}
+          :class="viewMode === 'grid' ? 'bg-ok-beige' : 'bg-white'"
+          class="inline-flex items-center px-3 py-1 border border-ok-dark-gray shadow-sm text-xs uppercase leading-4 font-medium rounded-md text-black bg-white hover:bg-ok-light-beige focus:outline-none focus:ring-1 focus:ring-gray-300 tracking-wider">
+          <img class="mr-2" src="/img/grid.svg" alt="{{ __('grid_view') }}"> {{ __('grid_view') }}
         </button>
 
         <FlyoutMenuWithDividers
           v-if="documents.length > 0"
-          class="lg:min-w-[300px] lg:max-w-[300px] xl:min-w-[450px] xl:max-w-[450px]"
+          class="lg:min-w-[300px] lg:max-w-[300px] xl:min-w-[450px] xl:max-w-[450px] rounded-md uppercase tracking-wider"
           :label="__('document_filter_label')"
           :options="documents"
           :active-option="activeDocument"
