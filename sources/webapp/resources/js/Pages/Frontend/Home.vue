@@ -4,7 +4,7 @@
     <title>{{ __('home') }}</title>
   </Head>
 
-  <div class="w-full md:w-1/2 px-8 md:px-0 mx-auto mb-auto mt-32">
+  <div class="w-full lg:pl-40 px-8 md:px-0 mx-auto mb-auto mt-32">
     <p class="mt-8 text-5xl leading-tight">
         {{ __('home_text') }}
     </p>
