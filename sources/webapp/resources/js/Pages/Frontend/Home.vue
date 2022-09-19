@@ -4,14 +4,14 @@
     <title>{{ __('home') }}</title>
   </Head>
 
-  <div class="max-w-3xl mx-auto mb-auto mt-8 p-6">
-    <p class="mt-8 text-4xl leading-snug">
+  <div class="w-full md:w-1/2 px-8 md:px-0 mx-auto mb-auto mt-32">
+    <p class="mt-8 text-5xl leading-tight">
         {{ __('home_text') }}
     </p>
 
     <Link
       :href="`/${$page.props.locale}/ueber-onlinekommentar`"
-      class="inline-block mt-4 uppercase rounded-full border border-black text-xs px-4 py-2 font-medium tracking-widest">
+      class="ok-button">
       {{ __('home_more_link') }}
     </Link>
   </div>
