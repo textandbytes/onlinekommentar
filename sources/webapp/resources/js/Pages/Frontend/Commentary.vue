@@ -4,7 +4,7 @@
   </Head>
 
   <div class="md:max-w-6xl md:mx-auto md:mb-auto bg-white overflow-hidden px-4 md:px-24 md:py-12">
-    <div class="relative flex justify-between items-center md:grid md:grid-cols-3 md:gap-px border-b-2 border-black">
+    <div class="relative flex justify-between items-center md:grid md:grid-cols-3 md:gap-px border-b border-black">
       <FlyoutMenuFullWidth
         v-if="tableOfContents"
         label="Table of Contents"
@@ -48,7 +48,7 @@
       <FlyoutMenuFullWidth
         v-if="commentary"
         label="Zitiervorschlag"
-        class="relative flex justify-center w-full md:w-3/4 lg:w-1/2"
+        class="relative flex justify-center w-full md:w-2/3"
         menu-classes="top-8">
         <SuggestedCitationsPanel :commentary="commentary" />
       </FlyoutMenuFullWidth>
@@ -63,7 +63,7 @@
       </div>
     </div>
 
-    <div class="my-8 space-y-6" v-html="content">
+    <div class="content my-8" v-html="content">
     </div>
   </div>
 </template>
@@ -88,3 +88,29 @@
     versions: { type: Object, required: false, default: null },
   })
 </script>
+
+<style lang="postcss" scoped>
+  .content {
+    :deep(h2) {
+      @apply uppercase font-sans tracking-wider text-xl mt-12 mb-6
+    }
+
+    :deep(h3) {
+      @apply font-sans tracking-wider text-xl mt-12 mb-6
+    }
+
+    :deep(h4) {
+      @apply font-sans tracking-wider text-lg mb-6
+    }
+
+    :deep(p) {
+      @apply relative font-serif mb-6
+    }
+    :deep(.paragraph-nr) {
+      @apply absolute -left-8 text-sm font-sans
+    }
+  }
+  
+
+
+</style>
