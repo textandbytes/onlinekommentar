@@ -10,7 +10,7 @@
         label="Table of Contents"
         class="flex items-center py-2 md:py-4"
         menu-classes="top-16">
-        <div v-html="tableOfContents" class="p-4"></div>
+        <div v-html="tableOfContents" class="toc p-4"></div>
       </FlyoutMenuFullWidth>
       <div v-else class=" py-2 md:py-4">&nbsp;</div>
 
@@ -108,6 +108,16 @@
     }
     :deep(.paragraph-nr) {
       @apply absolute -left-8 text-sm font-sans
+    }
+  }
+
+  .toc {
+    :deep(ul > li) {
+      @apply uppercase
+    }
+
+    :deep(ul li ul li) {
+      @apply ml-4 normal-case
     }
   }
   
