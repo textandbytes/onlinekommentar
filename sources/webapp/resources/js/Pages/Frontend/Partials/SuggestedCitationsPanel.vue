@@ -1,16 +1,22 @@
 <template>
-  <div class="text-xs font-semibold text-gray-800 space-y-4">
+  <div class="text-xs text-gray-800 space-y-4">
     <div>
       {{ commentary.suggested_citation_long }}
     </div>
 
-    <div>
+     <CopyTextButton
+      :label="__('copy_citation')"
+      :text="citationTextLong"
+      class="flex items-center justify-end"
+    />
+
+    <div class="border-t border-black pt-2">
       {{ commentary.suggested_citation_short }}
     </div>
 
     <CopyTextButton
       :label="__('copy_citation')"
-      :text="citationText"
+      :text="citationTextShort"
       class="flex items-center justify-end"
     />
   </div>
@@ -24,7 +30,11 @@
     commentary: { type: Object, required: true }
   })
 
-  const citationText = computed(() => {
+  const citationTextLong = computed(() => {
+    return `${props.commentary.suggested_citation_long}: ${window.location.href}`
+  })
+
+  const citationTextShort = computed(() => {
     return `${props.commentary.suggested_citation_short}: ${window.location.href}`
   })
 </script>

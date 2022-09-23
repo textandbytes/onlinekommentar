@@ -1,7 +1,7 @@
 <template>
   <Popover v-slot="{ open }">
     <PopoverButton :class="[open ? 'text-gray-900' : 'text-gray-800', 'group inline-flex items-center bg-white text-base font-medium hover:text-gray-900 focus:outline-none']">
-      <span class="text-xs uppercase font-semibold">
+      <span class="text-xs uppercase">
         {{ label }}
       </span>
 
