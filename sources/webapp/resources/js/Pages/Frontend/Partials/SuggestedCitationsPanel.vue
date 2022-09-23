@@ -11,7 +11,7 @@
     />
 
     <div class="border-t border-black pt-2">
-      {{ commentary.suggested_citation_short }}
+      {{ usePage().props.value.translations.short_citation }}: {{ commentary.suggested_citation_short }}
     </div>
 
     <CopyTextButton
@@ -24,6 +24,7 @@
 
 <script setup>
   import { computed } from 'vue'
+  import { usePage } from '@inertiajs/inertia-vue3'
   import CopyTextButton from '@/Pages/Frontend/Partials/CopyTextButton'
 
   const props = defineProps({
