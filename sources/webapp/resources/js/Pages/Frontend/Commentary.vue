@@ -7,7 +7,7 @@
     <div class="relative flex justify-between items-center md:grid md:grid-cols-3 md:gap-px border-b border-black">
       <FlyoutMenuFullWidth
         v-if="tableOfContents"
-        label="Table of Contents"
+        :label="tocLabel"
         class="flex items-center py-2 md:py-4"
         menu-classes="top-16">
         <div v-html="tableOfContents" class="toc p-4"></div>
@@ -77,8 +77,13 @@
 </script>
 
 <script setup>
+  import { computed } from 'vue'
+  import { usePage } from '@inertiajs/inertia-vue3'
   import FlyoutMenuFullWidth from '@/Menus/FlyoutMenuFullWidth'
   import SuggestedCitationsPanel from '@/Pages/Frontend/Partials/SuggestedCitationsPanel'
+
+  const translations = computed(() => usePage().props.value.translations)
+  const tocLabel = translations.value.table_of_contents
 
   defineProps({
     document: { type: Object, required: true },
