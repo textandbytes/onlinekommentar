@@ -88,7 +88,7 @@
   defineProps({
     document: { type: Object, required: true },
     commentary: { type: Object, required: true },
-    content: { type: String, required: true },
+    content: { type: [String, null], required: true },
     tableOfContents: { type: String, required: false, default: null },
     versions: { type: Object, required: false, default: null },
   })
