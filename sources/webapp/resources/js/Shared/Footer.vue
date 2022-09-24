@@ -99,16 +99,30 @@
           </NavLink>
         </div>
 
-        <button class="w-28 -mt-1 text-center rounded-full border border-ok-dark-gray">
-          <!-- arrow up -->
-          <a href="#top" class="text-black font-semibold top-link">
+        <!-- arrow up -->
+        <button @click="scrollToTop" class="w-28 -mt-1 text-center rounded-full border border-ok-dark-gray">
+          <span class="text-black font-semibold top-link">
             ↑
-          </a>
+          </span>
         </button>
       </div>
     </div>
   </footer>
 </template>
+
+
+<script>
+export default {
+  methods: {
+    scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    }
+  }
+}
+</script>
 
 <style lang="postcss" scoped>
   
