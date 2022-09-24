@@ -1,5 +1,5 @@
 <template>
-  <div id="sidebar" :class="{ 'open': isSidebarOpen }" class="z-50 fixed top-0 bottom-0 left-0 w-10 h-screen bg-ok-blue rounded-tr-xl rounded-br-xl">
+  <div id="sidebar" :class="{ 'open': isSidebarOpen }" class="z-50 fixed top-0 bottom-0 -left-4 md:left-0 w-10 h-screen bg-ok-blue rounded-tr-xl rounded-br-xl">
   <div id="shadow" class="absolute top-0 bottom-0 left-0 w-2 h-screen bg-transparent"></div>
     
     <div v-if="isSidebarOpen" class="overflow-y-auto h-screen">
