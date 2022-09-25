@@ -20,9 +20,9 @@ class UserSeeder extends Seeder
          */
 
         User::factory()->create([
-            'name' => 'Dani­el Brug­ger',
-            'title' => 'MLaw, Rechts­an­walt',
-            'occupation' => 'Gerichts­schrei­ber am Bun­des­ge­richt und Grün­der des Online­kom­men­tars',
+            'name' => 'Daniel Brugger',
+            'title' => 'MLaw, Rechtsanwalt',
+            'occupation' => 'Gerichtsschreiber am Bundesgericht und Gründer des Onlinekommentars',
             'practice' => 'Gründer &amp; Gesamtherausgeber',
             'linkedin_url' => 'https://www.linkedin.com/in/daniel-brugger-90547474/',
             'website_url' => '',
@@ -33,35 +33,35 @@ class UserSeeder extends Seeder
          */
 
         User::factory()->create([
-            'name' => 'Mar­co Zol­lin­ger',
-            'title' => 'Dr. iur., Rechts­an­walt',
-            'occupation' => 'Gerichts­schrei­ber am Schwei­ze­ri­schen Bun­des­ge­richt',
+            'name' => 'Marco Zollinger',
+            'title' => 'Dr. iur., Rechtsanwalt',
+            'occupation' => 'Gerichtsschreiber am Schweizerischen Bundesgericht',
             'practice' => 'Bundesverfassung',
             'linkedin_url' => '',
             'website_url' => '',
         ]);
 
         User::factory()->create([
-            'name' => 'Mar­c\'An­to­nio Iten-Chen',
+            'name' => 'Marc\'Antonio Iten-Chen',
             'title' => 'Dr.iur.',
-            'occupation' => 'Erb­schafts- und Steu­er­be­ra­ter',
+            'occupation' => 'Erbschafts- und Steuerberater',
             'practice' => 'Zivilgesetzbuch',
             'linkedin_url' => 'https://www.linkedin.com/in/dr-iur-marc-antonio-iten-chen-5281b997/',
             'website_url' => '',
         ]);
 
         User::factory()->create([
-            'name' => 'Yan­nick Min­nig',
-            'title' => 'Dr. iur., Rechts­an­walt',
-            'occupation' => 'Habi­li­tand und Ober­as­sis­tent am Zivi­lis­ti­schen Semi­nar der Uni­ver­si­tät Bern',
+            'name' => 'Yannick Minnig',
+            'title' => 'Dr. iur., Rechtsanwalt',
+            'occupation' => 'Habilitand und Oberassistent am Zivilistischen Seminar der Universität Bern',
             'practice' => 'Zivilgesetzbuch',
             'linkedin_url' => '',
             'website_url' => 'https://www.ziv.unibe.ch/ueber_uns/personen/personen_abt_prof_wolf/dr_iur_minnig_yannick/index_ger.html',
         ]);
 
         User::factory()->create([
-            'name' => 'San­dra Strahm',
-            'title' => 'MLaw, Rechts­an­wäl­tin',
+            'name' => 'Sandra Strahm',
+            'title' => 'MLaw, Rechtsanwältin',
             'occupation' => '',
             'practice' => 'Zivilgesetzbuch',
             'linkedin_url' => 'https://www.linkedin.com/in/sandra-strahm-933050141/',
@@ -69,16 +69,16 @@ class UserSeeder extends Seeder
         ]);
 
         User::factory()->create([
-            'name' => 'San­dra Viert­ler',
-            'title' => 'Magis­tra',
-            'occupation' => 'Uni­ver­si­täts­as­sis­ten­tin und Dok­to­ran­din an der Uni­ver­si­tät Inns­bruck',
+            'name' => 'Sandra Viertler',
+            'title' => 'Magistra',
+            'occupation' => 'Universitätsassistentin und Doktorandin an der Universität Innsbruck',
             'practice' => 'Zivilgesetzbuch',
             'linkedin_url' => '',
             'website_url' => 'https://www.ziv.unibe.ch/ueber_uns/personen/personen_abt_prof_wolf/ehemalige_abt_wolf/viertler_sandra/index_ger.html',
         ]);
 
         User::factory()->create([
-            'name' => 'Peter Bar­mett­ler',
+            'name' => 'Peter Barmettler',
             'title' => 'Dr.oec.',
             'occupation' => '',
             'practice' => 'Obligationenrecht',
@@ -87,18 +87,18 @@ class UserSeeder extends Seeder
         ]);
 
         User::factory()->create([
-            'name' => 'Ema­nu­el Bit­tel',
-            'title' => 'Dr.iur, Rechts­an­walt',
-            'occupation' => 'Gerichts­schrei­ber am Bun­des­ge­richt',
+            'name' => 'Emanuel Bittel',
+            'title' => 'Dr.iur, Rechtsanwalt',
+            'occupation' => 'Gerichtsschreiber am Bundesgericht',
             'practice' => 'Obligationenrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/emanuel-bittel/',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'Valen­tin Bot­te­ron',
-            'title' => 'Dr.iur, Rechts­an­walt',
-            'occupation' => 'Gerichts­schrei­ber am Bun­des­ge­richt',
+            'name' => 'Valentin Botteron',
+            'title' => 'Dr.iur, Rechtsanwalt',
+            'occupation' => 'Gerichtsschreiber am Bundesgericht',
             'practice' => 'Obligationenrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/valentinbotteron/',
             'website_url' => '',
@@ -106,7 +106,7 @@ class UserSeeder extends Seeder
         
         User::factory()->create([
             'name' => 'Patric Brand',
-            'title' => 'Dr.iur, Rechts­an­walt, LL.M.',
+            'title' => 'Dr.iur, Rechtsanwalt, LL.M.',
             'occupation' => '',
             'practice' => 'Obligationenrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/patric-brand-174a22188/',
@@ -114,8 +114,8 @@ class UserSeeder extends Seeder
         ]);
         
         User::factory()->create([
-            'name' => 'Susan­ne Brütsch',
-            'title' => 'MLaw, Rechts­an­wäl­tin',
+            'name' => 'Susanne Brütsch',
+            'title' => 'MLaw, Rechtsanwältin',
             'occupation' => '',
             'practice' => 'Obligationenrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/susanne-br%C3%BCtsch-5a3a22109/',
@@ -123,8 +123,8 @@ class UserSeeder extends Seeder
         ]);
         
         User::factory()->create([
-            'name' => 'Rena­to Bucher',
-            'title' => 'MLaw, LL.M., Rechts­an­walt',
+            'name' => 'Renato Bucher',
+            'title' => 'MLaw, LL.M., Rechtsanwalt',
             'occupation' => '',
             'practice' => 'Obligationenrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/renatobucher/',
@@ -132,7 +132,7 @@ class UserSeeder extends Seeder
         ]);
         
         User::factory()->create([
-            'name' => 'Andre­as Diet­schi',
+            'name' => 'Andreas Dietschi',
             'title' => 'MLaw',
             'occupation' => '',
             'practice' => 'Obligationenrecht',
@@ -141,17 +141,17 @@ class UserSeeder extends Seeder
         ]);
         
         User::factory()->create([
-            'name' => 'Lucas For­rer',
-            'title' => 'MLaw, Juni­or Asso­cia­te',
-            'occupation' => 'Dok­to­rand an der Uni­ver­si­tät Zürich',
+            'name' => 'Lucas Forrer',
+            'title' => 'MLaw, Junior Associate',
+            'occupation' => 'Doktorand an der Universität Zürich',
             'practice' => 'Obligationenrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/lucasforrer/',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'Dario Gal­li',
-            'title' => 'MLaw, LL.M., Rechts­an­walt',
+            'name' => 'Dario Galli',
+            'title' => 'MLaw, LL.M., Rechtsanwalt',
             'occupation' => '',
             'practice' => 'Obligationenrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/dario-galli-65b460124/',
@@ -159,17 +159,17 @@ class UserSeeder extends Seeder
         ]);
         
         User::factory()->create([
-            'name' => 'Mar­cel Grie­sin­ger',
-            'title' => 'Rechts­an­walt',
-            'occupation' => 'Wis­sen­schaft­li­cher Mitarbeiter/Dozent',
+            'name' => 'Marcel Griesinger',
+            'title' => 'Rechtsanwalt',
+            'occupation' => 'Wissenschaftlicher Mitarbeiter/Dozent',
             'practice' => 'Obligationenrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/marcel-griesinger-9873a396/',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'Clau­dio Gür',
-            'title' => 'M.A. HSG in Law and Eco­no­mics, Rechts­an­walt',
+            'name' => 'Claudio Gür',
+            'title' => 'M.A. HSG in Law and Economics, Rechtsanwalt',
             'occupation' => '',
             'practice' => 'Obligationenrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/claudio-gur/',
@@ -177,17 +177,17 @@ class UserSeeder extends Seeder
         ]);
         
         User::factory()->create([
-            'name' => 'Jan Hel­ler',
+            'name' => 'Jan Heller',
             'title' => 'MLaw',
-            'occupation' => 'Anwalts­prak­ti­kant',
+            'occupation' => 'Anwaltspraktikant',
             'practice' => 'Obligationenrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/jan-heller-864546149/',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'David P. Hen­ry',
-            'title' => 'Dr.iur. HSG, LL.M., Rechts­an­walt',
+            'name' => 'David P. Henry',
+            'title' => 'Dr.iur. HSG, LL.M., Rechtsanwalt',
             'occupation' => '',
             'practice' => 'Obligationenrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/dphenry/',
@@ -195,17 +195,17 @@ class UserSeeder extends Seeder
         ]);
         
         User::factory()->create([
-            'name' => 'Sarah Lei­en­de­cker',
+            'name' => 'Sarah Leiendecker',
             'title' => 'Dipl. Jur.',
-            'occupation' => 'Wis­sen­schaft­li­che Mit­ar­bei­te­rin und juris­ti­sche Pod­cas­te­rin',
+            'occupation' => 'Wissenschaftliche Mitarbeiterin und juristische Podcasterin',
             'practice' => 'Obligationenrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/sarah-leiendecker/',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'Lukas Mül­ler',
-            'title' => 'Prof. Dr.oec. HSG, Rechts­an­walt',
+            'name' => 'Lukas Müller',
+            'title' => 'Prof. Dr.oec. HSG, Rechtsanwalt',
             'occupation' => '',
             'practice' => 'Obligationenrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/lukas-m%C3%BCller-b03441b0/',
@@ -213,25 +213,25 @@ class UserSeeder extends Seeder
         ]);
         
         User::factory()->create([
-            'name' => 'Mat­thi­as Mül­ler',
+            'name' => 'Matthias Müller',
             'title' => 'MLaw',
-            'occupation' => 'Juni­or Asso­cia­te',
+            'occupation' => 'Junior Associate',
             'practice' => 'Obligationenrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/mattpamueller/',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'Anne Mir­jam Schneuw­ly',
-            'title' => 'Dr.iur., Rechts­an­wäl­tin',
-            'occupation' => 'Exe­cu­ti­ve M.B.L.-HSG, Ober­as­sis­ten­tin an der Uni­ver­si­tät Zürich',
+            'name' => 'Anne Mirjam Schneuwly',
+            'title' => 'Dr.iur., Rechtsanwältin',
+            'occupation' => 'Executive M.B.L.-HSG, Oberassistentin an der Universität Zürich',
             'practice' => 'Obligationenrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/anne-mirjam-schneuwly-32b65159/',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'Jean-Pas­cal Stoll',
+            'name' => 'Jean-Pascal Stoll',
             'title' => 'MLaw',
             'occupation' => '',
             'practice' => 'Obligationenrecht',
@@ -240,8 +240,8 @@ class UserSeeder extends Seeder
         ]);
         
         User::factory()->create([
-            'name' => 'Mar­kus Vischer',
-            'title' => 'Dr.iur, LL.M., Rechts­an­walt',
+            'name' => 'Markus Vischer',
+            'title' => 'Dr.iur, LL.M., Rechtsanwalt',
             'occupation' => '',
             'practice' => 'Obligationenrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/markus-vischer-30193714b/',
@@ -249,17 +249,17 @@ class UserSeeder extends Seeder
         ]);
 
         User::factory()->create([
-            'name' => 'Oli­ver D. Wil­liam',
-            'title' => 'Dr. iur., Rechts­an­walt',
-            'occupation' => 'Lehr­be­auf­trag­ter und Seni­or Rese­ar­cher am Zivi­lis­ti­schen Semi­nar der Uni­ver­si­tät Bern',
+            'name' => 'Oliver D. William',
+            'title' => 'Dr. iur., Rechtsanwalt',
+            'occupation' => 'Lehrbeauftragter und Senior Researcher am Zivilistischen Seminar der Universität Bern',
             'practice' => 'Obligationenrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/oliver-d-william-bb3899115/',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'Cla­ris­se von Wunsch­heim',
-            'title' => 'Dr.iur, Rechts­an­wäl­tin',
+            'name' => 'Clarisse von Wunschheim',
+            'title' => 'Dr.iur, Rechtsanwältin',
             'occupation' => '',
             'practice' => 'Obligationenrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/clarisse-von-wunschheim-950561/',
@@ -267,8 +267,8 @@ class UserSeeder extends Seeder
         ]);
         
         User::factory()->create([
-            'name' => 'Pas­cal Zys­set',
-            'title' => 'Dr.iur., Rechts­an­walt und Notar',
+            'name' => 'Pascal Zysset',
+            'title' => 'Dr.iur., Rechtsanwalt und Notar',
             'occupation' => '',
             'practice' => 'Obligationenrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/pascal-zysset-100738b2/',
@@ -276,8 +276,8 @@ class UserSeeder extends Seeder
         ]);
         
         User::factory()->create([
-            'name' => 'Ben­ja­min Dome­nig',
-            'title' => 'M.A. HSG in Law and Eco­no­mics, Rechts­an­walt',
+            'name' => 'Benjamin Domenig',
+            'title' => 'M.A. HSG in Law and Economics, Rechtsanwalt',
             'occupation' => '',
             'practice' => 'Zivilverfahrensrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/benjamin-domenig/',
@@ -285,26 +285,26 @@ class UserSeeder extends Seeder
         ]);
         
         User::factory()->create([
-            'name' => 'Jac­ques Douz­als',
-            'title' => 'MLaw, LL.M., Rechts­an­walt',
-            'occupation' => 'Gerichts­schrei­ber am Bun­des­ge­richt',
+            'name' => 'Jacques Douzals',
+            'title' => 'MLaw, LL.M., Rechtsanwalt',
+            'occupation' => 'Gerichtsschreiber am Bundesgericht',
             'practice' => 'Zivilverfahrensrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/jacquesdouzals/',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'Lau­rent Gro­bé­ty',
-            'title' => 'Dr. iur., Rechts­an­walt',
-            'occupation' => 'Lehr­be­auf­trag­ter an der Fern­Uni Schweiz und an der Uni­ver­si­tät Frei­burg',
+            'name' => 'Laurent Grobéty',
+            'title' => 'Dr. iur., Rechtsanwalt',
+            'occupation' => 'Lehrbeauftragter an der FernUni Schweiz und an der Universität Freiburg',
             'practice' => 'Zivilverfahrensrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/laurent-grob%C3%A9ty-39033163/',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'Adri­en­ne Hen­ne­mann',
-            'title' => 'lic.iur., Rechts­an­wäl­tin',
+            'name' => 'Adrienne Hennemann',
+            'title' => 'lic.iur., Rechtsanwältin',
             'occupation' => '',
             'practice' => 'Zivilverfahrensrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/adrienne-hennemann-2a325619b/',
@@ -312,27 +312,27 @@ class UserSeeder extends Seeder
         ]);
         
         User::factory()->create([
-            'name' => 'Patrick Hon­eg­ger-Mün­te­ner',
-            'title' => 'MLaw, Rechts­an­walt',
-            'occupation' => 'Wis­sen­schaft­li­cher Assis­tent und Dok­to­rand',
+            'name' => 'Patrick Honegger-Müntener',
+            'title' => 'MLaw, Rechtsanwalt',
+            'occupation' => 'Wissenschaftlicher Assistent und Doktorand',
             'practice' => 'Zivilverfahrensrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/patrick-honegger-m%C3%BCntener-a7496b8a/',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'Alex­an­der Kist­ler',
-            'title' => 'MLaw, Rechts­an­walt, LL.M.',
-            'occupation' => 'Wis­sen­schaft­li­cher Assis­tent und Dok­to­rand',
+            'name' => 'Alexander Kistler',
+            'title' => 'MLaw, Rechtsanwalt, LL.M.',
+            'occupation' => 'Wissenschaftlicher Assistent und Doktorand',
             'practice' => 'Zivilverfahrensrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/alexander-kistler-a4916739/',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'Andre­as Schneuw­ly',
-            'title' => 'Dr.iur., Rechts­an­walt',
-            'occupation' => 'Ersatz­rich­ter am Ober­ge­richt des Kan­tons Aar­gau und Gerichts­schrei­ber am Han­dels­ge­richt des Kan­tons Aar­gau',
+            'name' => 'Andreas Schneuwly',
+            'title' => 'Dr.iur., Rechtsanwalt',
+            'occupation' => 'Ersatzrichter am Obergericht des Kantons Aargau und Gerichtsschreiber am Handelsgericht des Kantons Aargau',
             'practice' => 'Zivilverfahrensrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/andreas-schneuwly-463981b6/',
             'website_url' => '',
@@ -341,15 +341,15 @@ class UserSeeder extends Seeder
         User::factory()->create([
             'name' => 'Loïc Stucki',
             'title' => 'MLaw',
-            'occupation' => 'Wis­sen­schaft­li­cher Assis­tent an der Uni­ver­si­tät Bern',
+            'occupation' => 'Wissenschaftlicher Assistent an der Universität Bern',
             'practice' => 'Zivilverfahrensrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/lo%C3%AFc-stucki-7a769b192/',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'Domi­nik Mila­ni',
-            'title' => 'Dr.iur., Rechts­an­walt',
+            'name' => 'Dominik Milani',
+            'title' => 'Dr.iur., Rechtsanwalt',
             'occupation' => '',
             'practice' => 'Schuldbetreibungs- und Konkursrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/dominik-milani-244542b3/',
@@ -357,45 +357,45 @@ class UserSeeder extends Seeder
         ]);
         
         User::factory()->create([
-            'name' => 'Fré­dé­ric Erard',
-            'title' => 'Dr.iur., Rechts­an­walt',
-            'occupation' => 'Seni­or Legal Offi­cer',
+            'name' => 'Frédéric Erard',
+            'title' => 'Dr.iur., Rechtsanwalt',
+            'occupation' => 'Senior Legal Officer',
             'practice' => 'Strafrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-erard-41115378/',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'Mari­an­ne Johan­na Lehm­kuhl',
+            'name' => 'Marianne Johanna Lehmkuhl',
             'title' => 'Prof. Dr.iur.',
-            'occupation' => 'Ordi­na­ria für Straf­recht, Wirt­schafts- und inter­na­tio­na­les Straf­recht / Vize­de­ka­nin der Rechts­wis­sen­schaft­li­chen Fakul­tät der Uni­ver­si­tät Bern',
+            'occupation' => 'Ordinaria für Strafrecht, Wirtschafts- und internationales Strafrecht / Vizedekanin der Rechtswissenschaftlichen Fakultät der Universität Bern',
             'practice' => 'Strafrecht',
             'linkedin_url' => '',
             'website_url' => 'https://www.krim.unibe.ch/ueber_uns/personen/prof_dr_lehmkuhl_marianne_johanna/index_ger.html',
         ]);
         
         User::factory()->create([
-            'name' => 'Nico­las Leu',
+            'name' => 'Nicolas Leu',
             'title' => 'Dr.iur.',
-            'occupation' => 'Jurist Straf­rechts­dienst',
+            'occupation' => 'Jurist Strafrechtsdienst',
             'practice' => 'Strafrecht',
             'linkedin_url' => '',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'André Tan­ner',
+            'name' => 'André Tanner',
             'title' => 'MLaw',
-            'occupation' => 'Seni­or Com­pli­an­ce Offi­cer AML',
+            'occupation' => 'Senior Compliance Officer AML',
             'practice' => 'Strafrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/andr%C3%A9tanner/',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'Made­lei­ne von Rotz-Laager',
+            'name' => 'Madeleine von Rotz-Laager',
             'title' => 'Dr.iur',
-            'occupation' => 'Finan­cial Crime Com­pli­an­ce Offi­cer',
+            'occupation' => 'Financial Crime Compliance Officer',
             'practice' => 'Strafrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/dr-madeleine-von-rotz-laager-084a87a1/',
             'website_url' => '',
@@ -404,7 +404,7 @@ class UserSeeder extends Seeder
         User::factory()->create([
             'name' => 'Jonas Weber',
             'title' => 'Prof. Dr.iur.',
-            'occupation' => 'Ordi­na­ri­us für Straf­recht und Kri­mi­no­lo­gie, geschäfts­füh­ren­der Direk­tor des Depar­te­ments für Straf­recht der Uni­ver­si­tät Bern',
+            'occupation' => 'Ordinarius für Strafrecht und Kriminologie, geschäftsführender Direktor des Departements für Strafrecht der Universität Bern',
             'practice' => 'Strafrecht',
             'linkedin_url' => '',
             'website_url' => 'https://www.krim.unibe.ch/ueber_uns/personen/prof_dr_weber_jonas/index_ger.html',
@@ -413,33 +413,33 @@ class UserSeeder extends Seeder
         User::factory()->create([
             'name' => 'Jan Wenk',
             'title' => 'MLaw',
-            'occupation' => 'Wis­sen­schaft­li­cher Assis­tent an der Uni­ver­si­tät Bern',
+            'occupation' => 'Wissenschaftlicher Assistent an der Universität Bern',
             'practice' => 'Strafrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/jan-wenk-b46629160/',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'Kon­rad Jeker',
-            'title' => 'lic.iur, Rechts­an­walt',
-            'occupation' => 'Fach­an­walt SAV Straf­recht',
+            'name' => 'Konrad Jeker',
+            'title' => 'lic.iur, Rechtsanwalt',
+            'occupation' => 'Fachanwalt SAV Strafrecht',
             'practice' => 'Strafprozessrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/konrad-jeker-a756a1149/',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'Mar­kus J. Mei­er',
-            'title' => 'MLaw, Rechts­an­walt',
-            'occupation' => 'Straf­ver­tei­di­ger',
+            'name' => 'Markus J. Meier',
+            'title' => 'MLaw, Rechtsanwalt',
+            'occupation' => 'Strafverteidiger',
             'practice' => 'Strafprozessrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/markus-j-meier-611a3299/',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'Tobi­as Schaff­ner',
-            'title' => 'Dr.iur., LL.M., Rechts­an­walt',
+            'name' => 'Tobias Schaffner',
+            'title' => 'Dr.iur., LL.M., Rechtsanwalt',
             'occupation' => '',
             'practice' => 'Strafprozessrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/tobias-schaffner-08a586141/',
@@ -447,35 +447,35 @@ class UserSeeder extends Seeder
         ]);
         
         User::factory()->create([
-            'name' => 'Caro­li­ne Schär',
-            'title' => 'MLaw, Rechts­an­wäl­tin',
-            'occupation' => 'Gerichts­schrei­be­rin am Bun­des­ge­richt, Ersatz­rich­te­rin am Ober­ge­richt des Kan­tons Aar­gau',
+            'name' => 'Caroline Schär',
+            'title' => 'MLaw, Rechtsanwältin',
+            'occupation' => 'Gerichtsschreiberin am Bundesgericht, Ersatzrichterin am Obergericht des Kantons Aargau',
             'practice' => 'Strafprozessrecht',
             'linkedin_url' => '',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'Kris­ti­na Schwab',
+            'name' => 'Kristina Schwab',
             'title' => 'MLaw',
-            'occupation' => 'Juris­tin',
+            'occupation' => 'Juristin',
             'practice' => 'Strafprozessrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/kristina-schwab-b30833156/',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'Deni­se Wein­gart',
-            'title' => 'Dr.iur, Rechts­an­wäl­tin',
-            'occupation' => 'Gerichts­prä­si­den­tin Regio­nal­ge­richt Ber­ner Jura-See­land, Ersatz­rich­te­rin am Ober­ge­richt Bern',
+            'name' => 'Denise Weingart',
+            'title' => 'Dr.iur, Rechtsanwältin',
+            'occupation' => 'Gerichtspräsidentin Regionalgericht Berner Jura-Seeland, Ersatzrichterin am Obergericht Bern',
             'practice' => 'Strafprozessrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/denise-weingart-766b33157/',
             'website_url' => '',
         ]);
         
         User::factory()->create([
-            'name' => 'Lea Hun­ger­büh­ler',
-            'title' => 'Rechts­an­wäl­tin, LL.M.',
+            'name' => 'Lea Hungerbühler',
+            'title' => 'Rechtsanwältin, LL.M.',
             'occupation' => '',
             'practice' => 'Migrationsrecht',
             'linkedin_url' => 'https://www.linkedin.com/in/lea-hungerb%C3%BChler-37b99a107/',

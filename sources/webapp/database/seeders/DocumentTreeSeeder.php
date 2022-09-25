@@ -78,9 +78,9 @@ class DocumentTreeSeeder extends Seeder
             'label_fr'   => 'Art. 68 Cst. Sport',
             'label_it'   => 'Art. 68 Cost. Sport',
             'content_de' => '
-                <p><sup>1</sup>&nbsp;Der Bund fördert den Sport, ins­be­son­de­re die Ausbildung.</p>
+                <p><sup>1</sup>&nbsp;Der Bund fördert den Sport, insbesondere die Ausbildung.</p>
                 <p><sup>2</sup>&nbsp;Er betreibt eine Sportschule.</p>
-                <p><sup>3</sup>&nbsp;Er kann Vor­schrif­ten über den Jugend­sport erlas­sen und den Sport­un­ter­richt an Schu­len obli­ga­to­risch erklären.</p>
+                <p><sup>3</sup>&nbsp;Er kann Vorschriften über den Jugendsport erlassen und den Sportunterricht an Schulen obligatorisch erklären.</p>
             ',
             'content_en' => '
                 <p><sup>1</sup>&nbsp;The Confederation shall encourage sport, and in particular education in sport.</p>
