@@ -1,4 +1,4 @@
-# admin:
-#   title: Administrators
-#   roles:
-#     - admin
+developers:
+  title: Developers
+  roles:
+    - developer
