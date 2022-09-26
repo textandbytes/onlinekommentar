@@ -1,4 +1,8 @@
-# admin:
-#   title: Administrator
-#   permissions:
-#     - super
+admin:
+  title: Administrator
+contributor:
+  title: Contributor
+developer:
+  title: Developer
+  permissions:
+    - super
