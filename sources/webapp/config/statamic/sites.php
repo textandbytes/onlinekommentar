@@ -16,26 +16,26 @@ return [
     'sites' => [
 
         'en' => [
-            'name' => config('app.name'),
+            'name' => 'en',
             'locale' => 'en_US',
-            'url' => '/',
+            'url' => '/en/',
         ],
 
         'de' => [
             'name' => 'de',
-            'locale' => 'en_US',
+            'locale' => 'de_CH',
             'url' => '/de/',
         ],
 
         'fr' => [
             'name' => 'fr',
-            'locale' => 'en_US',
+            'locale' => 'fr_CH',
             'url' => '/fr/',
         ],
 
         'it' => [
             'name' => 'it',
-            'locale' => 'en_US',
+            'locale' => 'it_CH',
             'url' => '/it/',
         ],
 
