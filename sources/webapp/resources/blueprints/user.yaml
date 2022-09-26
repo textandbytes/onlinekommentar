@@ -78,6 +78,11 @@ sections:
           mode: select
           width: 50
           listable: true
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          if:
+            groups: 'contains Developers'
       -
         handle: groups
         field:
