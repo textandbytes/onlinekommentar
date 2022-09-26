@@ -1,0 +1,87 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: name
+        field:
+          type: text
+          display: Name
+          listable: true
+      -
+        handle: email
+        field:
+          type: text
+          input_type: email
+          display: 'Email Address'
+          listable: true
+      -
+        handle: title
+        field:
+          input_type: text
+          antlers: false
+          display: Title
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: occupation
+        field:
+          input_type: text
+          antlers: false
+          display: Occupation
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: practice
+        field:
+          input_type: text
+          antlers: false
+          display: Practice
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: linkedin_url
+        field:
+          display: 'LinkedIn URL'
+          type: link
+          icon: link
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: website_url
+        field:
+          display: 'Website URL'
+          type: link
+          icon: link
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: roles
+        field:
+          type: user_roles
+          mode: select
+          width: 50
+          listable: true
+      -
+        handle: groups
+        field:
+          type: user_groups
+          mode: select
+          width: 50
+          listable: true
