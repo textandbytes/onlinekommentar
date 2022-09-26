@@ -84,4 +84,7 @@ sections:
           type: user_groups
           mode: select
           width: 50
-          listable: true
+          listable: false
+          instructions_position: above
+          visibility: hidden
+          always_save: false
