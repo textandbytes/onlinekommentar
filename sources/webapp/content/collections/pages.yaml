@@ -1,8 +1,17 @@
 title: Pages
 sites:
   - en
-propagate: false
-revisions: false
+  - de
+  - fr
+  - it
+propagate: true
+template: default
+layout: layout
+revisions: true
+route: '{parent_uri}/{slug}'
+sort_dir: asc
 date_behavior:
   past: public
   future: private
+structure:
+  root: true

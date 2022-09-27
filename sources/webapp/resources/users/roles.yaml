@@ -10,12 +10,19 @@ admin:
     - 'edit commentaries entries'
     - 'create commentaries entries'
     - 'delete commentaries entries'
+    - 'publish commentaries entries'
+    - 'reorder commentaries entries'
     - 'view users'
     - 'edit users'
     - 'create users'
     - 'delete users'
 contributor:
   title: Contributor
+  permissions:
+    - 'access cp'
+    - 'view commentaries entries'
+    - 'edit commentaries entries'
+    - 'publish commentaries entries'
 developer:
   title: Developer
   permissions:

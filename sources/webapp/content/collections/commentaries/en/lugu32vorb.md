@@ -1,0 +1,63 @@
+---
+id: 85eec59a-d6e0-4478-86e1-52c1fe3c74c6
+blueprint: commentary
+title: 'Art. 32 — 37 LugÜ'
+author: c10c1599-a925-4e29-b45f-a4f9934c1ca7
+updated_by: c10c1599-a925-4e29-b45f-a4f9934c1ca7
+updated_at: 1663306623
+template: commentaries/show
+---
+<h2>I. Regelungsgegenstand und Begriff der Anerkennung</h2>
+<p><strong>1</strong> Infolge des Territorialitätsprinzips entfalten gerichtliche Entscheide als staatliche Hoheitsakte ausschliesslich Rechtsfolgen im Urteilsstaat.<a><sup>[5]</sup></a></p>
+<p><strong>2</strong> Die Anerkennung ist von der Vollstreckbarerklärung zu unterscheiden.<a><sup>[12]</sup></a></p>
+<p><strong>3</strong> Es besteht keine <em>allgemeine</em> völkerrechtliche Verpflichtung zur Anerkennung ausländischer Entscheidungen.<a><sup>[19]</sup></a></p>
+<h2>II. Anwendungsbereich und Kognition des Anerkennungsgerichts</h2>
+<p><strong>4</strong> Der Anwendungsbereich der Anerkennungsbestimmungen ist in <strong><em>räumlich-persönlicher Hinsicht</em></strong> auf vertragsstaatliche Entscheidungen beschränkt (Art. 32 LugÜ). Urteile eines Nichtvertragsstaates des Übereinkommens sind demgegenüber (mit Ausnahme ihrer Sperrwirkung gemäss Art. 34 Ziff. 4 LugÜ)<a><sup>[25]</sup></a></p>
+<p><strong>5</strong> In <strong><em>sachlicher Hinsicht</em></strong> wird ferner vorausgesetzt, dass die anzuerkennende Entscheidung in einem Rechtsstreit ergangen ist, welcher vom sachlichen Anwendungsbereich des Übereinkommens (Art. 1 LugÜ) erfasst ist.<a><sup>[27]</sup></a></p>
+<p><strong>6</strong> Schliesslich gehen auch <strong><em>Spezialübereinkommen</em></strong>, welche die gerichtliche Zuständigkeit, die Anerkennung oder die Vollstreckung regeln und denen sämtliche oder einzelne Vertragsstaaten angehören, dem Übereinkommen vor (Art. 67&nbsp;LugÜ).&nbsp;</p>
+<p><strong>7</strong> Über die Anwendung der Anerkennungs- und Vollstreckungsbestimmungen des Übereinkommens entscheidet das Anerkennungsgericht selbständig.<a><sup>[29]</sup></a></p>
+<h2>III. Die Grundsätze des Anerkennungssystems des Lugano Übereinkommens</h2>
+<h3>A. Urteilsfreizügigkeit</h3>
+<p><strong>8</strong> Das Parallelsystem zum System von Lugano<a><sup>[36]</sup></a></p>
+<p><strong>9</strong> Die <strong><em>Urteilsfreizügigkeit</em></strong> wurde innerhalb der Europäischen Gemeinschaft als Regelungskonzept im Zusammenhang mit der Warenverkehrsfreiheit entwickelt und gründet auf dem unionsrechtlichen Herkunftslandprinzip. Das <strong><em>Herkunftslandprinzip</em></strong> fand seinen Ursprung in der Anerkennung von Verwaltungsakten bei der Zulassung von Waren innerhalb der Europäischen Gemeinschaft. In Anwendung dieses Prinzips wurden im Herkunftsmitgliedstaat zugelassene Waren und Dienstleistungen im Empfangsstaat wie inländische Produkte und Dienstleistungen behandelt.<a><sup>[40]</sup></a></p>
+<p><strong>10</strong> Zur Erreichung dieses Ziels wurden seit dem Abschluss des ursprünglichen EuGVÜ kontinuierlich Anerkennungshindernisse abgeschafft und das Anerkennungsverfahren vereinfacht.<a><sup>[50]</sup></a></p>
+<h3>B. Vertrauensgrundsatz</h3>
+<p><strong>11</strong> Zur Gewährleistung einer derartigen Urteilsfreizügigkeit wird ein besonderes Mass an gegenseitigem Vertrauen in die Rechtspflege der Vertragsstaaten vorausgesetzt.<a><sup>[60]</sup></a></p>
+<h3>C. Effektiver Beklagtenschutz und Verhinderung unvereinbarer Entscheidungen</h3>
+<p><strong>12</strong> Eine ungebremste Urteilsfreizügigkeit birgt auch Risiken. So kann bei fehlender Möglichkeit zur Überprüfung des Entscheids durch den Anerkennungsstaat der Schutz der Parteirechte (insb. der beklagten Partei) unterlaufen werden.<a><sup>[68]</sup></a> Diesen Bestimmungen zufolge wird ein Entscheid nicht anerkannt, wenn sie entweder mit einer Entscheidung im Anerkennungsstaat (Nr. 3) oder mit einer früheren Entscheidung aus einem anderen Staat (Nr. 4) unvereinbar&nbsp;ist.</p>
+<h2>IV. Rechtsfolgen der Anerkennung</h2>
+<p><strong>13</strong> Während im Übereinkommen die Voraussetzungen und das Verfahren der Anerkennung ausführlich geregelt werden, enthält es keine explizite Bestimmung zu den Rechtsfolgen einer Anerkennung.<a><sup>[69]</sup></a> Dies wirft letztlich zwei Fragen auf: Erstens, nach welchem Recht sind die Rechtsfolgen einer anerkannten Entscheidung zu bestimmen? Zweitens, welche Rechtsfolgen sind überhaupt einer Anerkennung zugänglich und damit anerkennungsfähig?</p>
+<h3>A. Bestimmung der Rechtsfolgen der Anerkennung</h3>
+<h4>1. Allgemeine Theorien zu den Anerkennungsfolgen</h4>
+<p><strong>14</strong> In der Lehre ist umstritten, nach welcher Rechtsgrundlage sich die Rechtsfolgen einer Anerkennung bestimmen. Nach der von der h.L. vertretenen <strong><em>Wirkungserstreckungstheorie</em></strong> sind der anerkannten Entscheidung im Anerkennungsstaat dieselben Rechtsfolgen zuzuerkennen, die ihr im Ursprungsstaat zukommen.<a><sup>[76]</sup></a></p>
+<h4>2. Rechtsfolgen der Anerkennung innerhalb des&nbsp;LugÜ</h4>
+<h5>a. Wirkungserstreckungstheorie</h5>
+<p><strong>15</strong> Die <strong><em>offiziellen Berichte</em></strong><a><sup>[79]</sup></a></p>
+<p><strong>16</strong> Der EuGH scheint in seiner <em>Hoffmann</em> Rechtsprechung ebenfalls die Wirkungserstreckungstheorie zu befürworten.<a><sup>[85]</sup></a></p>
+<p><strong>17</strong> In der genannten Rechtsprechung differenziert der EuGH jedoch klar zwischen den Rechtsfolgen einer Anerkennung und denjenigen einer Vollstreckbarerklärung. Die genannte Wirkungsbegrenzung bezieht sich dabei ausschliesslich auf die Rechtsfolgen einer Vollstreckbarerklärung.<a><sup>[89]</sup></a></p>
+<p><strong>18</strong> Vielmehr lässt sich der Rechtsprechung in <em>Hoffmann </em>entnehmen, dass der Gerichtshof mit seiner Relativierung bloss die Differenzierung zwischen der Anerkennungswirkung und der Vollstreckbarerklärungswirkung verdeutlichen wollte. So wurde der EuGH gefragt, ob die Anerkennungspflicht gemäss Art. 26 EuGVÜ (Art. 33 LugÜ) dazu verpflichte, einer vertragsstaatlichen Entscheidung dieselbe Wirkung zuzuerkennen, die ihr im Ursprungsstaat zukomme und ob sie deshalb auch in denselben Fällen wie dort zu vollstrecken sei.<a><sup>[92]</sup></a></p>
+<p><strong>19</strong> Insgesamt folgt daher der EuGH für die Rechtsfolgen der Anerkennung der Wirkungserstreckungstheorie. Eine Ausnahme besteht jedoch für die Wirkung der Vollstreckbarkeit. Einerseits wird diese Wirkung erst mit der Vollstreckbarerklärung dem Entscheid originär durch den Anerkennungsstaat verliehen (Art. 38 Abs. 1 LugÜ).<a><sup>[94]</sup></a></p>
+<h5>b. Rechtsprechung des Bundesgerichts</h5>
+<p><strong>20</strong> Das Bundesgericht scheint in seiner Rechtsprechung ebenfalls der Wirkungserstreckungstheorie zu folgen. Zwar hielt das Bundesgericht in BGE 135 III 670 fest, dass durch die Anerkennung eines ausländischen Urteils grundsätzlich die Gleichstellung mit einem inländischen bewirkt werde.<a><sup>[96]</sup></a></p>
+<h5>c. Autonomer Rechtskraftbegriff</h5>
+<p><strong>21</strong> Ungeklärt ist, inwiefern der EuGH als weitere Ausnahme zur Wirkungserstreckungstheorie von einem autonomen Rechtskraftverständnis ausgeht.<a><sup>[103]</sup></a></p>
+<p><strong>22</strong> Einen autonomen Rechtkraftumfang befürwortete der EuGH alsdann im Urteil <em>Gothaer</em><a><sup>[110]</sup></a></p>
+<p><strong>23</strong> Der EuGH scheint zumindest <em>prima vista</em> seine Erkenntnis auf Entscheide zu beschränken, in denen ein vertragsstaatliches Gericht sich aufgrund der Wirksamkeit einer Gerichtsstandsvereinbarung zugunsten eines anderen Vertragsstaates für unzuständig erklärt.<a><sup>[118]</sup></a></p>
+<p><strong>24</strong> Indem der EuGH seine Entscheidung aber auch auf das inhaltliche Nachprüfungsverbot nach Art.&nbsp;36 EuGVVO (Art. 36 LugÜ) stützte, ist zumindest fraglich, ob dieses Rechtskraftverständnis nicht allenfalls sogar auf Sachurteile anwendbar ist.<a><sup>[128]</sup></a></p>
+<p><strong>25</strong> Bei näherer Betrachtung der Rechtsprechung des EuGH steht auch weniger ein gemeinsamer Streitgegenstandsbegriff als vielmehr ein gemeinsamer Zweck im Zentrum. So scheint der Gerichtshof dem Zweck der Verhinderung unvereinbarer Entscheidungen besonderes Gewicht beizumessen.<a><sup>[136]</sup></a> Dies ergibt sich daraus, dass während eines Verfahrens noch unklar ist, wie das Gericht entscheiden wird. Entsprechend besteht nur das Risiko unvereinbarer Entscheide. Im Zeitpunkt der Anerkennung steht hingegen fest, was das Gericht entschieden hat, weshalb abschliessend beurteilt werden kann, ob ein allfälliger Konflikt zwischen den Entscheidungen besteht. Dies erlaubt, den Begriff der unvereinbaren Entscheidung auf Ebene der Anerkennung enger zu ziehen, als auf Ebene der Rechtshängigkeit.</p>
+<p><strong>26</strong> Fraglich ist jedoch, inwieweit der EuGH bereit ist, diesen Zweck zulasten anderer Zweckmässigkeitsüberlegungen zu verfolgen. Bestimmte Begrenzungen ergeben sich zumindest aus der bisherigen Rechtsprechung des EuGH, wonach die Überprüfung der Zuständigkeit eines Gerichts durch den Gericht eines anderen Vertragsstaates explizit untersagt wird.<a><sup>[138]</sup></a> Entsprechend muss zur Wahrung des rechtlichen Gehörs zumindest gewährleistet werden, dass die Parteien sich zur entsprechenden Vorfrage vollumfänglich äussern konnten.</p>
+<p><strong>27</strong> Insgesamt kann bislang zwar aufgrund der <em>Gothaer </em>Rechtsprechung (noch) eine inhaltliche Begrenzung der autonomen Rechtskraft auf Zuständigkeitsentscheidungen über Gerichtsstandsvereinbarungen angenommen werden. Der EuGH scheint jedoch allgemein zugunsten einer umfassenderen Rechtskraftbindung zu tendieren. Zwar ist zu berücksichtigen, dass der EuGH in der erwähnten Rechtsprechung bislang eher einzelfallbezogen entschieden hat, weshalb nur mit Vorsicht eine Verallgemeinerung dieser Urteile anzunehmen ist.<a><sup>[139]</sup></a> Dennoch ergibt sich klar aus der Rechtsprechung, dass der EuGH der Verhinderung unvereinbarer Urteile ein hohes Gewicht beimisst und hierfür auch bereit ist, die nationalen Rechtsverständnisse zugunsten einer einheitlichen autonomen Regelung zurückzubinden.</p>
+<h3>B. Anerkennungsfähige Rechtsfolgen</h3>
+<p><strong>28</strong> Im Allgemeinen gelten sämtliche prozessrechtlichen Urteilswirkungen als anerkennungsfähig.<a><sup>[143]</sup></a></p>
+<h4>1. Materielle Rechtskraft</h4>
+<p><strong>29</strong> Die <strong><em>materielle Rechtskraft</em></strong> bildet die wohl wichtigste anzuerkennende Urteilswirkung.<a><sup>[154]</sup></a></p>
+<p><strong>30</strong> Zu berücksichtigen ist, dass zwischen den einzelnen Rechtssystemen der Vertragsstaaten wesentliche Unterschiede in Bezug auf die Reichweite und Rechtsnatur der Rechtskraft bestehen.<a><sup>[157]</sup></a></p>
+<h4>2. Gestaltungswirkung</h4>
+<p><strong>31</strong> Eine <strong><em>Gestaltungswirkung</em></strong> entfalten Gestaltungsurteile, welche unmittelbar auf die Begründung, Aufhebung oder Änderung eines Rechts gerichtet sind. Im Unterschied zu Urteilen über Leistungs- oder Feststellungsklagen, welche lediglich eine bereits ausserhalb des Verfahrens bestehende Rechtsfolge gerichtlich durchsetzen, entsteht mit einem Gestaltungsurteil eine Rechtsfolge, die bisher nicht vorhanden war.<a><sup>[162]</sup></a></p>
+<h4>3. Interventions- und Streitverkündungswirkung</h4>
+<p><strong>32</strong> Die <strong><em>Interventionswirkung</em></strong> setzt voraus, dass sich eine Drittperson zur Unterstützung einer Verfahrenspartei in den Prozess einbringt, weil sie am Prozesserfolg der von ihr unterstützten Partei ein eigenes rechtliches Interesse hat.<a><sup>[167]</sup></a></p>
+<h4>4. Tatbestandswirkung</h4>
+<p><strong>33</strong> Nicht anerkennungsfähig ist hingegen die <strong><em>Tatbestandswirkung</em></strong>.<a><sup>[174]</sup></a></p>
+<p><strong>34</strong> Anerkennungsfähig sind hingegen auch Urteilswirkungen, welche im Anerkennungsstaat unbekannt sind. So sind in der Schweiz auch französische Gewährleistungs- oder Interventionsurteile sowie irische <em>mareva </em>bzw. <em>freezing injunctions</em> anerkennungsfähig.<a><sup>[175]</sup></a></p>
+<h3>C. Prozessuale Geltendmachung der Entscheidungswirkungen</h3>
+<p><strong>35</strong> Umstritten ist schliesslich, ob die <strong><em>prozessuale Geltendmachung der Entscheidungswirkungen</em></strong> (z.B. ob die Rechtskraft von Amtes wegen oder erst auf Einrede hin zu berücksichtigen ist) sich nach dem Recht des Ursprungsstaates oder des Anerkennungsstaates richtet. Nach der h.L. wird dies durch die <em>lex fori</em> des Anerkennungsstaats bestimmt.<a><sup>[177]</sup></a></p>
