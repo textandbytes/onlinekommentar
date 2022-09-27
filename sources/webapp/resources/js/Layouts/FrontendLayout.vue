@@ -1,7 +1,7 @@
 
 <template>
   <article>
-    <header class="px-8 lg:px-16 w-full xl:w-10/12 mx-auto">
+    <header class="px-8 lg:px-16 xl:px-32 w-full xl:w-10/12 mx-auto">
       <div
         class="flex items-start justify-between pt-8 pb-4 px-4"
         :class="{ 'border-b border-black': $page.component !== 'Frontend/Home' }">
@@ -21,7 +21,7 @@
       </div>
     </header>
     
-    <main class="px-8 lg:px-32 w-full xl:w-10/12 mx-auto">
+    <main class="px-8 lg:px-16 xl:px-32 w-full xl:w-10/12 mx-auto">
       <slot />
     </main>
   
