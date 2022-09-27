@@ -1,8 +1,19 @@
 title: Commentaries
 sites:
   - en
+  - de
+  - fr
+  - it
 propagate: false
-revisions: false
+template: commentaries/show
+layout: layout
+mount: 87c31e4b-81a4-4df5-92ec-df10ec62d495
+revisions: true
+route: '/{mount}/{slug}'
+sort_dir: asc
 date_behavior:
   past: public
   future: private
+structure:
+  root: false
+  slugs: true

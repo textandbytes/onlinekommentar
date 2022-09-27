@@ -1,0 +1,65 @@
+---
+id: b4c1ccf9-cff5-4c45-99ee-ab2d81430f78
+blueprint: commentary
+title: 'Art. 32 LugÜ'
+author: c10c1599-a925-4e29-b45f-a4f9934c1ca7
+updated_by: c10c1599-a925-4e29-b45f-a4f9934c1ca7
+updated_at: 1663306629
+template: commentaries/show
+---
+<h2><strong>I. Regelungsgegenstand und Begriff der Entscheidung</strong></h2>
+<p><strong>1</strong> Der Antragssteller trägt bei einer beantragten Anerkennung nach Art. 33 LugÜ die Beweislast dafür, dass eine Entscheidung im Sinne des Übereinkommens vorliegt. Es handelt sich um eine positive Anerkennungsvoraussetzung.<a>[7]</a></p>
+<p><strong>2</strong> Für die Anerkennungsfähigkeit der Entscheidung ist daher grundsätzlich sowohl ihre Bezeichnung als auch die Verfahrensart, in der sie ergangen ist, unbeachtlich.<a>[17]</a></p>
+<p><strong>3</strong> Trotz fehlender inhaltlicher Vorgaben ist jedoch zumindest vorauszusetzen, dass die Entscheidung Rechtsfolgen entfaltet, welche grenzüberschreitend anerkannt oder für vollstreckbar erklärt werden können.<a>[18]</a> Mithin wird für die Qualifikation als Entscheidung im Sinne von Art. 32 LugÜ einerseits vorausgesetzt, dass der Entscheid Rechtsfolgen zeitigt, die einer grenzüberschreitenden Anerkennung oder Vollstreckbarerklärung zugänglich sind. Andererseits muss der Entscheid von einem Gericht im Sinne von Art. 62 LugÜ erlassen worden&nbsp;sein.</p>
+<h3><strong>A. Grenzüberschreitende Wirkungen</strong></h3>
+<p><strong>4</strong> Einer Anerkennung oder Vollstreckbarerklärung nach dem Übereinkommen zugänglich sind nur (potenziell) grenzüberschreitende Rechtsfolgen.<a>[22]</a></p>
+<p><strong>5</strong> Für die Anerkennung oder Vollstreckbarerklärung eines Entscheids nach dem Übereinkommen wird hingegen nicht vorausgesetzt, dass die Entscheidung in <strong><em>Rechtskraft</em></strong> erwachsen ist.<a>[28]</a>&nbsp;</p>
+<p><strong>6</strong> Ebenso vom Begriff des Entscheids erfasst sind <strong><em>vorsorgliche</em></strong> <strong><em>Massnahmen</em></strong>.<a>[33]</a></p>
+<p><strong>7</strong> Bei vorsorglichen Massnahmen, welche gestützt auf Art.&nbsp;31 LugÜ erlassen wurden, bestehen nach Rechtsprechung des EuGH noch zusätzliche Voraussetzungen, die auch im Rahmen des Vollstreckbarerklärungsverfahrens zu prüfen sind.<a>[39]</a> Sofern diese Voraussetzungen nicht erfüllt sind, können mithin solche Massnahmen nicht nach den Bestimmungen des Übereinkommens anerkannt oder für vollstreckbar erklärt werden.</p>
+<p><strong>8</strong> Umstritten ist, inwiefern <strong><em>Prozessentscheidungen</em></strong> (d.h. Entscheidungen, welche über das Vorliegen einer Prozessvoraussetzung befinden)<a>[44]</a></p>
+<h3><strong>B. Vertragsstaatliches Gericht (Art. 62&nbsp;LugÜ)</strong></h3>
+<p><strong>9</strong> Die Definition des <strong><em>vertragsstaatlichen Gerichts</em></strong> ergibt sich staatsvertragsautonom aus Art. 62 LugÜ. Im Unterschied zum aLugÜ, das grundsätzlich nur gerichtliche Behörden als Gerichte im Sinne des Übereinkommens qualifizierte,<a>[47]</a></p>
+<p><strong>10</strong> Für die Qualifikation als Gericht im Sinne von Art. 62 bzw. Art. 32 LugÜ ist somit die von der staatlichen Behörde ausgeübte Funktion und nicht ihre förmliche, organisatorische Einordnung im nationalen Recht massgeblich (sog. <strong><em>funktioneller Gerichtsbegriff</em></strong>).<a>[54]</a></p>
+<p><strong>11</strong> Gestützt auf diese Erwägung wird für die Qualifikation als Gericht im Sinne von Art. 32 LugÜ zweierlei vorausgesetzt: Einerseits muss es sich um eine <strong><em>staatliche Behörde</em></strong> handeln.<a>[63]</a></p>
+<p><strong>12</strong> Ungeklärt ist, inwiefern dem Entscheid ein justizförmiges Verfahren vorauszugehen hat.<a>[69]</a></p>
+<p><strong>13</strong> Im Rahmen des LugÜ wurde jedoch ausdrücklich auf die Voraussetzung eines Gerichts als entscheidende Behörde verzichtet. Mithin lassen sich zumindest dem Übereinkommen selbst keine weiteren Voraussetzungen an das durchzuführende Verfahren entnehmen. Eine solche Verpflichtung lässt sich aber der EMRK entnehmen, welche in Art. 6 Abs. 1 EMRK verschiedene Verfahrensgarantien vorsieht. Dabei kann die Anerkennung von Entscheidungen, welche gegen diese Verfahrensgarantien verstossen, gestützt auf den formellen <em>ordre public</em> Vorbehalt gemäss Art. 34 Nr. 1 LugÜ verweigert werden.<a>[73]</a></p>
+<h2><strong>II. Sonderfragen</strong></h2>
+<h3><strong>A. Entscheidungen von Schlichtungsbehörden</strong></h3>
+<p><strong>14</strong> <strong><em>Schlichtungsbehörden</em></strong> können als Gerichte im Sinne von Art. 62 bzw. Art. 32 LugÜ qualifiziert werden.<a>[79]</a></p>
+<h3><strong>B. Exequaturentscheidungen</strong></h3>
+<p><strong>15</strong> Entscheidungen, welche Urteile anderer Vertragsstaaten anerkennen oder für vollstreckbar erklären (sog. <strong><em>Exequaturentscheidungen</em></strong>) sind nicht anerkennungsfähig gemäss Art. 32 ff. LugÜ (sog. Verbot des Doppelexequaturs).<a>[82]</a></p>
+<p><strong>16</strong> Demgegenüber einer grenzüberschreitenden Anerkennung bzw. Vollstreckbarerklärung zugänglich sind vertragsstaatliche Entscheidungen, die einen vertragsstaatlichen oder drittstaatlichen Titel abändern. Dabei ist jedoch wesentlich, dass die frühere Entscheidung zwischen denselben Parteien und über denselben Streitgegenstand im Ergebnis ersetzt bzw. modifiziert wird.<a>[83]</a></p>
+<h3><strong>C. Entscheidungen des&nbsp;SchKG</strong></h3>
+<h4><strong>1. Entscheidungen im Zusammenhang mit einem Konkursverfahren</strong></h4>
+<p><strong>17</strong> Im Zusammenhang mit Entscheidungen aus <strong><em>Verfahren des SchKG</em></strong><a>[86]</a></p>
+<h4><strong>2. Vollstreckungsmassnahmen</strong></h4>
+<p><strong>18</strong> Ferner ist zu berücksichtigen, dass das Schweizer Schuldbetreibungs- und Konkursrecht von einer besonders <em>engen Verflechtung des Erkenntnis- und Vollstreckungsverfahrens</em> gekennzeichnet ist.<a>[88]</a> Hieraus ergeben sich massgebliche Schwierigkeiten bei der Zuordnung zum System der Anerkennung und Vollstreckbarerklärung des Übereinkommens.</p>
+<p><strong>19</strong> Einerseits gestaltet sich im Rahmen des SchKG die Abgrenzung zwischen reinen Vollstreckungsmassnahmen und Vollstreckungstiteln als besonders schwierig.<a>[94]</a></p>
+<p><strong>20</strong> Daher ist m.E. nach folgenden Kriterien zwischen Vollstreckungsmassnahmen und eigentlichen Vollstreckungstiteln zu differenzieren. Vollstreckungshandlungen, welche ausschliesslich der zwangsweisen Durchsetzung eines bereits gerichtlich anerkannten Rechtsanspruchs dienen, sind als Vollstreckungsmassnahmen zu qualifizieren (hierunter fallen z.B. Pfändungsbeschlüsse)<a>[96]</a></p>
+<h4><strong>3. Beschränkung auf das eingeleitete Betreibungsverfahren</strong></h4>
+<p><strong>21</strong> Andererseits bestehen bei Rechtstiteln des SchKG auch insofern Zuordnungsschwierigkeiten, als ihre betreibungsrechtlichen Wirkungen auf das eingeleitete inländische Betreibungsverfahren beschränkt sind. Sofern daher Rechtstitel ausschliesslich betreibungsrechtliche und keine materiell-rechtliche Wirkungen entfalten (wie z.B. der Rechtsöffnungsentscheid<a>[100]</a></p>
+<p><strong>22</strong> Eine solche Auffassung ist auf der einen Seite durchaus vertretbar und findet eine gewisse Bestätigung in der Rechtsprechung des EuGH zu den Rechtsfolgen einer Vollstreckbarerklärung. So hat der EuGH festgehalten, dass es nicht angehe, einem Entscheid bei seiner Vollstreckbarerklärung Rechtswirkungen zuzuerkennen, die es im Ursprungsstaat nicht hat.<a>[106]</a></p>
+<h4><strong>4. Zahlungsbefehl</strong></h4>
+<p><strong>23</strong> Sofern der unwidersprochene Zahlungsbefehl gestützt auf ein Urteil bzw. Urteilssurrogat erlassen wurde (sog. titulierter Zahlungsbefehl), stellt der Zahlungsbefehl keinen eigenständigen Vollstreckungstitel dar. Vielmehr weist er bloss aus, dass der zugrundeliegende Entscheid vollstreckbar ist. An der Titelfreizügigkeit des Übereinkommens nimmt daher (sofern vom sachlichen Anwendungsbereich erfasst) ausschliesslich der zugrundeliegende Entscheid teil, welcher aufgrund des Zahlungsbefehls als vollstreckbar gilt (Art. 38 Abs. 1 LugÜ).<a>[107]</a></p>
+<p><strong>24</strong> Wesentlich umstrittener ist, ob ein untitulierter und unwidersprochener Zahlungsbefehl als Entscheidung im Sinne von Art. 32 LugÜ anzusehen ist. Zum Teil wird geltend gemacht, es handle sich beim Zahlungsbefehl um eine reine Vollstreckungsmassnahme.<a>[116]</a></p>
+<p><strong>25</strong> Dabei ist auch unbeachtlich, dass der Zahlungsbefehl von einem Betreibungsamt und nicht von einem eigentlichen Gericht erlassen wird. Der Gerichtsbegriff wurde bekanntlich mit Art. 62 LugÜ auf Verwaltungsbehörden erweitert.<a>[121]</a> aber einer Vollstreckbarerklärung im Ausland zugänglich.</p>
+<p><strong>26</strong> Ebenso nicht massgebend ist die Tatsache, dass dem unwidersprochenen und untitulierten Zahlungsbefehl kein kontradiktorisches Verfahren vorausgeht. Nach der Rechtsprechung des EuGH wird nur die Möglichkeit eines kontradiktorischen Verfahrens vor dem Zeitpunkt der Beantragung der Anerkennung bzw. Vollstreckbarerklärung vorausgesetzt.<a>[125]</a></sup>&nbsp;</p>
+<p><strong>27</strong> Fraglich ist mithin nur, ob dem Zahlungsbefehl auch grenzüberscheitende Wirkungen zugesprochen werden können. Der Zahlungsbefehl ist an sich auf das eingeleitete Betreibungsverfahren beschränkt und befähigt gerade nicht dazu, ein weiteres Betreibungsverfahren anzuheben.<a>[130]</a></p>
+<h4><strong>5. Rechtsöffnungsentscheide</strong></h4>
+<p><strong>28</strong> Sofern ein erhobener Rechtsvorschlag mittels eines (provisorischen oder definitiven) Rechtsöffnungsentscheids oder einer Anerkennungsklage beseitigt wird, tritt dieser Entscheid an die Stelle des Zahlungsbefehls.<a>[131]</a></p>
+<p><strong>29</strong> Beim <strong><em>definitiven Rechtsöffnungsentscheid</em></strong> handelt es sich dabei um einen Exequaturentscheid,<a>[134]</a> Der dem Rechtsöffnungsentscheid zugrundeliegende Rechtstitel ist hingegen der grenzüberschreitenden Anerkennung und Vollstreckbarerklärung nach dem Übereinkommen grundsätzlich zugänglich.</p>
+<p><strong>30</strong> Das <strong><em>provisorische Rechtöffnungsverfahren </em></strong>hat zwar ebenfalls die Frage zum Gegenstand, ob die eingereichte öffentliche Urkunde bzw. Schuldanerkennung die Vollstreckungsvoraussetzungen nach Art. 82 SchKG erfüllt.<a>[141]</a></sup>&nbsp;</p>
+<p><strong>31</strong> In diesem Zusammenhang ist erneut die bestehende Beschränkung auf das eingeleitete Betreibungsverfahren zu erwähnen. So verpflichtet der Rechtsöffnungsentscheid in seinem Urteilsdispositiv nicht zu einer Geldleistung, sondern erteilt die provisorische Rechtsöffnung in einer bestimmten Betreibung für einen bestimmten Geldbetrag.<a>[146]</a></p>
+<h4><strong>6. Arrest</strong></h4>
+<p><strong>32</strong> Der Arrest stellt eine vorsorgliche Sicherungsmassnahme des SchKG dar.<a>[155]</a></p>
+<h3><strong>D. Prozessvergleiche</strong></h3>
+<p><strong>33</strong> Prozessvergleiche sind grundsätzlich nicht anerkennungsfähig im Sinne von Art. 32 ff. LugÜ.<a>[161]</a></p>
+<p><strong>34</strong> Fraglich ist daher, ob dem Vergleich nach Art. 241 ZPO in Verbindung mit einem gerichtlichen Abschreibungsbeschluss (Art. 241 Abs. 3 ZPO) eine gemäss Art. 32 ff. LugÜ anerkennungsfähige Wirkung zugesprochen werden kann. In <em>Solo Kleinmotoren</em> stellte der EuGH bekanntlich darauf ab, dass der Entscheid von einem vertragsstaatlichen Rechtsprechungsorgan erlassen wird, welcher kraft seines Auftrags selbst über die zwischen den Parteien bestehende Streitigkeit entscheidet.<a>[170]</a></p>
+<p><strong>35</strong> Zu beachten ist jedoch, dass die Grenze zwischen einem Prozessvergleich im Sinne von Art. 58 LugÜ und einer Entscheidung im Sinne von Art. 32 LugÜ fliessend ist.<a>[174]</a></p>
+<h3><strong>E. Entscheidungen im Zusammenhang mit der Schiedsgerichtsbarkeit</strong></h3>
+<p><strong>36</strong> Die Schiedsgerichtsbarkeit ist vom sachlichen Anwendungsbereich des Übereinkommens ausgeschlossen (Art. 1 Abs. 2 lit. d LugÜ). Der Schiedsgerichtsbarkeitsausschluss ist jedoch äusserst vage formuliert und daher auslegungsbedürftig.<a>[185]</a>&nbsp;</p>
+<p><strong>37</strong> Allgemein scheint für den Gerichtshof zur Bestimmung, ob eine Entscheidung vom sachlichen Anwendungsbereich des Übereinkommens erfasst ist, die Rechtsnatur des Streitgegenstandes massgeblich zu sein.<a>[190]</a></p>
+<h3><strong>F. Öffentliche Urkunden</strong></h3>
+<p><strong>38 </strong>Öffentliche Urkunden stellen keine Entscheidungen im Sinne des Übereinkommens dar.<a>[192]</a></p>
+<h3><strong>G. Kostenentscheidungen</strong></h3>
+<p><strong>39</strong> Bereits aus dem Wortlaut von Art. 32 LugÜ ergibt sich, dass Entscheidungen, welche die Kosten eines Verfahrens festlegen, nach dem Übereinkommen anerkennungs- und vollstreckungsfähig sind.<a>[195]</a></p>
