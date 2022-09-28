@@ -12,8 +12,42 @@ sections:
       -
         handle: content
         field:
-          type: markdown
-          localizable: true
+          collapse: false
+          always_show_set_button: false
+          previews: true
+          buttons:
+            - h2
+            - h3
+            - h4
+            - h5
+            - bold
+            - italic
+            - underline
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - superscript
+            - anchor
+          save_html: true
+          toolbar_mode: fixed
+          link_noopener: true
+          link_noreferrer: true
+          target_blank: true
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: false
+          enable_paste_rules: false
+          antlers: false
+          remove_empty_nodes: trim
+          display: Content
+          type: bard
+          icon: bard
+          instructions: 'Use the editor to format your commentary'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
       -
         handle: assigned_editors
         field:
