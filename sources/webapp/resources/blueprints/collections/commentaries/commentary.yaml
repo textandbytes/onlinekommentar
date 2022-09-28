@@ -36,6 +36,25 @@ sections:
           instructions_position: above
           visibility: visible
           always_save: false
+      -
+        handle: pdf
+        field:
+          mode: list
+          container: pdf_commentaries
+          restrict: true
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: PDF
+          type: assets
+          icon: assets
+          instructions: 'Upload a PDF for this Commentary'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          validate:
+            - 'mimes:pdf'
   sidebar:
     display: Sidebar
     fields:
@@ -47,13 +66,15 @@ sections:
       -
         handle: parent
         field:
-          mode: default
-          create: true
+          type: entries
           collections:
             - commentaries
-          type: entries
-          icon: entries
+          max_items: 1
           listable: false
+          localizable: true
+          mode: default
+          create: true
+          icon: entries
           instructions_position: above
           visibility: visible
           always_save: false

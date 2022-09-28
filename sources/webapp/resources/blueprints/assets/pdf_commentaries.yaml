@@ -1,0 +1,16 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: description
+        field:
+          type: text
+          display: Description
+          instructions: 'Description of the PDF'
+          instructions_position: above
+          listable: hidden
+          visibility: visible
+          always_save: false
+          input_type: text
+          antlers: false
