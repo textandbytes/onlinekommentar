@@ -24,7 +24,7 @@ RUN apk add --no-cache \
 RUN docker-php-ext-configure gd --with-jpeg --with-webp --with-freetype
 RUN docker-php-ext-install gd
 
-# Install exif extentsion
+# Install exif extension
 RUN docker-php-ext-install exif
 
 CMD ["php-fpm", "-y", "/usr/local/etc/php-fpm.conf", "-R"]
