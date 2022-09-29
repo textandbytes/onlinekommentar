@@ -5,7 +5,7 @@ sites:
   - fr
   - it
 propagate: true
-template: default
+template: pages/show
 layout: layout
 revisions: true
 route: '{parent_uri}/{slug}'
