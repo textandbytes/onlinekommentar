@@ -6,9 +6,9 @@
           <slot name="footer-contact-text" />
         </div>
         <button class="ok-button">
-          <Link :href="`/{{ locale }}/contact`">
+          <a :href="`/{{ locale }}/contact`">
             [TRANSLATE footer_contact_link_text]
-          </Link>
+          </a>
         </button>
       </div>
     </div>

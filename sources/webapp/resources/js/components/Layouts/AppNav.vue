@@ -4,36 +4,36 @@
       <nav class="flex h-screen justify-end items-center text-right mr-32 text-3xl">
         <ul class="flex flex-col list-style-none space-y-5">
           <NavLink
-            :href="`/${$page.props.locale}/kommentare`"
             :active="$page.component === 'Frontend/Commentaries'"
+            :href="`/{{ locale }}/kommentare`"
             @click="toggleMenu">
             [TRANSLATE commentaries]
           </NavLink>
 
           <NavLink
-            :href="`/${$page.props.locale}/autoren`"
             :active="$page.component === 'Frontend/Authors'"
+            :href="`/{{ locale }}/autoren`"
             @click="toggleMenu">
             [TRANSLATE authors]
           </NavLink>
 
           <NavLink
-            :href="`/${$page.props.locale}/herausgeber`"
             :active="$page.component === 'Frontend/Editors'"
+            :href="`/{{ locale }}/herausgeber`"
             @click="toggleMenu">
             [TRANSLATE editors]
           </NavLink>
 
           <NavLink
-            :href="`/${$page.props.locale}/ueber-onlinekommentar`"
             :active="$page.component === 'Frontend/About'"
+            :href="`/{{ locale }}/ueber-onlinekommentar`"
             @click="toggleMenu">
             [TRANSLATE about]
           </NavLink>
 
           <NavLink
-            :href="`/${$page.props.locale}/contact`"
             :active="$page.component === 'Frontend/Contact'"
+            :href="`/{{ locale }}/contact`"
             @click="toggleMenu">
             [TRANSLATE contact]
           </NavLink>
@@ -63,8 +63,8 @@
       <LanguageSelector
         id="nav-lang-switcher"
         as="li"
-        :languages="$page.props.locales"
-        :active-language="$page.props.locale"
+        :languages="locales"
+        :active-language="locale"
       />
 
       <li id="nav-menu" @click="toggleMenu" class="z-50">
@@ -89,6 +89,11 @@
 <script setup>
   import { ref } from 'vue'
   import LanguageSelector from './Partials/LanguageSelector.vue'
+
+  defineProps({
+    locale: { type: String, required: true },
+    locales: { type: Array, required: true }
+  })
 
   const searchBox = ref(false)
   const searchInput = ref()

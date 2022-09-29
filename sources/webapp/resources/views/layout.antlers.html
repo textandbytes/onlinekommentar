@@ -10,7 +10,12 @@
   <body class="font-sans antialiased bg-ok-beige">
     <article id="app">
       <app-header
-        locale="{{ locale }}">
+        locale="{{ locale }}"
+        :locales="[
+          {{ locales }}
+            '{{ locale:short }}',
+          {{ /locales }}
+        ]">
         <template v-slot:sidebar-content>
           [INSERT COMMENTARY TREE]
         </template>
@@ -20,8 +25,7 @@
         {{ template_content }}
       </main>
     
-      <app-footer
-        locale="{{ locale }}">
+      <app-footer locale="{{ locale }}">
         <template v-slot:footer-contact-text>
           {{ __('footer_contact_text') }}
         </template>

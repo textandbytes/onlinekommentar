@@ -13,7 +13,10 @@
         />
       </Link>
 
-      <AppNav />
+      <AppNav
+        :locale="locale"
+        :locales="locales">
+      </AppNav>
 
       <AppSidebar>
         <template v-slot:content>
@@ -29,6 +32,7 @@
   import AppSidebar from './AppSidebar.vue'
 
   defineProps({
-    locale: { type: String, required: true }
+    locale: { type: String, required: true },
+    locales: { type: Array, required: true }
   })
 </script>
