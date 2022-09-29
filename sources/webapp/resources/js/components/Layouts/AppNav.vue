@@ -4,35 +4,35 @@
       <nav class="flex h-screen justify-end items-center text-right mr-32 text-3xl">
         <ul class="flex flex-col list-style-none space-y-5">
           <NavLink
-            :href="`/{{ locale }}/kommentare`"
+            :href="'/' + locale + '/kommentare'"
             :active="false"
             @click="toggleMenu">
             [TRANSLATE commentaries]
           </NavLink>
 
           <NavLink
-            :href="`/{{ locale }}/autoren`"
+            :href="'/' + locale + '/autoren'"
             :active="false"
             @click="toggleMenu">
             [TRANSLATE authors]
           </NavLink>
 
           <NavLink
-            :href="`/{{ locale }}/herausgeber`"
+            :href="'/' + locale + '/herausgeber'"
             :active="false"
             @click="toggleMenu">
             [TRANSLATE editors]
           </NavLink>
 
           <NavLink
-            :href="`/{{ locale }}/ueber-onlinekommentar`"
+            :href="'/' + locale + '/ueber-onlinekommentar'"
             :active="false"
             @click="toggleMenu">
             [TRANSLATE about]
           </NavLink>
 
           <NavLink
-            :href="`/{{ locale }}/contact`"
+            :href="'/' + locale + '/contact'"
             :active="false"
             @click="toggleMenu">
             [TRANSLATE contact]

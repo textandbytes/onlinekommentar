@@ -6,7 +6,7 @@
           <slot name="footer-contact-text" />
         </div>
         <button class="ok-button">
-          <a :href="`/{{ locale }}/contact`">
+          <a :href="'/' + locale + '/contact'">
             [TRANSLATE footer_contact_link_text]
           </a>
         </button>
@@ -16,7 +16,7 @@
     <div class="col-span-1 md:col-span-2 lg:col-span-1 lg:order-first grid grid-cols-1 md:grid-cols-2 left-top lg:border-r border-ok-dark-gray">
       <div class="py-4 pl-8 border-b md:border-r border-ok-dark-gray">
         <NavLink
-          :href="`/{{ locale }}/kommentare`"
+          :href="'/' + locale + '/kommentare"
           :active="false">
           [TRANSLATE commentaries]
         </NavLink>
@@ -24,7 +24,7 @@
 
       <div class="py-4 pl-8 border-b border-ok-dark-gray">
         <NavLink
-          :href="`/{{ locale }}`"
+          :href="'/' + locale"
           :active="false">
           [TRANSLATE home]
         </NavLink>
@@ -32,7 +32,7 @@
 
       <div class="py-4 pl-8 border-b md:border-r border-ok-dark-gray">
         <NavLink
-          :href="`/{{ locale }}/autoren`"
+          :href="'/' + locale + '/autoren'"
           :active="false">
           [TRANSLATE authors]
         </NavLink>
@@ -40,7 +40,7 @@
 
       <div class="py-4 pl-8 border-b border-ok-dark-gray">
         <NavLink
-          :href="`/{{ locale }}/ueber-onlinekommentar`"
+          :href="'/' + locale + '/ueber-onlinekommentar'"
           :active="false">
           [TRANSLATE about]
         </NavLink>
@@ -48,7 +48,7 @@
 
       <div class="py-4 pl-8 border-b md:border-r border-ok-dark-gray">
         <NavLink
-          :href="`/{{ locale }}/herausgeber`"
+          :href="'/' + locale + '/herausgeber'"
           :active="false">
           [TRANSLATE editors]
         </NavLink>
@@ -56,7 +56,7 @@
 
       <div class="py-4 pl-8 border-b border-ok-dark-gray">
         <NavLink
-          :href="`/{{ locale }}/contact`"
+          :href="'/' + locale + '/contact'"
           :active="false">
           [TRANSLATE contact]
         </NavLink>
@@ -90,13 +90,13 @@
       <div class="flex flex-row justify-between px-8 pt-8">
         <div class="flex text-xs space-x-8">
           <NavLink
-            :href="`/{{ locale }}/disclaimer`"
+            :href="'/' + locale + '/disclaimer'"
             :active="false">
             [TRANSLATE disclaimer]
           </NavLink>
 
           <NavLink
-            :href="`/{{ locale }}/imprint`"
+            :href="'/' + locale + '/imprint'"
             :active="false">
             [TRANSLATE imprint]
           </NavLink>

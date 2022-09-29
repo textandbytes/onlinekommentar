@@ -5,7 +5,7 @@
       :class="{ 'border-b border-black': false }">
       <a
         class="hidden md:flex z-40"
-        :href="`/{{ locale }}`">
+        :href="'/' + locale">
         <img
           src="/img/ok-logo-text.svg"
           alt="Onlinekommentar – der frei zugängliche Rechtskommenter"
