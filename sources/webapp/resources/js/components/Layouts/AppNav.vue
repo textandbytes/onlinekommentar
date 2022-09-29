@@ -4,36 +4,36 @@
       <nav class="flex h-screen justify-end items-center text-right mr-32 text-3xl">
         <ul class="flex flex-col list-style-none space-y-5">
           <NavLink
-            :active="$page.component === 'Frontend/Commentaries'"
             :href="`/{{ locale }}/kommentare`"
+            :active="false"
             @click="toggleMenu">
             [TRANSLATE commentaries]
           </NavLink>
 
           <NavLink
-            :active="$page.component === 'Frontend/Authors'"
             :href="`/{{ locale }}/autoren`"
+            :active="false"
             @click="toggleMenu">
             [TRANSLATE authors]
           </NavLink>
 
           <NavLink
-            :active="$page.component === 'Frontend/Editors'"
             :href="`/{{ locale }}/herausgeber`"
+            :active="false"
             @click="toggleMenu">
             [TRANSLATE editors]
           </NavLink>
 
           <NavLink
-            :active="$page.component === 'Frontend/About'"
             :href="`/{{ locale }}/ueber-onlinekommentar`"
+            :active="false"
             @click="toggleMenu">
             [TRANSLATE about]
           </NavLink>
 
           <NavLink
-            :active="$page.component === 'Frontend/Contact'"
             :href="`/{{ locale }}/contact`"
+            :active="false"
             @click="toggleMenu">
             [TRANSLATE contact]
           </NavLink>
@@ -88,6 +88,7 @@
 
 <script setup>
   import { ref } from 'vue'
+  import NavLink from './Partials/NavLink.vue'
   import LanguageSelector from './Partials/LanguageSelector.vue'
 
   defineProps({

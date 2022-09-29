@@ -17,7 +17,7 @@
       <div class="py-4 pl-8 border-b md:border-r border-ok-dark-gray">
         <NavLink
           :href="`/{{ locale }}/kommentare`"
-          :active="$page.component === 'Frontend/Commentaries'">
+          :active="false">
           [TRANSLATE commentaries]
         </NavLink>
       </div>
@@ -25,7 +25,7 @@
       <div class="py-4 pl-8 border-b border-ok-dark-gray">
         <NavLink
           :href="`/{{ locale }}`"
-          :active="$page.component === 'Frontend/Home'">
+          :active="false">
           [TRANSLATE home]
         </NavLink>
       </div>
@@ -33,7 +33,7 @@
       <div class="py-4 pl-8 border-b md:border-r border-ok-dark-gray">
         <NavLink
           :href="`/{{ locale }}/autoren`"
-          :active="$page.component === 'Frontend/Authors'">
+          :active="false">
           [TRANSLATE authors]
         </NavLink>
       </div>
@@ -41,7 +41,7 @@
       <div class="py-4 pl-8 border-b border-ok-dark-gray">
         <NavLink
           :href="`/{{ locale }}/ueber-onlinekommentar`"
-          :active="$page.component === 'Frontend/About'">
+          :active="false">
           [TRANSLATE about]
         </NavLink>
       </div>
@@ -49,7 +49,7 @@
       <div class="py-4 pl-8 border-b md:border-r border-ok-dark-gray">
         <NavLink
           :href="`/{{ locale }}/herausgeber`"
-          :active="$page.component === 'Frontend/Editors'">
+          :active="false">
           [TRANSLATE editors]
         </NavLink>
       </div>
@@ -57,7 +57,7 @@
       <div class="py-4 pl-8 border-b border-ok-dark-gray">
         <NavLink
           :href="`/{{ locale }}/contact`"
-          :active="$page.component === 'Frontend/Contact'">
+          :active="false">
           [TRANSLATE contact]
         </NavLink>
       </div>
@@ -91,13 +91,13 @@
         <div class="flex text-xs space-x-8">
           <NavLink
             :href="`/{{ locale }}/disclaimer`"
-            :active="$page.component === 'Disclaimer'">
+            :active="false">
             [TRANSLATE disclaimer]
           </NavLink>
 
           <NavLink
             :href="`/{{ locale }}/imprint`"
-            :active="$page.component === 'Imprint'">
+            :active="false">
             [TRANSLATE imprint]
           </NavLink>
         </div>
@@ -114,7 +114,13 @@
 </template>
 
 <script>
+  import NavLink from './Partials/NavLink.vue'
+
   export default {
+    components: {
+      NavLink
+    },
+
     props: {
       locale: { type: String, required: true }
     },

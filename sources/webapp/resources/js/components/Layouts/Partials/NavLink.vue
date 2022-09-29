@@ -1,21 +1,13 @@
 <template>
-   <Link 
+   <a 
     class="text-black hover:text-gray-600"
-    :class="{ 'font-semibold': active }" 
-  >
+    :class="{ 'font-semibold': active }">
     <slot></slot>
-  </Link>
+  </a>
 </template>
 
 <script setup>
-  import { Link } from '@inertiajs/inertia-vue3';
-
   defineProps({
-      active: Boolean
-  });
-
+    active: Boolean
+  })
 </script>
-
-<style lang="postcss" scoped>
-
-</style>
