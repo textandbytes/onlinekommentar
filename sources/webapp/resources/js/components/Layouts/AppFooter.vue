@@ -16,7 +16,7 @@
     <div class="col-span-1 md:col-span-2 lg:col-span-1 lg:order-first grid grid-cols-1 md:grid-cols-2 left-top lg:border-r border-ok-dark-gray">
       <div class="py-4 pl-8 border-b md:border-r border-ok-dark-gray">
         <NavLink
-          :href="'/' + locale + '/kommentare"
+          :href="'/' + locale + '/kommentare'"
           :active="false">
           [TRANSLATE commentaries]
         </NavLink>
