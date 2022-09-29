@@ -1,0 +1,19 @@
+<ul>
+    {{ nav:collection:commentaries }}
+        <li>
+            {{ if content }}
+                <a href="{{ url }}"{{ if is_current || is_parent }} class="on"{{ /if }}>
+                    <strong>{{ title }}</strong>
+                </a>
+            {{ else }}
+                {{ title }}
+            {{ /if }}
+
+            {{ if children }}
+                <ul class="pl-4">
+                    {{ *recursive children* }}
+                </ul>
+            {{ /if }}
+        </li>
+    {{ /nav:collection:commentaries }}
+</ul>
