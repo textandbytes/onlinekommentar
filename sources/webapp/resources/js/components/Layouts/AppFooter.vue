@@ -1,62 +1,74 @@
 <template>
-  <footer class="flex mt-8 bg-ok-yellow">
-    <div class="left-top border-r border-ok-dark-gray">
-      <div class="pt-2 pl-12 border-b border-r border-ok-dark-gray">
-        <a href="/en/kommentare">
-          Commentaries
-        </a>
-      </div>
-
-      <div class="pt-2 pl-4 border-b border-ok-dark-gray">
-        <a href="/en">
-          Home
-        </a>
-      </div>
-
-      <div class="pt-2 pl-12 border-b border-r border-ok-dark-gray">
-        <a href="/en/autoren">
-          Authors
-        </a>
-      </div>
-
-      <div class="pt-2 pl-4 border-b border-ok-dark-gray">
-        <a href="/en/ueber-onlinekommentar">
-          About
-        </a>
-      </div>
-
-      <div class="pt-2 pl-12 border-b border-r border-ok-dark-gray">
-        <a href="/en/herausgeber">
-          Editors
-        </a>
-      </div>
-
-      <div class="pt-2 pl-4 border-b border-ok-dark-gray">
-        <a href="/en/contact">
-          Contact
-        </a>
-      </div>
-    </div>
-
-    <div class="border-b border-ok-dark-gray pt-4">
-      <div class="px-8 pb-4">
-        <div class="text-sm w-1/2">
-          [Insert Footer Contact Text Here]
+  <footer class="bg-ok-yellow mt-8 pl-4 md:pl-8 grid grid-cols-1 md:grid-cols-2">
+    <div class="md:col-span-2 lg:col-span-1 border-b border-ok-dark-gray py-4">
+      <div class="px-8 pb-2">
+        <div class="w-full">
+          <slot name="footer-contact-text" />
         </div>
-        <button class="mt-2 px-8 py-1 text-center uppercase text-xs rounded-full border border-ok-dark-gray">
-          <a href="/en/contact">
-            Footer Contact Text Link
-          </a>
+        <button class="ok-button">
+          <Link :href="`/{{ locale }}/contact`">
+            [TRANSLATE footer_contact_link_text]
+          </Link>
         </button>
       </div>
     </div>
 
-    <div class="flex justify-between border-r border-ok-dark-gray">
-      <div class="flex flex-col pl-12 pt-4">
+    <div class="col-span-1 md:col-span-2 lg:col-span-1 lg:order-first grid grid-cols-1 md:grid-cols-2 left-top lg:border-r border-ok-dark-gray">
+      <div class="py-4 pl-8 border-b md:border-r border-ok-dark-gray">
+        <NavLink
+          :href="`/{{ locale }}/kommentare`"
+          :active="$page.component === 'Frontend/Commentaries'">
+          [TRANSLATE commentaries]
+        </NavLink>
+      </div>
+
+      <div class="py-4 pl-8 border-b border-ok-dark-gray">
+        <NavLink
+          :href="`/{{ locale }}`"
+          :active="$page.component === 'Frontend/Home'">
+          [TRANSLATE home]
+        </NavLink>
+      </div>
+
+      <div class="py-4 pl-8 border-b md:border-r border-ok-dark-gray">
+        <NavLink
+          :href="`/{{ locale }}/autoren`"
+          :active="$page.component === 'Frontend/Authors'">
+          [TRANSLATE authors]
+        </NavLink>
+      </div>
+
+      <div class="py-4 pl-8 border-b border-ok-dark-gray">
+        <NavLink
+          :href="`/{{ locale }}/ueber-onlinekommentar`"
+          :active="$page.component === 'Frontend/About'">
+          [TRANSLATE about]
+        </NavLink>
+      </div>
+
+      <div class="py-4 pl-8 border-b md:border-r border-ok-dark-gray">
+        <NavLink
+          :href="`/{{ locale }}/herausgeber`"
+          :active="$page.component === 'Frontend/Editors'">
+          [TRANSLATE editors]
+        </NavLink>
+      </div>
+
+      <div class="py-4 pl-8 border-b border-ok-dark-gray">
+        <NavLink
+          :href="`/{{ locale }}/contact`"
+          :active="$page.component === 'Frontend/Contact'">
+          [TRANSLATE contact]
+        </NavLink>
+      </div>
+    </div>
+
+    <div class="flex justify-between md:border-r border-ok-dark-gray pb-8">
+      <div class="flex flex-col pl-8 pt-8">
         <span class="text-xs">&copy; {{ new Date().getFullYear() }}, Onlinekommentar.ch</span>
       </div>
 
-      <div class="flex flex-row pt-2 mr-4 space-x-2">
+      <div class="flex flex-row pt-6 mr-4 space-x-2">
         <a class="flex flex-col external" href="https://www.linkedin.com/company/onlinekommentar/" target="_blank">
           <span class="inline-block">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32">
@@ -75,42 +87,45 @@
     </div>
 
     <div>
-      <div class="flex flex-row justify-between px-8 pt-4">
+      <div class="flex flex-row justify-between px-8 pt-8">
         <div class="flex text-xs space-x-8">
-          <a href="/disclaimer">
-            Disclaimer
-          </a>
+          <NavLink
+            :href="`/{{ locale }}/disclaimer`"
+            :active="$page.component === 'Disclaimer'">
+            [TRANSLATE disclaimer]
+          </NavLink>
 
-          <a href="/imprint">
-            Imprint
-          </a>
+          <NavLink
+            :href="`/{{ locale }}/imprint`"
+            :active="$page.component === 'Imprint'">
+            [TRANSLATE imprint]
+          </NavLink>
         </div>
 
-        <button class="w-20 text-center text-sm rounded-full border border-ok-dark-gray">
-          <!-- arrow up -->
-          <a href="#top" class="text-black font-semibold top-link">
+        <!-- arrow up -->
+        <button @click="scrollToTop" class="w-28 -mt-1 text-center rounded-full border border-ok-dark-gray">
+          <span class="text-black font-semibold top-link">
             ↑
-          </a>
+          </span>
         </button>
       </div>
     </div>
   </footer>
 </template>
 
-<style lang="postcss" scoped>
-  footer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 3fr 2fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-  }
+<script>
+  export default {
+    props: {
+      locale: { type: String, required: true }
+    },
 
-  .left-top {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    methods: {
+      scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        })
+      }
+    }
   }
-</style>
+</script>

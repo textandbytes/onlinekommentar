@@ -9,13 +9,23 @@
   </head>
   <body class="font-sans antialiased bg-ok-beige">
     <article id="app">
-      <app-header></app-header>
+      <app-header
+        locale="{{ locale }}">
+        <template v-slot:sidebar-content>
+          [INSERT COMMENTARY TREE]
+        </template>
+      </app-header>
       
       <main class="px-8 lg:px-32">
         {{ template_content }}
       </main>
     
-      <app-footer></app-footer>
+      <app-footer
+        locale="{{ locale }}">
+        <template v-slot:footer-contact-text>
+          {{ __('footer_contact_text') }}
+        </template>
+      </app-footer>
     </article>
 
     <script src="{{ mix src='/vendor/app/js/manifest.js') }}"></script>

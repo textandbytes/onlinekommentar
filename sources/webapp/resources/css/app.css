@@ -4,10 +4,17 @@
 @import 'tailwindcss/utilities';
 
 html, body, #app {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .ok-button {
- @apply inline-block mt-4 uppercase rounded-full border border-black text-xs px-6 py-2 font-medium tracking-widest hover:text-white hover:bg-black
+  @apply inline-block mt-4 uppercase rounded-full border border-black text-xs px-6 py-2 font-medium tracking-widest hover:text-white hover:bg-black
+}
+
+article {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
 }

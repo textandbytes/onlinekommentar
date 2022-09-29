@@ -3,35 +3,40 @@
     <div v-show="showMenu" class="absolute top-0 left-0 w-screen h-screen bg-ok-yellow z-10">
       <nav class="flex h-screen justify-end items-center text-right mr-32 text-3xl">
         <ul class="flex flex-col list-style-none space-y-5">
-          <a
-            href="/en/kommentare"
+          <NavLink
+            :href="`/${$page.props.locale}/kommentare`"
+            :active="$page.component === 'Frontend/Commentaries'"
             @click="toggleMenu">
-            Commentaries
-          </a>
+            [TRANSLATE commentaries]
+          </NavLink>
 
-          <a
-            href="/en/autoren"
+          <NavLink
+            :href="`/${$page.props.locale}/autoren`"
+            :active="$page.component === 'Frontend/Authors'"
             @click="toggleMenu">
-            Authors
-          </a>
+            [TRANSLATE authors]
+          </NavLink>
 
-          <a
-            href="/en/herausgeber"
+          <NavLink
+            :href="`/${$page.props.locale}/herausgeber`"
+            :active="$page.component === 'Frontend/Editors'"
             @click="toggleMenu">
-            Editors
-          </a>
+            [TRANSLATE editors]
+          </NavLink>
 
-          <a
-            href="/en/ueber-onlinekommentar"
+          <NavLink
+            :href="`/${$page.props.locale}/ueber-onlinekommentar`"
+            :active="$page.component === 'Frontend/About'"
             @click="toggleMenu">
-            About
-          </a>
+            [TRANSLATE about]
+          </NavLink>
 
-          <a
-            href="/en/contact"
+          <NavLink
+            :href="`/${$page.props.locale}/contact`"
+            :active="$page.component === 'Frontend/Contact'"
             @click="toggleMenu">
-            Contact
-          </a>
+            [TRANSLATE contact]
+          </NavLink>
         </ul>
       </nav>
     </div>
@@ -41,7 +46,7 @@
     <ul class="flex items-center space-x-6">
       <li id="nav-search" class="cursor-pointer">
         <div class="flex">
-          <input ref="searchInput" v-show="searchBox" type="search" placeholder="[TRANSLATE nav_search_box_placeholder]')" class="w-48 md:w-64 xl:w-96 bg-white border-b-2 border-t-0 border-l-0 border-r-0 border-black focus:border-b-2 focus:border-black focus:ring-0 placeholder:text-xs md:placeholder:text-base xl:placeholder:text-lg">
+          <input ref="searchInput" v-show="searchBox" type="search" :placeholder="__('nav_search_box_placeholder')" class="w-48 md:w-64 xl:w-96 bg-white border-b-2 border-t-0 border-l-0 border-r-0 border-black focus:border-b-2 focus:border-black focus:ring-0 placeholder:text-xs md:placeholder:text-base xl:placeholder:text-lg">
 
           <span @click="toggleSearchBox" :class="{ 'bg-white border-b-2 border-black' : searchBox }">
             <svg id="Search" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 45 45">
@@ -55,13 +60,16 @@
         </div>
       </li>
 
-      <div>
-        Languages
-      </div>
+      <LanguageSelector
+        id="nav-lang-switcher"
+        as="li"
+        :languages="$page.props.locales"
+        :active-language="$page.props.locale"
+      />
 
       <li id="nav-menu" @click="toggleMenu" class="z-50">
         <button type="button" class="w-32 uppercase rounded-full border border-black text-xs font-medium tracking-wider py-3 text-center inline-flex items-center justify-center mr-2 mb-2">
-          [TRANSLATE menu]
+          {{ __('menu') }}
           <svg v-show="showMenu" class="ml-2" xmlns="http://www.w3.org/2000/svg" width="14.707" height="14.707" viewBox="0 0 14.707 14.707">
             <g id="X" transform="translate(-1792.387 -75.877)">
               <g id="Gruppe_17" data-name="Gruppe 17" transform="translate(1792.741 90.231) rotate(-45)">

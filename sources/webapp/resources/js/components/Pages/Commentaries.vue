@@ -1,8 +1,4 @@
 <template>
-  <Head>
-    <title>{{ __('commentaries') }}</title>
-  </Head>
-
   <div class="flex flex-col">
     <div class="lg:flex lg:items-center lg:justify-between space-y-2 lg:space-y-0 px-4 py-2 md:px-6 border-b border-black bg-white">
       <div class="text-xs uppercase font-medium tracking-wider">
@@ -113,14 +109,6 @@
     </GridListView>
   </div>
 </template>
-
-<script>
-  import FrontendLayout from '@/Layouts/FrontendLayout.vue'
-  
-  export default {
-    layout: FrontendLayout
-  }
-</script>
 
 <script setup>
   import { computed } from 'vue'

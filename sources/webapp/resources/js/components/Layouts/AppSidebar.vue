@@ -1,56 +1,39 @@
 <template>
-  <div id="sidebar" :class="{ 'open': isSidebarOpen }" class="z-50 absolute top-0 bottom-0 left-0 w-10 h-screen bg-ok-blue rounded-tr-xl rounded-br-xl">
+  <div id="sidebar" :class="{ 'open': isSidebarOpen }" class="z-50 fixed top-0 bottom-0 -left-4 md:left-0 w-10 h-screen bg-ok-blue rounded-tr-xl rounded-br-xl">
     <div id="shadow" class="absolute top-0 bottom-0 left-0 w-2 h-screen bg-transparent">
     </div>
     
-    <div v-if="isSidebarOpen" >
+    <div v-if="isSidebarOpen" class="overflow-y-auto h-screen">
       <div class="block p-4">
         <img src="/img/ok-logo-text.svg" alt="Onlinekommentar – der frei zugängliche Rechtskommenter" class="w-48 mt-4" />
       </div>
 
       <div class="ml-4 mt-4">
-        [INSERT-TREE]
+        <slot name="content" />
       </div>
     </div>
     
     <!-- sidebar handle -->
-    <div @click="toggleSidebar" class="absolute right-0 top-1/2 -mt-16 -mr-4 py-6 bg-ok-blue rounded-tr-lg rounded-br-lg shadow-tr-lg shadow-br-lg cursor-pointer">
-      <div class="text-xs uppercase mb-6 -rotate-90">
-        [TRANSLATE sidebar_handle_text]
+    <div @click="toggleSidebar" id="handle" class="absolute right-0 top-1/2 -mt-24 -mr-4 py-10 bg-ok-blue rounded-tr-lg rounded-br-lg shadow-tr-lg shadow-br-lg">
+      <div class="flex flex-col items-center mt-6 w-12">
+        <div id="handle-text" class="text-xs tracking-wider uppercase mb-6 font-medium">
+          [TRANSLATE sidebar_handle_text]
+        </div>
+        <img class="mt-6" src="/img/sidebar-handle.svg" height="22" width="24" alt="Handle">
       </div>
-      <img class="ml-3" src="/img/sidebar-handle.svg" alt="Handle">
     </div>
     <!-- end sidebar handle -->
   </div>
 </template>
 
 <script setup>
-  import { ref, onMounted } from 'vue'
-  // import { usePage } from '@inertiajs/inertia-vue3'
-  import axios from 'axios'
-  import TreeFrontend from './Partials/TreeFrontend.vue'
-
-  // const locale = computed(() => usePage().props.value.locale)
-  const locale = ref('en')
+  import { ref } from 'vue'
 
   const isSidebarOpen = ref(false)
-  const treeData = ref({})
   
   const toggleSidebar = () => {
     isSidebarOpen.value = !isSidebarOpen.value
   }
-
-  onMounted(() => {
-    // request the commentary tree
-    axios.get(`/api/collections/commentaries/tree?site=${locale.value}`)
-      .then(response => {
-console.log('response:', response)
-        treeData.value = response.data
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  })
 </script>
 
 <style lang="postcss" scoped>
@@ -63,9 +46,17 @@ console.log('response:', response)
     transition: width .3s;
 
     &.open {
-      width: 450px;
+      width: 680px;
       max-width: 95%;
       transition: width .3s;
     }
+  }
+
+  #handle {
+    cursor: pointer;
+
+    #handle-text {
+      transform: rotate(-90deg);
+    }  
   }
 </style>

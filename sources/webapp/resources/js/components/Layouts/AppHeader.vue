@@ -1,19 +1,25 @@
 <template>
-  <header class="px-8 lg:px-32">
-    <div class="flex items-start justify-between pt-8 pb-4 px-4">
-      <a
-        href="/en"
-        class="hidden md:flex z-40">
+  <header class="px-8 lg:px-16 xl:px-32 w-full xl:w-10/12 mx-auto">
+    <div
+      class="flex items-start justify-between pt-8 pb-4 px-4"
+      :class="{ 'border-b border-black': $page.component !== 'Frontend/Home' }">
+      <Link
+        class="hidden md:flex z-40"
+        :href="`/{{ locale }}`">
         <img
           src="/img/ok-logo-text.svg"
-          alt="Onlinekommentar - der frei zugängliche Rechtskommenter"
-          width="200"
+          alt="Onlinekommentar – der frei zugängliche Rechtskommenter"
+          :width="$page.component !== 'Frontend/Home' ? 200 : null"
         />
-      </a>
+      </Link>
 
       <AppNav />
 
-      <AppSidebar />
+      <AppSidebar>
+        <template v-slot:content>
+          <slot name="sidebar-content" />
+        </template>
+      </AppSidebar>
     </div>
   </header>
 </template>
@@ -22,10 +28,7 @@
   import AppNav from './AppNav.vue'
   import AppSidebar from './AppSidebar.vue'
 
-  // defineProps({
-  //   locales: { type: Array, required: true },
-  //   activeLocale: { type: String, required: true }
-  // })
-
-  // TODO: onMounted => send notification to language switcher
+  defineProps({
+    locale: { type: String, required: true }
+  })
 </script>
