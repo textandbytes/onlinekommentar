@@ -10,6 +10,7 @@
   <body class="font-sans antialiased bg-ok-beige">
     <article id="app">
       <app-header
+        current-page="{{ slug }}"
         locale="{{ locale }}"
         :locales="[
           {{ locales }}
