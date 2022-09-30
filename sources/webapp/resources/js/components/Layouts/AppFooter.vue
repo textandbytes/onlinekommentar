@@ -7,7 +7,7 @@
         </div>
         <button class="ok-button">
           <a :href="'/' + locale + '/contact'">
-            [TRANSLATE footer_contact_link_text]
+            {{ $t('footer_contact_link_text') }}
           </a>
         </button>
       </div>
@@ -18,7 +18,7 @@
         <NavLink
           :href="'/' + locale + '/kommentare'"
           :active="false">
-          [TRANSLATE commentaries]
+          {{ $t('commentaries') }}
         </NavLink>
       </div>
 
@@ -26,7 +26,7 @@
         <NavLink
           :href="'/' + locale"
           :active="false">
-          [TRANSLATE home]
+          {{ $t('home') }}
         </NavLink>
       </div>
 
@@ -34,7 +34,7 @@
         <NavLink
           :href="'/' + locale + '/autoren'"
           :active="false">
-          [TRANSLATE authors]
+          {{ $t('authors') }}
         </NavLink>
       </div>
 
@@ -42,7 +42,7 @@
         <NavLink
           :href="'/' + locale + '/ueber-onlinekommentar'"
           :active="false">
-          [TRANSLATE about]
+          {{ $t('about') }}
         </NavLink>
       </div>
 
@@ -50,7 +50,7 @@
         <NavLink
           :href="'/' + locale + '/herausgeber'"
           :active="false">
-          [TRANSLATE editors]
+          {{ $t('editors') }}
         </NavLink>
       </div>
 
@@ -58,7 +58,7 @@
         <NavLink
           :href="'/' + locale + '/contact'"
           :active="false">
-          [TRANSLATE contact]
+          {{ $t('contact') }}
         </NavLink>
       </div>
     </div>
@@ -92,13 +92,13 @@
           <NavLink
             :href="'/' + locale + '/disclaimer'"
             :active="false">
-            [TRANSLATE disclaimer]
+            {{ $t('disclaimer') }}
           </NavLink>
 
           <NavLink
             :href="'/' + locale + '/imprint'"
             :active="false">
-            [TRANSLATE imprint]
+            {{ $t('imprint') }}
           </NavLink>
         </div>
 
