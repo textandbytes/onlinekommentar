@@ -3,7 +3,7 @@
     <div class="md:col-span-2 lg:col-span-1 border-b border-ok-dark-gray py-4">
       <div class="px-8 pb-2">
         <div class="w-full">
-          <slot name="footer-contact-text" />
+          {{ $t('footer_contact_text') }}
         </div>
         <button class="ok-button">
           <a :href="'/' + locale + '/contact'">
@@ -96,7 +96,7 @@
           </NavLink>
 
           <NavLink
-            :href="'/' + locale + '/imprint'"
+            :href="'/' + locale + '/impressum'"
             :active="false">
             {{ $t('imprint') }}
           </NavLink>

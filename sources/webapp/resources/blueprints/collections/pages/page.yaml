@@ -9,6 +9,7 @@ sections:
           required: true
           validate:
             - required
+          localizable: true
       -
         handle: content
         field:
