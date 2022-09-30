@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "532be7103d81f26342df4c8e0c56a579",
+    "content-hash": "bfd35b1dc74ac7aeae2dc8cb9c915b78",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -7513,6 +7513,35 @@
             "time": "2022-08-02T16:17:38+00:00"
         },
         {
+            "name": "textandbytes/footnotes",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "addons/textandbytes/footnotes",
+                "reference": "1a0612df3f520088fc3d73fcef89506bd4716185"
+            },
+            "type": "library",
+            "extra": {
+                "statamic": {
+                    "name": "Footnotes",
+                    "description": "Footnotes addon"
+                },
+                "laravel": {
+                    "providers": [
+                        "Textandbytes\\Footnotes\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Textandbytes\\Footnotes\\": "src"
+                }
+            },
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "thecodingmachine/safe",
             "version": "v1.3.3",
             "source": {
@@ -10588,7 +10617,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "textandbytes/footnotes": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
