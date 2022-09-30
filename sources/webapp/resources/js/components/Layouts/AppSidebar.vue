@@ -17,7 +17,7 @@
     <div @click="toggleSidebar" id="handle" class="absolute right-0 top-1/2 -mt-24 -mr-4 py-10 bg-ok-blue rounded-tr-lg rounded-br-lg shadow-tr-lg shadow-br-lg">
       <div class="flex flex-col items-center mt-6 w-12">
         <div id="handle-text" class="text-xs tracking-wider uppercase mb-6 font-medium">
-          [TRANSLATE sidebar_handle_text]
+          {{ $t('sidebar_handle_text') }}
         </div>
         <img class="mt-6" src="/img/sidebar-handle.svg" height="22" width="24" alt="Handle">
       </div>
