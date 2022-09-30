@@ -17,7 +17,7 @@
       <div class="py-4 pl-8 border-b md:border-r border-ok-dark-gray">
         <NavLink
           :href="'/' + locale + '/kommentare'"
-          :active="false">
+          :active="currentPage === 'kommentare'">
           {{ $t('commentaries') }}
         </NavLink>
       </div>
@@ -25,7 +25,7 @@
       <div class="py-4 pl-8 border-b border-ok-dark-gray">
         <NavLink
           :href="'/' + locale"
-          :active="false">
+          :active="currentPage === 'home'">
           {{ $t('home') }}
         </NavLink>
       </div>
@@ -33,7 +33,7 @@
       <div class="py-4 pl-8 border-b md:border-r border-ok-dark-gray">
         <NavLink
           :href="'/' + locale + '/autoren'"
-          :active="false">
+          :active="currentPage === 'autoren'">
           {{ $t('authors') }}
         </NavLink>
       </div>
@@ -41,7 +41,7 @@
       <div class="py-4 pl-8 border-b border-ok-dark-gray">
         <NavLink
           :href="'/' + locale + '/ueber-onlinekommentar'"
-          :active="false">
+          :active="currentPage === 'ueber-onlinekommentar'">
           {{ $t('about') }}
         </NavLink>
       </div>
@@ -49,7 +49,7 @@
       <div class="py-4 pl-8 border-b md:border-r border-ok-dark-gray">
         <NavLink
           :href="'/' + locale + '/herausgeber'"
-          :active="false">
+          :active="currentPage === 'herausgeber'">
           {{ $t('editors') }}
         </NavLink>
       </div>
@@ -57,7 +57,7 @@
       <div class="py-4 pl-8 border-b border-ok-dark-gray">
         <NavLink
           :href="'/' + locale + '/contact'"
-          :active="false">
+          :active="currentPage === 'contact'">
           {{ $t('contact') }}
         </NavLink>
       </div>
@@ -122,6 +122,7 @@
     },
 
     props: {
+      currentPage: { type: String, required: true },
       locale: { type: String, required: true }
     },
 
