@@ -19,10 +19,9 @@
 
   const onChange = (language) => {
     // replace the locale segment in the url
-    // let targetUrl = usePage().url.value.replace(`/${props.activeLanguage}/`, `/${language}/`)
+    let targetUrl = window.location.href.replace(`/${props.activeLanguage}`, `/${language}`)
 
-    // TODO: redirect to the language-specific version of the current page
-    // request the target url to load the corresponding translations
-    // Inertia.visit(targetUrl)
+    // redirect to the language-specific version of the current page
+    window.location.href = targetUrl
   }
 </script>
