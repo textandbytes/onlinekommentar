@@ -9,6 +9,7 @@ sections:
           required: true
           validate:
             - required
+          localizable: true
       -
         handle: content
         field:
@@ -48,6 +49,7 @@ sections:
           instructions_position: above
           visibility: visible
           always_save: false
+          localizable: true
       -
         handle: assigned_editors
         field:
@@ -88,6 +90,7 @@ sections:
           validate:
             - 'mimes:pdf'
           container: pdf_commentaries
+          localizable: true
   sidebar:
     display: Sidebar
     fields:
