@@ -34,7 +34,7 @@
 
     <StackedListView
       v-if="viewMode === 'list'"
-      :directory="commentaryGroups">
+      directory="commentaryGroups">
       <template v-slot:item="commentary">
         <td class="flex flex-col whitespace-nowrap py-3 text-gray-800">
           <div class="text-lg font-semibold font-serif">
@@ -80,11 +80,11 @@
           <div class="flex flex-col relative items-center h-full w-full">
             
             <div class="text-xs uppercase mb-8 tracking-wider">
-              {{ commentary.document_label ?? '[UNKNOWN]' }}
+              {{ commentary.title ?? '[UNKNOWN]' }}
             </div>
             
             <h2 class="text-5xl text-center font-medium font-serif my-12">
-              {{ commentary.label }}
+              {{ commentary.slug }}
             </h2>
 
             <div class="text-sm text-center">
@@ -102,7 +102,6 @@
                 {{ $t('view_commentary') }}
               </button>
             </div>
-
           </div>
         </div>
       </template>
@@ -111,20 +110,18 @@
 </template>
 
 <script setup>
-  import { computed } from 'vue'
   import StackedListView from './Partials/StackedListView'
   import GridListView from './Partials/GridListView'
   import FlyoutMenuWithDividers from '@/components/Menus/FlyoutMenuWithDividers'
 
   const props = defineProps({
-    commentaryGroups: { type: Object, required: true }
+    locale: { type: String, required: true },
+    commentaries: { type: Array, required: true }
   })
-
-  const locale = computed(() => usePage().props.value.locale)
 
   const viewMode = 'grid'
 
-  const commentaries = computed(() => Object.values(props.commentaryGroups).flat())
+  // const commentaries = computed(() => Object.values(props.commentaryGroups).flat())
 
   const documents = [
     'Bundesverfassung',
@@ -137,10 +134,7 @@
   const activeDocument = 'Obligationenrecht'
 
   const onSelect = (commentary) => {
-    Inertia.visit(route('Frontend/Commentary', {
-      locale: locale.value,
-      commentary: commentary
-    }))
+    window.location.href = '/' + props.locale + '/kommentare/' + commentary.slug
   }
 
   const onFilter = (document) => {

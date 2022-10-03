@@ -1,6 +1,11 @@
-<p>
-    Commentary
-</p>
-<article class="mt-4 bg-white p-8 shadow-xl rounded-xl max-w-xl prose">
-    {{ content | widont }}
+
+<article class="commentary pl-32 mt-4 max-w-xl border">
+    <commentary :commentary="{
+        'title': '{{ title }}',
+        'legal_text': '{{ legal_text }}'
+    }">
+        <template v-slot:content>
+            {{ content }}
+        </template>
+    </commentary>
 </article>
