@@ -2,6 +2,8 @@ require('./bootstrap')
 
 require('phosphor-icons')
 
+import FloatingVue from 'floating-vue'
+
 import { createApp } from 'vue'
 import { i18nVue } from 'laravel-vue-i18n'
 
@@ -13,7 +15,9 @@ createApp({
     'app-header': AppHeader,
     'app-footer': AppFooter,
   }
-}).use(i18nVue, { 
-    resolve: (lang) => import(`../../lang/${lang}.json`) 
+})
+.use(FloatingVue)
+.use(i18nVue, { 
+  resolve: (lang) => import(`../../lang/${lang}.json`) 
 })
 .mount('#app')
