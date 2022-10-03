@@ -1,1 +1,11 @@
-footnote {}
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.fa-asterisk {
+  font-family: 'icomoon' !important;
+}
+
+.fa-asterisk:before {
+  content: "*";
+}

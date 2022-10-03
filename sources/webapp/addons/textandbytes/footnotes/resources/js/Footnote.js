@@ -42,11 +42,23 @@ export default class Footnote {
   }
   
   commands({ type }) {
-    return {}
+    return {
+      addFootnote: (attrs) => (state, dispatch) => {
+        const { selection } = state
+        const position = selection.$cursor ? selection.$cursor.pos : selection.$to.pos
+        const node = type.create(attrs)
+        const transaction = state.tr.insert(position, node)
+        dispatch(transaction)
+      },
+
+      updateFootnote: (attrs) => (state, dispatch) => {},
+
+      deselectFootnote: () => (state, dispatch) => {}
+    }
   }
   
   inputRules({ type }) {
-    return []
+    return [] // Input rules if you want
   }
   
   plugins() {

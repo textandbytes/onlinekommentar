@@ -9,9 +9,17 @@
     "production": "mix --production"
   },
   "devDependencies": {
-    "autoprefixer": "^10.1.0",
+    "@tailwindcss/forms": "^0.2.1",
+    "@tiptap/extension-link": "^2.0.0-beta.199",
+    "@tiptap/extension-subscript": "^2.0.0-beta.199",
+    "@tiptap/extension-superscript": "^2.0.0-beta.199",
+    "@tiptap/extension-underline": "^2.0.0-beta.199",
+    "@tiptap/starter-kit": "^2.0.0-beta.199",
+    "@tiptap/vue-2": "^2.0.0-beta.199",
+    "autoprefixer": "10.4.5",
     "cross-env": "^7.0",
     "laravel-mix": "^6.0",
+    "phosphor-icons": "^1.2.0",
     "postcss": "^8.2.1",
     "postcss-import": "^14.0.0",
     "postcss-nested": "^5.0.3",

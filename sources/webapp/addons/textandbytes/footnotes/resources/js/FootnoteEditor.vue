@@ -2,29 +2,37 @@
   <div class="footnote-wrapper">
     <button
       class="bard-toolbar-button"
-      :class="{ 'active': showEditor }"
+      :class="{ 'active': show }"
       v-html="button.html"
       v-tooltip="button.text"
-      @click="showEditor = !showEditor">
+      @click="show = !show">
     </button>
 
-    <div
-      v-if="showEditor"
+    <ModalOverlayWithFooter
+      v-if="show"
       class="footnote-container">
-      <div>
-        [Show Footnote Editor]
-      </div>
-    </div>
+      <template v-slot:body>
+        <TipTapEditor />
+      </template>
+    </ModalOverlayWithFooter>
   </div>
 </template>
 
 <script>
+  import ModalOverlayWithFooter from './ModalOverlayWithFooter.vue'
+  import TipTapEditor from './TipTapEditor.vue'
+
   export default {
     mixins: [BardToolbarButton],
 
+    components: {
+      ModalOverlayWithFooter,
+      TipTapEditor
+    },
+
     data() {
       return {
-        showEditor: false
+        show: false
       }
     }
   }
