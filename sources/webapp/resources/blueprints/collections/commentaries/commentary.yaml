@@ -60,6 +60,7 @@ sections:
             - bold
             - italic
             - underline
+            - superscript
             - unorderedlist
             - orderedlist
             - removeformat
