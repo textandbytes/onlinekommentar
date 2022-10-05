@@ -1,7 +1,5 @@
 require('./bootstrap')
 
-require('phosphor-icons')
-
 import FloatingVue from 'floating-vue'
 
 import { createApp } from 'vue'

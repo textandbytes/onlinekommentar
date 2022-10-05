@@ -1,77 +1,77 @@
 <template>
   <div
     v-if="editor"
-    class="flex flex-col border border-gray-300 rounded-t-md rounded-b-none shadow-sm focus-within:border-indigo-300 focus-within:ring focus-within:ring-indigo-200 focus-within:ring-opacity-50 overflow-hidden">
-    <div class="flex p-3 gap-4 border-b">
-      <div v-if="options.enableFormatting" class="flex gap-1">
+    class="editor-container">
+    <div class="editor-menu">
+      <div v-if="options.enableFormatting" class="editor-menu-group">
         <button
           @click.prevent="editor.chain().focus().toggleBold().run()"
           :class="{ 'is-active': editor.isActive('bold') }"
           title="[TRANSLATE TipTapEditor.bold]">
-          <i class="ph-text-bolder text-lg"></i>
+          <i class="ph-text-bolder icon-text-large"></i>
         </button>
 
         <button
           @click.prevent="editor.chain().focus().toggleItalic().run()"
           :class="{ 'is-active': editor.isActive('italic') }"
           title="[TRANSLATE TipTapEditor.italic]">
-          <i class="ph-text-italic text-lg"></i>
+          <i class="ph-text-italic icon-text-large"></i>
         </button>
 
         <button
           @click.prevent="editor.chain().focus().toggleUnderline().run()"
           :class="{ 'is-active': editor.isActive('underline') }"
           title="[TRANSLATE TipTapEditor.underline]">
-          <i class="ph-text-underline text-lg"></i>
+          <i class="ph-text-underline icon-text-large"></i>
         </button>
 
         <button
           @click.prevent="editor.chain().focus().toggleSubscript().run()"
           :class="{ 'is-active': editor.isActive('subscript') }"
           title="[TRANSLATE TipTapEditor.subscript]">
-          <span class="font-normal px-0.5">x<sub>2</sub></span>
+          <span class="icon-script">x<sub>2</sub></span>
         </button>
 
         <button
           @click.prevent="editor.chain().focus().toggleSuperscript().run()"
           :class="{ 'is-active': editor.isActive('superscript') }"
           title="[TRANSLATE TipTapEditor.superscript]">
-          <span class="font-normal px-0.5">x<sup>2</sup></span>
+          <span class="icon-script">x<sup>2</sup></span>
         </button>
       </div>
       
-      <div v-if="options.enableLinks" class="flex gap-1">
+      <div v-if="options.enableLinks" class="editor-menu-group">
         <button
           @click.prevent="setLink"
           :class="{ 'is-active': editor.isActive('link') }"
           title="[TRANSLATE TipTapEditor.link]">
-          <i class="ph-link text-lg"></i>
+          <i class="ph-link icon-text-large"></i>
         </button>
 
         <button
           @click.prevent="editor.chain().focus().unsetLink().run()"
           title="[TRANSLATE TipTapEditor.unset_link]">
-          <i class="ph-link-break text-lg"></i>
+          <i class="ph-link-break icon-text-large"></i>
         </button>
       </div>
 
-      <div v-if="options.enableErase" class="flex gap-1">
+      <div v-if="options.enableErase" class="editor-menu-group">
         <button
           @click.prevent="editor.chain().focus().unsetAllMarks().run()"
           title="[TRANSLATE TipTapEditor.clear]">
-          <i class="ph-eraser text-lg"></i>
+          <i class="ph-eraser icon-text-large"></i>
         </button>
       </div>
     </div>
 
     <editor-content
-      class="prose max-w-full p-3 overflow-scroll max-h-96"
+      class="prose editor-content"
       :editor="editor">
     </editor-content>
 
-    <div class="bg-white p-3 sm:flex sm:flex-row-reverse border-t border-gray-300">
+    <div class="editor-footer">
       <button
-        class="inline-flex w-full justify-center rounded-md border border-transparent bg-gray-200 p-2 text-base font-medium text-black shadow-sm hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
+        class="save-button"
         type="button"
         title="[TRANSLATE TipTapEditor.save_footnote]"
         @click.prevent="onSave">
@@ -79,7 +79,7 @@
       </button>
 
       <button
-        class="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-gray-200 p-2 text-base font-medium text-black shadow-sm hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+        class="cancel-button"
         type="button"
         title="[TRANSLATE TipTapEditor.cancel_footnote]"
         @click.prevent="$emit('on-cancel')">
@@ -195,6 +195,42 @@
 </script>
 
 <style lang="postcss" scoped>
+  .editor-container {
+    @apply flex flex-col border border-gray-300 rounded-t-md rounded-b-none shadow-sm focus-within:border-indigo-300 focus-within:ring focus-within:ring-indigo-200 focus-within:ring-opacity-50 overflow-hidden;
+
+    .editor-menu {
+      @apply flex p-3 gap-4 border-b;
+
+      .editor-menu-group {
+        @apply flex gap-1;
+      }
+    }
+
+    .editor-content {
+      @apply max-w-full p-3 overflow-scroll max-h-96;
+    }
+
+    .editor-footer {
+      @apply bg-white p-3 sm:flex sm:flex-row-reverse border-t border-gray-300;
+
+      .save-button {
+        @apply inline-flex w-full justify-center rounded-md border border-transparent bg-gray-200 p-2 text-base font-medium text-black shadow-sm hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm;
+      }
+
+      .cancel-button {
+        @apply mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-gray-200 p-2 text-base font-medium text-black shadow-sm hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm;
+      }
+    }
+  }
+
+  i.icon-text-large {
+    @apply text-lg;
+  }
+
+  .icon-script {
+    @apply font-normal px-0.5;
+  }
+
   button {
     @apply inline-flex items-center px-1 py-1 border border-transparent shadow-sm text-sm leading-4 font-medium rounded-md bg-gray-200 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300;
 
