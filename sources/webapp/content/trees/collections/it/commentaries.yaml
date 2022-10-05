@@ -1,8 +1,9 @@
 tree:
   -
     entry: ab9d7219-4e86-4401-a979-ae36db2f09a7
-  -
-    entry: edf31df7-ea38-42f1-93a6-83d976776537
+    children:
+      -
+        entry: edf31df7-ea38-42f1-93a6-83d976776537
   -
     entry: a90c56ee-9d93-4d7c-b56b-a4949a11f35e
     children:

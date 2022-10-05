@@ -1,8 +1,9 @@
 tree:
   -
-    entry: 80030ec0-4e79-41d6-aed4-f873f42cb581
-  -
     entry: f5df55f7-71b2-4dc0-9da8-d8867ff4d49a
+    children:
+      -
+        entry: 80030ec0-4e79-41d6-aed4-f873f42cb581
   -
     entry: 5f2b9f2f-e2d9-4fd6-b5e8-70f83d018623
     children:
