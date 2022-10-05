@@ -1,9 +1,9 @@
-<ul>
+<ul class="ml-4 mt-4">
     {{ nav:collection:commentaries }}
         <li>
             {{ if content }}
                 <a href="{{ url }}"{{ if is_current || is_parent }} class="on"{{ /if }}>
-                    <strong>{{ title }}</strong>
+                    <span class="label font-medium">{{ title }}</span>
                 </a>
             {{ else }}
                 {{ title }}

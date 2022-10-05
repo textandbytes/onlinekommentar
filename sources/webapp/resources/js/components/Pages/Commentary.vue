@@ -1,13 +1,10 @@
 <template>
-  <Head>
-    <title>Kommentar</title>
-  </Head>
 
   <div class="md:max-w-6xl md:mx-auto md:mb-auto bg-white overflow-hidden px-4 md:px-24 md:py-12">
     <div class="relative flex justify-between items-center md:grid md:grid-cols-3 md:gap-px border-b border-black">
       <FlyoutMenuFullWidth
         v-if="tableOfContents"
-        :label="tocLabel"
+        :label="$t('table_of_contents')"
         class="flex items-center py-2 md:py-4"
         menu-classes="top-16">
         <div v-html="tableOfContents" class="toc p-4"></div>
@@ -15,7 +12,7 @@
       <div v-else class=" py-2 md:py-4">&nbsp;</div>
 
       <div class="md:flex items-center justify-center text-2xl font-serif hidden">
-        {{ commentary.label_de }}
+        {{ commentary.title }}
       </div>
 
       <FlyoutMenuFullWidth
@@ -29,11 +26,11 @@
 
     <div class="flex flex-col items-center my-8 md:my-12 space-y-6">
       <div class="text-xs font-sans uppercase">
-        {{ __('commentary_on') }}
+        {{ $t('commentary_on') }}
       </div>
 
       <div class="text-2xl md:text-6xl font-serif">
-        {{ commentary.label_de }}
+        {{ commentary.title }}
       </div>
 
       <div class="text-center">
@@ -56,39 +53,25 @@
 
     <div class="flex flex-col p-4 md:p-8 bg-ok-orange space-y-4 md:space-y-6">
       <div class="font-bold font-serif">
-        {{ document.label_de }}
+        {{ commentary.title }}
       </div>
 
-      <div v-html="document.content_de" class="space-y-4 md:space-y-6">
+      <div v-html="commentary.legal_text" class="space-y-4 md:space-y-6">
       </div>
     </div>
 
-    <div class="content my-8" v-html="content">
+    <div class="content my-8">
+      <slot name="content" />
     </div>
   </div>
 </template>
 
-<script>
-  import FrontendLayout from '@/Layouts/FrontendLayout'
-
-  export default {
-    layout: FrontendLayout
-  }
-</script>
-
 <script setup>
-  import { computed } from 'vue'
-  import { usePage } from '@inertiajs/inertia-vue3'
-  import FlyoutMenuFullWidth from '@/Menus/FlyoutMenuFullWidth'
-  import SuggestedCitationsPanel from '@/Pages/Frontend/Partials/SuggestedCitationsPanel'
-
-  const translations = computed(() => usePage().props.value.translations)
-  const tocLabel = translations.value.table_of_contents
+  import FlyoutMenuFullWidth from '@/components/Menus/FlyoutMenuFullWidth'
+  import SuggestedCitationsPanel from '@/components/Pages/Partials/SuggestedCitationsPanel'
 
   defineProps({
-    document: { type: Object, required: true },
     commentary: { type: Object, required: true },
-    content: { type: [String, null], required: true },
     tableOfContents: { type: String, required: false, default: null },
     versions: { type: Object, required: false, default: null },
   })

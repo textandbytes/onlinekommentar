@@ -4,7 +4,7 @@ sites:
   - de
   - fr
   - it
-propagate: false
+propagate: true
 template: commentaries/show
 layout: layout
 mount: 87c31e4b-81a4-4df5-92ec-df10ec62d495

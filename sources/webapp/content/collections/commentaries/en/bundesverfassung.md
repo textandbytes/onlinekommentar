@@ -4,6 +4,6 @@ blueprint: commentary
 title: Bundesverfassung
 author: c10c1599-a925-4e29-b45f-a4f9934c1ca7
 updated_by: c10c1599-a925-4e29-b45f-a4f9934c1ca7
-updated_at: 1663306911
+updated_at: 1664911464
 template: commentaries/show
 ---

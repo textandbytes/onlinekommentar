@@ -4,18 +4,18 @@
       {{ commentary.suggested_citation_long }}
     </div>
 
-     <CopyTextButton
-      :label="__('copy_citation')"
+    <CopyTextButton
+      :label="$t('copy_citation')"
       :text="citationTextLong"
       class="flex items-center justify-end"
     />
 
     <div class="border-t border-black pt-2">
-      {{ usePage().props.value.translations.short_citation }}: {{ commentary.suggested_citation_short }}
+      {{ commentary.suggested_citation_short }}
     </div>
 
     <CopyTextButton
-      :label="__('copy_citation')"
+      :label="$t('copy_citation')"
       :text="citationTextShort"
       class="flex items-center justify-end"
     />
@@ -24,8 +24,7 @@
 
 <script setup>
   import { computed } from 'vue'
-  import { usePage } from '@inertiajs/inertia-vue3'
-  import CopyTextButton from '@/Pages/Frontend/Partials/CopyTextButton'
+  import CopyTextButton from '@/components/Pages/Partials/CopyTextButton'
 
   const props = defineProps({
     commentary: { type: Object, required: true }

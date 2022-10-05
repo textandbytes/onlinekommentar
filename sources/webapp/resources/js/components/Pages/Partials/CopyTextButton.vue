@@ -23,15 +23,12 @@
 </template>
 
 <script setup>
-  import { ref, computed } from 'vue'
-  import { usePage } from '@inertiajs/inertia-vue3'
+  import { ref } from 'vue'
 
   const props = defineProps({
     label: { type: String, required: false, default: null },
     text: { type: String, required: true }
   })
-
-  const translations = computed(() => usePage().props.value.translations)
 
   const copyStatus = ref('')
 
