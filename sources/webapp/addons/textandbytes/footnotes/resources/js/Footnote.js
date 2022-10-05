@@ -1,3 +1,5 @@
+const { core: tiptap, commands, utils } = Statamic.$bard.tiptap
+
 export default class Footnote {
   constructor(options = {}) {
     this.options = options
@@ -30,18 +32,18 @@ export default class Footnote {
 
       parseDOM: [
         {
-          tag: 'footnote[data-content]',
-          getAttrs: dom => ({
+          tag: 'footnote',
+          getAttrs: (dom) => ({
             'data-content': dom.getAttribute('data-content'),
-          }),
-        },
+          })
+        }
       ],
 
-      toDOM: node => ['footnote', node.attrs],
+      toDOM: node => ['footnote', node.attrs]
     }
   }
   
-  commands({ type }) {
+  commands({ type, toggleBlockType }) {
     return {
       addFootnote: (attrs) => (state, dispatch) => {
         const { selection } = state
@@ -51,14 +53,29 @@ export default class Footnote {
         dispatch(transaction)
       },
 
-      updateFootnote: (attrs) => (state, dispatch) => {},
+      updateFootnote: (attrs) => (state, dispatch) => {
+        // replace the footnote node with new content
+        const node = type.create(attrs)
+        const transaction = state.tr.replaceSelectionWith(node)
+        dispatch(transaction)
 
-      deselectFootnote: () => (state, dispatch) => {}
+        return toggleBlockType(type)
+      },
+
+      deselectFootnote: () => (state, dispatch) => {
+        // do not dispatch command if the selection is empty
+        if (!state.selection.empty) {
+          const endPosition = state.selection.$to.pos
+          const selection = new tiptap.TextSelection(state.doc.resolve(endPosition))
+          const transaction = state.tr.setSelection(selection)
+          dispatch(transaction)
+        }
+      }
     }
   }
   
   inputRules({ type }) {
-    return [] // Input rules if you want
+    return []
   }
   
   plugins() {

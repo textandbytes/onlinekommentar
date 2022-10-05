@@ -68,6 +68,24 @@
       class="prose max-w-full p-3 overflow-scroll max-h-96"
       :editor="editor">
     </editor-content>
+
+    <div class="bg-white p-3 sm:flex sm:flex-row-reverse border-t border-gray-300">
+      <button
+        class="inline-flex w-full justify-center rounded-md border border-transparent bg-gray-200 p-2 text-base font-medium text-black shadow-sm hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
+        type="button"
+        title="[TRANSLATE TipTapEditor.save_footnote]"
+        @click.prevent="onSave">
+        Save
+      </button>
+
+      <button
+        class="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-gray-200 p-2 text-base font-medium text-black shadow-sm hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+        type="button"
+        title="[TRANSLATE TipTapEditor.cancel_footnote]"
+        @click.prevent="$emit('on-cancel')">
+        Cancel
+      </button>
+    </div>
   </div>
 </template>
 
@@ -144,6 +162,10 @@
     },
 
     methods: {
+      onSave() {
+        this.$emit('on-save', this.editor.getHTML())
+      },
+
       updateEditorContentWithLink(markName, linkRef) {
         // cancelled
         if (linkRef === null) {
