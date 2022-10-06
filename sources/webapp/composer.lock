@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bfd35b1dc74ac7aeae2dc8cb9c915b78",
+    "content-hash": "83f1243af4647c9e0b2ccab0b2ecac1c",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -1724,6 +1724,94 @@
                 }
             ],
             "time": "2022-05-21T17:30:32+00:00"
+        },
+        {
+            "name": "jacksleight/statamic-bard-mutator",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jacksleight/statamic-bard-mutator.git",
+                "reference": "f6832ab1ef1cee3839aa7acf2119127763008989"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jacksleight/statamic-bard-mutator/zipball/f6832ab1ef1cee3839aa7acf2119127763008989",
+                "reference": "f6832ab1ef1cee3839aa7acf2119127763008989",
+                "shasum": ""
+            },
+            "require": {
+                "statamic/cms": "~3.1.14 || 3.2.* || 3.3.*"
+            },
+            "require-dev": {
+                "nunomaduro/collision": "^6.2",
+                "orchestra/testbench": "^7.5",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "statamic": {
+                    "name": "Bard Mutator",
+                    "description": "This Statamic addon allows you to modify the data and tags rendered by the Bard fieldtype, giving you full control over the final HTML."
+                },
+                "laravel": {
+                    "providers": [
+                        "JackSleight\\StatamicBardMutator\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JackSleight\\StatamicBardMutator\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "support": {
+                "issues": "https://github.com/jacksleight/statamic-bard-mutator/issues",
+                "source": "https://github.com/jacksleight/statamic-bard-mutator/tree/1.1.2"
+            },
+            "time": "2022-08-18T08:34:20+00:00"
+        },
+        {
+            "name": "jacksleight/statamic-bard-texstyle",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jacksleight/statamic-bard-texstyle.git",
+                "reference": "c7ed14fe29ab404e762146ab8492212c3994e066"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jacksleight/statamic-bard-texstyle/zipball/c7ed14fe29ab404e762146ab8492212c3994e066",
+                "reference": "c7ed14fe29ab404e762146ab8492212c3994e066",
+                "shasum": ""
+            },
+            "require": {
+                "jacksleight/statamic-bard-mutator": "^1.0.3",
+                "statamic/cms": "~3.2.24 || 3.3.*"
+            },
+            "type": "library",
+            "extra": {
+                "statamic": {
+                    "name": "Bard Texstyle",
+                    "description": "This Statamic addon gives you the ability to add custom heading, paragraph and inline (span) text styles to the Bard fieldtype."
+                },
+                "laravel": {
+                    "providers": [
+                        "JackSleight\\StatamicBardTexstyle\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JackSleight\\StatamicBardTexstyle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "support": {
+                "issues": "https://github.com/jacksleight/statamic-bard-texstyle/issues",
+                "source": "https://github.com/jacksleight/statamic-bard-texstyle/tree/1.0.3"
+            },
+            "time": "2022-06-21T12:02:08+00:00"
         },
         {
             "name": "james-heinrich/getid3",
