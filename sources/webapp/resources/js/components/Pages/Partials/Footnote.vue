@@ -18,6 +18,22 @@
 </script>
 
 <style lang="postcss">
+  .footnote-number {
+    @apply 
+      inline-block
+      border
+      border-black
+      hover:bg-black
+      hover:text-white
+      rounded-full
+      font-sans
+      text-center
+      ml-1;
+      width: 16px;
+      height: 16px;
+      line-height: 15px;
+  }
+
   .v-popper.v-popper--theme-dropdown {
     @apply inline;
   }
@@ -27,22 +43,15 @@
   }
 
   .v-popper__inner {
-    @apply p-4 bg-white text-black border-0 text-sm;
+    @apply p-4 bg-ok-orange text-black border-0 text-sm !important;
     
     div:first-child {
       @apply grid grid-cols-1;
     }
 
-    .footnote-number {
-      @apply row-start-1 row-end-2 col-start-1 col-end-1;
-    }
-
     .footnote-content {
-      @apply row-start-1 row-end-2 col-start-1 col-end-1;
+      @apply bg-ok-orange;
 
-      p:first-of-type {
-        text-indent: 2rem;
-      }
     }
   }
 </style>
