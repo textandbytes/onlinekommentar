@@ -63,6 +63,15 @@
     <div class="content my-8">
       <slot name="content" />
     </div>
+
+    <h2 class="uppercase font-sans tracking-wider text-xl mt-12 mb-4">
+      {{ $t('creative_commons_license') }}
+    </h2>
+    <p>
+      Onlinekommentar.ch, {{ $t('commentary_on') }} {{ commentary.title }} {{ $t('creative_commons_text') }}
+    </p>
+    <p class="mt-4"><img src="/img/cc-license.png" alt="Creative Commons"></p>
+
   </div>
 </template>
 

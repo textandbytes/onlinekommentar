@@ -82,5 +82,8 @@
 
   "ATTENTION: This version of the commentary is an automatic machine translation of the original. The original version is in :original_language. The translation was done with www.deepl.com. Only the original version is authoritative. The translated form of the commentary cannot be cited." : "ACHTUNG: Diese Version des Kommentars ist eine automatische maschinelle Übersetzung des Originals. Die Originalversion ist :original_language. Die Übersetzung wurde mit www.deepl.com durchgeführt. Nur die Originalversion ist autoritativ. Die übersetzte Form des Kommentars kann nicht zitiert werden.",
 
-  "visited_at": "besucht am"
+  "visited_at": "besucht am",
+
+  "creative_commons_license": "Creative Commons Lizenz",
+  "creative_commons_text": "ist lizenziert unter einer Creative Commons Namensnennung 4.0 International Lizenz."
 }
