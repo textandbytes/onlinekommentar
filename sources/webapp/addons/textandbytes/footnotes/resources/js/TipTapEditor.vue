@@ -4,62 +4,62 @@
     class="editor-container">
     <div class="editor-menu">
       <div v-if="options.enableFormatting" class="editor-menu-group">
-        <button
+        <button class="bard-toolbar-button has-tooltip"
           @click.prevent="editor.chain().focus().toggleBold().run()"
           :class="{ 'is-active': editor.isActive('bold') }"
-          title="[TRANSLATE TipTapEditor.bold]">
-          <i class="ph-text-bolder icon-text-large"></i>
+          title="Bold">
+          <i class="fa fa-bold icon-text-large"></i>
         </button>
 
-        <button
+        <button class="bard-toolbar-button has-tooltip"
           @click.prevent="editor.chain().focus().toggleItalic().run()"
           :class="{ 'is-active': editor.isActive('italic') }"
-          title="[TRANSLATE TipTapEditor.italic]">
-          <i class="ph-text-italic icon-text-large"></i>
+          title="Italic">
+          <i class="fa fa-italic icon-text-large"></i>
         </button>
 
-        <button
+        <button class="bard-toolbar-button has-tooltip"
           @click.prevent="editor.chain().focus().toggleUnderline().run()"
           :class="{ 'is-active': editor.isActive('underline') }"
-          title="[TRANSLATE TipTapEditor.underline]">
-          <i class="ph-text-underline icon-text-large"></i>
+          title="Underline">
+          <i class="fa fa-underline icon-text-large"></i>
         </button>
 
-        <!-- <button
+        <!-- <button class="bard-toolbar-button has-tooltip"
           @click.prevent="editor.chain().focus().toggleSubscript().run()"
           :class="{ 'is-active': editor.isActive('subscript') }"
-          title="[TRANSLATE TipTapEditor.subscript]">
-          <span class="icon-script">x<sub>2</sub></span>
+          title="Subscript">
+          <i class="fa fa-subscript icon-text-large"></i>
         </button> -->
 
-        <button
+        <button class="bard-toolbar-button has-tooltip"
           @click.prevent="editor.chain().focus().toggleSuperscript().run()"
           :class="{ 'is-active': editor.isActive('superscript') }"
-          title="[TRANSLATE TipTapEditor.superscript]">
-          <span class="icon-script">x<sup>2</sup></span>
+          title="Superscript">
+          <i class="fa fa-superscript icon-text-large"></i>
         </button>
       </div>
       
       <div v-if="options.enableLinks" class="editor-menu-group">
-        <button
+        <button class="bard-toolbar-button has-tooltip"
           @click.prevent="setLink"
           :class="{ 'is-active': editor.isActive('link') }"
-          title="[TRANSLATE TipTapEditor.link]">
-          <i class="ph-link icon-text-large"></i>
+          title="Link">
+          <i class="fa fa-link icon-text-large"></i>
         </button>
 
-        <button
+        <button class="bard-toolbar-button has-tooltip"
           @click.prevent="editor.chain().focus().unsetLink().run()"
-          title="[TRANSLATE TipTapEditor.unset_link]">
-          <i class="ph-link-break icon-text-large"></i>
+          title="Remove Link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M17 17h5v2h-3v3h-2v-5zM7 7H2V5h3V2h2v5zm11.364 8.536L16.95 14.12l1.414-1.414a5 5 0 1 0-7.071-7.071L9.879 7.05 8.464 5.636 9.88 4.222a7 7 0 0 1 9.9 9.9l-1.415 1.414zm-2.828 2.828l-1.415 1.414a7 7 0 0 1-9.9-9.9l1.415-1.414L7.05 9.88l-1.414 1.414a5 5 0 1 0 7.071 7.071l1.414-1.414 1.415 1.414zm-.708-10.607l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"/></svg>
         </button>
       </div>
 
       <div v-if="options.enableErase" class="editor-menu-group">
-        <button
+        <button class="bard-toolbar-button has-tooltip"
           @click.prevent="editor.chain().focus().unsetAllMarks().run()"
-          title="[TRANSLATE TipTapEditor.clear]">
-          <i class="ph-eraser icon-text-large"></i>
+          title="Clear formatting">
+          <i class="fa fa-eraser icon-text-large"></i>
         </button>
       </div>
     </div>
@@ -73,7 +73,7 @@
       <button
         class="save-button"
         type="button"
-        title="[TRANSLATE TipTapEditor.save_footnote]"
+        title="Save Footnote"
         @click.prevent="onSave">
         Save
       </button>
@@ -81,7 +81,7 @@
       <button
         class="cancel-button"
         type="button"
-        title="[TRANSLATE TipTapEditor.cancel_footnote]"
+        title="Cancel"
         @click.prevent="$emit('on-cancel')">
         Cancel
       </button>

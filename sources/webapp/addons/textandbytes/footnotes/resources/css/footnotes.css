@@ -1,7 +1,8 @@
-.fa-asterisk {
-  font-family: 'icomoon' !important;
+.fa-note {
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
-.fa-asterisk:before {
-  content: "*";
+.fa-note:before {
+  content: "Fn";
 }

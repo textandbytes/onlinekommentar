@@ -19,7 +19,6 @@
     "autoprefixer": "10.4.5",
     "cross-env": "^7.0",
     "laravel-mix": "^6.0",
-    "phosphor-icons": "^1.2.0",
     "postcss": "^8.4.17",
     "postcss-import": "^14.1.0",
     "postcss-nesting": "^10.1.8",
