@@ -11,7 +11,7 @@
     />
 
     <div class="border-t border-black pt-2">
-      {{ commentary.suggested_citation_short }}
+      {{ $t('short_citation') }}: {{ commentary.suggested_citation_short }}
     </div>
 
     <CopyTextButton
