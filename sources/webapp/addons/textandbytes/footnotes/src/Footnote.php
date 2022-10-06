@@ -21,7 +21,7 @@ class Footnote extends Node
             [
                 'tag' => 'footnote',
                 'attrs' => [
-                    'data-content' => $this->node->attrs['data-content']
+                    'data-content' => $this->node->attrs->{'data-content'}
                 ],
             ],
         ];
