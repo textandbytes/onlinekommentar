@@ -24,6 +24,7 @@
 
 <script setup>
   import { ref } from 'vue'
+  import { trans } from 'laravel-vue-i18n';
 
   const props = defineProps({
     label: { type: String, required: false, default: null },
@@ -47,10 +48,10 @@
     // copy the citation and update the label
     try {
       document.execCommand('copy')
-      copyLabel.value = translations.value.copied_citation
+      copyLabel.value = trans('copied_citation')
       copyStatus.value = 'copied'
     } catch (err) {
-      copyLabel.value = translations.value.copy_citation_error
+      copyLabel.value = trans('copy_citation_error')
       copyStatus.value = 'error'
     }
 
