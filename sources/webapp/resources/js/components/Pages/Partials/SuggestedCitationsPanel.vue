@@ -1,7 +1,7 @@
 <template>
   <div class="text-xs text-gray-800 space-y-4">
     <div>
-      {{ commentary.suggested_citation_long }}
+      {{ citationTextLong }}
     </div>
 
     <CopyTextButton
@@ -24,6 +24,7 @@
 
 <script setup>
   import { computed } from 'vue'
+  import { trans } from 'laravel-vue-i18n'
   import CopyTextButton from '@/components/Pages/Partials/CopyTextButton'
 
   const props = defineProps({
@@ -31,7 +32,9 @@
   })
 
   const citationTextLong = computed(() => {
-    return `${props.commentary.suggested_citation_long}: ${window.location.href}`
+    const current = new Date()
+    const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`
+    return `${props.commentary.suggested_citation_long}: ${window.location.href} (${trans('visited_at')} ${date})`
   })
 
   const citationTextShort = computed(() => {

@@ -80,5 +80,7 @@
 
   "sidebar_handle_text": "Navigazione",
 
-  "ATTENTION: This version of the commentary is an automatic machine translation of the original. The original version is in :original_language. The translation was done with www.deepl.com. Only the original version is authoritative. The translated form of the commentary cannot be cited.": "ATTENZIONE: Questa versione del commento è una traduzione automatica dell'originale. Il commento originale è in :original_language. La traduzione è stata effettuata con www.deepl.com. Solo la versione originale è autorevole. La forma tradotta del commento non può essere citata."
+  "ATTENTION: This version of the commentary is an automatic machine translation of the original. The original version is in :original_language. The translation was done with www.deepl.com. Only the original version is authoritative. The translated form of the commentary cannot be cited.": "ATTENZIONE: Questa versione del commento è una traduzione automatica dell'originale. Il commento originale è in :original_language. La traduzione è stata effettuata con www.deepl.com. Solo la versione originale è autorevole. La forma tradotta del commento non può essere citata.",
+
+  "visited_at": "Visitato il"
 }
