@@ -25,12 +25,12 @@
           <i class="ph-text-underline icon-text-large"></i>
         </button>
 
-        <button
+        <!-- <button
           @click.prevent="editor.chain().focus().toggleSubscript().run()"
           :class="{ 'is-active': editor.isActive('subscript') }"
           title="[TRANSLATE TipTapEditor.subscript]">
           <span class="icon-script">x<sub>2</sub></span>
-        </button>
+        </button> -->
 
         <button
           @click.prevent="editor.chain().focus().toggleSuperscript().run()"
@@ -134,7 +134,7 @@
       // initialize menu options
       this.options = {
         enableFormatting: true,
-        enableLinks: true,
+        enableLinks: false,
         enableErase: true,
         ...this.menuOptions
       }
