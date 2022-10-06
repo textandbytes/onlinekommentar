@@ -2,7 +2,9 @@
 <article class="commentary w-full border">
     <commentary :commentary="{
         'title': '{{ title }}',
-        'legal_text': '{{ legal_text }}'
+        'legal_text': '{{ legal_text }}',
+        'suggested_citation_long': '{{ suggested_citation_long }}',
+        'suggested_citation_short': '{{ suggested_citation_short }}'
     }">
         <template v-slot:content>
             {{ content }}
