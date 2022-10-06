@@ -20,7 +20,9 @@
 <style lang="postcss">
   .footnote-number {
     @apply 
-      inline-block
+      inline-flex
+      justify-center
+      px-1
       border
       border-black
       hover:bg-black
@@ -29,9 +31,8 @@
       font-sans
       text-center
       ml-1;
-      width: 16px;
-      height: 16px;
-      line-height: 15px;
+      min-width: 16px;
+      min-height: 16px;
   }
 
   .v-popper__arrow-container {
