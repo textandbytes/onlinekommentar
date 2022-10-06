@@ -56,11 +56,7 @@
     </div>
 
     <div class="flex flex-col p-4 md:p-8 bg-ok-orange space-y-4 md:space-y-6">
-      <div class="font-bold font-serif">
-        {{ commentary.title }}
-      </div>
-
-      <div v-html="commentary.legal_text" class="space-y-4 md:space-y-6">
+      <div v-html="commentary.legal_text" class="space-y-4 md:space-y-6 font-serif">
       </div>
     </div>
 
