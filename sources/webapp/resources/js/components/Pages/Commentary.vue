@@ -44,7 +44,7 @@
 
       <FlyoutMenuFullWidth
         v-if="commentary"
-        label="Zitiervorschlag"
+        :label="$t('suggested_citation')"
         class="relative flex justify-center w-full md:w-2/3"
         menu-classes="top-8">
         <SuggestedCitationsPanel :commentary="commentary" />
