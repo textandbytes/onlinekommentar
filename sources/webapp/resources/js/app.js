@@ -1,6 +1,8 @@
 require('./bootstrap')
 
 import FloatingVue from 'floating-vue'
+FloatingVue.options.themes.dropdown.placement = 'top'
+FloatingVue.options.themes.dropdown.distance = 10
 
 import { createApp } from 'vue'
 import { i18nVue } from 'laravel-vue-i18n'

@@ -34,6 +34,10 @@
       line-height: 15px;
   }
 
+  .v-popper__arrow-container {
+    display: none;
+  }
+
   .v-popper.v-popper--theme-dropdown {
     @apply inline;
   }
