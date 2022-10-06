@@ -4,7 +4,9 @@
         'title': '{{ title }}',
         'legal_text': '{{ legal_text }}',
         'suggested_citation_long': '{{ suggested_citation_long }}',
-        'suggested_citation_short': '{{ suggested_citation_short }}'
+        'suggested_citation_short': '{{ suggested_citation_short }}',
+        'original_language': '{{ original_language ?? 'de' }}',
+        'locale': '{{ locale }}',
     }">
         <template v-slot:content>
             {{ content }}

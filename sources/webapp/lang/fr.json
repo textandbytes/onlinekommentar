@@ -21,10 +21,10 @@
     "editor": "Editeur",
     "author": "Auteur",
 
-    "de": "Allemand",
-    "en": "Anglais",
-    "fr": "Français",
-    "it": "Italien",
+    "de": "allemand",
+    "en": "anglais",
+    "fr": "français",
+    "it": "italien",
 
     "draft": "Brouillon",
     "in_review": "En cours de révision",
@@ -78,5 +78,7 @@
 
     "table_of_contents": "Table de matières",
 
-    "sidebar_handle_text": "Navigation"
+    "sidebar_handle_text": "Navigation",
+
+    "ATTENTION: This version of the commentary is an automatic machine translation of the original. The original version is in :original_language. The translation was done with www.deepl.com. Only the original version is authoritative. The translated form of the commentary cannot be cited.": "ATTENTION : Cette version du commentaire est une traduction automatique de l'original. Le commentaire original est en :original_language. La traduction a été faite avec www.deepl.com. Seule la version originale fait autorité. La version traduite du commentaire ne peut pas être citée."
   }
