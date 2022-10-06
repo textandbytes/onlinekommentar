@@ -32,9 +32,10 @@
   })
 
   const citationTextLong = computed(() => {
-    const current = new Date()
-    const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`
-    return `${props.commentary.suggested_citation_long}: ${window.location.href} (${trans('visited_at')} ${date})`
+    const date = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const dateString = date.toLocaleDateString(props.commentary.locale, options);
+    return `${props.commentary.suggested_citation_long}: ${window.location.href} (${trans('visited_at')} ${dateString}).`
   })
 
   const citationTextShort = computed(() => {
