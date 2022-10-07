@@ -1,0 +1,16 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          localizable: true
+          validate:
+            - required
+  sidebar:
+    display: Sidebar
+    fields: {  }
+title: 'Legal Domain'
