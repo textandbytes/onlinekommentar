@@ -3,13 +3,13 @@
   <div class="md:max-w-6xl md:mx-auto md:mb-auto bg-white overflow-hidden px-4 md:px-24 md:py-12">
     <div class="relative flex justify-between items-center md:grid md:grid-cols-3 md:gap-px border-b border-black">
       <FlyoutMenuFullWidth
-        v-if="tableOfContents"
         :label="$t('table_of_contents')"
         class="flex items-center py-2 md:py-4"
         menu-classes="top-16">
-        <div v-html="tableOfContents" class="toc p-4"></div>
+        <div class="toc p-4">
+          <slot name="table-of-contents" />
+        </div>
       </FlyoutMenuFullWidth>
-      <div v-else class=" py-2 md:py-4">&nbsp;</div>
 
       <div class="md:flex items-center justify-center text-2xl font-serif hidden">
         {{ commentary.title }}
@@ -94,7 +94,6 @@
 
   defineProps({
     commentary: { type: Object, required: true },
-    tableOfContents: { type: String, required: false, default: null },
     versions: { type: Object, required: false, default: null },
   })
 </script>
