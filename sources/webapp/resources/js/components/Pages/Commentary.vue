@@ -39,10 +39,10 @@
 
       <div class="text-center">
         <p>
-          Ein Kommentar von <i>Marco Zollinger</i>
+          {{ $t('commentary_by') }} <i>{{ commentary.assigned_authors.join(' ' + $t('and') + ' ') }}</i>
         </p>
         <p>
-          Herausgegeben von <i>Stefan Schlegel</i> und <i>Odile Ammannn</i>
+          {{ $t('edited_by') }} <i>{{ commentary.assigned_editors.join(' ' + $t('and') + ' ') }}</i>
         </p>
       </div>
 

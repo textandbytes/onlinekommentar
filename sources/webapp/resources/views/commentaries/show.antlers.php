@@ -33,6 +33,16 @@
     <commentary :commentary="{
         'slug': '{{ slug }}',
         'title': '{{ title }}',
+        'assigned_editors': [
+          {{ assigned_editors }}
+            '{{ name }}',
+          {{ /assigned_editors }}
+        ],
+        'assigned_authors': [
+          {{ assigned_authors }}
+            '{{ name }}',
+          {{ /assigned_authors }}
+        ],
         'legal_text': '{{ legal_text }}',
         'suggested_citation_long': '{{ suggested_citation_long }}',
         'suggested_citation_short': '{{ suggested_citation_short }}',
