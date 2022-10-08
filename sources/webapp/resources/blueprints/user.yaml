@@ -35,6 +35,21 @@ sections:
           display: 'Email Address'
           listable: true
       -
+        handle: legal_domain
+        field:
+          mode: select
+          create: false
+          display: 'Legal Domain'
+          type: entries
+          icon: entries
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          max_items: 1
+          collections:
+            - legal_domains
+      -
         handle: title
         field:
           input_type: text
