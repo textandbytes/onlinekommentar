@@ -3,9 +3,13 @@ id: c77e9d76-4c07-4e57-9f9d-0683e6a43a42
 blueprint: commentary
 title: 'Art. 20 IPRG'
 author: c10c1599-a925-4e29-b45f-a4f9934c1ca7
-updated_by: c10c1599-a925-4e29-b45f-a4f9934c1ca7
-updated_at: 1663306611
 template: commentaries/show
+assigned_editors:
+  - bc344b1d-3c8e-4c29-bf69-5ead146f664a
+assigned_authors:
+  - b3c24b1d-3c8e-4229-b769-5ead146f664d
+updated_by: c10c1599-a925-4e29-b45f-a4f9934c1ca7
+updated_at: 1665244017
 ---
 <h2>I. Einleitung</h2>
 <h3>A. Allgemeines</h3>
