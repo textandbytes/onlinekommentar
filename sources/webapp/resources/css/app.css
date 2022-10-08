@@ -37,3 +37,7 @@ article {
   padding-right: 0.5px;
   cursor: pointer;
 }
+
+.tree ul li:last-child {
+  @apply mb-2
+}

@@ -4,8 +4,6 @@
     use TOC\MarkupFixer;
     use TOC\TocGenerator;
 
-    // var_dump(); exit();
-
     $entry = Entry::query()
         ->where('collection', 'commentaries')
         ->where('slug', Request::segment(count(Request::segments()))) // get the last slug from the URL
@@ -31,7 +29,18 @@
 
 <article class="commentary w-full border">
     <commentary :commentary="{
+        'slug': '{{ slug }}',
         'title': '{{ title }}',
+        'assigned_editors': [
+          {{ assigned_editors }}
+            '{{ name }}',
+          {{ /assigned_editors }}
+        ],
+        'assigned_authors': [
+          {{ assigned_authors }}
+            '{{ name }}',
+          {{ /assigned_authors }}
+        ],
         'legal_text': '{{ legal_text }}',
         'suggested_citation_long': '{{ suggested_citation_long }}',
         'suggested_citation_short': '{{ suggested_citation_short }}',

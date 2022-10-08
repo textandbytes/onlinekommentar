@@ -85,5 +85,10 @@
   "visited_at": "visitato il",
 
   "creative_commons_license": "Licenza Creative Commons",
-  "creative_commons_text": "è rilasciato con licenza Creative Commons Attribuzione 4.0 Internazionale."
+  "creative_commons_text": "è rilasciato con licenza Creative Commons Attribuzione 4.0 Internazionale.",
+
+  "and": "e",
+
+  "commentary_by": "Un commento da",
+  "edited_by": "Edito da"
 }

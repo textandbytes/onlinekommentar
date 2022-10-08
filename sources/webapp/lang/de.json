@@ -85,5 +85,9 @@
   "visited_at": "besucht am",
 
   "creative_commons_license": "Creative Commons Lizenz",
-  "creative_commons_text": "ist lizenziert unter einer Creative Commons Namensnennung 4.0 International Lizenz."
+  "creative_commons_text": "ist lizenziert unter einer Creative Commons Namensnennung 4.0 International Lizenz.",
+
+  "and": "und",
+  "commentary_by": "Ein Kommentar von",
+  "edited_by": "Herausgegeben von"
 }
