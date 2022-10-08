@@ -13,5 +13,7 @@ sort_dir: asc
 date_behavior:
   past: public
   future: private
+inject:
+  view_model: App\ViewModels\UsersData
 structure:
   root: true
