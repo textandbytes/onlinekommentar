@@ -15,10 +15,10 @@ return [
     |
     */
 
-    'enabled' => env('STATAMIC_API_ENABLED', false),
+    'enabled' => env('STATAMIC_API_ENABLED', true),
 
     'resources' => [
-        'collections' => false,
+        'collections' => true,
         'navs' => false,
         'taxonomies' => false,
         'assets' => false,
