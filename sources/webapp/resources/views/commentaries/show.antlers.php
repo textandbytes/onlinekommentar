@@ -31,6 +31,7 @@
 
 <article class="commentary w-full border">
     <commentary :commentary="{
+        'slug': '{{ slug }}',
         'title': '{{ title }}',
         'legal_text': '{{ legal_text }}',
         'suggested_citation_long': '{{ suggested_citation_long }}',

@@ -56,7 +56,13 @@
     </div>
 
     <div class="flex flex-col p-4 md:p-8 bg-ok-orange space-y-4 md:space-y-6">
-      <div v-html="commentary.legal_text" class="space-y-4 md:space-y-6 font-serif">
+      <div class="flex justify-end">
+        <span @click="setLegalTextLocale('de')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'de' }">de</span>
+        <span @click="setLegalTextLocale('en')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'en' }">en</span>
+        <span @click="setLegalTextLocale('fr')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'fr' }">fr</span>
+        <span @click="setLegalTextLocale('it')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'it' }">it</span>
+      </div>
+      <div v-html="localizedLegalText" class="space-y-4 md:space-y-6 font-serif">
       </div>
     </div>
 
@@ -89,13 +95,33 @@
 </template>
 
 <script setup>
+  import { ref } from 'vue'
   import FlyoutMenuFullWidth from '@/components/Menus/FlyoutMenuFullWidth'
   import SuggestedCitationsPanel from '@/components/Pages/Partials/SuggestedCitationsPanel'
+  import axios from 'axios';
 
-  defineProps({
+  const props = defineProps({
     commentary: { type: Object, required: true },
     versions: { type: Object, required: false, default: null },
   })
+
+  const legalTextLocale = ref(props.commentary.locale)
+  let localizedLegalText = ref(props.commentary.legal_text)
+
+
+  function setLegalTextLocale(locale) {
+    // Get all commentary entries, filter them by given locale and commentary slug, return legal text field
+    axios.get('/api/collections/commentaries/entries/?filter[site]=' + locale + '&filter[slug]=' + props.commentary.slug + '&fields=legal_text')
+      .then(function (response) {
+        localizedLegalText.value = response.data.data[0].legal_text
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+
+    this.legalTextLocale = locale
+  }
+
 </script>
 
 <style lang="postcss" scoped>
@@ -128,6 +154,14 @@
     :deep(ul li ul li) {
       @apply ml-4 normal-case
     }
+  }
+
+  .legal-text-locale-link {
+    @apply flex mr-2 rounded-xl px-2 text-sm uppercase cursor-pointer
+  }
+
+  .legal-text-locale-link.active {
+    @apply border border-black
   }
   
 
