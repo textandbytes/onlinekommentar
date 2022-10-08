@@ -4,8 +4,6 @@
     use TOC\MarkupFixer;
     use TOC\TocGenerator;
 
-    // var_dump(); exit();
-
     $entry = Entry::query()
         ->where('collection', 'commentaries')
         ->where('slug', Request::segment(count(Request::segments()))) // get the last slug from the URL
