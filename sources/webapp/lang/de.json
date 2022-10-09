@@ -21,13 +21,13 @@
   "editor": "Herausgeber",
   "author": "Autor",
 
-  "de": "Deutsch",
-  "en": "Englisch",
-  "fr": "Französisch",
-  "it": "Italienisch",
+  "de": "deutsch",
+  "en": "englisch",
+  "fr": "französisch",
+  "it": "italienisch",
 
   "draft": "Entwurf",
-  "in_review": "Im Rückblick",
+  "in_review": "In Überprüfung",
   "published": "Veröffentlicht",
 
   "bold": "Fett",
@@ -56,6 +56,7 @@
   "view_commentary": "Anzeigen",
   "back_to_results": "Zurück Zur Übersicht",
 
+  "suggested_citation": "Zitiervorschlag",
   "short_citation": "Kurzzitat",
   "copy_citation": "Kopieren",
   "copied_citation": "Kopiert",
@@ -73,9 +74,20 @@
   "home_text": "Onlinekommentar.ch ist die erste gemeinnützige kostenlose Plattform für Open-Access-Kommentare in der Schweiz.",
   "home_more_link": "Mehr",
 
-  "about_text": "<p>Das Konzept des Onlinekommentars lässt sich in einem Satz wie folgt zusammenfassen: Eine gemeinnützige Trägerschaft stellt mit dem Onlinekommentar eine Webplattform zur Verfügung, auf der qualitativ hochwertige und geprüfte Kommentare zum schweizerischen Recht für jedermann frei und kostenlos zur Verfügung gestellt werden können. Der Onlinekommentar ermöglicht es also, verschiedene Kommentare zu schweizerischen Erlassen an einem einzigen Ort zu veröffentlichen. Mit dem Verein Onlinekommentar ist eine stabile und dauerhafte Trägerschaft für den Onlinekommentar sichergestellt.</p><p>Der Onlinekommentar möchte juristisches Fachwissen frei verfügbar machen (open access). Das bedeutet mit anderen Worten, dass der Onlinekommentar für immer frei und kostenlos zugänglich bleibt und insbesondere keine pay-wall eingerichtet wird. In den Vereinsstatuten ist dabei ausdrücklich festgehalten, dass der Verein keine kommerziellen Zwecke verfolgt und keinen Gewinn erstrebt (Ziff. 2 der Statuten). Der Onlinekommenter baut als Open-Access-Kommentar Zugangshürden ab. Er ermöglicht einen kostenlosen, einfachen, bequemen und niederschwelligen Zugang zu den Texten, auch für Personen ausserhalb der “legal community”.</p><p>Frei zugängliche Kommentare fördern den Wissensaustausch und bieten dem Kommentator eine höhere Sichtbarkeit seines Arbeitsresultats. Das Projekt Onlinekommentar soll auch ein Beitrag sein zu einer inklusiveren, diverseren, qualitativeren, moderneren, aktuelleren, interaktiveren und weniger hierarchischen Rechtswissenschaft und –praxis. Weitere Vorteile des Onlinekommentars finden Sie hier.</p><p>Das Konzept des Onlinekommentars wurde vom Gründer in einem kürzlichen Artikel auf dem Verfassungsblog dargelegt.</p>",
-
   "commentary_on": "Kommentierung zu",
 
-  "table_of_contents": "Gliederung"
+  "table_of_contents": "Gliederung",
+
+  "sidebar_handle_text": "Navigation",
+
+  "ATTENTION: This version of the commentary is an automatic machine translation of the original. The original version is in :original_language. The translation was done with www.deepl.com. Only the original version is authoritative. The translated form of the commentary cannot be cited." : "ACHTUNG: Diese Version des Kommentars ist eine automatische maschinelle Übersetzung des Originals. Die Originalversion ist :original_language. Die Übersetzung wurde mit www.deepl.com durchgeführt. Nur die Originalversion ist autoritativ. Die übersetzte Form des Kommentars kann nicht zitiert werden.",
+
+  "visited_at": "besucht am",
+
+  "creative_commons_license": "Creative Commons Lizenz",
+  "creative_commons_text": "ist lizenziert unter einer Creative Commons Namensnennung 4.0 International Lizenz.",
+
+  "and": "und",
+  "commentary_by": "Ein Kommentar von",
+  "edited_by": "Herausgegeben von"
 }

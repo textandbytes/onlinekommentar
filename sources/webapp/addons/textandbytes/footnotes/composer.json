@@ -1,0 +1,19 @@
+{
+    "name": "textandbytes/footnotes",
+    "autoload": {
+        "psr-4": {
+            "Textandbytes\\Footnotes\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Footnotes",
+            "description": "Footnotes addon"
+        },
+        "laravel": {
+            "providers": [
+                "Textandbytes\\Footnotes\\ServiceProvider"
+            ]
+        }
+    }
+}

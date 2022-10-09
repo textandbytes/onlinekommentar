@@ -1,0 +1,29 @@
+admin:
+  title: Administrator
+  permissions:
+    - 'access cp'
+    - 'view legal_texts entries'
+    - 'edit legal_texts entries'
+    - 'create legal_texts entries'
+    - 'delete legal_texts entries'
+    - 'view commentaries entries'
+    - 'edit commentaries entries'
+    - 'create commentaries entries'
+    - 'delete commentaries entries'
+    - 'publish commentaries entries'
+    - 'reorder commentaries entries'
+    - 'view users'
+    - 'edit users'
+    - 'create users'
+    - 'delete users'
+contributor:
+  title: Contributor
+  permissions:
+    - 'access cp'
+    - 'view commentaries entries'
+    - 'edit commentaries entries'
+    - 'publish commentaries entries'
+developer:
+  title: Developer
+  permissions:
+    - super

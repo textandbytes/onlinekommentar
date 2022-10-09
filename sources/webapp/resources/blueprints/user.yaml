@@ -1,0 +1,117 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: avatar
+        field:
+          mode: list
+          container: avatars
+          restrict: true
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: Avatar
+          type: assets
+          icon: assets
+          instructions: 'Upload a profile picture'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          validate:
+            - image
+      -
+        handle: name
+        field:
+          type: text
+          display: Name
+          listable: true
+      -
+        handle: email
+        field:
+          type: text
+          input_type: email
+          display: 'Email Address'
+          listable: true
+      -
+        handle: legal_domain
+        field:
+          mode: select
+          create: false
+          display: 'Legal Domain'
+          type: entries
+          icon: entries
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          max_items: 1
+          collections:
+            - legal_domains
+      -
+        handle: title
+        field:
+          input_type: text
+          antlers: false
+          display: Title
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: occupation
+        field:
+          input_type: text
+          antlers: false
+          display: Occupation
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: linkedin_url
+        field:
+          display: 'LinkedIn URL'
+          type: link
+          icon: link
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: website_url
+        field:
+          display: 'Website URL'
+          type: link
+          icon: link
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: roles
+        field:
+          type: user_roles
+          mode: select
+          width: 50
+          listable: true
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          if:
+            groups: 'contains Developers'
+      -
+        handle: groups
+        field:
+          type: user_groups
+          mode: select
+          width: 50
+          listable: false
+          instructions_position: above
+          visibility: hidden
+          always_save: false

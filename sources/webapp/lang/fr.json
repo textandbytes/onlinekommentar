@@ -21,10 +21,10 @@
     "editor": "Editeur",
     "author": "Auteur",
 
-    "de": "Allemand",
-    "en": "Anglais",
-    "fr": "Français",
-    "it": "Italien",
+    "de": "allemand",
+    "en": "anglais",
+    "fr": "français",
+    "it": "italien",
 
     "draft": "Brouillon",
     "in_review": "En cours de révision",
@@ -56,6 +56,7 @@
     "view_commentary": "Voir le commentaire",
     "back_to_results": "Retourner aux résultats",
 
+    "suggested_citation": "Proposition de citation",
     "short_citation": "Brève citation",
     "copy_citation": "Copier",
     "copied_citation": "Copié",
@@ -68,14 +69,26 @@
     "footer_contact_text": "Vous avez des questions sur le concept ou vous souhaitez rédiger un commentaire pour Onlinekommentar&nbsp;?",
     "footer_contact_link_text": "Contactez-nous",
     "disclaimer": "Clause de non-responsabilité",
-    "imprint": "Impressum",
+    "imprint": "Mentions légales",
 
     "home_text": "Onlinekommentar.ch est la première plate-forme gratuite à but non lucratif pour les commentaires en libre accès en Suisse.",
     "home_more_link": "En savoir plus",
 
-    "about_text": "<p>Le concept d’Onlinekommentar peut être résumé par la phrase suivante&nbsp;: avec Onlinekommentar, un organisme responsable d’utilité publique met à disposition une plateforme web sur laquelle des commentaires de haute qualité et vérifiés sur le droit suisse peuvent être mis à la disposition de tous, librement et gratuitement. Onlinekommentar permet donc de publier en un seul endroit différents commentaires sur des actes législatifs suisses. Avec l’association Onlinekommentar, un organisme responsable stable et durable est assuré pour Onlinekommentar.</p><p>Onlinekommentar veut rendre les connaissances juridiques spécialisées librement disponibles (open access). Cela signifie en d’autres termes qu’Onlinekommentar restera toujours accessible librement et gratuitement et qu’aucun pay-wall ne sera notamment mis en place. Les statuts de l’association stipulent expressément que l’association ne poursuit pas de but commercial et ne cherche pas à faire de bénéfices (point 2 des statuts). Onlinekommentar, en tant que commentaire en accès libre, supprime les obstacles à l’accès. Il permet un accès gratuit, simple, pratique et à bas seuil aux textes, y compris pour les personnes extérieures à la «&nbsp;legal community&nbsp;».</p><p>Les commentaires en libre accès favorisent l’échange de connaissances et offrent à l’annotateur une plus grande visibilité du résultat de son travail. Le projet Onlinekommentar doit également être une contribution à une science et à une pratique juridiques plus inclusives, plus diversifiées, plus qualitatives, plus modernes, plus actuelles, plus interactives et moins hiérarchisées. Vous trouverez d’autres avantages d’Onlinekommentar ici.</p><p>Le concept d’Onlinekommentar a été exposé par son fondateur dans un article récent sur le blog constitutionnel.</p>",
-
     "commentary_on": "Commentaire de",
 
-    "table_of_contents": "Table de matières"
+    "table_of_contents": "Table de matières",
+
+    "sidebar_handle_text": "Navigation",
+
+    "ATTENTION: This version of the commentary is an automatic machine translation of the original. The original version is in :original_language. The translation was done with www.deepl.com. Only the original version is authoritative. The translated form of the commentary cannot be cited.": "ATTENTION : Cette version du commentaire est une traduction automatique de l'original. Le commentaire original est en :original_language. La traduction a été faite avec www.deepl.com. Seule la version originale fait autorité. La version traduite du commentaire ne peut pas être citée.",
+
+    "visited_at": "visité le",
+
+    "creative_commons_license": "Licence Creative Commons",
+    "creative_commons_text": "est sous licence Creative Commons Attribution 4.0 International License.",
+
+    "and": "et",
+
+    "commentary_by": "Un commentaire de",
+    "edited_by": "Edité par"
   }
