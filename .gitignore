@@ -12,6 +12,11 @@ sources/webapp/public/js/*/resources_js_*.js
 sources/webapp/public/js/*resources_js_*.js
 sources/webapp/public/storage
 sources/webapp/public/hot
+sources/webapp/public/vendor/app/js/cp.js
+sources/webapp/public/vendor/app/js/manifest.js
+sources/webapp/public/vendor/app/js/vendor.js
+sources/webapp/public/vendor/footnotes/css/footnotes.css
+sources/webapp/public/vendor/footnotes/js/footnotes.js
 sources/webapp/storage/*.key
 sources/webapp/.env
 sources/webapp/.env.backup

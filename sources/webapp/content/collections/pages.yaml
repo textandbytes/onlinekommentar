@@ -1,0 +1,19 @@
+title: Pages
+sites:
+  - en
+  - de
+  - fr
+  - it
+propagate: true
+template: pages/show
+layout: layout
+revisions: true
+route: '{parent_uri}/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+inject:
+  view_model: App\ViewModels\UsersData
+structure:
+  root: true

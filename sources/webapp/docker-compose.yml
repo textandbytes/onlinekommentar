@@ -59,6 +59,15 @@ services:
       - mysql
     entrypoint: ["php", "/var/www/html/artisan"]
 
+  please:
+    build:
+      context: ../../provisioning/local
+      dockerfile: php.dockerfile
+    volumes:
+      - ./:/var/www/html
+    working_dir: /var/www/html
+    entrypoint: ["php", "/var/www/html/please"]
+
   mailhog:
     image: 'mailhog/mailhog:latest'
     ports:

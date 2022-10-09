@@ -3,11 +3,41 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/*
+ * Floating Vue
+ */
+@import 'floating-vue/dist/style.css';
+
 html, body, #app {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .ok-button {
- @apply inline-block mt-4 uppercase rounded-full border border-black text-xs px-6 py-2 font-medium tracking-widest hover:text-white hover:bg-black
+  @apply inline-block mt-4 uppercase rounded-full border border-black text-xs px-6 py-2 font-medium tracking-widest hover:text-white hover:bg-black
+}
+
+article {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+}
+
+.commentary {
+  counter-reset: footnote-counter;
+}
+
+.commentary .footnote-number::after {
+  content: counter(footnote-counter);
+  counter-increment: footnote-counter;
+  vertical-align: super;
+  font-size: 75%;
+  padding-left: 1px;
+  padding-right: 0.5px;
+  cursor: pointer;
+}
+
+.tree ul li:last-child {
+  @apply mb-2
 }

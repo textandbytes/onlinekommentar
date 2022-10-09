@@ -3,9 +3,10 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './vendor/laravel/jetstream/**/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
+        './resources/views/**/*.antlers.html',
+        './resources/views/**/*.antlers.php',
         './resources/js/**/*.vue',
     ],
 
@@ -24,6 +25,7 @@ module.exports = {
               'ok-yellow':      '#FCF0BD',
               'ok-orange':      '#F4E8D7',
               'ok-blue':        '#AFCEE2',
+              'ok-red':         '#E06C56',
             }
         },
     },

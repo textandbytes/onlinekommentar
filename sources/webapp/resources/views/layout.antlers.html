@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title ?? site:name }}</title>
+    <link rel="stylesheet" href="{{ mix src='css/app.css' }}">
+  </head>
+  <body class="font-sans antialiased bg-ok-beige">
+    <article id="app">
+      <app-header
+        current-page="{{ slug }}"
+        locale="{{ locale }}"
+        :locales="[
+          {{ locales }}
+            '{{ locale:short }}',
+          {{ /locales }}
+        ]">
+        <template v-slot:sidebar-content>
+          {{ partial:commentaries/tree }}
+        </template>
+      </app-header>
+      
+      <main class="px-8 lg:px-32 w-full xl:w-10/12 mx-auto">
+        {{ template_content }}
+      </main>
+    
+      <app-footer 
+        current-page="{{ slug }}" 
+        locale="{{ locale }}">
+      </app-footer>
+    </article>
+
+    <script src="{{ mix src='/vendor/app/js/manifest.js') }}"></script>
+    <script src="{{ mix src='/vendor/app/js/vendor.js') }}"></script>
+    <script src="{{ mix src='/js/app.js' }}"></script>
+  </body>
+</html>

@@ -1,0 +1,206 @@
+sections:
+  commentary:
+    display: Commentary
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          localizable: true
+      -
+        handle: original_language
+        field:
+          max_items: 1
+          mode: select
+          display: 'Original Language'
+          type: sites
+          icon: sites
+          instructions: 'Select the language in which the commentary was originally written. All other language versions are considered translations'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: suggested_citation_long
+        field:
+          antlers: false
+          display: 'Suggested Citation (long)'
+          type: textarea
+          icon: textarea
+          instructions: 'How should the commentary be cited (full citation)'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: suggested_citation_short
+        field:
+          input_type: text
+          character_limit: 120
+          antlers: false
+          display: 'Suggested Citation (short)'
+          type: text
+          icon: text
+          instructions: 'How should the commentary by cited (short citation)'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: legal_text
+        field:
+          collapse: false
+          always_show_set_button: false
+          previews: true
+          buttons:
+            - h3
+            - bold
+            - italic
+            - underline
+            - superscript
+            - unorderedlist
+            - orderedlist
+            - removeformat
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: false
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          remove_empty_nodes: trim
+          display: 'Legal Text'
+          type: bard
+          icon: bard
+          instructions: 'The legal text that is the subject of the commentary'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          localizable: true
+      -
+        handle: doi
+        field:
+          input_type: text
+          antlers: false
+          display: DOI
+          type: text
+          icon: text
+          instructions: 'Register a DOI for this commentary at doi.crossref.org'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: assigned_editors
+        field:
+          mode: select
+          display: 'Assigned Editors'
+          type: users
+          icon: users
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: assigned_authors
+        field:
+          mode: select
+          display: 'Assigned Authors'
+          type: users
+          icon: users
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: pdf_commentary
+        field:
+          mode: list
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: 'PDF Commentary'
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          validate:
+            - 'mimes:pdf'
+          container: pdf_commentaries
+          localizable: true
+      -
+        handle: content
+        field:
+          collapse: false
+          always_show_set_button: false
+          previews: true
+          buttons:
+            - h2
+            - h3
+            - h4
+            - h5
+            - paragraph_nr
+            - bold
+            - italic
+            - underline
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - superscript
+            - anchor
+          save_html: true
+          toolbar_mode: fixed
+          link_noopener: true
+          link_noreferrer: true
+          target_blank: true
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: false
+          enable_paste_rules: false
+          antlers: false
+          remove_empty_nodes: trim
+          display: Content
+          type: bard
+          icon: bard
+          instructions: 'Use the editor to format your commentary'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          localizable: true
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - commentaries
+          max_items: 1
+          listable: false
+          localizable: true
+          mode: default
+          create: true
+          icon: entries
+          instructions_position: above
+          visibility: visible
+          always_save: false
+title: Commentary
