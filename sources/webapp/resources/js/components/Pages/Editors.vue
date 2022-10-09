@@ -1,27 +1,18 @@
 <template>
   <Users
-    :title="title"
+    :title="$t('editors')"
+    :locale="locale"
     :users="editors"
-    :documents="documents"
-    :active-document="activeDocument">
+    :legal-domains="legalDomains">
   </Users>
 </template>
 
-<script>
-  import FrontendLayout from '@/Layouts/FrontendLayout.vue'
-  
-  export default {
-    layout: FrontendLayout
-  }
-</script>
-
 <script setup>
-  import Users from '@/Pages/Frontend/Users'
+  import Users from '@/components/Pages/Partials/Users'
 
   defineProps({
-    title: { type: String, required: true },
-    editors: { type: Object, required: true },
-    documents: { type: Array, required: true },
-    activeDocument: { type: String, required: true }
+    locale: { type: String, required: true },
+    editors: { type: Array, required: true },
+    legalDomains: { type: Array, required: true }
   })
 </script>

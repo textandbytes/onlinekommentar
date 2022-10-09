@@ -1,11 +1,12 @@
 <template>
   <div class="relative group transition ease-in-out delay-150 bg-white p-8 cursor-pointer">
-    <div class="text-xs uppercase mb-4 text-center" v-html="user.practice">
-      
+    <div class="text-xs uppercase mb-4 text-center">
+      {{ user.legal_domain[0] }}
     </div>
 
     <div class="flex flex-col items-center justify-between space-y-6">
-      <img :src="user.profile_photo_url" class="w-24 h-24 rounded-full grayscale" />
+      <img v-if="user.avatar" :src="user.avatar" class="w-24 h-24 rounded-full grayscale" />
+      <span v-else class="w-24 h-24 rounded-full bg-gray-200"></span>
 
       <h2 class="text-5xl text-center font-medium font-regular leading-normal" style="word-spacing: 999px">
         {{ user.name }}

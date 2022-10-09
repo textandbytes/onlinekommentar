@@ -35,6 +35,21 @@ sections:
           display: 'Email Address'
           listable: true
       -
+        handle: legal_domain
+        field:
+          mode: select
+          create: false
+          display: 'Legal Domain'
+          type: entries
+          icon: entries
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          max_items: 1
+          collections:
+            - legal_domains
+      -
         handle: title
         field:
           input_type: text
@@ -52,18 +67,6 @@ sections:
           input_type: text
           antlers: false
           display: Occupation
-          type: text
-          icon: text
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-      -
-        handle: practice
-        field:
-          input_type: text
-          antlers: false
-          display: Practice
           type: text
           icon: text
           listable: hidden
