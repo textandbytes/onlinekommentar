@@ -5,7 +5,7 @@
         {{ $t('commentaries') }}
       </div>
 
-      <div class="flex flex-col lg:flex-row space-y-2 lg:space-x-2 lg:space-y-0">
+      <!-- <div class="flex flex-col lg:flex-row space-y-2 lg:space-x-2 lg:space-y-0">
         <button
           type="button"
           :class="viewMode === 'list' ? 'bg-ok-beige' : 'bg-white'"
@@ -29,10 +29,10 @@
           :active-option="activeDocument"
           @changed="onFilter"
         />
-      </div>
+      </div> -->
     </div>
 
-    <StackedListView
+    <!-- <StackedListView
       v-if="viewMode === 'list'"
       directory="commentaryGroups">
       <template v-slot:item="commentary">
@@ -66,10 +66,9 @@
           </button>
         </td>
       </template>
-    </StackedListView>
+    </StackedListView> -->
 
     <GridListView
-      v-else-if="viewMode === 'grid'"
       :items="commentaries"
       class="bg-gray-800 sm:gap-px">
       <template v-slot:item="commentary">
@@ -80,21 +79,22 @@
           <div class="flex flex-col relative items-center h-full w-full">
             
             <div class="text-xs uppercase mb-8 tracking-wider">
-              {{ commentary.title ?? '[UNKNOWN]' }}
+              {{ commentary.legal_domain }}
             </div>
             
             <h2 class="text-5xl text-center font-medium font-serif my-12">
-              {{ commentary.slug }}
+              {{ commentary.title }}
             </h2>
 
             <div class="text-sm text-center">
-              Ein Kommentar von <i>Marco Zollinger</i>
+              <p v-if="commentary.assigned_authors.length > 0 && commentary.assigned_authors[0] !== ''">
+                {{ $t('commentary_by') }} <i>{{ commentary.assigned_authors.join(' ' + $t('and') + ' ') }}</i>
+              </p>
+              <p v-if="commentary.assigned_editors.length > 0 && commentary.assigned_editors[0] !== ''">
+                {{ $t('edited_by') }} <i>{{ commentary.assigned_editors.join(' ' + $t('and') + ' ') }}</i>
+              </p>
             </div>
 
-            <div class="text-sm text-center mt-1">
-              Herausgegeben von <i>Stefan Schlegel</i> und <i>Odile Ammannn</i>
-            </div>
-            
             <div class="absolute flex bottom-0 w-full">
               <button
                 type="button"

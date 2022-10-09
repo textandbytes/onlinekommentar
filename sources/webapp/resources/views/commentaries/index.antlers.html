@@ -1,14 +1,21 @@
-
-
 <commentaries
   locale="{{ locale }}"
   :commentaries="[
     {{ collection:commentaries }}
       {
         'slug': '{{ slug }}',
-        'title': '{{ title }}'
+        'title': '{{ title }}',
+        'assigned_editors': [
+          {{ assigned_editors }}
+            '{{ name }}',
+          {{ /assigned_editors }}
+        ],
+        'assigned_authors': [
+          {{ assigned_authors }}
+            '{{ name }}',
+          {{ /assigned_authors }}
+        ]
       },
     {{ /collection:commentaries }}
   ]">
 </commentaries>
-
