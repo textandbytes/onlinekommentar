@@ -74,18 +74,6 @@ sections:
           visibility: visible
           always_save: false
       -
-        handle: practice
-        field:
-          input_type: text
-          antlers: false
-          display: Practice
-          type: text
-          icon: text
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-      -
         handle: linkedin_url
         field:
           display: 'LinkedIn URL'

@@ -1,7 +1,7 @@
 <template>
   <div class="relative group transition ease-in-out delay-150 bg-white p-8 cursor-pointer">
-    <div class="text-xs uppercase mb-4 text-center" v-html="user.practice">
-      
+    <div class="text-xs uppercase mb-4 text-center">
+      {{ user.legal_domain[0] }}
     </div>
 
     <div class="flex flex-col items-center justify-between space-y-6">
