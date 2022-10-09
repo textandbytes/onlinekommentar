@@ -5,7 +5,7 @@
         {{ title }}
       </div>
 
-      <div class="flex flex-col lg:flex-row space-y-2 lg:space-x-2 lg:space-y-0">
+      <!-- <div class="flex flex-col lg:flex-row space-y-2 lg:space-x-2 lg:space-y-0">
         <button
           type="button"
           :class="viewMode === 'list' ? 'bg-ok-beige' : 'bg-white'"
@@ -29,7 +29,7 @@
           :active-option="activeLegalDomain"
           @changed="onFilter"
         />
-      </div>
+      </div> -->
     </div>
 
     <GridListView
@@ -37,14 +37,14 @@
       class="bg-ok-beige sm:gap-x-px sm:gap-y-4">
       <template v-slot:item="user">
         <UserCard :user="user">
-          <template v-slot:buttons>
+          <!-- <template v-slot:buttons>
             <button
               type="button"
               class="ok-button"
               @click="goToUserDetailView(user)">
               {{ $t('view_user') }}
             </button>
-          </template>
+          </template> -->
         </UserCard>
       </template>
     </GridListView>
