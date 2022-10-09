@@ -4,6 +4,7 @@ namespace App\ViewModels;
 
 use Statamic\Facades\Entry; 
 use Statamic\View\ViewModel;
+use Storage;
  
 class UsersData extends ViewModel
 {
@@ -53,7 +54,7 @@ class UsersData extends ViewModel
                             'practice' => $author['practice'],
                             'linkedin_url' => $author['linkedin_url'],
                             'website_url' => $author['website_url'],
-                            'profile_photo_url' => $author['profile_photo_url']
+                            'avatar' => $author->value('avatar') ? Storage::url('avatars/') . $author->value('avatar') : null
                         ];
                     })->toArray()
                 ];
