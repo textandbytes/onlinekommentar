@@ -19,7 +19,7 @@
 
 <style lang="postcss">
   .footnote-number {
-    @apply 
+    @apply
       inline-flex
       justify-center
       px-1
@@ -49,10 +49,6 @@
 
   .v-popper__inner {
     @apply p-4 bg-ok-orange text-black border-0 text-sm !important;
-    
-    div:first-child {
-      @apply grid grid-cols-1;
-    }
 
     .footnote-content {
       @apply bg-ok-orange;
