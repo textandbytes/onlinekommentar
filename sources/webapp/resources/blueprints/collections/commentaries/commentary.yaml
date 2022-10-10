@@ -159,7 +159,8 @@ sections:
             - removeformat
             - superscript
             - anchor
-          save_html: true
+            - footnote
+          save_html: false
           toolbar_mode: fixed
           link_noopener: true
           link_noreferrer: true
