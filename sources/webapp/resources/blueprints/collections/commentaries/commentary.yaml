@@ -99,10 +99,10 @@ sections:
           visibility: visible
           always_save: false
       -
-        handle: assigned_editors
+        handle: assigned_authors
         field:
           mode: select
-          display: 'Assigned Editors'
+          display: 'Assigned Authors'
           type: users
           icon: users
           listable: hidden
@@ -110,10 +110,10 @@ sections:
           visibility: visible
           always_save: false
       -
-        handle: assigned_authors
+        handle: assigned_editors
         field:
           mode: select
-          display: 'Assigned Authors'
+          display: 'Assigned Editors'
           type: users
           icon: users
           listable: hidden
