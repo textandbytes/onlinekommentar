@@ -1,4 +1,5 @@
 provisioning/remote
+sources/webapp/users/*.yaml
 sources/webapp/vendor/
 sources/webapp/node_modules/
 sources/webapp/npm-debug.log
