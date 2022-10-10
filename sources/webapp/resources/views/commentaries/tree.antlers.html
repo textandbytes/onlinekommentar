@@ -6,7 +6,11 @@
                     <span class="label font-medium">{{ title }}</span>
                 </a>
             {{ else }}
-                {{ title }}
+                {{ if depth == 1 }}
+                    {{ title | upper }}
+                {{ else }}
+                    {{ title }}
+                {{ /if }}
             {{ /if }}
 
             {{ if children }}
