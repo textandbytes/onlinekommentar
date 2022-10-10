@@ -1,6 +1,0 @@
-name: Developer
-super: true
-roles:
-  - developer
-id: c10c1599-a925-4e29-b45f-a4f9934c1ca7
-password_hash: $2y$10$TU8gpcIiE043Y.lWf5zrTOjgmIPhHqhYUyif5NPK6lCu9QXMeTKXS
