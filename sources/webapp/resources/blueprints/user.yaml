@@ -103,8 +103,7 @@ sections:
           instructions_position: above
           visibility: visible
           always_save: false
-          if:
-            groups: 'contains Developers'
+          if: 'role:admin'
       -
         handle: groups
         field:
