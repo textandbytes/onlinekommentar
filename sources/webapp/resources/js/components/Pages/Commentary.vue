@@ -139,7 +139,11 @@
     }
 
     :deep(p) {
-      @apply relative font-serif mb-6
+      @apply relative font-serif mb-6 break-all;
+
+      a {
+        @apply underline
+      }
     }
     :deep(.paragraph-nr) {
       @apply absolute -left-8 text-sm font-sans
