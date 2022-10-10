@@ -82,7 +82,7 @@
               {{ commentary.legal_domain }}
             </div>
             
-            <h2 class="text-5xl text-center font-medium font-serif my-12">
+            <h2 class="text-3xl lg:text-4xl 2xl:text-5xl text-center font-medium font-serif my-12">
               {{ commentary.title }}
             </h2>
 
@@ -141,3 +141,9 @@
     console.log('filter commentaries by document:', document)
   }
 </script>
+
+<style lang="postcss" scoped>
+  h2 {
+    @apply break-all leading-snug;
+  }
+</style>
