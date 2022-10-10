@@ -2,8 +2,8 @@
 id: a20d652c-ea8f-4da7-a3be-c3ae4d54a46a
 blueprint: commentary
 title: 'Art. 366 StPO'
-author: c10c1599-a925-4e29-b45f-a4f9934c1ca7
-updated_by: c10c1599-a925-4e29-b45f-a4f9934c1ca7
+author: 5ecc98ca-e8cb-4d6a-b41d-360bc334b495
+updated_by: 5ecc98ca-e8cb-4d6a-b41d-360bc334b495
 updated_at: 1663306639
 template: commentaries/show
 ---

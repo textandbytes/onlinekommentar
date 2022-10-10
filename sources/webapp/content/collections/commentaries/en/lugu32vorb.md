@@ -2,8 +2,8 @@
 id: 85eec59a-d6e0-4478-86e1-52c1fe3c74c6
 blueprint: commentary
 title: 'Art. 32 — 37 LugÜ'
-author: c10c1599-a925-4e29-b45f-a4f9934c1ca7
-updated_by: c10c1599-a925-4e29-b45f-a4f9934c1ca7
+author: 5ecc98ca-e8cb-4d6a-b41d-360bc334b495
+updated_by: 5ecc98ca-e8cb-4d6a-b41d-360bc334b495
 updated_at: 1663306623
 template: commentaries/show
 ---
