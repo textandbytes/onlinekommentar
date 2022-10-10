@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+  return redirect('/de');
+});
+
 // Route::statamic('example', 'example-view', [
 //    'title' => 'Example'
 // ]);
