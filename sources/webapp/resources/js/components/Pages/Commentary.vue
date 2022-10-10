@@ -119,7 +119,7 @@
         console.log(error)
       })
 
-    this.legalTextLocale = locale
+    legalTextLocale.value = locale
   }
 
 </script>
