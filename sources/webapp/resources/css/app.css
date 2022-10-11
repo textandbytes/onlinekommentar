@@ -38,6 +38,10 @@ article {
   cursor: pointer;
 }
 
+.footnote-content a {
+    @apply underline;
+  }
+
 .tree ul li:last-child {
   @apply mb-2
 }
