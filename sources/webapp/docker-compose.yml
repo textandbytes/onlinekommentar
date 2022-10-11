@@ -11,20 +11,7 @@ services:
       - ./:/var/www/html
       - ./storage/app/public:/var/www/html/public/storage
     depends_on:
-      - mysql
       - php
-
-  mysql:
-    image: 'mysql/mysql-server:8.0'
-    ports:
-      - '${FORWARD_DB_PORT:-33061}:3306'
-    environment:
-      MYSQL_DATABASE: ${DB_DATABASE}
-      MYSQL_USER: ${DB_USERNAME}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_ALLOW_EMPTY_PASSWORD: 1
-    volumes:
-      - 'mysql-data:/var/lib/mysql'
 
   php:
     build:
@@ -55,8 +42,6 @@ services:
     volumes:
       - ./:/var/www/html
     working_dir: /var/www/html
-    depends_on:
-      - mysql
     entrypoint: ["php", "/var/www/html/artisan"]
 
   please:
@@ -73,7 +58,3 @@ services:
     ports:
       - '${FORWARD_MAILHOG_PORT:-1026}:1025'
       - '${FORWARD_MAILHOG_DASHBOARD_PORT:-8026}:8025'
-
-volumes:
-  mysql-data:
-    driver: local
