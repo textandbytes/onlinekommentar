@@ -2,6 +2,7 @@
 id: 468fb88f-7d5c-4440-8b7d-6ff32111dfcd
 origin: c77e9d76-4c07-4e57-9f9d-0683e6a43a42
 title: "Art. 20\_IPRG"
+legal_domain: 2a170e8b-78dd-41be-932f-8e60b9080241
 legal_text:
   -
     type: paragraph
@@ -55,7 +56,7 @@ legal_text:
         type: text
         text: "\_Niemand kann an mehreren Orten zugleich Wohnsitz haben. Hat eine Person nirgends einen Wohnsitz, so tritt der gewöhnliche Aufenthalt an die Stelle des Wohnsitzes. Die Bestimmungen des Zivilgesetzbuches\_über Wohnsitz und Aufenthalt sind nicht anwendbar."
 updated_by: 9c1f3a06-0ca1-43f6-8f13-124edfca1d88
-updated_at: 1665490954
+updated_at: 1665596390
 content:
   -
     type: heading

@@ -2,6 +2,7 @@
 id: b9ef6ed8-3ab9-483d-bd36-29cac88de667
 origin: 468fb88f-7d5c-4440-8b7d-6ff32111dfcd
 title: "Art. 20\_LDIP"
+legal_domain: 25e12ae0-d031-4ee7-992e-5e8e6b3a432e
 legal_text:
   -
     type: paragraph
@@ -55,7 +56,7 @@ legal_text:
         type: text
         text: "\_Nul ne peut avoir en même temps plusieurs domiciles. Si une personne n’a nulle part de domicile, la résidence habituelle est déterminante. Les dispositions du code civil suisse\_relatives au domicile et à la résidence ne sont pas applicables."
 updated_by: 9c1f3a06-0ca1-43f6-8f13-124edfca1d88
-updated_at: 1665490965
+updated_at: 1665596415
 content:
   -
     type: heading

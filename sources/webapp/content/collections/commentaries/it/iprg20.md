@@ -1,6 +1,7 @@
 ---
 id: 883d06ca-7b70-4761-82ae-ac77e8891577
 origin: b9ef6ed8-3ab9-483d-bd36-29cac88de667
+legal_domain: 62689085-3c80-4a5f-a7a0-c256be581a26
 legal_text:
   -
     type: paragraph
@@ -54,7 +55,7 @@ legal_text:
         type: text
         text: "\_Nessuno può avere contemporaneamente il suo domicilio in più luoghi. In mancanza di domicilio, fa stato la dimora abituale. Le disposizioni del Codice civile svizzero\_concernenti il domicilio e la dimora non sono applicabili."
 updated_by: 9c1f3a06-0ca1-43f6-8f13-124edfca1d88
-updated_at: 1665490995
+updated_at: 1665596444
 content:
   -
     type: heading

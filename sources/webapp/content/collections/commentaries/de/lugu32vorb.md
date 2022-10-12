@@ -3,7 +3,6 @@ id: 2ffcbf00-723e-4507-9295-5b221d2affd5
 origin: 85eec59a-d6e0-4478-86e1-52c1fe3c74c6
 title: 'Art. 32 — 37 LugÜ'
 updated_by: 9c1f3a06-0ca1-43f6-8f13-124edfca1d88
-updated_at: 1665491204
 content:
   -
     type: heading
@@ -1716,3 +1715,5 @@ content:
         type: text
         text: "Wieczorek Bernhard/Rolf A. Schütze, Zivilprozessordnung und Nebengesetze, Band 13/2, Brüssel Ia-VO, 4. Aufl. 2019 Berlin (zit. Wieczorek/Schütze – Bearbeiter, Art. xx Brüssel Ia-VO N.\_xx)"
 ---
+legal_domain: 34edef66-96b5-4406-9232-86c4a2b24897
+updated_at: 1665596564
