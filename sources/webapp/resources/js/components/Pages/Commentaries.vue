@@ -78,7 +78,7 @@
 
           <div class="flex flex-col relative items-center h-full w-full">
             
-            <div class="text-xs uppercase mb-8 tracking-wider">
+            <div v-if="commentary.legal_domain" class="text-xs uppercase text-center mb-8 tracking-wider">
               {{ commentary.legal_domain }}
             </div>
             
@@ -116,7 +116,8 @@
 
   const props = defineProps({
     locale: { type: String, required: true },
-    commentaries: { type: Array, required: true }
+    commentaries: { type: Array, required: true },
+    legalDomains: { type: Array, required: true }
   })
 
   const viewMode = 'grid'
