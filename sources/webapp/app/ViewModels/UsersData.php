@@ -19,10 +19,10 @@ class UsersData extends ViewModel
         $editorLegalDomains = $this->_getLegalDomainsOfAssignedUsers($editors);
 
         return [
-            'authors' => json_encode($authors, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT),
-            'author_legal_domains' => json_encode($authorLegalDomains, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT),
-            'editors' => json_encode($editors, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT),
-            'editor_legal_domains' => json_encode($editorLegalDomains, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT)
+            'authors' => json_encode(array_values($authors), JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT),
+            'author_legal_domains' => json_encode(array_values($authorLegalDomains), JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT),
+            'editors' => json_encode(array_values($editors), JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT),
+            'editor_legal_domains' => json_encode(array_values($editorLegalDomains), JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT)
         ];
     }
 
