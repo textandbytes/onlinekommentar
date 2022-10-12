@@ -51,7 +51,8 @@
 
   "list_view": "Listenansicht",
   "grid_view": "Gridanansicht",
-  "document_filter_label": "Erlasse",
+  "legal_domain_filter_label": "Erlasse",
+  "legal_domain_filter_all": "Alle",
   "view_user": "Anzeigen",
   "view_commentary": "Anzeigen",
   "back_to_results": "Zurück Zur Übersicht",

@@ -51,7 +51,8 @@
 
   "list_view": "Vista elenco",
   "grid_view": "Vista griglia",
-  "document_filter_label": "Decreti",
+  "legal_domain_filter_label": "Decreti",
+  "legal_domain_filter_all": "Tutto",
   "view_user": "Vista",
   "view_commentary": "Vista",
   "back_to_results": "Torna alla panoramica",
