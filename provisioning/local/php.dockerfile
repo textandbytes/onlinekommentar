@@ -1,5 +1,8 @@
 FROM php:8-fpm-alpine
 
+RUN apk update
+RUN apk add git
+
 ENV PHPUSER=laravel
 ENV PHPGROUP=laravel
 
