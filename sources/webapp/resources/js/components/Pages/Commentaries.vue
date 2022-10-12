@@ -73,7 +73,7 @@
       class="bg-gray-800 sm:gap-px">
       <template v-slot:item="commentary">
         <div
-          class="h-[310px] md:h-[340px] xl:h-[500px] relative group transition ease-in-out delay-150 bg-white hover:bg-ok-orange p-8 cursor-pointer"
+          class="h-[310px] md:h-[340px] xl:h-[500px] relative group transition ease-in-out delay-150 bg-white hover:bg-ok-orange p-4 md:p-8 cursor-pointer"
           @click="onSelect(commentary)">
 
           <div class="flex flex-col relative items-center h-full w-full">
