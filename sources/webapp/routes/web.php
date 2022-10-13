@@ -17,6 +17,6 @@ Route::get('/', function () {
   return redirect('/de');
 });
 
-// Route::statamic('example', 'example-view', [
-//    'title' => 'Example'
-// ]);
+Route::statamic('search', 'search', [
+   'title' => 'Search Results'
+]);
