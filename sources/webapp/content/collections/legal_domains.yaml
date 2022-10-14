@@ -1,10 +1,7 @@
 title: 'Legal Domains'
 sites:
   - en
-  - de
-  - fr
-  - it
-propagate: true
+propagate: false
 template: default
 layout: layout
 revisions: false
