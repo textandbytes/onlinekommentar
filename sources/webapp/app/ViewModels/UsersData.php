@@ -43,11 +43,10 @@ class UsersData extends ViewModel
                             'email' => $author['email'],
                             'legal_domain' => Entry::query()
                                 ->where('collection', 'legal_domains')
-                                ->where('locale', app()->getLocale())
                                 ->where('id', $author->value('legal_domain'))
                                 ->get()
                                 ->map(function ($legal_domain, $key) {
-                                    return $legal_domain['title'];
+                                    return trans($legal_domain['title']);
                                 })->toArray(),
                             'title' => $author['title'],
                             'occupation' => $author['occupation'],
