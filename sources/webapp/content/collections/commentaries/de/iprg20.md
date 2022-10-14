@@ -2,7 +2,7 @@
 id: 468fb88f-7d5c-4440-8b7d-6ff32111dfcd
 origin: c77e9d76-4c07-4e57-9f9d-0683e6a43a42
 title: "Art. 20\_IPRG"
-legal_domain: 2a170e8b-78dd-41be-932f-8e60b9080241
+legal_domain: 0e999038-1e85-4b97-b912-4d216f850fdc
 legal_text:
   -
     type: paragraph

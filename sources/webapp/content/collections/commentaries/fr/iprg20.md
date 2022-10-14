@@ -2,7 +2,7 @@
 id: b9ef6ed8-3ab9-483d-bd36-29cac88de667
 origin: 468fb88f-7d5c-4440-8b7d-6ff32111dfcd
 title: "Art. 20\_LDIP"
-legal_domain: 25e12ae0-d031-4ee7-992e-5e8e6b3a432e
+legal_domain: 0e999038-1e85-4b97-b912-4d216f850fdc
 legal_text:
   -
     type: paragraph

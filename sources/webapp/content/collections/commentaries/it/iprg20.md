@@ -1,7 +1,7 @@
 ---
 id: 883d06ca-7b70-4761-82ae-ac77e8891577
 origin: b9ef6ed8-3ab9-483d-bd36-29cac88de667
-legal_domain: 62689085-3c80-4a5f-a7a0-c256be581a26
+legal_domain: 0e999038-1e85-4b97-b912-4d216f850fdc
 legal_text:
   -
     type: paragraph
