@@ -45,21 +45,19 @@
   <nav>
     <ul class="flex items-center space-x-6">
       <li id="nav-search" class="cursor-pointer">
-        <div class="flex">
-          <form action="/search">
-            <input ref="searchInput" v-show="searchBox" name="q" :value="query || ''" type="search" :placeholder="$t('nav_search_box_placeholder')" class="w-48 md:w-64 xl:w-96 bg-white border-b-2 border-t-0 border-l-0 border-r-0 border-black focus:border-b-2 focus:border-black focus:ring-0 placeholder:text-xs md:placeholder:text-base xl:placeholder:text-lg">
+        <form class="flex" :action="'/' + locale + '/search'">
+          <input ref="searchInput" v-show="searchBox" name="q" :value="query || ''" type="search" :placeholder="$t('nav_search_box_placeholder')" class="w-48 md:w-64 xl:w-96 bg-white border-b-2 border-t-0 border-l-0 border-r-0 border-black focus:border-b-2 focus:border-black focus:ring-0 placeholder:text-xs md:placeholder:text-base xl:placeholder:text-lg">
 
-            <span @click="toggleSearchBox" :class="{ 'bg-white border-b-2 border-black' : searchBox }">
-              <svg id="Search" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 45 45">
-                <g id="Icon_feather-search" data-name="Icon feather-search" transform="translate(6.759 7.129)" style="isolation: isolate">
-                  <path id="Pfad_13" data-name="Pfad 13" d="M23.826,14.163A9.663,9.663,0,1,1,14.163,4.5a9.663,9.663,0,0,1,9.663,9.663Z" transform="translate(0 0)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-                  <path id="Pfad_14" data-name="Pfad 14" d="M30.229,30.229l-5.254-5.254" transform="translate(-3.988 -3.988)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-                </g>
-                <rect id="Rechteck_24" data-name="Rechteck 24" width="45" height="45" fill="none"/>
-              </svg>
-            </span>
-          </form>
-        </div>
+          <span @click="toggleSearchBox" :class="{ 'bg-white border-b-2 border-black' : searchBox }">
+            <svg id="Search" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 45 45">
+              <g id="Icon_feather-search" data-name="Icon feather-search" transform="translate(6.759 7.129)" style="isolation: isolate">
+                <path id="Pfad_13" data-name="Pfad 13" d="M23.826,14.163A9.663,9.663,0,1,1,14.163,4.5a9.663,9.663,0,0,1,9.663,9.663Z" transform="translate(0 0)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                <path id="Pfad_14" data-name="Pfad 14" d="M30.229,30.229l-5.254-5.254" transform="translate(-3.988 -3.988)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              </g>
+              <rect id="Rechteck_24" data-name="Rechteck 24" width="45" height="45" fill="none"/>
+            </svg>
+          </span>
+        </form>
       </li>
 
       <LanguageSelector
