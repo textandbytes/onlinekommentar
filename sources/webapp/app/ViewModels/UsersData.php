@@ -76,7 +76,7 @@ class UsersData extends ViewModel
         $users = array_values(array_intersect_key($users, array_unique(array_column($users, 'id'))));
       
         // sort the users by the label of the legal domain
-        usort($users, fn($obj1, $obj2) => strcmp($obj1['legal_domain']['label'], $obj2['legal_domain']['label']));
+        usort($users, fn($obj1, $obj2) => strcmp($obj1['legal_domain'] ? $obj1['legal_domain']['label'] : '', $obj2['legal_domain'] ? $obj2['legal_domain']['label'] : ''));
 
         return $users;
     }

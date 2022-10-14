@@ -15,7 +15,6 @@ $commentaries = Entry::query()
         'title' => $commentary['title'],
         'legal_domain' => Entry::query()
             ->where('collection', 'legal_domains')
-            ->where('locale', app()->getLocale())
             ->where('id', $commentary->value('legal_domain'))
             ->get()
             ->map(function ($legal_domain, $key) {
@@ -39,8 +38,9 @@ $commentaries = Entry::query()
   // remove null values that occur for commentary entries with no content
   // reset the array index values to return an indexed array instead of an associative array
   $commentaries = array_values(array_filter($commentaries));
+ 
   // sort the commentaries by the label of the legal domain
-  usort($commentaries, fn($obj1, $obj2) => strcmp($obj1['legal_domain']['label'], $obj2['legal_domain']['label']));
+  usort($commentaries, fn($obj1, $obj2) => strcmp($obj1['legal_domain'] ? $obj1['legal_domain']['label'] : '', $obj2['legal_domain'] ? $obj2['legal_domain']['label'] : ''));
 
   // get the non-null, unique legal domains from the list of commentaries
   // reset the array index values to return an indexed array instead of an associative array
