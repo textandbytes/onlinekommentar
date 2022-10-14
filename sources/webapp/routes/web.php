@@ -17,6 +17,6 @@ Route::get('/', function () {
   return redirect('/de');
 });
 
-Route::statamic('search', 'search', [
+Route::statamic('{locale}/search', 'search', [
    'title' => 'Search Results'
 ]);
