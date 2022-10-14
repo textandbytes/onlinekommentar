@@ -64,7 +64,6 @@ sections:
           instructions_position: above
           visibility: visible
           always_save: false
-          localizable: true
       -
         handle: legal_text
         field:
