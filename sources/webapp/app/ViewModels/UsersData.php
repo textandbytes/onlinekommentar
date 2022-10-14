@@ -48,7 +48,7 @@ class UsersData extends ViewModel
                                 ->map(function ($legal_domain, $key) {
                                     return trans($legal_domain['title']);
                                 })->toArray(),
-                            'title' => $author['title'],
+                            'title' => $author['professional_title'],
                             'occupation' => $author['occupation'],
                             'practice' => $author['practice'],
                             'linkedin_url' => $author['linkedin_url'],
