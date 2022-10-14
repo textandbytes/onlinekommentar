@@ -1,7 +1,7 @@
 <div class="bg-white">
   {{ search:results as="results" }}
-    <div class="px-8 py-2 mb-2 border-b border-black">
-      <h2 class="text-sm"><span class="font-medium uppercase">{{ get:q}}</span> – {{ results | count }} Resultate gefunden</h2>
+    <div class="px-8 py-4 mb-2 border-b border-black">
+      <h2 class="text-xs uppercase"><span class="font-medium">{{ get:q }}</span> – {{ results | count }} Resultat gefunden</h2>
     </div>
 
     <div class="container px-8 py-8">
