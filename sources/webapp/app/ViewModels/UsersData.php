@@ -46,8 +46,12 @@ class UsersData extends ViewModel
                                 ->where('id', $author->value('legal_domain'))
                                 ->get()
                                 ->map(function ($legal_domain, $key) {
-                                    return trans($legal_domain['title']);
-                                })->toArray(),
+                                    return [
+                                        'id' => $legal_domain['id'],
+                                        'label' => trans($legal_domain['title'])
+                                    ];
+                                })
+                                ->first(),
                             'title' => $author['professional_title'],
                             'occupation' => $author['occupation'],
                             'practice' => $author['practice'],
@@ -69,18 +73,22 @@ class UsersData extends ViewModel
         $users = array_merge(...$users);
 
         // remove duplicate users that have the same id
-        $users = array_intersect_key($users, array_unique(array_column($users, 'id')));
+        $users = array_values(array_intersect_key($users, array_unique(array_column($users, 'id'))));
       
+        // sort the users by the label of the legal domain
+        usort($users, fn($obj1, $obj2) => strcmp($obj1['legal_domain']['label'], $obj2['legal_domain']['label']));
+
         return $users;
     }
 
     private function _getLegalDomainsOfAssignedUsers($users)
     {
-        // extract the legal domain from the list of assigned users
-        $legalDomains = array_column($users, 'legal_domain');
+        // get the non-null, unique legal domains from the list of assigned users
+        // reset the array index values to return an indexed array instead of an associative array
+        $legalDomains = array_values(array_unique(array_filter(array_column($users, 'legal_domain')), SORT_REGULAR));
 
-        // remove the first level of grouping to create a flattened list of legal domains across all users
-        $legalDomains = array_merge(...$legalDomains);
+        // prepend an option to display all legal domains
+        array_unshift($legalDomains, ['id' => null, 'label' => __('legal_domain_filter_label') . ': ' . __('legal_domain_filter_all')]);
 
         return $legalDomains;
     }
