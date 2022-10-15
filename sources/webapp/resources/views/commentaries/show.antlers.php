@@ -6,6 +6,7 @@
 
     $entry = Entry::query()
         ->where('collection', 'commentaries')
+        ->where('status', 'published')
         ->where('slug', Request::segment(count(Request::segments()))) // get the last slug from the URL
         ->get(['content']);
 
