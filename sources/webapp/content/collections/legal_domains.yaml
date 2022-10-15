@@ -1,9 +1,6 @@
 title: 'Legal Domains'
 sites:
   - en
-  - de
-  - fr
-  - it
 propagate: true
 template: default
 layout: layout

@@ -9,7 +9,8 @@ assigned_authors:
 assigned_editors:
   - bc344b1d-3c8e-4c29-bf69-5ead146f664a
 updated_by: 9c1f3a06-0ca1-43f6-8f13-124edfca1d88
-updated_at: 1665491755
+legal_domain: e2c3e574-433c-4f6e-bcc6-eafec7fd7125
+updated_at: 1665592561
 content:
   -
     type: heading

@@ -49,9 +49,17 @@
   "redo": "Wiederholen",
   "clear": "Alle löschen",
 
+  "legal_domain_filter_label": "Erlasse",
+  "legal_domain_filter_all": "Alle",
+  "Civil Procedure": "Zivilverfahrensrecht",
+  "Code of Criminal Procedure": "Strafprozessordnung",
+  "Code of Obligations": "Obligationenrecht",
+  "Federal Constitution": "Bundesverfassung",
+  "Federal Law on Private International Law": "Bundesgesetz über das Internationale Privatrecht",
+  "Lugano Convention": "Lugano-Übereinkommen",
+
   "list_view": "Listenansicht",
   "grid_view": "Gridanansicht",
-  "document_filter_label": "Erlasse",
   "view_user": "Anzeigen",
   "view_commentary": "Anzeigen",
   "back_to_results": "Zurück Zur Übersicht",

@@ -7,7 +7,6 @@ sections:
         field:
           type: text
           required: true
-          localizable: true
           validate:
             - required
   sidebar:

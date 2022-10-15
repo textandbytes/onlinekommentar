@@ -49,9 +49,17 @@
   "redo": "Redo",
   "clear": "Clear all",
 
+  "legal_domain_filter_label": "Decrees",
+  "legal_domain_filter_all": "All",
+  "Civil Procedure": "Civil Procedure",
+  "Code of Criminal Procedure": "Code of Criminal Procedure",
+  "Code of Obligations": "Code of Obligations",
+  "Federal Constitution": "Federal Constitution",
+  "Federal Law on Private International Law": "Federal Law on Private International Law",
+  "Lugano Convention": "Lugano Convention",
+
   "list_view": "List view",
   "grid_view": "Grid view",
-  "document_filter_label": "Decrees",
   "view_user": "View",
   "view_commentary": "View",
   "back_to_results": "Back",

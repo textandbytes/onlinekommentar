@@ -3,7 +3,8 @@ id: f127f16c-2f27-446d-9e74-3bc34716d34c
 origin: a20d652c-ea8f-4da7-a3be-c3ae4d54a46a
 title: 'Art. 366 StPO'
 updated_by: 9c1f3a06-0ca1-43f6-8f13-124edfca1d88
-updated_at: 1665491470
+legal_domain: 191d45d8-ed6a-47ab-9fb9-17c0744effda
+updated_at: 1665596859
 content:
   -
     type: heading
