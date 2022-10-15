@@ -3,6 +3,7 @@
   <div class="md:max-w-6xl md:mx-auto md:mb-auto bg-white overflow-hidden px-4 md:px-24 md:py-12">
     <div class="relative flex justify-between items-center md:grid md:grid-cols-3 md:gap-px border-b border-black">
       <FlyoutMenuFullWidth
+        v-if="hasSlot('table-of-contents')"
         :label="$t('table_of_contents')"
         class="flex items-center py-2 md:py-4"
         menu-classes="top-16">
@@ -10,18 +11,20 @@
           <slot name="table-of-contents" />
         </div>
       </FlyoutMenuFullWidth>
+      <div v-else class="py-2 md:py-4">&nbsp;</div>
 
       <div class="md:flex items-center justify-center text-2xl font-serif hidden">
         {{ commentary.title }}
       </div>
 
       <FlyoutMenuFullWidth
-        v-if="versions"
+        v-if="hasSlot('revisions')"
         label="Versions"
         class="flex items-center justify-end py-2 md:py-4"
         menu-classes="top-16">
+        <slot name="revisions" />
       </FlyoutMenuFullWidth>
-      <div v-else class=" py-2 md:py-4">&nbsp;</div>
+      <div v-else class="py-2 md:py-4">&nbsp;</div>
     </div>
 
     <div class="flex flex-col items-center my-8 md:my-12 space-y-6">
@@ -90,12 +93,11 @@
       Onlinekommentar.ch, {{ $t('commentary_on') }} {{ commentary.title }} {{ $t('creative_commons_text') }}
     </p>
     <p class="mt-4"><img src="/img/cc-license.png" alt="Creative Commons"></p>
-
   </div>
 </template>
 
 <script setup>
-  import { ref } from 'vue'
+  import { ref, useSlots } from 'vue'
   import FlyoutMenuFullWidth from '@/components/Menus/FlyoutMenuFullWidth'
   import SuggestedCitationsPanel from '@/components/Pages/Partials/SuggestedCitationsPanel'
   import axios from 'axios';
@@ -105,11 +107,13 @@
     versions: { type: Object, required: false, default: null },
   })
 
+  const slots = useSlots()
+  const hasSlot = (name) => !!slots[name]
+
   const legalTextLocale = ref(props.commentary.locale)
   let localizedLegalText = ref(props.commentary.legal_text)
 
-
-  function setLegalTextLocale(locale) {
+  const setLegalTextLocale = (locale) => {
     // Get all commentary entries, filter them by given locale and commentary slug, return legal text field
     axios.get('/api/collections/commentaries/entries/?filter[site]=' + locale + '&filter[slug]=' + props.commentary.slug + '&fields=legal_text')
       .then(function (response) {
@@ -121,7 +125,6 @@
 
     legalTextLocale.value = locale
   }
-
 </script>
 
 <style lang="postcss" scoped>
@@ -167,7 +170,4 @@
   .legal-text-locale-link.active {
     @apply border border-black
   }
-  
-
-
 </style>
