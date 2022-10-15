@@ -63,7 +63,7 @@
       <LanguageSelector
         id="nav-lang-switcher"
         as="li"
-        :languages="locales"
+        :languages="locales.count > 0 ? locales : defaultLocales"
         :active-language="locale"
       />
 
@@ -100,6 +100,8 @@
   const searchBox = ref(false)
   const searchInput = ref()
   const showMenu = ref(false)
+
+  const defaultLocales = ['de', 'en', 'fr', 'it']
 
   const toggleMenu = () => {
     showMenu.value = !showMenu.value
