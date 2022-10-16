@@ -15,7 +15,8 @@
 
       <AppNav
         :locale="locale"
-        :locales="locales">
+        :locales="locales"
+        :query="query">
       </AppNav>
 
       <AppSidebar>
@@ -34,6 +35,7 @@
   defineProps({
     currentPage: { type: String, required: true },
     locale: { type: String, required: true },
-    locales: { type: Array, required: true }
+    locales: { type: Array, required: true },
+    query: { type: String, required: false }
   })
 </script>

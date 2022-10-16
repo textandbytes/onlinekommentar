@@ -12,6 +12,7 @@
       <app-header
         current-page="{{ slug }}"
         locale="{{ locale }}"
+        query="{{ get:q }}"
         :locales="[
           {{ locales }}
             '{{ locale:short }}',

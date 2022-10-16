@@ -45,8 +45,8 @@
   <nav>
     <ul class="flex items-center space-x-6">
       <li id="nav-search" class="cursor-pointer">
-        <div class="flex">
-          <input ref="searchInput" v-show="searchBox" type="search" :placeholder="$t('nav_search_box_placeholder')" class="w-48 md:w-64 xl:w-96 bg-white border-b-2 border-t-0 border-l-0 border-r-0 border-black focus:border-b-2 focus:border-black focus:ring-0 placeholder:text-xs md:placeholder:text-base xl:placeholder:text-lg">
+        <form class="flex" :action="'/' + locale + '/search'">
+          <input ref="searchInput" v-show="searchBox" name="q" :value="query || ''" type="search" :placeholder="$t('nav_search_box_placeholder')" class="w-48 md:w-64 xl:w-96 bg-white border-b-2 border-t-0 border-l-0 border-r-0 border-black focus:border-b-2 focus:border-black focus:ring-0 placeholder:text-xs md:placeholder:text-base xl:placeholder:text-lg">
 
           <span @click="toggleSearchBox" :class="{ 'bg-white border-b-2 border-black' : searchBox }">
             <svg id="Search" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 45 45">
@@ -57,13 +57,13 @@
               <rect id="Rechteck_24" data-name="Rechteck 24" width="45" height="45" fill="none"/>
             </svg>
           </span>
-        </div>
+        </form>
       </li>
 
       <LanguageSelector
         id="nav-lang-switcher"
         as="li"
-        :languages="locales"
+        :languages="locales.count > 0 ? locales : defaultLocales"
         :active-language="locale"
       />
 
@@ -92,13 +92,16 @@
   import LanguageSelector from './Partials/LanguageSelector.vue'
 
   defineProps({
-    locale: { type: String, required: true },
-    locales: { type: Array, required: true }
+    locale:  { type: String, required: true },
+    locales: { type: Array, required: true },
+    query:   { type: String, required: false }
   })
 
   const searchBox = ref(false)
   const searchInput = ref()
   const showMenu = ref(false)
+
+  const defaultLocales = ['de', 'en', 'fr', 'it']
 
   const toggleMenu = () => {
     showMenu.value = !showMenu.value

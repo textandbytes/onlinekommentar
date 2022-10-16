@@ -62,7 +62,7 @@
       </FlyoutMenuFullWidth>
     </div>
 
-    <div class="flex flex-col p-4 md:p-8 bg-ok-orange space-y-4 md:space-y-6">
+    <div v-if="localizedLegalText != ''" class="flex flex-col p-4 md:p-8 bg-ok-orange space-y-4 md:space-y-6">
       <div class="flex justify-end">
         <span @click="setLegalTextLocale('de')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'de' }">de</span>
         <span @click="setLegalTextLocale('en')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'en' }">en</span>

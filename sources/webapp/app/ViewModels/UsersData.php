@@ -30,6 +30,7 @@ class UsersData extends ViewModel
     {
         return Entry::query()
             ->where('collection', 'commentaries')
+            ->where('status', 'published')
             ->where('locale', app()->getLocale())
             ->where($userFieldName, '!=', null)
             ->get()

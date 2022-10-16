@@ -100,5 +100,11 @@
   "and": "and",
 
   "commentary_by": "A commentary by",
-  "edited_by": "Edited by"
+  "edited_by": "Edited by",
+
+  "result_found": "result found",
+  "results_found": "results found",
+  "no_results_found": "No results found",
+
+  "open": "Open"
 }

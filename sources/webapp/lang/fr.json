@@ -100,5 +100,11 @@
     "and": "et",
 
     "commentary_by": "Un commentaire de",
-    "edited_by": "Edité par"
+    "edited_by": "Edité par",
+
+    "result_found": "Résultat trouvé",
+    "results_found": "Résultats trouvés",
+    "no_results_found": "Aucun résultat trouvé",
+
+    "open": "Ouvrir"
   }

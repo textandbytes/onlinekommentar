@@ -99,5 +99,11 @@
 
   "and": "und",
   "commentary_by": "Ein Kommentar von",
-  "edited_by": "Herausgegeben von"
+  "edited_by": "Herausgegeben von",
+
+  "result_found": "Resultat gefunden",
+  "results_found": "Resultate gefunden",
+  "no_results_found": "Keine Resultate gefunden",
+
+  "open": "Öffnen"
 }
