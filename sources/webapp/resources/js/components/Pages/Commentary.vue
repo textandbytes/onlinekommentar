@@ -1,7 +1,7 @@
 <template>
 
   <div class="md:max-w-6xl md:mx-auto md:mb-auto bg-white overflow-hidden px-4 md:px-24 md:py-12">
-    <div class="relative flex justify-between items-center md:grid md:grid-cols-3 md:gap-px border-b border-black">
+    <div class="relative flex justify-between items-center md:gap-px border-b border-black">
       <FlyoutMenuFullWidth
         v-if="hasSlot('table-of-contents')"
         :label="$t('table_of_contents')"
@@ -18,11 +18,15 @@
       </div>
 
       <FlyoutMenuFullWidth
-        v-if="hasSlot('revisions')"
-        label="Versions"
+        v-if="versions"
+        :label="$t('versions')"
         class="flex items-center justify-end py-2 md:py-4"
         menu-classes="top-16">
-        <slot name="revisions" />
+        <VersionsPanel
+          :versions="versions"
+          :active-version="activeVersion"
+          @on-select="loadVersionWithTimestamp">
+        </VersionsPanel>
       </FlyoutMenuFullWidth>
       <div v-else class="py-2 md:py-4">&nbsp;</div>
     </div>
@@ -99,6 +103,7 @@
 <script setup>
   import { ref, useSlots } from 'vue'
   import FlyoutMenuFullWidth from '@/components/Menus/FlyoutMenuFullWidth'
+  import VersionsPanel from '@/components/Pages/Partials/VersionsPanel'
   import SuggestedCitationsPanel from '@/components/Pages/Partials/SuggestedCitationsPanel'
   import axios from 'axios';
 
@@ -113,6 +118,8 @@
   const legalTextLocale = ref(props.commentary.locale)
   let localizedLegalText = ref(props.commentary.legal_text)
 
+  const activeVersion = ref(props.versions[0])
+
   const setLegalTextLocale = (locale) => {
     // Get all commentary entries, filter them by given locale and commentary slug, return legal text field
     axios.get('/api/collections/commentaries/entries/?filter[site]=' + locale + '&filter[slug]=' + props.commentary.slug + '&fields=legal_text')
@@ -124,6 +131,15 @@
       })
 
     legalTextLocale.value = locale
+  }
+
+  const loadVersionWithTimestamp = (timestamp) => {
+    // set the active version
+    props.versions.forEach(version => {
+      if (version.timestamp === timestamp) {
+        activeVersion.value = version
+      }
+    })
   }
 </script>
 

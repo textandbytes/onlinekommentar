@@ -20,6 +20,7 @@ module.exports = {
              colors: {
               'ok-gray':        '#707070',
               'ok-dark-gray':   '#575757',
+              'ok-light-gray':  '#CCCCCC',
               'ok-beige':       '#E8E7E2',
               'ok-light-beige': '#EFEFEF',
               'ok-yellow':      '#FCF0BD',
