@@ -1,0 +1,1285 @@
+action: revision
+date: 1666042601
+user: 9c1f3a06-0ca1-43f6-8f13-124edfca1d88
+attributes:
+  id: bb46a246-47f6-433e-a3df-2a530949fe69
+  slug: bv68
+  published: true
+  date: null
+  data:
+    title: 'Art. 68 BV'
+    legal_domain: 8223e697-4ffc-4c9b-974b-96836bbbca4f
+    legal_text:
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: bold
+            text: "Art.\_68 BV\_Sport"
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: superscript
+            text: '1'
+          -
+            type: text
+            text: "\_Der Bund fördert den Sport, insbesondere die Ausbildung."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: superscript
+            text: '2'
+          -
+            type: text
+            text: "\_Er betreibt eine Sportschule."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: superscript
+            text: '3'
+          -
+            type: text
+            text: "\_Er kann Vorschriften über den Jugendsport erlassen und den Sportunterricht an Schulen obligatorisch erklären."
+    content:
+      -
+        type: heading
+        attrs:
+          level: 2
+        content:
+          -
+            type: text
+            text: 'I. Allgemeines'
+      -
+        type: heading
+        attrs:
+          level: 3
+        content:
+          -
+            type: text
+            text: 'A. Entstehungsgeschichte'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: bts_span
+                attrs:
+                  class: paragraph-nr
+            text: '1'
+          -
+            type: text
+            text: ' Die ersten Ansätze einer (bundes-)staatlichen Förderung und Regelung des Sports waren in der Schweiz um das Jahr 1874 zu erkennen. Zu diesem Zeitpunkt fehlte eine sportspezifische Verfassungsbestimmung. Der Bund befasste sich zwar im Rahmen der Verfassungsrevision von 1874 erstmals mit der Thematik des Turnens und des Sports.'
+          -
+            type: footnote
+            attrs:
+              data-content: '<p>Vgl. Botschaft SpoFöG, S. 8200; Botschaft 1971, S. 790; Breitensportkonzept, S. 8; vgl. auch SGK-Zen-Ruffinen, N. 1 zu Art. 68 BV.</p>'
+          -
+            type: text
+            text: ' Der Diskurs war in dieser '
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: 'ersten Phase'
+          -
+            type: text
+            text: ' der bundesverfassungsrechtlichen Erfassung des Turnen und Sports aber weitestgehend von '
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: 'wehrpolitischen Überlegungen'
+          -
+            type: text
+            text: " geprägt: Gestützt auf die Wehrartikel der alten Bundesverfassung vom 29.\_Mai 1874 (Art.\_18 ff. aBV) wurde im Rahmen der Militärorganisation von 1874 ein obligatorischer Vorunterricht für die Knaben vom 10. bis zum 20. Altersjahr eingeführt. Dieser diente als Vorbereitung für den Wehrdienst."
+          -
+            type: footnote
+            attrs:
+              data-content: '<p>Vgl. Botschaft 1969, S.&nbsp;1022.</p>'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: bts_span
+                attrs:
+                  class: paragraph-nr
+            text: '2'
+          -
+            type: text
+            text: ' Aufgrund einer unbefriedigenden Umsetzung des obligatorischen Vorunterrichts in den Kantonen erfolgten mit der Militärorganisation von 1907 diverse Anpassungen: Der Turnunterricht wurde an den Schulen für die Knaben ab dem siebten Schuljahr für obligatorisch erklärt und mit einem freiwilligen Vorunterricht nach dem Schulaustritt ergänzt.'
+          -
+            type: footnote
+            attrs:
+              data-content: '<p>Vgl. Botschaft 1971, S. 790; Botschaft 1969, S. 1022 f.; Eichenberger, S. 31 ff.; Zollinger, S. 36&nbsp;f.</p>'
+          -
+            type: text
+            text: " Die in diesem Zuge 1909 erlassene Verordnung über den Vorunterricht wurde im Jahr 1928 revidiert und letztlich in die Verordnung vom 7.\_Januar 1947 über die Förderung von Turnen und Sport überführt. In Letzterer wurde das Schulsportobligatorium auf drei Wochenstunden fixiert und der Betrieb der während des Zweiten Weltkriegs in Magglingen geschaffenen Eidgenössischen Turn- und Sportschule verankert."
+          -
+            type: footnote
+            attrs:
+              data-content: '<p>Vgl. Botschaft SpoFöG, S. 8200; Botschaft 1969, S. 1023; Zollinger, S. 39. Zur Eidgenössischen Turn- und Sportschule siehe Rz. 18 f. hiernach.</p>'
+          -
+            type: text
+            text: ' Auf der Ebene des Bundes richteten sich die Vorschriften zum Turnen und Sport – wie auch das Schulsportobligatorium'
+          -
+            type: footnote
+            attrs:
+              data-content: '<p>Zum Schulsportobligatorium siehe Rz. 23–25 hiernach.</p>'
+          -
+            type: text
+            text: " – noch bis in das Jahr 1970 lediglich an die Knaben und jungen Männer. Indessen hatten bis zum Zweiten Weltkrieg 15\_Kantone den Turnunterricht auch für die Mädchen und jungen Frauen für obligatorisch erklärt."
+          -
+            type: footnote
+            attrs:
+              data-content: '<p>Vgl. Zollinger, S. 38.</p>'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: bts_span
+                attrs:
+                  class: paragraph-nr
+            text: '3'
+          -
+            type: text
+            text: ' Die '
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: 'zweite Phase'
+          -
+            type: text
+            text: ' der bundesverfassungsrechtlichen Erfassung des Sports in der Schweiz zeichnete sich ab der zweiten Hälfte des 20. Jahrhunderts ab. Aufgrund der verringerten körperlichen Bewegung der Bevölkerung rückten vermehrt die mit dem Turnen und dem Sport verbundenen positiven '
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: 'gesundheitlichen Aspekte'
+          -
+            type: text
+            text: ' in den Vordergrund der (politischen) Überlegungen. Ausserdem bildeten noch bis 1970 die Wehrartikel der alten Bundesverfassung die verfassungsrechtliche Grundlage, womit die Kompetenz des Bundes zur Förderung des Turnens und des Sports sowohl hinsichtlich des Alters als auch bezüglich des Geschlechts beschränkt war. Diese Beschränkung führte insbesondere mit Blick auf die Geschlechtergleichstellung und die Gesundheit der gesamten Bevölkerung zu unbefriedigenden Ergebnissen. Im Jahr 1967 begannen deshalb die Arbeiten für einen '
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: Verfassungsartikel
+          -
+            type: text
+            text: ' sowie für ein Bundesgesetz über die Förderung von Turnen und Sport.'
+          -
+            type: footnote
+            attrs:
+              data-content: '<p>Vgl. CR-Adank, N. 2 f. zu Art. 68 BV; Botschaft 1971, S. 790 f.; Botschaft 1969, S. 1027 f.; Zollinger, S. 40&nbsp;f.</p>'
+          -
+            type: text
+            text: " Der neue Art.\_27"
+          -
+            type: text
+            marks:
+              -
+                type: superscript
+            text: quinquies
+          -
+            type: text
+            text: " aBV wurde in der Volksabstimmung vom 27.\_September 1970 mit grosser Mehrheit angenommen. Damit erhielten unter anderem das Schulsportobligatorium und die Eidgenössische Turn- und Sportschule in Magglingen eine verfassungsrechtliche Grundlage sowie der Bund die Kompetenz, Vorschriften über das Turnen und den Sport mit Wirkung für die gesamte Bevölkerung zu erlassen. Mit der systematischen Einordnung des Verfassungsartikels in die Art. 27 ff. aBV zum Bildungswesen wurde ferner die “Abkoppelung von der Landesverteidigung” unterstrichen."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: '4 Gestützt auf Art. 27'
+          -
+            type: text
+            marks:
+              -
+                type: superscript
+            text: quinquies
+          -
+            type: text
+            text: " aBV traten am 1. Juli 1972 das Bundesgesetz vom 17. März 1972 über die Förderung von Turnen und Sport (SR\_415.0) sowie die Verordnung vom 26. Juni 1972 zum Bundesgesetz über die Förderung von Turnen und Sport (SR\_415.01) in Kraft. Das Gesetz bezweckte, Turnen und Sport im Interesse der Entwicklung der Jugend, der Volksgesundheit und der körperlichen Leistungsfähigkeit zu fördern. Die “gesundheits‑, gesellschafts- und sportpolitischen Anliegen” des Bundesgesetzgebers kamen darin klar zum Ausdruck. Namentlich erklärte das Bundesgesetz den Turn- und Sportunterricht an allen Volks‑, Mittel- und Berufsschulen einschliesslich Seminaren und Lehramtsschulen für sämtliche Schülerinnen und Schüler für obligatorisch. Der freiwillige militärische Vorunterricht wurde in “eine moderne Institution” Jugend und Sport überführt."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: '5 Während in den ersten beiden Phasen jeweils bestimmte Anliegen mit der Förderung des Turnens und Sports verbunden waren, stand ab der '
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: 'dritten Phase'
+          -
+            type: text
+            text: ' die verfassungsrechtliche Bundeskompetenz im Zeichen einer '
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: gesamtheitlichen
+          -
+            type: text
+            text: " Förderung des Sports. Zwar wurde Art.\_27"
+          -
+            type: text
+            marks:
+              -
+                type: superscript
+            text: quinquies
+          -
+            type: text
+            text: ' aBV im Zuge der Totalrevision der Bundesverfassung inhaltlich unverändert in Art. 68 BV überführt. Dennoch ergibt sich aus der entsprechenden Botschaft, dass der Verfassungsartikel im Sinne der Sportverbände redaktionell überarbeitet wurde und “nun” eine Bundeskompetenz zur gesamtheitlichen Förderung des Sports verankert. In diesem Sinne vollzog der Bundesrat im Jahr des Inkrafttretens der neuen Bundesverfassung diesen Richtungswechsel mit der Verabschiedung des Konzepts vom 30. November 2000 für eine Sportpolitik in der Schweiz. Das sportpolitische Konzept orientierte sich an den fünf Bereichen Gesundheit, Bildung, Leistung, Wirtschaft sowie Nachhaltigkeit, wobei die Sportpolitik anhand eines Gesamtleitbilds des Sports und fünf Hauptzielen “in die übergeordneten Staatsziele eingebettet” wurde. Es ist demnach nicht zu erkennen, dass der Bund mit der Sportförderung in dieser Phase ein eigenständiges Staatsziel verfolgte.  Vielmehr versuchte der Bundesrat “einen politischen Beitrag [zu] leisten, um eine breite Bewegungskultur, einen ′Spirit of Sport′ entstehen zu lassen, was auch zu Zusammenhalt und Identität unserer Gesellschaft beitragen kann”.'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "6 Gestützt auf Art. 68 BV traten alsdann am 1. Oktober 2012 das Bundesgesetz vom 17.\_Juni 2011 über die Förderung von Sport und Bewegung (Sportförderungsgesetz, SpoFöG; SR\_415.0) sowie die Verordnung vom 23. Mai 2012 über die Förderung von Sport und Bewegung (Sportförderungsverordnung, SpoFöV; SR\_415.01) in Kraft. Die bewährten und wesentlichen Stossrichtungen des sportpolitischen Konzepts flossen in das neue Sportförderungsgesetz ein. Der Wechsel zum Ansatz einer gesamtheitlichen Förderung des Sports hatte indes keinen substanziellen Einfluss auf den Umfang der staatlichen Sportförderung. Die Sportförderung in der Schweiz blieb auch in der Folge vom Primat des privaten Engagements als Ausfluss des Grundsatzes der Subsidiarität geprägt."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: '7 Gegenwärtig definiert der '
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: 'Aktionsplan Sportförderung des Bundes'
+          -
+            type: text
+            text: ' vom 26. Oktober 2016 die eidgenössische Sportpolitik. Der Aktionsplan wurde in Erfüllung der Motion 13.3369 der Kommission für Wissenschaft, Bildung und Kultur des Nationalrats erarbeitet und gibt eine konzeptionelle und finanzielle Gesamtschau zur künftigen Entwicklung der Sportförderung des Bundes. Ausfluss aus dem Aktionsplan ist je ein Konzept zum Breitensport und Leistungssport sowie ein Immobilienkonzept Sport.'
+      -
+        type: heading
+        attrs:
+          level: 3
+        content:
+          -
+            type: text
+            text: 'B. Verfassungsrechtlicher Sportbegriff'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: '8 Der Begriff des Sports wird in der Bundesverfassung nicht definiert. Er lässt sich auch nicht aus der Systematik der Bundesverfassung her- oder aus einer anderen Verfassungsbestimmung ableiten. Der Begriff des Sports findet sich denn auch nur in Art. 68 BV sowie in Art. 106 Abs. 6 BV (zur Verwendung der Reinerträge aus den Geldspielen). Auch ansonsten besteht keine anerkannte rechtliche Definition des Begriffs. Aufgrund des Bestrebens, den Sport gesamtheitlich zu fördern, ist allerdings von einem breiten verfassungsrechtlichen Sportbegriff auszugehen. Vor diesem Hintergrund kann auf die Definition des Sportbegriffs des Europarats zurückgegriffen werden, da diese eine gewisse internationale Akzeptanz und im Gegensatz zu anderen gängigen Definitionen eine wenig restriktive und offene Formulierung aufweist. Demnach erfasst Sport “toutes formes d’activités physiques qui, à travers une participation organisée ou non, ont pour objectif l’expression ou l’amélioration de la condition physique et psychique, le développement des relations sociales ou l’obtention de résultats en compétition de tous niveaux”. Im Sinne dieses Begriffs fördert der Bund denn auch den Sport und die Bewegung im Interesse der körperlichen Leistungsfähigkeit und der Gesundheit der Bevölkerung, der ganzheitlichen Bildung und des gesellschaftlichen Zusammenhalts.'
+      -
+        type: heading
+        attrs:
+          level: 2
+        content:
+          -
+            type: text
+            text: 'II. Sport- und Bewegungsförderung'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "9 Art.\_68 BV befindet sich bei der Aufgaben- und Kompetenzverteilung zwischen dem Bund und den Kantonen im dritten Abschnitt zur Bildung, Forschung und Kultur. In "
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: systematischer
+          -
+            type: text
+            text: " Hinsicht ist der Artikel damit Bestandteil der Bildungsverfassung, obwohl er nicht Gegenstand der Neuordnung der Verfassungsbestimmungen zur Bildung im Jahr 2006 gewesen ist. Aufgrund seiner systematischen Stellung stellt der bildungsrechtliche und schulsportspezifische Gehalt von Art.\_68 BV – insbesondere Art.\_68 Abs.\_3 BV – konzeptionell ein Element des Bildungsraums Schweiz dar (vgl. Art. 61a BV). Allerdings hat die Bestimmung eine weitergehende, “eigenständige Bedeutung”, soweit sie sich der Förderung des Sports über die Bildung hinaus (gesamtheitlich) widmet. Aus Art.\_68 BV ergeben sich drei unterschiedliche Arten von Bundeskompetenzen. Während Art.\_68 Abs.\_1 BV als "
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: 'parallele '
+          -
+            type: text
+            text: und
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: ' beschränkte Förderungskompetenz'
+          -
+            type: text
+            text: " des Bundes eine gleichzeitige Sport- und Bewegungsförderung durch die Kantone nicht ausschliesst, verankert Art.\_68 Abs.\_2 BV einen "
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: Handlungsauftrag
+          -
+            type: text
+            text: " an den Bund zum Betrieb einer Sportschule. Art.\_68 Abs.\_3 BV enthält eine "
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: 'konkurrierende, nachträglich derogierende Gesetzgebungskompetenz'
+          -
+            type: text
+            text: ' im Bereich des Jugend- und Schulsports.'
+      -
+        type: heading
+        attrs:
+          level: 3
+        content:
+          -
+            type: text
+            text: 'A. Absatz 1: Sportförderung'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: '10 Gemäss Art. 68 Abs. 1 BV fördert der Bund den Sport, insbesondere die Ausbildung. Der erste Absatz des Verfassungsartikels verankert eine Bundeskompetenz und erteilt dem Bund zugleich den Auftrag, fördernd tätig zu werden. Er bildet die verfassungsrechtliche Grundlage für die Sport- und Bewegungsförderung des Bundes.'
+      -
+        type: heading
+        attrs:
+          level: 4
+        content:
+          -
+            type: text
+            text: '1. Förderungskompetenz des Bundes'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: '11Die '
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: Kompetenz
+          -
+            type: text
+            text: " zur Förderung des Sports besteht parallel zu jener der Kantone. Sie beinhaltet keine Regelungskompetenz, da aus systematischen Überlegungen andernfalls der zweite und dritte Absatz der Verfassungsbestimmung überflüssig wären. Mangels einer solchen Kompetenz kann der Bund keine Vorschriften über den Sport an sich oder zu den einzelnen Sportarten aufstellen. Die Befugnis nach Art.\_68 Abs. 1 BV stellt folglich eine reine Kompetenz zur Förderung dar; sie ist darauf beschränkt. Hingegen schränkt Art. 68 Abs. 1 BV die Art und Weise, wie der Bund den Sport fördert, nicht ein. Die Förderungskompetenz ist daher gesamtheitlich zu verstehen und kann sich auf alle Sportarten und auf die ganze Bevölkerung erstrecken. Aus der Verwendung des Begriffs des Förderns ergibt sich ferner die Form der Unterstützung. Fördern zeichnet sich in erster Linie als Unterstützung durch finanzielle Mittel aus. Zugleich bedeutet Fördern, subsidiär tätig zu werden. Im Grundsatz hat sich die (finanzielle) Unterstützung daher auf bestehende kantonale, kommunale oder private Massnahmen zu beziehen und diese gegebenenfalls zu ergänzen. Die parallele Kompetenz beschränkt sich folglich auf eine gesamtheitliche, aber subsidiäre Unterstützung des Sports namentlich in Form von finanziellen staatlichen Leistungen oder durch die Schaffung von günstigen Rahmenbedingungen. Diese Rahmenbedingungen sind wiederum weit zu fassen. Sie können beispielsweise die Schaffung eines vorteilhaften Steuersystems für die nationalen und internationalen Sportverbände und Sportvereine oder die Dopingbekämpfung zur Gewährleistung eines sauberen Sports umfassen."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: '12 Art. 68 Abs. 1 BV beinhaltet jedoch nicht nur eine Kompetenz, wonach der Bund den Sport fördern darf. Vielmehr wird der Bund durch den Verfassungsartikel auch zur Förderung des Sports verpflichtet. Insofern verankert der erste Absatz auch einen '
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: verpflichtenden
+          -
+            type: text
+            text: ' '
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: Auftrag
+          -
+            type: text
+            text: ' an den Bund. Diese Pflicht, den Sport zu fördern, steht gewissermassen in einem Spannungsverhältnis zum Grundsatz, wonach Fördern ein subsidiäres Tätigwerden des Bundes impliziert. Demzufolge lässt sich der Umfang des verfassungsrechtlichen Förderungsauftrags nicht abstrakt bestimmen. Dieser ergibt sich einerseits aus den mit der Sportförderung verbundenen politischen sowie gesellschaftlichen Zielen und andererseits aus dem Fehlen von privaten Initiativen oder privatem Engagement. Beide Faktoren können sportartspezifisch variieren, gleich- und gegenläufig sein sowie einem zeitlichen Wandel unterliegen.'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: '13 Die Förderungskompetenz und der Förderungsauftrag beziehen sich insbesondere auf die '
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: Ausbildung
+          -
+            type: text
+            text: '. Dieser zweite Teilsatz des ersten Absatzes von Art. 68 BV verdeutlicht, dass sich die Förderung gleichermassen auf den Breiten‑, den leistungsorientierten Nachwuchs- und auf den Spitzensport bezieht. Damit wird zugleich anerkannt, dass der Spitzensport ein “wichtiger Motor der Sportentwicklung” ist, da er “als Motivator und Schrittmacher den Breitensport” beeinflusst sowie ein “nationaler Identitätsstifter und ein nicht zu unterschätzender Wirtschaftsfaktor” darstellt. Der zusätzliche Teilsatz erlaubt dem Bund ausserdem, die Aus- und Weiterbildung der Sportlehrkräfte finanziell zu unterstützen, die Schaffung von überregionalen, kantonalen, kommunalen oder privaten Sportschulen zu fördern sowie deren Betrieb zu koordinieren. Ohne in die Schulhoheit der Kantone einzugreifen (vgl. Art. 62 Abs. 1 BV), steht es dem Bund damit auch zu, Massnahmen zu ergreifen, um die Schulpflicht mit dem Nachwuchsleistungssport in Einklang zu bringen.'
+      -
+        type: heading
+        attrs:
+          level: 4
+        content:
+          -
+            type: text
+            text: '2. Sportförderungsmassnahmen auf Bundesebene'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "14 Wie der Umfang der verfassungsrechtlich zulässigen Förderung wird ebenso die Art der zu ergreifenden Massnahmen in Art. 68 Abs. 1 BV nicht konkretisiert. Der Verfassungsartikel schränkt die denkbaren Massnahmen im Rahmen des ansonsten verfassungsrechtlich Zulässigen aber auch nicht ein. Gestützt auf Art.\_68 Abs.\_1 BV hat der Bund eine Reihe von "
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: Förderungsmassnahmen
+          -
+            type: text
+            text: ' ergriffen. Die Förderungsmassnahmen ergeben sich aus der Bundesgesetzgebung, namentlich aus dem Sportförderungsgesetz, und sie werden in der Sportförderungsverordnung konkretisiert. Mit Blick auf die allgemeine Sport- und Bewegungsförderung unterstützt, koordiniert und initiiert der Bund zunächst Programme und Projekte zur Förderung der regelmässigen Sport- und Bewegungsaktivität auf allen Altersstufen. Darunter fällt neben dem Programm Jugend und Sport insbesondere das Programm Erwachsenensport Schweiz (esa). Diesbezüglich engagiert sich der Bund im Wesentlichen bei der Aus- und Weiterbildung der Kaderpersonen, die Sportangebote für Personen im Erwachsenenalter leiten. Überdies unterstützt der Bund die Sportverbände. Der Dachverband des Schweizer Sports (Swiss Olympic) erhält einen jährlichen Beitrag zur Förderung, Entwicklung und Unterstützung des Schweizer Sports, wobei das Bundesamt für Sport (BASPO) mit dem Dachverband einen Leistungsvertrag abschliesst, der insbesondere die Geld‑, Dienst- und Sachleistungen des Bundes an den Dachverband sowie deren Weiterleitung an die nationalen Sportverbände regelt. Der Bund sorgt im Rahmen seiner Zuständigkeiten dafür, dass internationale Sportverbände für ihre Tätigkeit in der Schweiz gute Rahmenbedingungen vorfinden. In diesem Zusammenhang ist unter anderem die – teilweise kritisierte – Befreiung der internationalen Sportverbände von der direkten Bundessteuer zu nennen. Weitere Finanzhilfen kann der Bund für Sportanlagen von nationaler Bedeutung ausrichten. Im Zusammenhang mit der Sportinfrastruktur erstellt der Bund ein Nationales Sportanlagenkonzept (NASAK), das den Bestand der vorhandenen Sportanlagen von nationaler Bedeutung, den Bedarf an Sportanlagen sowie die Realisierungsprioritäten und die Kostenfolgen aufzeigt. Das BASPO führt im Übrigen je ein Kurs- und Ausbildungszentrum in Magglingen und in Tenero.'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: '15 Nebst diesen Massnahmen zur allgemeinen Sport- und Bewegungsförderung unterstützt der Bund die Förderung des leistungsorientierten Nachwuchssports und des Spitzensports. Hierzu erbringt er insbesondere Dienstleistungen zur Unterstützung von Spitzensportlerinnen und ‑sportlern in der Leistungsentwicklung und unterstützt die Aus- und Weiterbildung von Trainerinnen und Trainern im leistungsorientierten Nachwuchssport und im Spitzensport. Von erheblicher Bedeutung in der Förderung des Spitzensports ist zudem die Möglichkeit für Spitzensportlerinnen und Spitzensportler, den obligatorischen und freiwilligen Militärdienst für die Leistungsentwicklung und Wettkämpfe zu nutzen. Gestützt auf die entsprechende gesetzliche Vorgabe regelt die Verordnung vom 29. Oktober 2003 über den Militärsport (SR 512.38) Massnahmen zur Förderung des Spitzensports im Militärdienst. Als solche Massnahme bietet der Bund beispielsweise die Spitzensport-Rekrutenschule oder die Anstellung als Person des Zeitmilitärs an. Ferner kann der Bund internationale Sportanlässe und ‑kongresse in der Schweiz, die von europäischer oder weltweiter Bedeutung sind, unterstützen, sofern sich die Kantone angemessen an den Kosten beteiligen. In diesem Rahmen kann sich der Bund an den Kosten der Kandidatur für internationale Sportanlässe und ‑kongresse und von deren Durchführung beteiligen. Schliesslich schafft der Bund unter dem Titel der Fairness und Sicherheit die Voraussetzungen für einen sauberen und transparenten Sport, indem er die unerwünschten Begleiterscheinungen des Sports bekämpft. Hierzu stellt er Vorschriften über die Dopingbekämpfung auf und ergreift Massnahmen gegen die Wettkampfmanipulation. Ausserdem bietet die bestehende gesetzliche Grundlage nach der hier vertretenen Auffassung auch Hand, systemische Probleme wie etwa die physischen und psychischen Missbräuche im Sport als unerwünschte Begleiterscheinungen zu bekämpfen. Der Bund kann namentlich seine Finanzhilfen von entsprechenden verbandsinternen Bekämpfungs‑, Aufklärungs- und Kontrollmassnahmen abhängig machen.'
+      -
+        type: heading
+        attrs:
+          level: 4
+        content:
+          -
+            type: text
+            text: ' 3. Finanzielles Engagement von Bund, Kantonen und Gemeinden im Bereich des Sports'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "16 Wie bereits angesprochen, wird die staatliche Sportförderung in der Schweiz vom Primat des privaten Engagements und vom Grundsatz der Subsidiarität geprägt. Dies bedeutet, dass die privaten Sportverbände und Sportvereine die Trägerschaft und Basis des Schweizer Sports bilden. Damit einher geht ein nur schwer quantifizierbares ehrenamtliches Engagement. Dieses Milizprinzip hat im Schweizer Sport “eine lange Tradition” und entlastet den Staat in finanzieller Hinsicht. Überdies finanzieren der Bund sowie die Kantone und Gemeinden lediglich einen geringen Teil der gesamten Sportförderung. Der staatliche Anteil an der Finanzierung des Sports wird in der Schweiz auf 5\_% geschätzt. Dabei beliefen sich die Gesamtausgaben des Bundes für den Sport im Jahr 2010 auf Fr.\_190 Mio., während die Kantone Fr.\_232 Mio. und die Gemeinden Fr.\_1.35 Mrd. aufwendeten. Die kantonalen und kommunalen Ausgaben zugunsten des Sports blieben in den Folgejahren in der Summe weitestgehend konstant: Im Jahr 2018 beliefen sich die kantonalen Ausgaben auf Fr.\_290 Mio. und jene der Gemeinden auf Fr.\_1.26 Mrd."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "17 Das Bundesgesetz vom 29. September 2017 über Geldspiele (Geldspielgesetz, BGS; SR\_935.51) verpflichtet die Kantone, die Reingewinne aus Lotterien und Sportwetten vollumfänglich für gemeinnützige Zwecke unter anderem im Bereich des Sports zu verwenden (vgl. auch Art.\_106 Abs.\_6 BV). Rund die Hälfte der kantonalen Ausgaben zugunsten des Sports wird durch die Ausschüttung des Reingewinns der beiden Landeslotterien SWISSLOS Interkantonale Landeslotterie Genossenschaft und Société de la loterie de la Suisse romande finanziert. Im Jahr 2020 schütteten die beiden Lotteriegesellschaften zusammen einen Betrag von Fr.\_178 Mio. zugunsten des Schweizer Sports aus. Davon flossen rund Fr.\_120.9 Mio. an die Kantone zwecks Förderung des Breitensports und der Sportinfrastruktur. Fr.\_57.1 Mio. gelangten an die Sport-Toto-Gesellschaft, die diese Mittel an Swiss Olympic, an den Schweizer Fussball, an das Schweizer Eishockey und an die Schweizer Sporthilfe weiterleitete. Ab dem 1.\_Januar 2023 übernimmt die (neue) Stiftung Sportförderung Schweiz die Aufgaben der Sport-Toto-Gesellschaft."
+      -
+        type: heading
+        attrs:
+          level: 3
+        content:
+          -
+            type: text
+            text: 'B. Absatz 2: Sportschule'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "18 Art. 68 Abs. 2 BV bestimmt, dass der Bund eine Sportschule betreibt. Die Idee einer eidgenössischen Sportschule entstand unter dem Eindruck des Zweiten Weltkriegs, um die Wehrfähigkeit der (männlichen) Bevölkerung zu verbessern. Mit Bundesbeschluss vom 3. März 1944 wurde die Eidgenössische Turn- und Sportschule Magglingen mit dem Zweck geschaffen, militärische Lehrkräfte auszubilden. Deren Betrieb wurde zunächst in der Verordnung vom 7. Januar 1947 zur Förderung von Turnen und Sport geregelt. Im Zuge der Schaffung des Verfassungsartikels fand die Sportschule in Art.\_27"
+          -
+            type: text
+            marks:
+              -
+                type: superscript
+            text: quinquies
+          -
+            type: text
+            text: " Abs.\_3 aBV eine ausdrückliche verfassungsrechtliche Verankerung. Der Betrieb der – mittlerweile umbenannten – "
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: 'Eidgenössischen Hochschule für Sport Magglingen'
+          -
+            type: text
+            text: " (EHSM) ist seit der Totalrevision der Bundesverfassung im Jahr 1999 in Art. 68 Abs. 2 BV festgehalten. Der Bund ist zum Betrieb einer Sportschule verpflichtet, da der Absatz die Existenz einer eidgenössischen Sportschule explizit vorsieht. Indessen hat der Bund bei der konkreten Ausgestaltung der Sportschule sowohl in inhaltlicher als auch in organisatorischer Hinsicht einen Spielraum. Art.\_68 Abs.\_2 BV verankert damit einen blossen Handlungsauftrag. Die Stellung und Aufgaben der EHSM werden alsdann in der Bundesgesetzgebung konkretisiert. Demgemäss führt der Bund eine Hochschule für Sport mit sportwissenschaftlicher Lehre, Forschung und Dienstleistung sowie Aus- und Weiterbildung im Tertiärbereich."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "19 Die EHSM ist eine Organisationseinheit des BASPO und leistet einen Beitrag zur nationalen Sport- und Bewegungsförderung. Diese Aufgabe nimmt sie insbesondere wahr, indem sie eine “wesentliche Rolle bei der Koordination der in der Schweiz angebotenen Sportstudien” spielt und sich in der “anwendungsorientierten und interdisziplinären sportwissenschaftlichen Forschung und Entwicklung” engagiert. Die EHSM geniesst in der Lehre und Forschung Autonomie. Sie gilt als Hochschule im Sinne des Bundesgesetzes vom 30. September 2011 über die Förderung der Hochschulen und die Koordination im schweizerischen Hochschulbereich (Hochschulförderungs- und ‑koordinationsgesetz, HFKG; SR\_414.20). Der EHSM kommen drei Hauptaufgaben zu: Sie erbringt praxisorientierte Aus- und Weiterbildungen, anwendungsbasierte Forschung und Entwicklung sowie Dienstleistungen. Im Bereich der "
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: Lehre
+          -
+            type: text
+            text: ' bietet sie einen Bachelorstudiengang sowie einen Masterstudiengang an. Sie kann im Übrigen Weiterbildungsstudiengänge und sonstige Weiterbildungsangebote betreiben. Von besonderer Bedeutung im Bereich der '
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: 'Forschung und Entwicklung'
+          -
+            type: text
+            text: ' ist die Erfüllung von Aufgaben der Ressortforschung des Bundes im Bereich Sport und Bewegung – namentlich für Politikberatung, Expertise, Evaluation und Monitoring. Sie ist damit “das Forschungszentrum des Bundes im Bereich des Sports”. Die (entgeltlichen) '
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: Dienstleistungen
+          -
+            type: text
+            text: " der EHSM beziehen sich insbesondere auf die Bereiche Sportmedizin, Physiotherapie und Leistungsdiagnostik. Überdies kann der Bund auch ausserhalb der EHSM die sportwissenschaftliche Forschung in Form von Forschungsbeiträgen unterstützen. Wesentliches Element der eidgenössischen Förderung der sportwissenschaftlichen Forschung bildet ein Forschungskonzept, das das BASPO für eine Dauer von jeweils vier Jahren erarbeitet. Das Forschungskonzept fügt sich in die forschungspolitische Planung und Koordination nach dem Bundesgesetz vom 14. Dezember 2012 über die Förderung der Forschung und der Innovation (FIFG; SR\_420.1) ein."
+      -
+        type: heading
+        attrs:
+          level: 3
+        content:
+          -
+            type: text
+            text: 'C. Absatz 3: Jugend- und Schulsport'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: '20 Laut Art. 68 Abs. 3 BV kann der Bund Vorschriften über den Jugendsport erlassen und den Sportunterricht an den Schulen obligatorisch erklären.'
+      -
+        type: heading
+        attrs:
+          level: 4
+        content:
+          -
+            type: text
+            text: '1. Jugendsport'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: '21 Art. 68 Abs. 3 BV räumt dem Bund zunächst eine konkurrierende, nachträglich derogierende Gesetzgebungskompetenz im Bereich des Jugendsports ein. Dem Bund kommt damit die Befugnis zu, im Jugendsport über die in Art. 68 Abs. 1 BV vorgesehene Förderung hinaus abschliessend zu legiferieren. Der Bund hat bis anhin indes '
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: 'keine abschliessenden Regelungen'
+          -
+            type: text
+            text: " erlassen, womit es auch den Kantonen weiterhin möglich ist, Vorschriften über den Jugendsport aufzustellen, soweit sie nicht den bestehenden Bundesvorgaben widersprechen (vgl. Art. 49 Abs. 1 BV). Der Jugendsport betrifft den freiwilligen Sport der Kinder und Jugendlichen innerhalb und ausserhalb der Schule. Nach der bestehenden gesetzlichen Regelung erfasst der Jugendsport im Grundsatz die Kinder ab dem 1. Januar des Jahres, in dem sie fünf Jahre alt werden. Die Teilnahme am Jugendsport endet am 31. Dezember des Jahres, in dem die Jugendlichen ihr 20.\_Altersjahr vollenden."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: '22 Während sich der Bund ansonsten weitestgehend auf die Unterstützung bestehender Förderungsmassnahmen beschränkt, führt er im Bereich Jugendsport ein eigenes Programm – das '
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: 'Programm “Jugend und Sport”'
+          -
+            type: text
+            text: '. Dieses Programm soll die Entwicklung und Entfaltung der Kinder und Jugendlichen unterstützen und ihnen ermöglichen, den Sport ganzheitlich zu erleben. Im Weiteren bezweckt es die Förderung des kinder- und jugendgerechten Sports unter Berücksichtigung der Grundsätze der Fairness und der Sicherheit. Es soll die Einbettung der Kinder und Jugendlichen in eine Sportgemeinschaft fördern sowie die Entwicklung und Entfaltung junger Menschen unter pädagogischen, sozialen und gesundheitlichen Gesichtspunkten unterstützen. Das Programm steht einerseits im Lichte der allgemeinen Sport- und Bewegungsförderungskompetenz im Sinne von Art. 68 Abs. 1 BV. Andererseits hat der Bund das Programm im Rahmen seiner Gesetzgebungskompetenz von Art. 68 Abs. 3 BV abschliessend geregelt. Er übernimmt “wesentliche Vollzugsaufgaben selbst” und trägt die “Hauptverantwortung” für das Programm, auch wenn dieses “in partnerschaftlicher Zusammenarbeit” mit den Sportverbänden geführt und teilweise von den Kantonen mit ihren J+S‑Ämtern vollzogen wird. Im Rahmen dieser Zusammenarbeit richtet der Bund Beiträge an Kurse und Lager sowie an die Kaderbildung der Kantone und der privaten Organisationen aus.'
+      -
+        type: heading
+        attrs:
+          level: 4
+        content:
+          -
+            type: text
+            text: '2. Schulsport'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "23 Die derogierende Gesetzgebungskompetenz des Bundes im Bereich des Schulsports erlaubt es dem Bundesgesetzgeber, punktuell in die Schulhoheit der Kantone (vgl. Art. 62 Abs. 2 BV) einzugreifen und in diesem Zuge, den Schulsport für obligatorisch zu erklären. Der Schulsport war bereits ab dem Jahr 1907 für die Knaben ab dem siebten Schuljahr obligatorisch und wurde in der Verordnung vom 7.\_Januar 1947 über die Förderung von Turnen und Sport auf drei Wochenstunden fixiert. Nachdem die Kompetenz des Bundes, den Schulsport für obligatorisch zu erklären, in Art.\_27"
+          -
+            type: text
+            marks:
+              -
+                type: superscript
+            text: quinquies
+          -
+            type: text
+            text: " Abs. 1 aBV verankert worden war, erklärte der Bund den Turn- und Sportunterricht an allen Volks‑, Mittel- und Berufsschulen einschliesslich Seminaren und Lehramtsschulen für sämtliche Schülerinnen und Schüler für obligatorisch. In Art.\_1 Abs.\_1 der Verordnung vom 26. Juni 1972 zum Bundesgesetz über die Förderung von Turnen und Sport legte der Bundesrat wiederum fest, dass an den Volks- und Mittelschulen in der Woche mindestens drei Stunden Turn- und Sportunterricht zu erteilen sind. Nunmehr erklärt die gegenwärtig geltende Sportförderungsgesetzgebung den Sportunterricht in der obligatorischen Schule und auf der Sekundarstufe II für obligatorisch. Weiter bestimmt das Sportförderungsgesetz, dass in der obligatorischen Schule mindestens "
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: 'drei Lektionen Sportunterricht pro Woche'
+          -
+            type: text
+            text: ' obligatorisch sind. Aus der Sportförderungsverordnung ergibt sich ferner, dass an den Mittelschulen, die nicht mehr zu den obligatorischen Schulen zählen, pro Schuljahr mindestens 110 Lektionen Sportunterricht regelmässig über das ganze Schuljahr verteilt zu erteilen sind. Das Bundesgericht kam im Zusammenhang mit dieser Verordnungsbestimmung zu den Mittelschulen zum Schluss, dass mit der Regelung von 110 Lektionen pro Schuljahr eine flexible Umsetzung ermöglicht werden sollte. Die erforderliche Regelmässigkeit bedinge nicht, dass (auch) an den Mittelschulen wöchentlich drei Lektionen Sport unterrichtet würden. Über den Sportunterricht hinaus sollen die Kantone im Rahmen des schulischen Unterrichts die täglichen Sport- und Bewegungsmöglichkeiten fördern.'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: '24 Zur Reichweite der Bundeskompetenz im Bereich des Schulsports – mithin zur Frage, ob der Bund das Schulsportobligatorium qualitativ und quantitativ konkretisieren darf – herrschen zumindest in der Lehre unterschiedliche Auffassungen, während diese Frage in der Rechtsprechung als geklärt erscheint. Die Lehre ist sich im Wesentlichen darüber uneinig, ob Art. 68 Abs. 3 BV eher isoliert und gestützt auf eine teleologische Auslegung zu deuten sei, oder ob die Verfassungsbestimmung im Rahmen der Bildungsverfassung und daher mit besonderem Gewicht auf ihre systematische Stellung auszulegen sei. Letztere Auffassung vertritt '
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: 'Ehrenzeller:'
+          -
+            type: text
+            text: " Er argumentiert vor einem föderalistischen Hintergrund, Art.\_68 Abs.\_3 BV sei im Kontext der kantonalen Schulhoheit zu lesen. Art. 62 Abs. 2 BV bestimme, dass die Kantone für einen ausreichenden Grundschulunterricht sorgten. Dies gelte auch für den Schulsport. Entsprechend dürfe der Bund mit Blick auf den Schulsport nicht weiter konkretisieren, was als ausreichend zu gelten habe. Die andere Ansicht äussert "
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: Biaggini
+          -
+            type: text
+            text: ', der bei seiner Argumentation das Gewicht auf den Sinn und Zweck des Schulsportobligatoriums legt. Ein Obligatorium mache nur Sinn, wenn es auch verwirklicht werde. Stünde dem Bund nicht auch die Befugnis zu, die Art und den Umfang des Schulsportobligatoriums zu regeln, könnte das Obligatorium mit einer ungenügenden kantonalen Umsetzung ohne Weiteres unterwandert werden. Demnach enthalte Art. 68 Abs. 3 BV eine stillschweigende Bundeskompetenz zur Regelung des qualitativen und quantitativen Mindestumfangs des Schulsports. Die weiteren Lehrmeinungen anerkennen grundsätzlich das föderalistische Argument der kantonalen Schulhoheit, fügen der Debatte jedoch ein verfassungsgebungshistorisches Element hinzu. Seit dem Jahr 1947 wird das Schulsportobligatorium auf Verordnungsstufe ausdrücklich mit drei Wochenstunden dotiert. Weder im Rahmen der Schaffung des Verfassungsartikels im Jahr 1970 noch mit der Totalrevision der Bundesverfassung im Jahr 1999 oder der Neuordnung der Verfassungsbestimmungen zur Bildung im Jahr 2006 wurde der Umfang des Schulsportobligatoriums effektiv infrage gestellt. Das Volk und die Stände hätten sich bei diesen Gelegenheiten jeweils abweichend zur verordnungsrechtlichen Regelung äussern und Art. 68 Abs. 3 BV konkreter fassen können. Da eine solche Konkretisierung des Verfassungsartikels unterblieb, wird mehrheitlich die Ansicht vertreten, dem Bund komme auch die verfassungsrechtliche Befugnis zu, die Ausgestaltung des Schulsportobligatoriums zu regeln. Vor diesem Hintergrund und nach der hier vertretenen Auffassung erweist sich der Regelungsgehalt der Sportförderungsgesetzgebung zum Schulsport(-obligatorium) als verfassungskonform.'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: '25Die Debatte wird – zumindest mit Blick auf den quantitativen Umfang des Schulsportobligatoriums – auch von den Kantonen gelegentlich geführt, da die kantonale Umsetzung des Obligatoriums die Verfügbarkeit einer ausreichenden (Schul-)Sportinfrastruktur voraussetzt und die Reduktion der Anzahl Lektionen an Sportunterricht mit einer Kostenersparnis einherginge. Die diesbezügliche Diskussion war auch bereits Gegenstand '
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: '(bundes-)gerichtlicher Verfahren'
+          -
+            type: text
+            text: '. In diesem Zusammenhang hielt das Bundesgericht zunächst fest, dass die Streichung von Turn- und Sportlektionen grundsätzlich ein zulässiges Anfechtungsobjekt darstelle, da die Reduktion der Lektionen geeignet sei, Rechte und Pflichten der Schülerinnen und Schüler zu berühren. Sodann erwog das Bundesgericht, dass die Umsetzung der bundesrechtlichen Vorgabe von drei Lektionen Sportunterricht im Lichte der Rechtsweggarantie von Art. 29a BV im Grundsatz einer gerichtlichen Kontrolle zugänglich sein müsse. In einem wegweisenden Urteil aus dem Jahr 2017 rügte das Bundesgericht den Kanton Genf, der in der Stundentafel der obligatorischen Schulen für das Schuljahr 2016/2017 weniger als drei Sportlektionen vorsah. Es hielt fest, es sei unbestritten, dass der Kanton Genf drei Lektionen Sportunterricht an den obligatorischen Schulen vorsehen müsse und er dieser bundesrechtlichen Vorgabe nicht nachkomme. Das Bundesgericht gelangte zum Schluss, “il appartient au canton d’introduire une troisième période d’éducation physique hebdomadaire pour tous les niveaux de l’école obligatoire dans les plus brefs délais”.'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: '26 Nicht umstritten ist die Bundeskompetenz zum Sport an den '
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: Berufsfachschulen
+          -
+            type: text
+            text: ', da dem Bund ebenso die Befugnis zukommt, Vorschriften über die Berufsbildung zu erlassen (vgl. Art. 63 Abs. 1 BV). Der Bundesrat legt die Mindestlektionenanzahl und qualitativen Grundsätze für den Sportunterricht an den Berufsfachschulen fest. Der Sportunterricht ist auch an den Berufsfachschulen obligatorisch, wobei sich der Umfang nach der berufsabhängigen Grundbildung richtet. Schliesslich enthält Art. 68 Abs. 3 BV eine implizite Kompetenz, einen Mindeststandard für die '
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: 'Aus- und Weiterbildung von Lehrerinnen und Lehrern'
+          -
+            type: text
+            text: ' zu erlassen, die den obligatorisch erklärten Schulsport unterrichten. Die Begründung dieser Kompetenz folgt der gleichen Logik und den gleichen Überlegungen, die zur Bundeskompetenz, wonach der Bund das Schulsportobligatorium qualitativ und quantitativ konkretisieren darf, bereits erläutert worden sind. Das Sportförderungsgesetz sieht diesbezüglich jedoch bloss vor, dass der Bund in Zusammenarbeit mit den Kantonen die Aus- und Weiterbildung der Lehrerinnen und Lehrer unterstützen kann, die Sportunterricht erteilen.'
+      -
+        type: heading
+        attrs:
+          level: 2
+        content:
+          -
+            type: text
+            text: 'III. Empfohlene weiterführende Lektüre'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Diem Carl, Weltgeschichte des Sports und der Leibeserziehung, Stuttgart\_1960."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Eichenberger Lutz, Die Eidgenössische Sportkommission 1998–2011, Chronik der letzten Jahre, Magglingen\_2012."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Eichenberger Lutz, Die Eidgenössische Sportkommission 1874–1997, Ein Beitrag zur Sportpolitik des Bundes, Magglingen\_1998."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Eichenberger Lutz, Die Eidgenössische Sportschule Magglingen 1944–1994, 50 Jahre im Dienst der Sportförderung, Magglingen\_1994."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Henning Evelyn, Sport und Gemeinnützigkeit, Stuttgart/München 2005.'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Hotz Arturo, Fakten und Facetten zur Sportentwicklung in der Schweiz sowie zur Geschichte der Schweizer Sportpolitik seit 1874, Magglingen\_2004."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Jenny Viktor K., Die öffentliche Sportförderung in der Schweiz, Unter besonderer Berücksichtigung des Bundesgesetzes vom 17. März 1972 über die Förderung von Turnen und Sport, Ahrensburg\_1978."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Kempf Hippolyt/Lichtsteiner Hans, Das System Sport – in der Schweiz und international, 2. Aufl., Magglingen\_2015."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Kennel Georg, Sport-Toto als subsidiärer Sportförderer, in: Bundesamt für Sport BASPO (Hrsg.), Die öffentliche Sportförderung in der Schweiz: Bestätigung oder Handlungsbedarf?, 38. Magglinger Symposium 19.–21. September 1999, Schriftenreihe des BASPO Nr. 76, Magglingen\_1999."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Krogmann Mario, Grundrechte im Sport, Berlin\_1998."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Langer Mathias, Öffentliche Förderung des Sports, Eine ordnungspolitische Analyse, Berlin\_2006."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Thom Volker, Sportförderung und Sportförderungsrecht als Staatsaufgabe, Frankfurt am Main\_1992."
+      -
+        type: heading
+        attrs:
+          level: 2
+        content:
+          -
+            type: text
+            text: "IV. Zum\_Autor"
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Dr. iur. Marco Zollinger, Rechtsanwalt, ist Gerichtsschreiber an der II. öffentlich-rechtlichen Abteilung des Schweizerischen Bundesgerichts in Lausanne. Er hat sich im Rahmen seiner Dissertation eingehend mit den rechtlichen Rahmenbedingungen der staatlichen Sportförderung in der Schweiz befasst. Gegenwärtig publiziert er regelmässig Beiträge im Bereich des Verwaltungs- und Staatsrechts sowie des öffentlichen Verfahrensrechts.'
+      -
+        type: heading
+        attrs:
+          level: 2
+        content:
+          -
+            type: text
+            text: Bibliografie
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Adank Nathalie F., Art. 68 BV, in: Martenet Vincent/Dubey Jacques, Constitution fédérale, Commentaire Romand, Basel\_2021."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Biaggini Giovanni, Zur Tragweite der Sportschul-Klausel, Art. 68 Abs. 3 BV nach der Revision der Bildungsartikel, in: Caroni Martina/Heselhaus Sebastian/Mathis Klaus/Norer Roland (Hrsg.), Auf der Scholle und in lichten Höhen, Festschrift für Paul Richli zum 65. Geburtstag, Zürich/St. Gallen\_2010."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Botschaft zum Sportförderungsgesetz und zum Bundesgesetz über die Informationssysteme des Bundes im Bereich Sport vom 11. November 2009, BBl 2009 S. 8189 ff., abrufbar unter '
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://www.fedlex.admin.ch/eli/fga/2009/1425/de'
+                  rel: 'noreferrer noopener'
+                  target: _blank
+                  title: null
+            text: 'https://www.fedlex.admin.ch/eli/fga/2009/1425/de'
+          -
+            type: text
+            text: ' (besucht am 24. September 2021).'
+          -
+            type: hard_break
+          -
+            type: text
+            text: '(zit.: Botschaft SpoFöG)'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Botschaft über eine neue Bundesverfassung vom 20. November 1996, BBl 1997 I 1 ff., abrufbar unter '
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://www.fedlex.admin.ch/eli/fga/1997/1_1_1_1/de'
+                  rel: 'noreferrer noopener'
+                  target: _blank
+                  title: null
+            text: 'https://www.fedlex.admin.ch/eli/fga/1997/1_1_1_1/de'
+          -
+            type: text
+            text: ' (besucht am 3. Oktober 2021).'
+          -
+            type: hard_break
+          -
+            type: text
+            text: '(zit.: Botschaft BV)'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Botschaft des Bundesrates an die Bundesversammlung über die Förderung von Turnen und Sport vom 1. September 1971, BBl 1971 II 789 ff., abrufbar unter '
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://www.fedlex.admin.ch/eli/fga/1971/2_789_785_509/de'
+                  rel: 'noreferrer noopener'
+                  target: _blank
+                  title: null
+            text: 'https://www.fedlex.'
+          -
+            type: hard_break
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://www.fedlex.admin.ch/eli/fga/1971/2_789_785_509/de'
+                  rel: 'noreferrer noopener'
+                  target: _blank
+                  title: null
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://www.fedlex.admin.ch/eli/fga/1971/2_789_785_509/de'
+                  rel: 'noreferrer noopener'
+                  target: _blank
+                  title: null
+            text: admin.ch/eli/fga/1971/2_789_785_509/de
+          -
+            type: text
+            text: ' (besucht am 3. Oktober 2021).'
+          -
+            type: hard_break
+          -
+            type: text
+            text: '(zit.: Botschaft 1971)'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Botschaft des Bundesrates an die Bundesversammlung über die Ergänzung der Bundesverfassung durch einen Artikel 27'
+          -
+            type: text
+            marks:
+              -
+                type: superscript
+            text: quinquies
+          -
+            type: text
+            text: ' betreffend die Förderung von Turnen und Sport vom 10. September 1969, BBl 1969 II S. 1021 ff., abrufbar unter '
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://www.fedlex.admin.ch/eli/fga/1969/2_1021_1029_401/de'
+                  rel: 'noreferrer noopener'
+                  target: _blank
+                  title: null
+            text: 'https://www.fedlex.'
+          -
+            type: hard_break
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://www.fedlex.admin.ch/eli/fga/1969/2_1021_1029_401/de'
+                  rel: 'noreferrer noopener'
+                  target: _blank
+                  title: null
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://www.fedlex.admin.ch/eli/fga/1969/2_1021_1029_401/de'
+                  rel: 'noreferrer noopener'
+                  target: _blank
+                  title: null
+            text: admin.ch/eli/fga/1969/2_1021_1029_401/de
+          -
+            type: text
+            text: ' (besucht am 24. September 2021).'
+          -
+            type: hard_break
+          -
+            type: text
+            text: '(zit.: Botschaft 1969)'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Bundesamt für Sport (BASPO), Leistungssport Schweiz 2019, Momentaufnahme SPLISS-CH 2019, Juni 2021, abrufbar unter '
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://www.baspo.admin.ch/content/baspo-internet/de/dokumentation/publikationen/studie-leistungssport-schweiz/_jcr_content/contentPar/downloadlist/downloadItems/214_1624864459234.download/Bro_Leistungssport_Schweiz_2019_d.pdf'
+                  rel: 'noreferrer noopener'
+                  target: _blank
+                  title: null
+            text: 'https://www.baspo.admin.ch/content/baspo-internet/de/dokumentation/publikationen/studie-leistungssport-schweiz/_jcr_content/contentPar/downloadlist/downloadItems/214_1624864459234.download/Bro_Leistungssport_Schweiz_2019_d.pdf'
+          -
+            type: text
+            text: " (besucht am 16.\_Oktober 2021)."
+          -
+            type: hard_break
+          -
+            type: text
+            text: '(zit.: SPLISS 2019)'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Bundesamt für Sport (BASPO), Forschungskonzept “Sport und Bewegung” 2021–2024, 2020, abrufbar unter '
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://www.baspo.admin.ch/content/baspo-internet/de/bildung-und-forschung/forschung/forschungskonzept/_jcr_content/contentPar/downloadlist/downloadItems/366_1491221449156.download/Forschungskonzept_Sport_Bewegung_2021-2024_de.pdf'
+                  rel: 'noreferrer noopener'
+                  target: _blank
+                  title: null
+            text: 'https://www.baspo.admin.ch/content/baspo-internet/de/bildung-und-forschung/forschung/forschungskonzept/_jcr_content/contentPar/downloadlist/downloadItems/366_1491221449156.download/Forschungskonzept_Sport_Bewegung_2021-2024_de.pdf'
+          -
+            type: text
+            text: ' (besucht am 10. Oktober 2021).'
+          -
+            type: hard_break
+          -
+            type: text
+            text: '(zit.: Forschungskonzept 2021–2024)'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Bundesamt für Sport (BASPO), Aktionsplan Sportförderung des Bundes vom 26. Oktober 2016, Bericht des Bundesrates in Erfüllung der Motion 13.3369 WBK-NR vom 2. Mai 2013, abrufbar unter '
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://www.baspo.admin.ch/content/baspo-internet/de/aktuell/themen--dossiers-/archivierte-dossiers/aktionsplan-sportfoerderung/_jcr_content/infotabs/items/dokumente/tabPar/downloadlist/downloadItems/168_1506677256455.download/Aktionsplan_Bericht_Bundesrat_de.pdf'
+                  rel: 'noreferrer noopener'
+                  target: _blank
+                  title: null
+            text: 'https://www.baspo.admin.ch/content/baspo-internet/de/aktuell/themen–dossiers-/archivierte-dossiers/aktionsplan-sportfoerderung/_jcr_content/infotabs/items/dokumente/tabPar/downloadlist/downloadItems/168_1506677256455.download/Aktionsplan_Bericht_Bundesrat_de.pdf'
+          -
+            type: text
+            text: ' (besucht am 16. Oktober 2021).'
+          -
+            type: hard_break
+          -
+            type: text
+            text: '(zit.: Aktionsplan)'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Bundesamt für Sport (BASPO), Anhang 1 zum Aktionsplan Sportförderung des Bundes vom 26. Oktober 2016, Breitensportkonzept Bund vom 26. Oktober 2016, abrufbar unter '
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://www.baspo.admin.ch/content/baspo-internet/de/aktuell/themen--dossiers-/archivierte-dossiers/aktionsplan-sportfoerderung/_jcr_content/infotabs/items/dokumente/tabPar/downloadlist/downloadItems/171_1506677336638.download/Breitensportkonzept_de.pdf'
+                  rel: 'noreferrer noopener'
+                  target: _blank
+                  title: null
+            text: 'https://www.baspo.admin.ch/content/baspo-internet/de/aktuell/themen–dossiers-/archivierte-dossiers/aktionsplan-sportfoerderung/_jcr_content/infotabs/items/dokumente/tabPar/downloadlist/downloadItems/171_1506677336638.download/Breitensportkonzept_de.pdf'
+          -
+            type: text
+            text: ' (besucht am 16. Oktober 2021).'
+          -
+            type: hard_break
+          -
+            type: text
+            text: '(zit.: Breitensportkonzept)'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Bundesamt für Sport (BASPO), Anhang 2 zum Aktionsplan Sportförderung des Bundes vom 26. Oktober 2016, Leistungssportkonzept Bund vom 26. Oktober 2016, abrufbar unter '
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://www.baspo.admin.ch/content/baspo-internet/de/aktuell/themen--dossiers-/archivierte-dossiers/aktionsplan-sportfoerderung/_jcr_content/infotabs/items/dokumente/tabPar/downloadlist/downloadItems/170_1506677310138.download/Leistungssportkonzept_de.pdf'
+                  rel: 'noreferrer noopener'
+                  target: _blank
+                  title: null
+            text: 'https://www.baspo.admin.ch/content/baspo-internet/de/aktuell/themen–dossiers-/archivierte-dossiers/aktionsplan-sportfoerderung/_jcr_content/infotabs/items/dokumente/tabPar/downloadlist/downloadItems/170_1506677310138.download/Leistungssportkonzept_de.pdf'
+          -
+            type: text
+            text: ' (besucht am 16. Oktober 2021).'
+          -
+            type: hard_break
+          -
+            type: text
+            text: '(zit.: Leistungssportkonzept)'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Bundesamt für Sport (BASPO), Anhang 3 zum Aktionsplan Sportförderung des Bundes vom 26. Oktober 2016, Immobilienkonzept Sport des Bundes vom 26. Oktober 2016, abrufbar unter '
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://www.baspo.admin.ch/content/baspo-internet/de/aktuell/themen--dossiers-/archivierte-dossiers/aktionsplan-sportfoerderung/_jcr_content/infotabs/items/dokumente/tabPar/downloadlist/downloadItems/169_1506677283970.download/Immobilienkonzept_Sport_de.pdf'
+                  rel: 'noreferrer noopener'
+                  target: _blank
+                  title: null
+            text: 'https://www.baspo.admin.ch/content/baspo-internet/de/aktuell/themen–dossiers-/archivierte-dossiers/aktionsplan-sportfoerderung/_jcr_content/infotabs/items/dokumente/tabPar/downloadlist/downloadItems/169_1506677283970.download/Immobilienkonzept_Sport_de.pdf'
+          -
+            type: text
+            text: ' (besucht am 16. Oktober 2021).'
+          -
+            type: hard_break
+          -
+            type: text
+            text: '(zit.: Immobilienkonzept)'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Bundesamt für Sport (BASPO), Leistungssport Schweiz 2011, Momentaufnahme SPLISS-CH 2011, Mai 2014, abrufbar unter '
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://www.baspo.admin.ch/content/baspo-internet/de/dokumentation/publikationen/studie-leistungssport-schweiz/_jcr_content/contentPar/downloadlist/downloadItems/27_1624356952034.download/der_leistungssport_in_der_schweiz_momentaufnahme_d.pdf'
+                  rel: 'noreferrer noopener'
+                  target: _blank
+                  title: null
+            text: 'https://www.baspo.admin.ch/content/baspo-internet/de/dokumentation/publikationen/studie-leistungssport-schweiz/_jcr_content/contentPar/downloadlist/downloadItems/27_1624356952034.download/der_leistungssport_in_der_schweiz_momentaufnahme_d.pdf'
+          -
+            type: text
+            text: ' (besucht am 16. Oktober 2021).'
+          -
+            type: hard_break
+          -
+            type: text
+            text: '(zit.: SPLISS 2011)'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Bundesrat, Konzept vom 30. November 2000 für eine Sportpolitik in der Schweiz, abrufbar unter '
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://www.sportobs.ch/inhalte/DasObservatorium/Konzept_d.pdf'
+                  rel: 'noreferrer noopener'
+                  target: _blank
+                  title: null
+            text: 'https://www.sportobs.ch/inhalte/DasObservatorium/Konzept_d.pdf'
+          -
+            type: text
+            text: ' (besucht am 3. Oktober 2021).'
+          -
+            type: hard_break
+          -
+            type: text
+            text: '(zit.: Konzept Sportpolitik)'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Diaconu Madalina, Droit économique et sport, Aspects suisse et internationaux, Diss., Neuenburg\_2015."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Ehrenzeller Bernhard, Bewegung in der Schule, Der obligatorische Schulsport im Lichte von Art. 68 BV, in: Caroni Martina/Heselhaus Sebastian/Mathis Klaus/Norer Roland (Hrsg.), Auf der Scholle und in lichten Höhen, Festschrift für Paul Richli zum 65. Geburtstag, Zürich/St. Gallen\_2010."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Eichenberger Lutz, Die Eidgenössische Sportkommission 1874–1997, Ein Beitrag zur Sportpolitik des Bundes, Magglingen\_1998."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Europarat, Recommendation No. R (92) 13 REV of the Committee of Ministers to Member States on the Revised European Sports Charter, adopted by the Committee of Ministers on 24 September 1992 at the 480th meeting of the Ministers’ Deputies and revised at their 752nd meeting on 16 May 2001, abrufbar unter '
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://search.coe.int/cm/Pages/result_details.aspx?ObjectID=09000016804c9dbb'
+                  rel: 'noreferrer noopener'
+                  target: _blank
+                  title: null
+            text: 'https://search.coe.int/cm/Pages/result_details.aspx?ObjectID=09000016804c9dbb'
+          -
+            type: text
+            text: ' (besucht am 3. Oktober 2021).'
+          -
+            type: hard_break
+          -
+            type: text
+            text: '(zit.: European Sports Charter)'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Hafner Yann, Le concept de nationalité sportive, Sources, état des lieux critique et relation avec le droit, Diss., Neuenburg\_2020."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Hänni Peter, Art. 68 BV, in: Waldmann Bernhard/Belser Eva Maria/Epiney Astrid (Hrsg.), Schweizerische Bundesverfassung, Basler Kommentar, Basel\_2015."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Kaiser Martin, Sportrecht – Berücksichtigung der Interessen des Sports in der Rechtsordnung, Bern\_2011."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Koller Heinrich, Subsidiarität als Verfassungsprinzip, in: Der Verfassungsstaat vor neuen Herausforderungen, Festschrift für Yvo Hangartner, St. Gallen/Lachen 1998.'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Koller Thomas, Völkerverständigung und Friedensförderung als “öffentlicher Zweck” von in der Schweiz angesiedelten internationalen Sportverbänden – oder blosse Wahrung der bis anhin führenden Position der Schweiz im “sportlichen” Standortwettbewerb?, npoR 2/2018, S. 61–64.'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Pachmann Thilo, Struktur und Governance des nationalen und internationalen Sportverbandswesens, in: Kleiner Jan/Baddeley Margareta/Arter Oliver (Hrsg.), Sportrecht, Band I, Bern\_2013."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Richli Paul, Staatsaufgaben – Grundlagen, in: Thürer Daniel/Aubert Jean-François/Müller Jörg Paul (Hrsg.), Verfassungsrecht der Schweiz, Zürich 2001.'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Sport-Toto-Gesellschaft, Jahresbericht 2020, abrufbar unter '
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://www.sport-toto.ch/media/jb_2020.pdf'
+                  rel: 'noreferrer noopener'
+                  target: _blank
+                  title: null
+            text: 'https://www.sport-toto.ch/media/jb_2020.pdf'
+          -
+            type: text
+            text: ' (besucht am 23. Januar 2022).'
+          -
+            type: hard_break
+          -
+            type: text
+            text: "(zit.: Sport-Toto, Jahresbericht\_2020)"
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Zen-Ruffinen Piermarco, Art. 68 BV, in: Ehrenzeller Bernhard/Schindler Benjamin/Schweizer Rainer J./Vallender Klaus A. (Hrsg.), Die schweizerische Bundesverfassung, St. Galler Kommentar, 3.\_Aufl., Zürich 2014."
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Zen-Ruffinen Piermarco, Droit du Sport, Zürich/Basel/Genf 2002.'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: "Zollinger Marco, Die rechtlichen Rahmenbedingungen der staatlichen Sportförderung in der Schweiz, Unter besonderer Berücksichtigung des Leistungssports, Diss., Zürich/St. Gallen\_2019."
