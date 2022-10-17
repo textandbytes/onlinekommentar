@@ -96,6 +96,7 @@ return [
 
     'paths' => [
         base_path('content'),
+        base_path('revisions'),
         resource_path('blueprints'),
         resource_path('fieldsets'),
         resource_path('forms'),

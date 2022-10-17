@@ -25,6 +25,6 @@ return [
     |
     */
 
-    'path' => storage_path('statamic/revisions'),
+    'path' => base_path('revisions'),
 
 ];
