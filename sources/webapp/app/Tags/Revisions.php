@@ -4,7 +4,9 @@ namespace App\Tags;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
+use PragmaRX\Yaml\Package\Facade as YamlFacade;
 use Statamic\Tags\Tags;
+use Statamic\Modifiers\CoreModifiers;
 
 class Revisions extends Tags
 {
@@ -20,27 +22,47 @@ class Revisions extends Tags
         $commentaryId = $this->params->get('id');
 
         // extract the timestamps from the list of revision files
-        $pathToRevisions = config('statamic.revisions.path') . '/collections/commentaries/' . $locale . '/' . $commentaryId;
-        $revisionTimestamps = $this->_getFilenamesFromPath($pathToRevisions, false);
+        $commentaryRevisionBasePath = config('statamic.revisions.path') . '/collections/commentaries/' . $locale . '/' . $commentaryId;
+        $revisionTimestamps = $this->_getFilenamesFromPath($commentaryRevisionBasePath, false);
 
-        // convert revision timestamps into human-readable strings
+
+        // return the unix timestamp, human-readable timestamp and content for each revision
         $revisions = [];
+        $currentRevisionHtml = null;
+        $previousRevisionHtml = null;
+        $yaml = YamlFacade::instance();
         foreach ($revisionTimestamps as $timestamp) {
-            $revisions[] = [
-                'unix_timestamp' => $timestamp,
-                'human_readable_timestamp' => Carbon::createFromTimestamp($timestamp)->isoFormat('MM.DD.YYYY hh:mm:ss z')
-            ];
+            // keep track of the previous version of the content
+            $previousRevisionHtml = $currentRevisionHtml;
+
+            // extract the structured data from 'content' field in the revision file
+            $revisionFile = $commentaryRevisionBasePath . '/' . $timestamp . '.yaml';
+            $revision = $yaml->parseFile($revisionFile);
+            $revisionContent = $revision['attributes']['data']['content'];
+
+            // convert the structured data from the 'content' field into HTML
+            $modifiers = new CoreModifiers();
+            $revisionHtml = $modifiers->bardHtml($revisionContent);
+
+            // keep track of the current version of the content
+            $currentRevisionHtml = $revisionHtml;
+
+            // only include revisions whose content field has changed
+            if (strcmp($currentRevisionHtml, $previousRevisionHtml) !== 0) {
+                $revisions[] = [
+                    'unix_timestamp' => $timestamp,
+                    'human_readable_timestamp' => Carbon::createFromTimestamp($timestamp)->isoFormat('MM.DD.YYYY hh:mm:ss z'),
+                    'content' => $currentRevisionHtml
+                ];
+            }
         }
 
-        return $revisions;
+        return array_reverse($revisions);
     }
 
     private function _getFilenamesFromPath($path, $includeFileExtension = true)
     {
         $filenames = collect(File::files($path))
-            ->sortByDesc(function ($file) {
-                return $file->getCTime();
-            })
             ->map(function ($file) use ($includeFileExtension) {
                 return $includeFileExtension ? pathinfo($file)['basename'] : pathinfo($file)['filename'];
             })
