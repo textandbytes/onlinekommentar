@@ -45,3 +45,12 @@ article {
 .tree ul li:last-child {
   @apply mb-2
 }
+
+.tree {
+    details > summary::marker {
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='19' fill='%23000000' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Ccircle cx='128' cy='128' r='96' fill='none' stroke='%23000000' stroke-miterlimit='10' stroke-width='16'%3E%3C/circle%3E%3Cpolyline points='134.1 161.9 168 128 134.1 94.1' fill='none' stroke='%23000000' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'%3E%3C/polyline%3E%3Cline x1='88' y1='128' x2='168' y2='128' fill='none' stroke='%23000000' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'%3E%3C/line%3E%3C/svg%3E");
+    }
+    details[open] > summary::marker {
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='19' fill='%23000000' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Ccircle cx='128' cy='128' r='96' fill='none' stroke='%23000000' stroke-miterlimit='10' stroke-width='16'%3E%3C/circle%3E%3Cpolyline points='94.1 134.1 128 168 161.9 134.1' fill='none' stroke='%23000000' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'%3E%3C/polyline%3E%3Cline x1='128' y1='88' x2='128' y2='168' fill='none' stroke='%23000000' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'%3E%3C/line%3E%3C/svg%3E");
+    }
+}

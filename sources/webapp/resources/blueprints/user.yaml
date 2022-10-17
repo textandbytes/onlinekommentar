@@ -50,7 +50,7 @@ sections:
           collections:
             - legal_domains
       -
-        handle: title
+        handle: professional_title
         field:
           input_type: text
           antlers: false

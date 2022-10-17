@@ -5,8 +5,8 @@
         {{ title }}
       </div>
 
-      <!-- <div class="flex flex-col lg:flex-row space-y-2 lg:space-x-2 lg:space-y-0">
-        <button
+      <div class="flex flex-col lg:flex-row space-y-2 lg:space-x-2 lg:space-y-0">
+        <!-- <button
           type="button"
           :class="viewMode === 'list' ? 'bg-ok-beige' : 'bg-white'"
           class="inline-flex items-center px-3 py-1 border border-ok-dark-gray shadow-sm text-xs uppercase leading-4 font-medium rounded-md text-black bg-white hover:bg-ok-light-beige focus:outline-none focus:ring-1 focus:ring-gray-300 tracking-wider"
@@ -19,33 +19,24 @@
           :class="viewMode === 'grid' ? 'bg-ok-beige' : 'bg-white'"
           class="inline-flex items-center px-3 py-1 border border-ok-dark-gray shadow-sm text-xs uppercase leading-4 font-medium rounded-md text-black bg-white hover:bg-ok-light-beige focus:outline-none focus:ring-1 focus:ring-gray-300 tracking-wider">
           <img class="mr-2" src="/img/grid.svg" alt="{{ $t('grid_view') }}"> {{ $t('grid_view') }}
-        </button>
+        </button> -->
 
         <FlyoutMenuWithDividers
           v-if="legalDomains.length > 0"
           class="lg:min-w-[300px] lg:max-w-[300px] xl:min-w-[450px] xl:max-w-[450px] uppercase tracking-wider"
-          :label="$t('document_filter_label')"
+          :label="$t('legal_domain_filter_label')"
           :options="legalDomains"
           :active-option="activeLegalDomain"
           @changed="onFilter"
         />
-      </div> -->
+      </div>
     </div>
 
     <GridListView
-      :items="users"
+      :items="filteredUsers"
       class="bg-ok-beige sm:gap-x-px sm:gap-y-4">
       <template v-slot:item="user">
-        <UserCard :user="user">
-          <!-- <template v-slot:buttons>
-            <button
-              type="button"
-              class="ok-button"
-              @click="goToUserDetailView(user)">
-              {{ $t('view_user') }}
-            </button>
-          </template> -->
-        </UserCard>
+        <UserCard :user="user" />
       </template>
     </GridListView>
   </div>
@@ -66,11 +57,18 @@
 
   const viewMode = 'grid'
 
+  const filteredUsers = ref(props.users)
+
   const activeLegalDomain = ref(props.legalDomains[0])
 
-  const goToUserDetailView = (user) => {
-    // TODO: implement
-  }
+  const onFilter = (legalDomain) => {
+    // reset the list of filtered users
+    filteredUsers.value = props.users
 
-  const onFilter = (document) => {}
+    if (legalDomain.id) {
+      filteredUsers.value = filteredUsers.value.filter(commentary => {
+        return commentary.legal_domain && (commentary.legal_domain.id === legalDomain.id)
+      })
+    }
+  }
 </script>

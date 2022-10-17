@@ -50,6 +50,21 @@ sections:
           visibility: visible
           always_save: false
       -
+        handle: legal_domain
+        field:
+          max_items: 1
+          mode: select
+          create: false
+          collections:
+            - legal_domains
+          display: 'Legal Domain'
+          type: entries
+          icon: entries
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
         handle: legal_text
         field:
           collapse: false

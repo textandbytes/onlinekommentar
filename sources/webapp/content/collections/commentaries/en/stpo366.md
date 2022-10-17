@@ -10,7 +10,8 @@ assigned_editors:
   - 2f1885fe-7fb1-42ae-a9d3-c0ae99f30740
 original_language: de
 updated_by: 9c1f3a06-0ca1-43f6-8f13-124edfca1d88
-updated_at: 1665491493
+legal_domain: 191d45d8-ed6a-47ab-9fb9-17c0744effda
+updated_at: 1665592615
 content:
   -
     type: heading

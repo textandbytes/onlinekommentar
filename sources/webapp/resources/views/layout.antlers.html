@@ -12,6 +12,7 @@
       <app-header
         current-page="{{ slug }}"
         locale="{{ locale }}"
+        query="{{ get:q }}"
         :locales="[
           {{ locales }}
             '{{ locale:short }}',
@@ -22,7 +23,7 @@
         </template>
       </app-header>
       
-      <main class="px-8 lg:px-32 w-full xl:w-10/12 mx-auto">
+      <main class="px-8 lg:px-16 w-full xl:w-10/12 mx-auto">
         {{ template_content }}
       </main>
     

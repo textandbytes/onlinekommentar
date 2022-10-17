@@ -49,7 +49,8 @@ legal_text:
         type: text
         text: "2\_No person may have more than one domicile at the same time. If a person does not have a domicile anywhere, the habitual residence is the relevant place. The provisions of the Civil Code\_relating to domicile and residence do not\_apply."
 updated_by: 9c1f3a06-0ca1-43f6-8f13-124edfca1d88
-updated_at: 1665490946
+legal_domain: 0e999038-1e85-4b97-b912-4d216f850fdc
+updated_at: 1665592529
 content:
   -
     type: heading

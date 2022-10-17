@@ -5,8 +5,8 @@
         {{ $t('commentaries') }}
       </div>
 
-      <!-- <div class="flex flex-col lg:flex-row space-y-2 lg:space-x-2 lg:space-y-0">
-        <button
+      <div class="flex flex-col lg:flex-row space-y-2 lg:space-x-2 lg:space-y-0">
+        <!-- <button
           type="button"
           :class="viewMode === 'list' ? 'bg-ok-beige' : 'bg-white'"
           class="inline-flex items-center px-3 py-1 border border-ok-dark-gray shadow-sm text-xs uppercase leading-4 font-medium rounded-md text-black bg-white hover:bg-ok-light-beige focus:outline-none focus:ring-1 focus:ring-gray-300 tracking-wider"
@@ -19,17 +19,17 @@
           :class="viewMode === 'grid' ? 'bg-ok-beige' : 'bg-white'"
           class="inline-flex items-center px-3 py-1 border border-ok-dark-gray shadow-sm text-xs uppercase leading-4 font-medium rounded-md text-black bg-white hover:bg-ok-light-beige focus:outline-none focus:ring-1 focus:ring-gray-300 tracking-wider">
           <img class="mr-2" src="/img/grid.svg" alt="{{ $t('grid_view') }}"> {{ $t('grid_view') }}
-        </button>
+        </button> -->
 
         <FlyoutMenuWithDividers
-          v-if="documents.length > 0"
+          v-if="legalDomains.length > 0"
           class="lg:min-w-[300px] lg:max-w-[300px] xl:min-w-[450px] xl:max-w-[450px] rounded-md uppercase tracking-wider"
-          :label="$t('document_filter_label')"
-          :options="documents"
-          :active-option="activeDocument"
+          :label="$t('legal_domain_filter_label')"
+          :options="legalDomains"
+          :active-option="activeLegalDomain"
           @changed="onFilter"
         />
-      </div> -->
+      </div>
     </div>
 
     <!-- <StackedListView
@@ -69,7 +69,7 @@
     </StackedListView> -->
 
     <GridListView
-      :items="commentaries"
+      :items="filteredCommentaries"
       class="bg-gray-800 sm:gap-px">
       <template v-slot:item="commentary">
         <div
@@ -78,8 +78,8 @@
 
           <div class="flex flex-col relative items-center h-full w-full">
             
-            <div class="text-xs uppercase mb-8 tracking-wider">
-              {{ commentary.legal_domain }}
+            <div v-if="commentary.legal_domain" class="text-xs uppercase text-center mb-8 tracking-wider">
+              {{ commentary.legal_domain.label }}
             </div>
             
             <h2 class="text-3xl lg:text-4xl 2xl:text-5xl text-center font-medium font-serif my-4 lg:my-12">
@@ -110,35 +110,36 @@
 </template>
 
 <script setup>
+  import { ref } from 'vue'
   import StackedListView from './Partials/StackedListView'
   import GridListView from './Partials/GridListView'
   import FlyoutMenuWithDividers from '@/components/Menus/FlyoutMenuWithDividers'
 
   const props = defineProps({
     locale: { type: String, required: true },
-    commentaries: { type: Array, required: true }
+    commentaries: { type: Array, required: true },
+    legalDomains: { type: Array, required: true }
   })
 
   const viewMode = 'grid'
 
-  // const commentaries = computed(() => Object.values(props.commentaryGroups).flat())
+  const filteredCommentaries = ref(props.commentaries)
 
-  const documents = [
-    'Bundesverfassung',
-    'Obligationenrecht',
-    'Bundesgesetz über das Internationale Privatrecht',
-    'Lugano-Übereinkommen',
-    'Strafprozessordnung',
-  ]
-
-  const activeDocument = 'Obligationenrecht'
+  const activeLegalDomain = ref(props.legalDomains[0])
 
   const onSelect = (commentary) => {
     window.location.href = '/' + props.locale + '/kommentare/' + commentary.slug
   }
 
-  const onFilter = (document) => {
-    console.log('filter commentaries by document:', document)
+  const onFilter = (legalDomain) => {
+    // reset the list of filtered commentaries
+    filteredCommentaries.value = props.commentaries
+
+    if (legalDomain.id) {
+      filteredCommentaries.value = filteredCommentaries.value.filter(commentary => {
+        return commentary.legal_domain.id === legalDomain.id
+      })
+    }
   }
 </script>
 

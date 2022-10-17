@@ -49,9 +49,17 @@
   "redo": "Ripetere",
   "clear": "Cancella tutto",
 
+  "legal_domain_filter_label": "Decreti",
+  "legal_domain_filter_all": "Tutto",
+  "Civil Procedure": "Diritto processuale civile",
+  "Code of Criminal Procedure": "Codice di procedura penale",
+  "Code of Obligations": "Codice delle obbligazioni",
+  "Federal Constitution": "Costituzione federale",
+  "Federal Law on Private International Law": "Legge federale sul diritto internazionale privato",
+  "Lugano Convention": "Convenzione di Lugano",
+
   "list_view": "Vista elenco",
   "grid_view": "Vista griglia",
-  "document_filter_label": "Decreti",
   "view_user": "Vista",
   "view_commentary": "Vista",
   "back_to_results": "Torna alla panoramica",
@@ -90,5 +98,11 @@
   "and": "e",
 
   "commentary_by": "Un commento da",
-  "edited_by": "Edito da"
+  "edited_by": "Edito da",
+
+  "result_found": "Risultato trovato",
+  "results_found": "Risultati trovati",
+  "no_results_found": "Nessun risultato trovato",
+
+  "open": "Aperto"
 }

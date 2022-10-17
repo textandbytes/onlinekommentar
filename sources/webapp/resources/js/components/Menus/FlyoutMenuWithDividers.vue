@@ -9,7 +9,7 @@
             {{ label }}
           </span>
           <span v-else class="block tracking-wider uppercase">
-            {{ selected }}
+            {{ selected.label }}
           </span>
 
           <ChevronDownIcon
@@ -32,7 +32,7 @@
           <ListboxOption as="template" v-for="option in options" :key="option.id" :value="option" v-slot="{ active, selected }">
             <li :class="[{ 'bg-ok-beige': active }, 'cursor-pointer select-none relative p-2']">
               <span :class="[selected ? 'font-semibold' : 'font-normal', 'block']">
-                {{ option }}
+                {{ option.label }}
               </span>
             </li>
           </ListboxOption>
@@ -52,7 +52,7 @@
   const props = defineProps({
     label: { type: String, required: false, default: null },
     options: { type: Array, required: false, default: [] },
-    activeOption: { type: String, required: false, default: null }
+    activeOption: { type: Object, required: false, default: null }
   })
 
   const selected = ref(props.activeOption ?? props.options[0])
