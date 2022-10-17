@@ -11,6 +11,7 @@ admin:
     - 'view pages entries'
     - 'edit pages entries'
     - 'publish pages entries'
+    - 'reorder pages entries'
     - 'edit other authors pages entries'
     - 'publish other authors pages entries'
     - 'view users'
