@@ -1,6 +1,6 @@
 <template>
 
-  <div class="px-4 overflow-hidden bg-white md:max-w-7xl md:mx-auto md:mb-auto md:px-12 lg:px-24 lg:py-12">
+  <div class="px-4 overflow-hidden bg-white md:max-w-[1225px] md:mx-auto md:mb-auto md:px-12 lg:px-24 xl:px-32 lg:py-12">
     <div class="relative flex items-center justify-between border-b border-black lg:pb-4 md:grid md:grid-cols-3 md:gap-px">
       <FlyoutMenuFullWidth
         :label="$t('table_of_contents')"
@@ -33,7 +33,7 @@
         {{ $t('commentary_on') }}
       </div>
 
-      <div class="font-serif text-3xl lg:text-4xl 2xl:text-5xl">
+      <div class="font-serif text-3xl md:text-4xl xl:text-5xl">
         {{ commentary.title }}
       </div>
 
@@ -130,8 +130,16 @@
       @apply uppercase font-sans tracking-wider text-xl lg:text-2xl mt-12 mb-6
     }
 
+    :deep(h2 strong) {
+      @apply font-medium
+    }
+
     :deep(h3) {
       @apply font-sans tracking-wider text-xl lg:text-2xl mt-12 mb-6
+    }
+
+    :deep(h3 strong) {
+      @apply font-medium
     }
 
     :deep(h4) {
@@ -143,6 +151,10 @@
 
       a {
         @apply underline break-all
+      }
+
+      em {
+        @apply tracking-wide
       }
     }
     :deep(.paragraph-nr) {
