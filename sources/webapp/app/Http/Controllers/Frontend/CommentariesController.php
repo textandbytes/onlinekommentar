@@ -67,7 +67,7 @@ class CommentariesController extends Controller
                 'new_version' => $revision2['creator'] . '&nbsp;&nbsp;' . $revision2['human_readable_timestamp'] . '<br />'
             ],
             // show line numbers in HTML renderers
-            'lineNumbers' => true,
+            'lineNumbers' => false,
             // show a separator between different diff hunks in HTML renderers
             'separateBlock' => true,
             // show the (table) header
