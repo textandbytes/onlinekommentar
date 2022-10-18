@@ -4,7 +4,7 @@
     </div>
     
     <div v-if="isSidebarOpen" class="h-screen overflow-y-auto">
-      <div class="block p-4">
+      <div class="block px-8 py-4">
         <img src="/img/ok-logo-text.svg" alt="Onlinekommentar – der frei zugängliche Rechtskommenter" class="w-48 mt-4" />
       </div>
 
