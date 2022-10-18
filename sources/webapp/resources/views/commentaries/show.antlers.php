@@ -9,7 +9,7 @@
     ->where('locale', app()->getLocale())
     ->where('status', 'published')
     ->where('slug', Request::segment(count(Request::segments()))) // get the last slug from the URL
-    ->get(['content']);
+    ->get();
 
   // generate formatted html markup for the language-specific 'content' field
   $content = $entry[0]['content'];
@@ -31,33 +31,35 @@
 
 <article class="commentary w-full border">
   <commentary
+    locale="{{ locale }}"
     :commentary="{
-      'slug': '{{ slug }}',
-      'title': '{{ title }}',
-      'assigned_editors': [
+      id: '{{ id }}',
+      slug: '{{ slug }}',
+      title: '{{ title }}',
+      assigned_editors: [
         {{ assigned_editors }}
           '{{ name }}',
         {{ /assigned_editors }}
       ],
-      'assigned_authors': [
+      assigned_authors: [
         {{ assigned_authors }}
           '{{ name }}',
         {{ /assigned_authors }}
       ],
-      'legal_text': '{{ legal_text }}',
-      'suggested_citation_long': '{{ suggested_citation_long }}',
-      'suggested_citation_short': '{{ suggested_citation_short }}',
-      'original_language': '{{ original_language ?? 'de' }}',
-      'locale': '{{ locale }}',
-      'pdf_commentary_path': '<?= Storage::url('commentaries/pdf/') ?>',
-      'pdf_commentary_filename': '{{ pdf_commentary:basename }}',
+      legal_text: '{{ legal_text }}',
+      suggested_citation_long: '{{ suggested_citation_long }}',
+      suggested_citation_short: '{{ suggested_citation_short }}',
+      original_language: '{{ original_language ?? 'de' }}',
+      locale: '{{ locale }}',
+      pdf_commentary_path: '<?= Storage::url('commentaries/pdf/') ?>',
+      pdf_commentary_filename: '{{ pdf_commentary:basename }}',
     }"
     :versions="[
       {{ revisions:commentary :id='id' :locale='locale' }}
         {
-          'id': '{{ unix_timestamp }}',
-          'timestamp': '{{ unix_timestamp }}',
-          'label': '{{ human_readable_timestamp }}'
+          id: '{{ unix_timestamp }}',
+          timestamp: '{{ unix_timestamp }}',
+          label: '{{ human_readable_timestamp }}'
         },
       {{ /revisions:commentary }}
     ]">
