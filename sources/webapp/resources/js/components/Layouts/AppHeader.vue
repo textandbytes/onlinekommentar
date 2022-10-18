@@ -4,7 +4,7 @@
       class="flex items-center justify-between px-4 py-4"
       :class="{ 'border-b border-black': currentPage !== 'home' }">
       <a
-        class="z-40 hidden md:flex w-[270px] lg:w-auto"
+        class="z-40 hidden lg:flex w-[270px] lg:w-auto"
         :href="'/' + locale">
         <img
           src="/img/ok-logo-text.svg"
@@ -12,12 +12,21 @@
           :width="currentPage !== 'home' ? 270 : null"
         />
       </a>
-
-      <AppNav
-        :locale="locale"
-        :locales="locales"
-        :query="query">
-      </AppNav>
+      <a
+        class="z-40 flex w-12 md:w-20 lg:hidden lg:w-auto"
+        :href="'/' + locale">
+        <img
+          src="/img/ok-logo.svg"
+          alt="Onlinekommentar – der frei zugängliche Rechtskommenter"
+        />
+      </a>
+      <div>
+        <AppNav
+          :locale="locale"
+          :locales="locales"
+          :query="query">
+        </AppNav>
+      </div>
 
       <AppSidebar>
         <template v-slot:content>
