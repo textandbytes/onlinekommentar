@@ -33,7 +33,8 @@
       font-sans
       ml-1
       pb-[1px]
-      xl:pb-[2px];
+      xl:pb-[2px]
+      2xl:pb-0;
       min-width: 18px;
       height: 18px;
   }
