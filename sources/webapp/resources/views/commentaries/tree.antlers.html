@@ -1,11 +1,11 @@
-<ul class="ml-4 mt-4 tree">
+<ul class="mt-4 ml-4 tree">
     {{ nav:collection:commentaries }}
         {{ if children }}
             <details{{ if is_current || is_parent }} open{{ /if }}>
                 <summary>
                     {{ if content }}
                         <a href="{{ url }}"{{ if is_current || is_parent }} class="on"{{ /if }}>
-                            <span class="label font-medium">{{ title }}</span>
+                            <span class="font-medium label">{{ title }}</span>
                         </a>
                     {{ else }}
                         <span class="cursor-pointer">
@@ -19,17 +19,17 @@
                 </summary>
                 <li>
                     {{ if children }}
-                        <ul class="pl-4">
+                        <ul class="pl-6 mb-4">
                             {{ *recursive children* }}
                         </ul>
                     {{ /if }}
                 </li>
             </details>
         {{ else }}
-            <span class="ml-8 block">
+            <li>
                 {{ if content }}
                     <a href="{{ url }}"{{ if is_current || is_parent }} class="on"{{ /if }}>
-                        <span class="label font-medium">{{ title }}</span>
+                        <span class="font-medium label">{{ title }}</span>
                     </a>
                 {{ else }}
                     <span class="cursor-pointer">
@@ -40,7 +40,7 @@
                         {{ /if }}
                     </span>
                 {{ /if }}
-            </span>
+                </li>
         {{ /if }}
     {{ /nav:collection:commentaries }}
 </ul>
