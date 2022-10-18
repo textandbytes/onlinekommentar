@@ -1,8 +1,8 @@
 <template>
   <Transition>
-    <div v-show="showMenu" class="absolute top-0 left-0 w-screen h-screen bg-ok-yellow z-10">
-      <nav class="flex h-screen justify-center md:justify-end items-center text-right mr-4 lg:mr-32 text-3xl">
-        <ul class="flex flex-col list-style-none space-y-5">
+    <div v-show="showMenu" class="absolute top-0 left-0 z-10 w-screen h-screen bg-ok-yellow">
+      <nav class="flex items-center justify-center h-screen mr-4 text-3xl text-right md:justify-end lg:mr-32">
+        <ul class="flex flex-col space-y-5 list-style-none">
           <NavLink
             :href="'/' + locale + '/kommentare'"
             :active="false"
@@ -43,10 +43,10 @@
   </Transition>
 
   <nav>
-    <ul class="flex items-center space-x-6">
+    <ul class="flex items-center space-x-0 sm:space-x-2 md:space-x-6">
       <li id="nav-search" class="cursor-pointer">
         <form class="flex" :action="'/' + locale + '/search'">
-          <input ref="searchInput" v-show="searchBox" name="q" :value="query || ''" type="search" :placeholder="$t('nav_search_box_placeholder')" class="w-48 md:w-64 xl:w-96 bg-white border-b-2 border-t-0 border-l-0 border-r-0 border-black focus:border-b-2 focus:border-black focus:ring-0 placeholder:text-xs md:placeholder:text-base xl:placeholder:text-lg">
+          <input ref="searchInput" v-show="searchBox" name="q" :value="query || ''" type="search" :placeholder="$t('nav_search_box_placeholder')" class="bg-white border-t-0 border-b-2 border-l-0 border-r-0 border-black w-36 md:w-64 xl:w-96 focus:border-b-2 focus:border-black focus:ring-0 placeholder:text-xs md:placeholder:text-base xl:placeholder:text-lg">
 
           <span @click="toggleSearchBox" :class="{ 'bg-white border-b-2 border-black' : searchBox }">
             <svg id="Search" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 45 45">
@@ -68,9 +68,9 @@
       />
 
       <li id="nav-menu" @click="toggleMenu" class="z-50">
-        <button type="button" class="w-32 uppercase rounded-full border border-black text-xs font-medium tracking-wider py-3 text-center inline-flex items-center justify-center mr-2 mb-2">
+        <button type="button" class="inline-flex items-center justify-center w-20 py-1 mb-2 mr-2 text-xs font-medium tracking-wider text-center uppercase border border-black rounded-full md:w-28 md:py-2 lg:py-3 lg:w-32">
           {{ $t('menu') }}
-          <svg v-show="showMenu" class="ml-2" xmlns="http://www.w3.org/2000/svg" width="14.707" height="14.707" viewBox="0 0 14.707 14.707">
+          <svg v-show="showMenu" class="w-2 h-2 ml-2 lg:w-4 lg:h-4" xmlns="http://www.w3.org/2000/svg" width="14.707" height="14.707" viewBox="0 0 14.707 14.707">
             <g id="X" transform="translate(-1792.387 -75.877)">
               <g id="Gruppe_17" data-name="Gruppe 17" transform="translate(1792.741 90.231) rotate(-45)">
                 <line id="Linie_2" data-name="Linie 2" x2="19.799" fill="none" stroke="#000" stroke-width="1"/>

@@ -1,28 +1,28 @@
 <template>
-  <div class="relative group transition ease-in-out delay-150 bg-white p-8 cursor-pointer">
-    <div v-if="user.legal_domain" class="text-xs uppercase mb-4 text-center">
+  <div class="relative p-8 transition ease-in-out delay-150 bg-white cursor-pointer group">
+    <div v-if="user.legal_domain" class="mb-4 text-xs tracking-widest text-center uppercase">
       {{ user.legal_domain.label }}
     </div>
 
     <div class="flex flex-col items-center justify-between space-y-6">
-      <img v-if="user.avatar" :src="user.avatar" class="w-24 h-24 rounded-full grayscale" />
-      <span v-else class="w-24 h-24 rounded-full bg-gray-200"></span>
+      <img v-if="user.avatar" :src="user.avatar" class="rounded-full w-28 h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36 grayscale" />
+      <span v-else class="bg-gray-200 rounded-full w-28 h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36"></span>
 
-      <h2 class="text-5xl text-center font-medium font-regular leading-normal" style="word-spacing: 999px">
+      <h2 class="font-serif text-3xl font-medium !leading-snug text-center lg:text-4xl 2xl:text-5xl" style="word-spacing: 999px">
         {{ user.name }}
       </h2>
 
-      <div class="text-xs text-center">
+      <div class="text-sm text-center lg:text-base">
         {{ user.title }}
       </div>
     </div>
 
     <div
-      class="w-full text-sm mt-8 mb-4 py-2 border-y border-black min-h-[60px]">
+      class="w-full text-sm lg:text-base mt-8 mb-4 py-2 border-y border-black min-h-[60px]">
       {{ user.occupation ?? '' }}
     </div>
 
-    <div class="w-full flex items-center justify-between">
+    <div class="flex items-center justify-between w-full">
       <div class="mt-4 space-x-2">
         <a
           v-if="user.linkedin_url"

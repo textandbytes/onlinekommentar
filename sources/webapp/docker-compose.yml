@@ -8,8 +8,8 @@ services:
     ports:
       - 8001:80
     volumes:
-      - ./:/var/www/html
-      - ./storage/app/public:/var/www/html/public/storage
+      - ../../:/var/www/html
+      - ./storage/app/public:/var/www/html/sources/webapp/public/storage
     depends_on:
       - php
 
@@ -18,40 +18,40 @@ services:
       context: ../../provisioning/local
       dockerfile: php.dockerfile
     volumes:
-      - ./:/var/www/html
+      - ../../:/var/www/html
 
   composer:
     build:
       context: ../../provisioning/local
       dockerfile: composer.dockerfile
     volumes:
-      - ./:/var/www/html
-    working_dir: /var/www/html
+      - ../../:/var/www/html
+    working_dir: /var/www/html/sources/webapp
 
   npm:
     image: node:current-alpine
     volumes:
-      - ./:/var/www/html
+      - ../../:/var/www/html
     entrypoint: ["npm"]
-    working_dir: /var/www/html
+    working_dir: /var/www/html/sources/webapp
 
   artisan:
     build:
       context: ../../provisioning/local
       dockerfile: php.dockerfile
     volumes:
-      - ./:/var/www/html
-    working_dir: /var/www/html
-    entrypoint: ["php", "/var/www/html/artisan"]
+      - ../../:/var/www/html
+    working_dir: /var/www/html/sources/webapp
+    entrypoint: ["php", "/var/www/html/sources/webapp/artisan"]
 
   please:
     build:
       context: ../../provisioning/local
       dockerfile: php.dockerfile
     volumes:
-      - ./:/var/www/html
-    working_dir: /var/www/html
-    entrypoint: ["php", "/var/www/html/please"]
+      - ../../:/var/www/html
+    working_dir: /var/www/html/sources/webapp
+    entrypoint: ["php", "/var/www/html/sources/webapp/please"]
 
   mailhog:
     image: 'mailhog/mailhog:latest'

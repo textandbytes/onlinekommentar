@@ -1,15 +1,15 @@
 <template>
   <div class="flex flex-col">
-    <div class="lg:flex lg:items-center lg:justify-between space-y-2 lg:space-y-0 px-4 py-2 md:px-6 border-b border-black bg-white">
-      <div class="text-xs uppercase font-medium tracking-wider">
+    <div class="px-4 py-2 space-y-2 bg-white border-b border-black lg:flex lg:items-center lg:justify-between lg:space-y-0 md:px-6">
+      <div class="text-xs font-medium tracking-wider uppercase">
         {{ $t('commentaries') }}
       </div>
 
-      <div class="flex flex-col lg:flex-row space-y-2 lg:space-x-2 lg:space-y-0">
+      <div class="flex flex-col space-y-2 lg:flex-row lg:space-x-2 lg:space-y-0">
         <!-- <button
           type="button"
           :class="viewMode === 'list' ? 'bg-ok-beige' : 'bg-white'"
-          class="inline-flex items-center px-3 py-1 border border-ok-dark-gray shadow-sm text-xs uppercase leading-4 font-medium rounded-md text-black bg-white hover:bg-ok-light-beige focus:outline-none focus:ring-1 focus:ring-gray-300 tracking-wider"
+          class="inline-flex items-center px-3 py-1 text-xs font-medium leading-4 tracking-wider text-black uppercase bg-white border rounded-md shadow-sm border-ok-dark-gray hover:bg-ok-light-beige focus:outline-none focus:ring-1 focus:ring-gray-300"
           @click="">
           <img class="mr-2" src="/img/list.svg" alt="{{ $t('list_view') }}"> {{ $t('list_view') }}
         </button>
@@ -17,7 +17,7 @@
         <button
           type="button"
           :class="viewMode === 'grid' ? 'bg-ok-beige' : 'bg-white'"
-          class="inline-flex items-center px-3 py-1 border border-ok-dark-gray shadow-sm text-xs uppercase leading-4 font-medium rounded-md text-black bg-white hover:bg-ok-light-beige focus:outline-none focus:ring-1 focus:ring-gray-300 tracking-wider">
+          class="inline-flex items-center px-3 py-1 text-xs font-medium leading-4 tracking-wider text-black uppercase bg-white border rounded-md shadow-sm border-ok-dark-gray hover:bg-ok-light-beige focus:outline-none focus:ring-1 focus:ring-gray-300">
           <img class="mr-2" src="/img/grid.svg" alt="{{ $t('grid_view') }}"> {{ $t('grid_view') }}
         </button> -->
 
@@ -36,28 +36,28 @@
       v-if="viewMode === 'list'"
       directory="commentaryGroups">
       <template v-slot:item="commentary">
-        <td class="flex flex-col whitespace-nowrap py-3 text-gray-800">
-          <div class="text-lg font-semibold font-serif">
+        <td class="flex flex-col py-3 text-gray-800 whitespace-nowrap">
+          <div class="font-serif text-lg font-semibold">
             {{ commentary.label }}
           </div>
-          <div class="whitespace-normal text-sm text-gray-500 md:hidden">
+          <div class="text-sm text-gray-500 whitespace-normal md:hidden">
             Ein kommentar von <i>Marco Zollinger</i>
           </div>
-          <div class="whitespace-normal text-sm text-gray-500 md:hidden">
+          <div class="text-sm text-gray-500 whitespace-normal md:hidden">
             15.05.2021
           </div>
         </td>
-        <td class="py-3 hidden md:flex">
-          <div class="whitespace-normal text-sm text-gray-500">
+        <td class="hidden py-3 md:flex">
+          <div class="text-sm text-gray-500 whitespace-normal">
             Ein kommentar von <i>Marco Zollinger</i>
           </div>
         </td>
-        <td class="py-3 hidden md:flex">
-          <div class="whitespace-normal text-sm text-gray-500">
+        <td class="hidden py-3 md:flex">
+          <div class="text-sm text-gray-500 whitespace-normal">
             15.05.2021
           </div>
         </td>
-        <td class="relative whitespace-nowrap py-3 pl-3 text-right text-sm font-medium">
+        <td class="relative py-3 pl-3 text-sm font-medium text-right whitespace-nowrap">
           <button
             type="button"
             class="transition ease-in-out delay-150 inline-flex items-center px-3 py-1.5 border border-2 border-black text-xs font-medium uppercase rounded-full text-black bg-white group-hover:bg-black group-hover:text-white"
@@ -76,17 +76,17 @@
           class="h-[310px] md:h-[340px] xl:h-[500px] relative group transition ease-in-out delay-150 bg-white hover:bg-ok-orange p-4 md:p-8 cursor-pointer"
           @click="onSelect(commentary)">
 
-          <div class="flex flex-col relative items-center h-full w-full">
+          <div class="relative flex flex-col items-center w-full h-full">
             
-            <div v-if="commentary.legal_domain" class="text-xs uppercase text-center mb-8 tracking-wider">
+            <div v-if="commentary.legal_domain" class="mb-8 text-xs tracking-wider text-center uppercase">
               {{ commentary.legal_domain.label }}
             </div>
             
-            <h2 class="text-3xl lg:text-4xl 2xl:text-5xl text-center font-medium font-serif my-4 lg:my-12">
+            <h2 class="my-4 font-serif text-3xl font-medium text-center lg:text-4xl 2xl:text-5xl lg:my-12">
               {{ commentary.title }}
             </h2>
 
-            <div class="text-sm text-center">
+            <div class="text-sm text-center lg:text-base">
               <p v-if="commentary.assigned_authors.length > 0 && commentary.assigned_authors[0] !== ''">
                 {{ $t('commentary_by') }} <i>{{ commentary.assigned_authors.join(' ' + $t('and') + ' ') }}</i>
               </p>
@@ -95,10 +95,10 @@
               </p>
             </div>
 
-            <div class="absolute flex bottom-0 w-full">
+            <div class="absolute bottom-0 flex w-full">
               <button
                 type="button"
-                class="ok-button mx-auto pb-10">
+                class="pb-10 mx-auto ok-button">
                 {{ $t('view_commentary') }}
               </button>
             </div>

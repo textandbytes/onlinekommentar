@@ -3,7 +3,7 @@ FROM nginx:stable-alpine
 ENV NGINXUSER=laravel
 ENV NGINXGROUP=laravel
 
-RUN mkdir -p /var/www/html/public
+RUN mkdir -p /var/www/html/sources/webapp/public
 
 ADD nginx/default.conf /etc/nginx/conf.d/default.conf
 

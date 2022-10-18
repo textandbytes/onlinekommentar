@@ -1,20 +1,20 @@
 <template>
   <Popover v-slot="{ open }">
     <PopoverButton :class="[open ? 'text-gray-900' : 'text-gray-800', 'group inline-flex items-center bg-white text-base font-medium hover:text-gray-900 focus:outline-none']">
-      <span class="text-xs uppercase">
+      <span class="text-xs tracking-widest uppercase">
         {{ label }}
       </span>
 
       <ChevronDownIcon
-        class="h-5 w-5 text-gray-800 ml-1"
+        class="w-5 h-5 ml-1 text-gray-800"
         :class="[open ? 'rotate-180' : 'rotate-0']"
         aria-hidden="true"
       />
     </PopoverButton>
 
-    <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1" enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150" leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-1">
+    <transition enter-active-class="transition duration-200 ease-out" enter-from-class="translate-y-1 opacity-0" enter-to-class="translate-y-0 opacity-100" leave-active-class="transition duration-150 ease-in" leave-from-class="translate-y-0 opacity-100" leave-to-class="translate-y-1 opacity-0">
       <PopoverPanel class="absolute inset-x-0 z-10 bg-white shadow-md" :class="menuClasses">
-        <div class="overflow-hidden drop-shadow-2xl ring-1 ring-black ring-opacity-5 p-4">
+        <div class="p-4 overflow-hidden drop-shadow-2xl ring-1 ring-black ring-opacity-5">
           <slot />
         </div>
       </PopoverPanel>

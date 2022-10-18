@@ -24,3 +24,4 @@ sources/webapp/.env.backup
 sources/webapp/.phpunit.result.cache
 /.vagrant
 /.vscode
+.DS_Store

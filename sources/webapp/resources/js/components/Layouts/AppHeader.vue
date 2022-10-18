@@ -1,23 +1,32 @@
 <template>
-  <header class="px-8 lg:px-16 2xl:px-32 w-full xl:w-10/12 mx-auto">
+  <header class="w-full pl-5 pr-4 mx-auto md:pl-12 md:pr-4 lg:px-8 xl:w-10/12">
     <div
-      class="flex items-start justify-between pt-8 pb-4 px-4"
+      class="flex items-center justify-between px-4 py-4"
       :class="{ 'border-b border-black': currentPage !== 'home' }">
       <a
-        class="hidden md:flex z-40"
+        class="z-40 hidden lg:flex w-[270px] lg:w-auto"
         :href="'/' + locale">
         <img
           src="/img/ok-logo-text.svg"
           alt="Onlinekommentar – der frei zugängliche Rechtskommenter"
-          :width="currentPage !== 'home' ? 200 : null"
+          :width="currentPage !== 'home' ? 270 : null"
         />
       </a>
-
-      <AppNav
-        :locale="locale"
-        :locales="locales"
-        :query="query">
-      </AppNav>
+      <a
+        class="z-40 flex w-12 md:w-20 lg:hidden lg:w-auto"
+        :href="'/' + locale">
+        <img
+          src="/img/ok-logo.svg"
+          alt="Onlinekommentar – der frei zugängliche Rechtskommenter"
+        />
+      </a>
+      <div>
+        <AppNav
+          :locale="locale"
+          :locales="locales"
+          :query="query">
+        </AppNav>
+      </div>
 
       <AppSidebar>
         <template v-slot:content>

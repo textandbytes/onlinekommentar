@@ -1,23 +1,46 @@
-<ul class="ml-4 mt-4 tree">
+<ul class="mt-4 ml-4 tree">
     {{ nav:collection:commentaries }}
-        <li>
-            {{ if content }}
-                <a href="{{ url }}"{{ if is_current || is_parent }} class="on"{{ /if }}>
-                    <span class="label font-medium">{{ title }}</span>
-                </a>
-            {{ else }}
-                {{ if depth == 1 }}
-                    {{ title | upper }}
+        {{ if children }}
+            <details{{ if is_current || is_parent }} open{{ /if }}>
+                <summary>
+                    {{ if content }}
+                        <a href="{{ url }}"{{ if is_current || is_parent }} class="on"{{ /if }}>
+                            <span class="font-medium label">{{ title }}</span>
+                        </a>
+                    {{ else }}
+                        <span class="cursor-pointer">
+                            {{ if depth == 1 }}
+                                {{ title | upper }}
+                            {{ else }}
+                                {{ title }}
+                            {{ /if }}
+                        </span>
+                    {{ /if }}
+                </summary>
+                <li>
+                    {{ if children }}
+                        <ul class="pl-6 mb-4">
+                            {{ *recursive children* }}
+                        </ul>
+                    {{ /if }}
+                </li>
+            </details>
+        {{ else }}
+            <li>
+                {{ if content }}
+                    <a href="{{ url }}"{{ if is_current || is_parent }} class="on"{{ /if }}>
+                        <span class="font-medium label">{{ title }}</span>
+                    </a>
                 {{ else }}
-                    {{ title }}
+                    <span class="cursor-pointer">
+                        {{ if depth == 1 }}
+                            {{ title | upper }}
+                        {{ else }}
+                            {{ title }}
+                        {{ /if }}
+                    </span>
                 {{ /if }}
-            {{ /if }}
-
-            {{ if children }}
-                <ul class="pl-4">
-                    {{ *recursive children* }}
-                </ul>
-            {{ /if }}
-        </li>
+                </li>
+        {{ /if }}
     {{ /nav:collection:commentaries }}
 </ul>
