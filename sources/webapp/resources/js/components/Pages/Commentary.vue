@@ -1,17 +1,17 @@
 <template>
 
-  <div class="md:max-w-6xl md:mx-auto md:mb-auto bg-white overflow-hidden px-4 md:px-24 md:py-12">
-    <div class="relative flex justify-between items-center md:grid md:grid-cols-3 md:gap-px border-b border-black">
+  <div class="px-4 overflow-hidden bg-white md:max-w-7xl md:mx-auto md:mb-auto md:px-12 lg:px-24 lg:py-12">
+    <div class="relative flex items-center justify-between border-b border-black lg:pb-4 md:grid md:grid-cols-3 md:gap-px">
       <FlyoutMenuFullWidth
         :label="$t('table_of_contents')"
         class="flex items-center py-2 md:py-4"
         menu-classes="top-16">
-        <div class="toc p-4">
+        <div class="p-4 toc">
           <slot name="table-of-contents" />
         </div>
       </FlyoutMenuFullWidth>
 
-      <div class="md:flex items-center justify-center text-2xl font-serif hidden">
+      <div class="items-center justify-center hidden font-serif text-2xl md:flex">
         {{ commentary.title }}
       </div>
 
@@ -21,23 +21,23 @@
         class="flex items-center justify-end py-2 md:py-4"
         menu-classes="top-16">
       </FlyoutMenuFullWidth>
-      <div v-else class=" py-2 md:py-4">&nbsp;</div>
+      <div v-else class="py-2 md:py-4">&nbsp;</div>
     </div>
 
-    <div class="flex flex-col items-center my-8 md:my-12 space-y-6">
-      <div v-if="commentary.original_language !== commentary.locale" class="bg-ok-red text-white text-sm p-4 font-medium">
+    <div class="flex flex-col items-center my-8 space-y-6 md:my-12">
+      <div v-if="commentary.original_language !== commentary.locale" class="p-4 text-sm font-medium text-white bg-ok-red">
         {{ $t("ATTENTION: This version of the commentary is an automatic machine translation of the original. The original version is in :original_language. The translation was done with www.deepl.com. Only the original version is authoritative. The translated form of the commentary cannot be cited.", { original_language: $t(commentary.original_language) }) }}
       </div>
       
-      <div class="text-xs font-sans uppercase">
+      <div class="font-sans text-xs tracking-widest uppercase">
         {{ $t('commentary_on') }}
       </div>
 
-      <div class="text-2xl md:text-6xl font-serif">
+      <div class="font-serif text-3xl lg:text-4xl 2xl:text-5xl">
         {{ commentary.title }}
       </div>
 
-      <div class="text-center">
+      <div class="text-center lg:text-xl">
         <p v-if="commentary.assigned_authors.length > 0 && commentary.assigned_authors[0] !== ''">
           {{ $t('commentary_by') }} <i>{{ commentary.assigned_authors.join(' ' + $t('and') + ' ') }}</i>
         </p>
@@ -55,23 +55,23 @@
       </FlyoutMenuFullWidth>
     </div>
 
-    <div v-if="localizedLegalText != ''" class="flex flex-col p-4 md:p-8 bg-ok-orange space-y-4 md:space-y-6">
+    <div v-if="localizedLegalText != ''" class="flex flex-col p-4 space-y-4 md:p-8 bg-ok-orange md:space-y-6">
       <div class="flex justify-end">
         <span @click="setLegalTextLocale('de')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'de' }">de</span>
         <span @click="setLegalTextLocale('en')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'en' }">en</span>
         <span @click="setLegalTextLocale('fr')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'fr' }">fr</span>
         <span @click="setLegalTextLocale('it')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'it' }">it</span>
       </div>
-      <div v-html="localizedLegalText" class="space-y-4 md:space-y-6 font-serif">
+      <div v-html="localizedLegalText" class="space-y-4 font-serif lg:text-xl md:space-y-6">
       </div>
     </div>
 
-    <div class="content my-8">
+    <div class="my-8 content">
       <slot name="content" />
     </div>
 
     <template v-if="commentary.pdf_commentary_filename !== ''">
-      <h2 class="uppercase font-sans tracking-wider text-xl mt-12 mb-4">
+      <h2 class="mt-12 mb-4 font-sans text-xl tracking-wider uppercase">
         Download PDF
       </h2>
       <p>
@@ -83,7 +83,7 @@
       </p>
     </template>
     
-    <h2 class="uppercase font-sans tracking-wider text-xl mt-12 mb-4">
+    <h2 class="mt-12 mb-4 font-sans text-xl tracking-wider uppercase">
       {{ $t('creative_commons_license') }}
     </h2>
     <p>
@@ -127,11 +127,11 @@
 <style lang="postcss" scoped>
   .content {
     :deep(h2) {
-      @apply uppercase font-sans tracking-wider text-xl mt-12 mb-6
+      @apply uppercase font-sans tracking-wider text-xl lg:text-2xl mt-12 mb-6
     }
 
     :deep(h3) {
-      @apply font-sans tracking-wider text-xl mt-12 mb-6
+      @apply font-sans tracking-wider text-xl lg:text-2xl mt-12 mb-6
     }
 
     :deep(h4) {
@@ -139,7 +139,7 @@
     }
 
     :deep(p) {
-      @apply relative font-serif mb-6;
+      @apply lg:text-xl !leading-[1.5em] relative font-serif mb-6;
 
       a {
         @apply underline break-all
