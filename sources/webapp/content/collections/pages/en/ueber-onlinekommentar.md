@@ -1,9 +1,0 @@
----
-id: 6f244303-f1e8-4821-8cac-0ad04902c4c7
-blueprint: page
-title: About
-updated_by: c10c1599-a925-4e29-b45f-a4f9934c1ca7
-updated_at: 1664563968
-template: pages/show
----
-<p>The concept of Onlinekommentar can be summarized in one sentence as follows: With Onlinekommentar, a non-profit sponsorship provides a web platform on which high-quality and verified commentaries on Swiss law can be made available to anyone, free of charge. Onlinekommentar thus makes it possible to publish various commentaries on Swiss enactments in a single place. With Onlinekommentar Association, a stable and permanent sponsorship for Onlinekommentar is ensured.</p><p>Onlinekommentar aims to make legal expertise freely available (open access). In other words, this means that Onlinekommentar will forever remain freely accessible and free of charge and, in particular, that no pay-wall will be set up. In the statutes of the association it is explicitly stated that the association does not pursue commercial purposes and does not strive for profit (No. 2 of the statutes). As an open-access commentary, Onlinekommentar reduces access barriers. It provides free, easy, convenient and low-threshold access to the texts, also for people outside the “legal community”.</p><p>Free-access commentaries promote the exchange of knowledge and offer the commentator a higher visibility of his work result. Onlinekommentar project is also intended to be a contribution to a more inclusive, diverse, qualitative, modern, up-to-date, interactive, and less hierarchical legal scholarship and practice. More benefits of Online Commentary can be found here.</p><p>The concept of Online Commentary was outlined by its founder in a recent article on the Constitution Blog.</p>
