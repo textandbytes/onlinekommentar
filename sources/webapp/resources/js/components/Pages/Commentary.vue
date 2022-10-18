@@ -104,16 +104,28 @@
     :label="$t('is_loading')"
   />
 
-  <ModalWithDismiss />
+  <ModalDialog>
+    <template v-slot:title>
+      {{ $t('compare_versions') }}
+    </template>
+    <template v-slot:body>
+      <RevisionComparisonPanel
+        v-if="versionComparisonData"
+        :content="versionComparisonData"
+        @close="emitter.emit('close-modal-dialog')"
+      />
+    </template>
+  </ModalDialog>
 </template>
 
 <script setup>
   import { ref, useSlots } from 'vue'
   import FlyoutMenuFullWidth from '@/components/Menus/FlyoutMenuFullWidth'
-  import VersionsPanel from '@/components/Pages/Partials/VersionsPanel'
-  import SuggestedCitationsPanel from '@/components/Pages/Partials/SuggestedCitationsPanel'
+  import ModalDialog from '@/components/Modals/ModalDialog'
   import Loading from '@/components/Indicators/Loading'
-  import ModalWithDismiss from '@/components/Modals/ModalWithDismiss'
+  import VersionsPanel from '@/components/Pages/Partials/VersionsPanel'
+  import RevisionComparisonPanel from '@/components/Pages/Partials/RevisionComparisonPanel'
+  import SuggestedCitationsPanel from '@/components/Pages/Partials/SuggestedCitationsPanel'
   import axios from 'axios'
   import useEmitter from '@/composables/useEmitter'
 
@@ -132,6 +144,7 @@
   let localizedLegalText = ref(props.commentary.legal_text)
 
   const activeVersion = ref(props.versions[0])
+  const versionComparisonData = ref(null)
 
   const isLoading = ref(false)
 
@@ -156,22 +169,20 @@
   }
 
   const compareVersions = (versions) => {
+    versionComparisonData.value = null
     isLoading.value = true
 
     // compare the two selected revisions and display results in a modal dialog
     axios.get('/' + props.locale + '/commentaries/' + props.commentary.id + '/revisions/' + versions[0].timestamp + '/compare/' + versions[1].timestamp)
       .then(response => {
         isLoading.value = false
-
-        emitter.emit('open-modal', {
-          title: 'Revision Comparison' ,
-          message: response.data,
-          confirmLabel: null,
-          cancelLabel: null
-        })
+        versionComparisonData.value = response.data
+        emitter.emit('open-modal-dialog')
       })
       .catch(error => {
         isLoading.value = false
+        versionComparisonData.value = null
+        emitter.emit('close-modal-dialog')
       })
   }
 </script>

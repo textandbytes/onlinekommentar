@@ -9,7 +9,7 @@
         :disabled="selectedVersions.length !== 2"
         class="font-medium text-xs uppercase"
         @click="$emit('on-compare', selectedVersions)">
-        {{ $t('compare_versions') }}
+        {{ $t('compare') }}
       </button>
     </div>
 

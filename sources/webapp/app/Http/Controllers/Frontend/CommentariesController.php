@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use PragmaRX\Yaml\Package\Facade as YamlFacade;
@@ -18,27 +19,28 @@ class CommentariesController extends Controller
 
         // get the html version of the 'content' field for each revision
         $commentaryRevisionBasePath = config('statamic.revisions.path') . '/collections/commentaries/' . $locale . '/' . $commentaryId;
-        $revisionContent1 = $this->_getHtmlContentFromRevisionFile($commentaryRevisionBasePath . '/' . $revisionTimestamp1 . '.yaml');
-        $revisionContent2 = $this->_getHtmlContentFromRevisionFile($commentaryRevisionBasePath . '/' . $revisionTimestamp2 . '.yaml');
+        $revision1 = $this->_getDataFromRevisionFile($commentaryRevisionBasePath . '/' . $revisionTimestamp1 . '.yaml');
+        $revision2 = $this->_getDataFromRevisionFile($commentaryRevisionBasePath . '/' . $revisionTimestamp2 . '.yaml');
 
         // compare the revisions
-        $comparisonResult = $this->_compareRevisions($revisionContent1, $revisionContent2);
+        $comparisonResult = $this->_compareRevisions($revision1, $revision2);
 
         return response()->json($comparisonResult);
     }
 
-    private function _getHtmlContentFromRevisionFile($revisionFile)
+    private function _getDataFromRevisionFile($revisionFile)
     {
-        // extract the structured data from 'content' field in the revision file
+        // open and parse the revision yaml file
         $yaml = YamlFacade::instance();
         $revision = $yaml->parseFile($revisionFile);
-        $revisionContent = $revision['attributes']['data']['content'];
 
-        // convert the structured data from the 'content' field into HTML
+        // convert the structured data from the 'content' field into html
         $modifiers = new CoreModifiers();
-        $revisionHtmlContent = $modifiers->bardHtml($revisionContent);
+        $revisionHtmlContent = $modifiers->bardHtml($revision['attributes']['data']['content']);
 
-        return $revisionHtmlContent;
+        return [
+            'content' => $revisionHtmlContent
+        ];
     }
 
     private function _compareRevisions($revision1, $revision2)
@@ -99,7 +101,7 @@ class CommentariesController extends Controller
         ];
 
         // use the JSON result to render in HTML
-        $jsonResult = DiffHelper::calculate($revision1, $revision2, 'Json');  // may store the JSON result in your database
+        $jsonResult = DiffHelper::calculate($revision1['content'], $revision2['content'], 'Json');  // may store the JSON result in your database
         $htmlRenderer = RendererFactory::make($rendererName, $rendererOptions);
         return html_entity_decode($htmlRenderer->renderArray(json_decode($jsonResult, true)));
     }
