@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col">
-    <div class="px-4 py-2 space-y-2 bg-white border-b border-black lg:flex lg:items-center lg:justify-between lg:space-y-0 md:px-6">
+    <div v-if="showHeaderLine" class="px-4 py-2 space-y-2 bg-white border-b border-black lg:flex lg:items-center lg:justify-between lg:space-y-0 md:px-6">
       <div class="text-xs font-medium tracking-wider uppercase">
         {{ $t('commentaries') }}
       </div>
@@ -118,14 +118,15 @@
   const props = defineProps({
     locale: { type: String, required: true },
     commentaries: { type: Array, required: true },
-    legalDomains: { type: Array, required: true }
+    legalDomains: { type: Array, required: false, default: [] },
+    showHeaderLine: { type: Boolean, required: false, default: true }
   })
 
   const viewMode = 'grid'
 
   const filteredCommentaries = ref(props.commentaries)
 
-  const activeLegalDomain = ref(props.legalDomains[0])
+  const activeLegalDomain = ref(props.legalDomain ? props.legalDomains[0] : null)
 
   const onSelect = (commentary) => {
     window.location.href = '/' + props.locale + '/kommentare/' + commentary.slug
