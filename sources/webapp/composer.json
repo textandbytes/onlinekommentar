@@ -12,6 +12,7 @@
         "caseyamcl/toc": "^3.1",
         "guzzlehttp/guzzle": "^7.2",
         "jacksleight/statamic-bard-texstyle": "^1.0",
+        "jfcherng/php-diff": "^6.12",
         "laravel/framework": "^9.11",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",

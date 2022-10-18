@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\CommentariesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,9 @@ Route::get('/', function () {
   return redirect('/de');
 });
 
+// compare revision commentaries
+Route::get('{locale}/commentaries/{commentary}/revisions/{revision1}/compare/{revision2}', [CommentariesController::class, 'compareRevisions']);
+
 Route::statamic('{locale}/search', 'search', [
-   'title' => 'Search Results'
+  'title' => 'Search Results'
 ]);
