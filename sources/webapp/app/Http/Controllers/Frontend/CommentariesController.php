@@ -39,6 +39,8 @@ class CommentariesController extends Controller
         $revisionHtmlContent = $modifiers->bardHtml($revision['attributes']['data']['content']);
 
         return [
+            'human_readable_timestamp' => Carbon::createFromTimestamp($revision['date'])->isoFormat('MM.DD.YYYY hh:mm:ss z'),
+            'creator' => $revision['user'],
             'content' => $revisionHtmlContent
         ];
     }
@@ -60,7 +62,10 @@ class CommentariesController extends Controller
             'detailLevel' => 'word',
             // renderer language: eng, cht, chs, jpn, ...
             // or an array which has the same keys with a language file
-            'language' => 'eng',
+            'language' => [
+                'old_version' => $revision1['creator'] . '&nbsp;&nbsp;' . $revision1['human_readable_timestamp'] . '<br />',
+                'new_version' => $revision2['creator'] . '&nbsp;&nbsp;' . $revision2['human_readable_timestamp'] . '<br />'
+            ],
             // show line numbers in HTML renderers
             'lineNumbers' => true,
             // show a separator between different diff hunks in HTML renderers
