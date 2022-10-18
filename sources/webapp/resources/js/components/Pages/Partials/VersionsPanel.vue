@@ -4,11 +4,13 @@
       <div class="font-medium text-xs uppercase">
         {{ $t('versions') }}
       </div>
-      <div
+      <button
         v-if="currentVersions.length > 1"
-        class="font-medium text-xs uppercase">
+        :disabled="selectedVersions.length !== 2"
+        class="font-medium text-xs uppercase"
+        @click="$emit('on-compare', selectedVersions)">
         {{ $t('compare_versions') }}
-      </div>
+      </button>
     </div>
 
     <CheckboxWithLabel
@@ -16,7 +18,7 @@
       :key="version.id"
       :option="version"
       :show="currentVersions.length > 1"
-      :disabled="numberOfSelectedVersions > 1 && !version.checked"
+      :disabled="selectedVersions.length > 1 && !version.checked"
       v-model:checked="version.checked">
       <template v-slot:option="option">
         <label
@@ -41,7 +43,8 @@
 
   const currentVersions = ref(props.versions)
 
-  const numberOfSelectedVersions = computed(() => {
-    return currentVersions.value.filter(version => version.checked === true).length
+  const selectedVersions = computed(() => {
+    // reverse the order of the selected revisions since the original list is supplied in descending order
+    return currentVersions.value.filter(version => version.checked === true).reverse()
   })
 </script>

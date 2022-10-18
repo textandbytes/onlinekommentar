@@ -106,5 +106,7 @@
   "results_found": "Risultati trovati",
   "no_results_found": "Nessun risultato trovato",
 
-  "open": "Aperto"
+  "open": "Aperto",
+
+  "is_loading": "Caricamento"
 }

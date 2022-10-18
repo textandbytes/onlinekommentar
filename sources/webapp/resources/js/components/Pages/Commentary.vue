@@ -1,5 +1,4 @@
 <template>
-
   <div class="md:max-w-6xl md:mx-auto md:mb-auto bg-white overflow-hidden px-4 md:px-24 md:py-12">
     <div class="relative flex justify-between items-center md:gap-px border-b border-black">
       <FlyoutMenuFullWidth
@@ -25,7 +24,8 @@
         <VersionsPanel
           :versions="versions"
           :active-version="activeVersion"
-          @on-select="loadVersionWithTimestamp">
+          @on-select="loadVersionWithTimestamp"
+          @on-compare="compareVersions">
         </VersionsPanel>
       </FlyoutMenuFullWidth>
       <div v-else class="py-2 md:py-4">&nbsp;</div>
@@ -98,6 +98,13 @@
     </p>
     <p class="mt-4"><img src="/img/cc-license.png" alt="Creative Commons"></p>
   </div>
+
+  <Loading
+    :show="isLoading"
+    :label="$t('is_loading')"
+  />
+
+  <ModalWithDismiss />
 </template>
 
 <script setup>
@@ -105,9 +112,15 @@
   import FlyoutMenuFullWidth from '@/components/Menus/FlyoutMenuFullWidth'
   import VersionsPanel from '@/components/Pages/Partials/VersionsPanel'
   import SuggestedCitationsPanel from '@/components/Pages/Partials/SuggestedCitationsPanel'
-  import axios from 'axios';
+  import Loading from '@/components/Indicators/Loading'
+  import ModalWithDismiss from '@/components/Modals/ModalWithDismiss'
+  import axios from 'axios'
+  import useEmitter from '@/composables/useEmitter'
+
+  const emitter = useEmitter()
 
   const props = defineProps({
+    locale: { type: String, required: true },
     commentary: { type: Object, required: true },
     versions: { type: Object, required: false, default: null },
   })
@@ -120,15 +133,15 @@
 
   const activeVersion = ref(props.versions[0])
 
+  const isLoading = ref(false)
+
   const setLegalTextLocale = (locale) => {
-    // Get all commentary entries, filter them by given locale and commentary slug, return legal text field
+    // filter all commentary entries by the given locale and commentary slug and return the legal text field
     axios.get('/api/collections/commentaries/entries/?filter[site]=' + locale + '&filter[slug]=' + props.commentary.slug + '&fields=legal_text')
-      .then(function (response) {
+      .then(response => {
         localizedLegalText.value = response.data.data[0].legal_text
       })
-      .catch(function (error) {
-        console.log(error)
-      })
+      .catch(error => {})
 
     legalTextLocale.value = locale
   }
@@ -140,6 +153,26 @@
         activeVersion.value = version
       }
     })
+  }
+
+  const compareVersions = (versions) => {
+    isLoading.value = true
+
+    // compare the two selected revisions and display results in a modal dialog
+    axios.get('/' + props.locale + '/commentaries/' + props.commentary.id + '/revisions/' + versions[0].timestamp + '/compare/' + versions[1].timestamp)
+      .then(response => {
+        isLoading.value = false
+
+        emitter.emit('open-modal', {
+          title: 'Revision Comparison' ,
+          message: response.data,
+          confirmLabel: null,
+          cancelLabel: null
+        })
+      })
+      .catch(error => {
+        isLoading.value = false
+      })
   }
 </script>
 
