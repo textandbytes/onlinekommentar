@@ -157,8 +157,13 @@
         @apply tracking-wide
       }
     }
+    
     :deep(.paragraph-nr) {
       @apply absolute -left-8 text-sm font-sans
+    }
+
+    :deep(hr) {
+      @apply my-3 border-gray-300
     }
   }
 
