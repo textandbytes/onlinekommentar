@@ -48,10 +48,17 @@ article {
       position: relative;
       padding-left: 24px;
       margin-bottom:4px;
+      list-style: none;
     }
-    details > summary::marker {
-      content: '';
+
+    details > summary::marker,
+    details > summary::-webkit-details-marker {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      display: none;
     }
+
     details > summary::before {
       position: absolute;
       left: 0;
