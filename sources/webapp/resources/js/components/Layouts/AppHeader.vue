@@ -4,12 +4,13 @@
       class="flex items-center justify-between px-4 py-4"
       :class="{ 'border-b border-black': currentPage !== 'home' }">
       <a
-        class="z-40 hidden lg:flex w-[270px] lg:w-auto"
+        class="z-40 hidden lg:flex w-[280px] lg:w-auto"
         :href="'/' + locale">
         <img
-          src="/img/ok-logo-text.svg"
-          alt="Onlinekommentar – der frei zugängliche Rechtskommenter"
-          :width="currentPage !== 'home' ? 270 : null"
+          src="/img/ok-logo-text_de.svg"
+          alt="Onlinekommentar – der frei zugängliche Rechtskommentar"
+          title="Onlinekommentar – der frei zugängliche Rechtskommentar"
+          :width="currentPage !== 'home' ? 280 : 390"
         />
       </a>
       <a
@@ -17,7 +18,8 @@
         :href="'/' + locale">
         <img
           src="/img/ok-logo.svg"
-          alt="Onlinekommentar – der frei zugängliche Rechtskommenter"
+          alt="Onlinekommentar – der frei zugängliche Rechtskommentar"
+          title="Onlinekommentar – der frei zugängliche Rechtskommentar"
         />
       </a>
       <div>
