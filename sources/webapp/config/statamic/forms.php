@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'forms' => resource_path('forms'),
+    'forms' => base_path('data/content/forms'),
 
     /*
     |--------------------------------------------------------------------------
@@ -22,7 +22,7 @@ return [
     |
     */
 
-    'submissions' => storage_path('forms'),
+    'submissions' => base_path('data/storage/forms'),
 
     /*
     |--------------------------------------------------------------------------
