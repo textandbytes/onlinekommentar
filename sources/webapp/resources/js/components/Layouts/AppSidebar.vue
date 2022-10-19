@@ -5,7 +5,7 @@
     
     <div v-if="isSidebarOpen" class="h-screen overflow-y-auto">
       <div class="block px-8 py-4">
-        <img src="/img/ok-logo-text.svg" alt="Onlinekommentar – der frei zugängliche Rechtskommenter" class="w-48 mt-4" />
+        <img src="/img/ok-logo.svg" alt="Onlinekommentar – der frei zugängliche Rechtskommenter" class="w-12 mt-2 md:w-20" />
       </div>
 
       <div class="mt-4 ml-4">
