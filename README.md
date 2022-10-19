@@ -14,13 +14,29 @@ Publishing platform for legal commentaries
 - Start the application using Docker: `docker-compose up`
 - Install dependencies with composer: `docker-compose run --rm composer install`
 - Install frontend dependencies: `docker-compose run --rm npm install`
-- Run the database migrations: `docker-compose run --rm artisan migrate`
 - Go to http://localhost:8001 and click on "GENERATE APP KEY" (the key will be stored in your `.env` file)
 
 ---
+## Statamic Data
+By default, Statamic stores the application configuration and data in several places. It uses flat files (YAML and Markdown) for both the configuration (e.g. "blueprints" that define the model of a content type) and the data (e.g. an item of a certain type).
+
+In order to separate the application source code and the user-generated content, this application stores the following data in a dedicated folder under `sources/webapp/data`:
+
+- content
+- revisions
+- resources
+- storage
+- revisions
+- users
+
+The content of this folder is not tracked in this repository. In order to retrieve the application data from the production server (or staging server), developers are expected to use the dedicated repository where this data is stored. The repository where the data is: https://github.com/textandbytes/onlinekommentar-data. Access to this repository is restricted to users with appropriate permissions.
+
+The blueprints and users roles definitions are stored in the default location (`resources`), and are tracked in this repository.
 
 ## Local Development
 - cd into the webapp directory : `cd sources/webapp` and run `composer`, `npm` and `artisan` commands via their Docker containers. See examples below.
+- Depending on your use case, clone the remote git repository containing the application data (https://github.com/textandbytes/onlinekommentar-data) under `sources/webapp/data`.
+⚠️ The application data should always be pulled from the production/staging server, not the other way around.
 
 ### Watching Javascript and CSS changes
 - Watch local file changes (JS, CSS): `docker-compose run --rm npm run watch`
