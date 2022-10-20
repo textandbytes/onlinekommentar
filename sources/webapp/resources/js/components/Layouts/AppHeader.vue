@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full pl-5 pr-4 mx-auto md:pl-12 md:pr-4 lg:px-8 xl:w-10/12">
+  <header class="w-full pl-5 pr-4 mx-auto md:pl-12 md:pr-4 lg:px-8 xl:w-10/12 print:hidden">
     <div
       class="flex items-center justify-between px-4 py-4"
       :class="{ 'border-b border-black': currentPage !== 'home' }">
