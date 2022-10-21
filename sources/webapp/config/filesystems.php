@@ -38,13 +38,13 @@ return [
 
         'avatars' => [
             'driver' => 'local',
-            'root' => storage_path('app/public/avatars'),
+            'root' => base_path('data/storage/app/public/avatars'),
             'throw' => false,
         ],
 
         'pdf_commentaries' => [
             'driver' => 'local',
-            'root' => storage_path('app/public/commentaries/pdf'),
+            'root' => base_path('data/storage/app/public/commentaries/pdf'),
             'throw' => false,
         ],
 
@@ -82,7 +82,7 @@ return [
     */
 
     'links' => [
-        public_path('storage') => storage_path('app/public'),
+        public_path('storage') => base_path('data/storage/app/public'),
     ],
 
 ];

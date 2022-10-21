@@ -108,5 +108,8 @@
 
   "open": "Öffnen",
 
-  "is_loading": "Laden..."
+  "is_loading": "Laden...",
+
+  "newest_comments": "Neuste Kommentare",
+  "all_comments": "Alle Kommentare"
 }

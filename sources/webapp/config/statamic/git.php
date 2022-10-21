@@ -95,13 +95,7 @@ return [
     */
 
     'paths' => [
-        base_path('content'),
-        base_path('revisions'),
-        resource_path('blueprints'),
-        resource_path('fieldsets'),
-        resource_path('forms'),
-        resource_path('users'),
-        storage_path('forms'),
+        base_path('data'),
     ],
 
     /*

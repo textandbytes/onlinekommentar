@@ -25,6 +25,6 @@ return [
     |
     */
 
-    'path' => base_path('revisions'),
+    'path' => base_path('data/revisions'),
 
 ];

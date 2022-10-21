@@ -1,4 +1,7 @@
 provisioning/remote
+sources/webapp/content/*
+sources/webapp/data/*
+sources/webapp/revisions/*
 sources/webapp/users/*.yaml
 sources/webapp/vendor/
 sources/webapp/node_modules/

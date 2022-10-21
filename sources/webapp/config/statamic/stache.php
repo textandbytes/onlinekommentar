@@ -32,47 +32,47 @@ return [
 
         'taxonomies' => [
             'class' => Stores\TaxonomiesStore::class,
-            'directory' => base_path('content/taxonomies'),
+            'directory' => base_path('data/content/taxonomies'),
         ],
 
         'terms' => [
             'class' => Stores\TermsStore::class,
-            'directory' => base_path('content/taxonomies'),
+            'directory' => base_path('data/content/taxonomies'),
         ],
 
         'collections' => [
             'class' => Stores\CollectionsStore::class,
-            'directory' => base_path('content/collections'),
+            'directory' => base_path('data/content/collections'),
         ],
 
         'entries' => [
             'class' => Stores\EntriesStore::class,
-            'directory' => base_path('content/collections'),
+            'directory' => base_path('data/content/collections'),
         ],
 
         'navigation' => [
             'class' => Stores\NavigationStore::class,
-            'directory' => base_path('content/navigation'),
+            'directory' => base_path('data/content/navigation'),
         ],
 
         'collection-trees' => [
             'class' => Stores\CollectionTreeStore::class,
-            'directory' => base_path('content/trees/collections'),
+            'directory' => base_path('data/content/trees/collections'),
         ],
 
         'nav-trees' => [
             'class' => Stores\NavTreeStore::class,
-            'directory' => base_path('content/trees/navigation'),
+            'directory' => base_path('data/content/trees/navigation'),
         ],
 
         'globals' => [
             'class' => Stores\GlobalsStore::class,
-            'directory' => base_path('content/globals'),
+            'directory' => base_path('data/content/globals'),
         ],
 
         'asset-containers' => [
             'class' => Stores\AssetContainersStore::class,
-            'directory' => base_path('content/assets'),
+            'directory' => base_path('data/content/assets'),
         ],
 
         'assets' => [
@@ -81,7 +81,7 @@ return [
 
         'users' => [
             'class' => Stores\UsersStore::class,
-            'directory' => base_path('users'),
+            'directory' => base_path('data/users'),
         ],
 
     ],

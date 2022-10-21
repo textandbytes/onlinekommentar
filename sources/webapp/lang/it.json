@@ -109,5 +109,8 @@
 
   "open": "Aperto",
 
-  "is_loading": "Caricamento"
+  "is_loading": "Caricamento",
+
+  "newest_comments": "Ultimi commenti",
+  "all_comments": "Tutti i commenti"
 }
