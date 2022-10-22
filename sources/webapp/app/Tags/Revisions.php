@@ -5,8 +5,8 @@ namespace App\Tags;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
 use PragmaRX\Yaml\Package\Facade as YamlFacade;
-use Statamic\Tags\Tags;
 use Statamic\Modifiers\CoreModifiers;
+use Statamic\Tags\Tags;
 
 class Revisions extends Tags
 {
@@ -24,7 +24,6 @@ class Revisions extends Tags
         // extract the timestamps from the list of revision files
         $commentaryRevisionBasePath = config('statamic.revisions.path') . '/collections/commentaries/' . $locale . '/' . $commentaryId;
         $revisionTimestamps = $this->_getFilenamesFromPath($commentaryRevisionBasePath, false);
-
 
         // return the unix timestamp, human-readable timestamp and content for each revision
         $revisions = [];
@@ -47,12 +46,11 @@ class Revisions extends Tags
             // keep track of the current version of the content
             $currentRevisionHtml = $revisionHtml;
 
-            // only include revisions whose content field has changed
+            // only include revisions whose 'content' field has changed
             if (strcmp($currentRevisionHtml, $previousRevisionHtml) !== 0) {
                 $revisions[] = [
                     'unix_timestamp' => $timestamp,
-                    'human_readable_timestamp' => Carbon::createFromTimestamp($timestamp)->isoFormat('MM.DD.YYYY hh:mm:ss z'),
-                    'content' => $currentRevisionHtml
+                    'human_readable_timestamp' => Carbon::createFromTimestamp($timestamp)->isoFormat('MM.DD.YYYY hh:mm:ss z')
                 ];
             }
         }
