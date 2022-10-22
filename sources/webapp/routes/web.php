@@ -18,6 +18,8 @@ Route::get('/', function () {
   return redirect('/de');
 });
 
+// load a revision commentary
+Route::get('{locale}/commentaries/{commentary}/revisions/{revision1}', [CommentariesController::class, 'show']);
 // compare revision commentaries
 Route::get('{locale}/commentaries/{commentary}/revisions/{revision1}/compare/{revision2}', [CommentariesController::class, 'compareRevisions']);
 

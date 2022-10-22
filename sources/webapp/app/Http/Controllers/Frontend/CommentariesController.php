@@ -13,22 +13,49 @@ use Jfcherng\Diff\Renderer\RendererConstant;
 
 class CommentariesController extends Controller
 {
+    public function show($locale, $commentaryId, $revisionTimestamp)
+    {
+        // get the revision data for the given timestamp
+        $commentaryRevisionBasePath = $this->_getCommentaryRevisionBasePath($locale, $commentaryId);
+        $revision = $this->_getRevisionDataFromRevisionFile($commentaryRevisionBasePath . '/' . $revisionTimestamp . '.yaml');
+
+        return response()->json($revision);
+    }
+
     public function compareRevisions($locale, $commentaryId, $revisionTimestamp1, $revisionTimestamp2)
     {
         // TODO: validate parameters
 
         // get the html version of the 'content' field for each revision
-        $commentaryRevisionBasePath = config('statamic.revisions.path') . '/collections/commentaries/' . $locale . '/' . $commentaryId;
-        $revision1 = $this->_getDataFromRevisionFile($commentaryRevisionBasePath . '/' . $revisionTimestamp1 . '.yaml');
-        $revision2 = $this->_getDataFromRevisionFile($commentaryRevisionBasePath . '/' . $revisionTimestamp2 . '.yaml');
+        $commentaryRevisionBasePath = $this->_getCommentaryRevisionBasePath($locale, $commentaryId);
+        $revisionContent1 = $this->_getRevisionContentFromRevisionFile($commentaryRevisionBasePath . '/' . $revisionTimestamp1 . '.yaml');
+        $revisionContent2 = $this->_getRevisionContentFromRevisionFile($commentaryRevisionBasePath . '/' . $revisionTimestamp2 . '.yaml');
 
         // compare the revisions
-        $comparisonResult = $this->_compareRevisions($revision1, $revision2);
+        $comparisonResult = $this->_compareRevisions($revisionContent1, $revisionContent2);
 
         return response()->json($comparisonResult);
     }
 
-    private function _getDataFromRevisionFile($revisionFile)
+    private function _getCommentaryRevisionBasePath($locale, $commentaryId)
+    {
+        return config('statamic.revisions.path') . '/collections/commentaries/' . $locale . '/' . $commentaryId;
+    }
+
+    private function _getRevisionDataFromRevisionFile($revisionFile)
+    {
+        // extract the revision data from the revision yaml file
+        $yaml = YamlFacade::instance();
+        $revision = $yaml->parseFile($revisionFile);
+        $revisionData = $revision['attributes']['data'];
+
+        // include the human-readable timestamp of the revision in the revision data
+        $revisionData['human_readable_timestamp'] = Carbon::createFromTimestamp($revision['date'])->isoFormat('MM.DD.YYYY hh:mm:ss z');
+
+        return $revisionData;
+    }
+
+    private function _getRevisionContentFromRevisionFile($revisionFile)
     {
         // open and parse the revision yaml file
         $yaml = YamlFacade::instance();
