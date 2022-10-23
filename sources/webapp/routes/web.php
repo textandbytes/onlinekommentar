@@ -18,9 +18,11 @@ Route::get('/', function () {
   return redirect('/de');
 });
 
-// load a revision commentary
-Route::get('{locale}/commentaries/{commentary}/revisions/{revision1}', [CommentariesController::class, 'show']);
-// compare revision commentaries
+// commentary revision detail view
+Route::get('{locale}/kommentare/{commentary}/versions/{versionTimestamp}', [CommentariesController::class, 'show']);
+// commentary detail view
+Route::get('{locale}/kommentare/{commentary}', [CommentariesController::class, 'show']);
+// commentary revision comparison
 Route::get('{locale}/commentaries/{commentary}/revisions/{revision1}/compare/{revision2}', [CommentariesController::class, 'compareRevisions']);
 
 Route::statamic('{locale}/search', 'search', [

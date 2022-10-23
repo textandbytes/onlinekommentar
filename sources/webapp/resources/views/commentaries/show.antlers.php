@@ -1,34 +1,3 @@
-<?php
-  use Statamic\Facades\Entry;
-  use Illuminate\Support\Facades\Request;
-  use TOC\MarkupFixer;
-  use TOC\TocGenerator;
-
-  $entry = Entry::query()
-    ->where('collection', 'commentaries')
-    ->where('locale', app()->getLocale())
-    ->where('status', 'published')
-    ->where('slug', Request::segment(count(Request::segments()))) // get the last slug from the URL
-    ->get();
-
-  // generate formatted html markup for the language-specific 'content' field
-  $content = $entry[0]['content'];
-
-  // add anchor attributes to the heading elements
-  $contentMarkup = null;
-  if ($content) {
-    $markupFixer = new MarkupFixer();
-    $contentMarkup = $markupFixer->fix($content);
-  }
-
-  // generate table of contents from the heading elements
-  $toc = null;
-  if ($contentMarkup) {
-    $tocGenerator = new TocGenerator();
-    $toc = $tocGenerator->getHtmlMenu($contentMarkup);
-  }
-?>
-
 <article class="commentary w-full border">
   <commentary
     locale="{{ locale }}"
@@ -62,13 +31,14 @@
           label: '{{ human_readable_timestamp }}'
         },
       {{ /revisions:commentary }}
-    ]">
+    ]"
+    version-timestamp="{{ versionTimestamp }}">
     <template v-slot:table-of-contents>
-      <?= $toc ?>
+      {{ toc }}
     </template>
 
     <template v-slot:content>
-      <?= $contentMarkup ?>
+      {{ contentMarkup }}
     </template>
   </commentary>
 </article>

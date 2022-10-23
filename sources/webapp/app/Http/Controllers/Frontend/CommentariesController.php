@@ -5,31 +5,89 @@ namespace App\Http\Controllers\Frontend;
 use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use PragmaRX\Yaml\Package\Facade as YamlFacade;
-use Statamic\Modifiers\CoreModifiers;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Request as RequestFacade;
 use Jfcherng\Diff\DiffHelper;
 use Jfcherng\Diff\Factory\RendererFactory;
 use Jfcherng\Diff\Renderer\RendererConstant;
+use PragmaRX\Yaml\Package\Facade as YamlFacade;
+use Statamic\Facades\Entry;
+use Statamic\Modifiers\CoreModifiers;
+use Statamic\View\View;
+use TOC\MarkupFixer;
+use TOC\TocGenerator;
 
 class CommentariesController extends Controller
 {
-    public function show($locale, $commentaryId, $revisionTimestamp)
+    public function show($locale, $commentarySlug, $versionTimestamp = null)
     {
-        // get the revision data for the given timestamp
-        $commentaryRevisionBasePath = $this->_getCommentaryRevisionBasePath($locale, $commentaryId);
-        $revision = $this->_getRevisionDataFromRevisionFile($commentaryRevisionBasePath . '/' . $revisionTimestamp . '.yaml');
+        if ($versionTimestamp) {
+            // locate the commentary with the given slug
+            $commentary = Entry::query()
+                ->where('collection', 'commentaries')
+                ->where('locale', $locale)
+                ->where('slug', $commentarySlug)
+                ->first()
+                ->toArray();
 
-        return response()->json($revision);
+            // return 404 if revision file is not found
+            $commentaryRevisionBasePath = $this->_getCommentaryRevisionBasePath($locale, $commentary['id']);
+            $revisionFile = $commentaryRevisionBasePath . '/' . $versionTimestamp . '.yaml';
+            if (!File::exists($revisionFile)) {
+                abort(404);
+            }
+
+            // get the revision data for the given timestamp
+            $commentaryData = $this->_getRevisionDataFromRevisionFile($revisionFile, $locale);
+        }
+        else {
+            $commentaryData = Entry::query()
+                ->where('collection', 'commentaries')
+                ->where('locale', $locale)
+                ->where('slug', $commentarySlug)
+                ->where('status', 'published')
+                ->first()
+                ->toArray();
+        }
+
+        // generate formatted html markup for the language-specific 'content' field
+        $content = $commentaryData['content'];
+
+        // add anchor attributes to the heading elements
+        $contentMarkup = null;
+        if ($content) {
+            $markupFixer = new MarkupFixer();
+            $contentMarkup = $markupFixer->fix($content);
+            // $commentaryData['content'] = $contentMarkup;
+        }
+        
+        // generate table of contents from the heading elements
+        $toc = null;
+        if ($contentMarkup) {
+            $tocGenerator = new TocGenerator();
+            $toc = $tocGenerator->getHtmlMenu($contentMarkup);
+        }
+    
+        // load the commentary detail view
+        return (new View)
+            ->template('commentaries/show')
+            ->layout('layout')
+            ->with(array_merge([
+                'locale' => $locale,
+                'contentMarkup' => $contentMarkup,
+                'toc' => $toc,
+                'versionTimestamp' => $versionTimestamp
+            ], $commentaryData));
     }
 
-    public function compareRevisions($locale, $commentaryId, $revisionTimestamp1, $revisionTimestamp2)
+    public function compareRevisions($locale, $commentaryId, $versionTimestamp1, $versionTimestamp2)
     {
         // TODO: validate parameters
 
         // get the html version of the 'content' field for each revision
         $commentaryRevisionBasePath = $this->_getCommentaryRevisionBasePath($locale, $commentaryId);
-        $revisionContent1 = $this->_getRevisionContentFromRevisionFile($commentaryRevisionBasePath . '/' . $revisionTimestamp1 . '.yaml');
-        $revisionContent2 = $this->_getRevisionContentFromRevisionFile($commentaryRevisionBasePath . '/' . $revisionTimestamp2 . '.yaml');
+        $revisionContent1 = $this->_getRevisionContentFromRevisionFile($commentaryRevisionBasePath . '/' . $versionTimestamp1 . '.yaml', $locale);
+        $revisionContent2 = $this->_getRevisionContentFromRevisionFile($commentaryRevisionBasePath . '/' . $versionTimestamp2 . '.yaml', $locale);
 
         // compare the revisions
         $comparisonResult = $this->_compareRevisions($revisionContent1, $revisionContent2);
@@ -42,20 +100,40 @@ class CommentariesController extends Controller
         return config('statamic.revisions.path') . '/collections/commentaries/' . $locale . '/' . $commentaryId;
     }
 
-    private function _getRevisionDataFromRevisionFile($revisionFile)
+    private function _getLocaleFormattedTimestamp($timestamp, $locale)
+    {
+        $format = ($locale === 'en' ? 'MM.DD' : 'DD.MM') . '.YYYY hh:mm:ss z';
+        return Carbon::createFromTimestamp($timestamp)->isoFormat($format);
+    }
+
+    private function _getRevisionDataFromRevisionFile($revisionFile, $locale)
     {
         // extract the revision data from the revision yaml file
         $yaml = YamlFacade::instance();
         $revision = $yaml->parseFile($revisionFile);
         $revisionData = $revision['attributes']['data'];
 
+        // include the id and slug in the revision data
+        $revisionData['id'] = $revision['attributes']['id'];
+        $revisionData['slug'] = $revision['attributes']['slug'];
+
+        // convert the structured data from the 'content' field into html
+        $modifiers = new CoreModifiers();
+        $revisionData['content'] = $modifiers->bardHtml($revisionData['content']);
+
+        // add anchor attributes to the heading elements
+        if ($revisionData['content']) {
+            $markupFixer = new MarkupFixer();
+            $revisionData['content'] = $markupFixer->fix($revisionData['content']);
+        }
+
         // include the human-readable timestamp of the revision in the revision data
-        $revisionData['human_readable_timestamp'] = Carbon::createFromTimestamp($revision['date'])->isoFormat('MM.DD.YYYY hh:mm:ss z');
+        $revisionData['human_readable_timestamp'] = $this->_getLocaleFormattedTimestamp($revision['date'], $locale);
 
         return $revisionData;
     }
 
-    private function _getRevisionContentFromRevisionFile($revisionFile)
+    private function _getRevisionContentFromRevisionFile($revisionFile, $locale)
     {
         // open and parse the revision yaml file
         $yaml = YamlFacade::instance();
@@ -66,7 +144,7 @@ class CommentariesController extends Controller
         $revisionHtmlContent = $modifiers->bardHtml($revision['attributes']['data']['content']);
 
         return [
-            'human_readable_timestamp' => Carbon::createFromTimestamp($revision['date'])->isoFormat('MM.DD.YYYY hh:mm:ss z'),
+            'human_readable_timestamp' => $this->_getLocaleFormattedTimestamp($revision['date'], $locale),
             'creator' => $revision['user'],
             'content' => $revisionHtmlContent
         ];
