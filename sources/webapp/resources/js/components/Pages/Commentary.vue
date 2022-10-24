@@ -170,7 +170,7 @@
     }
 
     :deep(.paragraph-nr) {
-      @apply absolute -left-8 text-sm font-sans
+      @apply absolute -left-8 text-sm font-sans print:relative print:left-0 print:mr-2 print:text-base
     }
 
     :deep(hr) {
