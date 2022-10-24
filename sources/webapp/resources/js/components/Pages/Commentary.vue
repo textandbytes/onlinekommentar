@@ -1,7 +1,7 @@
 <template>
 
-  <div class="px-4 overflow-hidden bg-white md:max-w-[1225px] md:mx-auto md:mb-auto md:px-12 lg:px-24 xl:px-32 lg:py-12">
-    <div class="relative flex items-center justify-between border-b border-black lg:pb-4 md:grid md:grid-cols-3 md:gap-px">
+  <div class="px-4 overflow-hidden bg-white md:max-w-[1225px] md:mx-auto md:mb-auto md:px-12 lg:px-24 xl:px-32 lg:py-12 print:overflow-visible print:m-0 print:p-0 print:w-full print:table">
+    <div class="relative flex items-center justify-between border-b border-black lg:pb-4 md:grid md:grid-cols-3 md:gap-px print:hidden">
       <FlyoutMenuFullWidth
         :label="$t('table_of_contents')"
         class="flex items-center py-2 md:py-4"
@@ -28,7 +28,7 @@
       <div v-if="commentary.original_language !== commentary.locale" class="p-4 text-sm font-medium text-white bg-ok-red">
         {{ $t("ATTENTION: This version of the commentary is an automatic machine translation of the original. The original version is in :original_language. The translation was done with www.deepl.com. Only the original version is authoritative. The translated form of the commentary cannot be cited.", { original_language: $t(commentary.original_language) }) }}
       </div>
-      
+
       <div class="font-sans text-xs tracking-widest uppercase">
         {{ $t('commentary_on') }}
       </div>
@@ -49,14 +49,14 @@
       <FlyoutMenuFullWidth
         v-if="commentary"
         :label="$t('suggested_citation')"
-        class="relative flex justify-center w-full md:w-2/3"
+        class="relative flex justify-center w-full md:w-2/3 print:hidden"
         menu-classes="top-8">
         <SuggestedCitationsPanel :commentary="commentary" />
       </FlyoutMenuFullWidth>
     </div>
 
     <div v-if="localizedLegalText != ''" class="flex flex-col p-4 space-y-4 md:p-8 bg-ok-orange md:space-y-6">
-      <div class="flex justify-end">
+      <div class="flex justify-end print:hidden">
         <span @click="setLegalTextLocale('de')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'de' }">de</span>
         <span @click="setLegalTextLocale('en')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'en' }">en</span>
         <span @click="setLegalTextLocale('fr')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'fr' }">fr</span>
@@ -82,7 +82,7 @@
         </a>
       </p>
     </template>
-    
+
     <h2 class="mt-12 mb-4 font-sans text-xl tracking-wider uppercase">
       {{ $t('creative_commons_license') }}
     </h2>
@@ -126,6 +126,7 @@
 
 <style lang="postcss" scoped>
   .content {
+
     :deep(h2) {
       @apply uppercase font-sans tracking-wider text-xl lg:text-2xl mt-12 mb-6
     }
@@ -135,29 +136,29 @@
     }
 
     :deep(h3) {
-      @apply font-sans tracking-wider text-xl lg:text-2xl mt-12 mb-6
+      @apply font-sans tracking-wider text-xl lg:text-2xl mt-12 mb-6 print:break-inside-avoid print:break-after-avoid
     }
 
     :deep(h3 strong) {
-      @apply font-medium
+      @apply font-medium print:break-inside-avoid print:break-after-avoid
     }
 
     :deep(h4) {
-      @apply font-sans tracking-wider text-lg mb-6
+      @apply font-sans tracking-wider text-lg mb-6 print:break-inside-avoid print:break-after-avoid
     }
 
     :deep(p) {
       @apply lg:text-xl !leading-[1.5em] relative font-serif mb-6;
 
       a {
-        @apply underline break-all
+        @apply underline break-all print:break-inside-avoid
       }
 
       em {
         @apply tracking-wide
       }
     }
-    
+
     :deep(.paragraph-nr) {
       @apply absolute -left-8 text-sm font-sans
     }
@@ -184,7 +185,12 @@
   .legal-text-locale-link.active {
     @apply border border-black
   }
-  
+
+  @media print {
+    @page {
+      margin: 2cm;
+    }
+  }
 
 
 </style>
