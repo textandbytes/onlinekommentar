@@ -70,6 +70,15 @@
       <slot name="content" />
     </div>
 
+    <div class="hidden print:block">
+        <h2 class="uppercase font-sans tracking-wider text-xl lg:text-2xl mt-12 mb-6">
+            {{ $t('footnotes') }}
+        </h2>
+        <ul>
+            <li v-for="(footnote, index) in store.footnotes" :key="index" class="list-decimal ml-8" v-html="footnote"></li>
+        </ul>
+    </div>
+
     <template v-if="commentary.pdf_commentary_filename !== ''">
       <h2 class="mt-12 mb-4 font-sans text-xl tracking-wider uppercase">
         Download PDF
@@ -98,6 +107,7 @@
   import { ref } from 'vue'
   import FlyoutMenuFullWidth from '@/components/Menus/FlyoutMenuFullWidth'
   import SuggestedCitationsPanel from '@/components/Pages/Partials/SuggestedCitationsPanel'
+  import { store } from '@/composables/store.js'
   import axios from 'axios';
 
   const props = defineProps({

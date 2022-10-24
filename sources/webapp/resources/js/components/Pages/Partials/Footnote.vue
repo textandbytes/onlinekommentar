@@ -8,12 +8,19 @@
 </template>
 
 <script>
+
+  import { store } from '@/composables/store.js'
+
   export default {
     name: 'Footnote',
 
     props: {
       dataContent: { type: String, required: false, default: null },
-    }
+    },
+
+    mounted() {
+        store.footnotes.push(this.dataContent)
+    },
   }
 </script>
 
