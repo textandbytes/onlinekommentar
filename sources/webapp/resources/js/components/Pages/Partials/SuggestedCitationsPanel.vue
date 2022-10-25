@@ -1,23 +1,23 @@
 <template>
-  <div class="text-xs text-gray-800 space-y-4">
-    <div>
+  <div class="text-xs text-gray-800 space-y-4 print:space-y-0">
+    <div class="print:pt-2">
       {{ citationTextLong }}
     </div>
 
     <CopyTextButton
       :label="$t('copy_citation')"
       :text="citationTextLong"
-      class="flex items-center justify-end"
+      class="flex items-center justify-end print:hidden"
     />
 
-    <div class="border-t border-black pt-2">
+    <div class="border-t border-black pt-2 print:border-none print:pt-2">
       {{ $t('short_citation') }}: {{ commentary.suggested_citation_short }}
     </div>
 
     <CopyTextButton
       :label="$t('copy_citation')"
       :text="citationTextShort"
-      class="flex items-center justify-end"
+      class="flex items-center justify-end print:hidden"
     />
   </div>
 </template>

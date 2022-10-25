@@ -51,8 +51,14 @@
         :label="$t('suggested_citation')"
         class="relative flex justify-center w-full md:w-2/3 print:hidden"
         menu-classes="top-8">
-        <SuggestedCitationsPanel :commentary="commentary" />
+        <SuggestedCitationsPanel :commentary="commentary" class="print:hidden" />
       </FlyoutMenuFullWidth>
+      <div id="print-suggested-citations" class="hidden print:block">
+        <span class="text-xs tracking-widest uppercase">
+            {{ $t('suggested_citation') }}
+        </span>
+        <SuggestedCitationsPanel :commentary="commentary" />
+      </div>
     </div>
 
     <div v-if="localizedLegalText != ''" class="flex flex-col p-4 space-y-4 md:p-8 bg-ok-orange md:space-y-6">
