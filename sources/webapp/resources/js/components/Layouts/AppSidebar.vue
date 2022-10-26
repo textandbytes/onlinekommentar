@@ -1,5 +1,5 @@
 <template>
-  <div id="sidebar" :class="{ 'open': isSidebarOpen }" class="fixed top-0 bottom-0 z-50 w-6 h-screen xl:w-12 xl:left-0 -left-4 md:left-0 bg-ok-blue rounded-tr-xl rounded-br-xl">
+  <div id="sidebar" :class="{ 'open': isSidebarOpen }" class="fixed top-0 bottom-0 z-50 w-6 h-screen xl:w-12 xl:left-0 -left-4 md:left-0 bg-ok-blue rounded-tr-xl rounded-br-xl print:hidden">
     <div id="shadow" class="absolute top-0 bottom-0 left-0 hidden w-2 h-screen bg-transparent xl:block">
     </div>
     

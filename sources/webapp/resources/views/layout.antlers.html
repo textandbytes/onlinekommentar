@@ -22,13 +22,13 @@
           {{ partial:commentaries/tree }}
         </template>
       </app-header>
-      
-      <main class="w-full pl-5 pr-4 mx-auto md:pl-12 md:pr-4 lg:px-8 xl:w-10/12">
+
+      <main class="w-full pl-5 pr-4 mx-auto md:pl-12 md:pr-4 lg:px-8 xl:w-10/12 print:m-0 print:p-0 print:w-full">
         {{ template_content }}
       </main>
-    
-      <app-footer 
-        current-page="{{ slug }}" 
+
+      <app-footer
+        current-page="{{ slug }}"
         locale="{{ locale }}">
       </app-footer>
     </article>

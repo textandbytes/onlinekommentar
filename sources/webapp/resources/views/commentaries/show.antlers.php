@@ -1,4 +1,4 @@
-<article class="commentary w-full border">
+<article class="commentary w-full border print:border-0">
   <commentary
     locale="{{ locale }}"
     :commentary="{

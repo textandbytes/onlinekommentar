@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-ok-yellow mt-8 pl-4 md:pl-8 grid grid-cols-1 md:grid-cols-2">
+  <footer class="bg-ok-yellow mt-8 pl-4 md:pl-8 grid grid-cols-1 md:grid-cols-2 print:hidden">
     <div class="md:col-span-2 lg:col-span-1 border-b border-ok-dark-gray py-4">
       <div class="px-8 pb-2">
         <div class="w-full">
