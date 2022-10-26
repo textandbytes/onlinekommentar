@@ -12,6 +12,7 @@ use Jfcherng\Diff\Factory\RendererFactory;
 use Jfcherng\Diff\Renderer\RendererConstant;
 use PragmaRX\Yaml\Package\Facade as YamlFacade;
 use Statamic\Facades\Entry;
+use Statamic\Facades\User;
 use Statamic\Modifiers\CoreModifiers;
 use Statamic\View\View;
 use TOC\MarkupFixer;
@@ -49,6 +50,10 @@ class CommentariesController extends Controller
                 ->first()
                 ->toArray();
         }
+
+        // get the assigned authors and editors from their ids
+        $commentaryData['assigned_authors'] = $this->_getUsers($commentaryData['assigned_authors'], ['name']);
+        $commentaryData['assigned_editors'] = $this->_getUsers($commentaryData['assigned_editors'], ['name']);
 
         // generate formatted html markup for the language-specific 'content' field
         $content = $commentaryData['content'];
@@ -93,6 +98,22 @@ class CommentariesController extends Controller
         $comparisonResult = $this->_compareRevisions($revisionContent1, $revisionContent2);
 
         return response()->json($comparisonResult);
+    }
+
+    private function _getUsers($ids, $fieldsToInclude = null)
+    {
+        $users = [];
+        if ($ids) {
+            foreach ($ids as $id) {
+                $user = User::query()
+                    ->where('id', '=', $id)
+                    ->first()
+                    ->toArray();
+
+                $users[] = $fieldsToInclude ? array_intersect_key($user, array_flip($fieldsToInclude)) : $user;
+            }
+        }
+        return $users;
     }
 
     private function _getCommentaryRevisionBasePath($locale, $commentaryId)
