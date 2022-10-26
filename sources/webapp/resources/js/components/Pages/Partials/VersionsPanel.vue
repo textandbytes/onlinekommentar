@@ -1,13 +1,15 @@
 <template>
   <div class="divide-y divide-ok-light-gray px-1">
-    <div class="flex justify-between py-2">
+    <div class="flex items-center justify-between py-2">
       <div class="font-medium text-xs uppercase">
         {{ $t('versions') }}
       </div>
+
       <button
         v-if="currentVersions.length > 1"
         :disabled="selectedVersions.length !== 2"
-        class="font-medium text-xs uppercase"
+        class="uppercase rounded-full text-xs border px-2 py-1 font-medium"
+        :class="[selectedVersions.length !== 2 ? 'border-ok-light-gray text-ok-light-gray cursor-not-allowed' : 'border-black cursor-pointer']"
         @click="$emit('on-compare', selectedVersions)">
         {{ $t('compare') }}
       </button>
@@ -48,3 +50,12 @@
     return currentVersions.value.filter(version => version.checked === true).reverse()
   })
 </script>
+
+<style lang="postcss" scoped>
+  button:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+</style>
