@@ -166,7 +166,6 @@ class CommentariesController extends Controller
 
         return [
             'human_readable_timestamp' => $this->_getLocaleFormattedTimestamp($revision['date'], $locale),
-            'creator' => $revision['user'],
             'content' => $revisionHtmlContent
         ];
     }
@@ -189,8 +188,8 @@ class CommentariesController extends Controller
             // renderer language: eng, cht, chs, jpn, ...
             // or an array which has the same keys with a language file
             'language' => [
-                'old_version' => $revision1['creator'] . '&nbsp;&nbsp;' . $revision1['human_readable_timestamp'] . '<br />',
-                'new_version' => $revision2['creator'] . '&nbsp;&nbsp;' . $revision2['human_readable_timestamp'] . '<br />'
+                'old_version' => $revision1['human_readable_timestamp'],
+                'new_version' => $revision2['human_readable_timestamp']
             ],
             // show line numbers in HTML renderers
             'lineNumbers' => false,
