@@ -16,7 +16,7 @@
     </div>
 
     <CheckboxWithLabel
-      v-for="version in currentVersions"
+      v-for="(version, index) in currentVersions"
       :key="version.id"
       :option="version"
       :show="currentVersions.length > 1"
@@ -29,6 +29,12 @@
           @click="option.id !== activeVersion.id ? { click: $emit('on-select', option.timestamp) } : {}">
           {{ option.label }}
         </label>
+
+        <span
+          v-if="index === 0"
+          class="inline-flex items-center rounded-full bg-ok-blue ml-2 px-1.5 text-xs font-medium text-black uppercase">
+          {{ $t('published') }}
+        </span>
       </template>
     </CheckboxWithLabel>
   </div>
