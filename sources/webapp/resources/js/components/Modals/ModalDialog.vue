@@ -1,5 +1,5 @@
 <template>
-  <TransitionRoot as="template" :show="open">
+  <TransitionRoot as="template" :show="show">
     <Dialog as="div" @close="closeModal" class="relative z-50">
       <TransitionChild
         as="template"
@@ -24,7 +24,7 @@
             leave-to="opacity-0 scale-95">
             <DialogPanel class="relative bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-6xl sm:w-full sm:p-6">
               <div class="hidden sm:block absolute top-0 right-0 pt-4 pr-4">
-                <button type="button" class="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none" @click="open = false">
+                <button type="button" class="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none" @click="show = false">
                   <span class="sr-only">Close</span>
                   <XIcon class="h-6 w-6" aria-hidden="true" />
                 </button>
@@ -55,7 +55,11 @@
 
   const emitter = useEmitter()
 
-  const open = ref(false)
+  const props = defineProps({
+    open: { type: Boolean, required: false, default: false }
+  })
+
+  const show = ref(props.open)
 
   onMounted(() => {
     emitter.on('open-modal-dialog', () => {

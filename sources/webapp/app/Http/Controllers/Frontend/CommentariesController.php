@@ -20,7 +20,7 @@ use TOC\TocGenerator;
 
 class CommentariesController extends Controller
 {
-    public function show($locale, $commentarySlug, $versionTimestamp = null)
+    public function show($locale, $commentarySlug, $versionTimestamp = null, $versionComparisonResult = null)
     {
         if ($versionTimestamp) {
             // locate the commentary with the given slug
@@ -81,23 +81,33 @@ class CommentariesController extends Controller
                 'locale' => $locale,
                 'contentMarkup' => $contentMarkup,
                 'toc' => $toc,
-                'versionTimestamp' => $versionTimestamp
+                'versionTimestamp' => $versionTimestamp,
+                'versionComparisonResult' => $versionComparisonResult
             ], $commentaryData));
     }
 
-    public function compareRevisions($locale, $commentaryId, $versionTimestamp1, $versionTimestamp2)
+    public function compareRevisions($locale, $commentaryId, $revisionTimestamp1, $revisionTimestamp2, $versionTimestamp = null)
     {
         // TODO: validate parameters
 
+        // get the slug of the commentary
+        $commentarySlug = Entry::query()
+            ->where('collection', 'commentaries')
+            ->where('locale', $locale)
+            ->where('id', $commentaryId)
+            ->first()
+            ->toArray()['slug'];
+
         // get the html version of the 'content' field for each revision
         $commentaryRevisionBasePath = $this->_getCommentaryRevisionBasePath($locale, $commentaryId);
-        $revisionContent1 = $this->_getRevisionContentFromRevisionFile($commentaryRevisionBasePath . '/' . $versionTimestamp1 . '.yaml', $locale);
-        $revisionContent2 = $this->_getRevisionContentFromRevisionFile($commentaryRevisionBasePath . '/' . $versionTimestamp2 . '.yaml', $locale);
+        $revisionContent1 = $this->_getRevisionContentFromRevisionFile($commentaryRevisionBasePath . '/' . $revisionTimestamp1 . '.yaml', $locale);
+        $revisionContent2 = $this->_getRevisionContentFromRevisionFile($commentaryRevisionBasePath . '/' . $revisionTimestamp2 . '.yaml', $locale);
 
         // compare the revisions
-        $comparisonResult = $this->_compareRevisions($revisionContent1, $revisionContent2);
+        $versionComparisonResult = $this->_compareRevisions($revisionContent1, $revisionContent2);
 
-        return response()->json($comparisonResult);
+        // redirect to the current commentary detail view and show the comparison result
+        return $this->show($locale, $commentarySlug, $versionTimestamp, $versionComparisonResult);
     }
 
     private function _getUsers($ids, $fieldsToInclude = null)

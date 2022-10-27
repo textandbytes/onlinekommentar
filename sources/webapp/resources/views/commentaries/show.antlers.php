@@ -41,4 +41,17 @@
       {{ contentMarkup }}
     </template>
   </commentary>
+
+  {{ if versionComparisonResult }}
+    <modal-dialog :open="true">
+      <template v-slot:title>
+        {{ $t('compare_versions') }}
+      </template>
+      <template v-slot:body>
+        <div class="prose max-w-full version-comparison">
+          {{ versionComparisonResult }}
+        </div>
+      </template>
+    </modal-dialog>
+  {{ /if }}
 </article>

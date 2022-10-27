@@ -113,39 +113,15 @@
     </p>
     <p class="mt-4"><img src="/img/cc-license.png" alt="Creative Commons"></p>
   </div>
-
-  <Loading
-    :show="isLoading"
-    :label="$t('is_loading')"
-  />
-
-  <ModalDialog>
-    <template v-slot:title>
-      {{ $t('compare_versions') }}
-    </template>
-    <template v-slot:body>
-      <RevisionComparisonPanel
-        v-if="versionComparisonData"
-        :content="versionComparisonData"
-        @close="emitter.emit('close-modal-dialog')"
-      />
-    </template>
-  </ModalDialog>
 </template>
 
 <script setup>
   import { ref, useSlots, computed } from 'vue'
   import FlyoutMenuFullWidth from '@/components/Menus/FlyoutMenuFullWidth'
-  import ModalDialog from '@/components/Modals/ModalDialog'
-  import Loading from '@/components/Indicators/Loading'
   import VersionsPanel from '@/components/Pages/Partials/VersionsPanel'
-  import RevisionComparisonPanel from '@/components/Pages/Partials/RevisionComparisonPanel'
   import SuggestedCitationsPanel from '@/components/Pages/Partials/SuggestedCitationsPanel'
-  import axios from 'axios'
   import { store } from '@/composables/store.js'
-  import useEmitter from '@/composables/useEmitter'
-
-  const emitter = useEmitter()
+  import axios from 'axios'
 
   const props = defineProps({
     locale: { type: String, required: true },
@@ -159,10 +135,6 @@
 
   const legalTextLocale = ref(props.commentary.locale)
   let localizedLegalText = ref(props.commentary.legal_text)
-
-  const versionComparisonData = ref(null)
-
-  const isLoading = ref(false)
 
   const activeVersion = computed(() => {
     const version = props.versions.find(version => {
@@ -189,21 +161,8 @@
   }
 
   const compareVersions = (versions) => {
-    versionComparisonData.value = null
-    isLoading.value = true
-
-    // compare the two selected revisions and display results in a modal dialog
-    axios.get('/' + props.locale + '/commentaries/' + props.commentary.id + '/revisions/' + versions[0].timestamp + '/compare/' + versions[1].timestamp)
-      .then(response => {
-        isLoading.value = false
-        versionComparisonData.value = response.data
-        emitter.emit('open-modal-dialog')
-      })
-      .catch(error => {
-        isLoading.value = false
-        versionComparisonData.value = null
-        emitter.emit('close-modal-dialog')
-      })
+    // compare the two selected revisions, redirect to the commentary detail view and display comparison result in a modal dialog
+    window.location.href = '/' + props.locale + '/commentaries/' + props.commentary.id + '/revisions/' + versions[0].timestamp + '/compare/' + versions[1].timestamp + (props.versionTimestamp ? '/versions/' + props.versionTimestamp : '')
   }
 </script>
 
