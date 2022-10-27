@@ -66,4 +66,12 @@
 
     }
   }
+
+  del {
+    @apply bg-[#e77276]
+  }
+  
+  ins {
+    @apply bg-[#79ee75]
+  }
 </style>
