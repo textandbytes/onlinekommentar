@@ -9,7 +9,7 @@
         v-if="currentVersions.length > 1"
         :disabled="selectedVersions.length !== 2"
         class="uppercase rounded-full text-xs border px-2 py-1 font-medium"
-        :class="[selectedVersions.length !== 2 ? 'border-ok-light-gray text-ok-light-gray cursor-not-allowed' : 'border-black cursor-pointer']"
+        :class="[selectedVersions.length !== 2 ? 'border-ok-light-gray text-ok-light-gray cursor-not-allowed' : 'border-black hover:bg-opacity-100 hover:bg-black hover:text-opacity-100 hover:text-white cursor-pointer']"
         @click="$emit('on-compare', selectedVersions)">
         {{ $t('compare') }}
       </button>
@@ -50,12 +50,3 @@
     return currentVersions.value.filter(version => version.checked === true).reverse()
   })
 </script>
-
-<style lang="postcss" scoped>
-  button:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
-  }
-</style>
