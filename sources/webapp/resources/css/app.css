@@ -151,6 +151,7 @@ article {
 
 .version-comparison .diff-wrapper.diff td.old {
   counter-reset: version-old-footnote-counter;
+  @apply pr-6
 }
 
 .version-comparison .diff-wrapper.diff td.old .footnote-number::after {
@@ -160,6 +161,7 @@ article {
 
 .version-comparison .diff-wrapper.diff td.new {
   counter-reset: version-new-footnote-counter;
+  @apply pr-6
 }
 
 .version-comparison .diff-wrapper.diff td.new .footnote-number::after {
