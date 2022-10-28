@@ -25,7 +25,7 @@
       <template v-slot:option="option">
         <label
           class="font-medium"
-          :class="{ 'text-ok-light-gray cursor-pointer hover:text-ok-dark-gray': option.id !== activeVersion.id }"
+          :class="{ 'text-ok-gray cursor-pointer hover:text-ok-dark-gray': option.id !== activeVersion.id }"
           @click="option.id !== activeVersion.id ? { click: $emit('on-select', option.timestamp) } : {}">
           {{ option.label }}
         </label>
