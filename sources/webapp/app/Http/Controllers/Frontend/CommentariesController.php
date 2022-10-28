@@ -3,20 +3,18 @@
 namespace App\Http\Controllers\Frontend;
 
 use Carbon\Carbon;
+use TOC\MarkupFixer;
+use TOC\TocGenerator;
+use Statamic\View\View;
+use Jfcherng\Diff\Differ;
+use Statamic\Facades\User;
+use Statamic\Facades\Entry;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Request as RequestFacade;
-use Jfcherng\Diff\DiffHelper;
+use Statamic\Modifiers\CoreModifiers;
 use Jfcherng\Diff\Factory\RendererFactory;
 use Jfcherng\Diff\Renderer\RendererConstant;
 use PragmaRX\Yaml\Package\Facade as YamlFacade;
-use Statamic\Facades\Entry;
-use Statamic\Facades\User;
-use Statamic\Modifiers\CoreModifiers;
-use Statamic\View\View;
-use TOC\MarkupFixer;
-use TOC\TocGenerator;
 
 class CommentariesController extends Controller
 {
@@ -190,11 +188,24 @@ class CommentariesController extends Controller
         $rendererName = 'SideBySide';
 
         /*
+         * Differ options
+         */
+        $differOptions = [
+            // show how many neighbor lines
+            // Differ::CONTEXT_ALL can be used to show the whole file
+            'context' => 3,
+            // ignore case difference
+            'ignoreCase' => false,
+            // ignore whitespace difference
+            'ignoreWhitespace' => false,
+        ];
+
+        /*
          * Renderer class options
          */
         $rendererOptions = [
             // how detailed the rendered HTML in-line diff is? (none, line, word, char)
-            'detailLevel' => 'word',
+            'detailLevel' => 'char',
             // renderer language: eng, cht, chs, jpn, ...
             // or an array which has the same keys with a language file
             'language' => [
@@ -240,9 +251,8 @@ class CommentariesController extends Controller
             'wrapperClasses' => ['diff-wrapper'],
         ];
 
-        // use the JSON result to render in HTML
-        $jsonResult = DiffHelper::calculate($revision1['content'], $revision2['content'], 'Json');  // may store the JSON result in your database
-        $htmlRenderer = RendererFactory::make($rendererName, $rendererOptions);
-        return html_entity_decode($htmlRenderer->renderArray(json_decode($jsonResult, true)));
+        $differ = new Differ(explode("\n", $revision1['content']), explode("\n", $revision2['content']), $differOptions);
+        $renderer = RendererFactory::make($rendererName, $rendererOptions);
+        return html_entity_decode($renderer->render($differ));
     }
 }
