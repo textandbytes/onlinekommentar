@@ -50,8 +50,8 @@ class CommentariesController extends Controller
         }
 
         // get the assigned authors and editors from their ids
-        $commentaryData['assigned_authors'] = $this->_getUsers($commentaryData['assigned_authors'], ['name']);
-        $commentaryData['assigned_editors'] = $this->_getUsers($commentaryData['assigned_editors'], ['name']);
+        $commentaryData['assigned_authors'] = $this->_getUsers($commentaryData['assigned_authors'] ?? null, ['name']);
+        $commentaryData['assigned_editors'] = $this->_getUsers($commentaryData['assigned_editors'] ?? null, ['name']);
 
         // generate formatted html markup for the language-specific 'content' field
         $content = $commentaryData['content'];
