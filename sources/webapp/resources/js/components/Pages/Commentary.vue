@@ -101,10 +101,10 @@
     <h2 class="mt-12 mb-4 font-sans text-xl tracking-wider uppercase">
       {{ $t('creative_commons_license') }}
     </h2>
-    <p>
-      Onlinekommentar.ch, {{ $t('commentary_on') }} {{ commentary.title }} {{ $t('creative_commons_text') }}
+    <p class="license">
+      Onlinekommentar.ch, {{ $t('commentary_on') }} {{ commentary.title }} <span v-html="$t('creative_commons_text')"></span>
     </p>
-    <p class="mt-4"><img src="/img/cc-license.png" alt="Creative Commons"></p>
+    <p class="mt-4"><a href="http://creativecommons.org/licenses/by/4.0/"><img src="/img/cc-license.png" alt="Creative Commons"></a></p>
 
   </div>
 </template>
@@ -181,6 +181,12 @@
 
     :deep(hr) {
       @apply my-3 border-gray-300
+    }
+  }
+
+  .license {
+    :deep(a) {
+    @apply underline
     }
   }
 
