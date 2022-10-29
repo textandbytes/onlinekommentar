@@ -176,7 +176,15 @@
     }
 
     :deep(.paragraph-nr) {
-      @apply absolute -left-8 text-sm font-sans print:relative print:left-0 print:mr-2 print:text-base
+      @apply 
+        inline-block md:absolute 
+        mr-2 md:mr-0
+        !leading-6
+        md:-left-8 
+        md:text-sm 
+        font-sans
+        after:content-[')'] md:after:content-none
+        print:relative print:left-0 print:mr-2 print:text-base
     }
 
     :deep(hr) {
