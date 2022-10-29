@@ -184,7 +184,6 @@
         md:text-sm 
         font-sans
         after:content-[')'] md:after:content-none
-        print:relative print:left-0 print:mr-2 print:text-base
     }
 
     :deep(hr) {
