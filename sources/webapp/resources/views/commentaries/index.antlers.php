@@ -21,7 +21,7 @@ $commentaries = Entry::query()
             ->map(function ($legal_domain, $key) {
                 return [
                   'id' => $legal_domain['id'],
-                  'label' => $legal_domain['title']
+                  'label' => __($legal_domain['title'])
                 ];
             })
             ->first(),
