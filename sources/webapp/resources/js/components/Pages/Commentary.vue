@@ -64,9 +64,9 @@
     <div v-if="localizedLegalText != ''" class="flex flex-col p-4 space-y-4 md:p-8 bg-ok-orange md:space-y-6">
       <div class="flex justify-end print:hidden">
         <span @click="setLegalTextLocale('de')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'de' }">de</span>
-        <span @click="setLegalTextLocale('en')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'en' }">en</span>
         <span @click="setLegalTextLocale('fr')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'fr' }">fr</span>
         <span @click="setLegalTextLocale('it')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'it' }">it</span>
+        <span @click="setLegalTextLocale('en')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'en' }">en</span>
       </div>
       <div v-html="localizedLegalText" class="space-y-4 font-serif lg:text-xl md:space-y-6">
       </div>
