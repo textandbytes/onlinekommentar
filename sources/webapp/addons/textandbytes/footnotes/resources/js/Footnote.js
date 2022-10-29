@@ -46,6 +46,9 @@ export default class Footnote {
   commands({ type, toggleBlockType }) {
     return {
       addFootnote: (attrs) => (state, dispatch) => {
+        // encode double quotes
+        attrs['data-content'] = attrs['data-content'].replace(/"/g, '&quot;')
+
         const { selection } = state
         const position = selection.$cursor ? selection.$cursor.pos : selection.$to.pos
         const node = type.create(attrs)
@@ -54,6 +57,9 @@ export default class Footnote {
       },
 
       updateFootnote: (attrs) => (state, dispatch) => {
+        // encode double quotes
+        attrs['data-content'] = attrs['data-content'].replace(/"/g, '&quot;')
+
         // replace the footnote node with new content
         const node = type.create(attrs)
         const transaction = state.tr.replaceSelectionWith(node)
