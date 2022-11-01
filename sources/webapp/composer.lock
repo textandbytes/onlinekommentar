@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf88dc902f596828660daaa5f3d36483",
+    "content-hash": "5135e6848eadebf7f3ec8b9f8fb95450",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -68,6 +68,72 @@
                 "source": "https://github.com/ajthinking/archetype/tree/v1.1.5"
             },
             "time": "2022-08-24T05:52:35+00:00"
+        },
+        {
+            "name": "aryehraber/statamic-impersonator",
+            "version": "v2.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aryehraber/statamic-impersonator.git",
+                "reference": "478b553ce18d9ee9ab74f08db29d67c60440f5ac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aryehraber/statamic-impersonator/zipball/478b553ce18d9ee9ab74f08db29d67c60440f5ac",
+                "reference": "478b553ce18d9ee9ab74f08db29d67c60440f5ac",
+                "shasum": ""
+            },
+            "require": {
+                "statamic/cms": "^3.0"
+            },
+            "type": "statamic-addon",
+            "extra": {
+                "statamic": {
+                    "name": "Impersonator",
+                    "description": "Give Admins the ability to authenticate as any user for easier debugging.",
+                    "version": "2.0.0"
+                },
+                "laravel": {
+                    "providers": [
+                        "AryehRaber\\Impersonator\\ImpersonatorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AryehRaber\\Impersonator\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aryeh Raber",
+                    "email": "aryeh.raber@gmail.com",
+                    "homepage": "https://aryeh.dev",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Give Admins the ability to authenticate as any user for easier debugging.",
+            "homepage": "https://github.com/aryehraber/statamic-impersonator",
+            "keywords": [
+                "Authentication",
+                "impersonator",
+                "statamic"
+            ],
+            "support": {
+                "issues": "https://github.com/aryehraber/statamic-impersonator/issues",
+                "source": "https://github.com/aryehraber/statamic-impersonator/tree/v2.4.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/aryehraber",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-12-23T10:10:15+00:00"
         },
         {
             "name": "brick/math",
@@ -7879,7 +7945,7 @@
         },
         {
             "name": "textandbytes/footnotes",
-            "version": "dev-main",
+            "version": "dev-develop",
             "dist": {
                 "type": "path",
                 "url": "addons/textandbytes/footnotes",

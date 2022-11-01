@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "aryehraber/statamic-impersonator": "^2.4",
         "caseyamcl/toc": "^3.1",
         "guzzlehttp/guzzle": "^7.2",
         "jacksleight/statamic-bard-texstyle": "^1.0",
@@ -16,7 +17,7 @@
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
         "statamic/cms": "3.3.45",
-        "textandbytes/footnotes": "dev-main",
+        "textandbytes/footnotes": "dev-develop",
         "tightenco/ziggy": "^1.0"
     },
     "require-dev": {
