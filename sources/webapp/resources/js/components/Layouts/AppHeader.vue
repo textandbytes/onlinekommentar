@@ -7,7 +7,7 @@
         class="z-40 hidden lg:flex w-[280px] lg:w-auto"
         :href="'/' + locale">
         <img
-          src="/img/ok-logo-text_de.svg"
+          :src="'/img/ok-logo-text_' + locale + '.svg'"
           alt="Onlinekommentar – der frei zugängliche Rechtskommentar"
           title="Onlinekommentar – der frei zugängliche Rechtskommentar"
           :width="currentPage !== 'home' ? 280 : 390"
