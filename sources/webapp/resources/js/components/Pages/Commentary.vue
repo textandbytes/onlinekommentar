@@ -71,9 +71,9 @@
     <div v-if="localizedLegalText != ''" class="flex flex-col p-4 space-y-4 md:p-8 bg-ok-orange md:space-y-6">
       <div class="flex justify-end print:hidden">
         <span @click="setLegalTextLocale('de')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'de' }">de</span>
-        <span @click="setLegalTextLocale('en')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'en' }">en</span>
         <span @click="setLegalTextLocale('fr')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'fr' }">fr</span>
         <span @click="setLegalTextLocale('it')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'it' }">it</span>
+        <span @click="setLegalTextLocale('en')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'en' }">en</span>
       </div>
       <div v-html="localizedLegalText" class="space-y-4 font-serif lg:text-xl md:space-y-6">
       </div>
@@ -88,7 +88,7 @@
             {{ $t('footnotes') }}
         </h2>
         <ul>
-            <li v-for="(footnote, index) in store.footnotes" :key="index" class="list-decimal ml-8" v-html="footnote"></li>
+            <li v-for="(footnote, index) in store.footnotes" :key="index" class="list-decimal ml-12 mb-2" v-html="footnote"></li>
         </ul>
     </div>
 
@@ -108,10 +108,11 @@
     <h2 class="mt-12 mb-4 font-sans text-xl tracking-wider uppercase">
       {{ $t('creative_commons_license') }}
     </h2>
-    <p>
-      Onlinekommentar.ch, {{ $t('commentary_on') }} {{ commentary.title }} {{ $t('creative_commons_text') }}
+    <p class="license">
+      Onlinekommentar.ch, {{ $t('commentary_on') }} {{ commentary.title }} <span v-html="$t('creative_commons_text')"></span>
     </p>
-    <p class="mt-4"><img src="/img/cc-license.png" alt="Creative Commons"></p>
+    <p class="mt-4"><a href="http://creativecommons.org/licenses/by/4.0/"><img src="/img/cc-license.png" alt="Creative Commons"></a></p>
+
   </div>
 </template>
 
@@ -202,11 +203,24 @@
     }
 
     :deep(.paragraph-nr) {
-      @apply absolute -left-8 text-sm font-sans print:relative print:left-0 print:mr-2 print:text-base
+      @apply 
+        inline-block md:absolute 
+        mr-2 md:mr-0
+        !leading-6
+        md:-left-8 
+        md:text-sm 
+        font-sans
+        after:content-[')'] md:after:content-none
     }
 
     :deep(hr) {
       @apply my-3 border-gray-300
+    }
+  }
+
+  .license {
+    :deep(a) {
+    @apply underline
     }
   }
 

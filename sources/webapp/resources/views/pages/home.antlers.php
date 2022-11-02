@@ -45,9 +45,9 @@ $commentaries = Entry::query()
 ?>
 
 <div class="max-w-3xl mx-auto mb-auto mt-8 p-6">
-  <p class="mt-8 text-4xl leading-snug">
+  <div class="mt-8 text-4xl leading-snug">
     {{ content }}
-  </p>
+  </div>
   <a
     href="/{{ locale }}/ueber-onlinekommentar"
     class="inline-block mt-4 uppercase rounded-full border border-black text-xs px-4 py-2 font-medium tracking-widest">

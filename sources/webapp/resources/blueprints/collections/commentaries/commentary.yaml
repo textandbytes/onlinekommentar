@@ -124,6 +124,7 @@ sections:
           instructions_position: above
           visibility: visible
           always_save: false
+          if: 'role:admin'
       -
         handle: assigned_editors
         field:
@@ -135,6 +136,7 @@ sections:
           instructions_position: above
           visibility: visible
           always_save: false
+          if: 'role:admin'
       -
         handle: pdf_commentary
         field:
