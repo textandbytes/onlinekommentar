@@ -109,5 +109,8 @@
     "newest_comments": "Derniers commentaires",
     "all_comments": "Tous les commentaires",
 
-    "footnotes": "Notes de bas de page"
+    "footnotes": "Notes de bas de page",
+
+    "print_commentary": "Imprimer le commentaire",
+    "print": "Imprimer"
   }
