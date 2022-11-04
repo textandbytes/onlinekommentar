@@ -219,7 +219,7 @@ class CommentariesController extends Controller
             // ignore case difference
             'ignoreCase' => false,
             // ignore whitespace difference
-            'ignoreWhitespace' => false,
+            'ignoreWhitespace' => true,
         ];
 
         /*
