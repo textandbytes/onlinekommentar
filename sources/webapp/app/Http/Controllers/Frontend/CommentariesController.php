@@ -215,7 +215,7 @@ class CommentariesController extends Controller
         $differOptions = [
             // show how many neighbor lines
             // Differ::CONTEXT_ALL can be used to show the whole file
-            'context' => 3,
+            'context' => 0,
             // ignore case difference
             'ignoreCase' => false,
             // ignore whitespace difference
