@@ -8,7 +8,6 @@ $commentaries = Entry::query()
   ->where('locale', app()->getLocale())
   ->where('status', 'published')
   ->orderBy('date', 'desc')
-  ->limit(4)
   ->get()
   ->map(function ($commentary, $key) {
     if ($commentary['content'] !== null) {
@@ -40,7 +39,8 @@ $commentaries = Entry::query()
 
   // remove null values that occur for commentary entries with no content
   // reset the array index values to return an indexed array instead of an associative array
-  $commentaries = array_values(array_filter($commentaries));
+  $numberOfCommentariesToDisplay = 3;
+  $commentaries = array_values(array_slice(array_filter($commentaries), 0, $numberOfCommentariesToDisplay));
  
 ?>
 
