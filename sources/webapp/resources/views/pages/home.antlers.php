@@ -8,7 +8,7 @@ $commentaries = Entry::query()
   ->where('locale', app()->getLocale())
   ->where('status', 'published')
   ->orderBy('date', 'desc')
-  ->limit(3)
+  ->limit(8)
   ->get()
   ->map(function ($commentary, $key) {
     if ($commentary['content'] !== null) {
