@@ -105,11 +105,11 @@
       </p>
     </template>
 
-    <h2 class="mt-12 mb-4 font-sans text-xl tracking-wider uppercase">
+    <h2 class="mt-12 mb-4 font-sans text-xl tracking-wider uppercase print:hidden">
       {{ $t('print_commentary') }}
     </h2>
 
-    <p>
+    <p class="print:hidden">
       <button @click="printCommentary()" class="ok-button">
         <span class="flex items-center">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
