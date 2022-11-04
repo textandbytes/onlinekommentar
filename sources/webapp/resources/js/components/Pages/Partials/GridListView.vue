@@ -6,7 +6,6 @@
       <slot name="item" v-bind="item" />
     </template>
 
-    <div v-for="n in (items.length % 3) + 1" class="bg-white" />
   </div>
 </template>
 
