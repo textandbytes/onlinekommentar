@@ -18,7 +18,7 @@
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
         "pragmarx/yaml": "^1.3",
-        "statamic/cms": "3.3.50",
+        "statamic/cms": "3.3.51",
         "textandbytes/footnotes": "dev-main",
         "tightenco/ziggy": "^1.0"
     },
