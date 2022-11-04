@@ -101,6 +101,10 @@ class CommentariesController extends Controller
         $revision1 = $this->_getRevisionContentFromRevisionFile($commentaryRevisionBasePath . '/' . $revisionTimestamp1 . '.yaml', $locale);
         $revision2 = $this->_getRevisionContentFromRevisionFile($commentaryRevisionBasePath . '/' . $revisionTimestamp2 . '.yaml', $locale);
 
+        // show footnotes inline before stripping tags
+        $revision1['content'] = $this->_showFootnotesInline($revision1['content']);
+        $revision2['content'] = $this->_showFootnotesInline($revision2['content']);
+
         /*
          * Append newlines after block element closing tags so that the revision
          * content can be diff'ed on a line-by-line basis.
@@ -116,6 +120,10 @@ class CommentariesController extends Controller
             $revision2['content'] = str_replace($closingTag, $closingTag . $lineDelimiter, $revision2['content']);
         }
 
+        // replace non-breaking spaces with regular spaces
+        // $revision1['content'] = str_replace('&nbsp;', ' ', $revision1['content']);
+        // $revision2['content'] = str_replace('&nbsp;', ' ', $revision2['content']);
+
         // strip html tags from the revision content
         $revision1['content'] = strip_tags($revision1['content']);
         $revision2['content'] = strip_tags($revision2['content']);
@@ -128,6 +136,14 @@ class CommentariesController extends Controller
 
         // redirect to the current commentary detail view and show the comparison result
         return $this->show($locale, $commentarySlug, $versionTimestamp, str_replace($lineDelimiter, '<br />', $versionComparisonResult));
+    }
+
+    private function _showFootnotesInline($content) {
+        $searchPattern = '/<footnote data-content=\"(.*?)\"><\/footnote>/i';
+        $content = preg_replace_callback($searchPattern, function($matches) {
+            return ' [' . strip_tags($matches[1]) . '] ';
+        }, $content);
+        return $content;
     }
 
     private function _getUsers($ids, $fieldsToInclude = null)
