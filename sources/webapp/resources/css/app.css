@@ -142,7 +142,7 @@ article {
 }
 
 .version-comparison ins {
-  @apply bg-[#79ee75]
+  @apply bg-[#79ee75] no-underline
 }
 
 /*
