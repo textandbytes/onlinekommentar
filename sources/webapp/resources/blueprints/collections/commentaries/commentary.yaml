@@ -202,6 +202,30 @@ sections:
     display: Sidebar
     fields:
       -
+        handle: review_status
+        field:
+          options:
+            draft: Draft
+            ready_to_review: 'Ready to review'
+            approved: Approved
+          multiple: false
+          max_items: 1
+          clearable: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          default: draft
+          display: 'Review Status'
+          type: select
+          icon: select
+          instructions: 'Default review status is "Draft". Authors: When ready for reviewing, set the status to "Ready to review". Editors: when reviewed and approved, set the status to "Approved", when reviewed and not approved, set it back to "Draft"'
+          listable: true
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          localizable: true
+      -
         handle: slug
         field:
           type: slug
