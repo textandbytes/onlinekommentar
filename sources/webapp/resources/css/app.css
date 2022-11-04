@@ -24,20 +24,9 @@ article {
   grid-template-columns: 100%;
 }
 
-.commentary {
-  counter-reset: footnote-counter;
-}
-
-.commentary .footnote-number::after {
-  content: counter(footnote-counter);
-  counter-increment: footnote-counter;
-  cursor: pointer;
-  position: absolute;
-}
-
-.footnote-content a {
-    @apply underline;
-  }
+/*
+ * Commentary tree
+ */
 
 .tree ul li:last-child {
   @apply mb-2
@@ -71,6 +60,10 @@ article {
     }
 }
 
+/*
+ * Typography: Prose Classes
+ */
+
 .prose {
   @apply !max-w-none text-black
 }
@@ -100,4 +93,78 @@ article {
 
 .prose em {
   @apply tracking-wide
+}
+
+/*
+ * Footnotes: General
+ */
+
+.footnote-number::after {
+  cursor: pointer;
+  position: absolute;
+}
+
+.footnote-content a {
+  @apply underline;
+}
+
+/*
+ * Footnotes: Commentary Detail View
+ */
+
+.commentary {
+  counter-reset: footnote-counter;
+}
+
+.commentary .footnote-number::after {
+  content: counter(footnote-counter);
+  counter-increment: footnote-counter;
+}
+
+/*
+ * Version Comparision: Styling
+ */
+
+.version-comparison .diff-wrapper.diff th {
+  @apply px-0 py-2
+}
+
+.version-comparison .diff-wrapper.diff td {
+  @apply p-0
+}
+
+/*
+ * Version Comparision: Difference Highlighting
+ */
+
+.version-comparison del {
+  @apply bg-[#e77276]
+}
+
+.version-comparison ins {
+  @apply bg-[#79ee75] no-underline
+}
+
+/*
+ * Version Comparision: Footnotes
+ */
+
+.version-comparison .diff-wrapper.diff td.old {
+  counter-reset: version-old-footnote-counter;
+  @apply pr-8 py-2 w-1/4 max-w-lg break-all
+}
+
+.version-comparison .diff-wrapper.diff td.old .footnote-number::after {
+  content: counter(version-old-footnote-counter);
+  counter-increment: version-old-footnote-counter;
+}
+
+.version-comparison .diff-wrapper.diff td.new {
+  counter-reset: version-new-footnote-counter;
+  @apply py-2 w-1/4 max-w-lg break-all
+}
+
+.version-comparison .diff-wrapper.diff td.new .footnote-number::after {
+  content: counter(version-new-footnote-counter);
+  counter-increment: version-new-footnote-counter;
 }

@@ -1,8 +1,8 @@
 <template>
-
   <div class="px-4 overflow-hidden bg-white md:max-w-[1225px] md:mx-auto md:mb-auto md:px-12 lg:px-24 xl:px-32 lg:py-12 print:overflow-visible print:m-0 print:p-0 print:w-full print:table">
     <div class="relative flex items-center justify-between border-b border-black lg:pb-4 md:grid md:grid-cols-3 md:gap-px print:hidden">
       <FlyoutMenuFullWidth
+        v-if="hasSlot('table-of-contents')"
         :label="$t('table_of_contents')"
         class="flex items-center py-2 md:py-4"
         menu-classes="top-16">
@@ -10,22 +10,29 @@
           <slot name="table-of-contents" />
         </div>
       </FlyoutMenuFullWidth>
+      <div v-else class="py-2 md:py-4">&nbsp;</div>
 
       <div class="items-center justify-center hidden font-serif text-2xl md:flex">
         {{ commentary.title }}
       </div>
 
       <FlyoutMenuFullWidth
-        v-if="versions"
-        label="Versions"
+        v-if="versions && activeVersion"
+        :label="$t('version') + ': ' + activeVersion.label"
         class="flex items-center justify-end py-2 md:py-4"
         menu-classes="top-16">
+        <VersionsPanel
+          :versions="versions"
+          :active-version="activeVersion"
+          @on-select="loadVersionWithTimestamp"
+          @on-compare="compareVersions">
+        </VersionsPanel>
       </FlyoutMenuFullWidth>
       <div v-else class="py-2 md:py-4">&nbsp;</div>
     </div>
 
     <div class="flex flex-col items-center my-8 space-y-6 md:my-12">
-      <div v-if="commentary.original_language !== commentary.locale" class="p-4 text-sm font-medium text-white bg-ok-red">
+      <div v-if="commentary.original_language && (commentary.original_language !== commentary.locale)" class="p-4 text-sm font-medium text-white bg-ok-red">
         {{ $t("ATTENTION: This version of the commentary is an automatic machine translation of the original. The original version is in :original_language. The translation was done with www.deepl.com. Only the original version is authoritative. The translated form of the commentary cannot be cited.", { original_language: $t(commentary.original_language) }) }}
       </div>
 
@@ -38,10 +45,10 @@
       </div>
 
       <div class="text-center lg:text-xl">
-        <p v-if="commentary.assigned_authors.length > 0 && commentary.assigned_authors[0] !== ''">
+        <p v-if="commentary.assigned_authors && commentary.assigned_authors.length > 0 && commentary.assigned_authors[0] !== ''">
           {{ $t('commentary_by') }} <i>{{ commentary.assigned_authors.join(' ' + $t('and') + ' ') }}</i>
         </p>
-        <p v-if="commentary.assigned_editors.length > 0 && commentary.assigned_editors[0] !== ''">
+        <p v-if="commentary.assigned_editors && commentary.assigned_editors.length > 0 && commentary.assigned_editors[0] !== ''">
           {{ $t('edited_by') }} <i>{{ commentary.assigned_editors.join(' ' + $t('and') + ' ') }}</i>
         </p>
       </div>
@@ -125,37 +132,58 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue'
+  import { ref, useSlots, computed } from 'vue'
   import FlyoutMenuFullWidth from '@/components/Menus/FlyoutMenuFullWidth'
+  import VersionsPanel from '@/components/Pages/Partials/VersionsPanel'
   import SuggestedCitationsPanel from '@/components/Pages/Partials/SuggestedCitationsPanel'
   import { store } from '@/composables/store.js'
-  import axios from 'axios';
+  import axios from 'axios'
 
   const props = defineProps({
+    locale: { type: String, required: true },
     commentary: { type: Object, required: true },
-    versions: { type: Object, required: false, default: null },
+    versions: { type: Array, required: false, default: null },
+    versionTimestamp: { type: String, required: false, default: null }
   })
+
+  const slots = useSlots()
+  const hasSlot = (name) => !!slots[name]
 
   const legalTextLocale = ref(props.commentary.locale)
   let localizedLegalText = ref(props.commentary.legal_text)
 
-  function printCommentary() {
+  const printCommentary = () => {
     window.print()
   }
 
-  function setLegalTextLocale(locale) {
-    // Get all commentary entries, filter them by given locale and commentary slug, return legal text field
+  const activeVersion = computed(() => {
+    const version = props.versions.find(version => {
+      return version.id == props.versionTimestamp
+    })
+    // return the most recently published version if a version for the timestamp could not found
+    return version ?? props.versions[0]
+  })
+
+  const setLegalTextLocale = (locale) => {
+    // filter all commentary entries by the given locale and commentary slug and return the legal text field
     axios.get('/api/collections/commentaries/entries/?filter[site]=' + locale + '&filter[slug]=' + props.commentary.slug + '&fields=legal_text')
-      .then(function (response) {
+      .then(response => {
         localizedLegalText.value = response.data.data[0].legal_text
       })
-      .catch(function (error) {
-        console.log(error)
-      })
+      .catch(error => {})
 
     legalTextLocale.value = locale
   }
 
+  const loadVersionWithTimestamp = (timestamp) => {
+    // redirect to the revision with the given timestamp
+    window.location.href = '/' + props.locale + '/kommentare/' + props.commentary.slug + (timestamp == props.versions[0].timestamp ? '' : '/versions/' + timestamp)
+  }
+
+  const compareVersions = (versions) => {
+    // compare the two selected revisions, redirect to the commentary detail view and display comparison result in a modal dialog
+    window.location.href = '/' + props.locale + '/commentaries/' + props.commentary.id + '/revisions/' + versions[0].timestamp + '/compare/' + versions[1].timestamp + (props.versionTimestamp ? '/versions/' + props.versionTimestamp : '')
+  }
 </script>
 
 <style lang="postcss" scoped>
@@ -238,6 +266,4 @@
       margin: 2cm;
     }
   }
-
-
 </style>

@@ -1,11 +1,14 @@
 require('./bootstrap')
 
+import { createApp } from 'vue'
+import { i18nVue } from 'laravel-vue-i18n'
+
+import mitt from 'mitt'
+const emitter = mitt()
+
 import FloatingVue from 'floating-vue'
 FloatingVue.options.themes.dropdown.placement = 'top'
 FloatingVue.options.themes.dropdown.distance = 10
-
-import { createApp } from 'vue'
-import { i18nVue } from 'laravel-vue-i18n'
 
 import AppHeader from '@/components/Layouts/AppHeader.vue'
 import AppFooter from '@/components/Layouts/AppFooter.vue'
@@ -14,8 +17,9 @@ import Commentary from '@/components/Pages/Commentary.vue'
 import Footnote from '@/components/Pages/Partials/Footnote.vue'
 import Authors from '@/components/Pages/Authors.vue'
 import Editors from '@/components/Pages/Editors.vue'
+import ModalDialog from '@/components/Modals/ModalDialog.vue'
 
-createApp({
+const app = createApp({
   components: {
     'app-header': AppHeader,
     'app-footer': AppFooter,
@@ -24,10 +28,14 @@ createApp({
     'footnote': Footnote,
     'authors': Authors,
     'editors': Editors,
+    'modal-dialog': ModalDialog
   }
 })
-.use(FloatingVue)
-.use(i18nVue, { 
-  resolve: (lang) => import(`../../lang/${lang}.json`) 
-})
-.mount('#app')
+
+app.config.globalProperties.emitter = emitter
+app
+  .use(FloatingVue)
+  .use(i18nVue, { 
+    resolve: (lang) => import(`../../lang/${lang}.json`) 
+  })
+  .mount('#app')

@@ -88,6 +88,9 @@
 
   "sidebar_handle_text": "Navigation",
 
+  "version": "Version",
+  "compare": "Compare",
+  "compare_versions": "Compare Versions",
   "ATTENTION: This version of the commentary is an automatic machine translation of the original. The original version is in :original_language. The translation was done with www.deepl.com. Only the original version is authoritative. The translated form of the commentary cannot be cited.": "ATTENTION: This version of the commentary is an automatic machine translation of the original. The original commentary is in :original_language. The translation was done with www.deepl.com. Only the original version is authoritative. The translated form of the commentary cannot be cited.",
 
   "visited_at": "visited on",
@@ -105,6 +108,8 @@
   "no_results_found": "No results found",
 
   "open": "Open",
+
+  "is_loading": "Loading...",
 
   "newest_comments": "Latest commentaries",
   "all_comments": "All commentaries",

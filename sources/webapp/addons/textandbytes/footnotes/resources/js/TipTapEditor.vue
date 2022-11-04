@@ -95,7 +95,6 @@
   import Underline from '@tiptap/extension-underline'
   import Subscript from '@tiptap/extension-subscript'
   import Superscript from '@tiptap/extension-superscript'
-  import Link from '@tiptap/extension-link'
 
   export default {
     name: 'TapTapEditor',
@@ -144,10 +143,7 @@
           StarterKit,
           Underline,
           Subscript,
-          Superscript,
-          Link.configure({
-            openOnClick: false
-          })
+          Superscript
         ],
 
         autofocus: this.autoFocus,
