@@ -98,14 +98,36 @@ class CommentariesController extends Controller
 
         // get the html version of the 'content' field for each revision
         $commentaryRevisionBasePath = $this->_getCommentaryRevisionBasePath($locale, $commentaryId);
-        $revisionContent1 = $this->_getRevisionContentFromRevisionFile($commentaryRevisionBasePath . '/' . $revisionTimestamp1 . '.yaml', $locale);
-        $revisionContent2 = $this->_getRevisionContentFromRevisionFile($commentaryRevisionBasePath . '/' . $revisionTimestamp2 . '.yaml', $locale);
+        $revision1 = $this->_getRevisionContentFromRevisionFile($commentaryRevisionBasePath . '/' . $revisionTimestamp1 . '.yaml', $locale);
+        $revision2 = $this->_getRevisionContentFromRevisionFile($commentaryRevisionBasePath . '/' . $revisionTimestamp2 . '.yaml', $locale);
+
+        /*
+         * Append newlines after block element closing tags so that the revision
+         * content can be diff'ed on a line-by-line basis.
+         * 
+         * Note: The list of block element closing tags are the ones that are 
+         *       enabled in the Bard field menu. Any newly added block elements
+         *       to the Bard field need to be added to this list.
+         */
+        $lineDelimiter = '\n';
+        $blockElementClosingTags = ['</p>', '</h1>', '</h2>', '</h3>', '</h4>', '</h5>', '</h6>', '</ul>', '</ol>'];
+        foreach ($blockElementClosingTags as $closingTag) {
+            $revision1['content'] = str_replace($closingTag, $closingTag . $lineDelimiter, $revision1['content']);
+            $revision2['content'] = str_replace($closingTag, $closingTag . $lineDelimiter, $revision2['content']);
+        }
+
+        // strip html tags from the revision content
+        $revision1['content'] = strip_tags($revision1['content']);
+        $revision2['content'] = strip_tags($revision2['content']);
 
         // compare the revisions
-        $versionComparisonResult = $this->_compareRevisions($revisionContent1, $revisionContent2);
+        $versionComparisonResult = $this->_compareRevisions(
+            $revision1['human_readable_timestamp'], explode($lineDelimiter, $revision1['content']),
+            $revision2['human_readable_timestamp'], explode($lineDelimiter, $revision2['content'])
+        );
 
         // redirect to the current commentary detail view and show the comparison result
-        return $this->show($locale, $commentarySlug, $versionTimestamp, $versionComparisonResult);
+        return $this->show($locale, $commentarySlug, $versionTimestamp, str_replace($lineDelimiter, '<br />', $versionComparisonResult));
     }
 
     private function _getUsers($ids, $fieldsToInclude = null)
@@ -178,7 +200,7 @@ class CommentariesController extends Controller
         ];
     }
 
-    private function _compareRevisions($revision1, $revision2)
+    private function _compareRevisions($revision1Timestamp, $revision1Content, $revision2Timestamp, $revision2Content)
     {
         /*
          * Renderer class name:
@@ -209,8 +231,8 @@ class CommentariesController extends Controller
             // renderer language: eng, cht, chs, jpn, ...
             // or an array which has the same keys with a language file
             'language' => [
-                'old_version' => $revision1['human_readable_timestamp'],
-                'new_version' => $revision2['human_readable_timestamp']
+                'old_version' => $revision1Timestamp,
+                'new_version' => $revision2Timestamp
             ],
             // show line numbers in HTML renderers
             'lineNumbers' => false,
@@ -251,7 +273,7 @@ class CommentariesController extends Controller
             'wrapperClasses' => ['diff-wrapper'],
         ];
 
-        $differ = new Differ(explode("\n", $revision1['content']), explode("\n", $revision2['content']), $differOptions);
+        $differ = new Differ($revision1Content, $revision2Content, $differOptions);
         $renderer = RendererFactory::make($rendererName, $rendererOptions);
         return html_entity_decode($renderer->render($differ));
     }
