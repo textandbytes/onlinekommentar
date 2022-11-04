@@ -35,7 +35,7 @@
     const date = new Date();
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     const dateString = date.toLocaleDateString(props.commentary.locale, options);
-    return `${props.commentary.suggested_citation_long}: ${window.location.href} (${trans('visited_at')} ${dateString}).`
+    return `${props.commentary.suggested_citation_long} – ${trans('version')}: ${props.commentary.date}: ${window.location.href} (${trans('visited_at')} ${dateString}).`
   })
 
   const citationTextShort = computed(() => {

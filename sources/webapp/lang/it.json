@@ -112,5 +112,7 @@
   "footnotes": "Note a piè di pagina",
 
   "print_commentary": "Stampa il commento",
-  "print": "Stampa"
+  "print": "Stampa",
+
+  "version": "Versione"
 }

@@ -33,6 +33,7 @@
     <commentary :commentary="{
         'slug': '{{ slug }}',
         'title': '{{ title }}',
+        'date': '{{ date format_localized="%d.%m.%Y" }}',
         'assigned_editors': [
           {{ assigned_editors }}
             '{{ name }}',

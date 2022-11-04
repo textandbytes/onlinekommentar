@@ -112,5 +112,7 @@
     "footnotes": "Notes de bas de page",
 
     "print_commentary": "Imprimer le commentaire",
-    "print": "Imprimer"
+    "print": "Imprimer",
+
+    "version": "Version"
   }

@@ -111,5 +111,7 @@
   "footnotes": "Fussnoten",
 
   "print_commentary": "Kommentar drucken",
-  "print": "Drucken"
+  "print": "Drucken",
+
+  "version": "Version"
 }
