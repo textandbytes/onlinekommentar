@@ -30,15 +30,13 @@
                 </button>
               </div>
 
-              <div class="sm:flex sm:items-start">
-                <div class="mt-3 text-center sm:mt-0 sm:text-left">
+                <div class="sm:flex-col mt-3 text-center sm:mt-0 sm:text-left">
                   <DialogTitle as="h2" class="text-lg leading-6 font-medium text-gray-900 border-b pb-4">
                     <slot name="title" />
                   </DialogTitle>
 
                   <slot name="body" />
                 </div>
-              </div>
             </DialogPanel>
           </TransitionChild>
         </div>
