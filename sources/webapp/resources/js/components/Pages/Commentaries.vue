@@ -81,6 +81,9 @@
             <div v-if="commentary.legal_domain" class="mb-8 text-xs tracking-wider text-center uppercase">
               {{ commentary.legal_domain.label }}
             </div>
+            <div v-else class="mb-8 text-xs tracking-wider text-center uppercase">
+              &nbsp;
+            </div>
             
             <h2 class="my-4 font-serif text-3xl font-medium text-center lg:text-4xl 2xl:text-5xl lg:my-12">
               {{ commentary.title }}
