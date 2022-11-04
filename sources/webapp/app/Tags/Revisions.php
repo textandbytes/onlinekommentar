@@ -72,6 +72,7 @@ class Revisions extends Tags
             ->reject(function ($name) {
                 return $name == 'working';
             })
+            ->sort()
             ->toArray();
 
         return array_values($filenames);
@@ -79,7 +80,7 @@ class Revisions extends Tags
 
     private function _getLocaleFormattedTimestamp($timestamp, $locale)
     {
-        $format = ($locale === 'en' ? 'MM.DD' : 'DD.MM') . '.YYYY hh:mm:ss z';
+        $format = ($locale === 'en' ? 'MM.DD' : 'DD.MM') . '.YYYY HH:mm:ss z';
         return Carbon::createFromTimestamp($timestamp)->isoFormat($format);
     }
 }
