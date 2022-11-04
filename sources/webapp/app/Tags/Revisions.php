@@ -57,7 +57,7 @@ class Revisions extends Tags
                 }
             }
 
-            return array_reverse($revisions);
+            return !empty($revisions) ? array_reverse($revisions) : null;
         }
 
         return null;
