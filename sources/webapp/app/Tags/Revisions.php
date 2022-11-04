@@ -69,6 +69,9 @@ class Revisions extends Tags
             ->map(function ($file) use ($includeFileExtension) {
                 return $includeFileExtension ? pathinfo($file)['basename'] : pathinfo($file)['filename'];
             })
+            ->reject(function ($name) {
+                return $name == 'working';
+            })
             ->toArray();
 
         return array_values($filenames);
