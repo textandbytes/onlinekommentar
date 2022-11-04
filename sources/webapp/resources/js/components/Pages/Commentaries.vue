@@ -70,11 +70,11 @@
 
     <GridListView
       :items="filteredCommentaries"
-      class="bg-gray-800 sm:gap-px">
+      class="sm:gap-px">
       <template v-slot:item="commentary">
-        <div
+        <a
           class="h-[310px] md:h-[340px] xl:h-[500px] relative group transition ease-in-out delay-150 bg-white hover:bg-ok-orange p-4 md:p-8 cursor-pointer"
-          @click="onSelect(commentary)">
+          :href="'/' + locale + '/kommentare/' + commentary.slug">
 
           <div class="relative flex flex-col items-center w-full h-full">
             
@@ -103,7 +103,7 @@
               </button>
             </div>
           </div>
-        </div>
+        </a>
       </template>
     </GridListView>
   </div>
@@ -127,10 +127,6 @@
   const filteredCommentaries = ref(props.commentaries)
 
   const activeLegalDomain = ref(props.legalDomain ? props.legalDomains[0] : null)
-
-  const onSelect = (commentary) => {
-    window.location.href = '/' + props.locale + '/kommentare/' + commentary.slug
-  }
 
   const onFilter = (legalDomain) => {
     // reset the list of filtered commentaries
