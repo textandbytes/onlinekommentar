@@ -17,7 +17,7 @@ import Commentary from '@/components/Pages/Commentary.vue'
 import Footnote from '@/components/Pages/Partials/Footnote.vue'
 import Authors from '@/components/Pages/Authors.vue'
 import Editors from '@/components/Pages/Editors.vue'
-import ModalDialog from '@/components/Modals/ModalDialog.vue'
+import VersionComparisonModalDialog from '@/components/Pages/Partials/VersionComparisonModalDialog.vue'
 
 const app = createApp({
   components: {
@@ -28,7 +28,7 @@ const app = createApp({
     'footnote': Footnote,
     'authors': Authors,
     'editors': Editors,
-    'modal-dialog': ModalDialog
+    'version-comparison-modal-dialog': VersionComparisonModalDialog
   }
 })
 

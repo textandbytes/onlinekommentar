@@ -44,7 +44,13 @@
   </commentary>
 
   {{ if versionComparisonResult }}
-    <modal-dialog :open="true">
+    <version-comparison-modal-dialog
+      locale="{{ locale }}"
+      :commentary="{
+        slug: '{{ slug }}',
+      }"
+      version-timestamp="{{ versionTimestamp }}"
+      :open="true">
       <template v-slot:title>
         {{ $t('compare_versions') }}
       </template>
@@ -53,6 +59,6 @@
           {{ versionComparisonResult }}
         </div>
       </template>
-    </modal-dialog>
+    </version-comparison-modal-dialog>
   {{ /if }}
 </article>
