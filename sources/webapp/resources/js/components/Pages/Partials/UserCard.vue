@@ -1,7 +1,7 @@
 <template>
   <div class="relative p-8 transition ease-in-out delay-150 bg-white group">
     <div v-if="user.legal_domain" class="mb-4 text-xs tracking-widest text-center uppercase">
-      {{ user.legal_domain.label }}
+      {{ $t(user.legal_domain.label) }}
     </div>
 
     <div class="flex flex-col items-center justify-between space-y-6">
