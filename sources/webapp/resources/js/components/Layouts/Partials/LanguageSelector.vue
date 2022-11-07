@@ -8,8 +8,6 @@
 </template>
 
 <script setup>
-  // import { Inertia } from '@inertiajs/inertia'
-  // import { usePage } from '@inertiajs/inertia-vue3'
   import SimpleMenu from '@/components/Menus/SimpleMenu.vue'
 
   const props = defineProps({
