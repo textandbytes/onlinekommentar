@@ -4,7 +4,7 @@
       <a
         class="inline-flex items-center py-1 text-xs uppercase leading-4 font-medium rounded-sm text-black bg-white focus:outline-none focus:ring-2 focus:ring-gray-300"
         href="/">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-3 h-3 mr-2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
         </svg>
         {{ $t('back_to_results') }}
