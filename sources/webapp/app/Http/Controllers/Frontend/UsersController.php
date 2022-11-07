@@ -11,8 +11,11 @@ use Storage;
 
 class UsersController extends Controller
 {
-    public function show($locale, $slug)
+    public function show($locale, $usersType, $slug)
     {
+        // ensure that a valid users view exists based on the supplied segment
+        abort_if(!in_array($usersType, ['autoren', 'herausgeber']), 404);
+
         // get the user with the given slug
         $user = User::query()
             ->where('slug', '=', $slug)
@@ -56,6 +59,7 @@ class UsersController extends Controller
             ->layout('layout')
             ->with(array_merge([
                 'locale' => $locale,
+                'base_path_prefix' => '/' . $locale . '/' . $usersType
             ], $userData));
     }
 

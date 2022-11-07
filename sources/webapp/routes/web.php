@@ -19,10 +19,8 @@ Route::get('/', function () {
   return redirect('/de');
 });
 
-// author detail view
-Route::get('{locale}/autoren/{slug}', [UsersController::class, 'show']);
-// editor detail view
-Route::get('{locale}/herausgeber/{slug}', [UsersController::class, 'show']);
+// author and editor detail views
+Route::get('{locale}/{usersType}/{slug}', [UsersController::class, 'show']);
 
 // commentary revision detail view
 Route::get('{locale}/kommentare/{commentarySlug}/versions/{versionTimestamp}', [CommentariesController::class, 'show']);
