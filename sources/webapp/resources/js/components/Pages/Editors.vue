@@ -1,9 +1,9 @@
 <template>
   <Users
     :title="$t('editors')"
-    :locale="locale"
     :users="editors"
-    :legal-domains="legalDomains">
+    :legal-domains="legalDomains"
+    :base-path-prefix="'/' + locale + '/herausgeber'">
   </Users>
 </template>
 

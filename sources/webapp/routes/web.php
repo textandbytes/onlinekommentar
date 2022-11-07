@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Frontend\CommentariesController;
+use App\Http\Controllers\Frontend\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
   return redirect('/de');
 });
+
+// author detail view
+Route::get('{locale}/autoren/{slug}', [UsersController::class, 'show']);
+// editor detail view
+Route::get('{locale}/herausgeber/{slug}', [UsersController::class, 'show']);
 
 // commentary revision detail view
 Route::get('{locale}/kommentare/{commentarySlug}/versions/{versionTimestamp}', [CommentariesController::class, 'show']);

@@ -40,6 +40,7 @@ class UsersData extends ViewModel
                     $userFieldName => $commentary[$userFieldName]->map(function ($author, $key) {
                         return [
                             'id' => $author['id'],
+                            'slug' => $author['slug'],
                             'name' => $author['name'],
                             'email' => $author['email'],
                             'legal_domain' => Entry::query()

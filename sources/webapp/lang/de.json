@@ -118,5 +118,8 @@
   "print_commentary": "Kommentar drucken",
   "print": "Drucken",
 
-  "version": "Version"
+  "version": "Version",
+
+  "editor_of": "Herausgeber von",
+  "author_of": "Kommentar zu"
 }
