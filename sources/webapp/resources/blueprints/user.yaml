@@ -114,3 +114,15 @@ sections:
           instructions_position: above
           visibility: hidden
           always_save: false
+      -
+        handle: slug
+        field:
+          from: name
+          generate: true
+          display: Slug
+          type: slug
+          icon: slug
+          listable: true
+          instructions_position: above
+          visibility: visible
+          always_save: false
