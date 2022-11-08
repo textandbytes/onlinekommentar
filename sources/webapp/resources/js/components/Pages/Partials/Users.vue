@@ -36,7 +36,7 @@
       :items="filteredUsers"
       class="bg-ok-beige sm:gap-x-px sm:gap-y-4">
       <template v-slot:item="user">
-        <UserCard :user="user">
+        <UserCard :locale="locale" :user="user">
           <template v-if="user.slug" v-slot:buttons>
             <a
               class="ok-button"
@@ -57,6 +57,7 @@
   import FlyoutMenuWithDividers from '@/components/Menus/FlyoutMenuWithDividers'
 
   const props = defineProps({
+    locale: { type: String, required: true },
     title: { type: String, required: true },
     users: { type: Array, required: true },
     legalDomains: { type: Array, required: true },

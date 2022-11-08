@@ -1,5 +1,6 @@
 <template>
   <Users
+    :locale="locale"
     :title="$t('editors')"
     :users="editors"
     :legal-domains="legalDomains"
