@@ -121,7 +121,7 @@ return [
     'custom_cms_name' => env('STATAMIC_CUSTOM_CMS_NAME', 'Statamic'),
 
     'custom_logo_url' => [
-        'nav' => '/img/ok-logo-text.svg',
+        'nav' => '/img/ok-logo.svg',
         'outside' => '/img/ok-logo-text.svg'
     ],
 
