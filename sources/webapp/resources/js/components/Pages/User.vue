@@ -11,7 +11,7 @@
       </a>
     </div>
 
-    <div class="flex flex-col items-center my-8 md:my-12 space-y-6">
+    <div class="w-full md:w-2/3 lg:w-1/2 2xl:w-1/3 m-auto flex flex-col items-center my-8 md:my-12 space-y-6">
       <UserCard
         :locale="locale"
         :user="user"
