@@ -52,7 +52,8 @@ class Revisions extends Tags
                 if (strcmp($currentRevisionHtml, $previousRevisionHtml) !== 0) {
                     $revisions[] = [
                         'unix_timestamp' => $timestamp,
-                        'human_readable_timestamp' => $this->_getLocaleFormattedTimestamp($timestamp, $locale)
+                        'human_readable_timestamp' => $this->_getLocaleFormattedTimestamp($timestamp, $locale),
+                        'human_readable_timestamp_date_only' => $this->_getLocaleFormattedTimestampDateOnly($timestamp, $locale)
                     ];
                 }
             }
@@ -81,6 +82,12 @@ class Revisions extends Tags
     private function _getLocaleFormattedTimestamp($timestamp, $locale)
     {
         $format = ($locale === 'en' ? 'MM.DD' : 'DD.MM') . '.YYYY HH:mm:ss z';
+        return Carbon::createFromTimestamp($timestamp)->isoFormat($format);
+    }
+
+    private function _getLocaleFormattedTimestampDateOnly($timestamp, $locale)
+    {
+        $format = ($locale === 'en' ? 'MM.DD' : 'DD.MM') . '.YYYY';
         return Carbon::createFromTimestamp($timestamp)->isoFormat($format);
     }
 }

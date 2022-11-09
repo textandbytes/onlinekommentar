@@ -18,7 +18,7 @@
 
       <FlyoutMenuFullWidth
         v-if="versions && activeVersion"
-        :label="$t('version') + ': ' + activeVersion.label"
+        :label="$t('version') + ':' + activeVersion.label_date_only"
         class="flex items-center justify-end py-2 md:py-4"
         menu-classes="top-16">
         <VersionsPanel

@@ -29,7 +29,8 @@
         {
           id: '{{ unix_timestamp }}',
           timestamp: '{{ unix_timestamp }}',
-          label: '{{ human_readable_timestamp }}'
+          label: '{{ human_readable_timestamp }}',
+          label_date_only: '{{ human_readable_timestamp_date_only }}'
         },
       {{ /revisions:commentary }}
     ]"
