@@ -83,7 +83,7 @@
       <slot name="content" />
     </div>
 
-    <div class="hidden print:block">
+    <div>
         <h2 class="uppercase font-sans tracking-wider text-xl lg:text-2xl mt-12 mb-6">
             {{ $t('footnotes') }}
         </h2>
