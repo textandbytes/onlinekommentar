@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 // author and editor detail views
-Route::get('{locale}/{usersType}/{slug}', [UsersController::class, 'show']);
+Route::get('{locale}/{usersType}/{slug}', [UsersController::class, 'show'])->whereIn('usersType', ['autoren', 'herausgeber']);
 
 // commentary revision detail view
 Route::get('{locale}/kommentare/{commentarySlug}/versions/{versionTimestamp}', [CommentariesController::class, 'show']);
