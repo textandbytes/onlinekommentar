@@ -1,0 +1,53 @@
+<article class="border print:border-0">
+  <user
+    locale="{{ locale }}"
+    :user="{
+      name: '{{ name }}',
+      legal_domain: 
+        {{ if legal_domain }}
+          {
+            {{ foreach:legal_domain }}
+              '{{ key }}': '{{ value }}',
+            {{ /foreach:legal_domain }}
+          },
+        {{ else }}
+          null,
+        {{ /if }}
+      title: '{{ title }}',
+      occupation: '{{ occupation }}',
+      practice: '{{ practice }}',
+      linkedin_url: '{{ linkedin_url }}',
+      website_url: '{{ website_url }}',
+      avatar: '{{ avatar }}',
+      authored_commentaries: 
+        {{ if authored_commentaries }}
+          [
+            {{ foreach:authored_commentaries as="commentary" }}
+              {
+                {{ foreach:commentary }}
+                  '{{ key }}': '{{ value }}',
+                {{ /foreach:commentary }}
+              },
+            {{ /foreach:authored_commentaries }}
+          ],
+        {{ else }}
+          null,
+        {{ /if }}
+      edited_commentaries: 
+        {{ if edited_commentaries }}
+          [
+            {{ foreach:edited_commentaries as="commentary" }}
+              {
+                {{ foreach:commentary }}
+                  '{{ key }}': '{{ value }}',
+                {{ /foreach:commentary }}
+              },
+            {{ /foreach:edited_commentaries }}
+          ],
+        {{ else }}
+          null,
+        {{ /if }}
+    }"
+    base-path-prefix="{{ base_path_prefix }}">
+  </user>
+</article>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Frontend\CommentariesController;
+use App\Http\Controllers\Frontend\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
   return redirect('/de');
 });
+
+// author and editor detail views
+Route::get('{locale}/{usersType}/{slug}', [UsersController::class, 'show'])->whereIn('usersType', ['autoren', 'herausgeber']);
 
 // commentary revision detail view
 Route::get('{locale}/kommentare/{commentarySlug}/versions/{versionTimestamp}', [CommentariesController::class, 'show']);

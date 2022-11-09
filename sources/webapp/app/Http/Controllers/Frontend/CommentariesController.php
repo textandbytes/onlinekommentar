@@ -61,7 +61,6 @@ class CommentariesController extends Controller
         if ($content) {
             $markupFixer = new MarkupFixer();
             $contentMarkup = $markupFixer->fix($content);
-            // $commentaryData['content'] = $contentMarkup;
         }
         
         // generate table of contents from the heading elements

@@ -36,7 +36,15 @@
       :items="filteredUsers"
       class="bg-ok-beige sm:gap-x-px sm:gap-y-4">
       <template v-slot:item="user">
-        <UserCard :user="user" />
+        <UserCard :locale="locale" :user="user">
+          <template v-if="user.slug" v-slot:buttons>
+            <a
+              class="ok-button"
+              :href="basePathPrefix + '/' + user.slug">
+              {{ $t('view_user') }}
+            </a>
+          </template>
+        </UserCard>
       </template>
     </GridListView>
   </div>
@@ -49,10 +57,11 @@
   import FlyoutMenuWithDividers from '@/components/Menus/FlyoutMenuWithDividers'
 
   const props = defineProps({
-    title: { type: String, required: true },
     locale: { type: String, required: true },
+    title: { type: String, required: true },
     users: { type: Array, required: true },
-    legalDomains: { type: Array, required: true }
+    legalDomains: { type: Array, required: true },
+    basePathPrefix: { type: String, required: true }
   })
 
   const viewMode = 'grid'

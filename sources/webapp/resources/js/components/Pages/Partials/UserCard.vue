@@ -1,7 +1,7 @@
 <template>
-  <div class="relative p-8 transition ease-in-out delay-150 bg-white cursor-pointer group">
+  <div class="relative p-8 transition ease-in-out delay-150 bg-white group">
     <div v-if="user.legal_domain" class="mb-4 text-xs tracking-widest text-center uppercase">
-      {{ user.legal_domain.label }}
+      {{ $t(user.legal_domain.label) }}
     </div>
 
     <div class="flex flex-col items-center justify-between space-y-6">
@@ -17,13 +17,36 @@
       </div>
     </div>
 
-    <div
-      class="w-full text-sm lg:text-base mt-8 mb-4 py-2 border-y border-black min-h-[60px]">
-      {{ user.occupation ?? '' }}
+    <div class="w-full text-sm lg:text-base mt-8 mb-4 border-y border-black divide-y divide-black min-h-[60px]">
+      <div class="py-2">
+        {{ user.occupation ?? '' }}
+      </div>
+
+      <div v-if="user.edited_commentaries" class="py-2">
+        <div>
+          {{ $t('editor_of')}}
+        </div>
+        <div
+          v-for="commentary in user.edited_commentaries"
+          :key="commentary.id">
+          &mdash; <a :href="'/' + locale + '/kommentare/' + commentary.slug" class="underline">{{ commentary.title }}</a>
+        </div>
+      </div>
+
+      <div v-if="user.authored_commentaries" class="py-2">
+        <div>
+          {{ $t('author_of')}}
+        </div>
+        <div
+          v-for="commentary in user.authored_commentaries"
+          :key="commentary.id">
+          &mdash; <a :href="'/' + locale + '/kommentare/' + commentary.slug" class="underline">{{ commentary.title }}</a>
+        </div>
+      </div>
     </div>
 
     <div class="flex items-center justify-between w-full">
-      <div class="mt-4 space-x-2">
+      <div class="flex mt-2 space-x-2">
         <a
           v-if="user.linkedin_url"
           :href="user.linkedin_url"
@@ -38,7 +61,7 @@
         <a
           v-if="user.website_url"
           :href="user.website_url"
-          class="inline-flex items-center px-3 py-1.5 border border-2 border-black text-xs font-medium uppercase rounded-md text-white bg-black hover:bg-white hover:text-black"
+          class="inline-flex items-center p-1 border border-2 border-black text-xs font-medium uppercase rounded-sm text-white bg-black hover:bg-white hover:text-black"
           target="_blank"
           rel="noopener">
           Website
@@ -52,6 +75,7 @@
 
 <script setup>
   defineProps({
+    locale: { type: String, required: true },
     user: { type: Object, required: true }
   })
 </script>
