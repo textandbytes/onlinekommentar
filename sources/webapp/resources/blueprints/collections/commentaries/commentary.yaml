@@ -11,19 +11,6 @@ sections:
             - required
           localizable: true
       -
-        handle: original_language
-        field:
-          max_items: 1
-          mode: select
-          display: 'Original Language'
-          type: sites
-          icon: sites
-          instructions: 'Select the language in which the commentary was originally written. All other language versions are considered translations'
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-      -
         handle: suggested_citation_long
         field:
           antlers: false
@@ -114,30 +101,6 @@ sections:
           visibility: visible
           always_save: false
       -
-        handle: assigned_authors
-        field:
-          mode: select
-          display: 'Assigned Authors'
-          type: users
-          icon: users
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-          if: 'role:admin'
-      -
-        handle: assigned_editors
-        field:
-          mode: select
-          display: 'Assigned Editors'
-          type: users
-          icon: users
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-          if: 'role:admin'
-      -
         handle: pdf_commentary
         field:
           mode: list
@@ -202,6 +165,19 @@ sections:
     display: Sidebar
     fields:
       -
+        handle: original_language
+        field:
+          max_items: 1
+          mode: select
+          display: 'Original Language'
+          type: sites
+          icon: sites
+          instructions: 'Select the language in which the commentary was originally written. All other language versions are considered translations'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
         handle: review_status
         field:
           options:
@@ -225,6 +201,30 @@ sections:
           visibility: visible
           always_save: false
           localizable: true
+      -
+        handle: assigned_authors
+        field:
+          mode: select
+          display: 'Assigned Authors'
+          type: users
+          icon: users
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          if: 'role:admin'
+      -
+        handle: assigned_editors
+        field:
+          mode: select
+          display: 'Assigned Editors'
+          type: users
+          icon: users
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          if: 'role:admin'
       -
         handle: slug
         field:
