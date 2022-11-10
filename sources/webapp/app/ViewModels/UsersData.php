@@ -54,9 +54,8 @@ class UsersData extends ViewModel
                                     ];
                                 })
                                 ->first(),
-                            'title' => $author['professional_title'],
-                            'occupation' => $author['occupation'],
-                            'practice' => $author['practice'],
+                            'title' => $author['professional_title_' . app()->getLocale()],
+                            'occupation' => $author['occupation_' . app()->getLocale()],
                             'linkedin_url' => $author['linkedin_url'],
                             'website_url' => $author['website_url'],
                             'avatar' => $author->value('avatar') ? Storage::url('avatars/') . $author->value('avatar') : null

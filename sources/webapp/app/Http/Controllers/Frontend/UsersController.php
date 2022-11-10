@@ -43,8 +43,8 @@ class UsersController extends Controller
                     ];
                 })
                 ->first(),
-            'title' => $user->professional_title,
-            'occupation' => $user->occupation,
+            'title' => $user->  { 'professional_title_' . $locale },
+            'occupation' => $user->{ 'occupation_' . $locale },
             'practice' => $user->practice,
             'linkedin_url' => $user->linkedin_url,
             'website_url' => $user->website_url,

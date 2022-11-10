@@ -50,11 +50,11 @@ sections:
           collections:
             - legal_domains
       -
-        handle: professional_title
+        handle: professional_title_de
         field:
           input_type: text
           antlers: false
-          display: Title
+          display: 'Title (German)'
           type: text
           icon: text
           listable: hidden
@@ -62,11 +62,83 @@ sections:
           visibility: visible
           always_save: false
       -
-        handle: occupation
+        handle: professional_title_en
         field:
           input_type: text
           antlers: false
-          display: Occupation
+          display: 'Title (English)'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: professional_title_fr
+        field:
+          input_type: text
+          antlers: false
+          display: 'Title (French)'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: professional_title_it
+        field:
+          input_type: text
+          antlers: false
+          display: 'Title (Italian)'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: occupation_de
+        field:
+          input_type: text
+          antlers: false
+          display: Occupation (German)
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: occupation_en
+        field:
+          input_type: text
+          antlers: false
+          display: Occupation (English)
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: occupation_fr
+        field:
+          input_type: text
+          antlers: false
+          display: Occupation (French)
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: occupation_it
+        field:
+          input_type: text
+          antlers: false
+          display: Occupation (Italian)
           type: text
           icon: text
           listable: hidden
