@@ -36,14 +36,17 @@
       hover:bg-black
       hover:text-white
       rounded-full
-      text-[12px]
+      text-[10px]
       font-sans
-      ml-1
+      font-medium
+      ml-[2px]
+      mb-1
       pb-[1px]
       xl:pb-[2px]
       2xl:pb-0;
-      min-width: 18px;
-      height: 18px;
+      width: auto;
+      min-width: 22px;
+      height: 16px;
   }
 
   .v-popper__arrow-container {
