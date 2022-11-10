@@ -84,11 +84,11 @@
     </div>
 
     <div>
-        <h2 class="uppercase font-sans tracking-wider text-xl lg:text-2xl mt-12 mb-6">
+        <h2 class="mt-12 mb-6 font-sans text-xl tracking-wider uppercase lg:text-2xl">
             {{ $t('footnotes') }}
         </h2>
         <ul>
-            <li v-for="(footnote, index) in store.footnotes" :key="index" class="list-decimal ml-12 mb-2" v-html="footnote"></li>
+            <li v-for="(footnote, index) in store.footnotes" :key="index" class="mb-2 ml-12 list-decimal" v-html="footnote"></li>
         </ul>
     </div>
 
@@ -206,7 +206,7 @@
     }
 
     :deep(h4) {
-      @apply font-sans tracking-wider text-lg mb-6 print:break-inside-avoid print:break-after-avoid
+      @apply font-sans tracking-wider text-lg lg:text-xl mt-3 mb-6 print:break-inside-avoid print:break-after-avoid
     }
 
     :deep(p) {
