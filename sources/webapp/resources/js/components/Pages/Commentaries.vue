@@ -145,6 +145,6 @@
 
 <style lang="postcss" scoped>
   h2 {
-    @apply break-all leading-snug;
+    @apply leading-snug;
   }
 </style>
