@@ -68,7 +68,7 @@ class UsersController extends Controller
         return Entry::query()
             ->where('collection', 'commentaries')
             ->where('status', 'published')
-            ->where('locale', app()->getLocale())
+            ->where('locale', $locale)
             ->where($userFieldName, '!=', null)
             ->get()
             ->flatMap(function ($commentary, $key) use ($user, $userFieldName) {
