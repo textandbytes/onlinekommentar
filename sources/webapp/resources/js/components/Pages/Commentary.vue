@@ -83,7 +83,7 @@
       <slot name="content" />
     </div>
 
-    <div>
+    <div v-if="store.footnotes.length > 0">
         <h2 class="mt-12 mb-6 font-sans text-xl tracking-wider uppercase lg:text-2xl">
             {{ $t('footnotes') }}
         </h2>
