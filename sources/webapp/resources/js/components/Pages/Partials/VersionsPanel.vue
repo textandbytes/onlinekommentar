@@ -33,7 +33,7 @@
         <span
           v-if="index === 0"
           class="inline-flex items-center rounded-full bg-ok-blue ml-2 px-1.5 text-xs font-medium text-black uppercase">
-          {{ $t('published') }}
+          {{ $t('current_version') }}
         </span>
       </template>
     </CheckboxWithLabel>

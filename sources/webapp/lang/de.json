@@ -121,5 +121,7 @@
   "versions": "Versionen",
 
   "editor_of": "Herausgeber von",
-  "author_of": "Kommentar zu"
+  "author_of": "Kommentar zu",
+
+  "current_version": "Aktuelle Version"
 }

@@ -122,5 +122,7 @@
   "versions": "Versions",
 
   "editor_of": "Editor of",
-  "author_of": "Author of"
+  "author_of": "Author of",
+
+  "current_version": "Current version"
 }
