@@ -81,13 +81,13 @@ class Revisions extends Tags
 
     private function _getLocaleFormattedTimestamp($timestamp, $locale)
     {
-        $format = ($locale === 'en' ? 'MM.DD' : 'DD.MM') . '.YYYY HH:mm:ss z';
+        $format = ($locale === 'en' ? 'MM/DD/YYYY' : 'DD.MM.YYYY') . ' HH:mm:ss z';
         return Carbon::createFromTimestamp($timestamp)->isoFormat($format);
     }
 
     private function _getLocaleFormattedTimestampDateOnly($timestamp, $locale)
     {
-        $format = ($locale === 'en' ? 'MM.DD' : 'DD.MM') . '.YYYY';
+        $format = ($locale === 'en' ? 'MM/DD/YYYY' : 'DD.MM.YYYY');
         return Carbon::createFromTimestamp($timestamp)->isoFormat($format);
     }
 }

@@ -168,7 +168,7 @@ class CommentariesController extends Controller
 
     private function _getLocaleFormattedTimestamp($timestamp, $locale)
     {
-        $format = ($locale === 'en' ? 'MM.DD' : 'DD.MM') . '.YYYY hh:mm:ss z';
+        $format = ($locale === 'en' ? 'MM/DD/YYYY' : 'DD.MM.YYYY') . ' hh:mm:ss z';
         return Carbon::createFromTimestamp($timestamp)->isoFormat($format);
     }
 
