@@ -53,8 +53,10 @@ class CommentariesController extends Controller
         $commentaryData['assigned_authors'] = $this->_getUsers($commentaryData['assigned_authors'] ?? null, ['name']);
         $commentaryData['assigned_editors'] = $this->_getUsers($commentaryData['assigned_editors'] ?? null, ['name']);
 
-        // return the first original language since only one original language can be assigned to a commentary
-        $commentaryData['original_language'] = $commentaryData['original_language'][0];
+        // return the first original language (default to German) since only one original language can be assigned to a commentary
+        $commentaryData['original_language'] = ($commentaryData['original_language'] && is_array($commentaryData['original_language']) && !empty($commentaryData['original_language']))
+            ? $commentaryData['original_language'][0]
+            : 'de';
 
         // generate formatted html markup for the language-specific 'content' field
         $content = $commentaryData['content'];
