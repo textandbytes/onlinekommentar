@@ -25,5 +25,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Statamic::script('app', 'cp.js');
+        date_default_timezone_set('Europe/Zurich');
     }
 }
