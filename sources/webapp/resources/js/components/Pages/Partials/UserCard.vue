@@ -24,13 +24,13 @@
 
       <div v-if="user.edited_commentaries" class="py-2">
         <div>
-          {{ $t('editor_of')}}
+          {{ $t('editor_of')}} {{$t(user.legal_domain.label) }}
         </div>
-        <div
+        <!-- <div
           v-for="commentary in user.edited_commentaries"
           :key="commentary.id">
           &mdash; <a :href="'/' + locale + '/kommentare/' + commentary.slug" class="underline">{{ commentary.title }}</a>
-        </div>
+        </div> -->
       </div>
 
       <div v-if="user.authored_commentaries" class="py-2">
