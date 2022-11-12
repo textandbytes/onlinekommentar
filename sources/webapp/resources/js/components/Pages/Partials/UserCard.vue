@@ -24,7 +24,7 @@
 
       <div v-if="user.edited_commentaries" class="py-2">
         <div>
-          {{ $t('editor_of')}} {{$t(user.legal_domain.label) }}
+          {{ user.editor_of }}
         </div>
         <!-- <div
           v-for="commentary in user.edited_commentaries"

@@ -50,6 +50,62 @@ sections:
           collections:
             - legal_domains
       -
+        handle: linkedin_url
+        field:
+          display: 'LinkedIn URL'
+          type: link
+          icon: link
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: website_url
+        field:
+          display: 'Website URL'
+          type: link
+          icon: link
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: roles
+        field:
+          type: user_roles
+          mode: select
+          width: 50
+          listable: true
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          if: 'role:admin'
+      -
+        handle: groups
+        field:
+          type: user_groups
+          mode: select
+          width: 50
+          listable: false
+          instructions_position: above
+          visibility: hidden
+          always_save: false
+      -
+        handle: slug
+        field:
+          from: name
+          generate: true
+          display: Slug
+          type: slug
+          icon: slug
+          listable: true
+          instructions_position: above
+          visibility: visible
+          always_save: false
+  multilingual_descriptive_info:
+    display: 'Multilingual Descriptive Info'
+    fields:
+      -
         handle: professional_title_de
         field:
           input_type: text
@@ -102,7 +158,7 @@ sections:
         field:
           input_type: text
           antlers: false
-          display: Occupation (German)
+          display: 'Occupation (German)'
           type: text
           icon: text
           listable: hidden
@@ -114,7 +170,7 @@ sections:
         field:
           input_type: text
           antlers: false
-          display: Occupation (English)
+          display: 'Occupation (English)'
           type: text
           icon: text
           listable: hidden
@@ -126,7 +182,7 @@ sections:
         field:
           input_type: text
           antlers: false
-          display: Occupation (French)
+          display: 'Occupation (French)'
           type: text
           icon: text
           listable: hidden
@@ -138,7 +194,7 @@ sections:
         field:
           input_type: text
           antlers: false
-          display: Occupation (Italian)
+          display: 'Occupation (Italian)'
           type: text
           icon: text
           listable: hidden
@@ -146,55 +202,50 @@ sections:
           visibility: visible
           always_save: false
       -
-        handle: linkedin_url
+        handle: editor_of_de
         field:
-          display: 'LinkedIn URL'
-          type: link
-          icon: link
+          antlers: false
+          display: 'Editor of (German)'
+          type: textarea
+          icon: textarea
+          instructions: 'This is the text that appears in the editors detail page and describes what they are editor of and with whom (German version)'
           listable: hidden
           instructions_position: above
           visibility: visible
           always_save: false
       -
-        handle: website_url
+        handle: editor_of_en
         field:
-          display: 'Website URL'
-          type: link
-          icon: link
+          antlers: false
+          display: 'Editor of (English)'
+          type: textarea
+          icon: textarea
+          instructions: 'This is the text that appears in the editors detail page and describes what they are editor of and with whom (English version)'
           listable: hidden
           instructions_position: above
           visibility: visible
           always_save: false
       -
-        handle: roles
+        handle: editor_of_fr
         field:
-          type: user_roles
-          mode: select
-          width: 50
-          listable: true
+          antlers: false
+          display: 'Editor of (French)'
+          type: textarea
+          icon: textarea
+          instructions: 'This is the text that appears in the editors detail page and describes what they are editor of and with whom (French version)'
+          listable: hidden
           instructions_position: above
           visibility: visible
           always_save: false
-          if: 'role:admin'
       -
-        handle: groups
+        handle: editor_of_it
         field:
-          type: user_groups
-          mode: select
-          width: 50
-          listable: false
-          instructions_position: above
-          visibility: hidden
-          always_save: false
-      -
-        handle: slug
-        field:
-          from: name
-          generate: true
-          display: Slug
-          type: slug
-          icon: slug
-          listable: true
+          antlers: false
+          display: 'Editor of (Italian)'
+          type: textarea
+          icon: textarea
+          instructions: 'This is the text that appears in the editors detail page and describes what they are editor of and with whom (Italian version)'
+          listable: hidden
           instructions_position: above
           visibility: visible
           always_save: false
