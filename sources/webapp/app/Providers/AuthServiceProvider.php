@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
+use App\Policies\EntryPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -13,7 +13,8 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        // 'App\Models\Model' => 'App\Policies\ModelPolicy',
+        \Statamic\Contracts\Entries\Entry::class => EntryPolicy::class,
+        \Statamic\Entries\Entry::class => EntryPolicy::class,
     ];
 
     /**
@@ -23,6 +24,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->registerPolicies();
+        $this->app->booted(function () {
+            $this->registerPolicies();
+        });
     }
 }
