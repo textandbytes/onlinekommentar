@@ -1,0 +1,729 @@
+-
+    type: heading
+    attrs:
+        level: '1'
+    content:
+        -
+            type: text
+            text: I.
+            marks:
+                -
+                    type: link
+                    attrs:
+                        href: ''
+        -
+            type: text
+            text: "\_\_\_\_\_\_\_\_\_\_\_\_\_\n"
+            marks:
+                -
+                    type: link
+                    attrs:
+                        href: ''
+        -
+            type: text
+            text: 'Überschrift 1'
+            marks:
+                -
+                    type: link
+                    attrs:
+                        href: ''
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: '1'
+            marks:
+                -
+                    type: bts_span
+                    attrs:
+                        class: paragraph-nr
+        -
+            type: text
+            text: " Überschriften der ersten Gliederungsebene werden durch\nrömische Zahlen gegliedert."
+        -
+            type: footnote
+            attrs:
+                data-content: 'BSK-<span style="text-transform:uppercase">Dubs/Truffer</span>, N. 1 zu Art. 701 OR. Hier gibt es auch <i>Kursivschrift</i> und <b>Fettschrift</b>.'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: '2'
+            marks:
+                -
+                    type: bts_span
+                    attrs:
+                        class: paragraph-nr
+        -
+            type: text
+            text: " Erfassen Sie hier Ihren Kommentar. Gewisse Wörter können\nauch "
+        -
+            type: text
+            text: Fett
+            marks:
+                -
+                    type: bold
+        -
+            type: text
+            text: ' oder '
+        -
+            type: text
+            text: Kursiv
+            marks:
+                -
+                    type: italic
+        -
+            type: text
+            text: ' geschrieben werden.'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: "\_"
+-
+    type: heading
+    attrs:
+        level: '2'
+    content:
+        -
+            type: text
+            text: A.
+            marks:
+                -
+                    type: link
+                    attrs:
+                        href: ''
+        -
+            type: text
+            text: "\_\_\_\_\_\_\_\_\_\_\n"
+            marks:
+                -
+                    type: link
+                    attrs:
+                        href: ''
+        -
+            type: text
+            text: 'Überschrift 2'
+            marks:
+                -
+                    type: link
+                    attrs:
+                        href: ''
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: '3'
+            marks:
+                -
+                    type: bts_span
+                    attrs:
+                        class: paragraph-nr
+        -
+            type: text
+            text: " Überschriften der zweiten Gliederungsebene werden durch Grossbuchstaben\ngegliedert."
+        -
+            type: footnote
+            attrs:
+                data-content: 'BGE 147 III 345 E. 6.2.'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: '4'
+            marks:
+                -
+                    type: bts_span
+                    attrs:
+                        class: paragraph-nr
+        -
+            type: text
+            text: ' Erfassen Sie hier Ihren Kommentar. Gewisse '
+        -
+            type: text
+            text: Wörter
+            marks:
+                -
+                    type: bold
+        -
+            type: text
+            text: 'können auch Fett geschrieben werden.'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: "\_"
+-
+    type: heading
+    attrs:
+        level: '3'
+    content:
+        -
+            type: text
+            text: '1.'
+            marks:
+                -
+                    type: link
+                    attrs:
+                        href: ''
+        -
+            type: text
+            text: "\_\_\_\_\_\_\_\_\_\_\_\_\n"
+            marks:
+                -
+                    type: link
+                    attrs:
+                        href: ''
+        -
+            type: text
+            text: 'Überschrift 3'
+            marks:
+                -
+                    type: link
+                    attrs:
+                        href: ''
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: '5'
+            marks:
+                -
+                    type: bts_span
+                    attrs:
+                        class: paragraph-nr
+        -
+            type: text
+            text: " Überschriften der dritten Gliederungsebene werden durch arabische\nZiffern gegliedert."
+        -
+            type: footnote
+            attrs:
+                data-content: '<span style="text-transform:uppercase">Von der Crone</span>, Rz. 66.'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: '6'
+            marks:
+                -
+                    type: bts_span
+                    attrs:
+                        class: paragraph-nr
+        -
+            type: text
+            text: " Erfassen Sie hier Ihren Kommentar. Auch hier können\ngewisse Elemente durch "
+        -
+            type: text
+            text: Fettschrift
+            marks:
+                -
+                    type: bold
+        -
+            type: text
+            text: ' oder '
+        -
+            type: text
+            text: 'Kursivschrift '
+            marks:
+                -
+                    type: italic
+        -
+            type: text
+            text: "hervorgehoben\nwerden."
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: "\_"
+-
+    type: heading
+    attrs:
+        level: '4'
+    content:
+        -
+            type: text
+            text: a.
+            marks:
+                -
+                    type: link
+                    attrs:
+                        href: ''
+        -
+            type: text
+            text: "\_\_\_\_\_\_\_\_\_\_\_\_\n"
+            marks:
+                -
+                    type: link
+                    attrs:
+                        href: ''
+        -
+            type: text
+            text: 'Überschrift 4'
+            marks:
+                -
+                    type: link
+                    attrs:
+                        href: ''
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: '7'
+            marks:
+                -
+                    type: bts_span
+                    attrs:
+                        class: paragraph-nr
+        -
+            type: text
+            text: " Überschriften der vierten Gliederungsebene werden durch Kleinbuchstaben\ngegliedert."
+        -
+            type: footnote
+            attrs:
+                data-content: '<span style="text-transform:uppercase">Studer</span>, S. 142.'
+        -
+            type: text
+            text: 'Der Kommentar sollte nicht mehr als vier Gliederungsebenen umfassen.'
+        -
+            type: footnote
+            attrs:
+                data-content: 'Urteil 4A_262/2021 vom 30. September 2021 E. 5.3.'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: '8'
+            marks:
+                -
+                    type: bts_span
+                    attrs:
+                        class: paragraph-nr
+        -
+            type: text
+            text: ' Erfassen Sie hier Ihren Kommentar.'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: "\_"
+-
+    type: heading
+    attrs:
+        level: '4'
+    content:
+        -
+            type: text
+            text: b.
+        -
+            type: text
+            text: "\_\_\_\_\_\_\_\_\_\_\_\_\n"
+        -
+            type: text
+            text: 'Überschrift 4'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: '9'
+            marks:
+                -
+                    type: bts_span
+                    attrs:
+                        class: paragraph-nr
+        -
+            type: text
+            text: " Überschriften der vierten Gliederungsebene werden durch Kleinbuchstaben\ngegliedert."
+        -
+            type: footnote
+            attrs:
+                data-content: '<span style="text-transform:uppercase">Studer</span>, S. 142.'
+        -
+            type: text
+            text: 'Der Kommentar sollte nicht mehr als vier Gliederungsebenen umfassen.'
+        -
+            type: footnote
+            attrs:
+                data-content: 'Urteil 4A_262/2021 vom 30. September 2021 E. 5.3.'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: '10'
+            marks:
+                -
+                    type: bts_span
+                    attrs:
+                        class: paragraph-nr
+        -
+            type: text
+            text: ' Erfassen Sie hier Ihren Kommentar.'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: "\_"
+-
+    type: heading
+    attrs:
+        level: '1'
+    content:
+        -
+            type: text
+            text: II.
+        -
+            type: text
+            text: "\_\_\_\_\_\_\_\_\_\_\n"
+        -
+            type: text
+            text: 'Überschrift 1'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: '11'
+            marks:
+                -
+                    type: bts_span
+                    attrs:
+                        class: paragraph-nr
+        -
+            type: text
+            text: " Überschriften der ersten Gliederungsebene werden durch\nrömische Zahlen gegliedert."
+        -
+            type: footnote
+            attrs:
+                data-content: 'Beginn – In einer Fussnote kann auch sehr viel Text stehen. In einer Fussnote kann auch sehr viel Text stehen. In einer Fussnote kann auch sehr viel Text stehen. In einer Fussnote kann auch sehr viel Text stehen. In einer Fussnote kann auch sehr viel Text stehen. In einer Fussnote kann auch sehr viel Text stehen. In einer Fussnote kann auch sehr viel Text stehen. In einer Fussnote kann auch sehr viel Text stehen. In einer Fussnote kann auch sehr viel Text stehen. In einer Fussnote kann auch sehr viel Text stehen – Ende.'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: '12'
+            marks:
+                -
+                    type: bts_span
+                    attrs:
+                        class: paragraph-nr
+        -
+            type: text
+            text: " Erfassen Sie hier Ihren Kommentar. Gewisse Wörter\nkönnen auch "
+        -
+            type: text
+            text: Fett
+            marks:
+                -
+                    type: bold
+        -
+            type: text
+            text: ' geschrieben werden.'
+        -
+            type: footnote
+            attrs:
+                data-content: 'Manchmal gibt es auch Links in der Fussnote, <a href="https://www.nzz.ch/technologie/mastodon-die-twitter-alternative-hat-eine-elegante-loesung-fuer-zensur-und-hassrede-ld.1710322">https://www.nzz.ch/technologie/mastodon-die-twitter-alternative-hat-eine-elegante-loesung-fuer-zensur-und-hassrede-ld.1710322</a>'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: "\_"
+-
+    type: heading
+    attrs:
+        level: '2'
+    content:
+        -
+            type: text
+            text: A.
+        -
+            type: text
+            text: "\_\_\_\_\_\_\_\_\_\_\n"
+        -
+            type: text
+            text: 'Überschrift 2'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: '13'
+            marks:
+                -
+                    type: bts_span
+                    attrs:
+                        class: paragraph-nr
+        -
+            type: text
+            text: " Überschriften der zweiten Gliederungsebene werden durch\nGrossbuchstaben gegliedert."
+        -
+            type: footnote
+            attrs:
+                data-content: 'BGE 147 III 345 E. 6.2.'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: '14'
+            marks:
+                -
+                    type: bts_span
+                    attrs:
+                        class: paragraph-nr
+        -
+            type: text
+            text: ' Erfassen Sie hier Ihren Kommentar. Gewisse '
+        -
+            type: text
+            text: Wörter
+            marks:
+                -
+                    type: bold
+        -
+            type: text
+            text: 'können auch Fett oder '
+        -
+            type: text
+            text: Kursiv
+            marks:
+                -
+                    type: italic
+        -
+            type: text
+            text: ' geschrieben werden.'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: "\_"
+-
+    type: heading
+    attrs:
+        level: '3'
+    content:
+        -
+            type: text
+            text: '1.'
+        -
+            type: text
+            text: "\_\_\_\_\_\_\_\_\_\_\_\_\n"
+        -
+            type: text
+            text: 'Überschrift 3'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: '15'
+            marks:
+                -
+                    type: bts_span
+                    attrs:
+                        class: paragraph-nr
+        -
+            type: text
+            text: " Überschriften der dritten Gliederungsebene werden durch\narabische Ziffern gegliedert."
+        -
+            type: footnote
+            attrs:
+                data-content: '<span style="text-transform:uppercase">Von der Crone</span>, Rz. 66.'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: '16'
+            marks:
+                -
+                    type: bts_span
+                    attrs:
+                        class: paragraph-nr
+        -
+            type: text
+            text: " Erfassen Sie hier Ihren Kommentar. Auch hier können\ngewisse Elemente durch "
+        -
+            type: text
+            text: Fettschrift
+            marks:
+                -
+                    type: bold
+        -
+            type: text
+            text: ' hervorgehoben werden.'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: "\_"
+-
+    type: heading
+    attrs:
+        level: '4'
+    content:
+        -
+            type: text
+            text: a.
+        -
+            type: text
+            text: "\_\_\_\_\_\_\_\_\_\_\_\_\n"
+        -
+            type: text
+            text: 'Überschrift 4'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: '17'
+            marks:
+                -
+                    type: bts_span
+                    attrs:
+                        class: paragraph-nr
+        -
+            type: text
+            text: " Überschriften der vierten Gliederungsebene werden durch\nKleinbuchstaben gegliedert."
+        -
+            type: footnote
+            attrs:
+                data-content: '<span style="text-transform:uppercase">Studer</span>, S. 142.'
+        -
+            type: text
+            text: 'Der Kommentar sollte nicht mehr als vier Gliederungsebenen umfassen.'
+        -
+            type: footnote
+            attrs:
+                data-content: 'Urteil 4A_262/2021 vom 30. September 2021 E. 5.3.'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: '18'
+            marks:
+                -
+                    type: bts_span
+                    attrs:
+                        class: paragraph-nr
+        -
+            type: text
+            text: ' Erfassen Sie hier Ihren Kommentar.'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: "\_"
+-
+    type: heading
+    attrs:
+        level: '4'
+    content:
+        -
+            type: text
+            text: b.
+        -
+            type: text
+            text: "\_\_\_\_\_\_\_\_\_\_\_\_\n"
+        -
+            type: text
+            text: 'Überschrift 4'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: '19'
+            marks:
+                -
+                    type: bts_span
+                    attrs:
+                        class: paragraph-nr
+        -
+            type: text
+            text: " Überschriften der vierten Gliederungsebene werden durch\nKleinbuchstaben gegliedert."
+        -
+            type: footnote
+            attrs:
+                data-content: '<span style="text-transform:uppercase">Studer</span>, S. 142.'
+        -
+            type: text
+            text: 'Der Kommentar sollte nicht mehr als vier Gliederungsebenen umfassen.'
+        -
+            type: footnote
+            attrs:
+                data-content: 'Urteil 4A_262/2021 vom 30. September 2021 E. 5.3.'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: '20'
+            marks:
+                -
+                    type: bts_span
+                    attrs:
+                        class: paragraph-nr
+        -
+            type: text
+            text: ' Erfassen Sie hier Ihren Kommentar.'
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: "\_"
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: Literaturverzeichnis
+            marks:
+                -
+                    type: bold
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: "Dubs Dieter / Truffer\nRoland, "
+        -
+            type: text
+            text: "in: Honsell Heinrich / Vogt Nedim Peter / Watter Rolf (Hrsg.),\nBasler Kommentar, Obligationenrecht II, 5. Aufl., Basel 2016."
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: 'Studer Christoph D., '
+        -
+            type: text
+            text: "Die\nEinberufung der Generalversammlung der Aktiengesellschaft, Diss., Bern 1995."
+-
+    type: paragraph
+    content:
+        -
+            type: text
+            text: "Von der Crone Hans\nCaspar"
+        -
+            type: text
+            text: ', Aktienrecht, 2. Aufl., Bern 2020.'
