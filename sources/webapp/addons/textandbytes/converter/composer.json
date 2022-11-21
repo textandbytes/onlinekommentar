@@ -1,0 +1,19 @@
+{
+    "name": "textandbytes/converter",
+    "autoload": {
+        "psr-4": {
+            "Textandbytes\\Converter\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Converter",
+            "description": "Converter addon"
+        },
+        "laravel": {
+            "providers": [
+                "Textandbytes\\Converter\\ServiceProvider"
+            ]
+        }
+    }
+}
