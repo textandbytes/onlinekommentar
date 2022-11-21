@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Converters\Marks;
+namespace Textandbytes\Converter\Marks;
 
 use HtmlToProseMirror\Marks\Mark;
 

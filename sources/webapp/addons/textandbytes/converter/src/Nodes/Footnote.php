@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Converters\Nodes;
+namespace Textandbytes\Converter\Nodes;
 
 use DOMXPath;
 use HtmlToProseMirror\Nodes\Node;

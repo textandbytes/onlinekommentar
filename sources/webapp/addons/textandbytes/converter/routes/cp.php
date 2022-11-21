@@ -1,10 +1,10 @@
 <?php
 
-use App\Converters\Converter;
+use Textandbytes\Converter\Converter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::post('/api/converter', function (Request $request) {
+Route::post('converter/convert', function (Request $request) {
     $values = $request->json()->all();
 
     return [

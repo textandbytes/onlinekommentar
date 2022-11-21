@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests;
 
-use App\Converters\Converter;
+use Textandbytes\Converter\Converter;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Yaml\Yaml;
 
@@ -123,9 +123,9 @@ EOT;
     /** @test */
     public function it_converts_sample()
     {
-        $html = file_get_contents(__DIR__.'/../__fixtures__/documents/sample.html');
+        $html = file_get_contents(__DIR__.'/__fixtures__/documents/sample.html');
         
-        $expected = Yaml::parse(file_get_contents(__DIR__.'/../__fixtures__/documents/sample.yaml'));
+        $expected = Yaml::parse(file_get_contents(__DIR__.'/__fixtures__/documents/sample.yaml'));
 
         $this->assertEquals($expected, $this->convert($html));
     }

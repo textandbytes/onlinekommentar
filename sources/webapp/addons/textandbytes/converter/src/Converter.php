@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Converters;
+namespace Textandbytes\Converter;
 
 use HtmlToProseMirror\Renderer;
 use Statamic\Support\Str;

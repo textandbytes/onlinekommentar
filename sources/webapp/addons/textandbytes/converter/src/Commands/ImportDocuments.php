@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Textandbytes\Converter\Commands;
 
-use App\Converters\Converter;
+use Textandbytes\Converter\Converter;
 use Illuminate\Console\Command;
 use Statamic\Facades\Entry;
 
@@ -13,7 +13,7 @@ class ImportDocuments extends Command
      *
      * @var string
      */
-    protected $signature = 'app:import-documents';
+    protected $signature = 'converter:import-documents';
 
     /**
      * Execute the console command.
