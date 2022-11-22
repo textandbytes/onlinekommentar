@@ -43,7 +43,7 @@ EOT;
                 'content' => [
                     [
                         'type' => 'text',
-                        'text' => "Überschriften der ersten Gliederungsebene werden durch\nrömische Zahlen gegliedert.",
+                        'text' => "Überschriften der ersten Gliederungsebene werden durch römische Zahlen gegliedert.",
                     ],
                     [
                         'type' => 'footnote',
@@ -88,13 +88,57 @@ EOT;
                     ],
                     [
                         'type' => 'text',
-                        'text' => " Überschriften der ersten Gliederungsebene werden durch\nrömische Zahlen gegliedert.",
+                        'text' => " Überschriften der ersten Gliederungsebene werden durch römische Zahlen gegliedert.",
                     ],
                 ],
             ],
         ];
 
         $this->assertEquals($expected, $this->convert($html));
+    }
+
+    /** @test */
+    public function it_removes_toc_anchors()
+    {
+        $html = <<<EOT
+<h1><a name="_Toc88908065"></a><a name="_Toc90035648">I.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Überschrift 1</a></h1>
+EOT;
+
+        $expected = [
+            [
+                'type' => 'heading',
+                'attrs' => [
+                    'level' => 1,
+                ],
+                'content' => [
+                    [
+                        'type' => 'text',
+                        'text' => "I.",
+                    ],
+                    [
+                        'type' => 'text',
+                        'text' => " ",
+                    ],
+                    [
+                        'type' => 'text',
+                        'text' => "Überschrift 1",
+                    ],
+                ],
+            ],
+        ];
+
+        $this->assertEquals($expected, $this->convert($html));
+    }
+
+    /** @test */
+    public function it_removes_empty_paragraphs()
+    {
+        $html = <<<EOT
+<p class=MsoNormal>&nbsp;</p>
+EOT;
+
+        $this->assertEquals([], $this->convert($html));
     }
 
     /** @test */
@@ -125,6 +169,7 @@ EOT;
     {
         $html = file_get_contents(__DIR__.'/__fixtures__/documents/sample.html');
         
+        // file_put_contents(__DIR__.'/__fixtures__/documents/sample.yaml', Yaml::dump($this->convert($html), 10));
         $expected = Yaml::parse(file_get_contents(__DIR__.'/__fixtures__/documents/sample.yaml'));
 
         $this->assertEquals($expected, $this->convert($html));

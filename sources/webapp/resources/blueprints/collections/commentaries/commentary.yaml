@@ -163,6 +163,15 @@ sections:
           visibility: visible
           always_save: false
           localizable: true
+      -
+        handle: converter
+        field:
+          display: Import
+          type: converter
+          instructions_position: above
+          listable: hidden
+          visibility: visible
+          always_save: false
   sidebar:
     display: Sidebar
     fields:

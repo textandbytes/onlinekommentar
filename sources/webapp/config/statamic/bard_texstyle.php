@@ -35,7 +35,7 @@ return [
             'name'   => 'Paragraph Nr',
             'ident'  => 'Nr',
             'class'  => 'paragraph-nr',
-            'cp_css' => 'position:absolute margin-left:-20px font-size: 0.75rem font-family: "Work Sans"',
+            'cp_css' => 'background: #dee3e9; border-radius: 3px; padding: 1px 3px;',
         ],
 
     ],

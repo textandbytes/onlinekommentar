@@ -44,7 +44,7 @@ class ImportDocuments extends Command
                 ->slug($name)
                 ->data([
                     'title' => $name,
-                    'legal_text' => $text,
+                    'content' => $text,
                 ])
                 ->save();
         }

@@ -6,27 +6,12 @@
         -
             type: text
             text: I.
-            marks:
-                -
-                    type: link
-                    attrs:
-                        href: ''
         -
             type: text
-            text: "\_\_\_\_\_\_\_\_\_\_\_\_\_\n"
-            marks:
-                -
-                    type: link
-                    attrs:
-                        href: ''
+            text: ' '
         -
             type: text
             text: 'Überschrift 1'
-            marks:
-                -
-                    type: link
-                    attrs:
-                        href: ''
 -
     type: paragraph
     content:
@@ -40,7 +25,7 @@
                         class: paragraph-nr
         -
             type: text
-            text: " Überschriften der ersten Gliederungsebene werden durch\nrömische Zahlen gegliedert."
+            text: ' Überschriften der ersten Gliederungsebene werden durch römische Zahlen gegliedert.'
         -
             type: footnote
             attrs:
@@ -58,7 +43,7 @@
                         class: paragraph-nr
         -
             type: text
-            text: " Erfassen Sie hier Ihren Kommentar. Gewisse Wörter können\nauch "
+            text: ' Erfassen Sie hier Ihren Kommentar. Gewisse Wörter können auch '
         -
             type: text
             text: Fett
@@ -78,12 +63,6 @@
             type: text
             text: ' geschrieben werden.'
 -
-    type: paragraph
-    content:
-        -
-            type: text
-            text: "\_"
--
     type: heading
     attrs:
         level: '2'
@@ -91,27 +70,12 @@
         -
             type: text
             text: A.
-            marks:
-                -
-                    type: link
-                    attrs:
-                        href: ''
         -
             type: text
-            text: "\_\_\_\_\_\_\_\_\_\_\n"
-            marks:
-                -
-                    type: link
-                    attrs:
-                        href: ''
+            text: ' '
         -
             type: text
             text: 'Überschrift 2'
-            marks:
-                -
-                    type: link
-                    attrs:
-                        href: ''
 -
     type: paragraph
     content:
@@ -125,7 +89,7 @@
                         class: paragraph-nr
         -
             type: text
-            text: " Überschriften der zweiten Gliederungsebene werden durch Grossbuchstaben\ngegliedert."
+            text: ' Überschriften der zweiten Gliederungsebene werden durch Grossbuchstaben gegliedert.'
         -
             type: footnote
             attrs:
@@ -152,13 +116,7 @@
                     type: bold
         -
             type: text
-            text: 'können auch Fett geschrieben werden.'
--
-    type: paragraph
-    content:
-        -
-            type: text
-            text: "\_"
+            text: ' können auch Fett geschrieben werden.'
 -
     type: heading
     attrs:
@@ -167,27 +125,12 @@
         -
             type: text
             text: '1.'
-            marks:
-                -
-                    type: link
-                    attrs:
-                        href: ''
         -
             type: text
-            text: "\_\_\_\_\_\_\_\_\_\_\_\_\n"
-            marks:
-                -
-                    type: link
-                    attrs:
-                        href: ''
+            text: ' '
         -
             type: text
             text: 'Überschrift 3'
-            marks:
-                -
-                    type: link
-                    attrs:
-                        href: ''
 -
     type: paragraph
     content:
@@ -201,7 +144,7 @@
                         class: paragraph-nr
         -
             type: text
-            text: " Überschriften der dritten Gliederungsebene werden durch arabische\nZiffern gegliedert."
+            text: ' Überschriften der dritten Gliederungsebene werden durch arabische Ziffern gegliedert.'
         -
             type: footnote
             attrs:
@@ -219,7 +162,7 @@
                         class: paragraph-nr
         -
             type: text
-            text: " Erfassen Sie hier Ihren Kommentar. Auch hier können\ngewisse Elemente durch "
+            text: ' Erfassen Sie hier Ihren Kommentar. Auch hier können gewisse Elemente durch '
         -
             type: text
             text: Fettschrift
@@ -237,13 +180,7 @@
                     type: italic
         -
             type: text
-            text: "hervorgehoben\nwerden."
--
-    type: paragraph
-    content:
-        -
-            type: text
-            text: "\_"
+            text: 'hervorgehoben werden.'
 -
     type: heading
     attrs:
@@ -252,27 +189,12 @@
         -
             type: text
             text: a.
-            marks:
-                -
-                    type: link
-                    attrs:
-                        href: ''
         -
             type: text
-            text: "\_\_\_\_\_\_\_\_\_\_\_\_\n"
-            marks:
-                -
-                    type: link
-                    attrs:
-                        href: ''
+            text: ' '
         -
             type: text
             text: 'Überschrift 4'
-            marks:
-                -
-                    type: link
-                    attrs:
-                        href: ''
 -
     type: paragraph
     content:
@@ -286,14 +208,14 @@
                         class: paragraph-nr
         -
             type: text
-            text: " Überschriften der vierten Gliederungsebene werden durch Kleinbuchstaben\ngegliedert."
+            text: ' Überschriften der vierten Gliederungsebene werden durch Kleinbuchstaben gegliedert.'
         -
             type: footnote
             attrs:
                 data-content: '<span style="text-transform:uppercase">Studer</span>, S. 142.'
         -
             type: text
-            text: 'Der Kommentar sollte nicht mehr als vier Gliederungsebenen umfassen.'
+            text: ' Der Kommentar sollte nicht mehr als vier Gliederungsebenen umfassen.'
         -
             type: footnote
             attrs:
@@ -313,12 +235,6 @@
             type: text
             text: ' Erfassen Sie hier Ihren Kommentar.'
 -
-    type: paragraph
-    content:
-        -
-            type: text
-            text: "\_"
--
     type: heading
     attrs:
         level: '4'
@@ -328,7 +244,7 @@
             text: b.
         -
             type: text
-            text: "\_\_\_\_\_\_\_\_\_\_\_\_\n"
+            text: ' '
         -
             type: text
             text: 'Überschrift 4'
@@ -345,14 +261,14 @@
                         class: paragraph-nr
         -
             type: text
-            text: " Überschriften der vierten Gliederungsebene werden durch Kleinbuchstaben\ngegliedert."
+            text: ' Überschriften der vierten Gliederungsebene werden durch Kleinbuchstaben gegliedert.'
         -
             type: footnote
             attrs:
                 data-content: '<span style="text-transform:uppercase">Studer</span>, S. 142.'
         -
             type: text
-            text: 'Der Kommentar sollte nicht mehr als vier Gliederungsebenen umfassen.'
+            text: ' Der Kommentar sollte nicht mehr als vier Gliederungsebenen umfassen.'
         -
             type: footnote
             attrs:
@@ -372,12 +288,6 @@
             type: text
             text: ' Erfassen Sie hier Ihren Kommentar.'
 -
-    type: paragraph
-    content:
-        -
-            type: text
-            text: "\_"
--
     type: heading
     attrs:
         level: '1'
@@ -387,7 +297,7 @@
             text: II.
         -
             type: text
-            text: "\_\_\_\_\_\_\_\_\_\_\n"
+            text: ' '
         -
             type: text
             text: 'Überschrift 1'
@@ -404,7 +314,7 @@
                         class: paragraph-nr
         -
             type: text
-            text: " Überschriften der ersten Gliederungsebene werden durch\nrömische Zahlen gegliedert."
+            text: ' Überschriften der ersten Gliederungsebene werden durch römische Zahlen gegliedert.'
         -
             type: footnote
             attrs:
@@ -422,7 +332,7 @@
                         class: paragraph-nr
         -
             type: text
-            text: " Erfassen Sie hier Ihren Kommentar. Gewisse Wörter\nkönnen auch "
+            text: ' Erfassen Sie hier Ihren Kommentar. Gewisse Wörter können auch '
         -
             type: text
             text: Fett
@@ -437,12 +347,6 @@
             attrs:
                 data-content: 'Manchmal gibt es auch Links in der Fussnote, <a href="https://www.nzz.ch/technologie/mastodon-die-twitter-alternative-hat-eine-elegante-loesung-fuer-zensur-und-hassrede-ld.1710322">https://www.nzz.ch/technologie/mastodon-die-twitter-alternative-hat-eine-elegante-loesung-fuer-zensur-und-hassrede-ld.1710322</a>'
 -
-    type: paragraph
-    content:
-        -
-            type: text
-            text: "\_"
--
     type: heading
     attrs:
         level: '2'
@@ -452,7 +356,7 @@
             text: A.
         -
             type: text
-            text: "\_\_\_\_\_\_\_\_\_\_\n"
+            text: ' '
         -
             type: text
             text: 'Überschrift 2'
@@ -469,7 +373,7 @@
                         class: paragraph-nr
         -
             type: text
-            text: " Überschriften der zweiten Gliederungsebene werden durch\nGrossbuchstaben gegliedert."
+            text: ' Überschriften der zweiten Gliederungsebene werden durch Grossbuchstaben gegliedert.'
         -
             type: footnote
             attrs:
@@ -496,7 +400,7 @@
                     type: bold
         -
             type: text
-            text: 'können auch Fett oder '
+            text: ' können auch Fett oder '
         -
             type: text
             text: Kursiv
@@ -507,12 +411,6 @@
             type: text
             text: ' geschrieben werden.'
 -
-    type: paragraph
-    content:
-        -
-            type: text
-            text: "\_"
--
     type: heading
     attrs:
         level: '3'
@@ -522,7 +420,7 @@
             text: '1.'
         -
             type: text
-            text: "\_\_\_\_\_\_\_\_\_\_\_\_\n"
+            text: ' '
         -
             type: text
             text: 'Überschrift 3'
@@ -539,7 +437,7 @@
                         class: paragraph-nr
         -
             type: text
-            text: " Überschriften der dritten Gliederungsebene werden durch\narabische Ziffern gegliedert."
+            text: ' Überschriften der dritten Gliederungsebene werden durch arabische Ziffern gegliedert.'
         -
             type: footnote
             attrs:
@@ -557,7 +455,7 @@
                         class: paragraph-nr
         -
             type: text
-            text: " Erfassen Sie hier Ihren Kommentar. Auch hier können\ngewisse Elemente durch "
+            text: ' Erfassen Sie hier Ihren Kommentar. Auch hier können gewisse Elemente durch '
         -
             type: text
             text: Fettschrift
@@ -568,12 +466,6 @@
             type: text
             text: ' hervorgehoben werden.'
 -
-    type: paragraph
-    content:
-        -
-            type: text
-            text: "\_"
--
     type: heading
     attrs:
         level: '4'
@@ -583,7 +475,7 @@
             text: a.
         -
             type: text
-            text: "\_\_\_\_\_\_\_\_\_\_\_\_\n"
+            text: ' '
         -
             type: text
             text: 'Überschrift 4'
@@ -600,14 +492,14 @@
                         class: paragraph-nr
         -
             type: text
-            text: " Überschriften der vierten Gliederungsebene werden durch\nKleinbuchstaben gegliedert."
+            text: ' Überschriften der vierten Gliederungsebene werden durch Kleinbuchstaben gegliedert.'
         -
             type: footnote
             attrs:
                 data-content: '<span style="text-transform:uppercase">Studer</span>, S. 142.'
         -
             type: text
-            text: 'Der Kommentar sollte nicht mehr als vier Gliederungsebenen umfassen.'
+            text: ' Der Kommentar sollte nicht mehr als vier Gliederungsebenen umfassen.'
         -
             type: footnote
             attrs:
@@ -627,12 +519,6 @@
             type: text
             text: ' Erfassen Sie hier Ihren Kommentar.'
 -
-    type: paragraph
-    content:
-        -
-            type: text
-            text: "\_"
--
     type: heading
     attrs:
         level: '4'
@@ -642,7 +528,7 @@
             text: b.
         -
             type: text
-            text: "\_\_\_\_\_\_\_\_\_\_\_\_\n"
+            text: ' '
         -
             type: text
             text: 'Überschrift 4'
@@ -659,14 +545,14 @@
                         class: paragraph-nr
         -
             type: text
-            text: " Überschriften der vierten Gliederungsebene werden durch\nKleinbuchstaben gegliedert."
+            text: ' Überschriften der vierten Gliederungsebene werden durch Kleinbuchstaben gegliedert.'
         -
             type: footnote
             attrs:
                 data-content: '<span style="text-transform:uppercase">Studer</span>, S. 142.'
         -
             type: text
-            text: 'Der Kommentar sollte nicht mehr als vier Gliederungsebenen umfassen.'
+            text: ' Der Kommentar sollte nicht mehr als vier Gliederungsebenen umfassen.'
         -
             type: footnote
             attrs:
@@ -690,12 +576,6 @@
     content:
         -
             type: text
-            text: "\_"
--
-    type: paragraph
-    content:
-        -
-            type: text
             text: Literaturverzeichnis
             marks:
                 -
@@ -705,10 +585,10 @@
     content:
         -
             type: text
-            text: "Dubs Dieter / Truffer\nRoland, "
+            text: 'Dubs Dieter / Truffer Roland, '
         -
             type: text
-            text: "in: Honsell Heinrich / Vogt Nedim Peter / Watter Rolf (Hrsg.),\nBasler Kommentar, Obligationenrecht II, 5. Aufl., Basel 2016."
+            text: 'in: Honsell Heinrich / Vogt Nedim Peter / Watter Rolf (Hrsg.), Basler Kommentar, Obligationenrecht II, 5. Aufl., Basel 2016.'
 -
     type: paragraph
     content:
@@ -717,13 +597,13 @@
             text: 'Studer Christoph D., '
         -
             type: text
-            text: "Die\nEinberufung der Generalversammlung der Aktiengesellschaft, Diss., Bern 1995."
+            text: 'Die Einberufung der Generalversammlung der Aktiengesellschaft, Diss., Bern 1995.'
 -
     type: paragraph
     content:
         -
             type: text
-            text: "Von der Crone Hans\nCaspar"
+            text: 'Von der Crone Hans Caspar'
         -
             type: text
             text: ', Aktienrecht, 2. Aufl., Bern 2020.'
