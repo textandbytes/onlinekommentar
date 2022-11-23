@@ -1,0 +1,7 @@
+.bard-fieldtype + .converter-fieldtype {
+    padding-top: 0;
+    margin-top: -6px;
+    .publish-field-label {
+        display: none;
+    }
+}

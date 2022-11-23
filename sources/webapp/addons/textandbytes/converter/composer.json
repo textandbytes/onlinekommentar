@@ -1,0 +1,30 @@
+{
+    "name": "textandbytes/converter",
+    "autoload": {
+        "psr-4": {
+            "Textandbytes\\Converter\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Converter",
+            "description": "Converter addon"
+        },
+        "laravel": {
+            "providers": [
+                "Textandbytes\\Converter\\ServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "statamic/cms": "3.3.51",
+        "phpunit/phpunit": "^9.5",
+        "nunomaduro/collision": "^6.2",
+        "orchestra/testbench": "^7.5"
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true
+        }
+    }
+}
