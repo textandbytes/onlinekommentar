@@ -33,7 +33,3 @@ contributor:
     - 'access cp'
     - 'view commentaries entries'
     - 'edit commentaries entries'
-developer:
-  title: Developer
-  permissions:
-    - super
