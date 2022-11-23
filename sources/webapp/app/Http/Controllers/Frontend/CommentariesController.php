@@ -44,9 +44,13 @@ class CommentariesController extends Controller
                 ->where('collection', 'commentaries')
                 ->where('locale', $locale)
                 ->where('slug', $commentarySlug)
-                ->where('status', 'published')
                 ->first()
                 ->toArray();
+        }
+
+        // do not show unpublished commentaries to unauthenticated users on the frontend
+        if ($commentaryData['status'] !== 'published' && !User::current()) {
+            abort(404);
         }
 
         // get the assigned authors and editors from their ids

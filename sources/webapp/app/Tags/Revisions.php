@@ -41,20 +41,22 @@ class Revisions extends Tags
                 $revision = $yaml->parseFile($revisionFile);
                 $revisionContent = $revision['attributes']['data']['content'];
 
-                // convert the structured data from the 'content' field into HTML
-                $modifiers = new CoreModifiers();
-                $revisionHtml = $modifiers->bardHtml($revisionContent);
+                if($revisionContent) {
+                    // convert the structured data from the 'content' field into HTML
+                    $modifiers = new CoreModifiers();
+                    $revisionHtml = $modifiers->bardHtml($revisionContent);
 
-                // keep track of the current version of the content
-                $currentRevisionHtml = $revisionHtml;
+                    // keep track of the current version of the content
+                    $currentRevisionHtml = $revisionHtml;
 
-                // only include revisions whose 'content' field has changed
-                if (strcmp($currentRevisionHtml, $previousRevisionHtml) !== 0) {
-                    $revisions[] = [
-                        'unix_timestamp' => $timestamp,
-                        'human_readable_timestamp' => $this->_getLocaleFormattedTimestamp($timestamp, $locale),
-                        'human_readable_timestamp_date_only' => $this->_getLocaleFormattedTimestampDateOnly($timestamp, $locale)
-                    ];
+                    // only include revisions whose 'content' field has changed
+                    if (strcmp($currentRevisionHtml, $previousRevisionHtml) !== 0) {
+                        $revisions[] = [
+                            'unix_timestamp' => $timestamp,
+                            'human_readable_timestamp' => $this->_getLocaleFormattedTimestamp($timestamp, $locale),
+                            'human_readable_timestamp_date_only' => $this->_getLocaleFormattedTimestampDateOnly($timestamp, $locale)
+                        ];
+                    }
                 }
             }
 
