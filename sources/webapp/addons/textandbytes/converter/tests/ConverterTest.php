@@ -169,7 +169,6 @@ EOT;
     {
         $html = file_get_contents(__DIR__ . '/__fixtures__/documents/sample.html');
 
-        // file_put_contents(__DIR__ . '/__fixtures__/documents/sample.yaml', Yaml::dump($this->convert($html), 10));
         $expected = Yaml::parse(file_get_contents(__DIR__ . '/__fixtures__/documents/sample.yaml'));
 
         $this->assertEquals($expected, $this->convert($html));
