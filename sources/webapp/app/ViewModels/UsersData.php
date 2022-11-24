@@ -2,9 +2,10 @@
  
 namespace App\ViewModels;
 
+use Storage;
+use Statamic\Facades\User;
 use Statamic\Facades\Entry; 
 use Statamic\View\ViewModel;
-use Storage;
  
 class UsersData extends ViewModel
 {
@@ -15,7 +16,42 @@ class UsersData extends ViewModel
         $authorLegalDomains = $this->_getLegalDomainsOfAssignedUsers($authors);
 
         $commentaries = $this->_getCommentariesForUsers('assigned_editors');
-        $editors = $this->_getAssignedUsersOfCommentaries($commentaries, 'assigned_editors');
+        
+        // get list of users that should be displayed on the editors page
+        $usersToShowAsEditors = User::all()
+            ->where('show_as_editor', true)
+            ->map(function ($user, $key) {
+                return [
+                    'id' => $user['id'],
+                    'slug' => $user['slug'],
+                    'name' => $user['name'],
+                    'email' => $user['email'],
+                    'legal_domain' => Entry::query()
+                        ->where('collection', 'legal_domains')
+                        ->where('id', $user->value('legal_domain'))
+                        ->get()
+                        ->map(function ($legal_domain, $key) {
+                            return [
+                                'id' => $legal_domain['id'],
+                                'label' => trans($legal_domain['title'])
+                            ];
+                        })
+                        ->first(),
+                    'title' => $user['professional_title_' . app()->getLocale()],
+                    'occupation' => $user['occupation_' . app()->getLocale()],
+                    'linkedin_url' => $user['linkedin_url'],
+                    'website_url' => $user['website_url'],
+                    'avatar' => $user->value('avatar') ? Storage::url('avatars/') . $user->value('avatar') : null
+                ];
+            })
+            ->toArray();
+
+        // get users that are assigned to commentaries as editors
+        $editorsOfCommentaries = $this->_getAssignedUsersOfCommentaries($commentaries, 'assigned_editors');
+
+        // merge the two lists of users
+        $editors = array_merge($usersToShowAsEditors, $editorsOfCommentaries);
+
         $editorLegalDomains = $this->_getLegalDomainsOfAssignedUsers($editors);
 
         return [

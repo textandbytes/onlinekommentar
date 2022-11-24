@@ -21,9 +21,9 @@
       <div class="py-2">
         {{ user.occupation ?? '' }}
       </div>
-
-      <div v-if="user.edited_commentaries" class="py-2">
-        <div>
+     
+      <div v-if="user.editor_of" class="py-2">
+         <div>
           {{ user.editor_of }}
         </div>
         <!-- <div
