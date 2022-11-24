@@ -48,7 +48,7 @@ EOT;
                     [
                         'type' => 'footnote',
                         'attrs' => [
-                            'data-content' => 'BSK-<span style="text-transform:uppercase">Dubs/Truffer</span>, N. 1 zu Art. 701 OR. Hier gibt es auch <i>Kursivschrift</i> und <b>Fettschrift</b>.',
+                            'data-content' => 'BSK-Dubs/Truffer, N. 1 zu Art. 701 OR. Hier gibt es auch <i>Kursivschrift</i> und <b>Fettschrift</b>.',
                         ],
                     ],
                 ],
@@ -167,14 +167,14 @@ EOT;
     /** @test */
     public function it_converts_sample()
     {
-        $html = file_get_contents(__DIR__.'/__fixtures__/documents/sample.html');
-        
-        // file_put_contents(__DIR__.'/__fixtures__/documents/sample.yaml', Yaml::dump($this->convert($html), 10));
-        $expected = Yaml::parse(file_get_contents(__DIR__.'/__fixtures__/documents/sample.yaml'));
+        $html = file_get_contents(__DIR__ . '/__fixtures__/documents/sample.html');
+
+        // file_put_contents(__DIR__ . '/__fixtures__/documents/sample.yaml', Yaml::dump($this->convert($html), 10));
+        $expected = Yaml::parse(file_get_contents(__DIR__ . '/__fixtures__/documents/sample.yaml'));
 
         $this->assertEquals($expected, $this->convert($html));
     }
-    
+
     private function convert($html)
     {
         return (new Converter)->convert($html);
