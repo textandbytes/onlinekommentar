@@ -67,6 +67,11 @@ article {
 .prose {
   @apply !max-w-none text-black
 }
+
+.prose h1 {
+  @apply font-medium uppercase font-sans tracking-wider text-xl lg:text-2xl mt-12 mb-6
+}
+
 .prose h2 {
   @apply font-medium uppercase font-sans tracking-wider text-xl lg:text-2xl mt-12 mb-6
 }
