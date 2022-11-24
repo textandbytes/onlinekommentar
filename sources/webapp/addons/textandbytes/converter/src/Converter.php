@@ -9,6 +9,7 @@ use Statamic\Support\Str;
 use Textandbytes\Converter\Marks\ParagraphNumber;
 use Textandbytes\Converter\Nodes\Cleaner;
 use Textandbytes\Converter\Nodes\Footnote;
+use Textandbytes\Converter\Nodes\Heading;
 use Textandbytes\Converter\Nodes\Text;
 
 class Converter
@@ -47,7 +48,7 @@ class Converter
                 // Nodes\CodeBlock::class,
                 // Nodes\CodeBlockWrapper::class,
                 Nodes\HardBreak::class,
-                Nodes\Heading::class,
+                Heading::class,
                 // Nodes\HorizontalRule::class,
                 // Nodes\Image::class,
                 Nodes\ListItem::class,
