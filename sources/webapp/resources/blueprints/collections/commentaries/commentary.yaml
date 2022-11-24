@@ -128,7 +128,6 @@ sections:
           always_show_set_button: false
           previews: true
           buttons:
-            - h1
             - h2
             - h3
             - h4
