@@ -50,6 +50,18 @@ sections:
           collections:
             - legal_domains
       -
+        handle: show_as_editor
+        field:
+          default: false
+          display: 'Show this user on the editors page'
+          type: toggle
+          icon: toggle
+          instructions: 'Check this field if this user should be listed as an editor in the frontend even when he/she is not assigned as an editor to a commentary.'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
         handle: linkedin_url
         field:
           display: 'LinkedIn URL'
