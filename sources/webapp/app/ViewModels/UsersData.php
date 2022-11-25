@@ -52,6 +52,15 @@ class UsersData extends ViewModel
         // merge the two lists of users
         $editors = array_merge($usersToShowAsEditors, $editorsOfCommentaries);
 
+        // set specific user name to be sorted first
+        $userNameToSortFirst = 'Daniel Brugger';
+
+        // find array key for name="Daniel Brugger"
+        $key = array_search($userNameToSortFirst, array_column($editors, 'name'));
+
+        // remove array element with key $key and insert it at the beginning of the array
+        array_splice($editors, 0, 0, array_splice($editors, $key, 1));
+
         $editorLegalDomains = $this->_getLegalDomainsOfAssignedUsers($editors);
 
         return [
