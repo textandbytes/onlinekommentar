@@ -2,21 +2,21 @@
   <user
     locale="{{ locale }}"
     :user="{
-      name: '{{ name }}',
+      name: '{{ name | add_slashes | sanitize:true }}',
       legal_domain: 
         {{ if legal_domain }}
           {
             {{ foreach:legal_domain }}
-              '{{ key }}': '{{ value }}',
+              '{{ key }}': '{{ value | add_slashes | sanitize:true }}',
             {{ /foreach:legal_domain }}
           },
         {{ else }}
           null,
         {{ /if }}
       title: '{{ title }}',
-      occupation: '{{ occupation }}',
-      practice: '{{ practice }}',
-      editor_of: '{{ editor_of }}',
+      occupation: '{{ occupation | add_slashes | sanitize:true }}',
+      practice: '{{ practice | add_slashes | sanitize:true }}',
+      editor_of: '{{ editor_of | add_slashes | sanitize:true }}',
       linkedin_url: '{{ linkedin_url }}',
       website_url: '{{ website_url }}',
       avatar: '{{ avatar }}',
