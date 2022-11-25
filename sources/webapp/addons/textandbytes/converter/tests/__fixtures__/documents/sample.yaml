@@ -1,7 +1,7 @@
 -
     type: heading
     attrs:
-        level: '1'
+        level: 1
     content:
         -
             type: text
@@ -29,7 +29,7 @@
         -
             type: footnote
             attrs:
-                data-content: 'BSK-<span style="text-transform:uppercase">Dubs/Truffer</span>, N. 1 zu Art. 701 OR. Hier gibt es auch <i>Kursivschrift</i> und <b>Fettschrift</b>.'
+                data-content: 'BSK-Dubs/Truffer, N. 1 zu Art. 701 OR. Hier gibt es auch <i>Kursivschrift</i> und <b>Fettschrift</b>.'
 -
     type: paragraph
     content:
@@ -65,7 +65,7 @@
 -
     type: heading
     attrs:
-        level: '2'
+        level: 2
     content:
         -
             type: text
@@ -120,7 +120,7 @@
 -
     type: heading
     attrs:
-        level: '3'
+        level: 3
     content:
         -
             type: text
@@ -148,7 +148,7 @@
         -
             type: footnote
             attrs:
-                data-content: '<span style="text-transform:uppercase">Von der Crone</span>, Rz. 66.'
+                data-content: 'Von der Crone, Rz. 66.'
 -
     type: paragraph
     content:
@@ -184,7 +184,7 @@
 -
     type: heading
     attrs:
-        level: '4'
+        level: 4
     content:
         -
             type: text
@@ -212,7 +212,7 @@
         -
             type: footnote
             attrs:
-                data-content: '<span style="text-transform:uppercase">Studer</span>, S. 142.'
+                data-content: 'Studer, S. 142.'
         -
             type: text
             text: ' Der Kommentar sollte nicht mehr als vier Gliederungsebenen umfassen.'
@@ -237,7 +237,7 @@
 -
     type: heading
     attrs:
-        level: '4'
+        level: 4
     content:
         -
             type: text
@@ -265,7 +265,7 @@
         -
             type: footnote
             attrs:
-                data-content: '<span style="text-transform:uppercase">Studer</span>, S. 142.'
+                data-content: 'Studer, S. 142.'
         -
             type: text
             text: ' Der Kommentar sollte nicht mehr als vier Gliederungsebenen umfassen.'
@@ -290,7 +290,7 @@
 -
     type: heading
     attrs:
-        level: '1'
+        level: 1
     content:
         -
             type: text
@@ -345,11 +345,11 @@
         -
             type: footnote
             attrs:
-                data-content: 'Manchmal gibt es auch Links in der Fussnote, <a href="https://www.nzz.ch/technologie/mastodon-die-twitter-alternative-hat-eine-elegante-loesung-fuer-zensur-und-hassrede-ld.1710322">https://www.nzz.ch/technologie/mastodon-die-twitter-alternative-hat-eine-elegante-loesung-fuer-zensur-und-hassrede-ld.1710322</a>'
+                data-content: 'Manchmal gibt es auch Links in der Fussnote, https://www.nzz.ch/technologie/mastodon-die-twitter-alternative-hat-eine-elegante-loesung-fuer-zensur-und-hassrede-ld.1710322'
 -
     type: heading
     attrs:
-        level: '2'
+        level: 2
     content:
         -
             type: text
@@ -413,7 +413,7 @@
 -
     type: heading
     attrs:
-        level: '3'
+        level: 3
     content:
         -
             type: text
@@ -441,7 +441,7 @@
         -
             type: footnote
             attrs:
-                data-content: '<span style="text-transform:uppercase">Von der Crone</span>, Rz. 66.'
+                data-content: 'Von der Crone, Rz. 66.'
 -
     type: paragraph
     content:
@@ -468,7 +468,7 @@
 -
     type: heading
     attrs:
-        level: '4'
+        level: 4
     content:
         -
             type: text
@@ -496,7 +496,7 @@
         -
             type: footnote
             attrs:
-                data-content: '<span style="text-transform:uppercase">Studer</span>, S. 142.'
+                data-content: 'Studer, S. 142.'
         -
             type: text
             text: ' Der Kommentar sollte nicht mehr als vier Gliederungsebenen umfassen.'
@@ -521,7 +521,7 @@
 -
     type: heading
     attrs:
-        level: '4'
+        level: 4
     content:
         -
             type: text
@@ -549,7 +549,7 @@
         -
             type: footnote
             attrs:
-                data-content: '<span style="text-transform:uppercase">Studer</span>, S. 142.'
+                data-content: 'Studer, S. 142.'
         -
             type: text
             text: ' Der Kommentar sollte nicht mehr als vier Gliederungsebenen umfassen.'
