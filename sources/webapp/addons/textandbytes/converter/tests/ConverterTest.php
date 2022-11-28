@@ -59,6 +59,61 @@ EOT;
     }
 
     /** @test */
+    public function it_converts_footnotes_alt_class()
+    {
+        $html = <<<EOT
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:1.0cm;text-align:justify;text-indent:-1.0cm;border:none'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif;
+color:black'>Infolge des Territorialitätsprinzips entfalten gerichtliche
+Entscheide als staatliche Hoheitsakte ausschliesslich Rechtsfolgen im
+Urteilsstaat.<a href="#_ftn1" name="_ftnref1" title=""><sup><sup><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif;
+color:black'>[1]</span></sup></sup></a></p>
+
+</div>
+
+<div>
+
+<div id=ftn1>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;border:none'><a
+href="#_ftnref1" name="_ftn1" title=""><sup><span style='font-size:10.0pt;
+font-family:"Times New Roman",serif'><sup><span style='font-size:10.0pt;
+line-height:107%;font-family:"Times New Roman",serif'>[1]</span></sup></span></sup></a><span
+style='font-size:10.0pt;font-family:"Times New Roman",serif;color:black'>
+Spühler/Rodriguez, Rz. 323; Linke/Hau, Rz. 12.1; Donzallaz, Rz. 1749 f.;
+Matscher, S. 265. </span></p>
+
+</div>
+
+</div>
+EOT;
+
+        $expected = [
+            [
+                'type' => 'paragraph',
+                'content' => [
+                    [
+                        'type' => 'text',
+                        'text' => "Infolge des Territorialitätsprinzips entfalten gerichtliche Entscheide als staatliche Hoheitsakte ausschliesslich Rechtsfolgen im Urteilsstaat.",
+                    ],
+                    [
+                        'type' => 'footnote',
+                        'attrs' => [
+                            'data-content' => 'Spühler/Rodriguez, Rz. 323; Linke/Hau, Rz. 12.1; Donzallaz, Rz. 1749 f.; Matscher, S. 265.',
+                        ],
+                    ],
+                ],
+            ],
+        ];
+
+        $this->assertEquals($expected, $this->convert($html));
+    }
+
+    /** @test */
     public function it_converts_paragraph_numbers()
     {
         $html = <<<EOT
@@ -135,7 +190,7 @@ EOT;
     public function it_removes_empty_paragraphs()
     {
         $html = <<<EOT
-<p class=MsoNormal>&nbsp;</p>
+<p class=MsoNormal>&nbsp;</p><o:p></o:p>
 EOT;
 
         $this->assertEquals([], $this->convert($html));

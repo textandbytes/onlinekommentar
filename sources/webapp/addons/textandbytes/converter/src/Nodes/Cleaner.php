@@ -37,7 +37,7 @@ class Cleaner extends Node
     {
         /* Is this a paragraph that only contains a non-breaking space */
         return $this->DOMNode->nodeName === 'p'
-            && $this->DOMNode->textContent === "\xc2\xa0";
+            && ($this->DOMNode->textContent === "" || $this->DOMNode->textContent === "\xc2\xa0");
     }
 
     private function isTocAnchor()
