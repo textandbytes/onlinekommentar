@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-ok-yellow mt-8 pl-4 md:pl-8 grid grid-cols-1 md:grid-cols-2 print:hidden">
+  <footer class="bg-ok-yellow mt-8 pl-4 pb-8 md:pb-0 lg:pl-8 grid grid-cols-1 md:grid-cols-2 print:hidden">
     <div class="md:col-span-2 lg:col-span-1 border-b border-ok-dark-gray py-4">
       <div class="px-8 pb-2">
         <div class="w-full">
@@ -87,12 +87,18 @@
     </div>
 
     <div>
-      <div class="flex flex-row justify-between px-8 pt-8">
-        <div class="flex text-xs space-x-8">
+      <div class="flex flex-row justify-between px-8 pt-8 mb-2 lg:mb-0">
+        <div class="flex flex-col lg:flex-row text-xs lg:space-x-4">
           <NavLink
             :href="'/' + locale + '/disclaimer'"
             :active="false">
             {{ $t('disclaimer') }}
+          </NavLink>
+
+          <NavLink
+            :href="'/' + locale + '/privacy'"
+            :active="false">
+            Datenschutzbestimmungen
           </NavLink>
 
           <NavLink
@@ -103,7 +109,7 @@
         </div>
 
         <!-- arrow up -->
-        <button @click="scrollToTop" class="w-28 -mt-1 text-center rounded-full border border-ok-dark-gray">
+        <button @click="scrollToTop" class="w-20 xl:w-28 h-8 -mt-1 text-center rounded-full border border-ok-dark-gray">
           <span class="text-black font-semibold top-link">
             ↑
           </span>
