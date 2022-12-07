@@ -98,7 +98,7 @@
           <NavLink
             :href="'/' + locale + '/privacy'"
             :active="false">
-            Datenschutzbestimmungen
+            {{ $t('privacy') }}
           </NavLink>
 
           <NavLink
