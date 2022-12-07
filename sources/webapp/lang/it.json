@@ -1,8 +1,8 @@
 {
   "home": "Homepage",
-  "commentaries": "Commenti",
-  "authors": "Autore",
-  "editors": "Editore",
+  "commentaries": "Commentari",
+  "authors": "Autori",
+  "editors": "Editori",
   "about": "Sul progetto",
   "contact": "Contatto",
 
@@ -85,13 +85,13 @@
 
   "nav_search_box_placeholder": "Inserire il termine di ricerca",
 
-  "footer_contact_text": "Avete domande sul concetto o volete scrivere un commento per il commento online?",
+  "footer_contact_text": "Avete domande sul concetto o volete scrivere un commento per il Commentario online?",
   "footer_contact_link_text": "Contattateci",
   "disclaimer": "Dichiarazione di non responsabilità",
   "privacy": "Politica sulla privacy",
   "imprint": "Impronta",
 
-  "home_text": "Onlinekommentar.ch è la prima piattaforma gratuita e senza scopo di lucro per i commenti ad accesso aperto in Svizzera.",
+  "home_text": "Onlinekommentar.ch è la prima piattaforma gratuita e senza scopo di lucro per i commentari ad accesso aperto in Svizzera.",
   "home_more_link": "Di più",
 
   "commentary_on": "Commento su",
@@ -103,7 +103,7 @@
   "version": "Versione",
   "compare": "Confrontare",
   "compare_versions": "confrontare le versioni",
-  "ATTENTION: This version of the commentary is an automatic machine translation of the original. The original version is in :original_language. The translation was done with www.deepl.com. Only the original version is authoritative. The translated form of the commentary cannot be cited.": "ATTENZIONE: Questa versione del commento è una traduzione automatica dell'originale. Il commento originale è in :original_language. La traduzione è stata effettuata con www.deepl.com. Solo la versione originale è autorevole. La forma tradotta del commento non può essere citata.",
+  "ATTENTION: This version of the commentary is an automatic machine translation of the original. The original version is in :original_language. The translation was done with www.deepl.com. Only the original version is authoritative. The translated form of the commentary cannot be cited.": "ATTENZIONE: Questa versione del commentario è una traduzione automatica dell’originale. Il commentario originale è in tedesco. La traduzione è stata effettuata con www.deepl.com. Solo la versione originale fa fede. La forma tradotta del commentario non può essere citata",
 
   "visited_at": "visitato il",
 
@@ -112,8 +112,8 @@
 
   "and": "e",
 
-  "commentary_by": "Un commento da",
-  "edited_by": "Edito da",
+  "commentary_by": "Un commentario di",
+  "edited_by": "Editato da",
 
   "result_found": "Risultato trovato",
   "results_found": "Risultati trovati",
@@ -123,8 +123,8 @@
 
   "is_loading": "Caricamento",
 
-  "newest_comments": "Ultimi commenti",
-  "all_comments": "Tutti i commenti",
+  "newest_comments": "Ultimi commentari",
+  "all_comments": "Tutti i commentari",
 
   "footnotes": "Note a piè di pagina",
 
