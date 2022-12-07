@@ -209,6 +209,18 @@
       @apply font-sans tracking-wider text-lg lg:text-xl mt-3 mb-6 print:break-inside-avoid print:break-after-avoid
     }
 
+    :deep(ul) {
+      @apply list-disc list-outside ml-4
+    }
+
+    :deep(li) {
+      @apply mt-2 pl-2
+    }
+
+    :deep(li p) {
+      @apply inline
+    }
+
     :deep(p) {
       @apply lg:text-xl !leading-[1.5em] relative font-serif mb-6;
 
