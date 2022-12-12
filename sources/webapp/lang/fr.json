@@ -1,8 +1,8 @@
 {
     "home": "Accueil",
     "commentaries": "Commentaires",
-    "authors": "Auteurs",
-    "editors": "Editeurs",
+    "authors": "Auteurs:Autrices",
+    "editors": "Éditeurs:Editrices",
     "about": "A propos",
     "contact": "Contact",
 
@@ -85,7 +85,7 @@
 
     "nav_search_box_placeholder": "Saisir un terme de recherche",
 
-    "footer_contact_text": "Vous avez des questions sur le concept ou vous souhaitez rédiger un commentaire pour Onlinekommentar&nbsp;?",
+    "footer_contact_text": "Vous avez des questions sur le concept ou vous souhaitez rédiger un commentaire pour Onlinekommentar?",
     "footer_contact_link_text": "Contactez-nous",
     "disclaimer": "Clause de non-responsabilité",
     "privacy": "Politique de confidentialité",
