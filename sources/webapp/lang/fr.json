@@ -103,7 +103,7 @@
     "version": "Version",
     "compare": "Comparer",
     "compare_versions": "Comparer les versions",
-    "ATTENTION: This version of the commentary is an automatic machine translation of the original. The original version is in :original_language. The translation was done with www.deepl.com. Only the original version is authoritative. The translated form of the commentary cannot be cited.": "ATTENTION : Cette version du commentaire est une traduction automatique de l’original. Le commentaire original est en allemand. La traduction a été faite avec www.deepl.com. Seule la version originale fait foi. La version traduite du commentaire ne peut pas être citée.",
+    "ATTENTION: This version of the commentary is an automatic machine translation of the original. The original version is in :original_language. The translation was done with www.deepl.com. Only the original version is authoritative. The translated form of the commentary cannot be cited.": "ATTENTION : Cette version du commentaire est une traduction automatique de l’original. Le commentaire original est en :original_language. La traduction a été faite avec www.deepl.com. Seule la version originale fait foi. La version traduite du commentaire ne peut pas être citée.",
 
     "visited_at": "visité le",
 
