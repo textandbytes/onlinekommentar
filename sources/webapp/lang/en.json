@@ -49,7 +49,7 @@
   "redo": "Redo",
   "clear": "Clear all",
 
-  "legal_domain_filter_label": "Decrees",
+  "legal_domain_filter_label": "Legislative Acts",
   "legal_domain_filter_all": "All",
 
   "Federal Constitution": "Federal Constitution",
@@ -85,7 +85,7 @@
 
   "nav_search_box_placeholder": "Enter a search term",
 
-  "footer_contact_text": "Do you have questions about the concept or would you like to write a comment for Onlinekommentar?",
+  "footer_contact_text": "Do you have questions about the concept or would you like to contribute to the Onlinekommentar?",
   "footer_contact_link_text": "Contact us",
   "disclaimer": "Disclaimer",
   "privacy": "Privacy Policy",
@@ -103,7 +103,7 @@
   "version": "Version",
   "compare": "Compare",
   "compare_versions": "Compare Versions",
-  "ATTENTION: This version of the commentary is an automatic machine translation of the original. The original version is in :original_language. The translation was done with www.deepl.com. Only the original version is authoritative. The translated form of the commentary cannot be cited.": "ATTENTION: This version of the commentary is an automatic machine translation of the original. The original commentary is in :original_language. The translation was done with www.deepl.com. Only the original version is authoritative. The translated form of the commentary cannot be cited.",
+  "ATTENTION: This version of the commentary is an automatic machine translation of the original. The original version is in :original_language. The translation was done with www.deepl.com. Only the original version is authoritative. The translated form of the commentary cannot be cited.": "ATTENTION: This version of the commentary is an automatically generated machine translation of the original. The original commentary is in German. The translation was done with www.deepl.com. Only the original version is authoritative. The translated form of the commentary cannot be cited.",
 
   "visited_at": "visited on",
 
