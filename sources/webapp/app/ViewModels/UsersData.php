@@ -49,8 +49,10 @@ class UsersData extends ViewModel
         // get users that are assigned to commentaries as editors
         $editorsOfCommentaries = $this->_getAssignedUsersOfCommentaries($commentaries, 'assigned_editors');
 
-        // merge the two lists of users
+        // create a new list that has all unique users that should be displayed on the editors page
         $editors = array_merge($usersToShowAsEditors, $editorsOfCommentaries);
+        $editors = array_values(array_intersect_key($editors, array_unique(array_column($editors, 'id'))));
+
 
         // set specific user name to be sorted first
         $userNameToSortFirst = 'Daniel Brugger';
