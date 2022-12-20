@@ -75,7 +75,7 @@
         <span @click="setLegalTextLocale('it')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'it' }">it</span>
         <span @click="setLegalTextLocale('en')" class="legal-text-locale-link" :class="{ active: legalTextLocale == 'en' }">en</span>
       </div>
-      <div v-html="localizedLegalText" class="space-y-4 font-serif lg:text-xl md:space-y-6">
+      <div v-html="localizedLegalText" class="localized-legal-text space-y-4 font-serif lg:text-xl md:space-y-6">
       </div>
     </div>
 
@@ -247,6 +247,26 @@
     :deep(hr) {
       @apply my-3 border-gray-300
     }
+  }
+
+  .localized-legal-text {
+
+    :deep(ul) {
+      @apply list-disc list-outside ml-4
+    }
+
+    :deep(ol) {
+      @apply list-decimal list-outside ml-4
+    }
+
+    :deep(li) {
+      @apply mt-2 pl-2
+    }
+
+    :deep(li p) {
+      @apply inline
+    }
+
   }
 
   .license {

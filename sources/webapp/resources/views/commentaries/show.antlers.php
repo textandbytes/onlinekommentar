@@ -16,7 +16,7 @@
           '{{ name }}',
         {{ /assigned_authors }}
       ],
-      legal_text: '{{ legal_text }}',
+      legal_text: '{{ legal_text | sanitize }}',
       suggested_citation_long: '{{ suggested_citation_long }}',
       suggested_citation_short: '{{ suggested_citation_short }}',
       original_language: '{{ original_language }}',
