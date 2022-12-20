@@ -14,6 +14,7 @@ sources/webapp/public/js/manifest.js
 sources/webapp/public/js/vendor.js
 sources/webapp/public/js/*/resources_js_*.js
 sources/webapp/public/js/*resources_js_*.js
+sources/webapp/public/mix-manifest.json
 sources/webapp/public/storage
 sources/webapp/public/hot
 sources/webapp/public/vendor/app/js/cp.js
