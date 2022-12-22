@@ -252,11 +252,11 @@
   .localized-legal-text {
 
     :deep(ul) {
-      @apply list-disc list-outside ml-4
+      @apply list-disc list-outside ml-10
     }
 
     :deep(ol) {
-      @apply list-decimal list-outside ml-4
+      @apply list-decimal list-outside ml-10
     }
 
     :deep(li) {
