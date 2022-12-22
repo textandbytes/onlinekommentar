@@ -73,7 +73,7 @@
       class="sm:gap-px">
       <template v-slot:item="commentary">
         <a
-          class="h-[310px] md:h-[340px] xl:h-[500px] relative group transition ease-in-out delay-150 bg-white hover:bg-ok-orange p-4 md:p-8 cursor-pointer"
+          class="h-[310px] md:h-[420px] xl:h-[500px] relative group transition ease-in-out delay-150 bg-white hover:bg-ok-orange p-4 md:p-8 cursor-pointer"
           :href="'/' + locale + '/kommentare/' + commentary.slug">
 
           <div class="relative flex flex-col items-center w-full h-full">

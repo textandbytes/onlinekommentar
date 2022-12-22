@@ -18,7 +18,7 @@
     </div>
     <div class="self-end w-full mt-auto">
       <div class="w-full text-sm lg:text-base mt-8 mb-4 border-y border-black divide-y divide-black min-h-[60px]">
-        <div class="flex line-clamp justify-center items-center py-2 h-48">
+        <div class="flex justify-center items-center py-2 h-48">
           {{ user.occupation ?? '' }}
         </div>
       
