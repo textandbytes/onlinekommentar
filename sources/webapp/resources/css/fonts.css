@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'librecaslon';
+    src: url('/fonts/librecaslontext-bold-webfont.woff2') format('woff2'),
+         url('/fonts/librecaslontext-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'librecaslon';
+    src: url('/fonts/librecaslontext-italic-webfont.woff2') format('woff2'),
+         url('/fonts/librecaslontext-italic-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'librecaslon';
+    src: url('/fontslibrecaslontext-regular-webfont.woff2') format('woff2'),
+         url('/fonts/librecaslontext-regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'worksans';
+    src: url('/fonts/WorkSans-Medium.woff2') format('woff2'),
+         url('/fonts/WorkSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'worksans';
+    src: url('/fonts/WorkSans-MediumItalic.woff2') format('woff2'),
+         url('/fonts/WorkSans-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'worksans';
+    src: url('/fonts/WorkSans-Regular.woff2') format('woff2'),
+         url('/fonts/WorkSans-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'worksans';
+    src: url('/fonts/WorkSans-Italic.woff2') format('woff2'),
+         url('/fonts/WorkSans-Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
