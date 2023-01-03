@@ -85,7 +85,7 @@
               &nbsp;
             </div>
             
-            <h2 class="my-4 font-serif text-3xl font-medium text-center lg:text-4xl 2xl:text-5xl lg:my-12">
+            <h2 class="my-4 font-serif text-3xl font-medium text-center lg:text-4xl 2xl:text-5xl lg:my-8">
               {{ commentary.title }}
             </h2>
 
