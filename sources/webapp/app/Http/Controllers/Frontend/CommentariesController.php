@@ -40,12 +40,17 @@ class CommentariesController extends Controller
             $commentaryData = $this->_getRevisionDataFromRevisionFile($revisionFile, $locale);
         }
         else {
+            // get the commentary data for the given locale and slug
             $commentaryData = Entry::query()
                 ->where('collection', 'commentaries')
                 ->where('locale', $locale)
                 ->where('slug', $commentarySlug)
-                ->first()
-                ->toArray();
+                ->first();
+            // return 404 if commentary is not found
+            if (!$commentaryData) {
+                abort(404);
+            }
+            $commentaryData = $commentaryData->toArray();
         }
 
         // do not show unpublished commentaries to unauthenticated users on the frontend
