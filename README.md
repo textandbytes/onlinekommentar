@@ -57,3 +57,6 @@ The blueprints and users roles definitions are stored in the default location (`
 
 ### Mailhog Dashboard
 - To test sending and receiving mails from the application locally, go to http://localhost:8026
+
+## Provision or deploy the production server
+- The master branch is automatically deployed to production using Ploi (ploi.io)
