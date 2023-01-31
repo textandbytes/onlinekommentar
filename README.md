@@ -59,4 +59,4 @@ The blueprints and users roles definitions are stored in the default location (`
 - To test sending and receiving mails from the application locally, go to http://localhost:8026
 
 ## Provision or deploy the production server
-- The master branch is automatically deployed to production using Ploi (ploi.io)
+- The master branch is manually deployed to production using Ploi (ploi.io). Note: to enable auto deploy, go to Github > Settings > Webhooks and click "Active" on the Ploi webhook. Please leave disabled unless you know what you are doing.
