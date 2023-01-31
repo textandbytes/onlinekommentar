@@ -38,6 +38,11 @@ The blueprints and users roles definitions are stored in the default location (`
 - Depending on your use case, clone the remote git repository containing the application data (https://github.com/textandbytes/onlinekommentar-data) under `sources/webapp/data`.
 ⚠️ The application data should always be pulled from the production/staging server, not the other way around.
 
+### Pull the latest data from the production server
+- `cd sources/webapp/data`
+- `git pull`
+- Log in to the CP and clear all caches under "Utilities > Cache Manager"
+
 ### Watching Javascript and CSS changes
 - Watch local file changes (JS, CSS): `docker-compose run --rm npm run watch`
 
