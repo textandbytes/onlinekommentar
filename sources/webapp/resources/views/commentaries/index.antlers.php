@@ -38,7 +38,16 @@ $commentaries = Entry::query()
   ->toArray();
 
   // sort the commentaries by the label of the legal domain
-  usort($commentaries, fn($obj1, $obj2) => strcmp($obj1['legal_domain'] ? $obj1['legal_domain']['label'] : '', $obj2['legal_domain'] ? $obj2['legal_domain']['label'] : ''));
+  usort($commentaries, fn($obj1, $obj2) => 
+    strcmp(
+      $obj1['legal_domain']
+        ? str_replace(array('Ä', 'Ö', 'Ü'), array('Ae', 'Oe', 'Ue'), strtoupper($obj1['legal_domain']['label']))
+        : '',
+      $obj2['legal_domain']
+        ? str_replace(array('Ä', 'Ö', 'Ü'), array('Ae', 'Oe', 'Ue'), strtoupper($obj2['legal_domain']['label']))
+        : ''
+    )
+  );
 
   // get the non-null, unique legal domains from the list of commentaries
   // reset the array index values to return an indexed array instead of an associative array
