@@ -39,9 +39,10 @@ class Revisions extends Tags
                 // extract the structured data from 'content' field in the revision file
                 $revisionFile = $commentaryRevisionBasePath . '/' . $timestamp . '.yaml';
                 $revision = $yaml->parseFile($revisionFile);
-                $revisionContent = $revision['attributes']['data']['content'];
 
-                if($revisionContent) {
+                if (array_key_exists('content', $revision['attributes']['data']) && $revision['attributes']['data']['content']) {
+                    $revisionContent = $revision['attributes']['data']['content'];
+
                     // convert the structured data from the 'content' field into HTML
                     $modifiers = new CoreModifiers();
                     $revisionHtml = $modifiers->bardHtml($revisionContent);
