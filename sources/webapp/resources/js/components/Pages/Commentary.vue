@@ -119,6 +119,15 @@
       </button>
     </p>
 
+    <h2 v-if="commentary.doi" class="mt-12 mb-4 font-sans text-xl tracking-wider uppercase">
+      DOI (Digital Object Identifier)
+    </h2>
+
+    <p v-if="commentary.doi">
+      <div class="text-xl">{{ commentary.doi }}</div >
+      <div><a class="underline" target="_blank" :href="'https://doi.org/' + commentary.doi">https://doi.org/{{ commentary.doi }}</a></div >
+    </p>
+
     <h2 class="mt-12 mb-4 font-sans text-xl tracking-wider uppercase">
       {{ $t('creative_commons_license') }}
     </h2>

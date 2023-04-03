@@ -5,6 +5,7 @@
       id: '{{ id }}',
       slug: '{{ slug }}',
       title: '{{ title }}',
+      doi: '{{ doi }}',
       date: '{{ date format_localized="%d.%m.%Y" }}',
       assigned_editors: [
         {{ assigned_editors }}
