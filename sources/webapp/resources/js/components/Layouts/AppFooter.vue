@@ -3,11 +3,11 @@
     <div class="md:col-span-2 lg:col-span-1 border-b border-ok-dark-gray py-4">
       <div class="px-8 pb-2">
         <div class="w-full">
-          {{ $t('footer_contact_text') }}
+          {{ $t('footer_support_text') }}
         </div>
         <button class="ok-button">
-          <a :href="'/' + locale + '/contact'">
-            {{ $t('footer_contact_link_text') }}
+          <a :href="'/' + locale + '/mitglieder'">
+            {{ $t('footer_support_link_text') }}
           </a>
         </button>
       </div>
