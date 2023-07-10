@@ -138,6 +138,7 @@ sections:
             - underline
             - unorderedlist
             - orderedlist
+            - table
             - removeformat
             - superscript
             - anchor

@@ -256,6 +256,33 @@
     :deep(hr) {
       @apply my-3 border-gray-300
     }
+
+    :deep(table) {
+      @apply w-full overflow-x-auto block;
+    }
+
+    :deep(table) tbody tr:first-child {
+      @apply bg-gray-100 border border-gray-400;
+      p {
+        @apply align-middle m-0 py-2 font-semibold;
+      }
+    }
+
+    :deep(table) tbody td {
+      @apply px-4 py-1 border border-gray-400;
+      p {
+        @apply font-sans text-base;
+      }
+    }
+
+    @media (min-width: 640px) {
+      :deep(table) {
+        @apply inline-table;
+      }
+    }
+
+
+
   }
 
   .localized-legal-text {
