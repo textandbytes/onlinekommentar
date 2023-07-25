@@ -1,15 +1,19 @@
 <template>
 
-    <div>
+    <div class="flex gap-1">
         <input
             hidden
             type="file"
             accept="text/html"
             ref="input"
-            @input="select" />
-        <button type="button" class="btn btn-with-icon" @click.prevent="browse" :disabled="converting">
+            @input="selectHtml" />
+        <button type="button" class="btn btn-with-icon" @click="browseHtml" :disabled="converting">
             <svg-icon name="upload" class="w-6 h-6 text-grey-80"></svg-icon>
-            {{ __('Import Document') }}
+            {{ __('Import HTML') }}
+        </button>
+        <button type="button" class="btn btn-with-icon" @click="convertProsemirrorToWord" :disabled="converting">
+            <svg-icon name="download" class="w-6 h-6 text-grey-80"></svg-icon>
+            {{ __('Export Word') }}
         </button>
     </div>
 
@@ -20,6 +24,8 @@ export default {
 
     mixins: [Fieldtype],
 
+    inject: ['storeName'],
+
     data() {
         return {
             file: null,
@@ -29,53 +35,65 @@ export default {
 
     computed: {
 
-        store() {
-            let store;
-            let parent = this;
-
-            while (! parent.storeName) {
-                parent = parent.$parent;
-                store = parent.storeName;
-                if (parent === this.$root) return null;
-            }
-           
-            return this.$store.state.publish[store];
+        store() {           
+            return this.$store.state.publish[this.storeName];
         },
 
     },
 
     methods: {
 
-        browse() {
+        browseHtml() {
             this.$refs.input.click();
         },
 
-        select() {
+        selectHtml() {
             const file = this.$refs.input.files[0];
             if (file) {
                 const reader = new FileReader();
                 reader.onload = (ev) => {
                     const html = ev.target.result
                         .replace('charset=windows-1252', 'charset=utf-8');
-                    this.convert(html);
+                    this.convertHtmlToProsemirror(html);
                 };
                 reader.readAsText(file, 'windows-1252');
             }
         },
 
-        convert(html) {
+        convertHtmlToProsemirror(html) {
             this.converting = true;
             this.$progress.start('convert' + this._uid);
-            this.$axios.post(cp_url('converter/convert'), {
+            this.$axios.post(cp_url('converter/html-prosemirror'), {
                 html
             }).then(response => {
                 const values = response.data;
-                this.store.values.content = JSON.stringify(values.data);
+                this.store.values.content = values.data;
             }).catch(e => {
             }).finally(e => {
                 this.converting = false;
                 this.$progress.complete('convert' + this._uid);
                 this.$refs.input.value = null;
+            })
+        },
+
+        convertProsemirrorToWord() {
+            this.converting = true;
+            this.$progress.start('convert' + this._uid);
+            this.$axios.post(cp_url('converter/prosemirror-word'), {
+                id: this.store.values.id,
+                data: this.store.values.content,
+            }, { responseType: 'blob' }).then(response => {
+                const file = response.headers['content-disposition'].match(/^attachment.+filename\*?=(?:UTF-8'')?"?([^"]+)"?/i)[1];
+                const url = window.URL.createObjectURL(new Blob([response.data]));
+                const link = document.createElement('a');
+                link.href = url;
+                link.setAttribute('download', file);
+                document.body.appendChild(link);
+                link.click();
+            }).catch(e => {
+            }).finally(e => {
+                this.converting = false;
+                this.$progress.complete('convert' + this._uid);
             })
         },
 
