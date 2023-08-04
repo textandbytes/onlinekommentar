@@ -9,6 +9,7 @@ use Statamic\View\View;
 use Jfcherng\Diff\Differ;
 use Statamic\Facades\User;
 use Statamic\Facades\Entry;
+use Statamic\CP\LivePreview;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Statamic\Modifiers\CoreModifiers;
@@ -20,42 +21,51 @@ class CommentariesController extends Controller
 {
     public function show($locale, $commentarySlug, $versionTimestamp = null, $versionComparisonResult = null)
     {
-        if ($versionTimestamp) {
-            // locate the commentary with the given slug
-            $commentary = Entry::query()
-                ->where('collection', 'commentaries')
-                ->where('locale', $locale)
-                ->where('slug', $commentarySlug)
-                ->first()
-                ->toArray();
-
-            // return 404 if revision file is not found
-            $commentaryRevisionBasePath = $this->_getCommentaryRevisionBasePath($locale, $commentary['id']);
-            $revisionFile = $commentaryRevisionBasePath . '/' . $versionTimestamp . '.yaml';
-            if (!File::exists($revisionFile)) {
-                abort(404);
-            }
-
-            // get the revision data for the given timestamp
-            $commentaryData = $this->_getRevisionDataFromRevisionFile($revisionFile, $locale);
-        }
-        else {
-            // get the commentary data for the given locale and slug
-            $commentaryData = Entry::query()
-                ->where('collection', 'commentaries')
-                ->where('locale', $locale)
-                ->where('slug', $commentarySlug)
-                ->first();
-            // return 404 if commentary is not found
-            if (!$commentaryData) {
-                abort(404);
-            }
+        // Handle Live Preview in CP
+        if(request()->statamicToken()) {
+            $livePreview = new LivePreview(); 
+            $commentaryData = $livePreview->item(app()->request->statamicToken());
             $commentaryData = $commentaryData->toArray();
         }
+        // Handle frontend
+        else {
+            if ($versionTimestamp) {
+                // locate the commentary with the given slug
+                $commentary = Entry::query()
+                    ->where('collection', 'commentaries')
+                    ->where('locale', $locale)
+                    ->where('slug', $commentarySlug)
+                    ->first()
+                    ->toArray();
 
-        // do not show unpublished commentaries to unauthenticated users on the frontend
-        if ($commentaryData['status'] !== 'published' && !User::current()) {
-            abort(404);
+                // return 404 if revision file is not found
+                $commentaryRevisionBasePath = $this->_getCommentaryRevisionBasePath($locale, $commentary['id']);
+                $revisionFile = $commentaryRevisionBasePath . '/' . $versionTimestamp . '.yaml';
+                if (!File::exists($revisionFile)) {
+                    abort(404);
+                }
+
+                // get the revision data for the given timestamp
+                $commentaryData = $this->_getRevisionDataFromRevisionFile($revisionFile, $locale);
+            }
+            else {
+                // get the commentary data for the given locale and slug
+                $commentaryData = Entry::query()
+                    ->where('collection', 'commentaries')
+                    ->where('locale', $locale)
+                    ->where('slug', $commentarySlug)
+                    ->first();
+                // return 404 if commentary is not found
+                if (!$commentaryData) {
+                    abort(404);
+                }
+                $commentaryData = $commentaryData->toArray();
+            }
+
+            // do not show unpublished commentaries to unauthenticated users on the frontend
+            if ($commentaryData['status'] !== 'published' && !User::current()) {
+                abort(404);
+            }
         }
 
         // get the assigned authors and editors from their ids
