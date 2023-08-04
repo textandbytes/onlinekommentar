@@ -219,7 +219,7 @@
     }
 
     :deep(ul) {
-      @apply list-disc list-outside ml-4
+      @apply list-disc list-outside ml-4 mb-2
     }
 
     :deep(li) {
