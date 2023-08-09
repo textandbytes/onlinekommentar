@@ -1,30 +1,7 @@
 <article class="commentary w-full border print:border-0">
   <commentary
     locale="{{ locale }}"
-    :commentary="{
-      id: '{{ id }}',
-      slug: '{{ slug }}',
-      title: '{{ title }}',
-      doi: '{{ doi }}',
-      date: '{{ date format_localized="%d.%m.%Y" }}',
-      assigned_editors: [
-        {{ assigned_editors }}
-          '{{ name }}',
-        {{ /assigned_editors }}
-      ],
-      assigned_authors: [
-        {{ assigned_authors }}
-          '{{ name }}',
-        {{ /assigned_authors }}
-      ],
-      legal_text: '{{ legal_text | sanitize }}',
-      suggested_citation_long: '{{ suggested_citation_long }}',
-      suggested_citation_short: '{{ suggested_citation_short }}',
-      original_language: '{{ original_language }}',
-      locale: '{{ locale }}',
-      pdf_commentary_path: '<?= Storage::url('commentaries/pdf/') ?>',
-      pdf_commentary_filename: '{{ pdf_commentary:basename }}',
-    }"
+    :commentary="{{ commentary | to_json | entities }}"
     :versions="[
       {{ revisions:commentary :id='id' :locale='locale' }}
         {

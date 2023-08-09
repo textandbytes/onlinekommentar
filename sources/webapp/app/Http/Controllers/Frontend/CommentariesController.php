@@ -13,6 +13,7 @@ use Statamic\CP\LivePreview;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Statamic\Modifiers\CoreModifiers;
+use Illuminate\Support\Facades\Storage;
 use Jfcherng\Diff\Factory\RendererFactory;
 use Jfcherng\Diff\Renderer\RendererConstant;
 use PragmaRX\Yaml\Package\Facade as YamlFacade;
@@ -69,13 +70,20 @@ class CommentariesController extends Controller
         }
 
         // get the assigned authors and editors from their ids
-        $commentaryData['assigned_authors'] = $this->_getUsers($commentaryData['assigned_authors'] ?? null, ['name']);
-        $commentaryData['assigned_editors'] = $this->_getUsers($commentaryData['assigned_editors'] ?? null, ['name']);
+        $commentaryData['assigned_authors'] = array_column($this->_getUsers($commentaryData['assigned_authors'] ?? null, ['name']), 'name');
+        $commentaryData['assigned_editors'] = array_column($this->_getUsers($commentaryData['assigned_editors'] ?? null, ['name']), 'name');
 
         // return the first original language (default to German) since only one original language can be assigned to a commentary
         $commentaryData['original_language'] = ($commentaryData['original_language'] && is_array($commentaryData['original_language']) && !empty($commentaryData['original_language']))
             ? $commentaryData['original_language'][0]
             : 'de';
+
+        // format the date
+        $commentaryData['date'] = $commentaryData['date']->formatLocalized('%d.%m.%Y');
+
+        // set the path and filename to the commentary pdf
+        $commentaryData['pdf_commentary_path'] = Storage::url('commentaries/pdf/');
+        $commentaryData['pdf_commentary_filename'] = $commentaryData['pdf_commentary'] ? $commentaryData['pdf_commentary']['basename'] : '';
 
         // generate formatted html markup for the language-specific 'content' field
         $content = $commentaryData['content'];
@@ -94,6 +102,25 @@ class CommentariesController extends Controller
             $toc = $tocGenerator->getHtmlMenu($contentMarkup);
         }
     
+        // only return the fields needed to render the detail view
+        $allowedCommentaryFields = [
+            'id',
+            'slug',
+            'title',
+            'doi',
+            'date',
+            'assigned_editors',
+            'assigned_authors',
+            'legal_text',
+            'suggested_citation_long',
+            'suggested_citation_short',
+            'original_language',
+            'locale',
+            'pdf_commentary_path',
+            'pdf_commentary_filename'
+        ];
+        $commentaryData = array_intersect_key($commentaryData, array_flip($allowedCommentaryFields));
+
         // load the commentary detail view
         return (new View)
             ->template('commentaries/show')
@@ -104,7 +131,7 @@ class CommentariesController extends Controller
                 'toc' => $toc,
                 'versionTimestamp' => $versionTimestamp,
                 'versionComparisonResult' => $versionComparisonResult
-            ], $commentaryData));
+            ], ['commentary' => $commentaryData]));
     }
 
     public function compareRevisions($locale, $commentaryId, $revisionTimestamp1, $revisionTimestamp2, $versionTimestamp = null)
