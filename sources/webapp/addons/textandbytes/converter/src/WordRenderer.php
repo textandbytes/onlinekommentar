@@ -2,8 +2,10 @@
 
 namespace Textandbytes\Converter;
 
+use HtmlToProseMirror\Renderer;
 use PhpOffice\PhpWord\Element\TextRun;
 use PhpOffice\PhpWord\PhpWord;
+use PhpOffice\PhpWord\Settings;
 use PhpOffice\PhpWord\Shared\Converter;
 use PhpOffice\PhpWord\SimpleType\Jc;
 use PhpOffice\PhpWord\Style\Font;
@@ -17,6 +19,8 @@ class WordRenderer
 
     public function __construct()
     {
+        Settings::setOutputEscapingEnabled(true);
+
         $this->word = new PhpWord();
         $this->word->getSettings()->setThemeFontLang(new Language(Language::DE_DE));
         $this->defineStyles();
@@ -66,10 +70,6 @@ class WordRenderer
         ]);
 
         $this->word->addTableStyle('table', [
-            'size' => 10,
-        ]);
-
-        $this->word->addFontStyle('footnote', [
             'size' => 10,
         ]);
     }
@@ -223,6 +223,11 @@ class WordRenderer
         $cursor->addText($node->text, $this->makeStyle($node, $style));
     }
 
+    protected function renderHardBreak($node, $cursor)
+    {
+        $cursor->addTextBreak();
+    }
+
     protected function renderLink($node, $cursor)
     {
         $mark = $this->findMark($node, 'link');
@@ -231,7 +236,21 @@ class WordRenderer
 
     protected function renderFootnote($node, $cursor)
     {
-        $cursor->addFootnote()->addText($node->attrs->{'data-content'} ?? null, 'footnote');
+        $nodes = $this->parseFootnoteHtml($node->attrs->{'data-content'} ?? null);
+        $this->renderNodes($nodes ?? [], $cursor->addFootnote(), [
+            'size' => 10,
+        ]);
+    }
+
+    protected function parseFootnoteHtml($html)
+    {
+        $nodes = collect((new Renderer)->render($html)['content'] ?? [])
+            ->map(fn ($node) => array_merge($node['content'], [['type' => 'hardBreak']]))
+            ->flatten(1)
+            ->slice(0, -1)
+            ->all();
+
+        return json_decode(json_encode($nodes));
     }
 
     protected function isParagraphWithNumber($node)
