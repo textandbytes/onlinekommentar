@@ -67,17 +67,35 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         responseType: 'blob'
       }).then(function (response) {
-        var file = response.headers['content-disposition'].match(/^attachment.+filename\*?=(?:UTF-8'')?"?([^"]+)"?/i)[1];
-        var url = window.URL.createObjectURL(new Blob([response.data]));
-        var link = document.createElement('a');
-        link.href = url;
-        link.setAttribute('download', file);
-        document.body.appendChild(link);
-        link.click();
+        _this3.downloadFile(response);
       })["catch"](function (e) {})["finally"](function (e) {
         _this3.converting = false;
         _this3.$progress.complete('convert' + _this3._uid);
       });
+    },
+    convertEntryToWord: function convertEntryToWord() {
+      var _this4 = this;
+      this.converting = true;
+      this.$progress.start('convert' + this._uid);
+      this.$axios.post(cp_url("converter/entry-word"), {
+        id: this.store.values.id
+      }, {
+        responseType: 'blob'
+      }).then(function (response) {
+        _this4.downloadFile(response);
+      })["catch"](function (e) {})["finally"](function (e) {
+        _this4.converting = false;
+        _this4.$progress.complete('convert' + _this4._uid);
+      });
+    },
+    downloadFile: function downloadFile(response) {
+      var file = response.headers['content-disposition'].match(/^attachment.+filename\*?=(?:UTF-8'')?"?([^"]+)"?/i)[1];
+      var url = window.URL.createObjectURL(new Blob([response.data]));
+      var link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', file);
+      document.body.appendChild(link);
+      link.click();
     }
   }
 });
@@ -131,7 +149,7 @@ var render = function render() {
       disabled: _vm.converting
     },
     on: {
-      click: _vm.convertProsemirrorToWord
+      click: _vm.convertEntryToWord
     }
   }, [_c("svg-icon", {
     staticClass: "w-6 h-6 text-grey-80",

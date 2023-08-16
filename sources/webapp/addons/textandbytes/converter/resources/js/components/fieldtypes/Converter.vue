@@ -11,7 +11,7 @@
             <svg-icon name="upload" class="w-6 h-6 text-grey-80"></svg-icon>
             {{ __('Import HTML') }}
         </button>
-        <button type="button" class="btn btn-with-icon" @click="convertProsemirrorToWord" :disabled="converting">
+        <button type="button" class="btn btn-with-icon" @click="convertEntryToWord" :disabled="converting">
             <svg-icon name="download" class="w-6 h-6 text-grey-80"></svg-icon>
             {{ __('Export Word') }}
         </button>
@@ -83,18 +83,36 @@ export default {
                 id: this.store.values.id,
                 data: this.store.values.content,
             }, { responseType: 'blob' }).then(response => {
-                const file = response.headers['content-disposition'].match(/^attachment.+filename\*?=(?:UTF-8'')?"?([^"]+)"?/i)[1];
-                const url = window.URL.createObjectURL(new Blob([response.data]));
-                const link = document.createElement('a');
-                link.href = url;
-                link.setAttribute('download', file);
-                document.body.appendChild(link);
-                link.click();
+                this.downloadFile(response);
             }).catch(e => {
             }).finally(e => {
                 this.converting = false;
                 this.$progress.complete('convert' + this._uid);
             })
+        },
+
+        convertEntryToWord() {
+            this.converting = true;
+            this.$progress.start('convert' + this._uid);
+            this.$axios.post(cp_url(`converter/entry-word`), {
+                id: this.store.values.id,
+            }, { responseType: 'blob' }).then(response => {
+                this.downloadFile(response);
+            }).catch(e => {
+            }).finally(e => {
+                this.converting = false;
+                this.$progress.complete('convert' + this._uid);
+            })
+        },
+
+        downloadFile(response) {
+            const file = response.headers['content-disposition'].match(/^attachment.+filename\*?=(?:UTF-8'')?"?([^"]+)"?/i)[1];
+            const url = window.URL.createObjectURL(new Blob([response.data]));
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', file);
+            document.body.appendChild(link);
+            link.click();
         },
 
     }

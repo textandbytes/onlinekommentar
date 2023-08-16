@@ -56,6 +56,11 @@ class WordRenderer
         $this->word->setDefaultParagraphStyle([
             'spacing' => $this->lineHeight(1.08),
             'alignment' => Jc::BOTH,
+        ]);
+
+        $this->word->addParagraphStyle('withNumber', [
+            'spacing' => $this->lineHeight(1.08),
+            'alignment' => Jc::BOTH,
             'indentation' => [
                 'left' => $this->cm(1),
                 'hanging' => $this->cm(1),
@@ -139,7 +144,7 @@ class WordRenderer
             $second->text = ltrim($second->text);
         }
 
-        $this->renderNodes($node->content ?? [], $cursor->addTextRun());
+        $this->renderNodes($node->content ?? [], $cursor->addTextRun('withNumber'));
         $cursor->addTextBreak();
     }
 

@@ -21,3 +21,13 @@ Route::post('converter/prosemirror-word', function (Request $request) {
         ->download($file, "{$entry->slug}.docx")
         ->deleteFileAfterSend(true);
 });
+
+Route::post('converter/entry-word', function (Request $request) {
+    $values = $request->json()->all();
+    $entry = Entry::find($values['id']);
+    $file = (new Converter)->entryToWord($entry);
+
+    return response()
+        ->download($file, "{$entry->slug}.docx")
+        ->deleteFileAfterSend(true);
+});

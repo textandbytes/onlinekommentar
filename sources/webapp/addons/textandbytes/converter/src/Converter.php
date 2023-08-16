@@ -73,4 +73,54 @@ class Converter
 
         return (new WordRenderer)->render($data);
     }
+
+    public function entryToWord($entry)
+    {
+        if ($entry->collection()->handle() === 'commentaries') {
+            return $this->commentartyToWord($entry);
+        }
+
+        throw new \Exception('Not implemented');
+    }
+
+    public function commentartyToWord($entry)
+    {
+        $data = array_merge(
+            $this->makeHeading($entry->title, 0),
+            $entry->get('content'),
+            $this->makeHeading('Assigned Authors', 1),
+            $this->makeParagraph($entry->assigned_authors->pluck('name')->join(', ')),
+            $this->makeHeading('Assigned Editors', 1),
+            $this->makeParagraph($entry->assigned_editors->pluck('name')->join(', ')),
+            $this->makeHeading('Suggested Citation', 1),
+            $this->makeParagraph($entry->suggested_citation_long),
+            $this->makeHeading('Legal Text', 1),
+            $entry->get('legal_text'),
+        );
+
+        $data = json_decode(json_encode($data));
+
+        return (new WordRenderer)->render($data);
+    }
+
+    protected function makeParagraph($text)
+    {
+        return [[
+            'type' => 'paragraph',
+            'content' => [
+                ['type' => 'text', 'text' => $text],
+            ],
+        ]];
+    }
+
+    protected function makeHeading($text, $level)
+    {
+        return [[
+            'type' => 'heading',
+            'attrs' => ['level' => $level],
+            'content' => [
+                ['type' => 'text', 'text' => $text],
+            ],
+        ]];
+    }
 }
