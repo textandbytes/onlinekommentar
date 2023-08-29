@@ -22,14 +22,6 @@ sources/webapp/public/vendor/app/js/manifest.js
 sources/webapp/public/vendor/app/js/vendor.js
 sources/webapp/public/vendor/footnotes/css/footnotes.css
 sources/webapp/public/vendor/footnotes/js/footnotes.js
-sources/webapp/public/vendor/statamic/cp/css/cp.css
-sources/webapp/public/vendor/statamic/cp/css/cp.css.map
-sources/webapp/public/vendor/statamic/cp/js/app.js
-sources/webapp/public/vendor/statamic/cp/js/app.js.map
-sources/webapp/public/vendor/statamic/cp/js/vendor.js
-sources/webapp/public/vendor/statamic/cp/js/vendor.js.map
-sources/webapp/public/vendor/statamic/frontend/js/helpers.js
-sources/webapp/public/vendor/statamic/frontend/js/helpers.js.map
 sources/webapp/storage/*.key
 sources/webapp/.env
 sources/webapp/.env.backup
