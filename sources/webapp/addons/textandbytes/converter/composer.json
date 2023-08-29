@@ -26,5 +26,8 @@
         "allow-plugins": {
             "pixelfear/composer-dist-plugin": true
         }
+    },
+    "require": {
+        "phpoffice/phpword": "^1.1"
     }
 }

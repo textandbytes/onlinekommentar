@@ -9,7 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
-        "aryehraber/statamic-impersonator": "^2.4",
+        "aryehraber/statamic-impersonator": "~2.4.0",
         "caseyamcl/toc": "^3.1",
         "guzzlehttp/guzzle": "^7.2",
         "jacksleight/statamic-bard-texstyle": "^1.0",
