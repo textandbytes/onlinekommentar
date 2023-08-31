@@ -24,6 +24,7 @@
         "tightenco/ziggy": "^1.0"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.9",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.16.3",
         "mockery/mockery": "^1.4.4",
