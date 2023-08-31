@@ -2,17 +2,26 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Statamic\Facades\Entry;
-use Statamic\Facades\User;
-use Statamic\View\View;
 use Storage;
+use Statamic\View\View;
+use Statamic\Facades\User;
+use Statamic\Facades\Entry;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cache;
 
 class UsersController extends Controller
 {
     public function show($locale, $usersType, $slug)
     {
+        // Create a unique cache key based on the request parameters
+        $cacheKey = "commentary_view:{$locale}:{$usersType}:{$slug}";
+
+        // Check if the view is already cached
+        if (Cache::has($cacheKey)) {
+            return Cache::get($cacheKey);
+        }
+
         // ensure that a valid users view exists based on the supplied segment
         abort_if(!in_array($usersType, ['autoren', 'herausgeber']), 404);
 
@@ -55,13 +64,19 @@ class UsersController extends Controller
         ];
 
         // load the user detail view
-        return (new View)
+        $view = (new View)
             ->template('users/show')
             ->layout('layout')
             ->with(array_merge([
                 'locale' => $locale,
                 'base_path_prefix' => '/' . $locale . '/' . $usersType
-            ], $userData));
+            ], $userData))
+            ->render();  // render the view to a string;
+
+        // Cache the generated view for 7 days
+        Cache::put($cacheKey, $view, now()->addDays(7));
+
+        return $view;
     }
 
     private function _getCommentariesAssignedToUser($locale, $user, $userFieldName)

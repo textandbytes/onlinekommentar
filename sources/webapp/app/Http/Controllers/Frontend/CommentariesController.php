@@ -12,6 +12,7 @@ use Statamic\Facades\Entry;
 use Statamic\CP\LivePreview;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Cache;
 use Statamic\Modifiers\CoreModifiers;
 use Jfcherng\Diff\Factory\RendererFactory;
 use Jfcherng\Diff\Renderer\RendererConstant;
@@ -21,6 +22,15 @@ class CommentariesController extends Controller
 {
     public function show($locale, $commentarySlug, $versionTimestamp = null, $versionComparisonResult = null)
     {
+        
+        // Create a unique cache key based on the request parameters
+        $cacheKey = "commentary_view:{$locale}:{$commentarySlug}:{$versionTimestamp}";
+
+        // Check if the view is already cached
+        if (Cache::has($cacheKey)) {
+            return Cache::get($cacheKey);
+        }
+
         // Handle Live Preview in CP
         if(request()->statamicToken()) {
             $livePreview = new LivePreview(); 
@@ -95,7 +105,7 @@ class CommentariesController extends Controller
         }
     
         // load the commentary detail view
-        return (new View)
+        $view = (new View)
             ->template('commentaries/show')
             ->layout('layout')
             ->with(array_merge([
@@ -104,7 +114,13 @@ class CommentariesController extends Controller
                 'toc' => $toc,
                 'versionTimestamp' => $versionTimestamp,
                 'versionComparisonResult' => $versionComparisonResult
-            ], $commentaryData));
+            ], $commentaryData))
+            ->render();  // render the view to a string
+
+        // Cache the generated view for 7 days
+        Cache::put($cacheKey, $view, now()->addDays(7));
+
+        return $view;
     }
 
     public function compareRevisions($locale, $commentaryId, $revisionTimestamp1, $revisionTimestamp2, $versionTimestamp = null)
