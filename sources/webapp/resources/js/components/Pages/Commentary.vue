@@ -88,7 +88,7 @@
             {{ $t('footnotes') }}
         </h2>
         <ul>
-            <li v-for="(footnote, index) in store.footnotes" :key="index" class="mb-2 ml-12 list-decimal break-all" v-html="footnote"></li>
+            <li v-for="(footnote, index) in store.footnotes" :key="index" class="mb-2 ml-12 list-decimal break-words" v-html="footnote"></li>
         </ul>
     </div>
 
