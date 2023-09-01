@@ -146,5 +146,15 @@
 <style lang="postcss" scoped>
   h2 {
     @apply leading-snug;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    max-width: 100%;
   }
 </style>
