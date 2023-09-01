@@ -29,3 +29,7 @@ sources/webapp/.phpunit.result.cache
 /.vagrant
 /.vscode
 .DS_Store
+sources/webapp/public/css/app.css.map
+sources/webapp/public/js/app.js.map
+sources/webapp/public/js/*
+sources/webapp/public/vendor/app/js/*
