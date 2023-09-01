@@ -18,7 +18,7 @@ class UsersController extends Controller
         $cacheKey = "commentary_view:{$locale}:{$usersType}:{$slug}";
 
         // Check if the view is already cached
-        if (Cache::has($cacheKey)) {
+        if (config('app.env') !== 'local' && Cache::has($cacheKey)) {
             return Cache::get($cacheKey);
         }
 
