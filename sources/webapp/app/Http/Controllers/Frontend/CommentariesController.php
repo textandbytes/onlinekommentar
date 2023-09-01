@@ -22,17 +22,18 @@ class CommentariesController extends Controller
 {
     public function show($locale, $commentarySlug, $versionTimestamp = null, $versionComparisonResult = null)
     {
-        
+        $isLivePreview = request()->statamicToken();
+
         // Create a unique cache key based on the request parameters
         $cacheKey = "commentary_view:{$locale}:{$commentarySlug}:{$versionTimestamp}";
 
         // Check if the view is already cached
-        if (config('app.env') !== 'local' && Cache::has($cacheKey)) {
+        if (config('app.env') !== 'local' && !$isLivePreview && Cache::has($cacheKey)) {
             return Cache::get($cacheKey);
         }
 
         // Handle Live Preview in CP
-        if(request()->statamicToken()) {
+        if($isLivePreview) {
             $livePreview = new LivePreview(); 
             $commentaryData = $livePreview->item(app()->request->statamicToken());
             $commentaryData = $commentaryData->toArray();
@@ -118,7 +119,9 @@ class CommentariesController extends Controller
             ->render();  // render the view to a string
 
         // Cache the generated view for 7 days
-        Cache::put($cacheKey, $view, now()->addDays(7));
+        if (config('app.env') !== 'local' && !$isLivePreview) {
+            Cache::put($cacheKey, $view, now()->addDays(7));
+        }
 
         return $view;
     }
