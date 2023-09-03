@@ -281,6 +281,18 @@
       }
     }
 
+    :deep(ol) {
+      @apply list-decimal list-outside ml-10 mb-4
+    }
+
+    :deep(li) {
+      @apply mt-2 pl-2
+    }
+
+    :deep(li p) {
+      @apply inline
+    }
+
 
 
   }
