@@ -89,7 +89,7 @@
               {{ commentary.title }}
             </h2>
 
-            <div class="text-sm text-center lg:text-base">
+            <div class="text-sm text-center lg:text-base attribution">
               <p v-if="commentary.assigned_authors.length > 0 && commentary.assigned_authors[0] !== ''">
                 {{ $t('commentary_by') }} <i>{{ commentary.assigned_authors.join(' ' + $t('and') + ' ') }}</i>
               </p>
@@ -144,7 +144,7 @@
 </script>
 
 <style lang="postcss" scoped>
-  h2 {
+  .attribution p, h2 {
     @apply leading-snug;
     hyphens: auto;
     -webkit-hyphens: auto;
@@ -152,9 +152,15 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;  
     overflow: hidden;
     max-width: 100%;
+  }  
+  @media (min-width: 640px) {
+    .attribution p, h2 {
+      -webkit-line-clamp: 4;
+    }  
   }
+  
 </style>
