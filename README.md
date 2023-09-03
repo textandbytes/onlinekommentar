@@ -40,7 +40,7 @@ In order to separate the application source code and the user-generated content,
 
 The content of this folder is not tracked in this repository. In order to retrieve the application data from the production server (or staging server), developers are expected to use the dedicated repository where this data is stored. The repository where the data is: https://github.com/textandbytes/onlinekommentar-data. Access to this repository is restricted to users with appropriate permissions.
 
-- Clone the onlinekommentar-data repository into sources/webapp: `git@github.com:textandbytes/onlinekommentar-data.git`
+- Clone the onlinekommentar-data repository into sources/webapp: `git@github.com:onlinekommentar/onlinekommentar-data.git`
 - Rename the onlinekommentar-data folder to `data`
 
 The blueprints and users roles definitions are stored in the default location (`resources`), and are tracked in this repository.
