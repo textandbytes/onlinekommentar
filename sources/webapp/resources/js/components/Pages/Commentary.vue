@@ -83,7 +83,7 @@
       <slot name="content" />
     </div>
 
-    <div v-if="store.footnotes.length > 0">
+    <div v-if="store.footnotes.length > 0" class="footnotes">
         <h2 class="mt-12 mb-6 font-sans text-xl tracking-wider uppercase lg:text-2xl">
             {{ $t('footnotes') }}
         </h2>
@@ -327,6 +327,12 @@
 
   .legal-text-locale-link.active {
     @apply border border-black
+  }
+
+  .footnotes { 
+    :deep(a) {
+      @apply underline;
+    }
   }
 
   @media print {

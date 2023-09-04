@@ -34,7 +34,7 @@ class Footnote extends Node
         return [
             'type' => 'footnote',
             'attrs' => [
-                'data-content' => Str::collapseWhitespace(strip_tags($html, ['b', 'i', 'u', 'em', 'strong', 'sup'])),
+                'data-content' => Str::collapseWhitespace(strip_tags($html, ['b', 'i', 'u', 'em', 'strong', 'sup', 'a'])),
             ],
         ];
     }
