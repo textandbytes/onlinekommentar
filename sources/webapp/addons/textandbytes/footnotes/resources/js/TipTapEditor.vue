@@ -2,66 +2,63 @@
   <div
     v-if="editor"
     class="editor-container">
-    <div class="editor-menu">
-      <div v-if="options.enableFormatting" class="editor-menu-group">
-        <button class="bard-toolbar-button has-tooltip"
-          @click.prevent="editor.chain().focus().toggleBold().run()"
-          :class="{ 'is-active': editor.isActive('bold') }"
-          title="Bold">
-          <i class="fa fa-bold icon-text-large"></i>
-        </button>
+    <div v-if="options.enableFormatting" class="editor-menu bard-fixed-toolbar p-1">
 
-        <button class="bard-toolbar-button has-tooltip"
-          @click.prevent="editor.chain().focus().toggleItalic().run()"
-          :class="{ 'is-active': editor.isActive('italic') }"
-          title="Italic">
-          <i class="fa fa-italic icon-text-large"></i>
-        </button>
+      <button class="bard-toolbar-button has-tooltip"
+        @click.prevent="editor.chain().focus().toggleBold().run()"
+        :class="{ 'active': editor.isActive('bold') }"
+        title="Bold">
+        <i class="fa fa-bold icon-text-large"></i>
+      </button>
 
-        <button class="bard-toolbar-button has-tooltip"
-          @click.prevent="editor.chain().focus().toggleUnderline().run()"
-          :class="{ 'is-active': editor.isActive('underline') }"
-          title="Underline">
-          <i class="fa fa-underline icon-text-large"></i>
-        </button>
+      <button class="bard-toolbar-button has-tooltip"
+        @click.prevent="editor.chain().focus().toggleItalic().run()"
+        :class="{ 'active': editor.isActive('italic') }"
+        title="Italic">
+        <i class="fa fa-italic icon-text-large"></i>
+      </button>
 
-        <!-- <button class="bard-toolbar-button has-tooltip"
-          @click.prevent="editor.chain().focus().toggleSubscript().run()"
-          :class="{ 'is-active': editor.isActive('subscript') }"
-          title="Subscript">
-          <i class="fa fa-subscript icon-text-large"></i>
-        </button> -->
+      <button class="bard-toolbar-button has-tooltip"
+        @click.prevent="editor.chain().focus().toggleUnderline().run()"
+        :class="{ 'active': editor.isActive('underline') }"
+        title="Underline">
+        <i class="fa fa-underline icon-text-large"></i>
+      </button>
 
-        <button class="bard-toolbar-button has-tooltip"
-          @click.prevent="editor.chain().focus().toggleSuperscript().run()"
-          :class="{ 'is-active': editor.isActive('superscript') }"
-          title="Superscript">
-          <i class="fa fa-superscript icon-text-large"></i>
-        </button>
-      </div>
+      <!-- <button class="bard-toolbar-button has-tooltip"
+        @click.prevent="editor.chain().focus().toggleSubscript().run()"
+        :class="{ 'active': editor.isActive('subscript') }"
+        title="Subscript">
+        <i class="fa fa-subscript icon-text-large"></i>
+      </button> -->
+
+      <button class="bard-toolbar-button has-tooltip"
+        @click.prevent="editor.chain().focus().toggleSuperscript().run()"
+        :class="{ 'active': editor.isActive('superscript') }"
+        title="Superscript">
+        <i class="fa fa-superscript icon-text-large"></i>
+      </button>
       
-      <div v-if="options.enableLinks" class="editor-menu-group">
-        <button class="bard-toolbar-button has-tooltip"
-          @click.prevent="setLink"
-          :class="{ 'is-active': editor.isActive('link') }"
-          title="Link">
-          <i class="fa fa-link icon-text-large"></i>
-        </button>
+      <button class="bard-toolbar-button has-tooltip"
+        @click.prevent="setLink"
+        :class="{ 'active': editor.isActive('link') }"
+        title="Link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4"><path fill="currentColor" d="M314.222 197.78c51.091 51.091 54.377 132.287 9.75 187.16-6.242 7.73-2.784 3.865-84.94 86.02-54.696 54.696-143.266 54.745-197.99 0-54.711-54.69-54.734-143.255 0-197.99 32.773-32.773 51.835-51.899 63.409-63.457 7.463-7.452 20.331-2.354 20.486 8.192a173.31 173.31 0 0 0 4.746 37.828c.966 4.029-.272 8.269-3.202 11.198L80.632 312.57c-32.755 32.775-32.887 85.892 0 118.8 32.775 32.755 85.892 32.887 118.8 0l75.19-75.2c32.718-32.725 32.777-86.013 0-118.79a83.722 83.722 0 0 0-22.814-16.229c-4.623-2.233-7.182-7.25-6.561-12.346 1.356-11.122 6.296-21.885 14.815-30.405l4.375-4.375c3.625-3.626 9.177-4.594 13.76-2.294 12.999 6.524 25.187 15.211 36.025 26.049zM470.958 41.04c-54.724-54.745-143.294-54.696-197.99 0-82.156 82.156-78.698 78.29-84.94 86.02-44.627 54.873-41.341 136.069 9.75 187.16 10.838 10.838 23.026 19.525 36.025 26.049 4.582 2.3 10.134 1.331 13.76-2.294l4.375-4.375c8.52-8.519 13.459-19.283 14.815-30.405.621-5.096-1.938-10.113-6.561-12.346a83.706 83.706 0 0 1-22.814-16.229c-32.777-32.777-32.718-86.065 0-118.79l75.19-75.2c32.908-32.887 86.025-32.755 118.8 0 32.887 32.908 32.755 86.025 0 118.8l-45.848 45.84c-2.93 2.929-4.168 7.169-3.202 11.198a173.31 173.31 0 0 1 4.746 37.828c.155 10.546 13.023 15.644 20.486 8.192 11.574-11.558 30.636-30.684 63.409-63.457 54.733-54.735 54.71-143.3-.001-197.991z" class=""></path></svg>
+      </button>
 
-        <button class="bard-toolbar-button has-tooltip"
-          @click.prevent="editor.chain().focus().unsetLink().run()"
-          title="Remove Link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M17 17h5v2h-3v3h-2v-5zM7 7H2V5h3V2h2v5zm11.364 8.536L16.95 14.12l1.414-1.414a5 5 0 1 0-7.071-7.071L9.879 7.05 8.464 5.636 9.88 4.222a7 7 0 0 1 9.9 9.9l-1.415 1.414zm-2.828 2.828l-1.415 1.414a7 7 0 0 1-9.9-9.9l1.415-1.414L7.05 9.88l-1.414 1.414a5 5 0 1 0 7.071 7.071l1.414-1.414 1.415 1.414zm-.708-10.607l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"/></svg>
-        </button>
-      </div>
+      <button class="bard-toolbar-button has-tooltip"
+        v-if="editor.isActive('link')"
+        @click.prevent="editor.chain().focus().unsetLink().run()"
+        title="Remove Link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4"><path fill="currentColor" d="M304.083 388.936c4.686 4.686 4.686 12.284 0 16.971l-65.057 65.056c-54.709 54.711-143.27 54.721-197.989 0-54.713-54.713-54.719-143.27 0-197.989l65.056-65.057c4.686-4.686 12.284-4.686 16.971 0l22.627 22.627c4.686 4.686 4.686 12.284 0 16.971L81.386 311.82c-34.341 34.341-33.451 88.269.597 120.866 32.577 31.187 84.788 31.337 117.445-1.32l65.057-65.056c4.686-4.686 12.284-4.686 16.971 0l22.627 22.626zm-56.568-243.245l64.304-64.304c34.346-34.346 88.286-33.453 120.882.612 31.18 32.586 31.309 84.785-1.335 117.43l-65.056 65.057c-4.686 4.686-4.686 12.284 0 16.971l22.627 22.627c4.686 4.686 12.284 4.686 16.971 0l65.056-65.057c54.711-54.709 54.721-143.271 0-197.99-54.71-54.711-143.27-54.72-197.989 0l-65.057 65.057c-4.686 4.686-4.686 12.284 0 16.971l22.627 22.627c4.685 4.685 12.283 4.685 16.97-.001zm238.343 362.794l22.627-22.627c4.686-4.686 4.686-12.284 0-16.971L43.112 3.515c-4.686-4.686-12.284-4.686-16.971 0L3.515 26.142c-4.686 4.686-4.686 12.284 0 16.971l465.373 465.373c4.686 4.686 12.284 4.686 16.97-.001z" class=""></path></svg>
+      </button>
 
-      <div v-if="options.enableErase" class="editor-menu-group">
-        <button class="bard-toolbar-button has-tooltip"
-          @click.prevent="editor.chain().focus().unsetAllMarks().run()"
-          title="Clear formatting">
-          <i class="fa fa-eraser icon-text-large"></i>
-        </button>
-      </div>
+      <button class="bard-toolbar-button has-tooltip"
+        @click.prevent="editor.chain().focus().unsetAllMarks().run()"
+        title="Clear formatting">
+        <i class="fa fa-eraser icon-text-large"></i>
+      </button>
+
     </div>
 
     <editor-content
@@ -69,23 +66,11 @@
       :editor="editor">
     </editor-content>
 
-    <div class="editor-footer">
-      <button
-        class="save-button"
-        type="button"
-        title="Save Footnote"
-        @click.prevent="onSave">
-        Save
-      </button>
-
-      <button
-        class="cancel-button"
-        type="button"
-        title="Cancel"
-        @click.prevent="$emit('on-cancel')">
-        Cancel
-      </button>
+    <div class="px-2 py-1.5 bg-grey-20 border-t flex items-center justify-end text-sm">
+        <button class="text-grey hover:text-grey-90" @click.prevent="$emit('on-cancel')">Cancel</button>
+        <button class="btn btn-primary ml-2" :class="buttonClass" @click.prevent="onSave">Save</button>
     </div>
+
   </div>
 </template>
 
@@ -95,6 +80,7 @@
   import Underline from '@tiptap/extension-underline'
   import Subscript from '@tiptap/extension-subscript'
   import Superscript from '@tiptap/extension-superscript'
+  import Link from '@tiptap/extension-link'
 
   export default {
     name: 'TapTapEditor',
@@ -133,7 +119,7 @@
       // initialize menu options
       this.options = {
         enableFormatting: true,
-        enableLinks: false,
+        enableLinks: true,
         enableErase: true,
         ...this.menuOptions
       }
@@ -143,7 +129,8 @@
           StarterKit,
           Underline,
           Subscript,
-          Superscript
+          Superscript,
+          Link.configure({ openOnClick: false }),
         ],
 
         autofocus: this.autoFocus,
@@ -191,48 +178,9 @@
 </script>
 
 <style lang="postcss" scoped>
-  .editor-container {
-    @apply flex flex-col border border-gray-300 rounded-t-md rounded-b-none shadow-sm focus-within:border-indigo-300 focus-within:ring focus-within:ring-indigo-200 focus-within:ring-opacity-50 overflow-hidden;
-
-    .editor-menu {
-      @apply flex p-3 gap-4 border-b;
-
-      .editor-menu-group {
-        @apply flex gap-1;
-      }
-    }
-
-    .editor-content {
-      @apply max-w-full p-3 overflow-scroll max-h-96;
-    }
-
-    .editor-footer {
-      @apply bg-white p-3 sm:flex sm:flex-row-reverse border-t border-gray-300;
-
-      .save-button {
-        @apply inline-flex w-full justify-center rounded-md border border-transparent bg-gray-200 p-2 text-base font-medium text-black shadow-sm hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm;
-      }
-
-      .cancel-button {
-        @apply mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-gray-200 p-2 text-base font-medium text-black shadow-sm hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm;
-      }
-    }
-  }
-
-  i.icon-text-large {
-    @apply text-lg;
-  }
-
-  .icon-script {
-    @apply font-normal px-0.5;
-  }
-
-  button {
-    @apply inline-flex items-center px-1 py-1 border border-transparent shadow-sm text-sm leading-4 font-medium rounded-md bg-gray-200 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300;
-
-    &.is-active {
-      @apply text-white bg-green-600 hover:bg-green-700 focus:ring-green-500;
-    }
+  .bard-fixed-toolbar {
+    top: 0;
+    justify-content: flex-start;
   }
 </style>
 
@@ -248,6 +196,9 @@
   }
 
   .ProseMirror {
+    
+    padding: 12px 16px !important;
+
     > * + * {
       margin-top: 0.75em;
     }
@@ -298,6 +249,12 @@
       border: none;
       border-top: 2px solid rgba(#0D0D0D, 0.1);
       margin: 2rem 0;
+    }
+
+    a {
+      color: #1d8fc9;
+      text-decoration: underline;
+      cursor: text;
     }
   }
 </style>

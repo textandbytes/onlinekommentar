@@ -83,12 +83,12 @@
       <slot name="content" />
     </div>
 
-    <div v-if="store.footnotes.length > 0">
+    <div v-if="store.footnotes.length > 0" class="footnotes">
         <h2 class="mt-12 mb-6 font-sans text-xl tracking-wider uppercase lg:text-2xl">
             {{ $t('footnotes') }}
         </h2>
         <ul>
-            <li v-for="(footnote, index) in store.footnotes" :key="index" class="mb-2 ml-12 list-decimal break-all" v-html="footnote"></li>
+            <li v-for="(footnote, index) in store.footnotes" :key="index" class="mb-2 ml-12 list-decimal break-words" v-html="footnote"></li>
         </ul>
     </div>
 
@@ -339,6 +339,12 @@
 
   .legal-text-locale-link.active {
     @apply border border-black
+  }
+
+  .footnotes { 
+    :deep(a) {
+      @apply underline;
+    }
   }
 
   @media print {

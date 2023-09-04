@@ -1,5 +1,5 @@
 <template>
-  <div class="footnote-wrapper">
+  <div>
     <button
       class="bard-toolbar-button"
       :class="{ 'active': isButtonActive }"
@@ -8,29 +8,29 @@
       @click="isButtonActive = !isButtonActive">
     </button>
 
-    <ModalOverlayWithFooter
+    <modal
       v-if="isButtonActive || isFootnoteActive"
-      class="footnote-container">
-      <template v-slot:body>
-        <TipTapEditor
-          v-model="content"
-          @on-save="onSave"
-          @on-cancel="onCancel"
-        />
-      </template>
-    </ModalOverlayWithFooter>
+      name="footnote-modal"
+      width="500px"
+      pivot-y="0.5"
+      @closed="hideEditor"
+    >
+      <TipTapEditor
+        v-model="content"
+        @on-save="onSave"
+        @on-cancel="onCancel"
+      />
+    </modal>
   </div>
 </template>
 
 <script>
-  import ModalOverlayWithFooter from './ModalOverlayWithFooter.vue'
   import TipTapEditor from './TipTapEditor.vue'
 
   export default {
     mixins: [BardToolbarButton],
 
     components: {
-      ModalOverlayWithFooter,
       TipTapEditor
     },
 
@@ -92,16 +92,12 @@
 </script>
 
 <style lang="postcss">
-  .footnote-wrapper {
-    @apply inline-block relative;
-  }
-
-  .footnote-container {
-    @apply absolute bg-white border border-gray-300 rounded-sm z-10 divide-y divide-gray-100 shadow-lg;
-  }
-
   .ProseMirror {
     counter-reset: footnote-counter;
+
+    footnote {
+      cursor: pointer;
+    }
   
     footnote::after {
       content: counter(footnote-counter);
