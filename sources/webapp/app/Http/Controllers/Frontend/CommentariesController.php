@@ -25,7 +25,7 @@ class CommentariesController extends Controller
         $isLivePreview = request()->statamicToken();
 
         // Create a unique cache key based on the request parameters
-        $cacheKey = "commentary_view:{$locale}:{$commentarySlug}:{$versionTimestamp}";
+        $cacheKey = "commentary_view:{$locale}:{$commentarySlug}:{$versionTimestamp}:" . ($versionComparisonResult ? md5($versionComparisonResult) : '');
 
         // Check if the view is already cached
         if (config('app.env') !== 'local' && !$isLivePreview && Cache::has($cacheKey)) {
