@@ -1,6 +1,6 @@
 <template>
 
-    <div class="flex gap-1">
+    <div class="flex">
         <input
             hidden
             type="file"
@@ -8,11 +8,11 @@
             ref="input"
             @input="selectHtml" />
         <button type="button" class="btn btn-with-icon" @click="browseHtml" :disabled="converting">
-            <svg-icon name="upload" class="w-6 h-6 text-grey-80"></svg-icon>
+            <svg-icon name="upload" class="w-6 h-6 text-gray-80"></svg-icon>
             {{ __('Import HTML') }}
         </button>
-        <button type="button" class="btn btn-with-icon" @click="convertEntryToWord" :disabled="converting">
-            <svg-icon name="download" class="w-6 h-6 text-grey-80"></svg-icon>
+        <button type="button" class="btn btn-with-icon ml-2" @click="convertEntryToWord" :disabled="converting">
+            <svg-icon name="light/download" class="w-6 h-6 text-gray-80"></svg-icon>
             {{ __('Export Word') }}
         </button>
     </div>

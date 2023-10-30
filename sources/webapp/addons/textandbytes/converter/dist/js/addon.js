@@ -117,7 +117,7 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", {
-    staticClass: "flex gap-1"
+    staticClass: "flex"
   }, [_c("input", {
     ref: "input",
     attrs: {
@@ -138,12 +138,12 @@ var render = function render() {
       click: _vm.browseHtml
     }
   }, [_c("svg-icon", {
-    staticClass: "w-6 h-6 text-grey-80",
+    staticClass: "w-6 h-6 text-gray-80",
     attrs: {
       name: "upload"
     }
   }), _vm._v("\n        " + _vm._s(_vm.__("Import HTML")) + "\n    ")], 1), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-with-icon",
+    staticClass: "btn btn-with-icon ml-2",
     attrs: {
       type: "button",
       disabled: _vm.converting
@@ -152,9 +152,9 @@ var render = function render() {
       click: _vm.convertEntryToWord
     }
   }, [_c("svg-icon", {
-    staticClass: "w-6 h-6 text-grey-80",
+    staticClass: "w-6 h-6 text-gray-80",
     attrs: {
-      name: "download"
+      name: "light/download"
     }
   }), _vm._v("\n        " + _vm._s(_vm.__("Export Word")) + "\n    ")], 1)]);
 };

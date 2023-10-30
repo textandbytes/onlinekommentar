@@ -2,7 +2,6 @@
 
 namespace Textandbytes\Converter;
 
-use HtmlToProseMirror\Renderer;
 use PhpOffice\PhpWord\Element\TextRun;
 use PhpOffice\PhpWord\PhpWord;
 use PhpOffice\PhpWord\Settings;
@@ -12,9 +11,14 @@ use PhpOffice\PhpWord\Style\Font;
 use PhpOffice\PhpWord\Style\Language;
 use PhpOffice\PhpWord\Style\ListItem;
 use Statamic\Support\Str;
+use Tiptap\Editor;
+use Tiptap\Extensions;
+use Tiptap\Marks;
 
 class WordRenderer
 {
+    protected $editor;
+
     protected $word;
 
     public function __construct()
@@ -24,6 +28,16 @@ class WordRenderer
         $this->word = new PhpWord();
         $this->word->getSettings()->setThemeFontLang(new Language(Language::DE_DE));
         $this->defineStyles();
+
+        $this->editor = new Editor([
+            'extensions' => [
+                new Extensions\StarterKit(),
+                new Marks\Underline(),
+                new Marks\Subscript(),
+                new Marks\Superscript(),
+                new Marks\Link(),
+            ],
+        ]);
     }
 
     protected function defineStyles()
@@ -249,7 +263,7 @@ class WordRenderer
 
     protected function parseFootnoteHtml($html)
     {
-        $nodes = collect((new Renderer)->render($html)['content'] ?? [])
+        $nodes = collect($this->editor->setContent($html)->getDocument()['content'] ?? [])
             ->map(fn ($node) => array_merge($node['content'], [['type' => 'hardBreak']]))
             ->flatten(1)
             ->slice(0, -1)
@@ -265,7 +279,7 @@ class WordRenderer
             return false;
         }
 
-        $mark = $this->findMark($first, 'bts_span');
+        $mark = $this->findMark($first, 'btsSpan');
         if (! $mark || $mark->attrs->class !== 'paragraph-nr') {
             return false;
         }
