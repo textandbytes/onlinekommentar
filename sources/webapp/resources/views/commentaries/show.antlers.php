@@ -6,7 +6,7 @@
       slug: '{{ slug }}',
       title: '{{ title }}',
       doi: '{{ doi }}',
-      date: '{{ date format_localized="%d.%m.%Y" }}',
+      date: '{{ date iso_format="DD.MM.YYYY" }}',
       assigned_editors: [
         {{ assigned_editors }}
           '{{ name }}',

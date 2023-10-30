@@ -70,6 +70,11 @@ return [
             'directory' => base_path('data/content/globals'),
         ],
 
+        'global-variables' => [
+            'class' => Stores\GlobalVariablesStore::class,
+            'directory' => base_path('data/content/globals'),
+        ],
+
         'asset-containers' => [
             'class' => Stores\AssetContainersStore::class,
             'directory' => base_path('data/content/assets'),
