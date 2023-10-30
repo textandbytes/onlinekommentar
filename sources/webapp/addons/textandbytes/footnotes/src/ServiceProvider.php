@@ -17,7 +17,6 @@ class ServiceProvider extends AddonServiceProvider
 
     public function bootAddon()
     {
-        parent::boot();
-        Augmentor::addNode(Footnote::class);
+        Augmentor::addExtension('footnote', new Footnote());
     }
 }

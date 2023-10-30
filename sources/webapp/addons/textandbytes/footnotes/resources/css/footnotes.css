@@ -1,8 +1,4 @@
-.fa-note {
-  font-weight: bold;
+.footnotes-icon {
   font-size: 1.2rem;
-}
-
-.fa-note:before {
-  content: "Fn";
+  font-family: "Arial Narrow", Arial, sans-serif;
 }
