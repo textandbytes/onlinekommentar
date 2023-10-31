@@ -141,7 +141,7 @@
 </template>
 
 <script setup>
-  import { ref, useSlots, computed } from 'vue'
+  import { ref, useSlots, computed, onMounted, nextTick } from 'vue'
   import FlyoutMenuFullWidth from '@/components/Menus/FlyoutMenuFullWidth'
   import VersionsPanel from '@/components/Pages/Partials/VersionsPanel'
   import SuggestedCitationsPanel from '@/components/Pages/Partials/SuggestedCitationsPanel'
@@ -160,6 +160,11 @@
 
   const legalTextLocale = ref(props.commentary.locale)
   let localizedLegalText = ref(props.commentary.legal_text)
+
+  onMounted(async () => {
+    await nextTick();
+    document.querySelector(window.location.hash)?.scrollIntoView();
+  })
 
   const printCommentary = () => {
     window.print()
@@ -244,13 +249,20 @@
 
     :deep(.paragraph-nr) {
       @apply 
-        inline-block md:absolute 
-        mr-2 md:mr-0
-        !leading-6
+        block md:absolute 
+        w-max
         md:-left-8 
+        md:top-1 
         md:text-sm 
         font-sans
-        after:content-[')'] md:after:content-none
+        px-2
+        bg-ok-light-beige
+        rounded-full
+        -ml-2
+    }
+
+    :deep(p:target .paragraph-nr) {
+      @apply bg-ok-yellow
     }
 
     :deep(hr) {
