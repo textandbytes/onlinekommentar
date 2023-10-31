@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ef1f84b99cbc6c8781e1d8221fcf84a",
+    "content-hash": "6db239fa0701ca3aba8232f42237084a",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -3864,6 +3864,61 @@
                 "source": "https://github.com/mitydigital/statamic-feedamic/tree/2.2.9"
             },
             "time": "2023-10-19T06:22:58+00:00"
+        },
+        {
+            "name": "mitydigital/sitemapamic",
+            "version": "2.3.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mitydigital/statamic-sitemapamic.git",
+                "reference": "c4d9937fd7d356bc0043c6aad5a89739a16fde0e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mitydigital/statamic-sitemapamic/zipball/c4d9937fd7d356bc0043c6aad5a89739a16fde0e",
+                "reference": "c4d9937fd7d356bc0043c6aad5a89739a16fde0e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1",
+                "statamic/cms": "^3.3|^4.0"
+            },
+            "type": "statamic-addon",
+            "extra": {
+                "statamic": {
+                    "name": "Sitemapamic",
+                    "description": "Adds an XML sitemap to a Statamic site."
+                },
+                "laravel": {
+                    "providers": [
+                        "MityDigital\\Sitemapamic\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MityDigital\\Sitemapamic\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marty Friedel"
+                }
+            ],
+            "description": "An XML sitemap generator for Statamic 3 and 4 that includes all collections and related taxonomy pages.",
+            "keywords": [
+                "Sitemap",
+                "statamic"
+            ],
+            "support": {
+                "issues": "https://github.com/mitydigital/statamic-sitemapamic/issues",
+                "source": "https://github.com/mitydigital/statamic-sitemapamic/tree/2.3.8"
+            },
+            "time": "2023-06-22T07:38:56+00:00"
         },
         {
             "name": "monolog/monolog",

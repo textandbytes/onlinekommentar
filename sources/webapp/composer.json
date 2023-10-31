@@ -17,6 +17,7 @@
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.7",
         "mitydigital/feedamic": "^2.2",
+        "mitydigital/sitemapamic": "^2.3",
         "pragmarx/yaml": "^1.3",
         "statamic/cms": "^4.0",
         "textandbytes/converter": "*",
