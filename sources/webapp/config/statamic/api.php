@@ -18,7 +18,13 @@ return [
     'enabled' => env('STATAMIC_API_ENABLED', true),
 
     'resources' => [
-        'collections' => true,
+        'collections' => [
+            'commentaries' => [
+                'allowed_filters' => ['site', 'slug'],
+            ],
+            'pages' => true,
+            'legal_domains' => true,
+        ],
         'navs' => false,
         'taxonomies' => false,
         'assets' => false,
