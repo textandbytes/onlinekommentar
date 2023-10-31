@@ -13,6 +13,15 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    {{ if site:handle == 'de' }}
+      {{ feedamic:de }}
+    {{ elseif site:handle == 'en' }}
+      {{ feedamic:en }}
+    {{ elseif site:handle == 'fr' }}
+      {{ feedamic:fr }}
+    {{ elseif site:handle == 'it' }}
+      {{ feedamic:it }}
+    {{ /if }}
   </head>
   <body class="font-sans antialiased bg-ok-beige">
     <article id="app">
