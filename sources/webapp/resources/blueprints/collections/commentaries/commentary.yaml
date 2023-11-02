@@ -137,6 +137,7 @@ tabs:
                 - h3
                 - h4
                 - h5
+                - h6
                 - paragraph_nr
                 - bold
                 - italic
@@ -169,6 +170,11 @@ tabs:
               visibility: visible
               always_save: false
               localizable: true
+              replicator_preview: true
+              smart_typography: false
+              inline: false
+              word_count: false
+              hide_display: false
           -
             handle: converter
             field:

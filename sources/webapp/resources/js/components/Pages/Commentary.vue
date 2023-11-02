@@ -204,7 +204,7 @@
   .content {
 
     :deep(h2) {
-      @apply uppercase font-sans tracking-wider text-xl lg:text-2xl mt-12 mb-6
+      @apply uppercase font-sans tracking-wider text-2xl mt-12 mb-6
     }
 
     :deep(h2 strong) {
@@ -212,7 +212,7 @@
     }
 
     :deep(h3) {
-      @apply font-sans tracking-wider text-xl lg:text-2xl mt-12 mb-6 print:break-inside-avoid print:break-after-avoid
+      @apply font-sans tracking-wider text-2xl mt-12 mb-6 print:break-inside-avoid print:break-after-avoid
     }
 
     :deep(h3 strong) {
@@ -220,7 +220,15 @@
     }
 
     :deep(h4) {
-      @apply font-sans tracking-wider text-lg lg:text-xl mt-3 mb-6 print:break-inside-avoid print:break-after-avoid
+      @apply font-sans tracking-wider text-xl mt-3 mb-6 print:break-inside-avoid print:break-after-avoid
+    }
+
+    :deep(h5) {
+      @apply font-sans tracking-wider text-lg mt-3 mb-6 print:break-inside-avoid print:break-after-avoid
+    }
+
+    :deep(h6) {
+      @apply font-sans tracking-wider text-base uppercase text-ok-gray mt-3 mb-6 print:break-inside-avoid print:break-after-avoid
     }
 
     :deep(ul) {
