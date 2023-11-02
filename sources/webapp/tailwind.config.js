@@ -17,7 +17,7 @@ module.exports = {
                 sans: ['worksans', 'sans-serif', ...defaultTheme.fontFamily.sans],
                 serif: ['librecaslon', 'serif', ...defaultTheme.fontFamily.serif],
             },
-             colors: {
+            colors: {
               'ok-gray':        '#707070',
               'ok-dark-gray':   '#575757',
               'ok-light-gray':  '#CCCCCC',
@@ -27,7 +27,13 @@ module.exports = {
               'ok-orange':      '#F4E8D7',
               'ok-blue':        '#AFCEE2',
               'ok-red':         '#E06C56',
-            }
+            },
+            listStyleType: {
+              square: 'square',
+              circle: 'circle',
+              'upper-roman': 'upper-roman',
+              'lower-roman': 'lower-roman',
+            },
         },
     },
 

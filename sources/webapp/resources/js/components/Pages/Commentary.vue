@@ -232,7 +232,27 @@
     }
 
     :deep(ul) {
-      @apply list-disc list-outside ml-4 mb-2
+      @apply list-disc list-outside ml-10 mb-4
+    }
+
+    :deep(ul ul) {
+      @apply list-circle
+    }
+
+    :deep(ul ul ul) {
+      @apply list-square
+    }
+
+    :deep(ol) {
+      @apply list-decimal list-outside ml-10 mb-4
+    }
+
+    :deep(ol ol) {
+      @apply list-upper-roman
+    }
+
+    :deep(ol ol ol) {
+      @apply list-lower-roman
     }
 
     :deep(li) {
@@ -300,20 +320,6 @@
         @apply inline-table;
       }
     }
-
-    :deep(ol) {
-      @apply list-decimal list-outside ml-10 mb-4
-    }
-
-    :deep(li) {
-      @apply mt-2 pl-2
-    }
-
-    :deep(li p) {
-      @apply inline
-    }
-
-
 
   }
 
