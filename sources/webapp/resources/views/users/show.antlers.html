@@ -3,13 +3,17 @@
     locale="{{ locale }}"
     :user="{
       name: '{{ name | add_slashes | sanitize:true }}',
-      legal_domain: 
-        {{ if legal_domain }}
-          {
-            {{ foreach:legal_domain }}
-              '{{ key }}': '{{ value | add_slashes | sanitize:true }}',
-            {{ /foreach:legal_domain }}
-          },
+      legal_domains: 
+        {{ if legal_domains }}
+          [
+            {{ foreach:legal_domains as="legal_domain" }}
+              {
+                {{ foreach:legal_domain }}
+                  '{{ key }}': '{{ value | add_slashes | sanitize:true }}',
+                {{ /foreach:legal_domain }}
+              },
+            {{ /foreach:legal_domains }}
+          ],
         {{ else }}
           null,
         {{ /if }}
