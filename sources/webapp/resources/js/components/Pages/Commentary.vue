@@ -46,10 +46,26 @@
 
       <div class="text-center lg:text-xl">
         <p v-if="commentary.assigned_authors && commentary.assigned_authors.length > 0 && commentary.assigned_authors[0] !== ''">
-          {{ $t('commentary_by') }} <i>{{ commentary.assigned_authors.join(' ' + $t('and') + ' ') }}</i>
+          {{ $t('commentary_by') }} 
+          <i>
+            <template v-for="assigned_author, index in commentary.assigned_authors">
+              <span v-if="index !== 0"> / </span>
+              <a class="underline decoration-ok-beige hover:decoration-ok-gray" :href="basePathPrefix + 'autoren/' + assigned_author.slug">
+                {{ assigned_author.name }}
+              </a>
+            </template>
+          </i>
         </p>
         <p v-if="commentary.assigned_editors && commentary.assigned_editors.length > 0 && commentary.assigned_editors[0] !== ''">
-          {{ $t('edited_by') }} <i>{{ commentary.assigned_editors.join(' ' + $t('and') + ' ') }}</i>
+          {{ $t('edited_by') }} 
+          <i>
+            <template v-for="assigned_editor, index in commentary.assigned_editors">
+              <span v-if="index !== 0"> / </span>
+              <a class="underline decoration-ok-beige hover:decoration-ok-gray" :href="basePathPrefix + 'herausgeber/' + assigned_editor.slug">
+                {{ assigned_editor.name }}
+              </a>
+            </template>
+          </i>
         </p>
       </div>
 
@@ -152,7 +168,8 @@
     locale: { type: String, required: true },
     commentary: { type: Object, required: true },
     versions: { type: Array, required: false, default: null },
-    versionTimestamp: { type: String, required: false, default: null }
+    versionTimestamp: { type: String, required: false, default: null },
+    basePathPrefix: { type: String, required: true }
   })
 
   const slots = useSlots()

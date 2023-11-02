@@ -1,6 +1,7 @@
 <article class="commentary w-full border print:border-0">
   <commentary
     locale="{{ locale }}"
+    base-path-prefix="{{ base_path_prefix }}"
     :commentary="{
       id: '{{ id }}',
       slug: '{{ slug }}',
@@ -8,14 +9,22 @@
       doi: '{{ doi }}',
       date: '{{ date iso_format="DD.MM.YYYY" }}',
       assigned_editors: [
-        {{ assigned_editors }}
-          '{{ name }}',
-        {{ /assigned_editors }}
+        {{ foreach:assigned_editors as="assigned_editor" }}
+          {
+            {{ foreach:assigned_editor }}
+              '{{ key }}': '{{ value | add_slashes | sanitize:true }}',
+            {{ /foreach:assigned_editor }}
+          },
+        {{ /foreach:assigned_editors }}
       ],
       assigned_authors: [
-        {{ assigned_authors }}
-          '{{ name }}',
-        {{ /assigned_authors }}
+        {{ foreach:assigned_authors as="assigned_author" }}
+          {
+            {{ foreach:assigned_author }}
+              '{{ key }}': '{{ value | add_slashes | sanitize:true }}',
+            {{ /foreach:assigned_author }}
+          },
+        {{ /foreach:assigned_authors }}
       ],
       legal_text: '{{ legal_text | add_slashes | sanitize:true }}',
       suggested_citation_long: '{{ suggested_citation_long | add_slashes | sanitize:true }}',

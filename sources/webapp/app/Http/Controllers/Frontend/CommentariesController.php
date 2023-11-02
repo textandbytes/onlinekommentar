@@ -80,8 +80,8 @@ class CommentariesController extends Controller
         }
 
         // get the assigned authors and editors from their ids
-        $commentaryData['assigned_authors'] = $this->_getUsers($commentaryData['assigned_authors'] ?? null, ['name']);
-        $commentaryData['assigned_editors'] = $this->_getUsers($commentaryData['assigned_editors'] ?? null, ['name']);
+        $commentaryData['assigned_authors'] = $this->_getUsers($commentaryData['assigned_authors'] ?? null, ['id', 'slug', 'name']);
+        $commentaryData['assigned_editors'] = $this->_getUsers($commentaryData['assigned_editors'] ?? null, ['id', 'slug', 'name']);
 
         // return the first original language (default to German) since only one original language can be assigned to a commentary
         $commentaryData['original_language'] = ($commentaryData['original_language'] && is_array($commentaryData['original_language']) && !empty($commentaryData['original_language']))
@@ -114,7 +114,8 @@ class CommentariesController extends Controller
                 'contentMarkup' => $contentMarkup,
                 'toc' => $toc,
                 'versionTimestamp' => $versionTimestamp,
-                'versionComparisonResult' => $versionComparisonResult
+                'versionComparisonResult' => $versionComparisonResult,
+                'base_path_prefix' => '/' . $locale . '/',
             ], $commentaryData))
             ->render();  // render the view to a string
 
