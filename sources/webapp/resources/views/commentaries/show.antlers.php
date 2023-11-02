@@ -17,9 +17,9 @@
           '{{ name }}',
         {{ /assigned_authors }}
       ],
-      legal_text: '{{ legal_text | sanitize }}',
-      suggested_citation_long: '{{ suggested_citation_long }}',
-      suggested_citation_short: '{{ suggested_citation_short }}',
+      legal_text: {{ legal_text | to_json | sanitize }},
+      suggested_citation_long: {{ suggested_citation_long | to_json | sanitize }},
+      suggested_citation_short: {{ suggested_citation_short | to_json | sanitize }},
       original_language: '{{ original_language }}',
       locale: '{{ locale }}',
       pdf_commentary_path: '<?= Storage::url('commentaries/pdf/') ?>',
