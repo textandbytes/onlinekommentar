@@ -83,6 +83,9 @@ class CommentariesController extends Controller
         $commentaryData['assigned_authors'] = $this->_getUsers($commentaryData['assigned_authors'] ?? null, ['id', 'slug', 'name']);
         $commentaryData['assigned_editors'] = $this->_getUsers($commentaryData['assigned_editors'] ?? null, ['id', 'slug', 'name']);
 
+        // get the additional documents
+        $commentaryData['additional_documents'] = $this->_getDocuments($commentaryData['additional_documents'] ?? null, ['id', 'url', 'title']);
+
         // return the first original language (default to German) since only one original language can be assigned to a commentary
         $commentaryData['original_language'] = ($commentaryData['original_language'] && is_array($commentaryData['original_language']) && !empty($commentaryData['original_language']))
             ? $commentaryData['original_language'][0]
@@ -203,6 +206,13 @@ class CommentariesController extends Controller
             }
         }
         return $users;
+    }
+
+    private function _getDocuments($assets, $fieldsToInclude = null)
+    {
+        return collect($assets)
+            ->map(fn ($asset) => $fieldsToInclude ? array_intersect_key($asset, array_flip($fieldsToInclude)) : $asset)
+            ->all();
     }
 
     private function _getCommentaryRevisionBasePath($locale, $commentaryId)

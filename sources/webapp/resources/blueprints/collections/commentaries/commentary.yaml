@@ -185,6 +185,24 @@ tabs:
               visibility: visible
               always_save: false
               localizable: false
+          -
+            handle: additional_documents
+            field:
+              mode: list
+              container: documents
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'Additional Documents'
+              icon: assets
+              localizable: true
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
   sidebar:
     display: Sidebar
     sections:

@@ -33,6 +33,7 @@
       locale: '{{ locale }}',
       pdf_commentary_path: '<?= Storage::url('commentaries/pdf/') ?>',
       pdf_commentary_filename: '{{ pdf_commentary:basename }}',
+      additional_documents: {{ additional_documents | to_json | sanitize:true }},
     }"
     :versions="[
       {{ revisions:commentary :id='id' :locale='locale' }}

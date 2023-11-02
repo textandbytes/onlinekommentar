@@ -48,6 +48,14 @@ return [
             'throw' => false,
         ],
 
+        'documents' => [
+            'driver' => 'local',
+            'root' => base_path('data/storage/app/public/documents'),
+            'url' => env('APP_URL').'/storage/documents',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
