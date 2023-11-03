@@ -108,9 +108,12 @@ class CommentariesController extends Controller
             $toc = $tocGenerator->getHtmlMenu($contentMarkup);
         }
     
+        // select the legal domain or show template depending on commentary content
+        $template = $commentaryData['content'] ? 'commentaries/show' : 'commentaries/legal-domain';
+
         // load the commentary detail view
         $view = (new View)
-            ->template('commentaries/show')
+            ->template($template)
             ->layout('layout')
             ->with(array_merge([
                 'locale' => $locale,

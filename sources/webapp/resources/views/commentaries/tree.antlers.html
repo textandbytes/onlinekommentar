@@ -1,21 +1,15 @@
-<ul class="mt-4 ml-4 tree">
+<ul class="m-4 tree">
     {{ nav:collection:commentaries select="url|title|content" }}
         {{ if children }}
             <details{{ if is_current || is_parent }} open{{ /if }}>
                 <summary>
-                    {{ if content | raw }}
-                        <a href="{{ url }}"{{ if is_current || is_parent }} class="on"{{ /if }}>
-                            <span class="font-medium label">{{ title }}</span>
-                        </a>
-                    {{ else }}
-                        <span class="cursor-pointer">
-                            {{ if depth == 1 }}
-                                {{ title | upper }}
-                            {{ else }}
-                                {{ title }}
-                            {{ /if }}
-                        </span>
-                    {{ /if }}
+                    <a href="{{ url }}"{{ if is_current || is_parent }} class="on"{{ /if }}>
+                        {{ if depth == 1 }}
+                            {{ title | upper }}
+                        {{ else }}
+                            {{ title }}
+                        {{ /if }}
+                    </a>
                 </summary>
                 <li>
                     {{ if children }}
@@ -27,20 +21,10 @@
             </details>
         {{ else }}
             <li>
-                {{ if content | raw }}
-                    <a href="{{ url }}"{{ if is_current || is_parent }} class="on"{{ /if }}>
-                        <span class="font-medium label">{{ title }}</span>
-                    </a>
-                {{ else }}
-                    <span class="cursor-pointer">
-                        {{ if depth == 1 }}
-                            {{ title | upper }}
-                        {{ else }}
-                            {{ title }}
-                        {{ /if }}
-                    </span>
-                {{ /if }}
-                </li>
+                <a href="{{ url }}"{{ if is_current || is_parent }} class="on"{{ /if }}>
+                    <span class="font-medium label">{{ title }}</span>
+                </a>
+            </li>
         {{ /if }}
     {{ /nav:collection:commentaries }}
 </ul>
