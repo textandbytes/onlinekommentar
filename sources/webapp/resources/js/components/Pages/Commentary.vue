@@ -399,7 +399,7 @@
 
   .footnotes { 
     :deep(a) {
-      @apply underline;
+      @apply underline break-all;
     }
   }
 
