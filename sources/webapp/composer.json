@@ -10,6 +10,7 @@
     "require": {
         "php": "^8.1.0",
         "caseyamcl/toc": "^3.1",
+        "gotenberg/gotenberg-php": "^1.1",
         "guzzlehttp/guzzle": "^7.2",
         "jacksleight/statamic-bard-texstyle": "^3.0",
         "jfcherng/php-diff": "^6.12",
@@ -74,7 +75,8 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "allow-plugins": {
-            "pixelfear/composer-dist-plugin": true
+            "pixelfear/composer-dist-plugin": true,
+            "php-http/discovery": true
         }
     },
     "minimum-stability": "dev",

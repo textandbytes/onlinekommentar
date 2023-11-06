@@ -2,6 +2,8 @@
 
 namespace Textandbytes\Converter;
 
+use Gotenberg\Gotenberg;
+use Gotenberg\Stream;
 use Statamic\Support\Str;
 use Textandbytes\Converter\Marks\ParagraphNumber;
 use Textandbytes\Converter\Nodes\Cleaner;
@@ -59,15 +61,10 @@ class Converter
 
     public function entryToWord($entry)
     {
-        if ($entry->collection()->handle() === 'commentaries') {
-            return $this->commentartyToWord($entry);
+        if ($entry->collection()->handle() !== 'commentaries') {
+            throw new \Exception('Entry is not a commentary');
         }
 
-        throw new \Exception('Not implemented');
-    }
-
-    public function commentartyToWord($entry)
-    {
         $data = array_merge(
             $this->makeHeading($entry->title, 0),
             $entry->get('content') ?? [],
@@ -84,6 +81,20 @@ class Converter
         $data = json_decode(json_encode($data));
 
         return (new WordRenderer)->render($data);
+    }
+
+    public function entryToPdf($entry)
+    {
+        $wordFile = $this->entryToWord($entry);
+
+        $dir = sys_get_temp_dir();
+        $request = Gotenberg::libreOffice(config('services.gotenberg.url'))
+            ->convert(Stream::path($wordFile));
+        $pdfFile = $dir.Gotenberg::save($request, $dir);
+
+        unlink($wordFile);
+
+        return $pdfFile;
     }
 
     protected function makeParagraph($text)

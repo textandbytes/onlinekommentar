@@ -97,7 +97,7 @@ class WordRenderer
     {
         $this->renderSection($data, $this->word);
 
-        $file = tempnam(sys_get_temp_dir(), 'PHPWord-');
+        $file = tempnam(sys_get_temp_dir(), 'PHPWord-').'.docx';
         $this->word->save($file, 'Word2007');
 
         return $file;

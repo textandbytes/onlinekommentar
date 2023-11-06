@@ -31,6 +31,8 @@ services:
             - '${FORWARD_MAILHOG_DASHBOARD_PORT:-8027}:8026'
         networks:
             - sail
+    gotenberg:
+        image: gotenberg/gotenberg:7
 networks:
     sail:
         driver: bridge
