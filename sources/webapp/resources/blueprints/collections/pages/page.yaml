@@ -53,6 +53,12 @@ tabs:
               instructions_position: above
               visibility: visible
               always_save: false
+              replicator_preview: true
+              smart_typography: false
+              inline: false
+              word_count: false
+              container: documents
+              hide_display: false
           -
             handle: template
             field:
