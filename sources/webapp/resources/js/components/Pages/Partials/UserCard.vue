@@ -10,7 +10,7 @@
       <img v-if="user.avatar" :src="user.avatar" class="object-cover rounded-full w-28 h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36 grayscale" />
       <span v-else class="bg-gray-200 rounded-full w-28 h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36"></span>
 
-      <h2 class="font-serif text-3xl font-medium !leading-snug text-center lg:text-4xl 2xl:text-5xl" style="word-spacing: 999px">
+      <h2 class="font-serif text-3xl font-medium !leading-snug text-center lg:text-4xl 2xl:text-5xl max-w-[10ch]">
         {{ user.name }}
       </h2>
 
