@@ -301,6 +301,7 @@
 
     :deep(p) {
       @apply lg:text-xl !leading-[1.5em] relative font-serif mb-6;
+      @apply scroll-mt-12 md:scroll-mt-16 lg:scroll-mt-24;
 
       a {
         @apply underline break-all print:break-inside-avoid
