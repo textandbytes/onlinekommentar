@@ -1,10 +1,5 @@
 <template>
   <div class="flex flex-col relative p-8 transition ease-in-out delay-150 bg-white group">
-    <div v-if="user.legal_domains" class="mb-4 text-xs tracking-widest text-center uppercase">
-      <div v-for="legal_doman in user.legal_domains">
-        {{ $t(legal_doman.label) }}
-      </div>
-    </div>
 
     <div class="flex flex-col items-center justify-between space-y-6">
       <img v-if="user.avatar" :src="user.avatar" class="object-cover rounded-full w-28 h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36 grayscale" />
@@ -16,6 +11,11 @@
 
       <div class="text-sm text-center lg:text-base">
         {{ user.title }}
+      </div>
+    </div>
+    <div v-if="user.legal_domains" class="mt-4 text-xs tracking-widest text-center uppercase">
+      <div v-for="legal_doman in user.legal_domains">
+        {{ $t(legal_doman.label) }}
       </div>
     </div>
     <div class="self-end w-full mt-auto">
