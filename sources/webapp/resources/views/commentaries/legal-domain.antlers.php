@@ -5,7 +5,7 @@ use Statamic\Facades\Entry;
 // get the list of commentaries that have valid content
 $commentaries = Entry::query()
   ->where('collection', 'commentaries')
-  ->where('locale', app()->getLocale())
+  ->where('locale', $site->handle())
   ->where('status', 'published')
   ->where('parent', $id)
   ->get()
