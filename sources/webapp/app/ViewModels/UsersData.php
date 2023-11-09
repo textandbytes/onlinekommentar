@@ -26,6 +26,7 @@ class UsersData extends ViewModel
                     'id' => $user['id'],
                     'slug' => $user['slug'],
                     'name' => $user['name'],
+                    'family_name' => $user['family_name'],
                     'email' => $user['email'],
                     'legal_domains' => Entry::query()
                         ->where('collection', 'legal_domains')
@@ -54,14 +55,8 @@ class UsersData extends ViewModel
         $editors = array_merge($usersToShowAsEditors, $editorsOfCommentaries);
         $editors = array_values(array_intersect_key($editors, array_unique(array_column($editors, 'id'))));
 
-        // set specific user name to be sorted first
-        $userNameToSortFirst = 'Daniel Brugger';
-
-        // find array key for name="Daniel Brugger"
-        $key = array_search($userNameToSortFirst, array_column($editors, 'name'));
-
-        // remove array element with key $key and insert it at the beginning of the array
-        array_splice($editors, 0, 0, array_splice($editors, $key, 1));
+        // sort the users by family name
+        usort($editors, fn ($obj1, $obj2) => strcmp($obj1['family_name'], $obj2['family_name']));
 
         $editorLegalDomains = $this->_getLegalDomainsOfAssignedUsers($editors);
 
@@ -89,6 +84,7 @@ class UsersData extends ViewModel
                             'id' => $author['id'],
                             'slug' => $author['slug'],
                             'name' => $author['name'],
+                            'family_name' => $author['family_name'],
                             'email' => $author['email'],
                             'legal_domains' => Entry::query()
                                 ->where('collection', 'legal_domains')
@@ -123,8 +119,8 @@ class UsersData extends ViewModel
         // remove duplicate users that have the same id
         $users = array_values(array_intersect_key($users, array_unique(array_column($users, 'id'))));
 
-        // sort the users by the label of the first legal domain
-        usort($users, fn ($obj1, $obj2) => strcmp($obj1['legal_domains'] ? $obj1['legal_domains'][0]['label'] : '', $obj2['legal_domains'] ? $obj2['legal_domains'][0]['label'] : ''));
+        // sort the users by family name
+        usort($users, fn ($obj1, $obj2) => strcmp($obj1['family_name'], $obj2['family_name']));
 
         return $users;
     }
