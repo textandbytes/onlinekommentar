@@ -8,6 +8,7 @@ $commentaries = Entry::query()
   ->where('locale', $site->handle())
   ->where('status', 'published')
   ->where('parent', $id)
+  ->orderBy('order', 'asc')
   ->get()
   ->map(function ($commentary, $key) {
       if ($commentary['content'] !== null) {
