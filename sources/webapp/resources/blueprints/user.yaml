@@ -44,7 +44,7 @@ tabs:
             field:
               mode: select
               create: false
-              display: 'Legal Domain'
+              display: 'Legislative Acts'
               type: entries
               icon: entries
               listable: hidden
