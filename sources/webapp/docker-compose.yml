@@ -33,6 +33,10 @@ services:
             - sail
     gotenberg:
         image: gotenberg/gotenberg:7
+        networks:
+            - sail
+        ports:
+            - '${GOTENBERG_PORT:-3000}:3000'
 networks:
     sail:
         driver: bridge
