@@ -13,7 +13,7 @@
         </FlyoutMenuFullWidth>
         <div v-else class="py-2 md:py-4">&nbsp;</div>
 
-        <div class="items-center justify-center hidden font-serif text-2xl md:flex">
+        <div class="items-center justify-center hidden font-serif text-2xl md:flex text-center">
           {{ commentary.title }}
         </div>
 
@@ -44,7 +44,7 @@
           {{ $t('commentary_on') }}
         </div>
 
-        <div class="font-serif text-3xl md:text-4xl xl:text-5xl">
+        <div class="font-serif text-3xl md:text-4xl xl:text-5xl text-center">
           {{ commentary.title }}
         </div>
 
