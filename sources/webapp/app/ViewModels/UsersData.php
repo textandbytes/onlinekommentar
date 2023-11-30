@@ -129,7 +129,7 @@ class UsersData extends ViewModel
     {
         // get the non-null, unique legal domains from the list of assigned users
         // reset the array index values to return an indexed array instead of an associative array
-        $legalDomains = array_values(array_unique(array_filter(array_column($users, 'legal_domain')), SORT_REGULAR));
+        $legalDomains = array_values(array_unique(array_filter(call_user_func_array('array_merge', array_column($users, 'legal_domains'))), SORT_REGULAR));
 
         // prepend an option to display all legal domains
         array_unshift($legalDomains, ['id' => null, 'label' => __('legal_domain_filter_label').': '.__('legal_domain_filter_all')]);
