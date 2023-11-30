@@ -1,5 +1,5 @@
 <ul class="m-4 tree">
-    {{ nav:collection:commentaries select="url|title|content" }}
+    {{ nav:cached handle="collection::commentaries" select="url|title" }}
         {{ if children }}
             <details{{ if is_current || is_parent }} open{{ /if }}>
                 <summary>
@@ -26,5 +26,5 @@
                 </a>
             </li>
         {{ /if }}
-    {{ /nav:collection:commentaries }}
+    {{ /nav:cached }}
 </ul>
