@@ -57,9 +57,9 @@ $commentaries = Entry::query()
 
 
 <div class="mt-16 flex justify-between text-sm uppercase">
-  <span><?= __('newest_comments') ?></span>
+  <span>{{ trans:newest_comments }}</span>
   <div class="flex">
-    <a href="{{ locale}}/kommentare"><span class="mr-2"><?= __('all_comments') ?></span>
+    <a href="{{ locale}}/kommentare"><span class="mr-2">{{ trans:all_comments }}</span>
       <svg class="inline-block mb-1" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11">
         <g id="Gruppe_51" data-name="Gruppe 51" transform="translate(10.5 -16.116) rotate(90)">
           <g id="Icon_feather-arrow-up" data-name="Icon feather-arrow-up" transform="translate(16.822)">
