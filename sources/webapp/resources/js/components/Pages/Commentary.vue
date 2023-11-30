@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white lg:pt-8 lg:pb-12 md:max-w-[1225px] md:mx-auto md:mb-auto print:overflow-visible print:m-0 print:p-0 print:w-full print:table">
-    <div class="bg-white px-4 md:px-12 lg:px-24 xl:px-32 print:hidden sticky -top-px z-10">
+    <div class="bg-white px-4 md:px-12 lg:px-24 xl:px-32 print:hidden sticky -top-px z-[1]">
       <div class="flex items-center justify-between border-b border-black md:grid md:grid-cols-3 md:gap-px lg:py-4">
         <FlyoutMenuFullWidth
           v-if="hasSlot('table-of-contents')"
