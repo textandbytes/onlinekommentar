@@ -114,7 +114,7 @@
 
       <template v-if="commentary.additional_documents.length">
         <h2 class="mt-12 mb-4 font-sans text-xl tracking-wider uppercase">
-          Additional Documents
+          {{ $t('additional_documents') }}
         </h2>
         <p v-for="additional_document in commentary.additional_documents" class="mt-2">
           <a :href="additional_document.url" download>
@@ -127,7 +127,7 @@
 
       <template v-if="commentary.pdf_commentary_filename !== ''">
         <h2 class="mt-12 mb-4 font-sans text-xl tracking-wider uppercase">
-          Download PDF
+          {{ $t('download_pdf') }}
         </h2>
         <p>
           <a :href="commentary.pdf_commentary_path + commentary.pdf_commentary_filename" download>
