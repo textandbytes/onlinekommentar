@@ -87,10 +87,10 @@ class Converter
     {
         $wordFile = $this->entryToWord($entry);
 
-        $dir = sys_get_temp_dir();
+        $dir = storage_path('app');
         $request = Gotenberg::libreOffice(config('services.gotenberg.url'))
             ->convert(Stream::path($wordFile));
-        $pdfFile = $dir.Gotenberg::save($request, $dir);
+        $pdfFile = $dir.'/'.Gotenberg::save($request, $dir);
 
         unlink($wordFile);
 
