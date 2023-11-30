@@ -167,7 +167,7 @@
   }  
   @media (min-width: 640px) {
     .attribution p, h2 {
-      -webkit-line-clamp: 4;
+      -webkit-line-clamp: 3;
     }  
   }
   
