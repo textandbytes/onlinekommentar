@@ -24,6 +24,7 @@ class CommentariesController extends Controller
     {
         $isLivePreview = request()->statamicToken();
 
+
         // Create a unique cache key based on the request parameters
         $cacheKey = "commentary_view:{$locale}:{$commentarySlug}:{$versionTimestamp}:" . ($versionComparisonResult ? md5($versionComparisonResult) : '');
 
