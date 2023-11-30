@@ -323,7 +323,7 @@
         px-2
         bg-ok-light-beige
         rounded-full
-        -ml-2
+        md:-ml-2
     }
 
     :deep(p:target .paragraph-nr) {
