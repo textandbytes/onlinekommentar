@@ -314,7 +314,7 @@
 
     :deep(.paragraph-nr) {
       @apply 
-        block md:absolute 
+        inline-block md:absolute 
         w-max
         md:-left-8 
         md:top-1 
