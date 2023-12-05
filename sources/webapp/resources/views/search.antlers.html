@@ -1,7 +1,7 @@
 <div class="bg-white">
-  {{ search:results as="results" }}
+  {{ search:results as="results" paginate="20" }}
     <div class="px-8 py-4 mb-2 border-b border-black">
-      <h2 class="text-xs uppercase"><span class="font-medium">{{ get:q }}</span> – {{ results | count }}
+      <h2 class="text-xs uppercase"><span class="font-medium">{{ get:q }}</span> – {{ paginate }}{{ total_items }}{{ /paginate }}
         {{ if results | count === 1 }}
           {{ trans:result_found }}
         {{ else }}
