@@ -1,5 +1,7 @@
 <?php
 
+use App\Scopes\FeedScope;
+
 return [
 
     /*
@@ -233,4 +235,6 @@ return [
     */
 
     'locales' => null,
+
+    'scope' => FeedScope::class,
 ];
