@@ -18,7 +18,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
     }
 
     /**
@@ -28,6 +27,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // Workaround for this issue: https://github.com/statamic/cms/issues/9012
+        Statamic::booted(function () {
+            $this->app->bind(
+                \Statamic\Contracts\Entries\Collection::class,
+                \App\Entries\Collection::class
+            );
+        });
+
         Statamic::script('app', 'cp.js');
         date_default_timezone_set('Europe/Zurich');
 
