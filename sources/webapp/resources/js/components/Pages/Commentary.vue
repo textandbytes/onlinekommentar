@@ -199,7 +199,9 @@
 
   onMounted(async () => {
     await nextTick();
-    document.querySelector(window.location.hash)?.scrollIntoView();
+    if (window.location.hash) {
+      document.querySelector(window.location.hash)?.scrollIntoView();
+    }
   })
 
   const printCommentary = () => {
