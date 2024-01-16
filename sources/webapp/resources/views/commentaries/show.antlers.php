@@ -31,7 +31,7 @@
       suggested_citation_short: '{{ suggested_citation_short | add_slashes | sanitize:true }}',
       original_language: '{{ original_language }}',
       locale: '{{ locale }}',
-      pdf_commentary_path: '<?= Storage::url('commentaries/pdf/') ?>',
+      pdf_commentary_path: '<?php echo Storage::url('commentaries/pdf/') ?>',
       pdf_commentary_filename: '{{ pdf_commentary:basename }}',
       additional_documents: {{ additional_documents | to_json | sanitize:true }},
     }"
