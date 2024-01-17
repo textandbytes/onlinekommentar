@@ -21,7 +21,7 @@
                     <li class="flex justify-between items-start border-b border-gray-400 py-4">
                       <span class="flex w-3/12 text-xl font-serif">{{ title }}</span>
                       <span class="flex w-6/12 text-sm text-gray-700">{{ content  | raw | bard_text | truncate:200 }}</span>
-                      {{ trans:open }}
+                      <a class="flex ok-button !mt-0" href="{{ url }}">{{ trans:open }}</a>
                     </li>
                   {{ endif }}
                 {{ /results }}
