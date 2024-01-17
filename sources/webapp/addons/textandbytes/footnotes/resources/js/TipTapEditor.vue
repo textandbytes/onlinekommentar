@@ -2,41 +2,41 @@
   <div
     v-if="editor"
     class="editor-container">
-    <div v-if="options.enableFormatting" class="editor-menu bard-fixed-toolbar p-1">
+    <div v-if="options.enableFormatting" class="editor-menu bard-fixed-toolbar p-2">
 
       <button class="bard-toolbar-button has-tooltip"
         @click.prevent="editor.chain().focus().toggleBold().run()"
         :class="{ 'active': editor.isActive('bold') }"
         title="Bold">
-        <i class="fa fa-bold icon-text-large"></i>
+        <svg-icon name="text-bold" />
       </button>
 
       <button class="bard-toolbar-button has-tooltip"
         @click.prevent="editor.chain().focus().toggleItalic().run()"
         :class="{ 'active': editor.isActive('italic') }"
         title="Italic">
-        <i class="fa fa-italic icon-text-large"></i>
+        <svg-icon name="text-italic" />
       </button>
 
       <button class="bard-toolbar-button has-tooltip"
         @click.prevent="editor.chain().focus().toggleUnderline().run()"
         :class="{ 'active': editor.isActive('underline') }"
         title="Underline">
-        <i class="fa fa-underline icon-text-large"></i>
+        <svg-icon name="text-underline" />
       </button>
 
       <!-- <button class="bard-toolbar-button has-tooltip"
         @click.prevent="editor.chain().focus().toggleSubscript().run()"
         :class="{ 'active': editor.isActive('subscript') }"
         title="Subscript">
-        <i class="fa fa-subscript icon-text-large"></i>
+        <svg-icon name="subscript" />
       </button> -->
 
       <button class="bard-toolbar-button has-tooltip"
         @click.prevent="editor.chain().focus().toggleSuperscript().run()"
         :class="{ 'active': editor.isActive('superscript') }"
         title="Superscript">
-        <i class="fa fa-superscript icon-text-large"></i>
+        <svg-icon name="superscript" />
       </button>
       
       <button class="bard-toolbar-button has-tooltip"
@@ -56,7 +56,7 @@
       <button class="bard-toolbar-button has-tooltip"
         @click.prevent="editor.chain().focus().unsetAllMarks().run()"
         title="Clear formatting">
-        <i class="fa fa-eraser icon-text-large"></i>
+        <svg-icon name="eraser" />
       </button>
 
     </div>
@@ -66,9 +66,9 @@
       :editor="editor">
     </editor-content>
 
-    <div class="px-2 py-1.5 bg-grey-20 border-t flex items-center justify-end text-sm">
-        <button class="text-grey hover:text-grey-90" @click.prevent="$emit('on-cancel')">Cancel</button>
-        <button class="btn btn-primary ml-2" :class="buttonClass" @click.prevent="onSave">Save</button>
+    <div class="px-4 py-3 bg-gray-20 border-t flex items-center justify-end text-sm">
+        <button class="text-gray hover:text-gray-90" @click.prevent="$emit('on-cancel')">Cancel</button>
+        <button class="btn btn-primary ml-4" :class="buttonClass" @click.prevent="onSave">Save</button>
     </div>
 
   </div>

@@ -2,28 +2,29 @@
 
 namespace Textandbytes\Footnotes;
 
-use ProseMirrorToHtml\Nodes\Node;
+use Tiptap\Core\Node;
+use Tiptap\Utils\HTML;
 
 class Footnote extends Node
 {
-    protected $nodeType = 'footnote';
+    public static $name = 'footnote';
 
-    protected $tagName = 'footnote';
-
-    public function matching(): bool
-    {
-        return $this->node->type === $this->nodeType;
-    }
-
-    public function tag(): ?array
+    public function addOptions()
     {
         return [
-            [
-                'tag' => 'footnote',
-                'attrs' => [
-                    'data-content' => e($this->node->attrs->{'data-content'}),
-                ],
-            ],
+            'HTMLAttributes' => [],
         ];
+    }
+
+    public function addAttributes()
+    {
+        return [
+            'data-content' => [],
+        ];
+    }
+
+    public function renderHTML($node, $HTMLAttributes = [])
+    {
+        return ['footnote', HTML::mergeAttributes($this->options['HTMLAttributes'], $HTMLAttributes)];
     }
 }

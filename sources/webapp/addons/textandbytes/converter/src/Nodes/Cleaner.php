@@ -2,48 +2,67 @@
 
 namespace Textandbytes\Converter\Nodes;
 
-use HtmlToProseMirror\Nodes\Node;
-use Statamic\Support\Str;
+use Tiptap\Core\Node;
 
 class Cleaner extends Node
 {
-    public function matching()
+    public static $name = 'cleaner';
+
+    public static $priority = 2000;
+
+    public function parseHTML()
     {
-        return $this->isFooter()
-            || $this->isEmptyParagraph()
-            || $this->isTocAnchor();
+        return [
+            [
+                'getAttrs' => function ($DOMNode) {
+                    $matches = $this->isFooter($DOMNode)
+                        || $this->isEmptyParagraph($DOMNode);
+
+                    if (! $matches) {
+                        return false;
+                    }
+
+                    while ($DOMNode->hasChildNodes()) {
+                        $DOMNode->removeChild($DOMNode->firstChild);
+                    }
+                },
+            ],
+        ];
     }
 
-    public function data()
+    private function isFooter($DOMNode)
     {
-        if (! $this->isTocAnchor()) {
-            while ($this->DOMNode->hasChildNodes()) {
-                $this->DOMNode->removeChild($this->DOMNode->firstChild);
+        /* Is this the div after the .WordSection1 div */
+        return $DOMNode->previousSibling
+            && $DOMNode->previousSibling->nodeName === 'div'
+            && $DOMNode->previousSibling->getAttribute('class') === 'WordSection1';
+    }
+
+    private function isEmptyParagraph($DOMNode)
+    {
+        /* Is this an empty paragraph */
+        return $DOMNode->nodeName === 'p'
+            && trim($DOMNode->textContent) === '';
+    }
+
+    public static function preConvert($html)
+    {
+        /* Collapse all whitespce while keeping leading/trailing spaces */
+        return preg_replace('/(\s|&nbsp;)+/u', ' ', $html);
+    }
+
+    public static function postConvert($data)
+    {
+        /* Tiptap will leave empty cleaner nodes behind that need to be removed */
+        foreach ($data as $i => $node) {
+            if ($node['type'] === 'cleaner') {
+                unset($data[$i]);
+            }
+            if ($node['content'] ?? false) {
+                $node['content'] = self::postConvert($node['content']);
             }
         }
 
-        return null;
-    }
-
-    private function isFooter()
-    {
-        /* Is this the div after the .WordSection1 div */
-        return $this->DOMNode->previousSibling
-            && $this->DOMNode->previousSibling->nodeName === 'div'
-            && $this->DOMNode->previousSibling->getAttribute('class') === 'WordSection1';
-    }
-
-    private function isEmptyParagraph()
-    {
-        /* Is this a paragraph that only contains a non-breaking space */
-        return $this->DOMNode->nodeName === 'p'
-            && ($this->DOMNode->textContent === "" || $this->DOMNode->textContent === "\xc2\xa0");
-    }
-
-    private function isTocAnchor()
-    {
-        /* Is this a table of contents anchor */
-        return $this->DOMNode->nodeName === 'a'
-            && Str::startsWith($this->DOMNode->getAttribute('name'), '_Toc');
+        return array_values($data);
     }
 }

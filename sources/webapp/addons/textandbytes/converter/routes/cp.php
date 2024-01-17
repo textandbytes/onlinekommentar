@@ -31,3 +31,13 @@ Route::post('converter/entry-word', function (Request $request) {
         ->download($file, "{$entry->slug}.docx")
         ->deleteFileAfterSend(true);
 });
+
+Route::post('converter/entry-pdf', function (Request $request) {
+    $values = $request->json()->all();
+    $entry = Entry::find($values['id']);
+    $file = (new Converter)->entryToPdf($entry);
+
+    return response()
+        ->download($file, "{$entry->slug}.pdf")
+        ->deleteFileAfterSend(true);
+});

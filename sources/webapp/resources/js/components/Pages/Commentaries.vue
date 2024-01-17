@@ -32,6 +32,12 @@
       </div>
     </div>
 
+    <div v-if="showTitleLine" class="px-4 bg-white md:px-12 lg:px-24 xl:px-32 lg:py-12 border-b border-black">
+      <div class="flex flex-col items-center">
+        <div class="font-serif text-3xl md:text-4xl xl:text-5xl text-center">{{ title }}</div>
+      </div>
+    </div>
+
     <!-- <StackedListView
       v-if="viewMode === 'list'"
       directory="commentaryGroups">
@@ -122,7 +128,9 @@
     locale: { type: String, required: true },
     commentaries: { type: Array, required: true },
     legalDomains: { type: Array, required: false, default: [] },
-    showHeaderLine: { type: Boolean, required: false, default: true }
+    showHeaderLine: { type: Boolean, required: false, default: true },
+    showTitleLine: { type: Boolean, required: false, default: false },
+    title: { type: String, required: false }
   })
 
   const viewMode = 'grid'
@@ -159,7 +167,7 @@
   }  
   @media (min-width: 640px) {
     .attribution p, h2 {
-      -webkit-line-clamp: 4;
+      -webkit-line-clamp: 3;
     }  
   }
   

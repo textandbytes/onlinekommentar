@@ -1,15 +1,19 @@
-sections:
+title: 'Legislative Act'
+tabs:
   main:
     display: Main
-    fields:
+    sections:
       -
-        handle: title
-        field:
-          type: text
-          required: true
-          validate:
-            - required
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              localizable: false
   sidebar:
     display: Sidebar
-    fields: {  }
-title: 'Legal Domain'
+    sections:
+      - {  }

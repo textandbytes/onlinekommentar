@@ -1,263 +1,292 @@
-sections:
+tabs:
   main:
     display: Main
-    fields:
+    sections:
       -
-        handle: avatar
-        field:
-          mode: list
-          container: avatars
-          restrict: true
-          allow_uploads: true
-          show_filename: true
-          max_files: 1
-          display: Avatar
-          type: assets
-          icon: assets
-          instructions: 'Upload a profile picture'
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-          validate:
-            - image
-      -
-        handle: name
-        field:
-          type: text
-          display: Name
-          listable: true
-      -
-        handle: email
-        field:
-          type: text
-          input_type: email
-          display: 'Email Address'
-          listable: true
-      -
-        handle: legal_domain
-        field:
-          mode: select
-          create: false
-          display: 'Legal Domain'
-          type: entries
-          icon: entries
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-          max_items: 1
-          collections:
-            - legal_domains
-      -
-        handle: show_as_editor
-        field:
-          default: false
-          display: 'Show this user on the editors page'
-          type: toggle
-          icon: toggle
-          instructions: 'Check this field if this user should be listed as an editor in the frontend even when he/she is not assigned as an editor to a commentary.'
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-      -
-        handle: linkedin_url
-        field:
-          display: 'LinkedIn URL'
-          type: link
-          icon: link
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-      -
-        handle: website_url
-        field:
-          display: 'Website URL'
-          type: link
-          icon: link
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-      -
-        handle: roles
-        field:
-          type: user_roles
-          mode: select
-          width: 50
-          listable: true
-          instructions_position: above
-          visibility: visible
-          always_save: false
-          if: 'role:admin'
-      -
-        handle: groups
-        field:
-          type: user_groups
-          mode: select
-          width: 50
-          listable: false
-          instructions_position: above
-          visibility: hidden
-          always_save: false
-      -
-        handle: slug
-        field:
-          from: name
-          generate: true
-          display: Slug
-          type: slug
-          icon: slug
-          listable: true
-          instructions_position: above
-          visibility: visible
-          always_save: false
+        fields:
+          -
+            handle: avatar
+            field:
+              mode: list
+              container: avatars
+              restrict: true
+              allow_uploads: true
+              show_filename: true
+              max_files: 1
+              display: Avatar
+              type: assets
+              icon: assets
+              instructions: 'Upload a profile picture'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              always_save: false
+              validate:
+                - image
+              localizable: false
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+              listable: true
+              localizable: false
+          -
+            handle: email
+            field:
+              type: text
+              input_type: email
+              display: 'Email Address'
+              listable: true
+              localizable: false
+          -
+            handle: legal_domain
+            field:
+              mode: select
+              create: false
+              display: 'Legislative Acts'
+              type: entries
+              icon: entries
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              always_save: false
+              collections:
+                - legal_domains
+              localizable: false
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: show_as_editor
+            field:
+              default: false
+              display: 'Show this user on the editors page'
+              type: toggle
+              icon: toggle
+              instructions: 'Check this field if this user should be listed as an editor in the frontend even when he/she is not assigned as an editor to a commentary.'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              always_save: false
+              localizable: false
+          -
+            handle: linkedin_url
+            field:
+              display: 'LinkedIn URL'
+              type: link
+              icon: link
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              always_save: false
+              localizable: false
+          -
+            handle: website_url
+            field:
+              display: 'Website URL'
+              type: link
+              icon: link
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              always_save: false
+              localizable: false
+          -
+            handle: roles
+            field:
+              type: user_roles
+              mode: select
+              width: 50
+              listable: true
+              filterable: false
+              instructions_position: above
+              visibility: visible
+              always_save: false
+              if: 'role:admin'
+              localizable: false
+          -
+            handle: groups
+            field:
+              type: user_groups
+              mode: select
+              width: 50
+              listable: false
+              filterable: false
+              instructions_position: above
+              visibility: hidden
+              always_save: false
+              localizable: false
+          -
+            handle: slug
+            field:
+              from: name
+              generate: true
+              display: Slug
+              type: slug
+              icon: slug
+              listable: true
+              instructions_position: above
+              visibility: visible
+              always_save: false
+              localizable: false
   multilingual_descriptive_info:
     display: 'Multilingual Descriptive Info'
-    fields:
+    sections:
       -
-        handle: professional_title_de
-        field:
-          input_type: text
-          antlers: false
-          display: 'Title (German)'
-          type: text
-          icon: text
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-      -
-        handle: professional_title_en
-        field:
-          input_type: text
-          antlers: false
-          display: 'Title (English)'
-          type: text
-          icon: text
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-      -
-        handle: professional_title_fr
-        field:
-          input_type: text
-          antlers: false
-          display: 'Title (French)'
-          type: text
-          icon: text
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-      -
-        handle: professional_title_it
-        field:
-          input_type: text
-          antlers: false
-          display: 'Title (Italian)'
-          type: text
-          icon: text
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-      -
-        handle: occupation_de
-        field:
-          input_type: text
-          antlers: false
-          display: 'Occupation (German)'
-          type: text
-          icon: text
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-      -
-        handle: occupation_en
-        field:
-          input_type: text
-          antlers: false
-          display: 'Occupation (English)'
-          type: text
-          icon: text
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-      -
-        handle: occupation_fr
-        field:
-          input_type: text
-          antlers: false
-          display: 'Occupation (French)'
-          type: text
-          icon: text
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-      -
-        handle: occupation_it
-        field:
-          input_type: text
-          antlers: false
-          display: 'Occupation (Italian)'
-          type: text
-          icon: text
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-      -
-        handle: editor_of_de
-        field:
-          antlers: false
-          display: 'Editor of (German)'
-          type: textarea
-          icon: textarea
-          instructions: 'This is the text that appears in the editors detail page and describes what they are editor of and with whom (German version)'
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-      -
-        handle: editor_of_en
-        field:
-          antlers: false
-          display: 'Editor of (English)'
-          type: textarea
-          icon: textarea
-          instructions: 'This is the text that appears in the editors detail page and describes what they are editor of and with whom (English version)'
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-      -
-        handle: editor_of_fr
-        field:
-          antlers: false
-          display: 'Editor of (French)'
-          type: textarea
-          icon: textarea
-          instructions: 'This is the text that appears in the editors detail page and describes what they are editor of and with whom (French version)'
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-      -
-        handle: editor_of_it
-        field:
-          antlers: false
-          display: 'Editor of (Italian)'
-          type: textarea
-          icon: textarea
-          instructions: 'This is the text that appears in the editors detail page and describes what they are editor of and with whom (Italian version)'
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
+        fields:
+          -
+            handle: professional_title_de
+            field:
+              input_type: text
+              antlers: false
+              display: 'Title (German)'
+              type: text
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              always_save: false
+              localizable: false
+          -
+            handle: professional_title_en
+            field:
+              input_type: text
+              antlers: false
+              display: 'Title (English)'
+              type: text
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              always_save: false
+              localizable: false
+          -
+            handle: professional_title_fr
+            field:
+              input_type: text
+              antlers: false
+              display: 'Title (French)'
+              type: text
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              always_save: false
+              localizable: false
+          -
+            handle: professional_title_it
+            field:
+              input_type: text
+              antlers: false
+              display: 'Title (Italian)'
+              type: text
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              always_save: false
+              localizable: false
+          -
+            handle: occupation_de
+            field:
+              input_type: text
+              antlers: false
+              display: 'Occupation (German)'
+              type: text
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              always_save: false
+              localizable: false
+          -
+            handle: occupation_en
+            field:
+              input_type: text
+              antlers: false
+              display: 'Occupation (English)'
+              type: text
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              always_save: false
+              localizable: false
+          -
+            handle: occupation_fr
+            field:
+              input_type: text
+              antlers: false
+              display: 'Occupation (French)'
+              type: text
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              always_save: false
+              localizable: false
+          -
+            handle: occupation_it
+            field:
+              input_type: text
+              antlers: false
+              display: 'Occupation (Italian)'
+              type: text
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              always_save: false
+              localizable: false
+          -
+            handle: editor_of_de
+            field:
+              antlers: false
+              display: 'Editor of (German)'
+              type: textarea
+              icon: textarea
+              instructions: 'This is the text that appears in the editors detail page and describes what they are editor of and with whom (German version)'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              always_save: false
+              localizable: false
+          -
+            handle: editor_of_en
+            field:
+              antlers: false
+              display: 'Editor of (English)'
+              type: textarea
+              icon: textarea
+              instructions: 'This is the text that appears in the editors detail page and describes what they are editor of and with whom (English version)'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              always_save: false
+              localizable: false
+          -
+            handle: editor_of_fr
+            field:
+              antlers: false
+              display: 'Editor of (French)'
+              type: textarea
+              icon: textarea
+              instructions: 'This is the text that appears in the editors detail page and describes what they are editor of and with whom (French version)'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              always_save: false
+              localizable: false
+          -
+            handle: editor_of_it
+            field:
+              antlers: false
+              display: 'Editor of (Italian)'
+              type: textarea
+              icon: textarea
+              instructions: 'This is the text that appears in the editors detail page and describes what they are editor of and with whom (Italian version)'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              always_save: false
+              localizable: false

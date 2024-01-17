@@ -75,8 +75,8 @@
     filteredUsers.value = props.users
 
     if (legalDomain.id) {
-      filteredUsers.value = filteredUsers.value.filter(commentary => {
-        return commentary.legal_domain && (commentary.legal_domain.id === legalDomain.id)
+      filteredUsers.value = filteredUsers.value.filter(user => {
+        return user.legal_domains && (user.legal_domains.map(legal_domain => legal_domain.id).includes(legalDomain.id))
       })
     }
   }
