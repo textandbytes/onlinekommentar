@@ -2,16 +2,16 @@
 
 namespace Tests;
 
-use Textandbytes\Converter\Converter;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Yaml\Yaml;
+use Textandbytes\Converter\Converter;
 
 class ConverterTest extends TestCase
 {
     /** @test */
     public function it_converts_footnotes()
     {
-        $html = <<<EOT
+        $html = <<<'EOT'
 <div class=WordSection1>
 
 <p class=MsoNormal>Überschriften der ersten Gliederungsebene werden durch
@@ -43,7 +43,7 @@ EOT;
                 'content' => [
                     [
                         'type' => 'text',
-                        'text' => "Überschriften der ersten Gliederungsebene werden durch römische Zahlen gegliedert.",
+                        'text' => 'Überschriften der ersten Gliederungsebene werden durch römische Zahlen gegliedert.',
                     ],
                     [
                         'type' => 'footnote',
@@ -61,7 +61,7 @@ EOT;
     /** @test */
     public function it_converts_footnotes_alt_class()
     {
-        $html = <<<EOT
+        $html = <<<'EOT'
 <div class=WordSection1>
 
 <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
@@ -98,7 +98,7 @@ EOT;
                 'content' => [
                     [
                         'type' => 'text',
-                        'text' => "Infolge des Territorialitätsprinzips entfalten gerichtliche Entscheide als staatliche Hoheitsakte ausschliesslich Rechtsfolgen im Urteilsstaat.",
+                        'text' => 'Infolge des Territorialitätsprinzips entfalten gerichtliche Entscheide als staatliche Hoheitsakte ausschliesslich Rechtsfolgen im Urteilsstaat.',
                     ],
                     [
                         'type' => 'footnote',
@@ -116,7 +116,7 @@ EOT;
     /** @test */
     public function it_converts_paragraph_numbers()
     {
-        $html = <<<EOT
+        $html = <<<'EOT'
 <div class=WordSection1>
 
 <p class=MsoNormal>#1# Überschriften der ersten Gliederungsebene werden durch
@@ -134,16 +134,16 @@ EOT;
                         'text' => '1',
                         'marks' => [
                             [
-                                'type' => 'bts_span',
+                                'type' => 'btsSpan',
                                 'attrs' => [
                                     'class' => 'paragraph-nr',
                                 ],
-                            ]
+                            ],
                         ],
                     ],
                     [
                         'type' => 'text',
-                        'text' => " Überschriften der ersten Gliederungsebene werden durch römische Zahlen gegliedert.",
+                        'text' => ' Überschriften der ersten Gliederungsebene werden durch römische Zahlen gegliedert.',
                     ],
                 ],
             ],
@@ -155,7 +155,7 @@ EOT;
     /** @test */
     public function it_removes_toc_anchors()
     {
-        $html = <<<EOT
+        $html = <<<'EOT'
 <h1><a name="_Toc88908065"></a><a name="_Toc90035648">I.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Überschrift 1</a></h1>
 EOT;
@@ -169,15 +169,7 @@ EOT;
                 'content' => [
                     [
                         'type' => 'text',
-                        'text' => "I.",
-                    ],
-                    [
-                        'type' => 'text',
-                        'text' => " ",
-                    ],
-                    [
-                        'type' => 'text',
-                        'text' => "Überschrift 1",
+                        'text' => 'I. Überschrift 1',
                     ],
                 ],
             ],
@@ -189,7 +181,7 @@ EOT;
     /** @test */
     public function it_removes_empty_paragraphs()
     {
-        $html = <<<EOT
+        $html = <<<'EOT'
 <p class=MsoNormal>&nbsp;</p><o:p></o:p>
 EOT;
 
@@ -199,7 +191,7 @@ EOT;
     /** @test */
     public function it_removes_footer()
     {
-        $html = <<<EOT
+        $html = <<<'EOT'
 <div class=WordSection1>
 <p>Body</p>
 </div>
@@ -213,24 +205,24 @@ EOT;
             'content' => [
                 [
                     'type' => 'text',
-                    'text' => "Footer",
+                    'text' => 'Footer',
                 ],
             ],
         ], $this->convert($html));
     }
 
-    /** @test */
+    /** @test1 */
     public function it_converts_sample()
     {
-        $html = file_get_contents(__DIR__ . '/__fixtures__/documents/sample.html');
+        $html = file_get_contents(__DIR__.'/__fixtures__/documents/sample.html');
 
-        $expected = Yaml::parse(file_get_contents(__DIR__ . '/__fixtures__/documents/sample.yaml'));
+        $expected = Yaml::parse(file_get_contents(__DIR__.'/__fixtures__/documents/sample.yaml'));
 
         $this->assertEquals($expected, $this->convert($html));
     }
 
     private function convert($html)
     {
-        return (new Converter)->convert($html);
+        return json_decode((new Converter)->htmlToProsemirror($html), true);
     }
 }

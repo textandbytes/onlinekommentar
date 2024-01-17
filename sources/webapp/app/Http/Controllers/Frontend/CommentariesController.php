@@ -24,6 +24,7 @@ class CommentariesController extends Controller
     {
         $isLivePreview = request()->statamicToken();
 
+
         // Create a unique cache key based on the request parameters
         $cacheKey = "commentary_view:{$locale}:{$commentarySlug}:{$versionTimestamp}:" . ($versionComparisonResult ? md5($versionComparisonResult) : '');
 
@@ -80,8 +81,11 @@ class CommentariesController extends Controller
         }
 
         // get the assigned authors and editors from their ids
-        $commentaryData['assigned_authors'] = $this->_getUsers($commentaryData['assigned_authors'] ?? null, ['name']);
-        $commentaryData['assigned_editors'] = $this->_getUsers($commentaryData['assigned_editors'] ?? null, ['name']);
+        $commentaryData['assigned_authors'] = $this->_getUsers($commentaryData['assigned_authors'] ?? null, ['id', 'slug', 'name']);
+        $commentaryData['assigned_editors'] = $this->_getUsers($commentaryData['assigned_editors'] ?? null, ['id', 'slug', 'name']);
+
+        // get the additional documents
+        $commentaryData['additional_documents'] = $this->_getDocuments($commentaryData['additional_documents'] ?? null, ['id', 'url', 'title']);
 
         // return the first original language (default to German) since only one original language can be assigned to a commentary
         $commentaryData['original_language'] = ($commentaryData['original_language'] && is_array($commentaryData['original_language']) && !empty($commentaryData['original_language']))
@@ -105,16 +109,20 @@ class CommentariesController extends Controller
             $toc = $tocGenerator->getHtmlMenu($contentMarkup);
         }
     
+        // select the legal domain or show template depending on commentary content
+        $template = $commentaryData['content'] ? 'commentaries/show' : 'commentaries/legal-domain';
+
         // load the commentary detail view
         $view = (new View)
-            ->template('commentaries/show')
+            ->template($template)
             ->layout('layout')
             ->with(array_merge([
                 'locale' => $locale,
                 'contentMarkup' => $contentMarkup,
                 'toc' => $toc,
                 'versionTimestamp' => $versionTimestamp,
-                'versionComparisonResult' => $versionComparisonResult
+                'versionComparisonResult' => $versionComparisonResult,
+                'base_path_prefix' => '/' . $locale . '/',
             ], $commentaryData))
             ->render();  // render the view to a string
 
@@ -202,6 +210,13 @@ class CommentariesController extends Controller
             }
         }
         return $users;
+    }
+
+    private function _getDocuments($assets, $fieldsToInclude = null)
+    {
+        return collect($assets)
+            ->map(fn ($asset) => $fieldsToInclude ? array_intersect_key($asset, array_flip($fieldsToInclude)) : $asset)
+            ->all();
     }
 
     private function _getCommentaryRevisionBasePath($locale, $commentaryId)

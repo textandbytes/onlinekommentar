@@ -9,6 +9,7 @@ use Statamic\Facades\Entry;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Arr;
 
 class UsersController extends Controller
 {
@@ -41,9 +42,9 @@ class UsersController extends Controller
         // compile list of fields to display on the user detail view
         $userData = [
             'name' => $user->name,
-            'legal_domain' => Entry::query()
+            'legal_domains' => Entry::query()
                 ->where('collection', 'legal_domains')
-                ->where('id', $user->value('legal_domain'))
+                ->whereIn('id', Arr::wrap($user->value('legal_domain')))
                 ->get()
                 ->map(function ($legal_domain, $key) {
                     return [
@@ -51,7 +52,7 @@ class UsersController extends Controller
                         'label' => trans($legal_domain->title)
                     ];
                 })
-                ->first(),
+                ->all(),
             'title' => $user->  { 'professional_title_' . $locale },
             'occupation' => $user->{ 'occupation_' . $locale },
             'editor_of' => $user->{ 'editor_of_' . $locale },

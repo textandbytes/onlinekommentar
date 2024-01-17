@@ -43,9 +43,9 @@
 
     computed: {
       isFootnoteActive() {
-        const active = this.editor.activeNodes.footnote()
+        const active = this.editor.isActive('footnote')
         if (active) {
-          this.content = this.editor.getNodeAttrs('footnote')['data-content']
+          this.content = this.editor.getAttributes('footnote')['data-content']
         }
         return active
       }
